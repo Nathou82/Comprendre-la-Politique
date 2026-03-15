@@ -1,6 +1,13 @@
 <!DOCTYPE html>
 <html lang="fr" prefix="og: https://ogp.me/ns#">
 <head>
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-TXHC5G54');</script>
+<!-- End Google Tag Manager -->
   <meta charset="UTF-8"/>
   <link rel="icon" type="image/png" sizes="32x32" href="favicon.png">
   <link rel="icon" type="image/png" sizes="16x16" href="favicon.png">
@@ -1160,9 +1167,52 @@
     line-height:1.6;
   }
 
+  /* ── Bandeau cookies ───────────────────────────────────── */
+  #cookieBanner{
+    position:fixed;bottom:1.4rem;right:1.4rem;z-index:10000;
+    background:var(--card);border:1px solid var(--border);
+    border-radius:14px;
+    box-shadow:0 8px 32px rgba(0,0,0,.18);
+    padding:1.1rem 1.2rem;max-width:320px;width:calc(100% - 2.8rem);
+    font-size:.78rem;line-height:1.6;color:var(--text2);
+    transform:translateY(20px);opacity:0;
+    transition:transform .35s cubic-bezier(.25,.46,.45,.94),opacity .35s ease;
+    pointer-events:none;
+  }
+  #cookieBanner.show{transform:translateY(0);opacity:1;pointer-events:all;}
+  #cookieBanner.hide{transform:translateY(20px);opacity:0;pointer-events:none;}
+  .cookie-title{font-weight:700;color:var(--text);font-size:.8rem;margin-bottom:.35rem;}
+  .cookie-actions{
+    display:flex;align-items:center;justify-content:space-between;
+    margin-top:.85rem;gap:.6rem;
+  }
+  .cookie-link{
+    font-size:.72rem;color:var(--text3);text-decoration:underline;
+    text-underline-offset:2px;cursor:pointer;
+    transition:color .15s;white-space:nowrap;
+  }
+  .cookie-link:hover{color:var(--blue2);}
+  .cookie-accept{
+    padding:.38rem .9rem;border-radius:20px;
+    background:var(--navy);color:#fff;
+    font-size:.75rem;font-weight:700;
+    border:none;cursor:pointer;
+    transition:background .18s,transform .15s;
+    white-space:nowrap;flex-shrink:0;
+  }
+  .cookie-accept:hover{background:var(--navy2);transform:scale(1.04);}
+  @media(max-width:480px){
+    #cookieBanner{bottom:.8rem;right:.8rem;left:.8rem;width:auto;max-width:none;}
+  }
+
+
   </style>
 </head>
 <body>
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TXHC5G54"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
 
 <!-- ============================================================
      NAVIGATION
@@ -1210,7 +1260,7 @@
   <div class="hero-bg"></div>
   <div class="hero-inner">
     <div class="hero">
-      <div class="hero-badge">comprendrelapolitique.fr - Guide pédagogique de 2026</div>
+      <div class="hero-badge">📚 comprendrelapolitique.fr — Guide pédagogique 2025</div>
       <h1>Comprendre la<br><em>Politique française</em></h1>
       <p class="hero-desc">Du spectre gauche-droite aux idéologies, des institutions aux partis — découvrez la politique française expliquée clairement, avec quiz, comparateur et test d'orientation.</p>
       <div class="hero-ctas">
@@ -3791,7 +3841,36 @@ function initGlossSearch(){
 }
 
 
+
+/* ── Bandeau cookies ─────────────────────────────────────── */
+(function(){
+  var banner=document.getElementById('cookieBanner');
+  if(!banner) return;
+  if(localStorage.getItem('cookieConsent')==='accepted') return;
+  setTimeout(function(){ banner.classList.add('show'); }, 2500);
+  var btn=document.getElementById('cookieAccept');
+  if(btn){
+    btn.addEventListener('click',function(){
+      localStorage.setItem('cookieConsent','accepted');
+      banner.classList.remove('show');
+      banner.classList.add('hide');
+      setTimeout(function(){ banner.style.display='none'; },400);
+    });
+  }
+})();
+
 </script>
+
+
+<!-- Bandeau cookies -->
+<div id="cookieBanner" role="dialog" aria-label="Consentement aux cookies" aria-live="polite">
+  <div class="cookie-title">🍪 Ce site utilise des cookies</div>
+  <p>Des cookies Google Analytics sont utilisés <strong>uniquement pour mesurer l'audience</strong> et améliorer le contenu pédagogique. Aucune donnée personnelle n'est vendue ou partagée.</p>
+  <div class="cookie-actions">
+    <a href="mentions-legales.html" class="cookie-link">Politique de confidentialité</a>
+    <button class="cookie-accept" id="cookieAccept">Accepter</button>
+  </div>
+</div>
 
 </body>
 </html>
