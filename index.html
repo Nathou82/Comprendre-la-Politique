@@ -11,7 +11,10 @@
   <meta property="og:title" content="Comprendre la Politique - Guide Pédagogique Complet"/>
   <meta property="og:description" content="Comprendre la Politique : idéologies, partis, institutions, quiz d'orientation et comparateur interactif. Tout sur comprendrelapolitique.fr"/>
   <meta property="og:type" content="website"/>
+  <meta property="og:image" content="https://i.imgur.com/aBaf4aS.png"/>
+  <meta property="og:url" content="https://comprendrelapolitique.fr"/>
   <meta name="twitter:card" content="summary_large_image"/>
+  <meta name="twitter:image" content="https://i.imgur.com/aBaf4aS.png"/>
   <title>Comprendre la Politique — Guide Pédagogique Complet | comprendrelapolitique.fr</title>
   <link rel="preconnect" href="https://fonts.googleapis.com"/>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet"/>
@@ -31,7 +34,7 @@
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "FAQPage",
+    "@type": "QPage",
     "mainEntity": [
       {"@type":"Question","name":"Qu'est-ce que la gauche en politique ?","acceptedAnswer":{"@type":"Answer","text":"La gauche politique défend traditionnellement l'égalité sociale, l'intervention de l'État dans l'économie, la redistribution des richesses et les droits des travailleurs. En France, elle est représentée par le PS, LFI, EELV et le PCF."}},
       {"@type":"Question","name":"Quels sont les principaux partis politiques français ?","acceptedAnswer":{"@type":"Answer","text":"Les principaux partis français sont : le Rassemblement National (RN), La France Insoumise (LFI), Renaissance (macronisme), Les Républicains (LR), le Parti Socialiste (PS), Europe Écologie Les Verts (EELV), le MoDem et le PCF."}},
@@ -45,7 +48,7 @@
      VARIABLES — LIGHT & DARK MODE
   ========================================================= */
   :root,[data-theme="light"]{
-    --bg:       #f7f8fa;
+    --bg:       #f7f8;
     --bg2:      #eef0f4;
     --bg3:      #ffffff;
     --text:     #1e2a38;
@@ -71,21 +74,21 @@
   *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
   html{scroll-behavior:smooth;font-size:16px}
   body{
-    font-family:'DM Sans',sans-serif;
+    font-mily:'DM Sans',sans-serif;
     background:var(--bg);color:var(--text);
     overflow-x:hidden;
     transition:background .35s,color .35s,border-color .35s;
   }
   a{color:inherit;text-decoration:none}
   img{max-width:100%}
-  h1,h2,h3,h4{font-family:'Playfair Display',serif;line-height:1.2;color:var(--text)}
+  h1,h2,h3,h4{font-mily:'Playir Display',serif;line-height:1.2;color:var(--text)}
   h1{font-size:clamp(2.2rem,5vw,4rem);font-weight:900}
   h2{font-size:clamp(1.7rem,3vw,2.5rem);font-weight:700}
   h3{font-size:clamp(1.1rem,2vw,1.45rem);font-weight:700}
   h4{font-size:1rem;font-weight:700}
   p{line-height:1.75;color:var(--text2)}
   .lead{font-size:1.1rem;line-height:1.8;color:var(--text3)}
-  select,input,button{font-family:'DM Sans',sans-serif}
+  select,input,button{font-mily:'DM Sans',sans-serif}
 
   /* =========================================================
      NAVIGATION
@@ -104,7 +107,7 @@
     padding:.75rem 1.5rem;gap:1rem;
   }
   .nav-logo{
-    font-family:'Playfair Display',serif;
+    font-mily:'Playir Display',serif;
     font-size:1.2rem;font-weight:900;color:#fff;
     display:flex;align-items:center;gap:.4rem;flex-shrink:0;
   }
@@ -229,7 +232,7 @@
   .hero-info-text{font-size:.72rem;color:rgba(255,255,255,.55);line-height:1.5;}
   @media(max-width:900px){.hero-infos{grid-template-columns:1fr;gap:.5rem;}}
   @media(max-width:640px){.hero-info-card{padding:.7rem .75rem;}}
-  .stat-card .num{font-family:'Playfair Display',serif;font-size:1.9rem;font-weight:900;color:var(--gold)}
+  .stat-card .num{font-mily:'Playir Display',serif;font-size:1.9rem;font-weight:900;color:var(--gold)}
   .stat-card .lbl{font-size:.7rem;color:rgba(255,255,255,.45);text-transform:uppercase;letter-spacing:.06em;margin-top:.25rem}
   .hero-visual{position:relative}
   .spectrum-preview{
@@ -270,9 +273,9 @@
   .col-exleft .ps-party{background:#f9e8e8;color:#8e1c1c}
   .col-left .ps-party{background:#fdecea;color:#c0392b}
   .col-cleft .ps-party{background:#fef0ed;color:#c0392b}
-  .col-center .ps-party{background:#eafaf1;color:#1e8449}
+  .col-center .ps-party{background:#eaf1;color:#1e8449}
   .col-cright .ps-party{background:#eaf4fc;color:#1a5276}
-  .col-right .ps-party{background:#e8f0fa;color:#1a4f8a}
+  .col-right .ps-party{background:#e8f0;color:#1a4f8a}
   .col-exright .ps-party{background:#e8e9ea;color:#333}
 
   /* =========================================================
@@ -294,7 +297,7 @@
   .ideo-chevron{font-size:.9rem;color:var(--text3);transition:transform .3s;flex-shrink:0;margin-top:.2rem}
   .ideo-card.open .ideo-chevron{transform:rotate(180deg)}
   .ideo-body{display:none;padding:0 1.3rem 1.3rem;border-top:1px solid var(--border)}
-  .ideo-card.open .ideo-body{display:block;animation:fadeIn .3s ease}
+  .ideo-card.open .ideo-body{display:block;animation:deIn .3s ease}
   @keyframes fadeIn{from{opacity:0;transform:translateY(-8px)}to{opacity:1;transform:none}}
   .ideo-def{
     background:var(--bg2);border-radius:8px;padding:.9rem;margin:.9rem 0;
