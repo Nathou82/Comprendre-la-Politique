@@ -1260,7 +1260,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <div class="hero-bg"></div>
   <div class="hero-inner">
     <div class="hero">
-      <div class="hero-badge">📚 comprendrelapolitique.fr — Guide pédagogique 2025</div>
+      <div class="hero-badge">📚 comprendrelapolitique.fr — Guide pédagogique 2026</div>
       <h1>Comprendre la<br><em>Politique française</em></h1>
       <p class="hero-desc">Du spectre gauche-droite aux idéologies, des institutions aux partis — découvrez la politique française expliquée clairement, avec quiz, comparateur et test d'orientation.</p>
       <div class="hero-ctas">
@@ -3843,7 +3843,7 @@ function initGlossSearch(){
 
 
 /* ── Bandeau cookies ─────────────────────────────────────── */
-(function(){
+document.addEventListener('DOMContentLoaded',function(){
   var banner=document.getElementById('cookieBanner');
   if(!banner) return;
   if(localStorage.getItem('cookieConsent')==='accepted') return;
@@ -3857,7 +3857,7 @@ function initGlossSearch(){
       setTimeout(function(){ banner.style.display='none'; },400);
     });
   }
-})();
+});
 
 </script>
 
