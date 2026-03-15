@@ -1,6 +1,14 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-R2B9TW1V79"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-R2B9TW1V79');
+</script>
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
   <meta name="description" content="Mentions légales du site Comprendre la Politique — comprendrelapolitique.fr"/>
@@ -355,6 +363,45 @@
     .ml-info-label{font-size:.7rem;}
   }
 
+  /* ── Bandeau cookies ───────────────────────────────────── */
+  #cookieBanner{
+    position:fixed;bottom:1.4rem;right:1.4rem;z-index:10000;
+    background:var(--card);border:1px solid var(--border);
+    border-radius:14px;
+    box-shadow:0 8px 32px rgba(0,0,0,.18);
+    padding:1.1rem 1.2rem;max-width:320px;width:calc(100% - 2.8rem);
+    font-size:.78rem;line-height:1.6;color:var(--text2);
+    transform:translateY(20px);opacity:0;
+    transition:transform .35s cubic-bezier(.25,.46,.45,.94),opacity .35s ease;
+    pointer-events:none;
+  }
+  #cookieBanner.show{transform:translateY(0);opacity:1;pointer-events:all;}
+  #cookieBanner.hide{transform:translateY(20px);opacity:0;pointer-events:none;}
+  .cookie-title{font-weight:700;color:var(--text);font-size:.8rem;margin-bottom:.35rem;}
+  .cookie-actions{
+    display:flex;align-items:center;justify-content:space-between;
+    margin-top:.85rem;gap:.6rem;
+  }
+  .cookie-link{
+    font-size:.72rem;color:var(--text3);text-decoration:underline;
+    text-underline-offset:2px;cursor:pointer;
+    transition:color .15s;white-space:nowrap;
+  }
+  .cookie-link:hover{color:var(--blue2);}
+  .cookie-accept{
+    padding:.38rem .9rem;border-radius:20px;
+    background:var(--navy);color:#fff;
+    font-size:.75rem;font-weight:700;
+    border:none;cursor:pointer;
+    transition:background .18s,transform .15s;
+    white-space:nowrap;flex-shrink:0;
+  }
+  .cookie-accept:hover{background:var(--navy2);transform:scale(1.04);}
+  @media(max-width:480px){
+    #cookieBanner{bottom:.8rem;right:.8rem;left:.8rem;width:auto;max-width:none;}
+  }
+
+
   </style>
 </head>
 <body>
@@ -420,7 +467,7 @@
               <div class="ml-infobox">
                 <div class="ml-info-row"><span class="ml-info-label">Éditeur</span><span class="ml-info-val">Anonyme</span></div>
                 <div class="ml-info-row"><span class="ml-info-label">Pays</span><span class="ml-info-val">France</span></div>
-                <div class="ml-info-row"><span class="ml-info-label">Contact</span><span class="ml-info-val"><a href="mailto:contact@comprendrelapolitique.fr" class="ml-link">contact@comprendrelapolitique.fr</a></span></div>
+                <div class="ml-info-row"><span class="ml-info-label">Contact</span><span class="ml-info-val"><a href="https://forms.gle/8DDieSwfE8rmFSrH8" target="_blank" rel="noopener noreferrer" class="ml-link">https://forms.gle/8DDieSwfE8rmFSrH8</a></span></div>
               </div>
               <p>Le directeur de la publication est <strong>Anonyme</strong>.</p>
             </div>
@@ -483,7 +530,7 @@
               <p>Le site peut collecter certaines données personnelles uniquement dans le cadre de son fonctionnement (par exemple via un formulaire de contact).</p>
               <p>Ces données sont utilisées uniquement pour répondre aux demandes des utilisateurs et ne sont pas cédées à des tiers.</p>
               <p>Conformément à la réglementation applicable en matière de protection des données, les utilisateurs disposent d'un droit d'accès, de rectification et de suppression de leurs données personnelles.<br>
-              Toute demande peut être adressée à : <a href="mailto:contact@comprendrelapolitique.fr" class="ml-link">contact@comprendrelapolitique.fr</a></p>
+              Toute demande peut être adressée à : <a href="https://forms.gle/8DDieSwfE8rmFSrH8" target="_blank" rel="noopener noreferrer" class="ml-link">https://forms.gle/8DDieSwfE8rmFSrH8</a></p>
             </div>
           </div>
 
@@ -616,7 +663,36 @@ document.addEventListener('click', function(e){
     window.scrollTo({top:0, behavior:'smooth'});
   }
 });
+
+/* ── Bandeau cookies ─────────────────────────────────────── */
+document.addEventListener('DOMContentLoaded',function(){
+  var banner=document.getElementById('cookieBanner');
+  if(!banner) return;
+  if(localStorage.getItem('cookieConsent')==='accepted') return;
+  setTimeout(function(){ banner.classList.add('show'); }, 2500);
+  var btn=document.getElementById('cookieAccept');
+  if(btn){
+    btn.addEventListener('click',function(){
+      localStorage.setItem('cookieConsent','accepted');
+      banner.classList.remove('show');
+      banner.classList.add('hide');
+      setTimeout(function(){ banner.style.display='none'; },400);
+    });
+  }
+});
+
 </script>
+
+
+<!-- Bandeau cookies -->
+<div id="cookieBanner" role="dialog" aria-label="Consentement aux cookies" aria-live="polite">
+  <div class="cookie-title">🍪 Ce site utilise des cookies</div>
+  <p>Des cookies Google Analytics sont utilisés <strong>uniquement pour mesurer l'audience</strong> et améliorer le contenu pédagogique. Aucune donnée personnelle n'est vendue ou partagée.</p>
+  <div class="cookie-actions">
+    <a href="mentions-legales.html" class="cookie-link">Politique de confidentialité</a>
+    <button class="cookie-accept" id="cookieAccept">Accepter</button>
+  </div>
+</div>
 
 </body>
 </html>
