@@ -1,0 +1,2108 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>La Politique Française — Guide Pédagogique</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    /* ======================================
+       VARIABLES & RESET
+    ====================================== */
+    :root {
+      --navy:    #0d1b2a;
+      --navy2:   #152236;
+      --blue:    #1a4f8a;
+      --blue2:   #2563a8;
+      --accent:  #c8392b;
+      --gold:    #d4a843;
+      --white:   #f7f8fa;
+      --off:     #eef0f4;
+      --mid:     #8895a7;
+      --text:    #1e2a38;
+      --border:  #dce3ed;
+      --left:    #c0392b;
+      --right:   #1a4f8a;
+      --center:  #2ecc71;
+      --exleft:  #8e1c1c;
+      --exright: #0d1b2a;
+      --r: 8px;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; font-size: 16px; }
+    body {
+      font-family: 'DM Sans', sans-serif;
+      background: var(--white);
+      color: var(--text);
+      overflow-x: hidden;
+    }
+    a { color: inherit; text-decoration: none; }
+    img { max-width: 100%; }
+
+    /* ======================================
+       TYPOGRAPHY
+    ====================================== */
+    h1, h2, h3, h4 { font-family: 'Playfair Display', serif; line-height: 1.2; }
+    h1 { font-size: clamp(2.4rem, 5vw, 4.2rem); font-weight: 900; }
+    h2 { font-size: clamp(1.8rem, 3vw, 2.6rem); font-weight: 700; }
+    h3 { font-size: clamp(1.2rem, 2vw, 1.5rem); font-weight: 700; }
+    h4 { font-size: 1.05rem; font-weight: 700; }
+    p  { line-height: 1.75; color: #3a4a5c; }
+    .lead { font-size: 1.15rem; line-height: 1.8; color: var(--mid); }
+
+    /* ======================================
+       NAVIGATION
+    ====================================== */
+    #navbar {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
+      background: rgba(13, 27, 42, 0.97);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(255,255,255,0.07);
+      transition: box-shadow .3s;
+    }
+    #navbar.scrolled { box-shadow: 0 4px 30px rgba(0,0,0,.4); }
+    .nav-inner {
+      max-width: 1280px; margin: 0 auto;
+      display: flex; align-items: center; justify-content: space-between;
+      padding: .85rem 2rem;
+    }
+    .nav-logo {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.25rem; font-weight: 900;
+      color: #fff;
+      display: flex; align-items: center; gap: .5rem;
+    }
+    .nav-logo span { color: var(--gold); }
+    .nav-links {
+      display: flex; gap: .25rem; list-style: none;
+    }
+    .nav-links a {
+      color: rgba(255,255,255,.7);
+      font-size: .82rem; font-weight: 500;
+      padding: .45rem .75rem; border-radius: 5px;
+      transition: color .2s, background .2s;
+      letter-spacing: .02em;
+    }
+    .nav-links a:hover, .nav-links a.active {
+      color: #fff;
+      background: rgba(255,255,255,.1);
+    }
+    .nav-toggle {
+      display: none; background: none; border: none;
+      cursor: pointer; padding: .4rem;
+    }
+    .nav-toggle span {
+      display: block; width: 22px; height: 2px;
+      background: #fff; margin: 4px 0;
+      transition: .3s;
+    }
+
+    /* ======================================
+       HERO
+    ====================================== */
+    #hero {
+      min-height: 100vh;
+      background: var(--navy);
+      display: flex; align-items: center;
+      position: relative; overflow: hidden;
+      padding: 7rem 2rem 5rem;
+    }
+    .hero-bg {
+      position: absolute; inset: 0;
+      background:
+        radial-gradient(ellipse 80% 60% at 70% 40%, rgba(26,79,138,.4) 0%, transparent 60%),
+        radial-gradient(ellipse 50% 40% at 20% 80%, rgba(200,57,43,.15) 0%, transparent 50%);
+    }
+    .tricolor-bar {
+      position: absolute; top: 0; left: 0; right: 0; height: 4px;
+      background: linear-gradient(90deg, #002395 33.3%, #fff 33.3% 66.6%, #ed2939 66.6%);
+    }
+    .hero-inner {
+      position: relative; z-index: 1;
+      max-width: 1280px; margin: 0 auto;
+      display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center;
+    }
+    .hero-badge {
+      display: inline-flex; align-items: center; gap: .5rem;
+      background: rgba(212,168,67,.15);
+      border: 1px solid rgba(212,168,67,.3);
+      color: var(--gold); font-size: .78rem; font-weight: 600;
+      padding: .35rem .9rem; border-radius: 50px;
+      margin-bottom: 1.5rem;
+      letter-spacing: .06em; text-transform: uppercase;
+    }
+    .hero h1 { color: #fff; margin-bottom: 1.25rem; }
+    .hero h1 em { color: var(--gold); font-style: normal; }
+    .hero-desc {
+      color: rgba(255,255,255,.65);
+      font-size: 1.05rem; line-height: 1.8;
+      margin-bottom: 2rem;
+    }
+    .hero-ctas { display: flex; gap: 1rem; flex-wrap: wrap; }
+    .btn {
+      display: inline-flex; align-items: center; gap: .5rem;
+      padding: .75rem 1.6rem; border-radius: 6px;
+      font-weight: 600; font-size: .9rem;
+      transition: all .25s; cursor: pointer; border: none;
+    }
+    .btn-primary {
+      background: var(--gold); color: var(--navy);
+    }
+    .btn-primary:hover { background: #e0b84e; transform: translateY(-1px); }
+    .btn-outline {
+      background: transparent;
+      border: 1.5px solid rgba(255,255,255,.25);
+      color: #fff;
+    }
+    .btn-outline:hover { border-color: rgba(255,255,255,.6); background: rgba(255,255,255,.06); }
+    .hero-stats {
+      display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem;
+      margin-top: 3rem;
+    }
+    .stat-card {
+      background: rgba(255,255,255,.05);
+      border: 1px solid rgba(255,255,255,.08);
+      border-radius: var(--r);
+      padding: 1.2rem 1rem;
+      text-align: center;
+    }
+    .stat-card .num {
+      font-family: 'Playfair Display', serif;
+      font-size: 2rem; font-weight: 900;
+      color: var(--gold);
+    }
+    .stat-card .lbl {
+      font-size: .75rem; color: rgba(255,255,255,.5);
+      text-transform: uppercase; letter-spacing: .06em;
+      margin-top: .3rem;
+    }
+    .hero-visual {
+      position: relative;
+    }
+    .spectrum-preview {
+      background: rgba(255,255,255,.04);
+      border: 1px solid rgba(255,255,255,.1);
+      border-radius: 12px;
+      padding: 2rem;
+    }
+    .spectrum-preview h3 {
+      color: rgba(255,255,255,.9);
+      font-size: 1rem; margin-bottom: 1.5rem;
+      text-align: center;
+    }
+    .spectrum-bar-wrap { position: relative; }
+    .spectrum-bar {
+      height: 10px; border-radius: 10px;
+      background: linear-gradient(90deg,
+        #8e1c1c 0%,
+        #c0392b 20%,
+        #e74c3c 35%,
+        #27ae60 50%,
+        #3498db 65%,
+        #1a4f8a 80%,
+        #0d1b2a 100%
+      );
+      margin-bottom: .75rem;
+    }
+    .spectrum-labels {
+      display: flex; justify-content: space-between;
+      font-size: .72rem; color: rgba(255,255,255,.5);
+    }
+    .party-dots { display: flex; flex-wrap: wrap; gap: .5rem; margin-top: 1.5rem; }
+    .pdot {
+      font-size: .72rem; padding: .3rem .7rem; border-radius: 20px;
+      font-weight: 600; cursor: default;
+      transition: transform .2s;
+    }
+    .pdot:hover { transform: scale(1.08); }
+
+    /* ======================================
+       SECTIONS — COMMON
+    ====================================== */
+    section { padding: 5rem 2rem; }
+    .section-inner { max-width: 1280px; margin: 0 auto; }
+    .section-label {
+      font-size: .72rem; font-weight: 700;
+      letter-spacing: .12em; text-transform: uppercase;
+      color: var(--blue2); margin-bottom: .75rem;
+    }
+    .section-title { margin-bottom: 1rem; }
+    .section-subtitle { font-size: 1.05rem; color: var(--mid); max-width: 640px; }
+    .section-header { margin-bottom: 3.5rem; }
+    .divider {
+      width: 48px; height: 3px;
+      background: var(--gold);
+      border-radius: 2px; margin: 1rem 0 1.25rem;
+    }
+
+    /* ======================================
+       SPECTRUM SECTION
+    ====================================== */
+    #spectrum { background: var(--off); }
+    .spectrum-full {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 2.5rem 3rem;
+      margin-bottom: 3rem;
+    }
+    .sf-title {
+      text-align: center; font-size: .8rem; font-weight: 700;
+      color: var(--mid); text-transform: uppercase;
+      letter-spacing: .08em; margin-bottom: 1.8rem;
+    }
+    .sf-bar {
+      height: 16px; border-radius: 16px;
+      background: linear-gradient(90deg,
+        #6d0000 0%,
+        #c0392b 18%,
+        #e74c3c 34%,
+        #1abc9c 50%,
+        #3498db 66%,
+        #1a4f8a 82%,
+        #0a0f18 100%
+      );
+      margin-bottom: 1rem; position: relative;
+    }
+    .sf-labels {
+      display: flex; justify-content: space-between;
+      margin-bottom: 2.5rem;
+    }
+    .sf-lbl {
+      font-size: .72rem; font-weight: 600;
+      text-align: center; flex: 1;
+    }
+    .parties-spectrum {
+      display: flex; justify-content: space-around;
+      flex-wrap: wrap; gap: 1rem;
+    }
+    .ps-col { text-align: center; flex: 1; min-width: 90px; }
+    .ps-col-title {
+      font-size: .68rem; font-weight: 700;
+      text-transform: uppercase; letter-spacing: .08em;
+      margin-bottom: .7rem; padding-bottom: .5rem;
+      border-bottom: 2px solid;
+    }
+    .ps-party {
+      font-size: .78rem; font-weight: 500;
+      padding: .3rem .5rem; border-radius: 4px;
+      margin-bottom: .4rem; cursor: pointer;
+      transition: opacity .2s, transform .2s;
+    }
+    .ps-party:hover { transform: scale(1.05); opacity: .85; }
+
+    /* Couleurs colonnes */
+    .col-exleft  .ps-col-title { color: #8e1c1c; border-color: #8e1c1c; }
+    .col-left    .ps-col-title { color: #c0392b; border-color: #c0392b; }
+    .col-cleft   .ps-col-title { color: #e74c3c; border-color: #e74c3c; }
+    .col-center  .ps-col-title { color: #27ae60; border-color: #27ae60; }
+    .col-cright  .ps-col-title { color: #2980b9; border-color: #2980b9; }
+    .col-right   .ps-col-title { color: #1a4f8a; border-color: #1a4f8a; }
+    .col-exright .ps-col-title { color: #0d1b2a; border-color: #0d1b2a; }
+
+    .col-exleft  .ps-party { background:#f9e8e8; color:#8e1c1c; }
+    .col-left    .ps-party { background:#fdecea; color:#c0392b; }
+    .col-cleft   .ps-party { background:#fef0ed; color:#c0392b; }
+    .col-center  .ps-party { background:#eafaf1; color:#1e8449; }
+    .col-cright  .ps-party { background:#eaf4fc; color:#1a5276; }
+    .col-right   .ps-party { background:#e8f0fa; color:#1a4f8a; }
+    .col-exright .ps-party { background:#e8e9ea; color:#0d1b2a; }
+
+    /* ======================================
+       IDEOLOGIES
+    ====================================== */
+    #ideologies { background: var(--white); }
+    .ideo-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+      gap: 1.5rem;
+    }
+    .ideo-card {
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      overflow: hidden;
+      transition: box-shadow .25s, transform .25s;
+    }
+    .ideo-card:hover { box-shadow: 0 8px 32px rgba(0,0,0,.1); transform: translateY(-3px); }
+    .ideo-header {
+      padding: 1.5rem;
+      cursor: pointer;
+      display: flex; align-items: flex-start; justify-content: space-between; gap: 1rem;
+    }
+    .ideo-icon {
+      width: 44px; height: 44px; border-radius: 10px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.3rem; flex-shrink: 0;
+    }
+    .ideo-title-wrap { flex: 1; }
+    .ideo-tag {
+      font-size: .65rem; font-weight: 700; letter-spacing: .1em;
+      text-transform: uppercase; margin-bottom: .4rem;
+    }
+    .ideo-card h3 { font-size: 1.1rem; }
+    .ideo-chevron {
+      font-size: 1rem; color: var(--mid);
+      transition: transform .3s; flex-shrink: 0; margin-top: .2rem;
+    }
+    .ideo-card.open .ideo-chevron { transform: rotate(180deg); }
+    .ideo-body {
+      display: none; padding: 0 1.5rem 1.5rem;
+      border-top: 1px solid var(--border);
+    }
+    .ideo-card.open .ideo-body { display: block; }
+    .ideo-def {
+      background: var(--off); border-radius: 8px;
+      padding: 1rem; margin: 1rem 0;
+      font-size: .9rem; line-height: 1.7;
+      border-left: 3px solid;
+    }
+    .ideo-section-title {
+      font-size: .7rem; font-weight: 700; letter-spacing: .1em;
+      text-transform: uppercase; color: var(--mid);
+      margin: 1rem 0 .4rem;
+    }
+    .ideo-body p { font-size: .88rem; }
+    .thinkers { display: flex; flex-wrap: wrap; gap: .4rem; margin-top: .5rem; }
+    .thinker {
+      font-size: .72rem; font-weight: 600;
+      background: var(--off); border: 1px solid var(--border);
+      padding: .25rem .65rem; border-radius: 20px; color: var(--text);
+    }
+    .examples { margin-top: .5rem; }
+    .example-item {
+      font-size: .82rem; padding: .3rem 0;
+      border-bottom: 1px solid var(--border);
+      display: flex; gap: .5rem; align-items: flex-start;
+    }
+    .example-item:last-child { border-bottom: none; }
+    .ex-flag { font-size: .85rem; flex-shrink: 0; }
+    .quote-block {
+      background: var(--navy);
+      color: rgba(255,255,255,.9);
+      border-radius: 8px; padding: 1rem 1.2rem;
+      font-style: italic; font-size: .85rem;
+      margin-top: 1rem; position: relative;
+      line-height: 1.65;
+    }
+    .quote-block::before {
+      content: '"'; font-size: 3rem; color: var(--gold);
+      position: absolute; top: -.5rem; left: .8rem;
+      font-family: 'Playfair Display', serif;
+      line-height: 1;
+    }
+    .quote-author {
+      font-size: .72rem; color: var(--gold);
+      font-style: normal; font-weight: 600;
+      margin-top: .5rem; display: block;
+    }
+
+    /* ======================================
+       PARTIES
+    ====================================== */
+    #partis { background: var(--off); }
+    .party-filters {
+      display: flex; flex-wrap: wrap; gap: .5rem; margin-bottom: 2.5rem;
+    }
+    .pf-btn {
+      padding: .45rem 1rem; border-radius: 20px;
+      font-size: .8rem; font-weight: 600;
+      cursor: pointer; transition: all .2s;
+      border: 1.5px solid transparent;
+      background: var(--white);
+      color: var(--mid);
+      border-color: var(--border);
+    }
+    .pf-btn:hover { color: var(--text); border-color: var(--text); }
+    .pf-btn.active { background: var(--navy); color: var(--white); border-color: var(--navy); }
+    .parties-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
+      gap: 1.5rem;
+    }
+    .party-card {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 12px; overflow: hidden;
+      transition: box-shadow .25s, transform .25s;
+    }
+    .party-card:hover { box-shadow: 0 6px 24px rgba(0,0,0,.09); transform: translateY(-2px); }
+    .party-top {
+      padding: 1.4rem 1.4rem 1rem;
+      display: flex; align-items: flex-start; gap: 1rem;
+    }
+    .party-logo {
+      width: 52px; height: 52px; border-radius: 10px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.5rem; font-weight: 900;
+      font-family: 'Playfair Display', serif;
+      flex-shrink: 0; color: #fff;
+    }
+    .party-meta { flex: 1; }
+    .party-orient {
+      display: inline-block; font-size: .65rem; font-weight: 700;
+      letter-spacing: .1em; text-transform: uppercase;
+      padding: .2rem .6rem; border-radius: 20px;
+      margin-bottom: .4rem;
+    }
+    .party-card h3 { font-size: 1.05rem; margin-bottom: .15rem; }
+    .party-short { font-size: .82rem; color: var(--mid); }
+    .party-body { padding: 0 1.4rem 1.4rem; }
+    .party-leader {
+      font-size: .78rem; color: var(--mid);
+      margin-bottom: .8rem;
+      display: flex; align-items: center; gap: .4rem;
+    }
+    .party-desc { font-size: .86rem; line-height: 1.7; margin-bottom: 1rem; }
+    .positions-grid {
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: .5rem;
+    }
+    .pos-item {
+      background: var(--off);
+      border-radius: 6px; padding: .6rem .8rem;
+    }
+    .pos-label {
+      font-size: .65rem; font-weight: 700;
+      text-transform: uppercase; letter-spacing: .07em;
+      color: var(--mid); margin-bottom: .2rem;
+    }
+    .pos-val { font-size: .8rem; font-weight: 500; }
+    .party-founded {
+      font-size: .75rem; color: var(--mid);
+      margin-top: 1rem;
+      padding-top: .8rem; border-top: 1px solid var(--border);
+    }
+
+    /* ======================================
+       COMPARATIF
+    ====================================== */
+    #comparatif { background: var(--white); }
+    .comp-table-wrap {
+      overflow-x: auto; border-radius: 12px;
+      border: 1px solid var(--border);
+      box-shadow: 0 2px 16px rgba(0,0,0,.05);
+    }
+    .comp-table {
+      width: 100%; border-collapse: collapse;
+      min-width: 600px;
+    }
+    .comp-table th {
+      padding: 1rem 1.5rem;
+      font-size: .8rem; font-weight: 700;
+      letter-spacing: .07em; text-transform: uppercase;
+    }
+    .comp-table td {
+      padding: .9rem 1.5rem;
+      font-size: .88rem; line-height: 1.6;
+      border-top: 1px solid var(--border);
+      vertical-align: top;
+    }
+    .comp-table tr:hover td { background: var(--off); }
+    .th-theme {
+      background: var(--navy); color: var(--gold);
+      width: 22%;
+    }
+    .th-left  { background: #fdecea; color: #c0392b; width: 37%; }
+    .th-right { background: #e8f0fa; color: #1a4f8a; width: 37%; }
+    .td-theme { font-weight: 700; color: var(--navy); background: var(--off); }
+    .td-left  { border-left: 2px solid #e74c3c; }
+    .td-right { border-left: 2px solid #3498db; }
+
+    /* ======================================
+       CITATIONS
+    ====================================== */
+    #citations { background: var(--navy); padding: 5rem 2rem; }
+    #citations .section-label { color: var(--gold); }
+    #citations .section-title { color: #fff; }
+    #citations .section-subtitle { color: rgba(255,255,255,.5); }
+    .quotes-grid {
+      display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 1.5rem; margin-top: 3rem;
+    }
+    .q-card {
+      background: rgba(255,255,255,.04);
+      border: 1px solid rgba(255,255,255,.08);
+      border-radius: 12px; padding: 1.8rem;
+      transition: background .25s;
+    }
+    .q-card:hover { background: rgba(255,255,255,.07); }
+    .q-text {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.05rem; color: #fff;
+      line-height: 1.65; margin-bottom: 1.2rem;
+      font-style: italic;
+    }
+    .q-author { display: flex; align-items: center; gap: .75rem; }
+    .q-avatar {
+      width: 38px; height: 38px; border-radius: 50%;
+      background: rgba(255,255,255,.1);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1rem; flex-shrink: 0;
+    }
+    .q-name { font-size: .85rem; font-weight: 600; color: var(--gold); }
+    .q-role { font-size: .72rem; color: rgba(255,255,255,.4); }
+
+    /* ======================================
+       TIMELINE
+    ====================================== */
+    #histoire { background: var(--off); }
+    .timeline {
+      position: relative; max-width: 860px; margin: 0 auto;
+      padding-left: 2rem;
+    }
+    .timeline::before {
+      content: ''; position: absolute;
+      left: 0; top: 0; bottom: 0; width: 2px;
+      background: linear-gradient(180deg, var(--blue2), var(--gold));
+    }
+    .tl-item {
+      position: relative; padding: 0 0 2.5rem 2rem;
+    }
+    .tl-dot {
+      position: absolute; left: -2rem;
+      width: 14px; height: 14px;
+      background: var(--white); border: 2px solid var(--blue2);
+      border-radius: 50%; top: .25rem;
+      transform: translateX(-6px);
+      transition: background .2s, transform .2s;
+    }
+    .tl-item:hover .tl-dot { background: var(--gold); transform: translateX(-6px) scale(1.2); }
+    .tl-year {
+      font-size: .72rem; font-weight: 700;
+      color: var(--blue2); letter-spacing: .08em;
+      text-transform: uppercase; margin-bottom: .4rem;
+    }
+    .tl-item h4 { margin-bottom: .4rem; }
+    .tl-item p { font-size: .88rem; }
+
+    /* ======================================
+       RESSOURCES
+    ====================================== */
+    #ressources { background: var(--white); }
+    .res-grid {
+      display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+      gap: 1.25rem;
+    }
+    .res-card {
+      border: 1px solid var(--border); border-radius: 10px;
+      padding: 1.4rem; display: flex; flex-direction: column; gap: .75rem;
+      transition: box-shadow .2s, transform .2s;
+    }
+    .res-card:hover {
+      box-shadow: 0 4px 18px rgba(0,0,0,.08); transform: translateY(-2px);
+    }
+    .res-icon {
+      width: 42px; height: 42px; border-radius: 8px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.2rem;
+    }
+    .res-card h4 { font-size: .95rem; }
+    .res-card p { font-size: .82rem; flex: 1; }
+    .res-link {
+      font-size: .78rem; font-weight: 600; color: var(--blue2);
+      display: flex; align-items: center; gap: .3rem;
+    }
+    .res-link:hover { text-decoration: underline; }
+
+    /* ======================================
+       FOOTER
+    ====================================== */
+    footer {
+      background: var(--navy);
+      padding: 3rem 2rem; text-align: center;
+    }
+    .footer-inner { max-width: 1280px; margin: 0 auto; }
+    footer .logo-txt {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.4rem; font-weight: 900; color: #fff;
+    }
+    footer .logo-txt span { color: var(--gold); }
+    footer p {
+      color: rgba(255,255,255,.35); font-size: .8rem;
+      margin-top: .75rem; line-height: 1.7;
+    }
+    .footer-links {
+      display: flex; justify-content: center; gap: 1.5rem;
+      flex-wrap: wrap; margin-top: 1.5rem;
+    }
+    .footer-links a {
+      color: rgba(255,255,255,.5);
+      font-size: .8rem; transition: color .2s;
+    }
+    .footer-links a:hover { color: var(--gold); }
+
+    /* ======================================
+       SEARCH / QUIZ
+    ====================================== */
+    .search-bar {
+      position: relative; max-width: 480px; margin-bottom: 2.5rem;
+    }
+    .search-bar input {
+      width: 100%; padding: .8rem 1rem .8rem 2.8rem;
+      border: 1.5px solid var(--border); border-radius: 8px;
+      font-size: .9rem; font-family: 'DM Sans', sans-serif;
+      background: var(--white); color: var(--text);
+      transition: border-color .2s, box-shadow .2s;
+    }
+    .search-bar input:focus {
+      outline: none; border-color: var(--blue2);
+      box-shadow: 0 0 0 3px rgba(37,99,168,.12);
+    }
+    .search-icon {
+      position: absolute; left: .9rem; top: 50%;
+      transform: translateY(-50%); color: var(--mid); font-size: .95rem;
+    }
+
+    /* ======================================
+       QUIZ
+    ====================================== */
+    #quiz-section { background: var(--off); }
+    .quiz-wrap {
+      max-width: 700px; margin: 0 auto;
+      background: var(--white); border: 1px solid var(--border);
+      border-radius: 16px; overflow: hidden;
+    }
+    .quiz-header {
+      background: var(--navy); padding: 1.8rem 2rem;
+    }
+    .quiz-header h3 { color: #fff; margin-bottom: .4rem; }
+    .quiz-header p { color: rgba(255,255,255,.6); font-size: .88rem; }
+    .quiz-body { padding: 2rem; }
+    .quiz-progress {
+      height: 4px; background: var(--border); border-radius: 4px; margin-bottom: 1.8rem;
+    }
+    .quiz-progress-bar {
+      height: 100%; background: var(--gold); border-radius: 4px;
+      transition: width .4s ease;
+    }
+    .quiz-q-num {
+      font-size: .72rem; font-weight: 700; color: var(--mid);
+      text-transform: uppercase; letter-spacing: .08em; margin-bottom: .6rem;
+    }
+    .quiz-question { font-size: 1.1rem; font-weight: 600; margin-bottom: 1.5rem; line-height: 1.5; }
+    .quiz-options { display: flex; flex-direction: column; gap: .6rem; }
+    .quiz-opt {
+      padding: .85rem 1.2rem; border-radius: 8px;
+      border: 1.5px solid var(--border);
+      cursor: pointer; font-size: .9rem;
+      transition: all .2s; background: var(--white);
+    }
+    .quiz-opt:hover { border-color: var(--blue2); background: #f0f6ff; }
+    .quiz-opt.correct { background: #eafaf1; border-color: #27ae60; color: #1e8449; font-weight: 600; }
+    .quiz-opt.wrong   { background: #fdecea; border-color: #c0392b; color: #922b21; font-weight: 600; }
+    .quiz-opt.disabled { pointer-events: none; }
+    .quiz-feedback {
+      margin-top: 1.2rem; padding: 1rem 1.2rem;
+      border-radius: 8px; font-size: .88rem; line-height: 1.6;
+      display: none;
+    }
+    .quiz-feedback.show { display: block; }
+    .quiz-feedback.good { background: #eafaf1; border: 1px solid #27ae60; color: #1e8449; }
+    .quiz-feedback.bad  { background: #fdecea; border: 1px solid #c0392b; color: #922b21; }
+    .quiz-next {
+      margin-top: 1.5rem; display: none;
+    }
+    .quiz-next.show { display: block; }
+    .quiz-score {
+      text-align: center; padding: 2rem;
+      display: none;
+    }
+    .quiz-score.show { display: block; }
+    .score-num {
+      font-family: 'Playfair Display', serif;
+      font-size: 4rem; font-weight: 900; color: var(--gold);
+    }
+    .score-label { font-size: 1rem; color: var(--mid); margin-bottom: 1.5rem; }
+    .score-stars { font-size: 2rem; margin-bottom: 1rem; }
+
+    /* ======================================
+       GLOSSAIRE
+    ====================================== */
+    #glossaire { background: var(--white); }
+    .glossaire-list { columns: 2; column-gap: 2rem; }
+    .gloss-item {
+      break-inside: avoid; margin-bottom: 1.2rem;
+      padding: .85rem 1rem;
+      border: 1px solid var(--border); border-radius: 8px;
+    }
+    .gloss-term { font-weight: 700; font-size: .95rem; margin-bottom: .3rem; }
+    .gloss-def { font-size: .82rem; line-height: 1.6; }
+
+    /* ======================================
+       SCROLL ANIMATIONS
+    ====================================== */
+    .reveal {
+      opacity: 0; transform: translateY(24px);
+      transition: opacity .55s ease, transform .55s ease;
+    }
+    .reveal.visible { opacity: 1; transform: none; }
+    .reveal-delay-1 { transition-delay: .1s; }
+    .reveal-delay-2 { transition-delay: .2s; }
+    .reveal-delay-3 { transition-delay: .3s; }
+
+    /* ======================================
+       SCROLL TO TOP
+    ====================================== */
+    #scroll-top {
+      position: fixed; bottom: 2rem; right: 2rem;
+      width: 44px; height: 44px; border-radius: 50%;
+      background: var(--navy); color: #fff;
+      border: none; cursor: pointer; font-size: 1.1rem;
+      display: flex; align-items: center; justify-content: center;
+      box-shadow: 0 4px 14px rgba(0,0,0,.25);
+      opacity: 0; pointer-events: none;
+      transition: opacity .3s, transform .3s;
+      z-index: 500;
+    }
+    #scroll-top.visible { opacity: 1; pointer-events: all; }
+    #scroll-top:hover { transform: translateY(-2px); }
+
+    /* ======================================
+       RESPONSIVE
+    ====================================== */
+    @media (max-width: 900px) {
+      .hero-inner { grid-template-columns: 1fr; }
+      .hero-visual { display: none; }
+      .hero-stats { grid-template-columns: repeat(3,1fr); }
+    }
+    @media (max-width: 640px) {
+      section { padding: 3.5rem 1.2rem; }
+      .nav-links { display: none; flex-direction: column; position: absolute; top: 100%; left:0; right:0; background: var(--navy); padding: 1rem; }
+      .nav-links.open { display: flex; }
+      .nav-toggle { display: block; }
+      .hero-stats { grid-template-columns: 1fr 1fr; }
+      .hero-stats .stat-card:last-child { grid-column: span 2; }
+      .spectrum-full { padding: 1.5rem; }
+      .parties-spectrum { flex-direction: column; }
+      .glossaire-list { columns: 1; }
+      .ideo-grid { grid-template-columns: 1fr; }
+      .parties-grid { grid-template-columns: 1fr; }
+      .positions-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ==================== NAVIGATION ==================== -->
+<nav id="navbar">
+  <div class="nav-inner">
+    <div class="nav-logo">🇫🇷 <span>Politique</span>FR</div>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#hero">Accueil</a></li>
+      <li><a href="#spectrum">Le spectre</a></li>
+      <li><a href="#ideologies">Idéologies</a></li>
+      <li><a href="#partis">Partis</a></li>
+      <li><a href="#comparatif">Comparatif</a></li>
+      <li><a href="#histoire">Histoire</a></li>
+      <li><a href="#quiz-section">Quiz</a></li>
+      <li><a href="#glossaire">Glossaire</a></li>
+      <li><a href="#ressources">Ressources</a></li>
+    </ul>
+    <button class="nav-toggle" id="navToggle" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<!-- ==================== HERO ==================== -->
+<section id="hero">
+  <div class="tricolor-bar"></div>
+  <div class="hero-bg"></div>
+  <div class="hero-inner">
+    <div class="hero">
+      <div class="hero-badge">📚 Guide pédagogique complet</div>
+      <h1>Comprendre la<br><em>Politique française</em></h1>
+      <p class="hero-desc">Du spectre gauche-droite aux grandes idéologies, de l'histoire des partis aux débats actuels — tout ce qu'il faut savoir pour être citoyen éclairé.</p>
+      <div class="hero-ctas">
+        <a href="#spectrum" class="btn btn-primary">Commencer l'apprentissage →</a>
+        <a href="#quiz-section" class="btn btn-outline">🎯 Tester ses connaissances</a>
+      </div>
+      <div class="hero-stats">
+        <div class="stat-card"><div class="num">12+</div><div class="lbl">Idéologies</div></div>
+        <div class="stat-card"><div class="num">20+</div><div class="lbl">Partis analysés</div></div>
+        <div class="stat-card"><div class="num">200+</div><div class="lbl">Ans d'histoire</div></div>
+      </div>
+    </div>
+    <div class="hero-visual">
+      <div class="spectrum-preview">
+        <h3>🧭 Le spectre politique français</h3>
+        <div class="spectrum-bar-wrap">
+          <div class="spectrum-bar"></div>
+          <div class="spectrum-labels">
+            <span>Extrême gauche</span>
+            <span>Gauche</span>
+            <span>Centre</span>
+            <span>Droite</span>
+            <span>Extrême droite</span>
+          </div>
+        </div>
+        <div class="party-dots">
+          <span class="pdot" style="background:#fdecea;color:#8e1c1c">LO</span>
+          <span class="pdot" style="background:#fdecea;color:#8e1c1c">NPA</span>
+          <span class="pdot" style="background:#fdecea;color:#c0392b">PCF</span>
+          <span class="pdot" style="background:#fef0ed;color:#c0392b">LFI</span>
+          <span class="pdot" style="background:#fef0ed;color:#c0392b">EELV</span>
+          <span class="pdot" style="background:#fef0ed;color:#c0392b">PS</span>
+          <span class="pdot" style="background:#eafaf1;color:#1e8449">Renaissance</span>
+          <span class="pdot" style="background:#eafaf1;color:#1e8449">MoDem</span>
+          <span class="pdot" style="background:#e8f0fa;color:#1a5276">LR</span>
+          <span class="pdot" style="background:#e8f0fa;color:#1a5276">UDI</span>
+          <span class="pdot" style="background:#e8e9ea;color:#0d1b2a">RN</span>
+          <span class="pdot" style="background:#e8e9ea;color:#0d1b2a">Reconquête</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== SPECTRE POLITIQUE ==================== -->
+<section id="spectrum">
+  <div class="section-inner">
+    <div class="section-header reveal">
+      <div class="section-label">Le spectre politique</div>
+      <h2 class="section-title">Gauche, droite, centre : que signifie vraiment ce classement ?</h2>
+      <div class="divider"></div>
+      <p class="section-subtitle">La distinction gauche-droite date de la Révolution française (1789). À l'Assemblée nationale, les partisans du changement siégeaient à gauche, les conservateurs à droite. Cette géographie s'est transformée en vision du monde.</p>
+    </div>
+
+    <div class="spectrum-full reveal">
+      <div class="sf-title">Positionnement des principaux partis français</div>
+      <div class="sf-bar"></div>
+      <div class="sf-labels">
+        <span class="sf-lbl" style="color:#6d0000">Extrême<br>gauche</span>
+        <span class="sf-lbl" style="color:#c0392b">Gauche</span>
+        <span class="sf-lbl" style="color:#e74c3c">Centre-<br>gauche</span>
+        <span class="sf-lbl" style="color:#27ae60">Centre</span>
+        <span class="sf-lbl" style="color:#2980b9">Centre-<br>droite</span>
+        <span class="sf-lbl" style="color:#1a4f8a">Droite</span>
+        <span class="sf-lbl" style="color:#0a0f18">Extrême<br>droite</span>
+      </div>
+      <div class="parties-spectrum">
+        <div class="ps-col col-exleft">
+          <div class="ps-col-title">Extrême gauche</div>
+          <div class="ps-party" onclick="scrollToParty('lo')">Lutte Ouvrière</div>
+          <div class="ps-party" onclick="scrollToParty('npa')">NPA</div>
+          <div class="ps-party" onclick="scrollToParty('poi')">POI</div>
+        </div>
+        <div class="ps-col col-left">
+          <div class="ps-col-title">Gauche</div>
+          <div class="ps-party" onclick="scrollToParty('pcf')">PCF</div>
+          <div class="ps-party" onclick="scrollToParty('lfi')">LFI</div>
+        </div>
+        <div class="ps-col col-cleft">
+          <div class="ps-col-title">Centre-gauche</div>
+          <div class="ps-party" onclick="scrollToParty('ps')">PS</div>
+          <div class="ps-party" onclick="scrollToParty('eelv')">EELV</div>
+          <div class="ps-party" onclick="scrollToParty('prg')">PRG</div>
+        </div>
+        <div class="ps-col col-center">
+          <div class="ps-col-title">Centre</div>
+          <div class="ps-party" onclick="scrollToParty('renaissance')">Renaissance</div>
+          <div class="ps-party" onclick="scrollToParty('modem')">MoDem</div>
+          <div class="ps-party" onclick="scrollToParty('horizons')">Horizons</div>
+        </div>
+        <div class="ps-col col-cright">
+          <div class="ps-col-title">Centre-droite</div>
+          <div class="ps-party" onclick="scrollToParty('udi')">UDI</div>
+          <div class="ps-party" onclick="scrollToParty('udc')">Agir</div>
+        </div>
+        <div class="ps-col col-right">
+          <div class="ps-col-title">Droite</div>
+          <div class="ps-party" onclick="scrollToParty('lr')">LR</div>
+          <div class="ps-party" onclick="scrollToParty('dli')">DLI</div>
+        </div>
+        <div class="ps-col col-exright">
+          <div class="ps-col-title">Extrême droite</div>
+          <div class="ps-party" onclick="scrollToParty('rn')">RN</div>
+          <div class="ps-party" onclick="scrollToParty('reconquete')">Reconquête</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Tableau gauche/droite résumé -->
+    <div class="reveal" style="margin-top:2rem;">
+      <div class="comp-table-wrap">
+        <table class="comp-table">
+          <thead>
+            <tr>
+              <th class="th-theme">Thème</th>
+              <th class="th-left">⬅️ Gauche</th>
+              <th class="th-right">➡️ Droite</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="td-theme">Économie</td>
+              <td class="td-left">Interventionnisme de l'État, redistribution, protection sociale forte</td>
+              <td class="td-right">Libre marché, baisse des impôts, réduction des dépenses publiques</td>
+            </tr>
+            <tr>
+              <td class="td-theme">Société</td>
+              <td class="td-left">Progressisme, ouverture aux minorités, égalité des droits</td>
+              <td class="td-right">Valeurs traditionnelles, ordre, respect des institutions</td>
+            </tr>
+            <tr>
+              <td class="td-theme">Immigration</td>
+              <td class="td-left">Accueil humaniste, intégration, droit d'asile</td>
+              <td class="td-right">Maîtrise des flux, priorité nationale, contrôle des frontières</td>
+            </tr>
+            <tr>
+              <td class="td-theme">Europe</td>
+              <td class="td-left">Pro-européenne (sauf extrême gauche eurosceptique)</td>
+              <td class="td-right">Souverainisme fort à l'extrême droite, pragmatisme au centre-droit</td>
+            </tr>
+            <tr>
+              <td class="td-theme">Écologie</td>
+              <td class="td-left">Transition écologique urgente, remise en cause du capitalisme</td>
+              <td class="td-right">Nucléaire, croissance verte, scepticisme de la décroissance</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== IDÉOLOGIES ==================== -->
+<section id="ideologies">
+  <div class="section-inner">
+    <div class="section-header reveal">
+      <div class="section-label">Les grandes idéologies</div>
+      <h2 class="section-title">Comprendre les courants de pensée politique</h2>
+      <div class="divider"></div>
+      <p class="section-subtitle">Chaque parti s'inscrit dans une tradition idéologique. Voici les principaux courants, leurs définitions, leurs penseurs et leur incarnation concrète.</p>
+    </div>
+    <div class="ideo-grid" id="ideologiesGrid">
+      <!-- Dynamiquement injecté par JS -->
+    </div>
+  </div>
+</section>
+
+<!-- ==================== PARTIS POLITIQUES ==================== -->
+<section id="partis">
+  <div class="section-inner">
+    <div class="section-header reveal">
+      <div class="section-label">Les partis politiques</div>
+      <h2 class="section-title">Panorama complet des forces politiques françaises</h2>
+      <div class="divider"></div>
+      <p class="section-subtitle">Des grands partis de gouvernement aux formations émergentes — qui sont-ils, d'où viennent-ils, que veulent-ils ?</p>
+    </div>
+    <div class="search-bar reveal">
+      <span class="search-icon">🔍</span>
+      <input type="text" id="partySearch" placeholder="Rechercher un parti (ex : RN, gauche, écologie…)" />
+    </div>
+    <div class="party-filters reveal" id="partyFilters">
+      <button class="pf-btn active" data-filter="all">Tous</button>
+      <button class="pf-btn" data-filter="extreme-gauche" style="border-color:#8e1c1c;color:#8e1c1c">Extrême gauche</button>
+      <button class="pf-btn" data-filter="gauche" style="border-color:#c0392b;color:#c0392b">Gauche</button>
+      <button class="pf-btn" data-filter="centre-gauche" style="border-color:#e74c3c;color:#e74c3c">Centre-gauche</button>
+      <button class="pf-btn" data-filter="centre" style="border-color:#27ae60;color:#1e8449">Centre</button>
+      <button class="pf-btn" data-filter="centre-droite" style="border-color:#2980b9;color:#1a5276">Centre-droite</button>
+      <button class="pf-btn" data-filter="droite" style="border-color:#1a4f8a;color:#1a4f8a">Droite</button>
+      <button class="pf-btn" data-filter="extreme-droite" style="border-color:#0d1b2a;color:#0d1b2a">Extrême droite</button>
+    </div>
+    <div class="parties-grid" id="partiesGrid">
+      <!-- Dynamiquement injecté par JS -->
+    </div>
+  </div>
+</section>
+
+<!-- ==================== COMPARATIF ==================== -->
+<section id="comparatif">
+  <div class="section-inner">
+    <div class="section-header reveal">
+      <div class="section-label">Tableau comparatif</div>
+      <h2 class="section-title">Gauche contre Droite : position par position</h2>
+      <div class="divider"></div>
+      <p class="section-subtitle">Un comparatif thématique approfondi des visions et propositions qui séparent les grandes familles politiques.</p>
+    </div>
+    <div class="comp-table-wrap reveal">
+      <table class="comp-table">
+        <thead>
+          <tr>
+            <th class="th-theme">Thématique</th>
+            <th class="th-left">⬅️ Vision de gauche</th>
+            <th class="th-right">➡️ Vision de droite</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td class="td-theme">Fiscalité</td><td class="td-left">Impôt progressif fort, ISF, taxe sur les grandes fortunes, justice fiscale</td><td class="td-right">Baisse des impôts, flat tax, attractivité pour les entreprises, moins d'État</td></tr>
+          <tr><td class="td-theme">Retraites</td><td class="td-left">Retraite à 60 ans, système par répartition solidaire, droits acquis</td><td class="td-right">Réforme structurelle, allongement de la durée de cotisation, système par points</td></tr>
+          <tr><td class="td-theme">Santé</td><td class="td-left">Sécurité sociale universelle, hôpital public, pas de dépassements d'honoraires</td><td class="td-right">Médecine libérale, complémentaires, efficience des dépenses de santé</td></tr>
+          <tr><td class="td-theme">Éducation</td><td class="td-left">École publique laïque, mixité sociale, davantage de moyens pour les ZEP</td><td class="td-right">Liberté d'enseignement, mérite, autonomie des établissements, écoles privées</td></tr>
+          <tr><td class="td-theme">Justice</td><td class="td-left">Réinsertion, prévention de la délinquance, lutte contre les causes sociales</td><td class="td-right">Fermeté, peines planchers, sécurité des biens et des personnes</td></tr>
+          <tr><td class="td-theme">Travail</td><td class="td-left">35h, droit syndical fort, CDI, augmentation du SMIC</td><td class="td-right">Flexibilité du marché du travail, moins de charges, CDI assoupli</td></tr>
+          <tr><td class="td-theme">Logement</td><td class="td-left">HLM, encadrement des loyers, droit au logement opposable</td><td class="td-right">Propriété privée, libération du foncier, incitations à la construction</td></tr>
+          <tr><td class="td-theme">Culture</td><td class="td-left">Exception culturelle, service public audiovisuel, accès démocratisé à la culture</td><td class="td-right">Industries culturelles, liberté de création, rayonnement de la France</td></tr>
+          <tr><td class="td-theme">Environnement</td><td class="td-left">Transition écologique urgente, décroissance, sortie du nucléaire et des fossiles</td><td class="td-right">Nucléaire comme énergie verte, innovation technologique, croissance verte</td></tr>
+          <tr><td class="td-theme">Institutions</td><td class="td-left">VIe République, proportionnelle, davantage de démocratie directe</td><td class="td-right">Présidentialisme fort, autorité de l'État, institutions stables</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== CITATIONS ==================== -->
+<section id="citations">
+  <div class="section-inner">
+    <div class="section-header reveal">
+      <div class="section-label">Paroles politiques</div>
+      <h2 class="section-title" style="color:#fff">Citations qui ont marqué l'histoire</h2>
+      <div class="divider"></div>
+      <p class="section-subtitle">Des mots qui ont défini des époques, inspiré des mouvements, ou révélé la nature d'un camp.</p>
+    </div>
+    <div class="quotes-grid">
+      <div class="q-card reveal reveal-delay-1">
+        <div class="q-text">« La France ne peut être la France sans la grandeur. »</div>
+        <div class="q-author">
+          <div class="q-avatar">🎖️</div>
+          <div><div class="q-name">Charles de Gaulle</div><div class="q-role">Président de la République (1959-1969)</div></div>
+        </div>
+      </div>
+      <div class="q-card reveal reveal-delay-2">
+        <div class="q-text">« Dans cette vie, il faut être un peu tout pour être quelque chose. »</div>
+        <div class="q-author">
+          <div class="q-avatar">🌹</div>
+          <div><div class="q-name">François Mitterrand</div><div class="q-role">Président de la République (1981-1995)</div></div>
+        </div>
+      </div>
+      <div class="q-card reveal reveal-delay-3">
+        <div class="q-text">« La force d'une démocratie se mesure à ce qu'elle accorde à ses adversaires. »</div>
+        <div class="q-author">
+          <div class="q-avatar">⚖️</div>
+          <div><div class="q-name">Léon Blum</div><div class="q-role">Chef du Front Populaire (1936)</div></div>
+        </div>
+      </div>
+      <div class="q-card reveal reveal-delay-1">
+        <div class="q-text">« La révolution, c'est quand le possible devient nécessaire. »</div>
+        <div class="q-author">
+          <div class="q-avatar">✊</div>
+          <div><div class="q-name">Jean-Luc Mélenchon</div><div class="q-role">Fondateur de LFI</div></div>
+        </div>
+      </div>
+      <div class="q-card reveal reveal-delay-2">
+        <div class="q-text">« Je veux être le président du camp patriote. »</div>
+        <div class="q-author">
+          <div class="q-avatar">🇫🇷</div>
+          <div><div class="q-name">Marine Le Pen</div><div class="q-role">Présidente du RN</div></div>
+        </div>
+      </div>
+      <div class="q-card reveal reveal-delay-3">
+        <div class="q-text">« En même temps » — l'art de réunir les contraires pour former un projet de centre.</div>
+        <div class="q-author">
+          <div class="q-avatar">⚡</div>
+          <div><div class="q-name">Emmanuel Macron</div><div class="q-role">Président de la République (2017–)</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== HISTOIRE ==================== -->
+<section id="histoire">
+  <div class="section-inner">
+    <div class="section-header reveal">
+      <div class="section-label">Repères historiques</div>
+      <h2 class="section-title">200 ans de vie politique française</h2>
+      <div class="divider"></div>
+      <p class="section-subtitle">Les grands moments qui ont façonné le paysage politique actuel.</p>
+    </div>
+    <div class="timeline">
+      <div class="tl-item reveal">
+        <div class="tl-dot"></div>
+        <div class="tl-year">1789</div>
+        <h4>La Révolution française et la naissance de la gauche/droite</h4>
+        <p>À l'Assemblée nationale, les partisans de la monarchie siègent à droite du président, les révolutionnaires à gauche. Cette distinction géographique devient idéologique.</p>
+      </div>
+      <div class="tl-item reveal">
+        <div class="tl-dot"></div>
+        <div class="tl-year">1848</div>
+        <h4>La IIe République et le suffrage universel masculin</h4>
+        <p>La France instaure le suffrage universel masculin. Les premières forces ouvrières et socialistes s'organisent. Marx publie le Manifeste du Parti communiste.</p>
+      </div>
+      <div class="tl-item reveal">
+        <div class="tl-dot"></div>
+        <div class="tl-year">1905</div>
+        <h4>Loi de séparation des Églises et de l'État</h4>
+        <p>La laïcité devient un principe fondateur de la République, clivant depuis droits catholiques et gauche laïque. Le Parti socialiste (SFIO) est fondé la même année.</p>
+      </div>
+      <div class="tl-item reveal">
+        <div class="tl-dot"></div>
+        <div class="tl-year">1936</div>
+        <h4>Le Front Populaire</h4>
+        <p>Alliance historique entre socialistes, radicaux et communistes sous Léon Blum. Conquêtes sociales majeures : congés payés, semaine de 40h, conventions collectives.</p>
+      </div>
+      <div class="tl-item reveal">
+        <div class="tl-dot"></div>
+        <div class="tl-year">1958</div>
+        <h4>La Ve République</h4>
+        <p>Le général de Gaulle fonde la Ve République. Un régime présidentiel fort qui recentre la vie politique autour de l'Élysée. Le RPF devient l'UNR puis le RPR.</p>
+      </div>
+      <div class="tl-item reveal">
+        <div class="tl-dot"></div>
+        <div class="tl-year">1968</div>
+        <h4>Mai 68 et le renouveau de la gauche</h4>
+        <p>La contestation étudiante et ouvrière bouscule la société française. Naissance d'une gauche culturelle et libertaire, recomposition du paysage politique.</p>
+      </div>
+      <div class="tl-item reveal">
+        <div class="tl-dot"></div>
+        <div class="tl-year">1981</div>
+        <h4>L'alternance historique — Mitterrand président</h4>
+        <p>Première victoire de la gauche sous la Ve République. Nationalisations, abolition de la peine de mort, décentralisation. La droite découvre qu'elle peut perdre le pouvoir.</p>
+      </div>
+      <div class="tl-item reveal">
+        <div class="tl-dot"></div>
+        <div class="tl-year">2002</div>
+        <h4>Le 21 avril — Le Pen au second tour</h4>
+        <p>Jean-Marie Le Pen (FN) devance Lionel Jospin au premier tour de la présidentielle. Choc républicain, rassemblement de toutes les forces pour barrer l'extrême droite.</p>
+      </div>
+      <div class="tl-item reveal">
+        <div class="tl-dot"></div>
+        <div class="tl-year">2017</div>
+        <h4>La disruption Macron — fin du bipartisme</h4>
+        <p>Emmanuel Macron crée En Marche et remporte la présidentielle. La bipolarisation PS/RPR-UMP-LR explose. Le paysage se recompose autour de trois blocs : gauche, centre, droite/extrême droite.</p>
+      </div>
+      <div class="tl-item reveal">
+        <div class="tl-dot"></div>
+        <div class="tl-year">2022–2024</div>
+        <h4>Tripartition et crise institutionnelle</h4>
+        <p>Le Nouveau Front Populaire (gauche), Renaissance (centre) et le Rassemblement National (droite nationaliste) s'affrontent dans une Assemblée sans majorité absolue. La France entre dans une ère d'instabilité gouvernementale inédite.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== QUIZ ==================== -->
+<section id="quiz-section">
+  <div class="section-inner">
+    <div class="section-header reveal">
+      <div class="section-label">Quiz interactif</div>
+      <h2 class="section-title">Testez vos connaissances politiques !</h2>
+      <div class="divider"></div>
+      <p class="section-subtitle">10 questions pour évaluer ce que vous avez retenu — ou découvrir de nouvelles choses.</p>
+    </div>
+    <div class="quiz-wrap reveal">
+      <div class="quiz-header">
+        <h3>🗳️ Quiz Politique Française</h3>
+        <p>Répondez aux questions, apprenez avec les explications</p>
+      </div>
+      <div class="quiz-body">
+        <div id="quizGame">
+          <div class="quiz-progress"><div class="quiz-progress-bar" id="quizBar" style="width:0%"></div></div>
+          <div class="quiz-q-num" id="quizNum">Question 1 / 10</div>
+          <div class="quiz-question" id="quizQ"></div>
+          <div class="quiz-options" id="quizOpts"></div>
+          <div class="quiz-feedback" id="quizFeedback"></div>
+          <div class="quiz-next" id="quizNext">
+            <button class="btn btn-primary" onclick="nextQuestion()">Question suivante →</button>
+          </div>
+        </div>
+        <div class="quiz-score" id="quizScore">
+          <div class="score-stars" id="scoreStars"></div>
+          <div class="score-num" id="scoreNum">0/10</div>
+          <div class="score-label" id="scoreMsg"></div>
+          <button class="btn btn-primary" onclick="resetQuiz()" style="margin-top:1rem">🔄 Recommencer</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== GLOSSAIRE ==================== -->
+<section id="glossaire">
+  <div class="section-inner">
+    <div class="section-header reveal">
+      <div class="section-label">Glossaire politique</div>
+      <h2 class="section-title">Les mots clés pour comprendre la politique</h2>
+      <div class="divider"></div>
+    </div>
+    <div class="glossaire-list reveal" id="glossaireList">
+      <!-- Dynamiquement injecté -->
+    </div>
+  </div>
+</section>
+
+<!-- ==================== RESSOURCES ==================== -->
+<section id="ressources">
+  <div class="section-inner">
+    <div class="section-header reveal">
+      <div class="section-label">Pour aller plus loin</div>
+      <h2 class="section-title">Ressources fiables pour approfondir</h2>
+      <div class="divider"></div>
+    </div>
+    <div class="res-grid" id="ressourcesGrid">
+      <!-- Dynamiquement injecté -->
+    </div>
+  </div>
+</section>
+
+<!-- ==================== FOOTER ==================== -->
+<footer>
+  <div class="footer-inner">
+    <div class="logo-txt">🇫🇷 <span>Politique</span>FR</div>
+    <p>Site pédagogique à but éducatif. Contenu équilibré et non partisan.<br>Les informations sont régulièrement vérifiées pour rester à jour.</p>
+    <div class="footer-links">
+      <a href="#hero">Accueil</a>
+      <a href="#spectrum">Spectre</a>
+      <a href="#ideologies">Idéologies</a>
+      <a href="#partis">Partis</a>
+      <a href="#quiz-section">Quiz</a>
+      <a href="#glossaire">Glossaire</a>
+    </div>
+    <p style="margin-top:1.5rem;font-size:.72rem">© 2025 PolitiqueFR — Contenu à but pédagogique uniquement</p>
+  </div>
+</footer>
+
+<button id="scroll-top" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
+
+<script>
+/* ============================================================
+   DATA — IDÉOLOGIES
+   ============================================================ */
+const ideologies = [
+  {
+    id: 'conservatisme',
+    label: 'Droite',
+    labelColor: '#1a4f8a',
+    bgColor: '#e8f0fa',
+    icon: '🏛️',
+    name: 'Conservatisme',
+    def: "Le conservatisme défend les traditions, les institutions établies et une évolution prudente de la société. Il s'oppose aux changements rapides et valorise l'ordre, la famille, la nation et la religion.",
+    defColor: '#1a4f8a',
+    history: "Né en réaction à la Révolution française, théorisé par Edmund Burke (1790). En France, il prend la forme du royalisme puis du bonapartisme, avant de s'incarner dans le gaullisme et la droite républicaine.",
+    thinkers: ['Edmund Burke', 'Joseph de Maistre', 'Charles de Gaulle', 'Jacques Chirac'],
+    franceEx: 'Les Républicains (LR), anciennement RPR/UMP, représentent le courant conservateur-républicain.',
+    worldEx: 'Parti Républicain (USA), Parti Conservateur (Royaume-Uni), CDU (Allemagne)',
+    quote: { text: "Il faut changer pour que les choses restent les mêmes.", author: "Giuseppe Tomasi di Lampedusa, Le Guépard" }
+  },
+  {
+    id: 'liberalisme',
+    label: 'Centre',
+    labelColor: '#1e8449',
+    bgColor: '#eafaf1',
+    icon: '⚖️',
+    name: 'Libéralisme',
+    def: "Le libéralisme place la liberté individuelle au cœur de son projet : liberté économique (libre marché) et liberté politique (démocratie, droits civils). Il existe en version économique et progressiste.",
+    defColor: '#1e8449',
+    history: "Issu des Lumières (Locke, Montesquieu, Smith). En France, il incarne le centre depuis la IIIe République. Aujourd'hui porté par Renaissance et le MoDem de façon libérale-sociale.",
+    thinkers: ['John Locke', 'Adam Smith', 'Alexis de Tocqueville', 'Raymond Aron', 'Emmanuel Macron'],
+    franceEx: 'Renaissance (ex-La République en Marche), MoDem, Horizons',
+    worldEx: 'Parti Libéral (Canada), FDP (Allemagne), Lib-Dems (Royaume-Uni)',
+    quote: { text: "La liberté est le droit de faire tout ce que les lois permettent.", author: "Montesquieu, De l'Esprit des Lois" }
+  },
+  {
+    id: 'socialisme',
+    label: 'Gauche',
+    labelColor: '#c0392b',
+    bgColor: '#fdecea',
+    icon: '🌹',
+    name: 'Socialisme',
+    def: "Le socialisme prône une transformation de la société pour réduire les inégalités. Il défend l'intervention de l'État dans l'économie, la protection sociale et les droits des travailleurs.",
+    defColor: '#c0392b',
+    history: "Apparu au XIXe siècle avec Saint-Simon, Proudhon, puis Marx. En France : la SFIO de Jaurès (1905), puis le PS de Mitterrand (1971). La gauche gouvernementale par excellence.",
+    thinkers: ['Jean Jaurès', 'Léon Blum', 'François Mitterrand', 'Karl Marx', 'Pierre Mendès France'],
+    franceEx: 'Parti Socialiste (PS), Place Publique de Raphaël Glucksmann',
+    worldEx: 'SPD (Allemagne), Parti Travailliste (Royaume-Uni), PSOE (Espagne)',
+    quote: { text: "Le socialisme, c'est mettre la morale là où il n'y a que l'intérêt.", author: "Jean Jaurès" }
+  },
+  {
+    id: 'communisme',
+    label: 'Extrême gauche',
+    labelColor: '#8e1c1c',
+    bgColor: '#f9e8e8',
+    icon: '☭',
+    name: 'Communisme',
+    def: "Le communisme vise l'abolition de la propriété privée des moyens de production et l'avènement d'une société sans classes. Il prône la collectivisation de l'économie et la direction politique du prolétariat.",
+    defColor: '#8e1c1c',
+    history: "Théorisé par Marx et Engels (1848). En France : fondation du PCF en 1920 (congrès de Tours). Grande influence jusqu'aux années 80. Affaibli depuis la chute de l'URSS.",
+    thinkers: ['Karl Marx', 'Friedrich Engels', 'Lénine', 'Maurice Thorez', 'Georges Marchais'],
+    franceEx: 'Parti Communiste Français (PCF), Lutte Ouvrière (LO)',
+    worldEx: 'Parti Communiste Chinois, Parti Communiste de Cuba',
+    quote: { text: "L'histoire de toute société jusqu'à nos jours est l'histoire des luttes de classes.", author: "Karl Marx & Friedrich Engels, Manifeste du Parti communiste (1848)" }
+  },
+  {
+    id: 'radicalisme',
+    label: 'Gauche',
+    labelColor: '#e74c3c',
+    bgColor: '#fef0ed',
+    icon: '✊',
+    name: 'Radicalisme de gauche',
+    def: "Le radicalisme de gauche (ou gauche radicale) pousse les principes socialistes jusqu'à leurs limites : remise en cause du capitalisme, réforme constitutionnelle profonde, souveraineté populaire directe.",
+    defColor: '#e74c3c',
+    history: "Issu des mouvements ouvriers et révolutionnaires du XIXe siècle. Aujourd'hui incarné par LFI, héritier du mélenchonisme et du mouvement altermondialiste.",
+    thinkers: ['Jean-Luc Mélenchon', 'Antonio Gramsci', 'Ernesto Laclau', 'Chantal Mouffe'],
+    franceEx: 'La France Insoumise (LFI), NPA (Nouveau Parti Anticapitaliste)',
+    worldEx: 'Podemos (Espagne), Syriza (Grèce), Bernie Sanders (USA)',
+    quote: { text: "Je suis insoumis à l'ordre de l'argent, insoumis aux règles qui détruisent la planète.", author: "Jean-Luc Mélenchon" }
+  },
+  {
+    id: 'ecologisme',
+    label: 'Centre-gauche',
+    labelColor: '#1e8449',
+    bgColor: '#eafaf1',
+    icon: '🌿',
+    name: 'Écologisme',
+    def: "L'écologisme place la protection de l'environnement au cœur du projet politique. Il remet en cause le modèle de croissance capitaliste au nom des limites planétaires et de la justice intergénérationnelle.",
+    defColor: '#1e8449',
+    history: "Né dans les années 70 après les premiers chocs pétroliers et la publication des Limites de la croissance (1972). En France : Les Verts fondés en 1984, devenus EELV en 2010.",
+    thinkers: ['René Dumont', 'Ivan Illich', 'Yannick Jadot', 'Sandrine Rousseau', 'Greta Thunberg'],
+    franceEx: 'Europe Écologie Les Verts (EELV), Génération Écologie',
+    worldEx: 'Die Grünen (Allemagne), Parti Vert (Suisse), Scottish Greens',
+    quote: { text: "Nous ne sommes pas en train de sauver la planète, nous sauvons notre espèce.", author: "Yann Arthus-Bertrand" }
+  },
+  {
+    id: 'nationalism',
+    label: 'Extrême droite',
+    labelColor: '#0d1b2a',
+    bgColor: '#e8e9ea',
+    icon: '🦅',
+    name: 'Nationalisme / Populisme de droite',
+    def: "Le nationalisme met la nation en valeur suprême et défend la priorité nationale. Le populisme de droite oppose le peuple aux élites corrompues et aux immigrés perçus comme une menace.",
+    defColor: '#0d1b2a',
+    history: "Tradition ancienne de la droite française : Boulangisme, Ligue des Patriotes, Action Française. Le Front National de Jean-Marie Le Pen (1972) puis Marine Le Pen qui le transforme en RN (2018).",
+    thinkers: ['Charles Maurras', 'Jean-Marie Le Pen', 'Marine Le Pen', 'Éric Zemmour'],
+    franceEx: 'Rassemblement National (RN), Reconquête !',
+    worldEx: 'Frères d\'Italie, AfD (Allemagne), Vox (Espagne), Trump (USA)',
+    quote: { text: "La mondialisation, c'est la mise en concurrence des peuples.", author: "Marine Le Pen" }
+  },
+  {
+    id: 'anarchisme',
+    label: 'Extrême gauche',
+    labelColor: '#8e1c1c',
+    bgColor: '#f9e8e8',
+    icon: '⚡',
+    name: 'Anarchisme',
+    def: "L'anarchisme refuse toute forme d'autorité et d'État. Il prône l'organisation libre et volontaire de la société, basée sur la coopération et la solidarité entre individus égaux.",
+    defColor: '#8e1c1c',
+    history: "Théorisé par Proudhon («La propriété, c'est le vol», 1840), Bakounine puis Kropotkine. Influence réelle au XIXe siècle dans les milieux ouvriers. Présent dans les mouvements autonomes actuels.",
+    thinkers: ['Pierre-Joseph Proudhon', 'Mikhaïl Bakounine', 'Pierre Kropotkine', 'Emma Goldman'],
+    franceEx: "Groupes autonomes, certains milieux de LFI, mouvements alternatifs",
+    worldEx: 'CNT (Espagne), IWW (USA), mouvements altermondialistes',
+    quote: { text: "La propriété, c'est le vol !", author: "Pierre-Joseph Proudhon (1840)" }
+  },
+  {
+    id: 'gaullisme',
+    label: 'Droite',
+    labelColor: '#1a4f8a',
+    bgColor: '#e8f0fa',
+    icon: '⚔️',
+    name: 'Gaullisme',
+    def: "Le gaullisme est une doctrine politique française centrée sur la grandeur nationale, l'indépendance de la France, la souveraineté populaire et un État fort. Il transcende parfois gauche et droite.",
+    defColor: '#1a4f8a',
+    history: "Issu de l'action et de la pensée du général de Gaulle. Du RPF (1947) au RPR de Chirac (1976) puis à l'UMP. Aujourd'hui dilué dans Les Républicains et en partie dans le macronisme.",
+    thinkers: ['Charles de Gaulle', 'Michel Debré', 'Jacques Chirac', 'Charles Pasqua'],
+    franceEx: 'Courant gaulliste dans LR, certaines figures de Renaissance',
+    worldEx: 'Inspiration pour les partis souverainistes de droite républicaine en Europe',
+    quote: { text: "La politique de la France ne se fait pas à la corbeille.", author: "Charles de Gaulle" }
+  },
+  {
+    id: 'reformisme',
+    label: 'Centre-gauche',
+    labelColor: '#e74c3c',
+    bgColor: '#fef0ed',
+    icon: '📋',
+    name: 'Réformisme',
+    def: "Le réformisme cherche à transformer la société progressivement, par la voie institutionnelle et légale, sans rupture révolutionnaire. Il s'oppose au statu quo mais aussi à la violence politique.",
+    defColor: '#e74c3c',
+    history: "Courant dominant de la social-démocratie depuis Bernstein (fin XIXe). En France, incarné par le PS dans ses années de gouvernement et par les partis de gouvernement modérés.",
+    thinkers: ['Édouard Bernstein', 'Léon Blum', 'Michel Rocard', 'Lionel Jospin'],
+    franceEx: 'PS (dans ses périodes de gouvernement), Génération.s, Place Publique',
+    worldEx: 'SPD, partis sociaux-démocrates nordiques',
+    quote: { text: "Gouverner, c'est choisir.", author: "Pierre Mendès France" }
+  },
+  {
+    id: 'federalisme',
+    label: 'Centre',
+    labelColor: '#1e8449',
+    bgColor: '#eafaf1',
+    icon: '🇪🇺',
+    name: 'Fédéralisme européen',
+    def: "Le fédéralisme européen prône l'intégration politique et économique des États membres dans une Europe fédérale dotée d'un gouvernement, d'un parlement et d'une politique étrangère communs.",
+    defColor: '#1e8449',
+    history: "Imaginé par Victor Hugo, relancé après 1945 par Jean Monnet, Robert Schuman, Adenauer. Aujourd'hui, courant fort dans les partis centristes et pro-européens.",
+    thinkers: ['Victor Hugo', 'Jean Monnet', 'Robert Schuman', 'Guy Verhofstadt'],
+    franceEx: 'Renaissance, MoDem, horizons — tous pro-UE',
+    worldEx: 'Mouvement européen, partis libéraux et sociaux-démocrates de l\'UE',
+    quote: { text: "Un jour viendra où toutes les nations du continent formeront une fraternité européenne.", author: "Victor Hugo (1849)" }
+  },
+  {
+    id: 'souverainisme',
+    label: 'Extrême droite / Gauche radicale',
+    labelColor: '#8e1c1c',
+    bgColor: '#f9e8e8',
+    icon: '🗺️',
+    name: 'Souverainisme',
+    def: "Le souverainisme réclame la récupération des pouvoirs délégués aux institutions supranationales (UE, FMI…) au profit de la souveraineté nationale. Il existe à droite (RN) et à gauche (LFI).",
+    defColor: '#8e1c1c',
+    history: "Courant présent de longue date en France. Philippe de Villiers fonde le MPF (1994). Jean-Pierre Chevènement crée le CERES puis le MRC. LFI et RN partagent ce point tout en s'opposant sur tout le reste.",
+    thinkers: ['Charles de Gaulle', 'Philippe de Villiers', 'Jean-Pierre Chevènement', 'Marine Le Pen', 'Jean-Luc Mélenchon'],
+    franceEx: 'RN, Reconquête, LFI (sur l\'Europe), Debout la France',
+    worldEx: 'Brexit (Royaume-Uni), M5S (Italie), AfD (Allemagne)',
+    quote: { text: "Ni Bruxelles, ni Washington — la France doit décider pour les Français.", author: "Courant souverainiste" }
+  }
+];
+
+/* ============================================================
+   DATA — PARTIS
+   ============================================================ */
+const parties = [
+  {
+    id: 'rn',
+    name: 'Rassemblement National',
+    short: 'RN',
+    initials: 'RN',
+    color: '#0d1b2a',
+    bg: '#e8e9ea',
+    orient: 'extreme-droite',
+    orientLabel: 'Extrême droite',
+    orientBg: '#0d1b2a',
+    orientColor: '#fff',
+    leader: 'Jordan Bardella (Président), Marine Le Pen (Présidente du groupe AN)',
+    founded: 'Fondé en 1972 sous le nom de Front National par Jean-Marie Le Pen. Rebaptisé Rassemblement National en 2018 sous Marine Le Pen.',
+    desc: "Le RN est le principal parti d'extrême droite français. Issu du FN, il a opéré une «dédiabolisation» pour toucher un électorat plus large. Il prône la priorité nationale, le contrôle de l'immigration et la sortie de certains traités européens. Avec Jordan Bardella, il vise un profil plus technocratique.",
+    positions: {
+      'Économie': 'Protectionnisme, pouvoir d\'achat',
+      'Immigration': 'Immigration zéro, préférence nationale',
+      'Europe': 'Refondation de l\'UE, souverainisme',
+      'Société': 'Valeurs traditionnelles, sécurité'
+    }
+  },
+  {
+    id: 'lfi',
+    name: 'La France Insoumise',
+    short: 'LFI',
+    initials: 'LFI',
+    color: '#8e1c1c',
+    bg: '#f9e8e8',
+    orient: 'gauche',
+    orientLabel: 'Gauche radicale',
+    orientBg: '#c0392b',
+    orientColor: '#fff',
+    leader: 'Jean-Luc Mélenchon (fondateur), Mathilde Panot (présidente du groupe AN)',
+    founded: 'Fondée en 2016 par Jean-Luc Mélenchon, suite à sa rupture avec le PS et le Front de Gauche.',
+    desc: "LFI est le principal parti de la gauche radicale française. Portant le programme «L'Avenir en Commun», il prône une VIe République, la bifurcation écologique et la rupture avec les traités européens libéraux. Fort électoralement avec 22% à la présidentielle 2022.",
+    positions: {
+      'Économie': 'Planification écologique, SMIC à 1600€',
+      'Immigration': 'Droit d\'asile, régularisation',
+      'Europe': 'Refondation, rupture avec traités',
+      'Société': 'Féminisme, antiracisme, laïcité'
+    }
+  },
+  {
+    id: 'lr',
+    name: 'Les Républicains',
+    short: 'LR',
+    initials: 'LR',
+    color: '#1a4f8a',
+    bg: '#e8f0fa',
+    orient: 'droite',
+    orientLabel: 'Droite',
+    orientBg: '#1a4f8a',
+    orientColor: '#fff',
+    leader: 'Laurent Wauquiez (Président du parti)',
+    founded: 'Né du RPR de Chirac, devenu UMP en 2002, rebaptisé Les Républicains en 2015 sous Nicolas Sarkozy.',
+    desc: "LR est le grand parti de la droite républicaine, héritier du gaullisme et du centrisme libéral-conservateur. Affaibli par la montée du RN et du macronisme, il cherche à redéfinir son identité entre conservatisme et libéralisme économique.",
+    positions: {
+      'Économie': 'Libéralisme, baisse des impôts',
+      'Immigration': 'Maîtrise des flux, fermeté',
+      'Europe': 'Pro-UE pragmatique',
+      'Société': 'Valeurs républicaines, ordre'
+    }
+  },
+  {
+    id: 'ps',
+    name: 'Parti Socialiste',
+    short: 'PS',
+    initials: 'PS',
+    color: '#c0392b',
+    bg: '#fdecea',
+    orient: 'centre-gauche',
+    orientLabel: 'Centre-gauche',
+    orientBg: '#e74c3c',
+    orientColor: '#fff',
+    leader: 'Olivier Faure (Premier secrétaire)',
+    founded: 'Fondé en 1969 (Congrès d\'Épinay 1971 sous Mitterrand), héritier de la SFIO de Jaurès (1905).',
+    desc: "Le PS est le grand parti de la gauche réformiste française. Au pouvoir de 1981-86, 1988-93, 1997-2002 et 2012-17. Affaibli depuis 2017 et le séisme Macron, il cherche sa place entre LFI et la reconstruction d'une gauche modérée au sein du NFP.",
+    positions: {
+      'Économie': 'Social-démocratie, redistribution',
+      'Immigration': 'Humanisme, intégration',
+      'Europe': 'Pro-européen fort',
+      'Société': 'Progressisme, laïcité'
+    }
+  },
+  {
+    id: 'renaissance',
+    name: 'Renaissance',
+    short: 'RE',
+    initials: 'RE',
+    color: '#1e8449',
+    bg: '#eafaf1',
+    orient: 'centre',
+    orientLabel: 'Centre libéral',
+    orientBg: '#27ae60',
+    orientColor: '#fff',
+    leader: 'Gabriel Attal (Président), Emmanuel Macron (fondateur)',
+    founded: 'Fondé en 2016 sous le nom «En Marche» puis «La République En Marche» (LREM). Rebaptisé Renaissance en 2022.',
+    desc: "Renaissance est le parti du président Macron. Héritier du macronisme, il prône un libéralisme économique modernisateur associé à des positions progressistes sur la société. Parti de gouvernement dominant depuis 2017, fragilisé depuis 2022 par l'absence de majorité absolue.",
+    positions: {
+      'Économie': 'Libéralisme, attractivité, innovation',
+      'Immigration': 'Fermeté et humanisme',
+      'Europe': 'Fédéralisme, leadership européen',
+      'Société': 'Progressisme modéré'
+    }
+  },
+  {
+    id: 'modem',
+    name: 'Mouvement Démocrate',
+    short: 'MoDem',
+    initials: 'MD',
+    color: '#1a5276',
+    bg: '#eaf4fc',
+    orient: 'centre',
+    orientLabel: 'Centre',
+    orientBg: '#2980b9',
+    orientColor: '#fff',
+    leader: 'François Bayrou (Président, Premier ministre)',
+    founded: 'Fondé en 2007 par François Bayrou, issu de l\'UDF. Allié de Macron depuis 2017.',
+    desc: "Le MoDem incarne le centre humaniste et européen. Bayrou, personnalité politique inclassable, a fondé ce parti pour créer un espace autonome entre gauche et droite. Aujourd'hui allié de Renaissance, il garde son identité démocrate-chrétienne.",
+    positions: {
+      'Économie': 'Économie sociale de marché',
+      'Immigration': 'Équilibre accueil/contrôle',
+      'Europe': 'Pro-européen fort',
+      'Société': 'Valeurs républicaines modérées'
+    }
+  },
+  {
+    id: 'eelv',
+    name: 'Europe Écologie Les Verts',
+    short: 'EELV',
+    initials: 'EV',
+    color: '#1e7e34',
+    bg: '#d4edda',
+    orient: 'centre-gauche',
+    orientLabel: 'Centre-gauche écolo',
+    orientBg: '#27ae60',
+    orientColor: '#fff',
+    leader: 'Marine Tondelier (Secrétaire nationale)',
+    founded: 'Fondé en 2010, fusion de Les Verts (1984) et Europe Écologie. Héritier du mouvement écologiste français.',
+    desc: "EELV est le principal parti écologiste français. Il porte une vision de transformation sociale et économique radicale face à la crise climatique. Oscillant entre alliances avec la gauche (NFP) et autonomie, il peine à s'imposer au-delà de 5-10%.",
+    positions: {
+      'Économie': 'Décroissance, planification verte',
+      'Immigration': 'Accueil et solidarité',
+      'Europe': 'Europe verte et sociale',
+      'Société': 'Féminisme, anti-discrimination'
+    }
+  },
+  {
+    id: 'pcf',
+    name: 'Parti Communiste Français',
+    short: 'PCF',
+    initials: 'PC',
+    color: '#8e1c1c',
+    bg: '#f9e8e8',
+    orient: 'gauche',
+    orientLabel: 'Gauche communiste',
+    orientBg: '#8e1c1c',
+    orientColor: '#fff',
+    leader: 'Fabien Roussel (Secrétaire national)',
+    founded: 'Fondé en 1920 au Congrès de Tours, par scission de la SFIO sur la question de l\'adhésion à l\'Internationale communiste.',
+    desc: "Le PCF est l'un des plus anciens partis français. Longtemps 1er parti de gauche (20-25% dans les années 50), il est aujourd'hui un parti minoritaire (2-3%). Fabien Roussel tente de le repositionner sur un communisme républicain et populaire.",
+    positions: {
+      'Économie': 'Planification, nationalisations',
+      'Immigration': 'Solidarité de classe internationale',
+      'Europe': 'Europe sociale alternative',
+      'Société': 'Laïcité, droits des travailleurs'
+    }
+  },
+  {
+    id: 'udi',
+    name: 'Union des Démocrates et Indépendants',
+    short: 'UDI',
+    initials: 'UDI',
+    color: '#2980b9',
+    bg: '#eaf4fc',
+    orient: 'centre-droite',
+    orientLabel: 'Centre-droite',
+    orientBg: '#2980b9',
+    orientColor: '#fff',
+    leader: 'Hervé Marseille (Président)',
+    founded: 'Fondée en 2012 par Jean-Louis Borloo, regroupant plusieurs partis du centre-droit.',
+    desc: "L'UDI est un parti du centre-droit héritier de la démocratie-chrétienne et du radicalisme valoisien. Il cherche un espace entre LR et le macronisme, sur une ligne libérale-sociale et pro-européenne.",
+    positions: {
+      'Économie': 'Libéralisme social',
+      'Immigration': 'Maîtrise raisonnée',
+      'Europe': 'Pro-européen',
+      'Société': 'Modération, dialogue'
+    }
+  },
+  {
+    id: 'reconquete',
+    name: 'Reconquête !',
+    short: 'REC',
+    initials: 'R!',
+    color: '#0d1b2a',
+    bg: '#e8e9ea',
+    orient: 'extreme-droite',
+    orientLabel: 'Extrême droite',
+    orientBg: '#0a0f18',
+    orientColor: '#fff',
+    leader: 'Éric Zemmour (Président)',
+    founded: 'Fondé en 2021 par Éric Zemmour, journaliste et polémiste, avant sa candidature à l\'élection présidentielle de 2022.',
+    desc: "Reconquête est un parti nationaliste et identitaire fondé par Éric Zemmour. Encore plus à droite que le RN sur les questions identitaires et d'immigration, il a obtenu 7% à la présidentielle 2022 mais peine à s'installer durablement.",
+    positions: {
+      'Économie': 'Libéralisme économique',
+      'Immigration': 'Immigration zéro totale',
+      'Europe': 'Sortie progressive de l\'UE',
+      'Société': 'Civilisationnisme, valeurs chrétiennes'
+    }
+  },
+  {
+    id: 'horizons',
+    name: 'Horizons',
+    short: 'HOR',
+    initials: 'H',
+    color: '#2563a8',
+    bg: '#e8f0fa',
+    orient: 'centre',
+    orientLabel: 'Centre',
+    orientBg: '#2563a8',
+    orientColor: '#fff',
+    leader: 'Édouard Philippe (Président)',
+    founded: 'Fondé en 2021 par Édouard Philippe, ex-Premier ministre, pour créer un courant autonome au sein de la majorité macroniste.',
+    desc: "Horizons est un parti centriste fondé par l'ex-Premier ministre Édouard Philippe. Allié de Renaissance, il incarne une ligne centriste libérale-conservatrice, plus pragmatique. Philippe est l'un des favoris pour 2027.",
+    positions: {
+      'Économie': 'Rigueur budgétaire, libéralisme',
+      'Immigration': 'Fermeté républicaine',
+      'Europe': 'Pro-européen réaliste',
+      'Société': 'Républicanisme centriste'
+    }
+  },
+  {
+    id: 'npa',
+    name: 'Nouveau Parti Anticapitaliste',
+    short: 'NPA',
+    initials: 'NPA',
+    color: '#6d0000',
+    bg: '#f9e8e8',
+    orient: 'extreme-gauche',
+    orientLabel: 'Extrême gauche',
+    orientBg: '#6d0000',
+    orientColor: '#fff',
+    leader: 'Anasse Kazib, Olivier Besancenot (fondateur)',
+    founded: 'Fondé en 2009 par Olivier Besancenot, issu de la LCR (Ligue Communiste Révolutionnaire, 1969).',
+    desc: "Le NPA est un parti anticapitaliste, révolutionnaire et internationaliste. Olivier Besancenot fut un candidat très populaire aux présidentielles 2002 et 2007. Le parti a connu des scissions mais reste actif sur les luttes sociales.",
+    positions: {
+      'Économie': 'Anticapitalisme, autogestion',
+      'Immigration': 'Ouverture totale, sans-papiers',
+      'Europe': 'Europe des travailleurs',
+      'Société': 'Féminisme radical, LGBTQ+'
+    }
+  },
+  {
+    id: 'lo',
+    name: 'Lutte Ouvrière',
+    short: 'LO',
+    initials: 'LO',
+    color: '#6d0000',
+    bg: '#f9e8e8',
+    orient: 'extreme-gauche',
+    orientLabel: 'Extrême gauche',
+    orientBg: '#6d0000',
+    orientColor: '#fff',
+    leader: 'Nathalie Arthaud (porte-parole)',
+    founded: 'Fondée dans les années 1940 sous diverses formes, LO tient son origine de l\'Union Communiste Internationaliste, courant trotskiste.',
+    desc: "LO est un parti trotskiste, rigoureux dans son marxisme orthodoxe. Arlette Laguiller, sa figure historique, a été candidate à 6 présidentielles consécutives (1974-2007). LO refuse les alliances avec la gauche réformiste.",
+    positions: {
+      'Économie': 'Marxisme, lutte des classes',
+      'Immigration': 'Solidarité ouvrière internationale',
+      'Europe': 'Refus de l\'Europe capitaliste',
+      'Société': 'Droit des travailleurs avant tout'
+    }
+  },
+  {
+    id: 'prg',
+    name: 'Parti Radical de Gauche',
+    short: 'PRG',
+    initials: 'PRG',
+    color: '#e74c3c',
+    bg: '#fef0ed',
+    orient: 'centre-gauche',
+    orientLabel: 'Centre-gauche',
+    orientBg: '#e74c3c',
+    orientColor: '#fff',
+    leader: 'Guillaume Lacroix (Président)',
+    founded: 'Fondé en 1972, issu du Parti Radical historique. Allié du PS depuis la gauche plurielle de Jospin.',
+    desc: "Le PRG est un petit parti laïc et républicain, de tradition radicale (la «gauche républicaine»). Il incarne le courant de la démocratie sociale, attaché aux libertés individuelles et à la séparation des Églises et de l'État.",
+    positions: {
+      'Économie': 'Social-libéralisme',
+      'Immigration': 'Intégration républicaine',
+      'Europe': 'Pro-européen',
+      'Société': 'Laïcité stricte'
+    }
+  }
+];
+
+/* ============================================================
+   DATA — QUIZ
+   ============================================================ */
+const quizData = [
+  {
+    q: "La distinction «gauche/droite» est apparue lors de quel événement historique ?",
+    opts: ["La Commune de Paris (1871)", "La Révolution française (1789)", "La IVe République (1946)", "Le Congrès de Vienne (1815)"],
+    ans: 1,
+    exp: "En 1789, à l'Assemblée nationale, les partisans du changement siégeaient à gauche du président de séance, les conservateurs à droite. Cette séparation géographique est devenue une séparation idéologique."
+  },
+  {
+    q: "Quel parti Jean-Luc Mélenchon a-t-il fondé en 2016 ?",
+    opts: ["Le Parti Socialiste", "Le Front de Gauche", "La France Insoumise", "Le NPA"],
+    ans: 2,
+    exp: "Jean-Luc Mélenchon a fondé La France Insoumise (LFI) en 2016, après avoir quitté le PS et participé au Front de Gauche. Le programme phare s'intitule «L'Avenir en Commun»."
+  },
+  {
+    q: "Sous quel nom le Rassemblement National s'appelait-il avant 2018 ?",
+    opts: ["Union pour un Mouvement Populaire", "Front National", "Mouvement National Républicain", "Alliance Nationale"],
+    ans: 1,
+    exp: "Le parti a été fondé en 1972 par Jean-Marie Le Pen sous le nom de «Front National» (FN). Marine Le Pen l'a rebaptisé «Rassemblement National» en 2018 dans le cadre de sa stratégie de dédiabolisation."
+  },
+  {
+    q: "Le Front Populaire de 1936 a instauré plusieurs droits sociaux majeurs. Lequel ?",
+    opts: ["Le salaire minimum", "Les congés payés", "La retraite à 60 ans", "La Sécurité Sociale"],
+    ans: 1,
+    exp: "Le gouvernement Blum (Front Populaire) a instauré les congés payés (2 semaines) et la semaine de 40 heures en 1936. La Sécurité Sociale a été créée en 1945 par le gouvernement de Gaulle."
+  },
+  {
+    q: "Qui a fondé le Mouvement Démocrate (MoDem) en 2007 ?",
+    opts: ["Valéry Giscard d'Estaing", "Jacques Delors", "François Bayrou", "Jean-Louis Borloo"],
+    ans: 2,
+    exp: "François Bayrou a fondé le MoDem en 2007, issu de l'UDF. Il est aujourd'hui allié d'Emmanuel Macron et a été nommé Premier ministre en décembre 2024."
+  },
+  {
+    q: "Quelle est la définition principale du libéralisme économique ?",
+    opts: ["Planification de l'économie par l'État", "Marché libre avec intervention minimale de l'État", "Collectivisation des moyens de production", "Protectionnisme et préférence nationale"],
+    ans: 1,
+    exp: "Le libéralisme économique (Adam Smith, Friedrich Hayek) prône la liberté du marché, la propriété privée et une intervention minimale de l'État dans l'économie. Il s'oppose au dirigisme et au socialisme."
+  },
+  {
+    q: "Quel événement de 2002 a profondément choqué la gauche et le centre français ?",
+    opts: ["L'élection de Chirac en 1995", "Jean-Marie Le Pen au second tour de la présidentielle", "La dissolution de l'Assemblée nationale", "La création du parti socialiste"],
+    ans: 1,
+    exp: "Le 21 avril 2002, Jean-Marie Le Pen (FN) devança Lionel Jospin au premier tour de la présidentielle. Ce choc républicain provoqua une mobilisation massive pour «barrer la route à l'extrême droite» au second tour."
+  },
+  {
+    q: "L'écologisme politique est notamment lié à la publication de quel rapport fondateur en 1972 ?",
+    opts: ["Le Capital de Marx", "Les Limites de la croissance (rapport Meadows)", "La Condition ouvrière de Simone Weil", "L'État, le pouvoir, le socialisme de Poulantzas"],
+    ans: 1,
+    exp: "«The Limits to Growth» (Les Limites de la croissance), commandé par le Club de Rome et publié en 1972, est l'un des textes fondateurs de l'écologie politique. Il modélisait l'effondrement planétaire en cas de croissance continue."
+  },
+  {
+    q: "Quelle réforme majeure des institutions Emmanuel Macron a-t-il lancé après son élection en 2017 ?",
+    opts: ["La création d'une VIe République", "Réforme du code du travail (Ordonnances Pénicaud)", "La proportionnelle intégrale", "La suppression du Sénat"],
+    ans: 1,
+    exp: "Dès l'été 2017, le gouvernement Philippe a réformé le Code du travail par ordonnances, assouplissant les règles sur les licenciements et la négociation d'entreprise. Cela a provoqué la naissance du mouvement «Nuit Debout» anti-réforme."
+  },
+  {
+    q: "La laïcité française est consacrée par quelle loi fondatrice ?",
+    opts: ["La loi Jules Ferry de 1882", "La loi de 1905 sur la séparation des Églises et de l'État", "La Déclaration des droits de l'homme de 1789", "La Constitution de 1958"],
+    ans: 1,
+    exp: "La loi du 9 décembre 1905, dite loi de séparation des Églises et de l'État, est la loi fondatrice de la laïcité française. Elle met fin au Concordat napoléonien et sépare strictement les sphères religieuse et publique."
+  }
+];
+
+/* ============================================================
+   DATA — GLOSSAIRE
+   ============================================================ */
+const glossaire = [
+  { term: "Abstentionnisme", def: "Refus de participer aux élections. En France, il atteint parfois 60% aux législatives, signe d'une crise de la représentation politique." },
+  { term: "Bicaméralisme", def: "Système où le Parlement est composé de deux chambres : l'Assemblée nationale (élue au suffrage universel direct) et le Sénat (élu au suffrage indirect)." },
+  { term: "Bonapartisme", def: "Courant politique héritier de Napoléon, qui mêle autorité de l'État, plébiscite populaire et grandeur nationale. Influence visible dans le gaullisme." },
+  { term: "Centrisme", def: "Courant politique qui refuse les extrêmes et cherche un équilibre entre valeurs de gauche (social) et de droite (économie de marché). Incarné par Macron." },
+  { term: "Clause de la nation la plus favorisée", def: "Terme de droit international : avantage commercial accordé à tous les membres de l'OMC. Souvent cité dans les débats sur le protectionnisme." },
+  { term: "Cohabitation", def: "Situation où le Président de la République et le Premier ministre sont de partis opposés. Ex : Mitterrand/Chirac (1986), Chirac/Jospin (1997)." },
+  { term: "Décroissance", def: "Courant écopolitique qui remet en cause le modèle de croissance infinie et propose une réduction volontaire de la production et de la consommation." },
+  { term: "Dédiabolisation", def: "Stratégie de Marine Le Pen pour rendre le FN puis RN fréquentable, en rompant avec l'antisémitisme et les positions les plus extrêmes de son père." },
+  { term: "Démocratie directe", def: "Forme de démocratie où les citoyens votent directement sur les lois (référendum, initiative populaire), sans passer par des représentants." },
+  { term: "Droite républicaine", def: "Courant conservateur qui se réclame des valeurs de la République française (liberté, ordre, nation) tout en défendant l'économie de marché. LR est son incarnation principale." },
+  { term: "Euroscepticisme", def: "Scepticisme ou opposition à l'intégration européenne. Présent à gauche (LFI) et à droite (RN, Reconquête) mais pour des raisons différentes." },
+  { term: "Fait majoritaire", def: "Phénomène sous la Ve République où le Président dispose d'une majorité à l'Assemblée nationale, lui garantissant un contrôle sur le gouvernement." },
+  { term: "Front républicain", def: "Alliance informelle de partis républicains pour bloquer l'extrême droite au second tour d'une élection en se retirant ou en appelant à voter contre elle." },
+  { term: "Gaullisme", def: "Courant politique fondé sur les idées du général de Gaulle : grandeur nationale, institutions fortes, indépendance de la France, démocratie sociale." },
+  { term: "Intersectionnalité", def: "Approche théorique qui analyse les discriminations croisées (genre, race, classe). Devenu un concept politique central dans la gauche progressiste." },
+  { term: "Jacobinisme", def: "Tradition politique française centralisatrice et républicaine, héritée de la Révolution. S'oppose au fédéralisme et aux régionalismes." },
+  { term: "Laïcité", def: "Principe constitutionnel français séparant l'État et les religions. Garanti par la loi de 1905. Enjeu majeur des débats politiques contemporains." },
+  { term: "Motion de censure", def: "Vote de l'Assemblée nationale pour renverser le gouvernement. Si elle obtient la majorité absolue des députés, le Premier ministre doit démissionner." },
+  { term: "Néolibéralisme", def: "Courant économique prônant la réduction de l'État, la dérégulation, la privatisation et la liberté des marchés. Thatcher et Reagan en sont les icônes." },
+  { term: "Oligarchie", def: "Terme utilisé à gauche pour désigner le pouvoir d'une minorité riche sur la démocratie. Souvent cité par LFI pour critiquer les élites financières et médiatiques." },
+  { term: "Populisme", def: "Rhétorique politique qui oppose «le peuple» aux «élites». Peut être de gauche (Mélenchon) ou de droite (Le Pen, Zemmour). Souvent péjoratif mais revendiqué par certains." },
+  { term: "Proportionnelle", def: "Mode de scrutin où les sièges sont distribués proportionnellement aux votes reçus. Réclamée par les petits partis pour une meilleure représentation." },
+  { term: "Question prioritaire de constitutionnalité (QPC)", def: "Mécanisme créé en 2010 permettant à tout citoyen de contester la constitutionnalité d'une loi lors d'un procès." },
+  { term: "Souverainisme", def: "Position politique qui défend la primauté de la souveraineté nationale sur les décisions des institutions internationales (UE, FMI, ONU)." },
+  { term: "Tripartition", def: "Situation politique depuis 2022 où trois blocs coexistent sans majorité absolue : gauche (NFP), centre (Renaissance/Macron), droite nationaliste (RN)." }
+];
+
+/* ============================================================
+   DATA — RESSOURCES
+   ============================================================ */
+const ressources = [
+  { icon: '📚', bg: '#e8f0fa', title: 'Vie-Publique.fr', desc: 'Site officiel du gouvernement pour comprendre les institutions, la loi et la vie politique française.', url: 'https://www.vie-publique.fr', label: 'vie-publique.fr' },
+  { icon: '🏛️', bg: '#fdecea', title: 'Assemblée Nationale', desc: 'Tous les groupes politiques, les lois en discussion, les votes des députés et les comptes rendus des séances.', url: 'https://www.assemblee-nationale.fr', label: 'assemblee-nationale.fr' },
+  { icon: '🗳️', bg: '#eafaf1', title: 'Conseil Constitutionnel', desc: 'Décisions, jurisprudence et ressources pédagogiques sur le droit constitutionnel français.', url: 'https://www.conseil-constitutionnel.fr', label: 'conseil-constitutionnel.fr' },
+  { icon: '📰', bg: '#f9e8e8', title: 'Le Monde Politique', desc: 'Dossiers, analyses et décryptages sur l\'actualité politique française et européenne.', url: 'https://www.lemonde.fr/politique/', label: 'lemonde.fr/politique' },
+  { icon: '🎓', bg: '#fef0ed', title: 'Sciences Po', desc: 'Ressources pédagogiques, revues scientifiques et travaux de recherche sur la vie politique française.', url: 'https://www.sciencespo.fr', label: 'sciencespo.fr' },
+  { icon: '📊', bg: '#e8f0fa', title: 'IFOP / Sondages', desc: 'Baromètres politiques, intentions de vote et études d\'opinion sur les partis et personnalités.', url: 'https://www.ifop.com/publications/', label: 'ifop.com' },
+  { icon: '🌍', bg: '#eafaf1', title: 'Parlement Européen France', desc: 'Informations sur les eurodéputés français, les groupes politiques européens et les enjeux de l\'UE.', url: 'https://www.europarl.europa.eu/france', label: 'europarl.europa.eu' },
+  { icon: '📖', bg: '#f9e8e8', title: 'Bibliothèque Nationale (Gallica)', desc: 'Archives historiques, journaux anciens, pamphlets politiques — l\'histoire de la politique française en documents.', url: 'https://gallica.bnf.fr', label: 'gallica.bnf.fr' }
+];
+
+/* ============================================================
+   RENDER FUNCTIONS
+   ============================================================ */
+
+function renderIdeologies() {
+  const grid = document.getElementById('ideologiesGrid');
+  grid.innerHTML = ideologies.map(i => `
+    <div class="ideo-card reveal" id="ideo-${i.id}">
+      <div class="ideo-header" onclick="toggleIdeo('${i.id}')">
+        <div class="ideo-icon" style="background:${i.bgColor}">${i.icon}</div>
+        <div class="ideo-title-wrap">
+          <div class="ideo-tag" style="color:${i.labelColor}">${i.label}</div>
+          <h3>${i.name}</h3>
+        </div>
+        <div class="ideo-chevron">▼</div>
+      </div>
+      <div class="ideo-body">
+        <div class="ideo-def" style="border-color:${i.labelColor}">${i.def}</div>
+        <div class="ideo-section-title">Historique</div>
+        <p>${i.history}</p>
+        <div class="ideo-section-title">Penseurs & figures clés</div>
+        <div class="thinkers">${i.thinkers.map(t=>`<span class="thinker">${t}</span>`).join('')}</div>
+        <div class="ideo-section-title">En France</div>
+        <div class="examples">
+          <div class="example-item"><span class="ex-flag">🇫🇷</span><span>${i.franceEx}</span></div>
+          <div class="example-item"><span class="ex-flag">🌍</span><span>${i.worldEx}</span></div>
+        </div>
+        ${i.quote ? `<div class="quote-block">${i.quote.text}<span class="quote-author">— ${i.quote.author}</span></div>` : ''}
+      </div>
+    </div>
+  `).join('');
+}
+
+function toggleIdeo(id) {
+  const card = document.getElementById(`ideo-${id}`);
+  card.classList.toggle('open');
+}
+
+function renderParties(filter = 'all', search = '') {
+  const grid = document.getElementById('partiesGrid');
+  const filtered = parties.filter(p => {
+    const matchFilter = filter === 'all' || p.orient === filter;
+    const s = search.toLowerCase();
+    const matchSearch = !s || p.name.toLowerCase().includes(s) || p.short.toLowerCase().includes(s) || p.orient.includes(s) || p.desc.toLowerCase().includes(s);
+    return matchFilter && matchSearch;
+  });
+  if (filtered.length === 0) {
+    grid.innerHTML = `<div style="color:var(--mid);padding:2rem;font-style:italic">Aucun parti ne correspond à votre recherche.</div>`;
+    return;
+  }
+  grid.innerHTML = filtered.map(p => `
+    <div class="party-card" id="party-${p.id}">
+      <div class="party-top">
+        <div class="party-logo" style="background:${p.color}">${p.initials}</div>
+        <div class="party-meta">
+          <span class="party-orient" style="background:${p.orientBg};color:${p.orientColor}">${p.orientLabel}</span>
+          <h3>${p.name}</h3>
+          <div class="party-short">${p.short}</div>
+        </div>
+      </div>
+      <div class="party-body">
+        <div class="party-leader">👤 ${p.leader}</div>
+        <p class="party-desc">${p.desc}</p>
+        <div class="positions-grid">
+          ${Object.entries(p.positions).map(([k,v]) => `
+            <div class="pos-item">
+              <div class="pos-label">${k}</div>
+              <div class="pos-val">${v}</div>
+            </div>
+          `).join('')}
+        </div>
+        <div class="party-founded">📅 ${p.founded}</div>
+      </div>
+    </div>
+  `).join('');
+}
+
+function renderGlossaire() {
+  const list = document.getElementById('glossaireList');
+  list.innerHTML = glossaire.map(g => `
+    <div class="gloss-item">
+      <div class="gloss-term">${g.term}</div>
+      <div class="gloss-def">${g.def}</div>
+    </div>
+  `).join('');
+}
+
+function renderRessources() {
+  const grid = document.getElementById('ressourcesGrid');
+  grid.innerHTML = ressources.map(r => `
+    <a class="res-card" href="${r.url}" target="_blank" rel="noopener">
+      <div class="res-icon" style="background:${r.bg}">${r.icon}</div>
+      <h4>${r.title}</h4>
+      <p>${r.desc}</p>
+      <span class="res-link">🔗 ${r.label}</span>
+    </a>
+  `).join('');
+}
+
+/* ============================================================
+   QUIZ LOGIC
+   ============================================================ */
+let quizIdx = 0, score = 0, answered = false;
+
+function renderQuestion() {
+  const q = quizData[quizIdx];
+  document.getElementById('quizQ').textContent = q.q;
+  document.getElementById('quizNum').textContent = `Question ${quizIdx+1} / ${quizData.length}`;
+  document.getElementById('quizBar').style.width = `${(quizIdx/quizData.length)*100}%`;
+  const opts = document.getElementById('quizOpts');
+  opts.innerHTML = q.opts.map((o,i) => `
+    <div class="quiz-opt" onclick="selectOpt(${i})">${o}</div>
+  `).join('');
+  document.getElementById('quizFeedback').className = 'quiz-feedback';
+  document.getElementById('quizFeedback').textContent = '';
+  document.getElementById('quizNext').className = 'quiz-next';
+  answered = false;
+}
+
+function selectOpt(idx) {
+  if (answered) return;
+  answered = true;
+  const q = quizData[quizIdx];
+  const opts = document.querySelectorAll('.quiz-opt');
+  opts.forEach(o => o.classList.add('disabled'));
+  opts[idx].classList.add(idx === q.ans ? 'correct' : 'wrong');
+  if (idx !== q.ans) opts[q.ans].classList.add('correct');
+  const fb = document.getElementById('quizFeedback');
+  fb.textContent = (idx === q.ans ? '✅ Bonne réponse ! ' : '❌ Mauvaise réponse. ') + q.exp;
+  fb.className = `quiz-feedback show ${idx === q.ans ? 'good' : 'bad'}`;
+  if (idx === q.ans) score++;
+  document.getElementById('quizNext').className = 'quiz-next show';
+}
+
+function nextQuestion() {
+  quizIdx++;
+  if (quizIdx >= quizData.length) {
+    showScore();
+  } else {
+    renderQuestion();
+  }
+}
+
+function showScore() {
+  document.getElementById('quizGame').style.display = 'none';
+  const sc = document.getElementById('quizScore');
+  sc.className = 'quiz-score show';
+  document.getElementById('scoreNum').textContent = `${score}/${quizData.length}`;
+  document.getElementById('quizBar').style.width = '100%';
+  let stars = '', msg = '';
+  if (score >= 9)      { stars = '⭐⭐⭐'; msg = 'Excellent ! Vous maîtrisez la politique française !'; }
+  else if (score >= 7) { stars = '⭐⭐'; msg = 'Très bien ! Quelques révisions et vous êtes expert !'; }
+  else if (score >= 5) { stars = '⭐'; msg = 'Pas mal ! Relisez les fiches pour progresser.'; }
+  else                 { stars = '📖'; msg = 'Retournez au cours, vous progresserez !'; }
+  document.getElementById('scoreStars').textContent = stars;
+  document.getElementById('scoreMsg').textContent = msg;
+}
+
+function resetQuiz() {
+  quizIdx = 0; score = 0;
+  document.getElementById('quizGame').style.display = 'block';
+  document.getElementById('quizScore').className = 'quiz-score';
+  renderQuestion();
+}
+
+/* ============================================================
+   SCROLL ANIMATIONS
+   ============================================================ */
+function initReveal() {
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.classList.add('visible');
+        observer.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.1 });
+  document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+}
+
+/* ============================================================
+   NAVBAR ACTIVE LINK
+   ============================================================ */
+function initNav() {
+  const sections = document.querySelectorAll('section[id]');
+  const navLinks = document.querySelectorAll('.nav-links a');
+  window.addEventListener('scroll', () => {
+    let cur = '';
+    sections.forEach(s => {
+      if (window.scrollY >= s.offsetTop - 120) cur = s.id;
+    });
+    navLinks.forEach(a => {
+      a.classList.toggle('active', a.getAttribute('href') === '#'+cur);
+    });
+    document.getElementById('navbar').classList.toggle('scrolled', window.scrollY > 50);
+    document.getElementById('scroll-top').classList.toggle('visible', window.scrollY > 400);
+  });
+  document.getElementById('navToggle').addEventListener('click', () => {
+    document.getElementById('navLinks').classList.toggle('open');
+  });
+}
+
+/* ============================================================
+   PARTY FILTERS
+   ============================================================ */
+function initPartyFilters() {
+  document.querySelectorAll('.pf-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      document.querySelectorAll('.pf-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      renderParties(btn.dataset.filter, document.getElementById('partySearch').value);
+    });
+  });
+  document.getElementById('partySearch').addEventListener('input', e => {
+    const activeFilter = document.querySelector('.pf-btn.active')?.dataset.filter || 'all';
+    renderParties(activeFilter, e.target.value);
+  });
+}
+
+function scrollToParty(id) {
+  document.getElementById('partis').scrollIntoView({ behavior: 'smooth' });
+  setTimeout(() => {
+    const el = document.getElementById(`party-${id}`);
+    if (el) el.scrollIntoView({ behavior: 'smooth', block: 'center' });
+  }, 600);
+}
+
+/* ============================================================
+   INIT
+   ============================================================ */
+document.addEventListener('DOMContentLoaded', () => {
+  renderIdeologies();
+  renderParties();
+  renderGlossaire();
+  renderRessources();
+  renderQuestion();
+  initReveal();
+  initNav();
+  initPartyFilters();
+  // Re-observe after dynamic render
+  setTimeout(() => {
+    document.querySelectorAll('.reveal:not(.visible)').forEach(el => {
+      const obs = new IntersectionObserver((entries) => {
+        entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.target); } });
+      }, { threshold: 0.05 });
+      obs.observe(el);
+    });
+  }, 100);
+});
+</script>
+</body>
+</html>

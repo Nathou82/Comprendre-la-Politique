@@ -1,0 +1,1041 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-R2B9TW1V79"></script>
+<script>
+  window.dataLayer=window.dataLayer||[];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js',new Date());
+  gtag('config','G-R2B9TW1V79');
+</script>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+  <meta name="description" content="Profils électoraux moyens par parti politique en France — âge, revenu, localisation, études. 14 partis analysés. Données INSEE, CEVIPOF et enquêtes post-électorales IFOP/IPSOS."/>
+  <meta name="keywords" content="profil électoral France, sociologie du vote, qui vote quoi France, INSEE partis politiques, CEVIPOF, électorat RN LFI Renaissance"/>
+  <meta name="robots" content="index, follow"/>
+  <meta property="og:title" content="Profils Électoraux par Parti Politique — comprendrelapolitique.fr"/>
+  <meta property="og:description" content="Explorez les profils socio-démographiques des électorats français : âge, revenu, formation, localisation. 14 partis comparés."/>
+  <meta property="og:type" content="website"/>
+  <meta property="og:url" content="https://comprendrelapolitique.fr/profils-electoraux.html"/>
+  <meta name="twitter:card" content="summary_large_image"/>
+  <link rel="icon" type="image/png" href="favicon.png"/>
+  <title>Profils Électoraux par Parti Politique — comprendrelapolitique.fr</title>
+  <link rel="canonical" href="https://comprendrelapolitique.fr/profils-electoraux.html"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+  <style>
+  :root{
+    --bg:#f7f8fa;--bg2:#eef0f4;--text:#1e2a38;--text2:#3a4a5c;--text3:#8895a7;
+    --border:#dce3ed;--navy:#0d1b2a;--navy2:#152236;--blue2:#2563a8;
+    --gold:#d4a843;--card:#fff;--shadow:0 2px 16px rgba(0,0,0,.07);--shadow2:0 8px 32px rgba(0,0,0,.12);
+  }
+  *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+  html{font-size:16px;scroll-behavior:smooth}
+  body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--text);overflow-x:hidden}
+  a{color:inherit;text-decoration:none}
+  img{max-width:100%;display:block}
+  h1,h2,h3{font-family:'Playfair Display',serif;line-height:1.2}
+
+  /* NAVBAR — identical to site */
+  #navbar{position:fixed;top:0;left:0;right:0;z-index:3000;background:rgba(13,27,42,.97);backdrop-filter:blur(14px);border-bottom:1px solid rgba(255,255,255,.07);transition:box-shadow .3s}
+  #navbar.scrolled{box-shadow:0 4px 30px rgba(0,0,0,.5)}
+  .nav-inner{max-width:1400px;margin:0 auto;display:flex;align-items:center;padding:.7rem 1.5rem;gap:0}
+  .nav-logo{font-family:'Playfair Display',serif;font-size:1.2rem;font-weight:900;color:#fff;display:flex;align-items:center;gap:.4rem;flex-shrink:0;text-decoration:none}
+  .nav-logo span{color:var(--gold)}
+  .nav-links{display:flex;gap:.1rem;list-style:none;flex-wrap:nowrap;overflow-x:auto;scrollbar-width:none;margin-left:1.2rem}
+  .nav-links::-webkit-scrollbar{display:none}
+  .nav-arrow{display:none;align-items:center;justify-content:center;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.18);color:#fff;font-size:1.2rem;width:26px;height:26px;border-radius:50%;cursor:pointer;flex-shrink:0;transition:background .18s;padding:0}
+  .nav-arrow:hover{background:rgba(255,255,255,.22)}
+  .nav-arrow.visible{display:flex}
+  .nav-links a{color:rgba(255,255,255,.7);font-size:.73rem;font-weight:500;padding:.3rem .55rem;border-radius:5px;white-space:nowrap;transition:all .18s;border:1.5px solid transparent;display:inline-flex;align-items:center}
+  .nav-links a:hover{color:#fff;background:rgba(255,255,255,.07);border-color:rgba(255,255,255,.2)}
+  .nav-links a[aria-current="page"]{color:var(--gold);background:rgba(212,168,67,.12);border-color:rgba(212,168,67,.4)}
+  .nav-actions{display:flex;align-items:center;gap:.5rem;flex-shrink:0;margin-left:auto}
+  .nav-toggle{display:none;background:none;border:none;cursor:pointer;padding:.4rem}
+  .nav-toggle span{display:block;width:22px;height:2px;background:#fff;margin:4px 0;transition:.3s}
+
+  /* HERO */
+  .hero{background:linear-gradient(135deg,var(--navy) 0%,#0e2244 60%,#0a1a35 100%);padding:5.5rem 1.5rem 3rem;position:relative;overflow:hidden;border-bottom:2px solid rgba(212,175,55,.2)}
+  .hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 70% 60% at 50% 0%,rgba(212,175,55,.08) 0%,transparent 70%);pointer-events:none}
+  .hero-in{max-width:900px;margin:0 auto;text-align:center;position:relative}
+  .hero-badge{display:inline-flex;align-items:center;gap:.4rem;background:rgba(212,175,55,.15);border:1px solid rgba(212,175,55,.35);color:var(--gold);font-size:.72rem;font-weight:700;padding:.25rem .75rem;border-radius:20px;letter-spacing:.06em;text-transform:uppercase;margin-bottom:.8rem}
+  .hero-in h1{font-size:2.2rem;font-weight:900;color:#fff;margin-bottom:.7rem}
+  .hero-in h1 em{color:var(--gold);font-style:normal}
+  .hero-in p{font-size:.9rem;color:rgba(255,255,255,.55);max-width:640px;margin:0 auto 1.5rem;line-height:1.7}
+  .hero-note{display:inline-flex;align-items:flex-start;gap:.5rem;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);color:rgba(255,255,255,.5);font-size:.74rem;padding:.5rem 1rem;border-radius:12px;line-height:1.5;max-width:560px;text-align:left}
+
+  /* FILTERS */
+  .filters-bar{background:var(--card);border-bottom:1px solid var(--border);position:sticky;top:54px;z-index:900;box-shadow:0 2px 12px rgba(0,0,0,.05)}
+  .filters-in{max-width:1200px;margin:0 auto;padding:.65rem 1.5rem;display:flex;align-items:center;gap:.75rem;flex-wrap:wrap}
+  .filter-group{display:flex;align-items:center;gap:.4rem}
+  .filter-lbl{font-size:.67rem;font-weight:700;color:var(--text3);text-transform:uppercase;letter-spacing:.07em;white-space:nowrap}
+  .filter-select{padding:.3rem .65rem;border:1.5px solid var(--border);border-radius:8px;font-size:.75rem;background:transparent;color:var(--text);cursor:pointer;outline:none;transition:border-color .18s;font-family:inherit}
+  .filter-select:focus{border-color:var(--blue2)}
+  .filter-reset{margin-left:auto;padding:.3rem .88rem;border:1.5px solid var(--border);border-radius:20px;background:transparent;color:var(--text2);font-size:.72rem;font-weight:600;cursor:pointer;transition:all .18s}
+  .filter-reset:hover{border-color:var(--navy);color:var(--navy)}
+  .results-count{font-size:.7rem;color:var(--text3);white-space:nowrap}
+
+  /* MAIN */
+  .main{max-width:1200px;margin:0 auto;padding:2rem 1.5rem 4rem}
+  .section-title{font-family:'Playfair Display',serif;font-size:1.25rem;font-weight:700;color:var(--text);margin-bottom:.3rem}
+  .section-sub{font-size:.8rem;color:var(--text3);margin-bottom:1.4rem;line-height:1.55}
+
+  /* CARDS GRID */
+  .cards-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(310px,1fr));gap:1.2rem;margin-bottom:3rem}
+  .pcard{background:var(--card);border:1px solid var(--border);border-radius:16px;overflow:hidden;transition:box-shadow .22s,transform .22s}
+  .pcard:hover{box-shadow:var(--shadow2);transform:translateY(-4px)}
+  .pcard-top{padding:1.05rem 1.1rem .7rem;display:flex;align-items:center;gap:.75rem}
+  .pcard-logo{width:54px;height:38px;object-fit:contain;flex-shrink:0;border-radius:6px;background:#f0f2f5;padding:4px}
+  .pcard-logo-fb{width:54px;height:38px;flex-shrink:0;border-radius:6px;display:flex;align-items:center;justify-content:center;font-size:.9rem;font-weight:700;color:#fff}
+  .pcard-hdr{flex:1;min-width:0}
+  .pcard-name{font-weight:700;font-size:.93rem;color:var(--text);line-height:1.2}
+  .pcard-orient{display:flex;align-items:center;gap:.3rem;margin-top:.18rem}
+  .orient-badge{font-size:.62rem;font-weight:700;padding:.12rem .4rem;border-radius:8px}
+  .pcard-score{font-family:'Playfair Display',serif;font-size:1.25rem;font-weight:900;flex-shrink:0;text-align:right;line-height:1}
+  .pcard-score-lbl{font-size:.58rem;color:var(--text3);font-family:'DM Sans',sans-serif;font-weight:400;display:block;margin-top:.12rem}
+  .pcard-body{padding:.85rem 1.1rem}
+  .stat-row{display:flex;align-items:center;gap:.5rem;padding:.32rem 0;border-bottom:1px solid var(--border)}
+  .stat-row:last-child{border-bottom:none}
+  .stat-ico{font-size:.82rem;width:20px;text-align:center;flex-shrink:0;opacity:.7}
+  .stat-key{font-size:.7rem;color:var(--text3);width:95px;flex-shrink:0}
+  .stat-bar-wrap{flex:1;height:5px;background:var(--bg2);border-radius:3px;overflow:hidden}
+  .stat-bar{height:100%;border-radius:3px;width:0;transition:width .65s cubic-bezier(.25,.46,.45,.94)}
+  .stat-val{font-size:.77rem;font-weight:600;color:var(--text);min-width:55px;text-align:right;flex-shrink:0}
+  .stat-tags{flex:1;display:flex;flex-wrap:wrap;gap:.15rem}
+  .tag{display:inline-flex;align-items:center;font-size:.61rem;font-weight:600;padding:.12rem .38rem;border-radius:10px}
+  .t-urb{background:#e0f2fe;color:#0369a1}
+  .t-per{background:#fef9c3;color:#854d0e}
+  .t-rur{background:#d4edda;color:#166534}
+  .t-all{background:#fdecea;color:#991b1b}
+  .t-age{background:#e8f0fa;color:#1a4f8a}
+  .pcard-note{margin-top:.65rem;padding:.5rem .65rem;border-radius:8px;font-size:.7rem;color:var(--text2);line-height:1.55}
+
+  /* CHART SECTION */
+  .chart-section{background:var(--bg2);border-radius:16px;padding:1.6rem;margin-bottom:2.4rem}
+  .chart-tabs{display:flex;gap:.3rem;flex-wrap:wrap;margin-bottom:1.1rem}
+  .ctab{padding:.3rem .72rem;border-radius:20px;font-size:.72rem;font-weight:600;border:1.5px solid var(--border);background:transparent;color:var(--text2);cursor:pointer;transition:all .18s}
+  .ctab.active{background:var(--navy);color:#fff;border-color:var(--navy)}
+  .chart-wrap{overflow-x:auto}
+  .bar-chart{min-width:500px}
+  .bc-row{display:flex;align-items:center;gap:.6rem;margin-bottom:.48rem}
+  .bc-lbl{font-size:.69rem;color:var(--text2);width:125px;flex-shrink:0;text-align:right;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;display:flex;align-items:center;gap:.3rem;justify-content:flex-end}
+  .bc-logo{width:18px;height:13px;object-fit:contain;flex-shrink:0;border-radius:2px;background:#f0f0f0;padding:1px}
+  .bc-track{flex:1;height:20px;background:var(--card);border-radius:5px;overflow:hidden;position:relative}
+  .bc-fill{height:100%;border-radius:5px;width:0;transition:width .7s cubic-bezier(.25,.46,.45,.94);display:flex;align-items:center;justify-content:flex-end;padding-right:6px}
+  .bc-fill span{font-size:.63rem;font-weight:700;color:rgba(255,255,255,.92);white-space:nowrap}
+  .bc-val{font-size:.69rem;font-weight:700;width:42px;flex-shrink:0}
+
+  /* PIE CHARTS — improved donut style */
+  .pie-section{background:var(--bg2);border-radius:16px;padding:1.6rem;margin-bottom:2.4rem}
+  .pie-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(160px,1fr));gap:1rem;margin-top:1rem}
+  .pie-card{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:.9rem .8rem;text-align:center;transition:box-shadow .2s,transform .2s}
+  .pie-card:hover{box-shadow:var(--shadow);transform:translateY(-2px)}
+  .pie-logo-wrap{display:flex;justify-content:center;margin-bottom:.4rem;height:22px}
+  .pie-logo{width:32px;height:22px;object-fit:contain;border-radius:3px;background:#f0f0f0;padding:1px}
+  .pie-logo-fb{width:32px;height:22px;display:flex;align-items:center;justify-content:center;border-radius:3px;font-size:.75rem;font-weight:700;color:#fff}
+  .pie-name{font-size:.65rem;font-weight:700;margin-bottom:.5rem;line-height:1.2}
+  .pie-donut{position:relative;width:80px;height:80px;margin:0 auto .5rem}
+  .pie-donut svg{transform:rotate(-90deg)}
+  .pie-donut-center{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:0}
+  .pie-donut-val{font-family:'Playfair Display',serif;font-size:.82rem;font-weight:900}
+  .pie-donut-lbl{font-size:.5rem;color:var(--text3);margin-top:-1px}
+  .pie-mini-legend{display:flex;flex-direction:column;gap:.18rem}
+  .pie-mini-li{display:flex;align-items:center;gap:.28rem;font-size:.59rem;color:var(--text2)}
+  .pie-mini-dot{width:6px;height:6px;border-radius:50%;flex-shrink:0}
+
+  /* EDUCATIONAL */
+  .edu-section{margin-bottom:2.5rem}
+  .edu-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:1rem}
+  .edu-card{background:var(--card);border-radius:12px;padding:1.1rem;border-left:4px solid transparent;transition:box-shadow .2s}
+  .edu-card:hover{box-shadow:var(--shadow)}
+  .edu-badge{display:inline-flex;align-items:center;gap:.3rem;font-size:.63rem;font-weight:700;padding:.14rem .45rem;border-radius:10px;margin-bottom:.55rem;text-transform:uppercase;letter-spacing:.05em}
+  .edu-title{font-weight:700;font-size:.87rem;color:var(--text);margin-bottom:.4rem;line-height:1.3}
+  .edu-text{font-size:.75rem;color:var(--text2);line-height:1.6}
+  .edu-src{font-size:.63rem;color:var(--text3);margin-top:.5rem}
+
+  /* EXPLORATION — same as other pages */
+  .exploration-section{position:relative;overflow:hidden;background:linear-gradient(135deg,#0a1628 0%,#0d1f3c 40%,#0e2244 100%);padding:3.5rem 1.5rem 4rem;border-top:2px solid rgba(212,175,55,.25)}
+  .exploration-section::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 70% 60% at 50% 0%,rgba(212,175,55,.08) 0%,transparent 70%);pointer-events:none}
+  .exploration-inner{max-width:1040px;margin:0 auto;position:relative}
+  .exploration-badge{display:inline-flex;align-items:center;gap:.4rem;background:rgba(212,175,55,.15);border:1px solid rgba(212,175,55,.35);color:var(--gold);font-size:.72rem;font-weight:700;padding:.25rem .75rem;border-radius:20px;letter-spacing:.06em;text-transform:uppercase;margin-bottom:.8rem}
+  .exploration-title{font-size:1.6rem;font-weight:900;color:#fff;text-align:center;margin-bottom:.4rem;line-height:1.25}
+  .exploration-title em{color:var(--gold);font-style:normal}
+  .exploration-subtitle{text-align:center;font-size:.84rem;color:rgba(255,255,255,.5);margin-bottom:2rem;max-width:540px;margin-left:auto;margin-right:auto;line-height:1.6}
+  .exploration-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(255px,1fr));gap:1rem}
+  .exploration-card{display:flex;align-items:center;gap:1rem;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);border-radius:14px;padding:1rem 1.1rem;text-decoration:none;transition:background .22s,border-color .22s,transform .2s}
+  .exploration-card:hover{background:rgba(255,255,255,.1);border-color:rgba(212,175,55,.5);transform:translateY(-2px)}
+  .exploration-icon{font-size:1.6rem;flex-shrink:0;background:rgba(255,255,255,.07);border-radius:10px;width:44px;height:44px;display:flex;align-items:center;justify-content:center;transition:background .2s}
+  .exploration-card:hover .exploration-icon{background:rgba(212,175,55,.15)}
+  .exploration-text{flex:1;min-width:0}
+  .exploration-text strong{display:block;font-size:.82rem;font-weight:700;color:#fff;margin-bottom:.14rem}
+  .exploration-text span{font-size:.72rem;color:rgba(255,255,255,.5);line-height:1.4}
+  .exploration-arrow{color:var(--gold);font-size:1.2rem;font-weight:700;width:26px;height:26px;display:flex;align-items:center;justify-content:center;background:rgba(212,175,55,.12);border-radius:50%;transition:background .2s,transform .2s}
+  .exploration-card:hover .exploration-arrow{background:rgba(212,175,55,.25);transform:translateX(3px)}
+
+  /* SHARE SECTION */
+  .share-section{background:var(--navy);padding:2.2rem 1.5rem;border-top:1px solid rgba(255,255,255,.07)}
+  .share-inner{max-width:700px;margin:0 auto;text-align:center}
+  .share-title{font-size:.78rem;font-weight:700;color:rgba(255,255,255,.4);text-transform:uppercase;letter-spacing:.1em;margin-bottom:.9rem}
+  .share-btns{display:flex;justify-content:center;flex-wrap:wrap;gap:.5rem}
+  .share-btn{display:inline-flex;align-items:center;gap:.42rem;padding:.42rem .95rem;border-radius:25px;font-size:.75rem;font-weight:700;text-decoration:none;border:1.5px solid transparent;transition:transform .18s,opacity .18s}
+  .share-btn:hover{transform:translateY(-2px);opacity:.9}
+  .share-btn svg{width:15px;height:15px;fill:currentColor;flex-shrink:0}
+  .sb-fb{background:#1877F2;color:#fff}.sb-x{background:#000;color:#fff}
+  .sb-li{background:#0A66C2;color:#fff}.sb-wa{background:#25D366;color:#fff}.sb-tg{background:#229ED9;color:#fff}
+  footer{background:var(--navy);padding:2.5rem 1.5rem;text-align:center;border-top:1px solid rgba(255,255,255,.08)}
+  .footer-inner{max-width:1280px;margin:0 auto}
+  .footer-logo{font-family:'Playfair Display',serif;font-size:1.2rem;font-weight:900;color:#fff}
+  .footer-logo span{color:var(--gold)}
+  footer p{color:rgba(255,255,255,.3);font-size:.76rem;margin-top:.6rem;line-height:1.7}
+  .footer-links{display:flex;justify-content:center;gap:1.1rem;flex-wrap:wrap;margin-top:1.1rem}
+  .footer-links a{color:rgba(255,255,255,.45);font-size:.76rem;transition:color .2s}
+  .footer-links a:hover{color:var(--gold)}
+  .ft-share{margin-top:1.2rem;padding-top:1.2rem;border-top:1px solid rgba(255,255,255,.08)}
+  .ft-share-title{font-size:.68rem;font-weight:700;color:rgba(255,255,255,.35);text-transform:uppercase;letter-spacing:.1em;margin-bottom:.6rem}
+  .ft-share-btns{display:flex;justify-content:center;flex-wrap:wrap;gap:.42rem}
+  .ft-share-btn{display:inline-flex;align-items:center;justify-content:center;width:32px;height:32px;border-radius:50%;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.12);color:rgba(255,255,255,.7);text-decoration:none;transition:background .18s,transform .18s}
+  .ft-share-btn:hover{background:rgba(255,255,255,.18);transform:scale(1.12)}
+  .ft-share-btn svg{width:14px;height:14px;fill:currentColor}
+  #cookieBanner{position:fixed;bottom:1.4rem;right:1.4rem;z-index:9000;background:var(--card);border:1px solid var(--border);border-radius:14px;box-shadow:0 8px 32px rgba(0,0,0,.18);padding:1rem 1.1rem;max-width:300px;width:calc(100% - 2.8rem);font-size:.77rem;line-height:1.6;color:var(--text2);transform:translateY(20px);opacity:0;transition:transform .35s,opacity .35s;pointer-events:none}
+  #cookieBanner.show{transform:translateY(0);opacity:1;pointer-events:all}
+  .ck-title{font-weight:700;font-size:.79rem;margin-bottom:.3rem}
+  .ck-actions{display:flex;align-items:center;justify-content:space-between;margin-top:.7rem;gap:.5rem}
+  .ck-link{font-size:.71rem;color:var(--text3);text-decoration:underline;cursor:pointer;white-space:nowrap}
+  .ck-accept{padding:.3rem .8rem;border-radius:20px;background:var(--navy);color:#fff;font-size:.73rem;font-weight:700;border:none;cursor:pointer;white-space:nowrap}
+  #scrollTopBtn{position:fixed;bottom:1.5rem;right:1.5rem;width:40px;height:40px;border-radius:50%;background:var(--navy);color:#fff;border:none;cursor:pointer;font-size:.9rem;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 14px rgba(0,0,0,.3);opacity:0;pointer-events:none;transition:opacity .3s,transform .3s;z-index:500}
+  #scrollTopBtn:hover{transform:translateY(-2px)}
+  .hidden{display:none!important}
+
+  /* BAR CHART — bigger logos */
+  .bc-logo{width:26px;height:18px;object-fit:contain;flex-shrink:0;border-radius:3px;background:#f5f5f5;padding:1px}
+  .bc-lbl{font-size:.71rem;color:var(--text2);width:160px;flex-shrink:0;text-align:right;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;display:flex;align-items:center;gap:.4rem;justify-content:flex-end}
+  .bc-fb{width:26px;height:18px;display:inline-flex;align-items:center;justify-content:center;border-radius:3px;font-size:.65rem;font-weight:700;color:#fff;flex-shrink:0}
+
+  /* COMPARISON */
+  .cmp-section{background:var(--bg2);border-radius:16px;padding:1.6rem;margin-bottom:2.4rem}
+  .cmp-selectors{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-bottom:1.4rem}
+  .cmp-side{background:var(--card);border-radius:12px;padding:1rem;border:2px solid var(--border);transition:border-color .2s}
+  .cmp-side.selected{border-color:var(--blue2)}
+  .cmp-side-lbl{font-size:.66rem;font-weight:700;color:var(--text3);text-transform:uppercase;letter-spacing:.08em;margin-bottom:.5rem}
+  .cmp-select{width:100%;padding:.38rem .65rem;border:1.5px solid var(--border);border-radius:8px;font-size:.8rem;background:transparent;color:var(--text);cursor:pointer;outline:none;font-family:inherit;transition:border-color .18s}
+  .cmp-select:focus{border-color:var(--blue2)}
+  .cmp-logo-wrap{display:flex;align-items:center;gap:.6rem;margin-top:.5rem;min-height:32px}
+  .cmp-logo{height:28px;width:auto;max-width:70px;object-fit:contain;border-radius:4px;background:#f0f0f0;padding:2px}
+  .cmp-logo-fb{height:28px;width:44px;display:inline-flex;align-items:center;justify-content:center;border-radius:4px;font-size:.8rem;font-weight:700;color:#fff;flex-shrink:0}
+  .cmp-name{font-weight:700;font-size:.85rem}
+  .cmp-orient-badge{font-size:.61rem;font-weight:700;padding:.12rem .38rem;border-radius:8px;margin-top:.18rem;display:inline-block}
+
+  /* Comparison table */
+  .cmp-placeholder{text-align:center;padding:2rem;color:var(--text3);font-size:.82rem}
+  .cmp-table{width:100%;border-collapse:collapse}
+  .cmp-table thead th{background:var(--bg2);font-size:.67rem;font-weight:700;text-transform:uppercase;letter-spacing:.07em;color:var(--text3);padding:.55rem .9rem;border-bottom:2px solid var(--border)}
+  .cmp-table thead th:nth-child(2),.cmp-table thead th:nth-child(3){text-align:center}
+  .cmp-table tbody tr:hover td{background:var(--bg2)}
+  .cmp-table td{padding:.5rem .9rem;font-size:.78rem;border-bottom:1px solid var(--border);vertical-align:middle}
+  .cmp-table tr:last-child td{border-bottom:none}
+  .cmp-row-lbl{display:flex;align-items:center;gap:.4rem;color:var(--text2)}
+  .cmp-row-lbl svg{flex-shrink:0;opacity:.6}
+  .cmp-cell{text-align:center}
+  .cmp-val{font-weight:700;font-size:.82rem}
+  .cmp-bar-duo{display:flex;flex-direction:column;gap:3px;min-width:120px}
+  .cmp-bar-row{display:flex;align-items:center;gap:.35rem}
+  .cmp-bar-track{flex:1;height:8px;background:var(--bg2);border-radius:4px;overflow:hidden}
+  .cmp-bar-fill{height:100%;border-radius:4px;width:0;transition:width .6s cubic-bezier(.25,.46,.45,.94)}
+  .cmp-badge-winner{display:inline-flex;align-items:center;gap:.2rem;font-size:.6rem;font-weight:700;padding:.08rem .32rem;border-radius:8px;background:#d4edda;color:#166534;white-space:nowrap}
+  .cmp-tag{display:inline-flex;font-size:.62rem;font-weight:600;padding:.1rem .35rem;border-radius:10px;margin:.05rem}
+  .cmp-tags-cell{text-align:left}
+  .cmp-win-a{background:#e8f4ff;color:#1a4f8a}
+  .cmp-win-b{background:#fff3e0;color:#e65100}
+  .cmp-radar-wrap{margin-top:1.2rem;display:flex;justify-content:center}
+  .cmp-radar{filter:drop-shadow(0 2px 8px rgba(0,0,0,.08))}
+  @media(max-width:640px){.cmp-selectors{grid-template-columns:1fr}}
+
+  @media(max-width:900px){.cards-grid{grid-template-columns:repeat(2,1fr)}.pie-grid{grid-template-columns:repeat(3,1fr)}}
+  @media(max-width:640px){
+    .hero-in h1{font-size:1.6rem}.cards-grid{grid-template-columns:1fr}.pie-grid{grid-template-columns:repeat(2,1fr)}
+    .nav-links{display:none;flex-direction:column;position:absolute;top:100%;left:0;right:0;background:rgba(13,27,42,.98);padding:1rem;z-index:999}
+    .nav-links.open{display:flex}.nav-toggle{display:block}
+    .filters-in{gap:.45rem}
+    #cookieBanner{bottom:.8rem;right:.8rem;left:.8rem;width:auto;max-width:none}
+  }
+  </style>
+</head>
+<body>
+
+<nav id="navbar" role="navigation" aria-label="Navigation principale">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 36" width="28" height="16" aria-hidden="true" style="display:inline-block;vertical-align:middle;flex-shrink:0"><path d="M32 34 A30 30 0 0 1 2 34 Z" fill="#B80000"/><path d="M32 34 A30 30 0 0 0 62 34 Z" fill="#003DA6"/><path d="M9 34 A23 23 0 0 1 32 11" fill="none" stroke="#E03030" stroke-width="3.8" stroke-linecap="round"/><path d="M15 34 A17 17 0 0 1 32 17" fill="none" stroke="#CC2222" stroke-width="3.8" stroke-linecap="round"/><path d="M21 34 A11 11 0 0 1 32 23" fill="none" stroke="#AA1515" stroke-width="3.8" stroke-linecap="round"/><path d="M55 34 A23 23 0 0 0 32 11" fill="none" stroke="#3366EE" stroke-width="3.8" stroke-linecap="round"/><path d="M49 34 A17 17 0 0 0 32 17" fill="none" stroke="#2255CC" stroke-width="3.8" stroke-linecap="round"/><path d="M43 34 A11 11 0 0 0 32 23" fill="none" stroke="#1144AA" stroke-width="3.8" stroke-linecap="round"/><line x1="32" y1="11" x2="32" y2="34" stroke="rgba(255,255,255,0.75)" stroke-width="1.5" stroke-dasharray="2,2"/><line x1="2" y1="34" x2="62" y2="34" stroke="rgba(255,255,255,0.55)" stroke-width="1.5"/></svg> <span>Comprendre la</span> Politique</a>
+    <button class="nav-arrow nav-arrow-left" id="navArrowLeft" aria-label="Défiler la navigation vers la gauche">&#8249;</button>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="index.html">Accueil</a></li>
+      <li><a href="partis-politiques.html">Partis politiques</a></li>
+      <li><a href="systeme-politique.html">Système politique</a></li>
+      <li><a href="culture-politique.html">Culture politique</a></li>
+      <li><a href="actualites-politiques.html">Actualités</a></li>
+      <li><a href="profils-electoraux.html" aria-current="page">Profils électoraux</a></li>
+      <li><a href="apprendre.html">Apprendre</a></li>
+    </ul>
+    <button class="nav-arrow nav-arrow-right" id="navArrowRight" aria-label="Défiler la navigation vers la droite">&#8250;</button>
+    <div class="nav-actions">
+      <button class="nav-toggle" id="navToggle" aria-label="Menu mobile">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</nav>
+
+<div class="hero">
+  <div class="hero-in">
+    <div class="hero-badge">📊 Analyse socio-électorale — INSEE, CEVIPOF, IFOP/IPSOS</div>
+    <h1>Profils électoraux<br><em>par parti politique</em></h1>
+    <p>Visualisez les tendances électorales françaises selon les caractéristiques socio-démographiques moyennes de chaque parti : âge, revenu, formation, localisation. 14 partis comparés sur données officielles.</p>
+    <div class="hero-note">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="flex-shrink:0;margin-top:1px"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+      Ces profils représentent des <strong>moyennes statistiques agrégées</strong>, pas des profils individuels. Un même électeur peut voter différemment selon les scrutins et les contextes locaux.
+    </div>
+  </div>
+</div>
+
+<div class="filters-bar">
+  <div class="filters-in">
+    <div class="filter-group">
+      <span class="filter-lbl">Parti</span>
+      <select class="filter-select" id="filtParti"><option value="">Tous les partis</option></select>
+    </div>
+    <div class="filter-group">
+      <span class="filter-lbl">Tranche d'âge</span>
+      <select class="filter-select" id="filtAge">
+        <option value="">Toutes</option>
+        <option value="jeune">Jeunes (&lt;35 ans)</option>
+        <option value="actif">Actifs (35–59 ans)</option>
+        <option value="senior">Seniors (60+ ans)</option>
+      </select>
+    </div>
+    <div class="filter-group">
+      <span class="filter-lbl">Revenu</span>
+      <select class="filter-select" id="filtRevenu">
+        <option value="">Tous</option>
+        <option value="bas">Bas (&lt;1 800 €)</option>
+        <option value="moyen">Moyen (1 800–3 000 €)</option>
+        <option value="haut">Haut (&gt;3 000 €)</option>
+      </select>
+    </div>
+    <button class="filter-reset" id="filtReset">
+      <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="display:inline;vertical-align:middle;margin-right:3px"><polyline points="1 4 1 10 7 10"/><path d="M3.51 15a9 9 0 1 0 .49-4.92"/></svg>
+      Réinitialiser
+    </button>
+    <span class="results-count" id="resultsCount">14 partis affichés</span>
+  </div>
+</div>
+
+<main class="main">
+
+  <div style="margin-bottom:1.4rem">
+    <h2 class="section-title">Profils moyens par parti</h2>
+    <p class="section-sub">Chaque bloc présente le profil socio-démographique type de l'électorat, basé sur les sondages IPSOS/IFOP post-électoraux, les études du CEVIPOF (Sciences Po) et les données INSEE.</p>
+  </div>
+  <div class="cards-grid" id="cardsGrid"></div>
+
+  <div style="margin-bottom:1.1rem">
+    <h2 class="section-title">Comparer deux partis</h2>
+    <p class="section-sub">Sélectionnez deux partis pour les comparer point par point sur tous les indicateurs socio-politiques.</p>
+  </div>
+  <div class="cmp-section">
+    <div class="cmp-selectors">
+      <div class="cmp-side" id="cmpSideA">
+        <div class="cmp-side-lbl">Parti A</div>
+        <select class="cmp-select" id="cmpSelA"><option value="">— Choisir un parti —</option></select>
+        <div class="cmp-logo-wrap" id="cmpLogoA"></div>
+      </div>
+      <div class="cmp-side" id="cmpSideB">
+        <div class="cmp-side-lbl">Parti B</div>
+        <select class="cmp-select" id="cmpSelB"><option value="">— Choisir un parti —</option></select>
+        <div class="cmp-logo-wrap" id="cmpLogoB"></div>
+      </div>
+    </div>
+    <div id="cmpResult"><div class="cmp-placeholder">Sélectionnez deux partis pour afficher la comparaison détaillée.</div></div>
+  </div>
+
+  <div style="margin-bottom:1.1rem">
+    <h2 class="section-title">Comparaison inter-partis</h2>
+    <p class="section-sub">Sélectionnez un indicateur pour comparer tous les partis sur un même critère.</p>
+  </div>
+  <div class="chart-section">
+    <div class="chart-tabs" id="chartTabs">
+      <button class="ctab active" data-chart="age">
+        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="display:inline;vertical-align:middle;margin-right:3px"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>Âge moyen
+      </button>
+      <button class="ctab" data-chart="revenu">
+        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="display:inline;vertical-align:middle;margin-right:3px"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>Revenu mensuel
+      </button>
+      <button class="ctab" data-chart="etudes">
+        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="display:inline;vertical-align:middle;margin-right:3px"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>Études sup.
+      </button>
+      <button class="ctab" data-chart="urbain">
+        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="display:inline;vertical-align:middle;margin-right:3px"><rect x="2" y="7" width="20" height="14" rx="2"/><polyline points="16 2 12 7 8 2"/></svg>Urbanisation
+      </button>
+      <button class="ctab" data-chart="participation">
+        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="display:inline;vertical-align:middle;margin-right:3px"><polyline points="9 11 12 14 22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>Participation
+      </button>
+    </div>
+    <div class="chart-wrap" id="chartWrap"></div>
+  </div>
+
+  <div style="margin-bottom:1.1rem">
+    <h2 class="section-title">Répartitions démographiques — 14 partis</h2>
+    <p class="section-sub">Comparaison visuelle des profils de chaque parti selon la catégorie sélectionnée. Les 14 partis sont affichés.</p>
+  </div>
+  <div class="pie-section">
+    <div class="chart-tabs" id="pieTabs">
+      <button class="ctab active" data-pie="localisation">
+        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="display:inline;vertical-align:middle;margin-right:3px"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg>Localisation
+      </button>
+      <button class="ctab" data-pie="csp">
+        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="display:inline;vertical-align:middle;margin-right:3px"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>Catégorie socio-pro.
+      </button>
+      <button class="ctab" data-pie="age_dist">
+        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="display:inline;vertical-align:middle;margin-right:3px"><line x1="8" y1="6" x2="21" y2="6"/><line x1="8" y1="12" x2="21" y2="12"/><line x1="8" y1="18" x2="21" y2="18"/><line x1="3" y1="6" x2="3.01" y2="6"/><line x1="3" y1="12" x2="3.01" y2="12"/><line x1="3" y1="18" x2="3.01" y2="18"/></svg>Tranches d'âge
+      </button>
+    </div>
+    <div class="pie-grid" id="pieGrid"></div>
+  </div>
+
+  <div class="edu-section">
+    <h2 class="section-title" style="margin-bottom:.3rem">Éclairages pédagogiques</h2>
+    <p class="section-sub">Quelques tendances électorales clés pour contextualiser les profils.</p>
+    <div class="edu-grid" id="eduGrid"></div>
+  </div>
+
+</main>
+
+<section class="exploration-section" aria-label="Continuer votre exploration politique">
+  <div class="exploration-inner">
+    <div style="text-align:center;margin-bottom:.4rem">
+      <span class="exploration-badge">🧭 Continuer l'exploration</span>
+    </div>
+    <h2 class="exploration-title">Allez plus loin dans votre<br><em>exploration politique</em></h2>
+    <p class="exploration-subtitle">Profils en contexte — explorez les partis, l'histoire et les actualités.</p>
+    <div class="exploration-grid">
+      <a href="partis-politiques.html" class="exploration-card">
+        <div class="exploration-icon">🗳️</div>
+        <div class="exploration-text"><strong>Partis politiques</strong><span>Programmes et positionnements des 14 partis →</span></div>
+        <div class="exploration-arrow">→</div>
+      </a>
+      <a href="actualites-politiques.html" class="exploration-card">
+        <div class="exploration-icon">📰</div>
+        <div class="exploration-text"><strong>Actualités politiques</strong><span>Suivre l'actualité en temps réel →</span></div>
+        <div class="exploration-arrow">→</div>
+      </a>
+      <a href="apprendre.html" class="exploration-card">
+        <div class="exploration-icon">🎓</div>
+        <div class="exploration-text"><strong>Quiz & Apprentissage</strong><span>Testez vos connaissances →</span></div>
+        <div class="exploration-arrow">→</div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<section class="share-section" aria-label="Partager">
+  <div class="share-inner">
+    <div class="share-title">📢 Partager ce site</div>
+    <div class="share-btns">
+      <a href="https://www.facebook.com/sharer/sharer.php?u=https://comprendrelapolitique.fr" target="_blank" rel="noopener noreferrer" class="share-btn sb-fb"><svg viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>Facebook</a>
+      <a href="https://twitter.com/intent/tweet?url=https://comprendrelapolitique.fr&text=Profils+%C3%A9lectoraux+par+parti+!" target="_blank" rel="noopener noreferrer" class="share-btn sb-x"><svg viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.74l7.73-8.835L1.254 2.25H8.08l4.253 5.622zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>X / Twitter</a>
+      <a href="https://www.linkedin.com/sharing/share-offsite/?url=https://comprendrelapolitique.fr" target="_blank" rel="noopener noreferrer" class="share-btn sb-li"><svg viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>LinkedIn</a>
+      <a href="https://api.whatsapp.com/send?text=Profils+%C3%A9lectoraux+%E2%86%92+https://comprendrelapolitique.fr" target="_blank" rel="noopener noreferrer" class="share-btn sb-wa"><svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>WhatsApp</a>
+      <a href="https://t.me/share/url?url=https://comprendrelapolitique.fr" target="_blank" rel="noopener noreferrer" class="share-btn sb-tg"><svg viewBox="0 0 24 24"><path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/></svg>Telegram</a>
+    </div>
+  </div>
+</section>
+
+<footer role="contentinfo">
+  <div class="footer-inner">
+    <div class="footer-logo">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 36" width="28" height="16" aria-hidden="true" style="display:inline-block;vertical-align:middle;flex-shrink:0;opacity:.9"><path d="M32 34 A30 30 0 0 1 2 34 Z" fill="#B80000"/><path d="M32 34 A30 30 0 0 0 62 34 Z" fill="#003DA6"/><path d="M9 34 A23 23 0 0 1 32 11" fill="none" stroke="#E03030" stroke-width="3.8" stroke-linecap="round"/><path d="M15 34 A17 17 0 0 1 32 17" fill="none" stroke="#CC2222" stroke-width="3.8" stroke-linecap="round"/><path d="M21 34 A11 11 0 0 1 32 23" fill="none" stroke="#AA1515" stroke-width="3.8" stroke-linecap="round"/><path d="M55 34 A23 23 0 0 0 32 11" fill="none" stroke="#3366EE" stroke-width="3.8" stroke-linecap="round"/><path d="M49 34 A17 17 0 0 0 32 17" fill="none" stroke="#2255CC" stroke-width="3.8" stroke-linecap="round"/><path d="M43 34 A11 11 0 0 0 32 23" fill="none" stroke="#1144AA" stroke-width="3.8" stroke-linecap="round"/><line x1="32" y1="11" x2="32" y2="34" stroke="rgba(255,255,255,0.75)" stroke-width="1.5" stroke-dasharray="2,2"/><line x1="2" y1="34" x2="62" y2="34" stroke="rgba(255,255,255,0.55)" stroke-width="1.5"/></svg>
+      <span>Comprendre la</span> Politique
+    </div>
+    <p>Site pédagogique à but éducatif. Contenu équilibré et non partisan.<br>Profils électoraux basés sur les données CEVIPOF, INSEE, IFOP/IPSOS.</p>
+    <div class="footer-links">
+      <a href="index.html">Accueil</a>
+      <a href="partis-politiques.html">Partis politiques</a>
+      <a href="systeme-politique.html">Système politique</a>
+      <a href="culture-politique.html">Culture politique</a>
+      <a href="actualites-politiques.html">Actualités</a>
+      <a href="profils-electoraux.html">Profils électoraux</a>
+      <a href="apprendre.html">Apprendre</a>
+      <a href="mentions-legales.html">Mentions légales</a>
+    </div>
+    <div class="ft-share" style="margin-top:1.2rem;padding-top:1.2rem;border-top:1px solid rgba(255,255,255,.08)">
+      <div class="ft-share-title">Partager ce site</div>
+      <div class="ft-share-btns">
+        <a href="https://www.facebook.com/sharer/sharer.php?u=https://comprendrelapolitique.fr" target="_blank" rel="noopener noreferrer" class="ft-share-btn"><svg viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg></a>
+        <a href="https://twitter.com/intent/tweet?url=https://comprendrelapolitique.fr" target="_blank" rel="noopener noreferrer" class="ft-share-btn"><svg viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.74l7.73-8.835L1.254 2.25H8.08l4.253 5.622zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
+        <a href="https://www.linkedin.com/sharing/share-offsite/?url=https://comprendrelapolitique.fr" target="_blank" rel="noopener noreferrer" class="ft-share-btn"><svg viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></a>
+        <a href="https://api.whatsapp.com/send?text=comprendrelapolitique.fr" target="_blank" rel="noopener noreferrer" class="ft-share-btn"><svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg></a>
+        <a href="https://t.me/share/url?url=https://comprendrelapolitique.fr" target="_blank" rel="noopener noreferrer" class="ft-share-btn"><svg viewBox="0 0 24 24"><path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/></svg></a>
+      </div>
+    </div>
+    <p style="margin-top:1.5rem;font-size:.7rem">© 2026 Comprendre la Politique — comprendrelapolitique.fr | Contenu pédagogique, non partisan</p>
+  </div>
+</footer>
+
+<button id="scrollTopBtn" aria-label="Retour en haut">↑</button>
+<div id="cookieBanner" role="dialog" aria-label="Consentement cookies">
+  <div class="ck-title">🍪 Ce site utilise des cookies</div>
+  <p>Google Analytics est utilisé <strong>uniquement pour mesurer l'audience</strong>.</p>
+  <div class="ck-actions">
+    <a href="mentions-legales.html" class="ck-link">Politique de confidentialité</a>
+    <button class="ck-accept" id="cookieAccept">Accepter</button>
+  </div>
+</div>
+
+<script>
+/* ════════════════════════════════════════════════════
+   DONNÉES — ordre: RN, LFI, RE, PS, LR, MoDem, EELV, PCF, Horizons, R!, UDI, NPA, LO, PRG
+   Sources: CEVIPOF, IFOP, IPSOS, INSEE, TNS-Sofres
+════════════════════════════════════════════════════ */
+const PARTIS = [
+  {id:"rn",nom:"Rassemblement National",logo:"https://www.tv83.info/wp-content/uploads/2024/02/Logo_alternatif_Rassemblement_national_2018.png",couleur:"#182B70",orient:"Extrême droite",orientBg:"#fdecea",orientCl:"#991b1b",ageMoyen:47,revenuMoyen:1820,revenuCateg:"bas",ageCat:"actif",etudes:28,urbain:38,periurbain:42,rural:20,localisation:"periurbain",csp:{emp:38,ouvrier:29,retraite:24,etudiant:5,autre:4},aides:["Chômage","RSA","AAH"],ageDistrib:{moins35:22,entre35_59:38,plus60:40},participation:75,score2022:23.2,notes:"Électorat populaire et périurbain, très présent dans les zones désindustrialisées (Nord, Moselle, Var, Pas-de-Calais). Fort sentiment de déclassement, rejet des élites.",etude:"Bac ou CAP/BEP (62%). Faible part de diplômés du supérieur."},
+  {id:"lfi",nom:"La France Insoumise",logo:"https://lfi72-la-france-insoumise.fr/wp-content/uploads/2025/02/LFI-logo-site.png",couleur:"#be1622",orient:"Gauche radicale",orientBg:"#fdecea",orientCl:"#c0392b",ageMoyen:38,revenuMoyen:1720,revenuCateg:"bas",ageCat:"jeune",etudes:45,urbain:58,periurbain:28,rural:14,localisation:"urbain",csp:{emp:30,ouvrier:22,retraite:12,etudiant:22,autre:14},aides:["RSA","APL","Chômage"],ageDistrib:{moins35:42,entre35_59:35,plus60:23},participation:65,score2022:22.0,notes:"Électorat jeune, étudiant et populaire urbain. Forte présence dans les banlieues (93, 94) et les villes universitaires. Profil très jeune et très divers socialement.",etude:"Bac+2/+3 en cours ou obtenu. Fort taux d'étudiants dans l'électorat."},
+  {id:"renaiss",nom:"Renaissance / Ensemble",logo:"https://upload.wikimedia.org/wikipedia/commons/thumb/7/75/Renaissance-logotype-officiel.svg/200px-Renaissance-logotype-officiel.svg.png",couleur:"#006EB7",orient:"Centre",orientBg:"#e0f2fe",orientCl:"#0369a1",ageMoyen:49,revenuMoyen:2850,revenuCateg:"moyen",ageCat:"senior",etudes:58,urbain:62,periurbain:28,rural:10,localisation:"urbain",csp:{emp:42,ouvrier:8,retraite:32,etudiant:8,autre:10},aides:["Complémentaire santé"],ageDistrib:{moins35:18,entre35_59:36,plus60:46},participation:83,score2022:27.9,notes:"Électorat urbain et diplômé, cadres et professions libérales. Forte présence dans les grandes métropoles et chez les retraités des classes moyennes supérieures.",etude:"Bac+3 et plus (58%). Cadres, professions intellectuelles, enseignants supérieurs."},
+  {id:"ps",nom:"Parti Socialiste",logo:"https://upload.wikimedia.org/wikipedia/fr/d/d1/Logo_Parti_socialiste_%28France%29_2016.png",couleur:"#E8003D",orient:"Gauche",orientBg:"#fdecea",orientCl:"#c0392b",ageMoyen:52,revenuMoyen:2200,revenuCateg:"moyen",ageCat:"actif",etudes:55,urbain:60,periurbain:28,rural:12,localisation:"urbain",csp:{emp:42,ouvrier:12,retraite:34,etudiant:7,autre:5},aides:["Complémentaire santé"],ageDistrib:{moins35:15,entre35_59:38,plus60:47},participation:80,score2022:1.75,notes:"Électorat vieillissant : fonctionnaires et enseignants. Perte massive d'électorat vers LFI (populaire) et EELV (diplômés) depuis 2012.",etude:"Bac+3 (55%). Enseignants, fonctionnaires, travailleurs sociaux."},
+  {id:"lr",nom:"Les Républicains",logo:"https://upload.wikimedia.org/wikipedia/commons/thumb/5/5c/CGLR2023_-_4.png/200px-CGLR2023_-_4.png",couleur:"#0066CC",orient:"Droite",orientBg:"#e0f2fe",orientCl:"#1a4f8a",ageMoyen:57,revenuMoyen:3100,revenuCateg:"haut",ageCat:"senior",etudes:62,urbain:52,periurbain:30,rural:18,localisation:"urbain",csp:{emp:38,ouvrier:6,retraite:42,etudiant:5,autre:9},aides:[],ageDistrib:{moins35:10,entre35_59:30,plus60:60},participation:88,score2022:4.8,notes:"Électorat très âgé — retraités des classes supérieures, catholiques pratiquants. Effondrement de la base électorale depuis 2017 (perte vers RN et Reconquête).",etude:"Bac+3 et plus (62%). Cadres, chefs d'entreprise, professions libérales."},
+  {id:"modem",nom:"MoDem",logo:"https://upload.wikimedia.org/wikipedia/commons/0/08/Mouvement-Democrate-Logo-2019.png",couleur:"#FF7900",orient:"Centre",orientBg:"#fef9c3",orientCl:"#854d0e",ageMoyen:53,revenuMoyen:2950,revenuCateg:"moyen",ageCat:"senior",etudes:65,urbain:60,periurbain:28,rural:12,localisation:"urbain",csp:{emp:44,ouvrier:5,retraite:38,etudiant:6,autre:7},aides:[],ageDistrib:{moins35:12,entre35_59:38,plus60:50},participation:85,score2022:null,notes:"Parti de François Bayrou, électorat centriste très diplômé. Proches des chrétiens-démocrates européens. Fort dans le Béarn et les zones catholiques modérées.",etude:"Bac+3 et plus (65%). Profils similaires à LR mais plus centristes."},
+  {id:"eelv",nom:"EELV / Les Écologistes",logo:"https://lesecologistes-paris11.org/wp-content/uploads/2025/06/bd19b-logo_eelv-fond-blanc.png",couleur:"#00A850",orient:"Gauche écologiste",orientBg:"#d4edda",orientCl:"#166534",ageMoyen:41,revenuMoyen:2650,revenuCateg:"moyen",ageCat:"actif",etudes:72,urbain:74,periurbain:20,rural:6,localisation:"urbain",csp:{emp:48,ouvrier:4,retraite:16,etudiant:18,autre:14},aides:["APL"],ageDistrib:{moins35:32,entre35_59:45,plus60:23},participation:79,score2022:4.6,notes:"Électorat le plus diplômé de France. Cadres supérieurs et professions intellectuelles dans les grandes villes. Fort en Lyon, Bordeaux, Strasbourg, Grenoble (mairies gagnées en 2020).",etude:"Bac+4 et plus (72%). Enseignants, ingénieurs, cadres supérieurs."},
+  {id:"pcf",nom:"Parti Communiste Français",logo:"https://upload.wikimedia.org/wikipedia/fr/thumb/6/6a/Logo_du_Parti_communiste_fran%C3%A7ais_%282018%2C_rouge%29.svg/200px-Logo_du_Parti_communiste_fran%C3%A7ais_%282018%2C_rouge%29.svg.png",couleur:"#C1282A",orient:"Gauche radicale",orientBg:"#fdecea",orientCl:"#991b1b",ageMoyen:54,revenuMoyen:1850,revenuCateg:"bas",ageCat:"actif",etudes:32,urbain:48,periurbain:30,rural:22,localisation:"periurbain",csp:{emp:28,ouvrier:34,retraite:32,etudiant:4,autre:2},aides:["Chômage","Retraite complémentaire"],ageDistrib:{moins35:12,entre35_59:38,plus60:50},participation:72,score2022:2.3,notes:"Ancien parti ouvrier, électorat vieillissant concentré dans la banlieue rouge parisienne (93, 94) et les bassins miniers. Résiste par sa présence municipale.",etude:"CAP/BEP ou bac pro (60%). Ouvriers qualifiés, agents de la fonction publique."},
+  {id:"horizons",nom:"Horizons",logo:"https://upload.wikimedia.org/wikipedia/commons/thumb/5/55/Logo_Parti_Politique_Horizons_-_2021.svg/200px-Logo_Parti_Politique_Horizons_-_2021.svg.png",couleur:"#00B0E8",orient:"Centre droit",orientBg:"#e0f2fe",orientCl:"#0369a1",ageMoyen:51,revenuMoyen:2800,revenuCateg:"moyen",ageCat:"actif",etudes:60,urbain:58,periurbain:30,rural:12,localisation:"urbain",csp:{emp:45,ouvrier:7,retraite:35,etudiant:6,autre:7},aides:[],ageDistrib:{moins35:14,entre35_59:40,plus60:46},participation:82,score2022:null,notes:"Parti fondé par Édouard Philippe, légèrement plus à droite que Renaissance. Forte implantation en Normandie et dans les villes de taille moyenne à travers les maires élus.",etude:"Bac+3 et plus (60%). Cadres, chefs de PME, élus locaux."},
+  {id:"reconq",nom:"Reconquête !",logo:"https://upload.wikimedia.org/wikipedia/commons/thumb/d/da/Logo_of_the_Reconquest_%28political_party%29.svg/200px-Logo_of_the_Reconquest_%28political_party%29.svg.png",couleur:"#1e1e5e",orient:"Extrême droite",orientBg:"#fdecea",orientCl:"#991b1b",ageMoyen:43,revenuMoyen:2600,revenuCateg:"moyen",ageCat:"actif",etudes:50,urbain:55,periurbain:30,rural:15,localisation:"urbain",csp:{emp:42,ouvrier:14,retraite:26,etudiant:10,autre:8},aides:[],ageDistrib:{moins35:28,entre35_59:42,plus60:30},participation:70,score2022:7.1,notes:"Plus jeune et plus diplômé que le RN. Forte présence dans PACA et les zones à forte immigration. Profil 'conservateur urbain' qui se distingue de l'électorat RN classique.",etude:"Bac+2 à bac+3 (50%). Cadres moyens, indépendants, professions libérales conservatrices."},
+  {id:"udi",nom:"Union Démocrates Indépendants",logo:"https://upload.wikimedia.org/wikipedia/commons/6/60/Logo_UDI_2019.png",couleur:"#00AACC",orient:"Centre droit",orientBg:"#e0f2fe",orientCl:"#0369a1",ageMoyen:54,revenuMoyen:2900,revenuCateg:"moyen",ageCat:"senior",etudes:60,urbain:52,periurbain:30,rural:18,localisation:"urbain",csp:{emp:40,ouvrier:8,retraite:40,etudiant:5,autre:7},aides:[],ageDistrib:{moins35:11,entre35_59:34,plus60:55},participation:83,score2022:null,notes:"Héritier de la démocratie chrétienne et du centre droit, ancienne UDF. Élus locaux nombreux dans l'Est et les régions catholiques. Très proches de LR et MoDem.",etude:"Bac+3 et plus (60%). Cadres, élus locaux, chefs d'entreprise."},
+  {id:"npa",nom:"Nouveau Parti Anticapitaliste",logo:"https://npa-lanticapitaliste.org/sites/default/files/styles/large/public/autocollant-npa-identitaire-horizontal.jpg",couleur:"#cc0000",orient:"Extrême gauche",orientBg:"#fdecea",orientCl:"#991b1b",ageMoyen:36,revenuMoyen:1600,revenuCateg:"bas",ageCat:"jeune",etudes:52,urbain:70,periurbain:22,rural:8,localisation:"urbain",csp:{emp:26,ouvrier:20,retraite:8,etudiant:32,autre:14},aides:["RSA","Chômage","APL"],ageDistrib:{moins35:48,entre35_59:36,plus60:16},participation:55,score2022:0.77,notes:"Électorat très jeune : étudiants militants et précaires urbains. Présence dans les universités et les villes de gauche. Électorat mobile, pouvant voter LFI ou s'abstenir.",etude:"Bac+2/+3 (52%). Nombreux étudiants, militants syndicaux, précaires qualifiés."},
+  {id:"lo",nom:"Lutte Ouvrière",logo:"https://upload.wikimedia.org/wikipedia/commons/e/e0/Logo_de_Lutte_Ouvri%C3%A8re.png",couleur:"#cc0000",orient:"Extrême gauche",orientBg:"#fdecea",orientCl:"#991b1b",ageMoyen:48,revenuMoyen:1550,revenuCateg:"bas",ageCat:"actif",etudes:35,urbain:55,periurbain:30,rural:15,localisation:"urbain",csp:{emp:18,ouvrier:42,retraite:28,etudiant:8,autre:4},aides:["Chômage","RSA"],ageDistrib:{moins35:18,entre35_59:45,plus60:37},participation:58,score2022:0.56,notes:"Électorat ouvrier militant, fidèle à la tradition trotskyste. Concentré dans les zones industrielles et les bassins employant de grands groupes. Électorat stable mais en déclin.",etude:"CAP/BEP ou bac pro (65%). Ouvriers d'usine, agents SNCF, postiers."},
+  {id:"prg",nom:"Parti Radical de Gauche",logo:"https://upload.wikimedia.org/wikipedia/fr/1/12/Logotype_PRG_Le_centre_gauche.png",couleur:"#e05c00",orient:"Centre gauche",orientBg:"#fef3ea",orientCl:"#c2500a",ageMoyen:55,revenuMoyen:2400,revenuCateg:"moyen",ageCat:"senior",etudes:58,urbain:55,periurbain:28,rural:17,localisation:"urbain",csp:{emp:40,ouvrier:10,retraite:40,etudiant:5,autre:5},aides:[],ageDistrib:{moins35:10,entre35_59:36,plus60:54},participation:78,score2022:null,notes:"Héritier du radicalisme républicain, partenaire historique du PS. Électorat rural et provincial, instituteurs et petits fonctionnaires. Fort dans le Sud-Ouest (Gers, Lot-et-Garonne).",etude:"Bac+2 à bac+3 (58%). Enseignants, fonctionnaires, petits indépendants."}
+];
+
+const EDU_DATA = [
+  {badge:"Vague verte 2020",badgeBg:"#d4edda",badgeCl:"#166634",accent:"#00A850",titre:"La montée de l'électorat écologiste dans les grandes villes",texte:"En 2020, les municipales ont révélé un électorat EELV jeune, diplômé et urbain qui a permis de remporter Lyon, Bordeaux, Strasbourg, Grenoble et Tours. Cet électorat (72% diplômés du sup.) est constitué dans les zones urbaines denses, animé par les enjeux climatiques et la critique de la voiture individuelle.",source:"CEVIPOF — Enquête post-municipales 2020"},
+  {badge:"Géographie du vote RN",badgeBg:"#e8eaf6",badgeCl:"#283593",accent:"#182B70",titre:"L'électorat RN : périurbain et désindustrialisé",texte:"L'électorat RN n'est pas uniquement rural. Il est très fort dans les zones périurbaines et anciennement industrielles (Nord, Moselle, Var, Pas-de-Calais). Revenu moyen inférieur à la médiane nationale, fort taux de chômage, sentiment de déclassement social marqué.",source:"IFOP — Sociologie du vote RN 2022"},
+  {badge:"Fracture éducative",badgeBg:"#f0e8f8",badgeCl:"#6b21a8",accent:"#7c3aed",titre:"Le diplôme, premier prédicteur du vote en France",texte:"La corrélation diplôme-vote est l'une des plus fortes jamais mesurée. Les bac+4 et plus votent à 72% EELV, Renaissance ou LR au premier tour 2022. Les non-diplômés votent à 43% RN ou LFI. Cette fracture s'est creusée depuis 2012 et structure désormais l'ensemble du champ politique.",source:"TNS-Sofres / OpinionWay — Sociologie du vote 2022"},
+  {badge:"Abstention des jeunes",badgeBg:"#fef9c3",badgeCl:"#854d0e",accent:"#d4a843",titre:"Jeunes et participation : une fracture persistante",texte:"Aux présidentielles 2022, seuls 40% des 18-24 ans ont voté au 1er tour. Pourtant, parmi ceux qui votent, les jeunes sont surreprésentés chez LFI (31%) et EELV (9%). L'abstention témoigne d'une distanciation vis-à-vis des institutions, pas d'une absence de préférence politique.",source:"IPSOS — Qui a voté pour qui ? Présidentielle 2022"},
+  {badge:"LR vieillit",badgeBg:"#e8f0fa",badgeCl:"#1a4f8a",accent:"#0066CC",titre:"La droite classique face au défi générationnel",texte:"L'âge médian de l'électorat LR est passé de 47 ans (2007) à 57 ans (2022). 60% de l'électorat LR a plus de 60 ans. Sans renouvellement, le parti risque une érosion mécanique. Paradoxe : ses idées sur l'autorité attirent des jeunes qui votent plutôt RN.",source:"CEVIPOF — Baromètre politique vague 13, 2022"},
+  {badge:"Classes populaires divisées",badgeBg:"#fef3ea",badgeCl:"#c2500a",accent:"#e07b3c",titre:"Ouvriers et employés : entre LFI, RN et abstention",texte:"Les classes populaires qui votaient massivement PS dans les années 1980 sont aujourd'hui divisées : 37% pour le RN, 23% pour LFI, 20% abstention. La désindustrialisation et le sentiment d'abandon ont fracturé ce bloc historiquement homogène.",source:"IFOP — Sociologie du vote des classes populaires 2022"}
+];
+
+/* ════════════════════════════════════════════════════
+   STATE
+════════════════════════════════════════════════════ */
+let S = {filtParti:"",filtAge:"",filtRevenu:"",currentChart:"age",currentPie:"localisation",visible:[...PARTIS]};
+
+/* ════════════════════════════════════════════════════
+   LOGO HELPER
+════════════════════════════════════════════════════ */
+function logoImg(p, w, h, klass, fallbackSize) {
+  if (p.logo) {
+    return `<img class="${klass}" src="${p.logo}" alt="${p.nom}" loading="lazy" width="${w}" height="${h}" onerror="this.style.display='none';this.nextElementSibling&&(this.nextElementSibling.style.display='flex')"/>` +
+           `<div class="pcard-logo-fb" style="display:none;background:${p.couleur};width:${w}px;height:${h}px;font-size:${fallbackSize||'.65rem'}">${p.nom.charAt(0)}</div>`;
+  }
+  return `<div class="pcard-logo-fb" style="background:${p.couleur};width:${w}px;height:${h}px;font-size:${fallbackSize||'.65rem'}">${p.nom.charAt(0)}</div>`;
+}
+
+/* ════════════════════════════════════════════════════
+   BUILD CARDS
+════════════════════════════════════════════════════ */
+function buildCards() {
+  const grid = document.getElementById("cardsGrid");
+  grid.innerHTML = "";
+  PARTIS.forEach(p => {
+    const card = document.createElement("div");
+    card.className = "pcard" + (S.visible.find(v=>v.id===p.id) ? "" : " hidden");
+    card.dataset.id = p.id;
+    card.style.borderTop = `3px solid ${p.couleur}`;
+    const aidesTags = p.aides.length
+      ? p.aides.map(a=>`<span class="tag t-all">${a}</span>`).join("")
+      : `<span class="tag" style="background:var(--bg2);color:var(--text3)">Aucune spécifique</span>`;
+    const locTags = `<span class="tag t-urb">${p.urbain}% urbain</span><span class="tag t-per">${p.periurbain}% périurb.</span><span class="tag t-rur">${p.rural}% rural</span>`;
+    card.innerHTML = `
+      <div class="pcard-top">
+        ${logoImg(p,54,38,"pcard-logo",'.7rem')}
+        <div class="pcard-hdr">
+          <div class="pcard-name">${p.nom}</div>
+          <div class="pcard-orient"><span class="orient-badge" style="background:${p.orientBg};color:${p.orientCl}">${p.orient}</span></div>
+        </div>
+        <div class="pcard-score" style="color:${p.couleur}">${p.score2022?p.score2022.toFixed(1)+"%":"—"}<span class="pcard-score-lbl">Prés. 2022 R1</span></div>
+      </div>
+      <div class="pcard-body">
+        <div class="stat-row">
+          <svg class="stat-ico" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+          <span class="stat-key">Âge moyen</span>
+          <div class="stat-bar-wrap"><div class="stat-bar" style="background:${p.couleur}" data-w="${Math.min((p.ageMoyen/70)*100,100).toFixed(0)}"></div></div>
+          <span class="stat-val">${p.ageMoyen} ans</span>
+        </div>
+        <div class="stat-row">
+          <svg class="stat-ico" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+          <span class="stat-key">Revenu mensuel</span>
+          <div class="stat-bar-wrap"><div class="stat-bar" style="background:${p.couleur}" data-w="${Math.min((p.revenuMoyen/4000)*100,100).toFixed(0)}"></div></div>
+          <span class="stat-val">${p.revenuMoyen.toLocaleString("fr-FR")} €</span>
+        </div>
+        <div class="stat-row">
+          <svg class="stat-ico" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
+          <span class="stat-key">Études sup.</span>
+          <div class="stat-bar-wrap"><div class="stat-bar" style="background:${p.couleur}" data-w="${p.etudes}"></div></div>
+          <span class="stat-val">${p.etudes}%</span>
+        </div>
+        <div class="stat-row">
+          <svg class="stat-ico" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 11 12 14 22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
+          <span class="stat-key">Participation</span>
+          <div class="stat-bar-wrap"><div class="stat-bar" style="background:${p.couleur}" data-w="${p.participation}"></div></div>
+          <span class="stat-val">${p.participation}%</span>
+        </div>
+        <div class="stat-row" style="flex-wrap:wrap;gap:.3rem">
+          <svg class="stat-ico" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg>
+          <span class="stat-key">Localisation</span>
+          <div class="stat-tags">${locTags}</div>
+        </div>
+        <div class="stat-row" style="flex-wrap:wrap;gap:.3rem;border-bottom:none">
+          <svg class="stat-ico" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+          <span class="stat-key">Aides fréquentes</span>
+          <div class="stat-tags">${aidesTags}</div>
+        </div>
+        <div class="pcard-note" style="background:${p.couleur}0d;border-left:3px solid ${p.couleur}20">
+          <div style="font-size:.65rem;font-weight:700;color:${p.couleur};margin-bottom:.25rem;text-transform:uppercase;letter-spacing:.05em">Formation type</div>
+          <p style="font-size:.71rem;color:var(--text2);line-height:1.5">${p.etude}</p>
+          <p style="font-size:.71rem;color:var(--text2);line-height:1.55;margin-top:.35rem;border-top:1px solid ${p.couleur}20;padding-top:.35rem">${p.notes}</p>
+        </div>
+      </div>`;
+    grid.appendChild(card);
+  });
+  animBars();
+}
+
+function animBars() {
+  requestAnimationFrame(()=>requestAnimationFrame(()=>{
+    document.querySelectorAll(".stat-bar[data-w]").forEach(el=>{el.style.width=el.dataset.w+"%";});
+  }));
+}
+
+function filterCards() {
+  S.visible = PARTIS.filter(p=>{
+    if(S.filtParti && p.id!==S.filtParti) return false;
+    if(S.filtAge==="jeune" && p.ageCat!=="jeune") return false;
+    if(S.filtAge==="actif" && p.ageCat!=="actif") return false;
+    if(S.filtAge==="senior" && p.ageCat!=="senior") return false;
+    if(S.filtRevenu==="bas" && p.revenuCateg!=="bas") return false;
+    if(S.filtRevenu==="moyen" && p.revenuCateg!=="moyen") return false;
+    if(S.filtRevenu==="haut" && p.revenuCateg!=="haut") return false;
+    return true;
+  });
+  document.querySelectorAll(".pcard").forEach(card=>{
+    card.classList.toggle("hidden",!S.visible.find(p=>p.id===card.dataset.id));
+  });
+  document.getElementById("resultsCount").textContent = S.visible.length+" parti"+(S.visible.length>1?"s":"")+" affiché"+(S.visible.length>1?"s":"");
+  renderChart(S.currentChart);
+}
+
+/* ════════════════════════════════════════════════════
+   BAR CHART
+════════════════════════════════════════════════════ */
+function renderChart(type) {
+  S.currentChart = type;
+  const wrap = document.getElementById("chartWrap");
+  const partis = S.visible.length > 0 ? S.visible : PARTIS;
+  const data = partis.map(p => {
+    let val, label;
+    if(type==="age"){val=p.ageMoyen;label=p.ageMoyen+" ans";}
+    else if(type==="revenu"){val=p.revenuMoyen;label=p.revenuMoyen.toLocaleString("fr-FR")+" €";}
+    else if(type==="etudes"){val=p.etudes;label=p.etudes+"%";}
+    else if(type==="urbain"){val=p.urbain;label=p.urbain+"%";}
+    else{val=p.participation;label=p.participation+"%";}
+    return {p,val,label};
+  }).sort((a,b)=>b.val-a.val);
+  const maxVal = Math.max(...data.map(d=>d.val));
+  let html = '<div class="bar-chart">';
+  data.forEach(({p,val,label})=>{
+    const pct = Math.round((val/maxVal)*100);
+    const logoH = p.logo
+      ? `<img class="bc-logo" src="${p.logo}" alt="${p.nom}" onerror="this.style.display='none';this.insertAdjacentHTML('afterend','<span class=\'bc-fb\' style=\'background:${p.couleur}\'>${p.nom.charAt(0)}</span>')">`
+      : `<span class="bc-fb" style="background:${p.couleur}">${p.nom.charAt(0)}</span>`;
+    html += `<div class="bc-row">
+      <div class="bc-lbl">${logoH}<span title="${p.nom}">${p.nom.length>22?p.nom.substring(0,21)+"…":p.nom}</span></div>
+      <div class="bc-track">
+        <div class="bc-fill" style="background:linear-gradient(90deg,${p.couleur}dd,${p.couleur})" data-w="${pct}">
+          <span>${label}</span>
+        </div>
+      </div>
+      <div class="bc-val" style="color:${p.couleur}">${label}</div>
+    </div>`;
+  });
+  html += "</div>";
+  wrap.innerHTML = html;
+  requestAnimationFrame(()=>requestAnimationFrame(()=>{
+    wrap.querySelectorAll(".bc-fill").forEach(el=>{el.style.width=el.dataset.w+"%";});
+  }));
+}
+
+/* ════════════════════════════════════════════════════
+   DONUT PIE CHARTS — all 14 parties
+════════════════════════════════════════════════════ */
+function getSlices(p, type) {
+  if(type==="localisation") return [
+    {l:"Urbain",v:p.urbain,c:"#1a73e8"},{l:"Périurb.",v:p.periurbain,c:"#fbbc04"},{l:"Rural",v:p.rural,c:"#34a853"}
+  ];
+  if(type==="csp") return [
+    {l:"Employé/Cadre",v:p.csp.emp,c:"#1a73e8"},{l:"Ouvrier",v:p.csp.ouvrier,c:"#e07b3c"},{l:"Retraité",v:p.csp.retraite,c:"#9aa0a6"},{l:"Étudiant",v:p.csp.etudiant,c:"#ea4335"},{l:"Autre",v:p.csp.autre||0,c:"#fbbc04"}
+  ];
+  // age_dist
+  const ad=p.ageDistrib;
+  return [
+    {l:"<35 ans",v:ad.moins35,c:"#34a853"},{l:"35-59",v:ad.entre35_59,c:"#1a73e8"},{l:"60+",v:ad.plus60,c:"#9aa0a6"}
+  ];
+}
+
+function buildDonutSVG(slices, size, mainVal, mainLbl) {
+  const r = size/2 - 4, cx = size/2, cy = size/2;
+  const total = slices.reduce((s,x)=>s+x.v,0);
+  if(!total) return "";
+  const strokeW = 10;
+  let paths = "";
+  let offset = 0;
+  const circ = 2*Math.PI*r;
+  slices.forEach(s=>{
+    const dash = (s.v/total)*circ;
+    const gap = circ - dash;
+    paths += `<circle cx="${cx}" cy="${cy}" r="${r}" fill="none" stroke="${s.c}" stroke-width="${strokeW}" stroke-dasharray="${dash.toFixed(2)} ${gap.toFixed(2)}" stroke-dashoffset="${-offset.toFixed(2)}" style="transform:rotate(-90deg);transform-origin:center;transition:stroke-dasharray .6s ease"/>`;
+    offset += dash;
+  });
+  return `<svg width="${size}" height="${size}" viewBox="0 0 ${size} ${size}">${paths}</svg>`;
+}
+
+function renderPie(type) {
+  S.currentPie = type;
+  const grid = document.getElementById("pieGrid");
+  grid.innerHTML = "";
+  PARTIS.forEach(p=>{
+    const slices = getSlices(p, type);
+    const topSlice = [...slices].sort((a,b)=>b.v-a.v)[0];
+    const card = document.createElement("div");
+    card.className = "pie-card";
+
+    const logoH = p.logo
+      ? `<img class="pie-logo" src="${p.logo}" alt="${p.nom}" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"/><div class="pie-logo-fb" style="display:none;background:${p.couleur}">${p.nom.charAt(0)}</div>`
+      : `<div class="pie-logo-fb" style="background:${p.couleur}">${p.nom.charAt(0)}</div>`;
+
+    const legendH = slices.filter(s=>s.v>0).map(s=>
+      `<div class="pie-mini-li"><div class="pie-mini-dot" style="background:${s.c}"></div><span style="flex:1">${s.l}</span><strong>${s.v}%</strong></div>`
+    ).join("");
+
+    card.innerHTML = `
+      <div class="pie-logo-wrap">${logoH}</div>
+      <div class="pie-name" style="color:${p.couleur}" title="${p.nom}">${p.nom.length>17?p.nom.substring(0,16)+"…":p.nom}</div>
+      <div class="pie-donut">
+        ${buildDonutSVG(slices, 80, topSlice.v, topSlice.l)}
+        <div class="pie-donut-center">
+          <span class="pie-donut-val" style="color:${topSlice.c}">${topSlice.v}%</span>
+          <span class="pie-donut-lbl" style="font-size:.44rem;text-align:center;line-height:1.1">${topSlice.l}</span>
+        </div>
+      </div>
+      <div class="pie-mini-legend">${legendH}</div>`;
+    grid.appendChild(card);
+  });
+}
+
+/* ════════════════════════════════════════════════════
+   EDU CARDS
+════════════════════════════════════════════════════ */
+function buildEdu() {
+  const grid = document.getElementById("eduGrid");
+  EDU_DATA.forEach(e=>{
+    const card = document.createElement("div");
+    card.className = "edu-card";
+    card.style.borderLeftColor = e.accent;
+    card.innerHTML = `
+      <span class="edu-badge" style="background:${e.badgeBg};color:${e.badgeCl}">${e.badge}</span>
+      <div class="edu-title">${e.titre}</div>
+      <p class="edu-text">${e.texte}</p>
+      <div class="edu-src">
+        <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
+        ${e.source}
+      </div>`;
+    grid.appendChild(card);
+  });
+}
+
+/* ════════════════════════════════════════════════════
+   FILTER EVENTS
+════════════════════════════════════════════════════ */
+function buildDropdown() {
+  const sel = document.getElementById("filtParti");
+  PARTIS.forEach(p=>{const o=document.createElement("option");o.value=p.id;o.textContent=p.nom;sel.appendChild(o);});
+}
+document.getElementById("filtParti").addEventListener("change",function(){S.filtParti=this.value;filterCards();renderPie(S.currentPie);});
+document.getElementById("filtAge").addEventListener("change",function(){S.filtAge=this.value;filterCards();renderPie(S.currentPie);});
+document.getElementById("filtRevenu").addEventListener("change",function(){S.filtRevenu=this.value;filterCards();renderPie(S.currentPie);});
+document.getElementById("filtReset").addEventListener("click",function(){
+  S.filtParti="";S.filtAge="";S.filtRevenu="";
+  document.getElementById("filtParti").value="";document.getElementById("filtAge").value="";document.getElementById("filtRevenu").value="";
+  S.visible=[...PARTIS];
+  document.querySelectorAll(".pcard").forEach(c=>c.classList.remove("hidden"));
+  document.getElementById("resultsCount").textContent=PARTIS.length+" partis affichés";
+  renderChart(S.currentChart);renderPie(S.currentPie);
+});
+document.querySelectorAll(".ctab").forEach(tab=>{
+  tab.addEventListener("click",function(){
+    const chart=this.dataset.chart,pie=this.dataset.pie;
+    if(chart){document.querySelectorAll("#chartTabs .ctab").forEach(t=>t.classList.remove("active"));this.classList.add("active");renderChart(chart);}
+    else if(pie){document.querySelectorAll("#pieTabs .ctab").forEach(t=>t.classList.remove("active"));this.classList.add("active");renderPie(pie);}
+  });
+});
+
+/* ════════════════════════════════════════════════════
+   MISC
+════════════════════════════════════════════════════ */
+(function(){
+  const nb=document.getElementById("navbar"),sb=document.getElementById("scrollTopBtn");
+  window.addEventListener("scroll",()=>{nb.classList.toggle("scrolled",window.scrollY>50);if(sb){sb.style.opacity=window.scrollY>400?"1":"0";sb.style.pointerEvents=window.scrollY>400?"all":"none";}},{passive:true});
+  if(sb)sb.onclick=()=>window.scrollTo({top:0,behavior:"smooth"});
+  const tgl=document.getElementById("navToggle"),lnk=document.getElementById("navLinks");
+  if(tgl&&lnk)tgl.onclick=()=>lnk.classList.toggle("open");
+  const ul=lnk,bL=document.getElementById("navArrowLeft"),bR=document.getElementById("navArrowRight");
+  if(bL&&bR&&ul){
+    function ua(){bL.classList.toggle("visible",ul.scrollLeft>2);bR.classList.toggle("visible",ul.scrollLeft<ul.scrollWidth-ul.clientWidth-2);}
+    bL.onclick=()=>ul.scrollBy({left:-200,behavior:"smooth"});bR.onclick=()=>ul.scrollBy({left:200,behavior:"smooth"});
+    ul.addEventListener("scroll",ua,{passive:true});window.addEventListener("resize",ua,{passive:true});setTimeout(ua,120);
+  }
+  const ck=document.getElementById("cookieBanner");
+  if(ck&&localStorage.getItem("cookieConsent")!=="accepted"){
+    setTimeout(()=>ck.classList.add("show"),2500);
+    document.getElementById("cookieAccept").onclick=()=>{localStorage.setItem("cookieConsent","accepted");ck.style.display="none";};
+  }
+})();
+
+/* ════════════════════════════════════════════════════
+   PARTY COMPARISON
+════════════════════════════════════════════════════ */
+function buildCmpDropdowns() {
+  ["cmpSelA","cmpSelB"].forEach(id => {
+    const sel = document.getElementById(id);
+    PARTIS.forEach(p => {
+      const o = document.createElement("option");
+      o.value = p.id; o.textContent = p.nom;
+      sel.appendChild(o);
+    });
+    sel.addEventListener("change", updateComparison);
+  });
+}
+
+function renderCmpLogo(p, containerId) {
+  const wrap = document.getElementById(containerId);
+  if (!p) { wrap.innerHTML = ""; return; }
+  const logoH = p.logo
+    ? `<img class="cmp-logo" src="${p.logo}" alt="${p.nom}" onerror="this.style.display='none';this.nextElementSibling.style.display='inline-flex'"/><span class="cmp-logo-fb" style="display:none;background:${p.couleur}">${p.nom.charAt(0)}</span>`
+    : `<span class="cmp-logo-fb" style="background:${p.couleur}">${p.nom.charAt(0)}</span>`;
+  wrap.innerHTML = `${logoH}<div><div class="cmp-name" style="color:${p.couleur}">${p.nom}</div><span class="cmp-orient-badge" style="background:${p.orientBg};color:${p.orientCl}">${p.orient}</span></div>`;
+}
+
+function updateComparison() {
+  const idA = document.getElementById("cmpSelA").value;
+  const idB = document.getElementById("cmpSelB").value;
+  const pA = PARTIS.find(p=>p.id===idA);
+  const pB = PARTIS.find(p=>p.id===idB);
+  renderCmpLogo(pA, "cmpLogoA");
+  renderCmpLogo(pB, "cmpLogoB");
+  document.getElementById("cmpSideA").classList.toggle("selected", !!pA);
+  document.getElementById("cmpSideB").classList.toggle("selected", !!pB);
+  if (!pA || !pB) {
+    document.getElementById("cmpResult").innerHTML = '<div class="cmp-placeholder">Sélectionnez deux partis pour afficher la comparaison détaillée.</div>';
+    return;
+  }
+  renderCmpTable(pA, pB);
+}
+
+function cmpWinner(vA, vB, higherIsBetter) {
+  if (vA === vB) return null;
+  return (higherIsBetter ? vA > vB : vA < vB) ? "A" : "B";
+}
+
+function cmpBarDuo(vA, vB, maxV, cA, cB) {
+  const pA = Math.round((vA/maxV)*100);
+  const pB = Math.round((vB/maxV)*100);
+  return `<div class="cmp-bar-duo">
+    <div class="cmp-bar-row"><div class="cmp-bar-track"><div class="cmp-bar-fill" style="background:${cA}" data-w="${pA}"></div></div><span style="font-size:.68rem;font-weight:700;color:${cA};min-width:40px">${vA}</span></div>
+    <div class="cmp-bar-row"><div class="cmp-bar-track"><div class="cmp-bar-fill" style="background:${cB}" data-w="${pB}"></div></div><span style="font-size:.68rem;font-weight:700;color:${cB};min-width:40px">${vB}</span></div>
+  </div>`;
+}
+
+function cmpBadge(winner, pA, pB) {
+  if (!winner) return '<span style="font-size:.68rem;color:var(--text3)">Égalité</span>';
+  const p = winner==="A"?pA:pB;
+  const cls = winner==="A"?"cmp-win-a":"cmp-win-b";
+  return `<span class="cmp-badge-winner ${cls}" style="background:${p.couleur}18;color:${p.couleur}">▶ ${p.nom.length>18?p.nom.substring(0,17)+"…":p.nom}</span>`;
+}
+
+function renderCmpTable(pA, pB) {
+  const rows = [
+    {lbl:"Âge moyen",icon:'<svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>',
+     vA:pA.ageMoyen+" ans", vB:pB.ageMoyen+" ans", numA:pA.ageMoyen, numB:pB.ageMoyen, max:75, higherBetter:false, unit:"ans"},
+    {lbl:"Revenu mensuel",icon:'<svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>',
+     vA:pA.revenuMoyen.toLocaleString("fr-FR")+" €", vB:pB.revenuMoyen.toLocaleString("fr-FR")+" €", numA:pA.revenuMoyen, numB:pB.revenuMoyen, max:4000, higherBetter:true, unit:"€"},
+    {lbl:"Diplômés sup.",icon:'<svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>',
+     vA:pA.etudes+"%", vB:pB.etudes+"%", numA:pA.etudes, numB:pB.etudes, max:100, higherBetter:true, unit:"%"},
+    {lbl:"Part. électorale",icon:'<svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 11 12 14 22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>',
+     vA:pA.participation+"%", vB:pB.participation+"%", numA:pA.participation, numB:pB.participation, max:100, higherBetter:true, unit:"%"},
+    {lbl:"% Urbain",icon:'<svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18"/><path d="M9 21V9"/></svg>',
+     vA:pA.urbain+"%", vB:pB.urbain+"%", numA:pA.urbain, numB:pB.urbain, max:100, higherBetter:null, unit:"%"},
+    {lbl:"% Rural",icon:'<svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg>',
+     vA:pA.rural+"%", vB:pB.rural+"%", numA:pA.rural, numB:pB.rural, max:100, higherBetter:null, unit:"%"},
+    {lbl:"% Ouvriers",icon:'<svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>',
+     vA:pA.csp.ouvrier+"%", vB:pB.csp.ouvrier+"%", numA:pA.csp.ouvrier, numB:pB.csp.ouvrier, max:50, higherBetter:null, unit:"%"},
+    {lbl:"% Retraités",icon:'<svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>',
+     vA:pA.csp.retraite+"%", vB:pB.csp.retraite+"%", numA:pA.csp.retraite, numB:pB.csp.retraite, max:60, higherBetter:null, unit:"%"},
+    {lbl:"% Étudiants",icon:'<svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/></svg>',
+     vA:pA.csp.etudiant+"%", vB:pB.csp.etudiant+"%", numA:pA.csp.etudiant, numB:pB.csp.etudiant, max:40, higherBetter:null, unit:"%"},
+    {lbl:"< 35 ans",icon:'<svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>',
+     vA:pA.ageDistrib.moins35+"%", vB:pB.ageDistrib.moins35+"%", numA:pA.ageDistrib.moins35, numB:pB.ageDistrib.moins35, max:60, higherBetter:null, unit:"%"},
+    {lbl:"60+ ans",icon:'<svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>',
+     vA:pA.ageDistrib.plus60+"%", vB:pB.ageDistrib.plus60+"%", numA:pA.ageDistrib.plus60, numB:pB.ageDistrib.plus60, max:80, higherBetter:null, unit:"%"},
+  ];
+
+  // Radar chart data (6 axes, normalized 0-100)
+  const radarAxes = [
+    {lbl:"Âge",vA:Math.min((pA.ageMoyen/70)*100,100),vB:Math.min((pB.ageMoyen/70)*100,100)},
+    {lbl:"Revenu",vA:Math.min((pA.revenuMoyen/4000)*100,100),vB:Math.min((pB.revenuMoyen/4000)*100,100)},
+    {lbl:"Études",vA:pA.etudes,vB:pB.etudes},
+    {lbl:"Participation",vA:pA.participation,vB:pB.participation},
+    {lbl:"Urbain",vA:pA.urbain,vB:pB.urbain},
+    {lbl:"Jeunes",vA:pA.ageDistrib.moins35,vB:pB.ageDistrib.moins35},
+  ];
+
+  let html = `
+  <div style="overflow-x:auto">
+  <table class="cmp-table">
+    <thead>
+      <tr>
+        <th style="width:160px;text-align:left">Indicateur</th>
+        <th style="min-width:130px">
+          <div style="display:flex;align-items:center;justify-content:center;gap:.4rem">
+            ${pA.logo?`<img src="${pA.logo}" style="width:22px;height:16px;object-fit:contain;border-radius:2px;background:#f0f0f0" onerror="this.style.display='none'"/>`:`<span style="width:22px;height:16px;display:inline-flex;align-items:center;justify-content:center;border-radius:2px;font-size:.6rem;font-weight:700;color:#fff;background:${pA.couleur}">${pA.nom.charAt(0)}</span>`}
+            <span style="color:${pA.couleur}">${pA.nom.length>16?pA.nom.substring(0,15)+"…":pA.nom}</span>
+          </div>
+        </th>
+        <th style="min-width:130px">
+          <div style="display:flex;align-items:center;justify-content:center;gap:.4rem">
+            ${pB.logo?`<img src="${pB.logo}" style="width:22px;height:16px;object-fit:contain;border-radius:2px;background:#f0f0f0" onerror="this.style.display='none'"/>`:`<span style="width:22px;height:16px;display:inline-flex;align-items:center;justify-content:center;border-radius:2px;font-size:.6rem;font-weight:700;color:#fff;background:${pB.couleur}">${pB.nom.charAt(0)}</span>`}
+            <span style="color:${pB.couleur}">${pB.nom.length>16?pB.nom.substring(0,15)+"…":pB.nom}</span>
+          </div>
+        </th>
+        <th style="text-align:left;min-width:110px">Avantage comparatif</th>
+      </tr>
+    </thead>
+    <tbody>`;
+
+  rows.forEach(row => {
+    const w = cmpWinner(row.numA, row.numB, row.higherBetter!==null?row.higherBetter:true);
+    html += `<tr>
+      <td><div class="cmp-row-lbl">${row.icon}<span>${row.lbl}</span></div></td>
+      <td class="cmp-cell">
+        <span class="cmp-val" style="color:${pA.couleur}">${row.vA}</span><br>
+        ${cmpBarDuo(row.numA, row.numB, row.max, pA.couleur, pB.couleur)}
+      </td>
+      <td class="cmp-cell"><span class="cmp-val" style="color:${pB.couleur}">${row.vB}</span></td>
+      <td>${row.higherBetter!==null ? cmpBadge(w,pA,pB) : '<span style="font-size:.68rem;color:var(--text3)">Contextuel</span>'}</td>
+    </tr>`;
+  });
+
+  // Aides sociales comparison
+  const aidesA = pA.aides.length?pA.aides.map(a=>`<span class="cmp-tag" style="background:${pA.couleur}18;color:${pA.couleur}">${a}</span>`).join(""):`<span style="font-size:.68rem;color:var(--text3)">Aucune</span>`;
+  const aidesB = pB.aides.length?pB.aides.map(a=>`<span class="cmp-tag" style="background:${pB.couleur}18;color:${pB.couleur}">${a}</span>`).join(""):`<span style="font-size:.68rem;color:var(--text3)">Aucune</span>`;
+  html += `<tr>
+    <td><div class="cmp-row-lbl"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg><span>Aides fréquentes</span></div></td>
+    <td class="cmp-tags-cell">${aidesA}</td>
+    <td class="cmp-tags-cell">${aidesB}</td>
+    <td></td>
+  </tr>`;
+
+  // Formation
+  html += `<tr>
+    <td><div class="cmp-row-lbl"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg><span>Formation type</span></div></td>
+    <td style="font-size:.71rem;color:var(--text2)">${pA.etude}</td>
+    <td style="font-size:.71rem;color:var(--text2)">${pB.etude}</td>
+    <td></td>
+  </tr>`;
+
+  html += `</tbody></table></div>`;
+
+  // Radar chart SVG
+  html += buildRadarChart(radarAxes, pA.couleur, pB.couleur, pA.nom, pB.nom);
+
+  document.getElementById("cmpResult").innerHTML = html;
+  // Animate bars
+  requestAnimationFrame(()=>requestAnimationFrame(()=>{
+    document.querySelectorAll(".cmp-bar-fill[data-w]").forEach(el=>{el.style.width=el.dataset.w+"%";});
+  }));
+}
+
+function buildRadarChart(axes, cA, cB, nameA, nameB) {
+  const N = axes.length, cx = 160, cy = 145, r = 110;
+  const step = (2*Math.PI)/N;
+  const gridLevels = [0.25,0.5,0.75,1];
+  let svgContent = "";
+  // Grid circles
+  gridLevels.forEach(lvl=>{
+    let pts = axes.map((_,i)=>{
+      const a = i*step - Math.PI/2;
+      return `${(cx+r*lvl*Math.cos(a)).toFixed(1)},${(cy+r*lvl*Math.sin(a)).toFixed(1)}`;
+    }).join(" ");
+    svgContent += `<polygon points="${pts}" fill="none" stroke="#e2e8f0" stroke-width="1"/>`;
+  });
+  // Axis lines
+  axes.forEach((_,i)=>{
+    const a = i*step - Math.PI/2;
+    svgContent += `<line x1="${cx}" y1="${cy}" x2="${(cx+r*Math.cos(a)).toFixed(1)}" y2="${(cy+r*Math.sin(a)).toFixed(1)}" stroke="#e2e8f0" stroke-width="1"/>`;
+  });
+  // Labels
+  axes.forEach((ax,i)=>{
+    const a = i*step - Math.PI/2;
+    const lx = cx+(r+18)*Math.cos(a), ly = cy+(r+18)*Math.sin(a);
+    const anchor = lx<cx-10?"end":lx>cx+10?"start":"middle";
+    svgContent += `<text x="${lx.toFixed(1)}" y="${ly.toFixed(1)}" font-size="10" fill="#8895a7" text-anchor="${anchor}" dominant-baseline="middle">${ax.lbl}</text>`;
+  });
+  // Polygon A
+  const ptsA = axes.map((ax,i)=>{
+    const a = i*step - Math.PI/2, v = (ax.vA/100);
+    return `${(cx+r*v*Math.cos(a)).toFixed(1)},${(cy+r*v*Math.sin(a)).toFixed(1)}`;
+  }).join(" ");
+  svgContent += `<polygon points="${ptsA}" fill="${cA}30" stroke="${cA}" stroke-width="2" stroke-linejoin="round"/>`;
+  // Polygon B
+  const ptsB = axes.map((ax,i)=>{
+    const a = i*step - Math.PI/2, v = (ax.vB/100);
+    return `${(cx+r*v*Math.cos(a)).toFixed(1)},${(cy+r*v*Math.sin(a)).toFixed(1)}`;
+  }).join(" ");
+  svgContent += `<polygon points="${ptsB}" fill="${cB}25" stroke="${cB}" stroke-width="2" stroke-linejoin="round" stroke-dasharray="6,3"/>`;
+  // Dots A
+  axes.forEach((ax,i)=>{
+    const a=i*step-Math.PI/2,v=ax.vA/100;
+    svgContent+=`<circle cx="${(cx+r*v*Math.cos(a)).toFixed(1)}" cy="${(cy+r*v*Math.sin(a)).toFixed(1)}" r="4" fill="${cA}" stroke="#fff" stroke-width="1.5"/>`;
+  });
+  // Dots B
+  axes.forEach((ax,i)=>{
+    const a=i*step-Math.PI/2,v=ax.vB/100;
+    svgContent+=`<circle cx="${(cx+r*v*Math.cos(a)).toFixed(1)}" cy="${(cy+r*v*Math.sin(a)).toFixed(1)}" r="4" fill="${cB}" stroke="#fff" stroke-width="1.5"/>`;
+  });
+  // Legend
+  const legY = cy+r+40;
+  svgContent += `<line x1="${cx-80}" y1="${legY}" x2="${cx-60}" y2="${legY}" stroke="${cA}" stroke-width="2"/><circle cx="${cx-70}" cy="${legY}" r="3" fill="${cA}"/><text x="${cx-55}" y="${legY}" font-size="10" fill="#3a4a5c" dominant-baseline="middle">${nameA.length>18?nameA.substring(0,17)+"…":nameA}</text>`;
+  svgContent += `<line x1="${cx+20}" y1="${legY}" x2="${cx+40}" y2="${legY}" stroke="${cB}" stroke-width="2" stroke-dasharray="5,2"/><circle cx="${cx+30}" cy="${legY}" r="3" fill="${cB}"/><text x="${cx+45}" y="${legY}" font-size="10" fill="#3a4a5c" dominant-baseline="middle">${nameB.length>18?nameB.substring(0,17)+"…":nameB}</text>`;
+
+  return `<div class="cmp-radar-wrap">
+    <svg class="cmp-radar" width="320" height="310" viewBox="0 0 320 310">${svgContent}</svg>
+  </div>`;
+}
+
+document.addEventListener("DOMContentLoaded",function(){
+  buildDropdown();
+  buildCmpDropdowns();
+  S.visible=[...PARTIS];
+  buildCards();
+  renderChart("age");
+  renderPie("localisation");
+  buildEdu();
+});
+</script>
+</body>
+</html>
