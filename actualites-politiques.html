@@ -516,10 +516,50 @@
   @media(max-width:480px){
     #cookieBanner{bottom:.8rem;right:.8rem;left:.8rem;width:auto;max-width:none;}
   }
+    #maintenance-popup-overlay{
+  position:fixed;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  background:rgba(0,0,0,0.85);
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  z-index:999999;
+}
+
+#maintenance-popup{
+  background:white;
+  padding:40px 50px;
+  border-radius:12px;
+  text-align:center;
+  max-width:420px;
+  width:90%;
+  font-family:Arial, sans-serif;
+}
+
+#maintenance-popup h2{
+  margin-bottom:15px;
+  font-size:28px;
+}
+
+#maintenance-popup p{
+  font-size:16px;
+  color:#444;
+}
   </style>
 </head>
 <body>
 
+<div id="maintenance-popup-overlay">
+<div id="maintenance-popup">
+  <h2>Page en maintenance</h2>
+  <p>Cette page actuellement en maintenance. En revanche, le reste du site est entièrement accessible<br>
+  Merci de revenir plus tard.</p>
+</div>
+</div>
+  
 <!-- NAVBAR -->
 <nav id="navbar" role="navigation" aria-label="Navigation principale">
   <div class="nav-inner">
