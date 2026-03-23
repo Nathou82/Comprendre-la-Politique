@@ -548,16 +548,132 @@
   font-size:16px;
   color:#444;
 }
+
+    /* ── Maintenance Popup ───────────────────────────── */
+
+#maintenanceOverlay{
+  position:fixed;
+  inset:0;
+  z-index:99999;
+
+  background:rgba(13,27,42,.85);
+  backdrop-filter:blur(8px);
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  opacity:0;
+  pointer-events:none;
+
+  transition:opacity .4s ease;
+}
+
+#maintenanceOverlay.active{
+  opacity:1;
+  pointer-events:all;
+}
+
+.maintenance-box{
+  background:var(--card);
+  border-radius:18px;
+  padding:2.5rem 2rem;
+  max-width:420px;
+  width:90%;
+
+  text-align:center;
+
+  box-shadow:0 20px 60px rgba(0,0,0,.35);
+
+  transform:scale(.9) translateY(20px);
+  opacity:0;
+
+  animation:popupIn .5s cubic-bezier(.25,.46,.45,.94) forwards;
+}
+
+@keyframes popupIn{
+  to{
+    transform:scale(1) translateY(0);
+    opacity:1;
+  }
+}
+
+.maintenance-icon{
+  font-size:2.5rem;
+  margin-bottom:1rem;
+  animation:spin 3s linear infinite;
+}
+
+@keyframes spin{
+  from{transform:rotate(0deg);}
+  to{transform:rotate(360deg);}
+}
+
+.maintenance-box h2{
+  font-family:'Playfair Display',serif;
+  font-size:1.5rem;
+  margin-bottom:.6rem;
+}
+
+.maintenance-box p{
+  font-family:'DM Sans',sans-serif;
+  font-size:.85rem;
+  color:var(--text2);
+  line-height:1.6;
+  margin-bottom:1.5rem;
+}
+
+/* Loader */
+.maintenance-loader{
+  width:40px;
+  height:40px;
+  margin:0 auto 1.5rem;
+  border:3px solid var(--border);
+  border-top-color:var(--gold);
+  border-radius:50%;
+  animation:spin .8s linear infinite;
+}
+
+/* Bouton */
+#closeMaintenance{
+  padding:.5rem 1.4rem;
+  border-radius:25px;
+  border:none;
+  cursor:pointer;
+
+  background:var(--navy);
+  color:#fff;
+
+  font-family:'DM Sans',sans-serif;
+  font-size:.75rem;
+  font-weight:600;
+
+  transition:.2s;
+}
+
+#closeMaintenance:hover{
+  background:var(--navy2);
+  transform:translateY(-2px);
+}
   </style>
 </head>
 <body>
 
-<div id="maintenance-popup-overlay">
-<div id="maintenance-popup">
-  <h2>Page en maintenance</h2>
-  <p>Cette page actuellement en maintenance. En revanche, le reste du site est entièrement accessible<br>
-  Merci de revenir plus tard.</p>
-</div>
+<div id="maintenanceOverlay">
+  <div class="maintenance-box">
+    
+    <div class="maintenance-icon">⚙️</div>
+
+    <h2>Maintenance en cours</h2>
+    <p>
+      Cette page est actuellement en maintenance afin d'améliorer votre expérience utilisateur.
+      Elle sera de retour très rapidement.
+    </p>
+
+    <div class="maintenance-loader"></div>
+
+    <button id="closeMaintenance">Fermer</button>
+  </div>
 </div>
   
 <!-- NAVBAR -->
@@ -1275,6 +1391,12 @@ document.addEventListener('DOMContentLoaded', function() {
       banner.classList.remove('show');
       banner.classList.add('hide');
       setTimeout(() => banner.style.display='none', 400);
+
+window.addEventListener("load", () => {
+  const popup = document.getElementById("maintenanceOverlay");
+  popup.classList.add("active");
+
+  document.body.style.overflow = "hidden";
     });
   }
 });
