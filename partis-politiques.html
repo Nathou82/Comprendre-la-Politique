@@ -20,8 +20,7 @@
   <meta property="og:type" content="website"/>
   <meta property="og:url" content="https://comprendrelapolitique.fr/partis-politiques.html"/>
   <meta name="twitter:card" content="summary_large_image"/>
-  <link rel="icon" type="image/x-icon" href="/favicon.ico">
-  <link rel="shortcut icon" href="/favicon.ico">
+  <link rel="icon" type="image/png" href="favicon.png"/>
   <title>Partis Politiques Français — Comparateur, Popularité et Profil | comprendrelapolitique.fr</title>
   <link rel="canonical" href="https://comprendrelapolitique.fr/partis-politiques.html"/>
     <link rel="preconnect" href="https://fonts.googleapis.com"/>
@@ -1386,6 +1385,7 @@
       <li><a href="culture-politique.html">Culture politique</a></li>
       <li><a href="actualites-politiques.html">Actualités</a></li>
       <li><a href="profils-electoraux.html">Profils électoraux</a></li>
+      <li><a href="guide-politique.html">Guide PDF</a></li>
       <li><a href="apprendre.html">Apprendre</a></li>
     </ul>
     <button class="nav-arrow nav-arrow-right" id="navArrowRight" aria-label="Défiler la navigation vers la droite">&#8250;</button>
@@ -1406,7 +1406,7 @@
       <p class="section-subtitle">Qui sont-ils, d'où viennent-ils, que veulent-ils ? Des grands partis de gouvernement aux formations émergentes — analyse complète des partis politiques français.</p>
     </div>
     <div class="search-bar reveal">
-      <span class="search-icon">🔍</span>
+      <span class="search-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></span>
       <input type="text" id="partySearch" placeholder="Rechercher un parti (ex : RN, gauche, écologie…)" aria-label="Rechercher un parti politique"/>
     </div>
     <div class="party-filters reveal" id="partyFilters" role="group" aria-label="Filtrer par orientation politique">
@@ -1432,9 +1432,9 @@
       <p class="section-subtitle">Intentions de vote, résultats des dernières élections, évolution des forces en présence — données issues des principaux instituts de sondage et résultats officiels.</p>
     </div>
     <div class="pop-tabs reveal" role="tablist">
-      <button class="pop-tab active" data-tab="sondages" role="tab">📊 Sondages (2024)</button>
-      <button class="pop-tab" data-tab="pres2022" role="tab">🗳️ Présidentielle 2022</button>
-      <button class="pop-tab" data-tab="legis2022" role="tab">🏛️ Législatives 2022</button>
+      <button class="pop-tab active" data-tab="sondages" role="tab"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg> Sondages (2024)</button>
+      <button class="pop-tab" data-tab="pres2022" role="tab"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 11 12 14 22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg> Présidentielle 2022</button>
+      <button class="pop-tab" data-tab="legis2022" role="tab"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="22" x2="21" y2="22"/><line x1="6" y1="18" x2="6" y2="11"/><line x1="10" y1="18" x2="10" y2="11"/><line x1="14" y1="18" x2="14" y2="11"/><line x1="18" y1="18" x2="18" y2="11"/><polygon points="12 2 20 7 4 7"/></svg> Législatives 2022</button>
       <button class="pop-tab" data-tab="euro2024" role="tab">🇪🇺 Européennes 2024</button>
     </div>
     <div class="pop-panel active reveal" id="tab-sondages"></div>
@@ -1533,7 +1533,7 @@
 
 <section class="share-section" aria-label="Partager sur les réseaux sociaux">
   <div class="share-inner">
-    <div class="share-title">📢 Partager ce site</div>
+    <div class="share-title"><span style="display:inline-flex;align-items:center;gap:.35rem;vertical-align:middle"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg></span> Partager ce site</div>
     <div class="share-btns">
       <a href="https://www.facebook.com/sharer/sharer.php?u=https://comprendrelapolitique.fr" target="_blank" rel="noopener noreferrer" class="share-btn share-btn-fb" aria-label="Partager sur Facebook">
         <svg viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg> Facebook
@@ -1565,11 +1565,12 @@
       <a href="culture-politique.html">Culture politique</a>
       <a href="actualites-politiques.html">Actualités</a>
       <a href="profils-electoraux.html">Profils électoraux</a>
+      <a href="guide-politique.html">Guide PDF</a>
       <a href="apprendre.html">Apprendre</a>
       <a href="mentions-legales.html">Mentions légales</a>
     </div>
     <div style="margin-top:1.8rem;padding-top:1.5rem;border-top:1px solid rgba(255,255,255,.08);max-width:760px;margin-left:auto;margin-right:auto;">
-      <p style="color:rgba(255,255,255,.55);font-size:.78rem;font-weight:600;margin-bottom:.5rem;letter-spacing:.06em;text-transform:uppercase;">📚 Sources &amp; fiabilité</p>
+      <p style="color:rgba(255,255,255,.55);font-size:.78rem;font-weight:600;margin-bottom:.5rem;letter-spacing:.06em;text-transform:uppercase;"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg> Sources &amp; fiabilité</p>
       <p style="color:rgba(255,255,255,.3);font-size:.75rem;line-height:1.75;">Les informations présentées sur ce site sont issues de sources publiques et institutionnelles : <strong style="color:rgba(255,255,255,.5)">Ministère de l'Intérieur</strong> (résultats électoraux), <strong style="color:rgba(255,255,255,.5)">Conseil Constitutionnel</strong>, <strong style="color:rgba(255,255,255,.5)">Assemblée Nationale</strong>, <strong style="color:rgba(255,255,255,.5)">vie-publique.fr</strong>, <strong style="color:rgba(255,255,255,.5)">Archives Nationales</strong> et <strong style="color:rgba(255,255,255,.5)">Gallica (BNF)</strong>. Les données de sondages sont fournies par IFOP, BVA, Odoxa et Ipsos à titre indicatif. Contenu éducatif, équilibré et non partisan.</p>
     </div>
     <p style="margin-top:1.5rem;font-size:.7rem">© 2026 Comprendre la Politique — comprendrelapolitique.fr | Contenu pédagogique, non partisan | Données : Ministère de l'Intérieur</p>
@@ -1672,7 +1673,7 @@ const ideologies = [
     franceEx:'Renaissance, MoDem, Horizons — tous fervents pro-UE',
     worldEx:'Mouvement européen, ALDE, Parti Vert européen',
     quote:{text:"Un jour viendra où toutes les nations du continent formeront une fraternité européenne.",author:"Victor Hugo, discours à l'Assemblée (1849)"} },
-  { id:'souverainisme', label:'Droite & Gauche radicale', lc:'#8e1c1c', bg:'#f9e8e8', icon:'🗺️', name:'Souverainisme',
+  { id:'souverainisme', label:'Droite & Gauche radicale', lc:'#8e1c1c', bg:'#f9e8e8', icon:'<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="1 6 1 22 8 18 16 22 23 18 23 2 16 6 8 2 1 6"/><line x1="8" y1="2" x2="8" y2="18"/><line x1="16" y1="6" x2="16" y2="22"/></svg>', name:'Souverainisme',
     def:"Le souverainisme réclame la récupération des pouvoirs délégués aux institutions supranationales (UE, FMI, OTAN) au profit de la souveraineté nationale. Il existe à droite (RN) et à gauche (LFI).",
     history:"De Villiers fonde le MPF (1994), Chevènement le MRC. LFI et RN partagent ce socle anti-traités tout en s'opposant sur tout le reste. Un paradoxe de la politique française.",
     thinkers:['Charles de Gaulle','Philippe de Villiers','Jean-Pierre Chevènement','Marine Le Pen'],
@@ -1767,7 +1768,7 @@ const scrutins = [
     steps:['1er tour : les candidats ayant obtenu plus de 12,5% des inscrits accèdent au 2nd tour','2e tour : scrutin majoritaire uninominal, le candidat le plus voté gagne','577 circonscriptions = 577 députés élus indépendamment'],
     infos:{'Mandat':'5 ans','Suffrage':'Universel direct','Circonscriptions':'577','Mode':'Majoritaire à 2 tours'},
     tip:"<strong>Le saviez-vous ?</strong> En 2024, la dissolution surprise prononcée par Macron a conduit à des législatives historiques avec un NFP premier groupe sans majorité absolue." },
-  { icon:'🗺️', iconBg:'#eafaf1', name:'Élections régionales', sub:'Tous les 6 ans', color:'#27ae60',
+  { icon:'<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="1 6 1 22 8 18 16 22 23 18 23 2 16 6 8 2 1 6"/><line x1="8" y1="2" x2="8" y2="18"/><line x1="16" y1="6" x2="16" y2="22"/></svg>', iconBg:'#eafaf1', name:'Élections régionales', sub:'Tous les 6 ans', color:'#27ae60',
     steps:['1er tour : listes en présence, les listes > 5% peuvent se maintenir au 2e tour','Fusion possible entre listes ayant > 5% et qui le souhaitent','2e tour : représentation proportionnelle avec prime à la liste en tête'],
     infos:{'Mandat':'6 ans','Collectivités':'18 régions','Suffrage':'Universel direct','Mode':'Proportionnel +prime'},
     tip:"<strong>Particularité :</strong> La liste arrivée en tête obtient automatiquement le quart des sièges ('prime majoritaire'), puis le reste est réparti à la proportionnelle." },
@@ -1805,7 +1806,7 @@ const institutions = [
     color:'#e74c3c', detail:"<p>Les syndicats (CGT, CFDT, FO, CFTC, CFE-CGC) jouent un rôle fondamental en France. Bien que peu représentatifs en termes d'adhésions (8% de salariés syndiqués, parmi les plus bas en Europe), ils ont un poids considérable dans la négociation sociale et les mobilisations. La réforme des retraites de 2023 a montré leur capacité de mobilisation.</p>", facts:['CGT (confédéré, gauche)','CFDT (réformiste, centre)','FO (indépendante)','CFTC (chrétienne)','CFE-CGC (cadres)'] },
   { id:'medias', icon:'📰', name:'Médias & opinion publique', role:'4e pouvoir informel',
     color:'#2980b9', detail:"<p>Les médias constituent un pouvoir informel crucial. En France, la question de la concentration médiatique (Bolloré, Arnault, Niel, Dassault…) alimente le débat sur l'indépendance de la presse. L'Arcom (ex-CSA) régule l'audiovisuel. Les réseaux sociaux ont profondément reconfiguré la communication politique depuis 2012.</p>", facts:['Arcom régule l\'audiovisuel','Concentration dans quelques groupes','Presse publique : France Médias','Réseaux sociaux omniprésents','AFP : agence d\'information publique'] },
-  { id:'collectivites', icon:'🗺️', name:'Collectivités territoriales', role:'Décentralisation et démocratie locale',
+  { id:'collectivites', icon:'<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="1 6 1 22 8 18 16 22 23 18 23 2 16 6 8 2 1 6"/><line x1="8" y1="2" x2="8" y2="18"/><line x1="16" y1="6" x2="16" y2="22"/></svg>', name:'Collectivités territoriales', role:'Décentralisation et démocratie locale',
     color:'#27ae60', detail:"<p>Depuis les lois Defferre (1982), la France est décentralisée. 3 niveaux : communes (35 000), départements (101), régions (18). Ils gèrent l'éducation, les transports, l'action sociale, le développement économique. Le clivage centralisateurs vs décentralisateurs traverse gauche et droite.</p>", facts:['35 000 communes','101 départements','18 régions','Lois Defferre 1982','Budget : 250 Mds €/an'] }
 ];
 
@@ -2404,7 +2405,7 @@ function renderEvoElections(wrap,dA,dB){
   // SVG Line Chart
   const svgChart=buildLineChart(dA,dB,'elections','Résultats électoraux (% des suffrages exprimés)');
   wrap.innerHTML=`
-    <div class="evo-chart-title">📊 Résultats électoraux — ${dA.name}${dB?' vs '+dB.name:''}</div>
+    <div class="evo-chart-title"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg> Résultats électoraux — ${dA.name}${dB?' vs '+dB.name:''}</div>
     ${svgChart}
     <div class="evo-legend">
       <div class="evo-leg-item"><div class="evo-leg-dot" style="background:${dA.color}"></div>${dA.name}</div>
@@ -2831,15 +2832,15 @@ function renderInstitutions(){
   const flow=document.getElementById('powerFlowDiagram');
   if(!flow) return;
   flow.innerHTML=`
-    <div class="flow-node" style="border-color:#d4a843">🗳️ Peuple<br><small>Suffrage universel</small></div>
+    <div class="flow-node" style="border-color:#d4a843"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 11 12 14 22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg> Peuple<br><small>Suffrage universel</small></div>
     <div class="flow-arrow">→</div>
     <div class="flow-node" style="border-color:#d4a843">🎖️ Président<br><small>5 ans</small></div>
     <div class="flow-arrow">→</div>
-    <div class="flow-node" style="border-color:#2563a8">🏛️ Premier ministre<br><small>Nommé</small></div>
+    <div class="flow-node" style="border-color:#2563a8"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="22" x2="21" y2="22"/><line x1="6" y1="18" x2="6" y2="11"/><line x1="10" y1="18" x2="10" y2="11"/><line x1="14" y1="18" x2="14" y2="11"/><line x1="18" y1="18" x2="18" y2="11"/><polygon points="12 2 20 7 4 7"/></svg> Premier ministre<br><small>Nommé</small></div>
     <div class="flow-arrow">→</div>
     <div class="flow-node" style="border-color:#2563a8">📋 Gouvernement<br><small>Ministres</small></div>
     <div class="flow-arrow">↔️</div>
-    <div class="flow-node" style="border-color:#c0392b">📜 Assemblée nationale<br><small>577 députés</small></div>`;
+    <div class="flow-node" style="border-color:#c0392b"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg> Assemblée nationale<br><small>577 députés</small></div>`;
 }
 
 function showInst(id){
@@ -2979,7 +2980,7 @@ function selectOpt(idx){
   if(idx!==q.ans) opts[q.ans].classList.add('correct');
   const fb=document.getElementById('quizFeedback');
   if(fb){
-    fb.textContent=(idx===q.ans?'✅ Bonne réponse ! ':'❌ Mauvaise réponse. ')+q.exp;
+    fb.textContent=(idx===q.ans?'<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Bonne réponse ! ':'❌ Mauvaise réponse. ')+q.exp;
     fb.className='quiz-feedback show '+(idx===q.ans?'good':'bad');
   }
   if(idx===q.ans) quizScore++;
@@ -3001,9 +3002,9 @@ function showQuizScore(){
   if(sc) sc.className='quiz-score show';
   if(bar) bar.style.width='100%';
   let stars='',msg='';
-  if(quizScore>=9){stars='⭐⭐⭐';msg='Excellent ! Vous maîtrisez la politique française !';}
-  else if(quizScore>=7){stars='⭐⭐';msg='Très bien ! Quelques révisions et vous êtes expert !';}
-  else if(quizScore>=5){stars='⭐';msg='Pas mal ! Relisez les fiches pour progresser.';}
+  if(quizScore>=9){stars='<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>';msg='Excellent ! Vous maîtrisez la politique française !';}
+  else if(quizScore>=7){stars='<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>';msg='Très bien ! Quelques révisions et vous êtes expert !';}
+  else if(quizScore>=5){stars='<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>';msg='Pas mal ! Relisez les fiches pour progresser.';}
   else{stars='📖';msg='Retournez au cours, il y a beaucoup à découvrir !';}
   const stEl=document.getElementById('scoreStars');
   const numEl=document.getElementById('scoreNum');
