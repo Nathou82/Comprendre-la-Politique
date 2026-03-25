@@ -154,6 +154,44 @@
   .edu-text{font-size:.75rem;color:var(--text2);line-height:1.6}
   .edu-src{font-size:.63rem;color:var(--text3);margin-top:.5rem}
 
+  /* PROFIL MINI TEST */
+  .test-section{background:var(--bg2);border-radius:16px;padding:1.6rem;margin-bottom:2.4rem;font-family:'DM Sans',sans-serif}
+  .test-form{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:1.1rem;box-shadow:0 1px 10px rgba(0,0,0,.03);font-family:'DM Sans',sans-serif}
+  .test-grid{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
+  .test-field{display:flex;flex-direction:column;gap:.35rem}
+  .test-lbl{font-size:.67rem;font-weight:700;color:var(--text3);text-transform:uppercase;letter-spacing:.07em;white-space:nowrap}
+  .test-input{width:100%;padding:.38rem .65rem;border:1.5px solid var(--border);border-radius:8px;font-size:.8rem;background:transparent;color:var(--text);cursor:pointer;outline:none;transition:border-color .18s;font-family:inherit}
+  .test-input:focus{border-color:var(--blue2)}
+  .test-input[type="number"]{cursor:text}
+  .test-actions{display:flex;gap:.8rem;align-items:center;margin-top:1.05rem;flex-wrap:wrap}
+  .test-cta{padding:.48rem 1.1rem;border-radius:22px;background:var(--navy);color:#fff;font-size:.78rem;font-weight:800;border:1px solid rgba(255,255,255,.12);cursor:pointer;transition:transform .18s,opacity .18s,box-shadow .18s;box-shadow:0 8px 22px rgba(13,27,42,.18)}
+  .test-cta:hover{transform:translateY(-2px);opacity:.96}
+  .test-disclaimer{margin-top:.75rem;font-size:.69rem;color:var(--text2);line-height:1.55}
+  .test-error{margin-top:.7rem;font-size:.7rem;color:#991b1b;background:#fdecea;border:1px solid #fecaca;padding:.55rem .75rem;border-radius:12px}
+
+  .test-result{margin-top:1.1rem;background:var(--card);border:1px solid var(--border);border-radius:14px;padding:1.1rem;opacity:0;transform:translateY(10px);pointer-events:none;transition:opacity .35s,transform .35s}
+  .test-result.show{opacity:1;transform:translateY(0);pointer-events:auto}
+  .test-result-title{font-weight:900;font-family:'Playfair Display',serif;color:var(--text);font-size:1.1rem;margin-bottom:.6rem}
+  .test-bars{display:flex;flex-direction:column;gap:.55rem;margin-top:.4rem}
+  .test-bar-row{display:flex;align-items:center;gap:.6rem}
+  .test-bar-name{flex:0 0 175px;min-width:0;display:flex;align-items:center;gap:.55rem;font-weight:800;font-size:.78rem;color:var(--text)}
+  .test-bar-dot{width:10px;height:10px;border-radius:50%;flex-shrink:0}
+  .test-bar-track{flex:1;height:10px;background:var(--bg2);border-radius:6px;overflow:hidden;position:relative}
+  .test-bar-fill{height:100%;width:0;border-radius:6px;transition:width .95s cubic-bezier(.25,.46,.45,.94);display:flex;align-items:center;justify-content:flex-end}
+  .test-bar-fill span{font-size:.62rem;font-weight:900;color:rgba(255,255,255,.95);white-space:nowrap;opacity:.95;margin-right:8px}
+  .test-bar-val{flex:0 0 54px;text-align:right;font-size:.78rem;font-weight:900;color:var(--text2)}
+  .test-expl{margin-top:1rem;font-size:.75rem;color:var(--text2);line-height:1.7}
+
+  .test-share-block{margin-top:1rem;padding-top:.95rem;border-top:1px solid var(--border)}
+  .test-share-title{font-size:.7rem;color:var(--text3);font-weight:800;text-transform:uppercase;letter-spacing:.08em;margin-bottom:.75rem}
+  .test-share-btns{display:flex;justify-content:flex-start;gap:.45rem;flex-wrap:wrap}
+  .test-share-btn{display:inline-flex;align-items:center;gap:.35rem;padding:.42rem .72rem;border-radius:18px;border:1.5px solid var(--border);background:transparent;color:var(--text2);font-size:.76rem;font-weight:800;cursor:pointer;text-decoration:none;transition:transform .18s,background .18s,border-color .18s,color .18s}
+  .test-share-btn:hover{transform:translateY(-2px);border-color:rgba(37,99,168,.4);background:rgba(37,99,168,.06);color:var(--navy)}
+  .test-share-btn svg{width:16px;height:16px;flex-shrink:0;fill:currentColor;opacity:.8}
+
+  @media(max-width:900px){.test-grid{grid-template-columns:1fr}}
+  @media(max-width:640px){.test-bar-name{flex-basis:140px}}
+
   /* EXPLORATION — same as other pages */
   .exploration-section{position:relative;overflow:hidden;background:linear-gradient(135deg,#0a1628 0%,#0d1f3c 40%,#0e2244 100%);padding:3.5rem 1.5rem 4rem;border-top:2px solid rgba(212,175,55,.25)}
   .exploration-section::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 70% 60% at 50% 0%,rgba(212,175,55,.08) 0%,transparent 70%);pointer-events:none}
@@ -400,6 +438,89 @@
       </button>
     </div>
     <div class="pie-grid" id="pieGrid"></div>
+  </div>
+
+  <div class="test-section">
+    <div style="margin-bottom:1.1rem">
+      <h2 class="section-title" style="margin-bottom:.35rem">Quel parti correspond le plus à votre profil ?</h2>
+      <p class="section-sub" style="margin-bottom:.45rem">Mini-test pédagogique : âge, revenu mensuel, profession et niveau d’étude.</p>
+    </div>
+
+    <form id="profilTestForm" class="test-form" aria-label="Mini test profil électoral" autocomplete="off">
+      <div id="profilTestError" class="test-error hidden" role="alert"></div>
+
+      <div class="test-grid">
+        <div class="test-field">
+          <label class="test-lbl" for="tAge">Âge</label>
+          <input class="test-input" id="tAge" type="number" min="18" max="100" step="1" required placeholder="Ex : 32"/>
+        </div>
+
+        <div class="test-field">
+          <label class="test-lbl" for="tRevenu">Revenu mensuel (en €)</label>
+          <input class="test-input" id="tRevenu" type="number" min="0" max="100000" step="50" required placeholder="Ex : 2400"/>
+        </div>
+
+        <div class="test-field">
+          <label class="test-lbl" for="tProf">Profession</label>
+          <select class="test-input" id="tProf" required>
+            <option value="" disabled selected>Sélectionnez</option>
+            <option value="emp">Cadre / profession intellectuelle</option>
+            <option value="employe">Employé / agent</option>
+            <option value="ouvrier">Ouvrier</option>
+            <option value="chomeur">Chômeur (ou à la recherche d'emploi)</option>
+            <option value="etudiant">Étudiant</option>
+            <option value="retraite">Retraité</option>
+            <option value="independant">Indépendant / artisan / commerçant</option>
+            <option value="autre">Autre situation</option>
+          </select>
+        </div>
+
+        <div class="test-field">
+          <label class="test-lbl" for="tEtudes">Niveau d’étude</label>
+          <select class="test-input" id="tEtudes" required>
+            <option value="" disabled selected>Sélectionnez</option>
+            <option value="moins_bac">Moins qu’un bac</option>
+            <option value="bac">Bac</option>
+            <option value="bac2">Bac+2</option>
+            <option value="bac3">Bac+3 / bac+4</option>
+            <option value="bac5">Bac+5 et plus</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="test-actions">
+        <button type="submit" class="test-cta">Voir mon profil électoral</button>
+      </div>
+
+      <div class="test-disclaimer">Ces résultats sont basés sur des tendances statistiques générales (INSEE, études électorales) et ne représentent pas un choix individuel.</div>
+    </form>
+
+    <div id="profilTestResult" class="test-result" aria-live="polite" role="status">
+      <div class="test-result-title">Votre profil électoral estimé</div>
+      <div id="profilTestBars" class="test-bars"></div>
+      <div id="profilTestExplanation" class="test-expl"></div>
+
+      <div id="profilTestShare" class="test-share-block hidden" aria-label="Partager mon résultat">
+        <div class="test-share-title">Partager mon résultat</div>
+        <div class="test-share-btns">
+          <a id="shareFb" class="test-share-btn" target="_blank" rel="noopener noreferrer" href="#" aria-label="Partager sur Facebook">
+            <svg viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg><span>Facebook</span>
+          </a>
+          <a id="shareX" class="test-share-btn" target="_blank" rel="noopener noreferrer" href="#" aria-label="Partager sur X / Twitter">
+            <svg viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.74l7.73-8.835L1.254 2.25H8.08l4.253 5.622zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg><span>X</span>
+          </a>
+          <a id="shareIn" class="test-share-btn" target="_blank" rel="noopener noreferrer" href="#" aria-label="Partager sur LinkedIn">
+            <svg viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg><span>LinkedIn</span>
+          </a>
+          <a id="shareWa" class="test-share-btn" target="_blank" rel="noopener noreferrer" href="#" aria-label="Partager sur WhatsApp">
+            <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg><span>WhatsApp</span>
+          </a>
+          <a id="shareTg" class="test-share-btn" target="_blank" rel="noopener noreferrer" href="#" aria-label="Partager sur Telegram">
+            <svg viewBox="0 0 24 24"><path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/></svg><span>Telegram</span>
+          </a>
+        </div>
+      </div>
+    </div>
   </div>
 
   <div class="edu-section">
@@ -1029,6 +1150,274 @@ function buildRadarChart(axes, cA, cB, nameA, nameB) {
   </div>`;
 }
 
+/* ════════════════════════════════════════════════════
+   PROFIL MINI TEST — Quel parti correspond le plus ?
+════════════════════════════════════════════════════ */
+function initProfilMiniTest() {
+  const form = document.getElementById("profilTestForm");
+  if (!form) return;
+
+  const errEl = document.getElementById("profilTestError");
+  const resultWrap = document.getElementById("profilTestResult");
+  const barsWrap = document.getElementById("profilTestBars");
+  const explWrap = document.getElementById("profilTestExplanation");
+  const shareBlock = document.getElementById("profilTestShare");
+
+  const shareFb = document.getElementById("shareFb");
+  const shareX = document.getElementById("shareX");
+  const shareIn = document.getElementById("shareIn");
+  const shareWa = document.getElementById("shareWa");
+  const shareTg = document.getElementById("shareTg");
+
+  const eduMap = {
+    moins_bac: 25,
+    bac: 40,
+    bac2: 55,
+    bac3: 65,
+    bac5: 75,
+  };
+
+  // La donnée ne contient pas "chômeur" en tant que CSP : on utilise donc
+  // une correspondance vers des CSP proches + un bonus basé sur les aides associées.
+  const profConfig = {
+    emp: { cspKey: "emp" },
+    employe: { cspKey: "emp" },
+    ouvrier: { cspKey: "ouvrier" },
+    etudiant: { cspKey: "etudiant" },
+    retraite: { cspKey: "retraite" },
+    independant: { cspKey: "autre" },
+    autre: { cspKey: "autre" },
+    chomeur: { cspKey: "ouvrier", aidNeed: ["Chômage", "RSA", "AAH"], aidBoost: 0.12 },
+  };
+
+  const fmtPct = (n) => Math.round(n);
+  const clamp01 = (x) => Math.max(0, Math.min(1, x));
+
+  function setError(msg) {
+    if (!errEl) return;
+    errEl.textContent = msg || "";
+    errEl.classList.toggle("hidden", !msg);
+  }
+
+  function buildShareLinks(winner, secondaries, url) {
+    if (!shareBlock) return;
+    if (!shareFb || !shareX || !shareIn || !shareWa || !shareTg) return;
+
+    // winner/secondaries sont fournis sous la forme {p, pct}
+    const winnerParty = winner?.p || winner;
+    const winnerPct = winner?.pct;
+    const winnerPctSafe = typeof winnerPct === "number" && Number.isFinite(winnerPct) ? winnerPct : 0;
+    const secTxt = secondaries?.length
+      ? secondaries
+        .map(s => {
+          const party = s?.p;
+          if (!party) return null;
+          const pct = typeof s.pct === "number" ? fmtPct(s.pct) : null;
+          return pct === null ? party.nom : `${party.nom} (${pct}%)`;
+        })
+        .filter(Boolean)
+        .slice(0, 3)
+        .join(" ; ")
+      : "";
+
+    const baseText = `Mon profil électoral estimé : ${winnerParty.nom} (${fmtPct(winnerPctSafe)}%)`;
+    const shareText = secTxt
+      ? `${baseText}. Autres partis probables : ${secTxt}.`
+      : `${baseText}.`;
+
+    // On conserve un texte neutre et on évite les paramètres qui peuvent être mal interprétés selon les réseaux.
+    const encodedUrl = encodeURIComponent(url);
+    shareFb.href = `https://www.facebook.com/sharer/sharer.php?u=${encodedUrl}`;
+    shareX.href = `https://twitter.com/intent/tweet?url=${encodedUrl}&text=${encodeURIComponent(shareText)}`;
+    shareIn.href = `https://www.linkedin.com/sharing/share-offsite/?url=${encodedUrl}&summary=${encodeURIComponent(shareText)}`;
+    shareWa.href = `https://api.whatsapp.com/send?text=${encodeURIComponent(shareText + " " + url)}`;
+    shareTg.href = `https://t.me/share/url?url=${encodedUrl}&text=${encodeURIComponent(shareText)}`;
+  }
+
+  function computeUserCats(age, revenu) {
+    const userAgeCat = age < 35 ? "jeune" : age <= 59 ? "actif" : "senior";
+    const userRevenuCateg = revenu < 1800 ? "bas" : revenu <= 3000 ? "moyen" : "haut";
+    return { userAgeCat, userRevenuCateg };
+  }
+
+  function similarityToParty(p, age, revenu, eduScore, profCfg, userAgeCat, userRevenuCateg) {
+    // Données moyennes affichées dans la page : on rapproche le profil utilisateur
+    // des profils moyens (âge, revenu, niveau d'études, CSP).
+    const ageDiff = Math.abs(age - p.ageMoyen);
+    const ageSim = clamp01(1 - Math.min(ageDiff / 18, 1)); // influence forte : amortit sur ~18 ans
+
+    const revDiff = Math.abs(revenu - p.revenuMoyen);
+    const revSim = clamp01(1 - Math.min(revDiff / 3000, 1)); // amortit sur ~3000 € d'écart
+
+    const eduDiff = Math.abs(eduScore - p.etudes);
+    const eduSim = clamp01(1 - Math.min(eduDiff / 40, 1)); // amortit sur ~40 points d'études (% dipl.)
+
+    const cspKey = profCfg.cspKey;
+    const cspVal = p.csp && typeof p.csp[cspKey] === "number" ? p.csp[cspKey] : 0;
+    const profSim = clamp01(cspVal / 100);
+
+    // Pondérations (âge = plus forte influence, revenu = moyenne, études/CSP = modérées).
+    let raw = 0.45 * ageSim + 0.25 * revSim + 0.18 * eduSim + 0.12 * profSim;
+
+    // Bonus pour certaines professions/ralentis (ex : chômeur) via les aides présentes dans les profils.
+    if (Array.isArray(profCfg.aidNeed) && profCfg.aidNeed.length) {
+      const aides = new Set(p.aides || []);
+      const match = profCfg.aidNeed.reduce((acc, k) => acc + (aides.has(k) ? 1 : 0), 0);
+      const aidSim = match / profCfg.aidNeed.length;
+      raw += (profCfg.aidBoost || 0) * aidSim;
+    }
+
+    // Bonus de cohérence avec les catégories déjà utilisées sur la page.
+    if (p.ageCat === userAgeCat) raw += 0.06;
+    if (p.revenuCateg === userRevenuCateg) raw += 0.05;
+
+    raw = clamp01(raw);
+    const rawAdj = raw * raw; // accentue les écarts (sans devenir "certain")
+    return rawAdj;
+  }
+
+  function renderBars(parties) {
+    barsWrap.innerHTML = "";
+
+    parties.forEach(({ p, pct }) => {
+      const pctRounded = fmtPct(pct);
+      const row = document.createElement("div");
+      row.className = "test-bar-row";
+
+      const name = document.createElement("div");
+      name.className = "test-bar-name";
+      name.innerHTML = `<span class="test-bar-dot" style="background:${p.couleur}"></span>${p.nom}`;
+
+      const track = document.createElement("div");
+      track.className = "test-bar-track";
+
+      const fill = document.createElement("div");
+      fill.className = "test-bar-fill";
+      fill.style.background = `linear-gradient(90deg, ${p.couleur}dd, ${p.couleur})`;
+      fill.dataset.w = String(pctRounded);
+      fill.innerHTML = `<span>${pctRounded}%</span>`;
+
+      track.appendChild(fill);
+
+      row.appendChild(name);
+      row.appendChild(track);
+      barsWrap.appendChild(row);
+    });
+
+    // Animation des barres après apparition du bloc résultat.
+    requestAnimationFrame(() => requestAnimationFrame(() => {
+      barsWrap.querySelectorAll(".test-bar-fill[data-w]").forEach(el => {
+        el.style.width = el.dataset.w + "%";
+      });
+    }));
+  }
+
+  function renderExplanation(params) {
+    const { winner, secondaries, age, revenu, eduLabel, userAgeCat, userRevenuCateg } = params;
+    const secTxt = secondaries.length
+      ? secondaries.map((p, i) => `${p.nom} (${fmtPct(p.pct)}%)${i === secondaries.length - 1 ? "" : ""}`).join(" et ")
+      : "";
+
+    // Phrase demandée (exemple fourni par l'utilisateur).
+    const sentence1 = `Les profils similaires au vôtre votent majoritairement pour ${winner.nom}, avec une probabilité estimée de ${fmtPct(winner.pct)}%.`;
+    const sentence2 = secondaries.length
+      ? `Les profils proches donnent aussi ${secTxt}.`
+      : `D'autres partis ressortent aussi selon vos autres critères.`;
+
+    const sentence3 = `Votre âge (${age} ans, ${userAgeCat}), votre revenu (${Math.round(revenu).toLocaleString("fr-FR")} €) et votre niveau d’étude (${eduLabel}, utilisé comme tendance sur la page) structurent surtout le résultat.`;
+
+    explWrap.innerHTML = `
+      <p style="margin-bottom:.55rem">${sentence1}</p>
+      <p style="margin-bottom:.55rem">${sentence2}</p>
+      <p style="margin-bottom:0">${sentence3}</p>
+    `;
+  }
+
+  form.addEventListener("submit", (e) => {
+    e.preventDefault();
+
+    setError("");
+
+    const age = Number(document.getElementById("tAge").value);
+    const revenu = Number(document.getElementById("tRevenu").value);
+    const profKeyIn = document.getElementById("tProf").value;
+    const eduKeyIn = document.getElementById("tEtudes").value;
+
+    if (!Number.isFinite(age) || age < 18 || age > 100) {
+      setError("Veuillez indiquer un âge valide (18 à 100 ans).");
+      return;
+    }
+    if (!Number.isFinite(revenu) || revenu < 0 || revenu > 100000) {
+      setError("Veuillez indiquer un revenu valide (0 à 100 000 €).");
+      return;
+    }
+    const profCfg = profConfig[profKeyIn];
+    if (!profCfg) {
+      setError("Veuillez sélectionner une profession.");
+      return;
+    }
+    if (!eduMap[eduKeyIn]) {
+      setError("Veuillez sélectionner un niveau d’étude.");
+      return;
+    }
+
+    const eduScore = eduMap[eduKeyIn];
+    const { userAgeCat, userRevenuCateg } = computeUserCats(age, revenu);
+
+    const eduLabels = {
+      moins_bac: "Moins qu’un bac",
+      bac: "Bac",
+      bac2: "Bac+2",
+      bac3: "Bac+3 / bac+4",
+      bac5: "Bac+5 et plus",
+    };
+
+    const scores = PARTIS.map(p => {
+      const rawAdj = similarityToParty(p, age, revenu, eduScore, profCfg, userAgeCat, userRevenuCateg);
+      return { p, rawAdj };
+    }).sort((a, b) => b.rawAdj - a.rawAdj);
+
+    const sum = scores.reduce((s, x) => s + x.rawAdj, 0) || 1;
+    const ranked = scores.map(x => ({
+      p: x.p,
+      pct: (x.rawAdj / sum) * 100,
+    }));
+
+    const winner = ranked[0];
+    const top3 = ranked.slice(1, 3);
+    const top4 = ranked[3];
+
+    const shown = [];
+    shown.push(winner);
+    if (top3[0]) shown.push(top3[0]);
+    if (top3[1]) shown.push(top3[1]);
+    if (top4 && top4.pct >= 6) shown.push(top4);
+
+    // On reconstruit la liste "secondaires" à partir des éléments affichés.
+    const secondaries = shown.slice(1);
+
+    renderBars(shown.map(x => ({ p: x.p, pct: x.pct })));
+    resultWrap.classList.remove("show");
+    // petite latence pour garantir la transition opacite/transform dans certains navigateurs
+    setTimeout(() => {
+      resultWrap.classList.add("show");
+    }, 40);
+
+    renderExplanation({
+      winner: shown[0],
+      secondaries,
+      age,
+      revenu,
+      eduLabel: eduLabels[eduKeyIn],
+      userAgeCat,
+      userRevenuCateg,
+    });
+
+    if (shareBlock) shareBlock.classList.remove("hidden");
+    buildShareLinks(shown[0], secondaries, window.location.href);
+  });
+}
+
 document.addEventListener("DOMContentLoaded",function(){
   buildDropdown();
   buildCmpDropdowns();
@@ -1037,6 +1426,7 @@ document.addEventListener("DOMContentLoaded",function(){
   renderChart("age");
   renderPie("localisation");
   buildEdu();
+  initProfilMiniTest();
 });
 </script>
 </body>
