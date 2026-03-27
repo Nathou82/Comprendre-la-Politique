@@ -20,7 +20,7 @@
   <meta property="og:type" content="website"/>
   <meta property="og:url" content="https://comprendrelapolitique.fr/comprendre-la-politique.html"/>
   <meta name="twitter:card" content="summary_large_image"/>
-  <link rel="icon" type="image/png" href="favicon.ico"/>
+    <link rel="icon" type="image/x-icon" href="favicon.ico"/>
   <title>Idéologies et Spectre Politique Français — Comprendre la Politique | comprendrelapolitique.fr</title>
   <link rel="canonical" href="https://comprendrelapolitique.fr/comprendre-la-politique.html"/>
     <link rel="preconnect" href="https://fonts.googleapis.com"/>
@@ -286,6 +286,7 @@
   .ideo-card:hover{box-shadow:var(--shadow2);transform:translateY(-2px)}
   .ideo-header{padding:1.3rem;cursor:pointer;display:flex;align-items:flex-start;justify-content:space-between;gap:.9rem}
   .ideo-icon{width:42px;height:42px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:1.25rem;flex-shrink:0}
+  .ideo-icon svg{width:20px;height:20px;display:block;}
   .ideo-title-wrap{flex:1}
   .ideo-tag{font-size:.62rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;margin-bottom:.3rem}
   .ideo-card h3{font-size:1.05rem}
@@ -1026,8 +1027,6 @@
   .footer-legal-title{font-size:.8rem;font-weight:700;color:rgba(255,255,255,.7);margin-bottom:.3rem;letter-spacing:.03em;}
   .footer-legal-text{font-size:.73rem;color:rgba(255,255,255,.35);line-height:1.6;}
   .footer-links a{color:rgba(255,255,255,.45);font-size:.77rem;transition:color .2s,border-color .2s}
-  .footer-links a.footer-legal{border:1px solid rgba(255,255,255,.2);padding:.28rem .75rem;border-radius:20px;color:rgba(255,255,255,.55)}
-  .footer-links a.footer-legal:hover{color:var(--gold);border-color:rgba(212,168,67,.5)}
   .footer-links a:hover{color:var(--gold)}
 
   /* =========================================================
@@ -1270,10 +1269,7 @@
     color:rgba(255,255,255,.55);margin-bottom:2.4rem;
     max-width:540px;margin-left:auto;margin-right:auto;line-height:1.6;
   }
-  .exploration-grid{
-    display:grid;grid-template-columns:repeat(auto-fill,minmax(270px,1fr));
-    gap:1.1rem;
-  }
+  .exploration-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1.1rem;}
   .exploration-card{
     display:flex;align-items:center;gap:1rem;
     background:rgba(255,255,255,.05);
@@ -1363,12 +1359,12 @@
   .footer-share-btn svg{width:15px;height:15px;fill:currentColor;}
 
   @media(max-width:640px){
-    .overview-grid,.exploration-grid{grid-template-columns:1fr;}
+    .overview-grid,.exploration-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1.1rem;}
     .exploration-title{font-size:1.4rem;}
   }
 
   @media(max-width:640px){
-    .overview-grid,.exploration-grid{grid-template-columns:1fr;}
+    .overview-grid,.exploration-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1.1rem;}
   }
   </style>
 </head>
@@ -1378,13 +1374,14 @@
   <div class="nav-inner">
     <div class="nav-logo"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 36" width="28" height="16" aria-hidden="true" style="display:inline-block;vertical-align:middle;flex-shrink:0"><path d="M32 34 A30 30 0 0 1 2 34 Z" fill="#B80000"/><path d="M32 34 A30 30 0 0 0 62 34 Z" fill="#003DA6"/><path d="M9 34 A23 23 0 0 1 32 11" fill="none" stroke="#E03030" stroke-width="3.8" stroke-linecap="round"/><path d="M15 34 A17 17 0 0 1 32 17" fill="none" stroke="#CC2222" stroke-width="3.8" stroke-linecap="round"/><path d="M21 34 A11 11 0 0 1 32 23" fill="none" stroke="#AA1515" stroke-width="3.8" stroke-linecap="round"/><path d="M55 34 A23 23 0 0 0 32 11" fill="none" stroke="#3366EE" stroke-width="3.8" stroke-linecap="round"/><path d="M49 34 A17 17 0 0 0 32 17" fill="none" stroke="#2255CC" stroke-width="3.8" stroke-linecap="round"/><path d="M43 34 A11 11 0 0 0 32 23" fill="none" stroke="#1144AA" stroke-width="3.8" stroke-linecap="round"/><line x1="32" y1="11" x2="32" y2="34" stroke="rgba(255,255,255,0.75)" stroke-width="1.5" stroke-dasharray="2,2"/><line x1="2" y1="34" x2="62" y2="34" stroke="rgba(255,255,255,0.55)" stroke-width="1.5"/></svg> <span>Comprendre la</span> Politique</div>
     <button class="nav-arrow nav-arrow-left" id="navArrowLeft" aria-label="Défiler la navigation vers la gauche">&#8249;</button>
-    <ul class="nav-links" id="navLinks">
+        <ul class="nav-links" id="navLinks">
       <li><a href="index.html">Accueil</a></li>
+      <li><a href="comprendre-la-politique.html" aria-current="page">Introduction</a></li>
       <li><a href="partis-politiques.html">Partis politiques</a></li>
-      <li><a href="systeme-politique.html">Système politique</a></li>
+      <li><a href="systeme-politique.html">Syst&egrave;me politique</a></li>
       <li><a href="culture-politique.html">Culture politique</a></li>
-      <li><a href="actualites-politiques.html">Actualités</a></li>
-      <li><a href="profils-electoraux.html">Profils électoraux</a></li>
+      <li><a href="actualites-politiques.html">Actualit&eacute;s</a></li>
+      <li><a href="profils-electoraux.html">Profils &eacute;lectoraux</a></li>
       <li><a href="guide-politique.html">Guide PDF</a></li>
       <li><a href="apprendre.html">Apprendre</a></li>
     </ul>
@@ -1529,32 +1526,32 @@
       <span class="exploration-badge"><span style="display:inline-flex;align-items:center;vertical-align:middle;margin-right:.3rem"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"/></svg></span>Continuer l'exploration</span>
     </div>
     <h2 class="exploration-title">Allez plus loin dans votre<br><em>exploration politique</em></h2>
-    <p class="exploration-subtitle">Chaque page du site révèle une nouvelle facette de la politique française. Choisissez votre prochain sujet.</p>
+    <p class="exploration-subtitle">Trois pages complementaires pour continuer dans un ordre logique.</p>
     <div class="exploration-grid">
-    <a href="systeme-politique.html" class="exploration-card">
-      <div class="exploration-icon" style="color:var(--gold)"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="22" x2="21" y2="22"/><line x1="6" y1="18" x2="6" y2="11"/><line x1="10" y1="18" x2="10" y2="11"/><line x1="14" y1="18" x2="14" y2="11"/><line x1="18" y1="18" x2="18" y2="11"/><polygon points="12 2 20 7 4 7"/></svg></div>
-      <div class="exploration-text">
-        <strong>Système politique</strong>
-        <span>Découvrez les institutions françaises et leur fonctionnement →</span>
-      </div>
-      <div class="exploration-arrow">→</div>
-    </a>
-    <a href="partis-politiques.html" class="exploration-card">
-      <div class="exploration-icon" style="color:var(--gold)"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 11 12 14 22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg></div>
-      <div class="exploration-text">
-        <strong>Partis politiques</strong>
-        <span>Comparez concrètement tous les partis en quelques clics →</span>
-      </div>
-      <div class="exploration-arrow">→</div>
-    </a>
-    <a href="profils-electoraux.html" class="exploration-card">
-      <div class="exploration-icon" style="color:var(--gold)"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg></div>
-      <div class="exploration-text">
-        <strong>Profils électoraux</strong>
-        <span>Explorez les profils socio-démographiques par parti →</span>
-      </div>
-      <div class="exploration-arrow">→</div>
-    </a>
+      <a href="systeme-politique.html" class="exploration-card">
+        <div class="exploration-icon" style="color:var(--gold)"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="22" x2="21" y2="22"/><line x1="6" y1="18" x2="6" y2="11"/><line x1="10" y1="18" x2="10" y2="11"/><line x1="14" y1="18" x2="14" y2="11"/><line x1="18" y1="18" x2="18" y2="11"/><polygon points="12 2 20 7 4 7"/></svg></div>
+        <div class="exploration-text">
+          <strong>Syst&egrave;me politique</strong>
+          <span>Comprenez les institutions derriere les decisions publiques -&gt;</span>
+        </div>
+        <div class="exploration-arrow">&rarr;</div>
+      </a>
+      <a href="partis-politiques.html" class="exploration-card">
+        <div class="exploration-icon" style="color:var(--gold)"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 11 12 14 22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg></div>
+        <div class="exploration-text">
+          <strong>Partis politiques</strong>
+          <span>Comparez les partis et leurs positions sur les grands sujets -&gt;</span>
+        </div>
+        <div class="exploration-arrow">&rarr;</div>
+      </a>
+      <a href="culture-politique.html" class="exploration-card">
+        <div class="exploration-icon" style="color:var(--gold)"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg></div>
+        <div class="exploration-text">
+          <strong>Culture politique</strong>
+          <span>Retracez l'histoire politique et les reperes essentiels -&gt;</span>
+        </div>
+        <div class="exploration-arrow">&rarr;</div>
+      </a>
     </div>
   </div>
 </section>
@@ -1586,16 +1583,17 @@
   <div class="footer-inner">
     <div class="footer-logo"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 36" width="28" height="16" aria-hidden="true" style="display:inline-block;vertical-align:middle;flex-shrink:0;opacity:.9"><path d="M32 34 A30 30 0 0 1 2 34 Z" fill="#B80000"/><path d="M32 34 A30 30 0 0 0 62 34 Z" fill="#003DA6"/><path d="M9 34 A23 23 0 0 1 32 11" fill="none" stroke="#E03030" stroke-width="3.8" stroke-linecap="round"/><path d="M15 34 A17 17 0 0 1 32 17" fill="none" stroke="#CC2222" stroke-width="3.8" stroke-linecap="round"/><path d="M21 34 A11 11 0 0 1 32 23" fill="none" stroke="#AA1515" stroke-width="3.8" stroke-linecap="round"/><path d="M55 34 A23 23 0 0 0 32 11" fill="none" stroke="#3366EE" stroke-width="3.8" stroke-linecap="round"/><path d="M49 34 A17 17 0 0 0 32 17" fill="none" stroke="#2255CC" stroke-width="3.8" stroke-linecap="round"/><path d="M43 34 A11 11 0 0 0 32 23" fill="none" stroke="#1144AA" stroke-width="3.8" stroke-linecap="round"/><line x1="32" y1="11" x2="32" y2="34" stroke="rgba(255,255,255,0.75)" stroke-width="1.5" stroke-dasharray="2,2"/><line x1="2" y1="34" x2="62" y2="34" stroke="rgba(255,255,255,0.55)" stroke-width="1.5"/></svg> <span>Comprendre la</span> Politique</div>
     <p>Site pédagogique à but éducatif. Contenu équilibré et non partisan.<br>Les données de sondages sont issues des principaux instituts (IFOP, BVA, Odoxa, Ipsos) et sont indicatives.</p>
-    <div class="footer-links">
+        <div class="footer-links">
       <a href="index.html">Accueil</a>
+      <a href="comprendre-la-politique.html">Introduction</a>
       <a href="partis-politiques.html">Partis politiques</a>
-      <a href="systeme-politique.html">Système politique</a>
+      <a href="systeme-politique.html">Syst&egrave;me politique</a>
       <a href="culture-politique.html">Culture politique</a>
-      <a href="actualites-politiques.html">Actualités</a>
-      <a href="profils-electoraux.html">Profils électoraux</a>
+      <a href="actualites-politiques.html">Actualit&eacute;s</a>
+      <a href="profils-electoraux.html">Profils &eacute;lectoraux</a>
       <a href="guide-politique.html">Guide PDF</a>
       <a href="apprendre.html">Apprendre</a>
-      <a href="mentions-legales.html">Mentions légales</a>
+      <a href="mentions-legales.html">Mentions l&eacute;gales</a>
     </div>
     <div style="margin-top:1.8rem;padding-top:1.5rem;border-top:1px solid rgba(255,255,255,.08);max-width:760px;margin-left:auto;margin-right:auto;">
       <p style="color:rgba(255,255,255,.55);font-size:.78rem;font-weight:600;margin-bottom:.5rem;letter-spacing:.06em;text-transform:uppercase;"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg> Sources &amp; fiabilité</p>
@@ -1624,77 +1622,77 @@
    DATA — IDÉOLOGIES
 ============================================================ */
 const ideologies = [
-  { id:'conservatisme', label:'Droite', lc:'#1a4f8a', bg:'#e8f0fa', icon:'🏛️', name:'Conservatisme',
+  { id:'conservatisme', label:'Droite', lc:'#1a4f8a', bg:'#e8f0fa', icon:'<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="22" x2="21" y2="22"/><line x1="6" y1="18" x2="6" y2="11"/><line x1="10" y1="18" x2="10" y2="11"/><line x1="14" y1="18" x2="14" y2="11"/><line x1="18" y1="18" x2="18" y2="11"/><polygon points="12 2 20 7 4 7"/></svg>', name:'Conservatisme',
     def:"Le conservatisme défend les traditions, les institutions établies et une évolution prudente de la société. Il valorise l'ordre, la famille, la nation et la religion contre les changements rapides.",
     history:"Né en réaction à la Révolution française, théorisé par Edmund Burke (1790). En France : royalisme, bonapartisme, gaullisme, droite républicaine. Aujourd'hui incarné par LR.",
     thinkers:['Edmund Burke','Joseph de Maistre','Charles de Gaulle','Jacques Chirac','Nicolas Sarkozy'],
     franceEx:'Les Républicains (LR), courant gaulliste de Renaissance',
     worldEx:'Parti Conservateur (UK), CDU (Allemagne), Parti Républicain (USA)',
     quote:{text:"Il faut changer pour que les choses restent les mêmes.",author:"Giuseppe Tomasi di Lampedusa, Le Guépard"} },
-  { id:'liberalisme', label:'Centre', lc:'#1e8449', bg:'#eafaf1', icon:'⚖️', name:'Libéralisme',
+  { id:'liberalisme', label:'Centre', lc:'#1e8449', bg:'#eafaf1', icon:'<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v18"/><path d="M5 7h14"/><path d="M5 17h14"/><path d="M7 7l-3 5h6z"/><path d="M17 7l-3 5h6z"/></svg>', name:'Libéralisme',
     def:"Le libéralisme place la liberté individuelle au cœur de son projet : liberté économique (libre marché) et liberté politique (démocratie, droits civils). Courant dominant en Europe occidentale.",
     history:"Issu des Lumières (Locke, Montesquieu, Smith). En France : centre depuis la IIIe République. Aujourd'hui porté par Renaissance, MoDem. Le libéralisme économique est distinct du libéralisme culturel.",
     thinkers:['John Locke','Adam Smith','Alexis de Tocqueville','Raymond Aron','Emmanuel Macron'],
     franceEx:'Renaissance, MoDem, Horizons, UDI',
     worldEx:'Parti Libéral (Canada), FDP (Allemagne), Lib-Dems (UK)',
     quote:{text:"La liberté est le droit de faire tout ce que les lois permettent.",author:"Montesquieu, De l'Esprit des Lois (1748)"} },
-  { id:'socialisme', label:'Gauche', lc:'#c0392b', bg:'#fdecea', icon:'🌹', name:'Socialisme',
+  { id:'socialisme', label:'Gauche', lc:'#c0392b', bg:'#fdecea', icon:'<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22c2.2-2.2 3.1-4.6 3-7.4-2.8-.1-5.2.8-7.3 2.9" stroke="#2E7D32" stroke-width="2"/><circle cx="15.8" cy="8.2" r="2.2" fill="#E53935"/><circle cx="12.8" cy="6.2" r="2.1" fill="#EF5350"/><circle cx="9.5" cy="7.6" r="2.2" fill="#D32F2F"/><circle cx="10.7" cy="11" r="2.1" fill="#F06292"/><circle cx="14.5" cy="11.4" r="2.1" fill="#C62828"/></svg>', name:'Socialisme',
     def:"Le socialisme prône une transformation de la société pour réduire les inégalités. Il défend l'intervention de l'État dans l'économie, la protection sociale forte et les droits des travailleurs.",
     history:"Né au XIXe siècle avec Saint-Simon, Proudhon. La SFIO de Jaurès (1905) est sa matrice française. Mitterrand refonde le PS en 1971 (Congrès d'Épinay). Au pouvoir en 1981, 1997 et 2012.",
     thinkers:['Jean Jaurès','Léon Blum','François Mitterrand','Michel Rocard','Lionel Jospin'],
     franceEx:'Parti Socialiste (PS), Place Publique de Raphaël Glucksmann',
     worldEx:'SPD (Allemagne), Parti Travailliste (UK), PSOE (Espagne)',
     quote:{text:"Le socialisme, c'est mettre la morale là où il n'y a que l'intérêt.",author:"Jean Jaurès"} },
-  { id:'communisme', label:'Extrême gauche', lc:'#8e1c1c', bg:'#f9e8e8', icon:'☭', name:'Communisme',
+  { id:'communisme', label:'Extrême gauche', lc:'#8e1c1c', bg:'#f9e8e8', icon:'<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 14.9 8.3 22 9.2 16.8 14 18.3 21 12 17.6 5.7 21 7.2 14 2 9.2 9.1 8.3 12 2"/></svg>', name:'Communisme',
     def:"Le communisme vise l'abolition de la propriété privée des moyens de production et l'avènement d'une société sans classes sociales, fondée sur la collectivisation de l'économie.",
     history:"Théorisé par Marx et Engels (1848). PCF fondé au Congrès de Tours (1920). Longtemps 1er parti de gauche (25% dans les années 50), il est aujourd'hui marginal mais historiquement fondamental.",
     thinkers:['Karl Marx','Friedrich Engels','Lénine','Maurice Thorez','Georges Marchais'],
     franceEx:'Parti Communiste Français (PCF), Lutte Ouvrière (LO)',
     worldEx:'Parti Communiste Chinois, Parti Communiste de Cuba',
     quote:{text:"L'histoire de toute société jusqu'à nos jours est l'histoire des luttes de classes.",author:"Marx & Engels, Manifeste (1848)"} },
-  { id:'radicalisme', label:'Gauche radicale', lc:'#e74c3c', bg:'#fef0ed', icon:'✊', name:'Radicalisme de gauche',
+  { id:'radicalisme', label:'Gauche radicale', lc:'#e74c3c', bg:'#fef0ed', icon:'<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>', name:'Radicalisme de gauche',
     def:"La gauche radicale pousse le socialisme jusqu'à ses limites : rupture avec le capitalisme, réforme constitutionnelle profonde, souveraineté populaire directe contre les élites.",
     history:"Héritier des mouvements ouvriers révolutionnaires. En France, LFI de Mélenchon hérite du Front de Gauche (2009) et de l'altermondialisme. Programme : L'Avenir en Commun.",
     thinkers:['Jean-Luc Mélenchon','Antonio Gramsci','Ernesto Laclau','Chantal Mouffe'],
     franceEx:'La France Insoumise (LFI), NPA (anticapitaliste)',
     worldEx:'Podemos (Espagne), Syriza (Grèce), Bernie Sanders (USA)',
     quote:{text:"La révolution, c'est quand le possible devient nécessaire.",author:"Jean-Luc Mélenchon"} },
-  { id:'ecologisme', label:'Centre-gauche', lc:'#1e8449', bg:'#eafaf1', icon:'🌿', name:'Écologisme politique',
+  { id:'ecologisme', label:'Centre-gauche', lc:'#1e8449', bg:'#eafaf1', icon:'<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.5 19 2c1 2 2 4.2 2 8 0 5.5-4.8 10-10 10z"/><path d="M2 21c0-3 1.9-5.4 5.1-6 2.4-.5 4.9-2 5.9-3"/></svg>', name:'Écologisme politique',
     def:"L'écologisme place la protection de l'environnement au cœur du projet politique. Il remet en cause le modèle de croissance capitaliste au nom des limites planétaires et de la justice intergénérationnelle.",
     history:"Né dans les années 70 (rapport Meadows 'Limites de la croissance', 1972). En France : Les Verts fondés en 1984, devenus EELV en 2010. René Dumont, premier candidat écologiste en 1974.",
     thinkers:['René Dumont','Ivan Illich','Yannick Jadot','Sandrine Rousseau','Greta Thunberg'],
     franceEx:'EELV, Génération Écologie, partis verts locaux',
     worldEx:'Die Grünen (Allemagne — au gouvernement 2021-2024), Scottish Greens',
     quote:{text:"Nous ne sommes pas en train de sauver la planète, nous sauvons notre espèce.",author:"Yann Arthus-Bertrand"} },
-  { id:'nationalism', label:'Extrême droite', lc:'#555', bg:'#e8e9ea', icon:'🦅', name:'Nationalisme & populisme de droite',
+  { id:'nationalism', label:'Extrême droite', lc:'#555', bg:'#e8e9ea', icon:'<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 3v18"/><path d="M5 4h10l-1.5 3L15 10H5"/></svg>', name:'Nationalisme & populisme de droite',
     def:"Le nationalisme met la nation en valeur suprême. Le populisme de droite oppose 'le peuple' aux 'élites corrompues' et aux immigrés perçus comme une menace identitaire et économique.",
     history:"Boulangisme, Ligue des Patriotes, Action Française de Maurras. Front National créé en 1972 par Jean-Marie Le Pen. Marine Le Pen le rebaptise RN en 2018 dans une stratégie de 'dédiabolisation'.",
     thinkers:['Charles Maurras','Jean-Marie Le Pen','Marine Le Pen','Éric Zemmour'],
     franceEx:'Rassemblement National (RN), Reconquête !',
     worldEx:"Fratelli d'Italia, AfD (Allemagne), Vox (Espagne), Donald Trump (USA)",
     quote:{text:"La mondialisation, c'est la mise en concurrence des peuples.",author:"Marine Le Pen"} },
-  { id:'anarchisme', label:'Extrême gauche', lc:'#8e1c1c', bg:'#f9e8e8', icon:'⚡', name:'Anarchisme',
+  { id:'anarchisme', label:'Extrême gauche', lc:'#8e1c1c', bg:'#f9e8e8', icon:'<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M8 16l4-8 4 8"/><path d="M9.5 13h5"/></svg>', name:'Anarchisme',
     def:"L'anarchisme refuse toute forme d'autorité imposée et d'État. Il prône l'organisation libre et volontaire, basée sur la coopération directe entre individus égaux sans hiérarchie.",
     history:"Théorisé par Proudhon ('La propriété, c'est le vol', 1840), Bakounine puis Kropotkine. Grande influence dans les milieux ouvriers du XIXe siècle. Présent dans les mouvements autonomes actuels.",
     thinkers:['Pierre-Joseph Proudhon','Mikhaïl Bakounine','Pierre Kropotkine','Emma Goldman'],
     franceEx:'Groupes autonomes, CNT-F, certains milieux des ZAD',
     worldEx:'CNT (Espagne), IWW (USA), mouvements altermondialistes',
     quote:{text:"La propriété, c'est le vol !",author:"Pierre-Joseph Proudhon (1840)"} },
-  { id:'gaullisme', label:'Droite républicaine', lc:'#1a4f8a', bg:'#e8f0fa', icon:'⚔️', name:'Gaullisme',
+  { id:'gaullisme', label:'Droite républicaine', lc:'#1a4f8a', bg:'#e8f0fa', icon:'<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>', name:'Gaullisme',
     def:"Le gaullisme est une doctrine française centrée sur la grandeur nationale, l'indépendance de la France, la souveraineté populaire et un État fort. Il transcende parfois gauche et droite.",
     history:"Du RPF (1947) au RPR de Chirac (1976), puis UMP (2002). Aujourd'hui dilué dans LR et en partie dans Renaissance. Chirac en est la dernière grande incarnation.",
     thinkers:['Charles de Gaulle','Michel Debré','Jacques Chirac','Charles Pasqua'],
     franceEx:'Courant gaulliste dans LR, certaines figures de Renaissance',
     worldEx:'Inspiration pour les partis souverainistes de droite républicaine en Europe',
     quote:{text:"La politique de la France ne se fait pas à la corbeille.",author:"Charles de Gaulle"} },
-  { id:'reformisme', label:'Centre-gauche', lc:'#e74c3c', bg:'#fef0ed', icon:'📋', name:'Réformisme social-démocrate',
+  { id:'reformisme', label:'Centre-gauche', lc:'#e74c3c', bg:'#fef0ed', icon:'<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="8" y="2" width="8" height="4" rx="1"/><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/></svg>', name:'Réformisme social-démocrate',
     def:"Le réformisme cherche à transformer la société progressivement par la voie institutionnelle et légale, sans rupture révolutionnaire. Il constitue le pilier de la social-démocratie européenne.",
     history:"Courant dominant depuis Bernstein (fin XIXe). En France, incarné par le PS dans ses années de gouvernement, Rocard ('Il faut traverser la rivière pierre par pierre'), Jospin.",
     thinkers:['Édouard Bernstein','Léon Blum','Michel Rocard','Lionel Jospin'],
     franceEx:'PS (gouvernemental), Génération.s, Place Publique',
     worldEx:'SPD, partis sociaux-démocrates nordiques, Labour (UK)',
     quote:{text:"Gouverner, c'est choisir.",author:"Pierre Mendès France"} },
-  { id:'federalisme', label:'Centre pro-européen', lc:'#1e8449', bg:'#eafaf1', icon:'🇪🇺', name:'Fédéralisme européen',
+  { id:'federalisme', label:'Centre pro-européen', lc:'#1e8449', bg:'#eafaf1', icon:'<svg width="20" height="20" viewBox="0 0 24 24" fill="none"><rect x="2.5" y="4" width="19" height="16" rx="3" fill="#1E3A8A"/><g fill="#FACC15"><circle cx="12" cy="7.2" r="0.9"/><circle cx="14.8" cy="8.1" r="0.9"/><circle cx="16.6" cy="10.4" r="0.9"/><circle cx="16.6" cy="13.6" r="0.9"/><circle cx="14.8" cy="15.9" r="0.9"/><circle cx="12" cy="16.8" r="0.9"/><circle cx="9.2" cy="15.9" r="0.9"/><circle cx="7.4" cy="13.6" r="0.9"/><circle cx="7.4" cy="10.4" r="0.9"/><circle cx="9.2" cy="8.1" r="0.9"/><circle cx="6.6" cy="9.2" r="0.9"/><circle cx="17.4" cy="14.8" r="0.9"/></g></svg>', name:'Fédéralisme européen',
     def:"Le fédéralisme européen prône une intégration politique poussée : gouvernement, parlement, politique étrangère et défense communs pour faire de l'UE un véritable État fédéral.",
     history:"Imaginé par Victor Hugo (1849), relancé après 1945 par Jean Monnet, Robert Schuman, Adenauer. Courant fort chez les partis centristes et pro-européens depuis les années 90.",
     thinkers:['Victor Hugo','Jean Monnet','Robert Schuman','Guy Verhofstadt'],
@@ -1709,7 +1707,7 @@ const ideologies = [
     worldEx:'Brexit (UK), M5S (Italie), AfD (Allemagne)',
     quote:{text:"Ni Bruxelles, ni Washington — la France doit décider pour les Français.",author:"Courant souverainiste"} },
 
-  { id:'monarchisme', label:'Droite traditionaliste', lc:'#7b3f00', bg:'#f9f0e8', icon:'👑', name:'Monarchisme constitutionnel',
+  { id:'monarchisme', label:'Droite traditionaliste', lc:'#7b3f00', bg:'#f9f0e8', icon:'<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 8l4 4 5-7 5 7 4-4v10H3z"/><path d="M3 18h18"/></svg>', name:'Monarchisme constitutionnel',
     def:"Le monarchisme constitutionnel prône un régime où un monarque héréditaire règne sans gouverner, les pouvoirs étant exercés par un gouvernement responsable devant un parlement élu. Distinct de la monarchie absolue.",
     history:"Théorisé par Montesquieu et les doctrinaires sous la Restauration. En France, le légitimisme (Bourbons) et l\'orléanisme (Louis-Philippe) s\'affrontent au XIXe. Aujourd\'hui marginal, il subsiste autour du prétendant Louis de Bourbon.",
     thinkers:['Montesquieu','Benjamin Constant','François Guizot','Jacques Bainville','Charles Maurras'],
@@ -1717,7 +1715,7 @@ const ideologies = [
     worldEx:'Monarchies constitutionnelles : Espagne, Belgique, Pays-Bas, Suède, Royaume-Uni',
     quote:{text:"Le roi règne mais ne gouverne pas.",author:"Adolphe Thiers, 1830"} },
 
-  { id:'libertarianisme', label:'Droite/Gauche libérale', lc:'#f39c12', bg:'#fef9e7', icon:'🗽', name:'Libertarianisme',
+  { id:'libertarianisme', label:'Droite/Gauche libérale', lc:'#f39c12', bg:'#fef9e7', icon:'<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v20"/><path d="M5 10l7-8 7 8"/><path d="M5 14h14"/></svg>', name:'Libertarianisme',
     def:"Le libertarianisme radicalise le libéralisme : il défend la liberté individuelle absolue contre toute coercition étatique. Il s\'oppose aussi bien à l\'État social qu\'à la morale imposée. Sa devise : liberté maximale, État minimal.",
     history:"Né aux États-Unis dans les années 1970 (Ayn Rand, Murray Rothbard, Friedrich Hayek). Peu implanté en France politiquement mais très influent dans les milieux libéraux, tech et entrepreneuriaux. Le mouvement altcoin/Bitcoin y est philosophiquement lié.",
     thinkers:['Friedrich Hayek','Milton Friedman','Ayn Rand','Murray Rothbard','Robert Nozick'],
@@ -1725,7 +1723,7 @@ const ideologies = [
     worldEx:'Parti Libertarien (USA — 3e parti), ancrage fort dans la Silicon Valley',
     quote:{text:"Votre liberté s\'arrête là où celle d\'autrui commence — et nulle part ailleurs.",author:"Principe libertarien fondateur"} },
 
-  { id:'syndicalisme', label:'Mouvement ouvrier', lc:'#c0392b', bg:'#fdecea', icon:'⚙️', name:'Syndicalisme révolutionnaire',
+  { id:'syndicalisme', label:'Mouvement ouvrier', lc:'#c0392b', bg:'#fdecea', icon:'<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1 1 0 0 0 .2 1.1l.1.1a2 2 0 1 1-2.8 2.8l-.1-.1a1 1 0 0 0-1.1-.2 1 1 0 0 0-.6.9V20a2 2 0 1 1-4 0v-.2a1 1 0 0 0-.6-.9 1 1 0 0 0-1.1.2l-.1.1a2 2 0 1 1-2.8-2.8l.1-.1a1 1 0 0 0 .2-1.1 1 1 0 0 0-.9-.6H4a2 2 0 1 1 0-4h.2a1 1 0 0 0 .9-.6 1 1 0 0 0-.2-1.1l-.1-.1a2 2 0 1 1 2.8-2.8l.1.1a1 1 0 0 0 1.1.2H9a1 1 0 0 0 .6-.9V4a2 2 0 1 1 4 0v.2a1 1 0 0 0 .6.9h.1a1 1 0 0 0 1.1-.2l.1-.1a2 2 0 1 1 2.8 2.8l-.1.1a1 1 0 0 0-.2 1.1v.1a1 1 0 0 0 .9.6H20a2 2 0 1 1 0 4h-.2a1 1 0 0 0-.9.6z"/></svg>', name:'Syndicalisme révolutionnaire',
     def:"Le syndicalisme révolutionnaire prône l\'émancipation des travailleurs par l\'action directe (grève générale, boycott) sans passer par l\'État ni les partis politiques. L\'organisation professionnelle remplace l\'État.",
     history:"Théorisé par Georges Sorel (Réflexions sur la violence, 1908) et Fernand Pelloutier. La Charte d\'Amiens (1906) de la CGT affirme l\'indépendance syndicale des partis. Influence persistante sur le syndicalisme français, l\'un des plus combatifs d\'Europe.",
     thinkers:['Georges Sorel','Fernand Pelloutier','Pierre Monatte','Victor Griffuelhes'],
@@ -2596,7 +2594,7 @@ function renderIdeologies(){
   g.innerHTML=ideologies.map(i=>`
     <div class="ideo-card" id="ideo-${i.id}" data-ideo="${i.id}">
       <div class="ideo-header" style="cursor:pointer">
-        <div class="ideo-icon" style="background:${i.bg}">${i.icon}</div>
+        <div class="ideo-icon" style="background:${i.bg};color:${i.lc}">${i.icon}</div>
         <div class="ideo-title-wrap">
           <div class="ideo-tag" style="color:${i.lc}">${i.label}</div>
           <h3>${i.name}</h3>

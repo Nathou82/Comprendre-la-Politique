@@ -20,7 +20,7 @@
   <meta property="og:type" content="website"/>
   <meta property="og:url" content="https://comprendrelapolitique.fr/partis-politiques.html"/>
   <meta name="twitter:card" content="summary_large_image"/>
-  <link rel="icon" type="image/png" href="favicon.ico"/>
+    <link rel="icon" type="image/x-icon" href="favicon.ico"/>
   <title>Partis Politiques Français — Comparateur, Popularité et Profil | comprendrelapolitique.fr</title>
   <link rel="canonical" href="https://comprendrelapolitique.fr/partis-politiques.html"/>
     <link rel="preconnect" href="https://fonts.googleapis.com"/>
@@ -1026,8 +1026,6 @@
   .footer-legal-title{font-size:.8rem;font-weight:700;color:rgba(255,255,255,.7);margin-bottom:.3rem;letter-spacing:.03em;}
   .footer-legal-text{font-size:.73rem;color:rgba(255,255,255,.35);line-height:1.6;}
   .footer-links a{color:rgba(255,255,255,.45);font-size:.77rem;transition:color .2s,border-color .2s}
-  .footer-links a.footer-legal{border:1px solid rgba(255,255,255,.2);padding:.28rem .75rem;border-radius:20px;color:rgba(255,255,255,.55)}
-  .footer-links a.footer-legal:hover{color:var(--gold);border-color:rgba(212,168,67,.5)}
   .footer-links a:hover{color:var(--gold)}
 
   /* =========================================================
@@ -1270,10 +1268,7 @@
     color:rgba(255,255,255,.55);margin-bottom:2.4rem;
     max-width:540px;margin-left:auto;margin-right:auto;line-height:1.6;
   }
-  .exploration-grid{
-    display:grid;grid-template-columns:repeat(auto-fill,minmax(270px,1fr));
-    gap:1.1rem;
-  }
+  .exploration-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1.1rem;}
   .exploration-card{
     display:flex;align-items:center;gap:1rem;
     background:rgba(255,255,255,.05);
@@ -1363,12 +1358,12 @@
   .footer-share-btn svg{width:15px;height:15px;fill:currentColor;}
 
   @media(max-width:640px){
-    .overview-grid,.exploration-grid{grid-template-columns:1fr;}
+    .overview-grid,.exploration-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1.1rem;}
     .exploration-title{font-size:1.4rem;}
   }
 
   @media(max-width:640px){
-    .overview-grid,.exploration-grid{grid-template-columns:1fr;}
+    .overview-grid,.exploration-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1.1rem;}
   }
   </style>
 </head>
@@ -1378,13 +1373,14 @@
   <div class="nav-inner">
     <div class="nav-logo"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 36" width="28" height="16" aria-hidden="true" style="display:inline-block;vertical-align:middle;flex-shrink:0"><path d="M32 34 A30 30 0 0 1 2 34 Z" fill="#B80000"/><path d="M32 34 A30 30 0 0 0 62 34 Z" fill="#003DA6"/><path d="M9 34 A23 23 0 0 1 32 11" fill="none" stroke="#E03030" stroke-width="3.8" stroke-linecap="round"/><path d="M15 34 A17 17 0 0 1 32 17" fill="none" stroke="#CC2222" stroke-width="3.8" stroke-linecap="round"/><path d="M21 34 A11 11 0 0 1 32 23" fill="none" stroke="#AA1515" stroke-width="3.8" stroke-linecap="round"/><path d="M55 34 A23 23 0 0 0 32 11" fill="none" stroke="#3366EE" stroke-width="3.8" stroke-linecap="round"/><path d="M49 34 A17 17 0 0 0 32 17" fill="none" stroke="#2255CC" stroke-width="3.8" stroke-linecap="round"/><path d="M43 34 A11 11 0 0 0 32 23" fill="none" stroke="#1144AA" stroke-width="3.8" stroke-linecap="round"/><line x1="32" y1="11" x2="32" y2="34" stroke="rgba(255,255,255,0.75)" stroke-width="1.5" stroke-dasharray="2,2"/><line x1="2" y1="34" x2="62" y2="34" stroke="rgba(255,255,255,0.55)" stroke-width="1.5"/></svg> <span>Comprendre la</span> Politique</div>
     <button class="nav-arrow nav-arrow-left" id="navArrowLeft" aria-label="Défiler la navigation vers la gauche">&#8249;</button>
-    <ul class="nav-links" id="navLinks">
+        <ul class="nav-links" id="navLinks">
       <li><a href="index.html">Accueil</a></li>
+      <li><a href="comprendre-la-politique.html">Introduction</a></li>
       <li><a href="partis-politiques.html" aria-current="page">Partis politiques</a></li>
-      <li><a href="systeme-politique.html">Système politique</a></li>
+      <li><a href="systeme-politique.html">Syst&egrave;me politique</a></li>
       <li><a href="culture-politique.html">Culture politique</a></li>
-      <li><a href="actualites-politiques.html">Actualités</a></li>
-      <li><a href="profils-electoraux.html">Profils électoraux</a></li>
+      <li><a href="actualites-politiques.html">Actualit&eacute;s</a></li>
+      <li><a href="profils-electoraux.html">Profils &eacute;lectoraux</a></li>
       <li><a href="guide-politique.html">Guide PDF</a></li>
       <li><a href="apprendre.html">Apprendre</a></li>
     </ul>
@@ -1501,32 +1497,32 @@
       <span class="exploration-badge"><span style="display:inline-flex;align-items:center;vertical-align:middle;margin-right:.3rem"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"/></svg></span>Continuer l'exploration</span>
     </div>
     <h2 class="exploration-title">Allez plus loin dans votre<br><em>exploration politique</em></h2>
-    <p class="exploration-subtitle">Chaque page du site révèle une nouvelle facette de la politique française. Choisissez votre prochain sujet.</p>
+    <p class="exploration-subtitle">Trois pages complementaires pour continuer dans un ordre logique.</p>
     <div class="exploration-grid">
-    <a href="profils-electoraux.html" class="exploration-card">
-      <div class="exploration-icon" style="color:var(--gold)"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg></div>
-      <div class="exploration-text">
-        <strong>Profils électoraux</strong>
-        <span>Qui vote pour chaque parti ? Analyse INSEE →</span>
-      </div>
-      <div class="exploration-arrow">→</div>
-    </a>
-    <a href="culture-politique.html" class="exploration-card">
-      <div class="exploration-icon" style="color:var(--gold)"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg></div>
-      <div class="exploration-text">
-        <strong>Culture politique</strong>
-        <span>Chronologie et évolution historique →</span>
-      </div>
-      <div class="exploration-arrow">→</div>
-    </a>
-    <a href="actualites-politiques.html" class="exploration-card">
-      <div class="exploration-icon" style="color:var(--gold)"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 22h16a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2H8a2 2 0 0 0-2 2v16a2 2 0 0 0-2 2zm0 0a2 2 0 0 1-2-2v-9c0-1.1.9-2 2-2h2"/><line x1="18" y1="2" x2="18" y2="22"/><line x1="14" y1="7" x2="10" y2="7"/><line x1="14" y1="11" x2="10" y2="11"/></svg></div>
-      <div class="exploration-text">
-        <strong>Actualités politiques</strong>
-        <span>Les dernières nouvelles en direct →</span>
-      </div>
-      <div class="exploration-arrow">→</div>
-    </a>
+      <a href="profils-electoraux.html" class="exploration-card">
+        <div class="exploration-icon" style="color:var(--gold)"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg></div>
+        <div class="exploration-text">
+          <strong>Profils &eacute;lectoraux</strong>
+          <span>Visualisez les profils socio-demographiques des electorats -&gt;</span>
+        </div>
+        <div class="exploration-arrow">&rarr;</div>
+      </a>
+      <a href="actualites-politiques.html" class="exploration-card">
+        <div class="exploration-icon" style="color:var(--gold)"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 22h16a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2H8a2 2 0 0 0-2 2v16a2 2 0 0 0-2 2zm0 0a2 2 0 0 1-2-2v-9c0-1.1.9-2 2-2h2"/><line x1="18" y1="2" x2="18" y2="22"/><line x1="14" y1="7" x2="10" y2="7"/><line x1="14" y1="11" x2="10" y2="11"/></svg></div>
+        <div class="exploration-text">
+          <strong>Actualit&eacute;s politiques</strong>
+          <span>Suivez les evolutions recentes et les decisions du moment -&gt;</span>
+        </div>
+        <div class="exploration-arrow">&rarr;</div>
+      </a>
+      <a href="comprendre-la-politique.html" class="exploration-card">
+        <div class="exploration-icon" style="color:var(--gold)"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9.5 2A2.5 2.5 0 0 1 12 4.5v15a2.5 2.5 0 0 1-4.96-.46 2.5 2.5 0 0 1-1.04-4.79A2.5 2.5 0 0 1 4 12a2.5 2.5 0 0 1 2-2.45V9.5A2.5 2.5 0 0 1 9.5 2z"/><path d="M14.5 2A2.5 2.5 0 0 0 12 4.5v15a2.5 2.5 0 0 0 4.96-.46 2.5 2.5 0 0 0 1.04-4.79A2.5 2.5 0 0 0 20 12a2.5 2.5 0 0 0-2-2.45V9.5A2.5 2.5 0 0 0 14.5 2z"/></svg></div>
+        <div class="exploration-text">
+          <strong>Comprendre la politique</strong>
+          <span>Explorez le spectre politique, les ideologies et les themes -&gt;</span>
+        </div>
+        <div class="exploration-arrow">&rarr;</div>
+      </a>
     </div>
   </div>
 </section>
@@ -1558,16 +1554,17 @@
   <div class="footer-inner">
     <div class="footer-logo"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 36" width="28" height="16" aria-hidden="true" style="display:inline-block;vertical-align:middle;flex-shrink:0;opacity:.9"><path d="M32 34 A30 30 0 0 1 2 34 Z" fill="#B80000"/><path d="M32 34 A30 30 0 0 0 62 34 Z" fill="#003DA6"/><path d="M9 34 A23 23 0 0 1 32 11" fill="none" stroke="#E03030" stroke-width="3.8" stroke-linecap="round"/><path d="M15 34 A17 17 0 0 1 32 17" fill="none" stroke="#CC2222" stroke-width="3.8" stroke-linecap="round"/><path d="M21 34 A11 11 0 0 1 32 23" fill="none" stroke="#AA1515" stroke-width="3.8" stroke-linecap="round"/><path d="M55 34 A23 23 0 0 0 32 11" fill="none" stroke="#3366EE" stroke-width="3.8" stroke-linecap="round"/><path d="M49 34 A17 17 0 0 0 32 17" fill="none" stroke="#2255CC" stroke-width="3.8" stroke-linecap="round"/><path d="M43 34 A11 11 0 0 0 32 23" fill="none" stroke="#1144AA" stroke-width="3.8" stroke-linecap="round"/><line x1="32" y1="11" x2="32" y2="34" stroke="rgba(255,255,255,0.75)" stroke-width="1.5" stroke-dasharray="2,2"/><line x1="2" y1="34" x2="62" y2="34" stroke="rgba(255,255,255,0.55)" stroke-width="1.5"/></svg> <span>Comprendre la</span> Politique</div>
     <p>Site pédagogique à but éducatif. Contenu équilibré et non partisan.<br>Les données de sondages sont issues des principaux instituts (IFOP, BVA, Odoxa, Ipsos) et sont indicatives.</p>
-    <div class="footer-links">
+        <div class="footer-links">
       <a href="index.html">Accueil</a>
+      <a href="comprendre-la-politique.html">Introduction</a>
       <a href="partis-politiques.html">Partis politiques</a>
-      <a href="systeme-politique.html">Système politique</a>
+      <a href="systeme-politique.html">Syst&egrave;me politique</a>
       <a href="culture-politique.html">Culture politique</a>
-      <a href="actualites-politiques.html">Actualités</a>
-      <a href="profils-electoraux.html">Profils électoraux</a>
+      <a href="actualites-politiques.html">Actualit&eacute;s</a>
+      <a href="profils-electoraux.html">Profils &eacute;lectoraux</a>
       <a href="guide-politique.html">Guide PDF</a>
       <a href="apprendre.html">Apprendre</a>
-      <a href="mentions-legales.html">Mentions légales</a>
+      <a href="mentions-legales.html">Mentions l&eacute;gales</a>
     </div>
     <div style="margin-top:1.8rem;padding-top:1.5rem;border-top:1px solid rgba(255,255,255,.08);max-width:760px;margin-left:auto;margin-right:auto;">
       <p style="color:rgba(255,255,255,.55);font-size:.78rem;font-weight:600;margin-bottom:.5rem;letter-spacing:.06em;text-transform:uppercase;"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg> Sources &amp; fiabilité</p>
@@ -1710,8 +1707,8 @@ const ideologies = [
    DATA — PARTIS
 ============================================================ */
 const parties = [
-  { id:'rn', name:'Rassemblement National', short:'RN', initials:'RN', color:'#1a1a2e', bg:'#e8e9ea', orient:'extreme-droite', orientLabel:'Extrême droite', orientBg:'#1a1a2e', orientColor:'#fff', leader:'Jordan Bardella (Prés.), Marine Le Pen (groupe AN)', founded:'Fondé en 1972 sous le nom Front National par Jean-Marie Le Pen. Rebaptisé RN en 2018 sous Marine Le Pen dans le cadre de sa dédiabolisation.', desc:"Le RN est le 1er parti d'extrême droite français. Avec 37 sièges au Parlement européen (2024) et ~34% des intentions de vote, il est devenu la première force politique en France. Jordan Bardella incarne son profil technocratique, Marine Le Pen sa direction stratégique.", positions:{'Économie':'Protectionnisme, pouvoir d\'achat, anti-mondialisation','Immigration':'Immigration filtrée, préférence nationale, remigration','Europe':'Refondation de l\'UE, souverainisme fort','Société':'Ordre, autorité, valeurs nationales'}, polls:34, euroscore:31.4, pres2022:23.15, legscore:18.7, logo:'https://www.tv83.info/wp-content/uploads/2024/02/Logo_alternatif_Rassemblement_national_2018.png' },
-  { id:'lfi', name:'La France Insoumise', short:'LFI', initials:'LFI', color:'#be1622', bg:'#f9e8e8', orient:'gauche', orientLabel:'Gauche radicale', orientBg:'#c0392b', orientColor:'#fff', leader:'Jean-Luc Mélenchon (fondateur), Mathilde Panot (prés. groupe AN)', founded:'Fondée en 2016 par Jean-Luc Mélenchon, suite à sa rupture avec le PS et le Front de Gauche.', desc:"LFI est le pilier de la gauche radicale. Avec 22% à la présidentielle 2022 (4e par le nombre de voix total depuis 1965), puis 9,4% aux européennes 2024, LFI reste la force dominante de la gauche française malgré des turbulences internes.", positions:{'Économie':'Planification écologique, SMIC à 1600€, fin des cadeaux fiscaux','Immigration':'Droit d\'asile, régularisation, solidarité','Europe':'Désobéissance aux traités, refondation sociale','Société':'Féminisme, antiracisme, laïcité émancipatrice, LGBT'}, polls:9, euroscore:9.4, pres2022:21.95, legscore:11.6, logo:'https://lfi72-la-france-insoumise.fr/wp-content/uploads/2025/02/LFI-logo-site.png' },
+  { id:'rn', name:'Rassemblement National', short:'RN', initials:'RN', color:'#1a1a2e', bg:'#e8e9ea', orient:'extreme-droite', orientLabel:'Extrême droite', orientBg:'#1a1a2e', orientColor:'#fff', leader:'Jordan Bardella (Prés.), Marine Le Pen (groupe AN)', founded:'Fondé en 1972 sous le nom Front National par Jean-Marie Le Pen. Rebaptisé RN en 2018 sous Marine Le Pen dans le cadre de sa dédiabolisation.', desc:"Le RN est le 1er parti d'extrême droite français. Avec 37 sièges au Parlement européen (2024) et ~34% des intentions de vote, il est devenu la première force politique en France. Jordan Bardella incarne son profil technocratique, Marine Le Pen sa direction stratégique.", positions:{'Économie':'Protectionnisme, pouvoir d\'achat, anti-mondialisation','Immigration':'Immigration zéro, préférence nationale, remigration','Europe':'Refondation de l\'UE, souverainisme fort','Société':'Ordre, autorité, valeurs nationales'}, polls:34, euroscore:31.4, pres2022:23.15, legscore:18.7, logo:'https://www.tv83.info/wp-content/uploads/2024/02/Logo_alternatif_Rassemblement_national_2018.png' },
+  { id:'lfi', name:'La France Insoumise', short:'LFI', initials:'LFI', color:'#be1622', bg:'#f9e8e8', orient:'gauche', orientLabel:'Gauche radicale', orientBg:'#c0392b', orientColor:'#fff', leader:'Jean-Luc Mélenchon (fondateur), Mathilde Panot (prés. groupe AN)', founded:'Fondée en 2016 par Jean-Luc Mélenchon, suite à sa rupture avec le PS et le Front de Gauche.', desc:"LFI est le pilier de la gauche radicale. Avec 22% à la présidentielle 2022 (4e par le nombre de voix total depuis 1965), puis 9,4% aux européennes 2024, LFI reste la force dominante de la gauche française malgré des turbulences internes.", positions:{'Économie':'Planification écologique, SMIC à 1600€, fin des cadeaux fiscaux','Immigration':'Droit d\'asile, régularisation, solidarité','Europe':'Désobéissance aux traités, refondation sociale','Société':'Féminisme, antiracisme, laïcité émancipatrice'}, polls:9, euroscore:9.4, pres2022:21.95, legscore:11.6, logo:'https://lfi72-la-france-insoumise.fr/wp-content/uploads/2025/02/LFI-logo-site.png' },
   { id:'renaissance', name:'Renaissance (ex-LREM)', short:'RE', initials:'RE', color:'#006EB7', bg:'#eafaf1', orient:'centre', orientLabel:'Centre libéral', orientBg:'#2563a8', orientColor:'#fff', leader:'Gabriel Attal (Prés. parti), Emmanuel Macron (fondateur)', founded:'Fondé en 2016 sous "En Marche", devenu LREM puis La République En Marche (2017), rebaptisé Renaissance (2022).', desc:"Renaissance est le parti présidentiel. Dominant de 2017 à 2022 avec majorité absolue, il gouverne depuis 2022 en minorité. Incarne le «en même temps» : libéralisme économique + progressisme social + pro-européisme fort.", positions:{'Économie':'Libéralisme modernisateur, investissement, innovation','Immigration':'Fermeté et humanisme simultanés','Europe':'Fédéralisme, leadership européen','Société':'Progressisme républicain modéré'}, polls:18, euroscore:14.6, pres2022:27.85, legscore:25.8, logo:'https://upload.wikimedia.org/wikipedia/commons/thumb/7/75/Renaissance-logotype-officiel.svg/langfr-960px-Renaissance-logotype-officiel.svg.png' },
   { id:'ps', name:'Parti Socialiste', short:'PS', initials:'PS', color:'#E8003D', bg:'#fdecea', orient:'centre-gauche', orientLabel:'Centre-gauche', orientBg:'#e74c3c', orientColor:'#fff', leader:'Olivier Faure (Premier secrétaire)', founded:"Fondé en 1969, refondé à Épinay en 1971 sous Mitterrand, héritier de la SFIO de Jaurès (1905).", desc:"Le PS a dominé la gauche de 1981 à 2017. Après le séisme Macron (6,3% en 2017 avec Hamon !), il se reconstruit au sein du NFP. Raphaël Glucksmann (Place Publique/PS) réalise 13,8% aux européennes 2024, signe de recomposition.", positions:{'Économie':'Social-démocratie, redistribution, service public','Immigration':'Humanisme, intégration républicaine','Europe':'Pro-européen fort, Europe sociale','Société':'Progressisme, laïcité, droits des femmes'}, polls:6, euroscore:13.8, pres2022:1.75, legscore:5.7, logo:'https://upload.wikimedia.org/wikipedia/fr/d/d1/Logo_Parti_socialiste_%28France%29_2016.png' },
   { id:'lr', name:'Les Républicains', short:'LR', initials:'LR', color:'#0066CC', bg:'#e8f0fa', orient:'droite', orientLabel:'Droite', orientBg:'#1a4f8a', orientColor:'#fff', leader:'Laurent Wauquiez (Président)', founded:'Fondé comme RPR (1976, Chirac), devenu UMP (2002), rebaptisé LR (2015).', desc:"LR est la droite républicaine classique. En crise depuis 2017 (pris en étau entre macronisme et RN), il a connu une scission en 2023 (Ciotti vers RN). Wauquiez tente de reconstruire une droite autonome et ferme sur l'immigration.", positions:{'Économie':'Libéralisme, baisse impôts, réduction dette','Immigration':'Maîtrise des flux, fermeté, identité nationale','Europe':'Pro-UE pragmatique et exigeant','Société':'Valeurs républicaines conservatrices, ordre'}, polls:8, euroscore:7.2, pres2022:4.78, legscore:12.6, logo:'https://upload.wikimedia.org/wikipedia/commons/thumb/5/5c/CGLR2023_-_4.png/1280px-CGLR2023_-_4.png' },

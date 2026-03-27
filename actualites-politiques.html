@@ -20,7 +20,7 @@
   <meta property="og:type" content="website"/>
   <meta property="og:url" content="https://comprendrelapolitique.fr/actualites-politiques.html"/>
   <meta name="twitter:card" content="summary_large_image"/>
-  <link rel="icon" type="image/png" href="favicon.ico"/>
+    <link rel="icon" type="image/x-icon" href="favicon.ico"/>
   <title>Actualités Politiques Françaises — comprendrelapolitique.fr</title>
   <link rel="canonical" href="https://comprendrelapolitique.fr/actualites-politiques.html"/>
   <link rel="preconnect" href="https://fonts.googleapis.com"/>
@@ -384,9 +384,7 @@
     color:rgba(255,255,255,.55);margin-bottom:2.4rem;
     max-width:540px;margin-left:auto;margin-right:auto;line-height:1.6;
   }
-  .exploration-grid{
-    display:grid;grid-template-columns:repeat(auto-fill,minmax(270px,1fr));gap:1.1rem;
-  }
+  .exploration-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1.1rem;}
   .exploration-card{
     display:flex;align-items:center;gap:1rem;
     background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);
@@ -501,7 +499,7 @@
     .actu-featured{grid-template-columns:1fr;}
     .actu-featured-img{min-height:200px;}
     .actu-grid{grid-template-columns:repeat(2,1fr);}
-    .exploration-grid{grid-template-columns:1fr;}
+    .exploration-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1.1rem;}
   }
   @media(max-width:640px){
     .actu-hero h1{font-size:1.7rem;}
@@ -516,178 +514,73 @@
   @media(max-width:480px){
     #cookieBanner{bottom:.8rem;right:.8rem;left:.8rem;width:auto;max-width:none;}
   }
-    #maintenance-popup-overlay{
-  position:fixed;
-  top:0;
-  left:0;
-  width:100%;
-  height:100%;
-  background:rgba(0,0,0,0.85);
-  display:flex;
-  justify-content:center;
-  align-items:center;
-  z-index:999999;
-}
 
-#maintenance-popup{
-  background:white;
-  padding:40px 50px;
-  border-radius:12px;
-  text-align:center;
-  max-width:420px;
-  width:90%;
-  font-family:Arial, sans-serif;
-}
-
-#maintenance-popup h2{
-  margin-bottom:15px;
-  font-size:28px;
-}
-
-#maintenance-popup p{
-  font-size:16px;
-  color:#444;
-}
-
-    /* ── Maintenance Popup ───────────────────────────── */
-
-#maintenanceOverlay{
-  position:fixed;
-  inset:0;
-  z-index:99999;
-
-  background:rgba(13,27,42,.85);
-  backdrop-filter:blur(8px);
-
-  display:flex;
-  align-items:center;
-  justify-content:center;
-
-  opacity:0;
-  pointer-events:none;
-
-  transition:opacity .4s ease;
-}
-
-#maintenanceOverlay.active{
-  opacity:1;
-  pointer-events:all;
-}
-
-.maintenance-box{
-  background:var(--card);
-  border-radius:18px;
-  padding:2.5rem 2rem;
-  max-width:420px;
-  width:90%;
-
-  text-align:center;
-
-  box-shadow:0 20px 60px rgba(0,0,0,.35);
-
-  transform:scale(.9) translateY(20px);
-  opacity:0;
-
-  animation:popupIn .5s cubic-bezier(.25,.46,.45,.94) forwards;
-}
-
-@keyframes popupIn{
-  to{
-    transform:scale(1) translateY(0);
-    opacity:1;
+  body.maintenance-lock{overflow:hidden !important;}
+  .maintenance-overlay{
+    position:fixed;left:0;right:0;bottom:0;top:var(--maintenance-top,0px);z-index:950;
+    display:none;align-items:center;justify-content:center;
+    background:rgba(6,12,22,.72);backdrop-filter:blur(4px);
+    padding:1.2rem;
   }
-}
-
-.maintenance-icon{
-  font-size:2.5rem;
-  margin-bottom:1rem;
-  animation:spin 3s linear infinite;
-}
-
-@keyframes spin{
-  from{transform:rotate(0deg);}
-  to{transform:rotate(360deg);}
-}
-
-.maintenance-box h2{
-  font-family:'Playfair Display',serif;
-  font-size:1.5rem;
-  margin-bottom:.6rem;
-}
-
-.maintenance-box p{
-  font-family:'DM Sans',sans-serif;
-  font-size:.85rem;
-  color:var(--text2);
-  line-height:1.6;
-  margin-bottom:1.5rem;
-}
-
-/* Loader */
-.maintenance-loader{
-  width:40px;
-  height:40px;
-  margin:0 auto 1.5rem;
-  border:3px solid var(--border);
-  border-top-color:var(--gold);
-  border-radius:50%;
-  animation:spin .8s linear infinite;
-}
-
-/* Bouton */
-#closeMaintenance{
-  padding:.5rem 1.4rem;
-  border-radius:25px;
-  border:none;
-  cursor:pointer;
-
-  background:var(--navy);
-  color:#fff;
-
-  font-family:'DM Sans',sans-serif;
-  font-size:.75rem;
-  font-weight:600;
-
-  transition:.2s;
-}
-
-#closeMaintenance:hover{
-  background:var(--navy2);
-  transform:translateY(-2px);
-}
+  .maintenance-overlay.show{display:flex;}
+  .maintenance-modal{
+    width:min(520px,100%);
+    background:linear-gradient(150deg,#0f2136 0%,#132b45 100%);
+    border:1px solid rgba(212,175,55,.35);
+    border-radius:16px;
+    box-shadow:0 20px 60px rgba(0,0,0,.45);
+    color:#fff;
+    padding:1.4rem 1.4rem 1.2rem;
+    text-align:center;
+    animation:maintenance-pop .55s cubic-bezier(.2,.9,.2,1);
+  }
+  @keyframes maintenance-pop{from{transform:translateY(22px) scale(.92);opacity:0;}to{transform:translateY(0) scale(1);opacity:1;}}
+  .maintenance-icon-wrap{
+    width:64px;height:64px;border-radius:50%;
+    margin:0 auto .9rem;
+    display:flex;align-items:center;justify-content:center;
+    font-size:1.9rem;line-height:1;
+    background:rgba(212,175,55,.12);
+    border:1px solid rgba(212,175,55,.45);
+    animation:maintenance-pulse 1.8s ease-in-out infinite;
+  }
+  @keyframes maintenance-pulse{0%,100%{transform:scale(1);box-shadow:0 0 0 0 rgba(212,175,55,.25);}50%{transform:scale(1.06);box-shadow:0 0 0 10px rgba(212,175,55,0);}}
+  .maintenance-modal h2{color:#fff;font-size:1.35rem;margin-bottom:.5rem;}
+  .maintenance-modal p{color:rgba(255,255,255,.82);font-size:.93rem;line-height:1.6;}
+  .maintenance-note{
+    margin-top:.8rem;display:inline-block;
+    font-size:.78rem;color:var(--gold);
+    border:1px solid rgba(212,175,55,.35);
+    padding:.2rem .7rem;border-radius:999px;
+    background:rgba(212,175,55,.12);
+  }
   </style>
 </head>
 <body>
-
-<div id="maintenanceOverlay">
-  <div class="maintenance-box">
-    
-    <div class="maintenance-icon">⚙️</div>
-
-    <h2>Maintenance en cours</h2>
-    <p>
-      Cette page est actuellement en maintenance afin d'améliorer votre expérience utilisateur.
-      Elle sera de retour très rapidement.
-    </p>
-
-    <div class="maintenance-loader"></div>
-
-    <button id="closeMaintenance">Fermer</button>
+<div id="maintenanceOverlay" class="maintenance-overlay" role="alertdialog" aria-modal="true" aria-labelledby="maintenanceTitle" aria-describedby="maintenanceDesc">
+  <div class="maintenance-modal">
+    <div class="maintenance-icon-wrap" aria-hidden="true">
+      <span>⚠️</span>
+    </div>
+    <h2 id="maintenanceTitle">Page en cours de maintenance</h2>
+    <p id="maintenanceDesc">La section Actualités est temporairement indisponible pendant une opération technique.</p>
+    <span class="maintenance-note">Merci de patienter</span>
   </div>
 </div>
-  
+
 <!-- NAVBAR -->
 <nav id="navbar" role="navigation" aria-label="Navigation principale">
   <div class="nav-inner">
     <a href="index.html" class="nav-logo"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 36" width="28" height="16" aria-hidden="true" style="display:inline-block;vertical-align:middle;flex-shrink:0"><path d="M32 34 A30 30 0 0 1 2 34 Z" fill="#B80000"/><path d="M32 34 A30 30 0 0 0 62 34 Z" fill="#003DA6"/><path d="M9 34 A23 23 0 0 1 32 11" fill="none" stroke="#E03030" stroke-width="3.8" stroke-linecap="round"/><path d="M15 34 A17 17 0 0 1 32 17" fill="none" stroke="#CC2222" stroke-width="3.8" stroke-linecap="round"/><path d="M21 34 A11 11 0 0 1 32 23" fill="none" stroke="#AA1515" stroke-width="3.8" stroke-linecap="round"/><path d="M55 34 A23 23 0 0 0 32 11" fill="none" stroke="#3366EE" stroke-width="3.8" stroke-linecap="round"/><path d="M49 34 A17 17 0 0 0 32 17" fill="none" stroke="#2255CC" stroke-width="3.8" stroke-linecap="round"/><path d="M43 34 A11 11 0 0 0 32 23" fill="none" stroke="#1144AA" stroke-width="3.8" stroke-linecap="round"/><line x1="32" y1="11" x2="32" y2="34" stroke="rgba(255,255,255,0.75)" stroke-width="1.5" stroke-dasharray="2,2"/><line x1="2" y1="34" x2="62" y2="34" stroke="rgba(255,255,255,0.55)" stroke-width="1.5"/></svg> <span>Comprendre la</span> Politique</a>
     <button class="nav-arrow nav-arrow-left" id="navArrowLeft" aria-label="Défiler la navigation vers la gauche">&#8249;</button>
-    <ul class="nav-links" id="navLinks">
+        <ul class="nav-links" id="navLinks">
       <li><a href="index.html">Accueil</a></li>
+      <li><a href="comprendre-la-politique.html">Introduction</a></li>
       <li><a href="partis-politiques.html">Partis politiques</a></li>
-      <li><a href="systeme-politique.html">Système politique</a></li>
+      <li><a href="systeme-politique.html">Syst&egrave;me politique</a></li>
       <li><a href="culture-politique.html">Culture politique</a></li>
-      <li><a href="actualites-politiques.html" aria-current="page">Actualités</a></li>
-      <li><a href="profils-electoraux.html">Profils électoraux</a></li>
+      <li><a href="actualites-politiques.html" aria-current="page">Actualit&eacute;s</a></li>
+      <li><a href="profils-electoraux.html">Profils &eacute;lectoraux</a></li>
       <li><a href="guide-politique.html">Guide PDF</a></li>
       <li><a href="apprendre.html">Apprendre</a></li>
     </ul>
@@ -757,34 +650,34 @@
 <section class="exploration-section" aria-label="Continuer votre exploration politique">
   <div class="exploration-inner">
     <div style="text-align:center;margin-bottom:.4rem;">
-      <span class="exploration-badge"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block;vertical-align:middle;margin-right:.3rem"><circle cx="12" cy="12" r="10"/><polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"/></svg>Continuer l'exploration</span>
+      <span class="exploration-badge"><span style="display:inline-flex;align-items:center;vertical-align:middle;margin-right:.3rem"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"/></svg></span>Continuer l'exploration</span>
     </div>
     <h2 class="exploration-title">Allez plus loin dans votre<br><em>exploration politique</em></h2>
-    <p class="exploration-subtitle">Les actualités en contexte — approfondissez avec nos guides pédagogiques.</p>
+    <p class="exploration-subtitle">Trois pages complementaires pour continuer dans un ordre logique.</p>
     <div class="exploration-grid">
       <a href="partis-politiques.html" class="exploration-card">
-        <div class="exploration-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 11 12 14 22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg></div>
+        <div class="exploration-icon" style="color:var(--gold)"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 11 12 14 22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg></div>
         <div class="exploration-text">
           <strong>Partis politiques</strong>
-          <span>Qui sont les acteurs des actualités ? →</span>
+          <span>Comparez les partis et leurs positions sur les grands sujets -&gt;</span>
         </div>
-        <div class="exploration-arrow">→</div>
+        <div class="exploration-arrow">&rarr;</div>
       </a>
       <a href="systeme-politique.html" class="exploration-card">
-        <div class="exploration-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="22" x2="21" y2="22"/><line x1="6" y1="18" x2="6" y2="11"/><line x1="10" y1="18" x2="10" y2="11"/><line x1="14" y1="18" x2="14" y2="11"/><line x1="18" y1="18" x2="18" y2="11"/><polygon points="12 2 20 7 4 7"/></svg></div>
+        <div class="exploration-icon" style="color:var(--gold)"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="22" x2="21" y2="22"/><line x1="6" y1="18" x2="6" y2="11"/><line x1="10" y1="18" x2="10" y2="11"/><line x1="14" y1="18" x2="14" y2="11"/><line x1="18" y1="18" x2="18" y2="11"/><polygon points="12 2 20 7 4 7"/></svg></div>
         <div class="exploration-text">
-          <strong>Système politique</strong>
-          <span>Comprendre les institutions derrière les décisions →</span>
+          <strong>Syst&egrave;me politique</strong>
+          <span>Comprenez les institutions derriere les decisions publiques -&gt;</span>
         </div>
-        <div class="exploration-arrow">→</div>
+        <div class="exploration-arrow">&rarr;</div>
       </a>
-      <a href="profils-electoraux.html" class="exploration-card">
-        <div class="exploration-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg></div>
+            <a href="comprendre-la-politique.html" class="exploration-card">
+        <div class="exploration-icon" style="color:var(--gold)"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9.5 2A2.5 2.5 0 0 1 12 4.5v15a2.5 2.5 0 0 1-4.96-.46 2.5 2.5 0 0 1-1.04-4.79A2.5 2.5 0 0 1 4 12a2.5 2.5 0 0 1 2-2.45V9.5A2.5 2.5 0 0 1 9.5 2z"/><path d="M14.5 2A2.5 2.5 0 0 0 12 4.5v15a2.5 2.5 0 0 0 4.96-.46 2.5 2.5 0 0 0 1.04-4.79A2.5 2.5 0 0 0 20 12a2.5 2.5 0 0 0-2-2.45V9.5A2.5 2.5 0 0 0 14.5 2z"/></svg></div>
         <div class="exploration-text">
-          <strong>Profils électoraux</strong>
-          <span>Contexte socio-démographique des tendances →</span>
+          <strong>Comprendre la politique</strong>
+          <span>Explorez le spectre politique, les ideologies et les themes -&gt;</span>
         </div>
-        <div class="exploration-arrow">→</div>
+        <div class="exploration-arrow">&rarr;</div>
       </a>
     </div>
   </div>
@@ -796,19 +689,24 @@
 <footer role="contentinfo">
   <div class="footer-inner">
     <div class="footer-logo"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 36" width="28" height="16" aria-hidden="true" style="display:inline-block;vertical-align:middle;flex-shrink:0;opacity:.9"><path d="M32 34 A30 30 0 0 1 2 34 Z" fill="#B80000"/><path d="M32 34 A30 30 0 0 0 62 34 Z" fill="#003DA6"/><path d="M9 34 A23 23 0 0 1 32 11" fill="none" stroke="#E03030" stroke-width="3.8" stroke-linecap="round"/><path d="M15 34 A17 17 0 0 1 32 17" fill="none" stroke="#CC2222" stroke-width="3.8" stroke-linecap="round"/><path d="M21 34 A11 11 0 0 1 32 23" fill="none" stroke="#AA1515" stroke-width="3.8" stroke-linecap="round"/><path d="M55 34 A23 23 0 0 0 32 11" fill="none" stroke="#3366EE" stroke-width="3.8" stroke-linecap="round"/><path d="M49 34 A17 17 0 0 0 32 17" fill="none" stroke="#2255CC" stroke-width="3.8" stroke-linecap="round"/><path d="M43 34 A11 11 0 0 0 32 23" fill="none" stroke="#1144AA" stroke-width="3.8" stroke-linecap="round"/><line x1="32" y1="11" x2="32" y2="34" stroke="rgba(255,255,255,0.75)" stroke-width="1.5" stroke-dasharray="2,2"/><line x1="2" y1="34" x2="62" y2="34" stroke="rgba(255,255,255,0.55)" stroke-width="1.5"/></svg> <span>Comprendre la</span> Politique</div>
-    <p>Site pédagogique à but éducatif. Contenu équilibré et non partisan.</p>
-    <div class="footer-links">
+    <p>Site pédagogique à but éducatif. Contenu équilibré et non partisan.<br>Les données de sondages sont issues des principaux instituts (IFOP, BVA, Odoxa, Ipsos) et sont indicatives.</p>
+        <div class="footer-links">
       <a href="index.html">Accueil</a>
+      <a href="comprendre-la-politique.html">Introduction</a>
       <a href="partis-politiques.html">Partis politiques</a>
-      <a href="systeme-politique.html">Système politique</a>
+      <a href="systeme-politique.html">Syst&egrave;me politique</a>
       <a href="culture-politique.html">Culture politique</a>
-      <a href="actualites-politiques.html">Actualités</a>
-      <a href="profils-electoraux.html">Profils électoraux</a>
+      <a href="actualites-politiques.html">Actualit&eacute;s</a>
+      <a href="profils-electoraux.html">Profils &eacute;lectoraux</a>
       <a href="guide-politique.html">Guide PDF</a>
       <a href="apprendre.html">Apprendre</a>
-      <a href="mentions-legales.html">Mentions légales</a>
+      <a href="mentions-legales.html">Mentions l&eacute;gales</a>
     </div>
-    <p style="margin-top:1.5rem;font-size:.7rem">© 2026 Comprendre la Politique — comprendrelapolitique.fr | Contenu pédagogique, non partisan</p>
+    <div style="margin-top:1.8rem;padding-top:1.5rem;border-top:1px solid rgba(255,255,255,.08);max-width:760px;margin-left:auto;margin-right:auto;">
+      <p style="color:rgba(255,255,255,.55);font-size:.78rem;font-weight:600;margin-bottom:.5rem;letter-spacing:.06em;text-transform:uppercase;"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg> Sources &amp; fiabilité</p>
+      <p style="color:rgba(255,255,255,.3);font-size:.75rem;line-height:1.75;">Les informations présentées sur ce site sont issues de sources publiques et institutionnelles : <strong style="color:rgba(255,255,255,.5)">Ministère de l'Intérieur</strong> (résultats électoraux), <strong style="color:rgba(255,255,255,.5)">Conseil Constitutionnel</strong>, <strong style="color:rgba(255,255,255,.5)">Assemblée Nationale</strong>, <strong style="color:rgba(255,255,255,.5)">vie-publique.fr</strong>, <strong style="color:rgba(255,255,255,.5)">Archives Nationales</strong> et <strong style="color:rgba(255,255,255,.5)">Gallica (BNF)</strong>. Les données de sondages sont fournies par IFOP, BVA, Odoxa et Ipsos à titre indicatif. Contenu éducatif, équilibré et non partisan.</p>
+    </div>
+    <p style="margin-top:1.5rem;font-size:.7rem">© 2026 Comprendre la Politique — comprendrelapolitique.fr | Contenu pédagogique, non partisan | Données : Ministère de l'Intérieur</p>
   </div>
 </footer>
 
@@ -832,6 +730,7 @@
 const ACTU_CONFIG = {
   apiKey:   'pub_25bf563f33c4468dbbd6a091e6e705a5',
   pageSize: 9,
+  fetchTimeoutMs: 8000,
   // Mapping catégorie → paramètres newsdata.io (category + mots-clés)
   categoryQueries: {
     politique:    { category:'politics',    q:'france politique' },
@@ -868,6 +767,7 @@ let state = {
   page: 1,            // page de chargement courante (pour load more)
   loading: false,
   apiWorked: false,
+  liveSource: 'none',
 };
 
 /* ============================================================
@@ -921,40 +821,122 @@ function imgOrPlaceholder(url, cat) {
   return `<img src="${url}" alt="" loading="lazy" onerror="this.parentElement.innerHTML='<div class=\\'actu-card-img-placeholder\\'>${emoji}</div>'"/>`;
 }
 
+
+async function fetchWithTimeout(url, timeoutMs) {
+  const controller = new AbortController();
+  const timer = setTimeout(() => controller.abort(), timeoutMs);
+  try {
+    return await fetch(url, { signal: controller.signal, cache: 'no-store' });
+  } catch (err) {
+    if (err && err.name === 'AbortError') {
+      throw new Error('Request timeout');
+    }
+    throw err;
+  } finally {
+    clearTimeout(timer);
+  }
+}
+
+
+function stripHtml(str) {
+  return (str || '').replace(/<[^>]*>/g, ' ').replace(/\s+/g, ' ').trim();
+}
+
+async function fetchGoogleNewsRss(category) {
+  if (state.page && state.page > 1) return [];
+  const qMap = {
+    politique: 'politique france gouvernement parlement',
+    municipales: 'elections municipales france',
+    geopolitique: 'geopolitique france europe otan',
+    conflits: 'guerre ukraine gaza france',
+    securite: 'securite interieure france police',
+    immigration: 'immigration france politique',
+    economie: 'economie france budget inflation',
+    ecologie: 'ecologie france climat'
+  };
+  const query = qMap[category] || qMap.politique;
+  const rssUrl = `https://news.google.com/rss/search?q=${encodeURIComponent(query)}&hl=fr&gl=FR&ceid=FR:fr`;
+  const apiUrl = `https://api.rss2json.com/v1/api.json?rss_url=${encodeURIComponent(rssUrl)}&count=${ACTU_CONFIG.pageSize}`;
+
+  const res = await fetchWithTimeout(apiUrl, ACTU_CONFIG.fetchTimeoutMs || 8000);
+  if (!res.ok) throw new Error(`RSS HTTP ${res.status}`);
+  const data = await res.json();
+  if (data.status !== 'ok' || !Array.isArray(data.items)) throw new Error('RSS unavailable');
+
+  return data.items.map(function(it){
+    const sourceName = (it.author && it.author.trim()) || ((it.title || '').split(' - ').pop() || 'Google News');
+    return {
+      title: it.title || '',
+      description: stripHtml(it.description || ''),
+      url: it.link || '',
+      urlToImage: it.thumbnail || null,
+      publishedAt: it.pubDate || '',
+      source: { name: sourceName },
+      category: category
+    };
+  }).filter(function(a){ return !!a.title && !!a.url; });
+}
 /* ============================================================
    API FETCH — NewsAPI
 ============================================================ */
 async function fetchNews(category, pageNum) {
   const cfg = ACTU_CONFIG.categoryQueries[category] || { category: 'politics', q: 'france politique' };
-  let url = `https://newsdata.io/api/1/latest?apikey=${ACTU_CONFIG.apiKey}` +
-    `&country=fr&language=fr` +
-    `&removeduplicate=1` +
-    `&category=${encodeURIComponent(cfg.category)}`;
-  if (cfg.q) url += `&q=${encodeURIComponent(cfg.q)}`;
-  if (pageNum && pageNum !== 1 && state.nextCursor) {
-    url += `&page=${encodeURIComponent(state.nextCursor)}`;
+
+  if (pageNum && pageNum !== 1 && (!state.nextCursor || state.liveSource !== 'newsdata')) {
+    return [];
   }
-  const res = await fetch(url);
-  if (!res.ok) throw new Error(`HTTP ${res.status}`);
-  const data = await res.json();
-  if (data.status !== 'success') throw new Error(data.message || 'API error');
-  // Store next cursor for pagination
-  state.nextCursor = data.nextPage || null;
-  if (!state.nextCursor) {
-    document.getElementById('actuLoadmore').style.display = 'none';
+
+  try {
+    let url = `https://newsdata.io/api/1/latest?apikey=${ACTU_CONFIG.apiKey}` +
+      `&country=fr&language=fr` +
+      `&removeduplicate=1` +
+      `&category=${encodeURIComponent(cfg.category)}`;
+    if (cfg.q) url += `&q=${encodeURIComponent(cfg.q)}`;
+    if (pageNum && pageNum !== 1 && state.nextCursor) {
+      url += `&page=${encodeURIComponent(state.nextCursor)}`;
+    }
+
+    const res = await fetchWithTimeout(url, ACTU_CONFIG.fetchTimeoutMs || 8000);
+    if (!res.ok) throw new Error(`HTTP ${res.status}`);
+
+    const data = await res.json();
+    if (data.status !== 'success') throw new Error(data.message || 'API error');
+
+    state.nextCursor = data.nextPage || null;
+    if (!state.nextCursor) {
+      const loadMoreEl = document.getElementById('actuLoadmore');
+      if (loadMoreEl) loadMoreEl.style.display = 'none';
+    }
+
+    const mapped = (data.results || []).map(function(a) {
+      return {
+        title:       a.title || '',
+        description: a.description || '',
+        url:         a.link || '',
+        urlToImage:  a.image_url || null,
+        publishedAt: a.pubDate || '',
+        source:      { name: a.source_name || a.source_id || '' },
+        category:    (a.category || []).join(', ')
+      };
+    }).filter(function(a){ return !!a.title && !!a.url; });
+
+    if (mapped.length) {
+      state.liveSource = 'newsdata';
+      return mapped;
+    }
+
+    throw new Error('No Newsdata results');
+
+  } catch (primaryErr) {
+    if (pageNum && pageNum !== 1) return [];
+
+    const rssArticles = await fetchGoogleNewsRss(category);
+    state.nextCursor = null;
+    state.liveSource = 'google-rss';
+    const loadMoreEl = document.getElementById('actuLoadmore');
+    if (loadMoreEl) loadMoreEl.style.display = 'none';
+    return rssArticles;
   }
-  // Map newsdata.io fields to expected format
-  return (data.results || []).map(function(a) {
-    return {
-      title:       a.title || '',
-      description: a.description || '',
-      url:         a.link || '',
-      urlToImage:  a.image_url || null,
-      publishedAt: a.pubDate || '',
-      source:      { name: a.source_name || a.source_id || '' },
-      category:    (a.category || []).join(', ')
-    };
-  });
 }
 
 /* ============================================================
@@ -1004,7 +986,7 @@ function renderFeatured(article, index) {
       <h2>${article.title||'Sans titre'}</h2>
       <p class="actu-featured-desc">${article.description||'Cliquez pour lire l\'article complet sur le site source.'}</p>
       <div class="actu-featured-source">
-        <span><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 22h16a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2H8a2 2 0 0 0-2 2v16a2 2 0 0 0-2 2zm0 0a2 2 0 0 1-2-2v-9c0-1.1.9-2 2-2h2"/><line x1="18" y1="2" x2="18" y2="22"/></svg> ${article.source?.name||'Source inconnue'}</span>
+        <span><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 22h16a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2H8a2 2 0 0 0-2 2v16a2 2 0 0 0-2 2zm0 0a2 2 0 0 1-2-2v-9c0-1.1.9-2 2-2h2"/><line x1="18" y1="2" x2="18" y2="22"/></svg> ${(article.source && article.source.name) || 'Source inconnue'}</span>
         <span>·</span>
         <span>${formatDate(article.publishedAt)}</span>
       </div>
@@ -1027,7 +1009,7 @@ function renderCard(article, index) {
       <div class="actu-card-title">${article.title||'Sans titre'}</div>
       <div class="actu-card-desc">${article.description||''}</div>
       <div class="actu-card-footer">
-        <span class="actu-card-source"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 22h16a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2H8a2 2 0 0 0-2 2v16a2 2 0 0 0-2 2zm0 0a2 2 0 0 1-2-2v-9c0-1.1.9-2 2-2h2"/><line x1="18" y1="2" x2="18" y2="22"/></svg> ${article.source?.name||'Source'}</span>
+        <span class="actu-card-source"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 22h16a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2H8a2 2 0 0 0-2 2v16a2 2 0 0 0-2 2zm0 0a2 2 0 0 1-2-2v-9c0-1.1.9-2 2-2h2"/><line x1="18" y1="2" x2="18" y2="22"/></svg> ${(article.source && article.source.name) || 'Source'}</span>
         <span class="actu-card-date">${formatDate(article.publishedAt)}</span>
       </div>
     </div>
@@ -1101,6 +1083,11 @@ function applyFilters() {
    LOAD MORE
 ============================================================ */
 async function loadMore() {
+  if (state.liveSource !== 'newsdata') {
+    const lm = document.getElementById('actuLoadmore');
+    if (lm) lm.style.display = 'none';
+    return;
+  }
   if (state.loading) return;
   state.loading = true;
   const btn = document.getElementById('actuLoadmoreBtn');
@@ -1113,14 +1100,17 @@ async function loadMore() {
       state.allArticles = [...state.allArticles, ...articles.filter(isRelevantArticle)];
       applyFilters();
       if (articles.length < ACTU_CONFIG.pageSize) {
-        document.getElementById('actuLoadmore').style.display = 'none';
+        const lm = document.getElementById('actuLoadmore');
+        if (lm) lm.style.display = 'none';
       }
     } else {
-      document.getElementById('actuLoadmore').style.display = 'none';
+      const lm = document.getElementById('actuLoadmore');
+        if (lm) lm.style.display = 'none';
     }
   } catch(e) {
     console.warn('Load more error:', e);
-    document.getElementById('actuLoadmore').style.display = 'none';
+    const lm = document.getElementById('actuLoadmore');
+        if (lm) lm.style.display = 'none';
   }
 
   state.loading = false;
@@ -1258,17 +1248,30 @@ async function initActu() {
   const lastUpdate = document.getElementById('lastUpdateLabel');
 
   try {
-    const articles = await fetchNews('politique', 1);
-    state.allArticles = articles;
-    state.apiWorked = true;
+    const apiArticles = await fetchNews('politique', 1);
+    const relevantArticles = apiArticles.filter(isRelevantArticle);
 
-    if (lastUpdate) lastUpdate.textContent = 'Mis à jour le ' + new Date().toLocaleDateString('fr-FR');
-    if (apiNote) apiNote.textContent = '📡 Actualités fournies par Newsdata.io — mise à jour en temps réel';
-    if (loadmore && articles.length >= ACTU_CONFIG.pageSize) loadmore.style.display = 'block';
+    if (relevantArticles.length) {
+      state.allArticles = relevantArticles;
+      state.apiWorked = true;
+      if (lastUpdate) lastUpdate.textContent = 'Mis a jour le ' + new Date().toLocaleDateString('fr-FR');
+      if (apiNote) apiNote.textContent = state.liveSource === 'newsdata' ? 'Actualites fournies par Newsdata.io - mise a jour en temps reel' : 'Actualites en direct via Google News (RSS)';
+      if (loadmore && state.liveSource === 'newsdata' && apiArticles.length >= ACTU_CONFIG.pageSize) loadmore.style.display = 'block';
+    } else {
+      state.allArticles = getFallbackArticles('politique');
+      state.apiWorked = false;
+      state.liveSource = 'fallback';
+      if (infoBanner) {
+        infoBanner.innerHTML = `<div class="actu-info-banner warn">⚠️ <span>Aucun article exploitable en direct pour le moment. Affichage des articles de demonstration.</span></div>`;
+      }
+      if (lastUpdate) lastUpdate.textContent = 'Articles de demonstration';
+      if (loadmore) loadmore.style.display = 'none';
+    }
 
   } catch(err) {
     console.warn('Newsdata.io fetch failed:', err.message, '— using fallback articles');
     state.allArticles = getFallbackArticles('politique');
+    state.liveSource = 'fallback';
 
     if (infoBanner) {
       infoBanner.innerHTML = `<div class="actu-info-banner warn">
@@ -1289,6 +1292,31 @@ async function initActu() {
    EVENTS
 ============================================================ */
 document.addEventListener('DOMContentLoaded', function() {
+  const maintenanceOverlay = document.getElementById('maintenanceOverlay');
+  if (maintenanceOverlay) {
+    const navbar = document.getElementById('navbar');
+    const syncOverlayTop = function() {
+      if (navbar) {
+        maintenanceOverlay.style.setProperty('--maintenance-top', navbar.offsetHeight + 'px');
+      }
+    };
+    syncOverlayTop();
+    window.addEventListener('resize', syncOverlayTop, { passive: true });
+    maintenanceOverlay.classList.add('show');
+    document.body.classList.add('maintenance-lock');
+    Array.from(document.body.children).forEach(function(el){
+      if (el !== maintenanceOverlay && el.id !== 'navbar') {
+        el.setAttribute('inert','');
+        el.setAttribute('aria-hidden','true');
+      }
+    });
+    document.addEventListener('keydown', function(e){
+      if (e.key === 'Escape' || e.key === 'Tab') {
+        e.preventDefault();
+      }
+    }, true);
+    return;
+  }
 
   // Init news
   initActu();
@@ -1322,7 +1350,7 @@ document.addEventListener('DOMContentLoaded', function() {
       document.getElementById('actuContent').style.display = 'block';
 
       const lm = document.getElementById('actuLoadmore');
-      if (lm) lm.style.display = state.allArticles.length >= ACTU_CONFIG.pageSize && state.apiWorked ? 'block' : 'none';
+      if (lm) lm.style.display = (state.liveSource === 'newsdata' && state.allArticles.length >= ACTU_CONFIG.pageSize) ? 'block' : 'none';
     });
   });
 
@@ -1391,12 +1419,6 @@ document.addEventListener('DOMContentLoaded', function() {
       banner.classList.remove('show');
       banner.classList.add('hide');
       setTimeout(() => banner.style.display='none', 400);
-
-window.addEventListener("load", () => {
-  const popup = document.getElementById("maintenanceOverlay");
-  popup.classList.add("active");
-
-  document.body.style.overflow = "hidden";
     });
   }
 });
