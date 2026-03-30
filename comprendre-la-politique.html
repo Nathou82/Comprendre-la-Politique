@@ -1435,6 +1435,7 @@
         <div class="ps-col col-cleft">
           <div class="ps-col-title">Centre-gauche</div>
           <div class="ps-party" data-party="ps">PS</div>
+          <div class="ps-party" data-party="pp">Place Publique</div>
           <div class="ps-party" data-party="eelv">EELV</div>
           <div class="ps-party" data-party="prg">PRG</div>
         </div>
@@ -1452,6 +1453,7 @@
         <div class="ps-col col-right">
           <div class="ps-col-title">Droite</div>
           <div class="ps-party" data-party="lr">LR</div>
+          <div class="ps-party" data-party="udr">UDR</div>
           <div class="ps-party">Debout la France</div>
         </div>
         <div class="ps-col col-exright">
@@ -1761,7 +1763,9 @@ const parties = [
   { id:'lfi', name:'La France Insoumise', short:'LFI', initials:'LFI', color:'#be1622', bg:'#f9e8e8', orient:'gauche', orientLabel:'Gauche radicale', orientBg:'#c0392b', orientColor:'#fff', leader:'Jean-Luc Mélenchon (fondateur), Mathilde Panot (prés. groupe AN)', founded:'Fondée en 2016 par Jean-Luc Mélenchon, suite à sa rupture avec le PS et le Front de Gauche.', desc:"LFI est le pilier de la gauche radicale. Avec 22% à la présidentielle 2022 (4e par le nombre de voix total depuis 1965), puis 9,4% aux européennes 2024, LFI reste la force dominante de la gauche française malgré des turbulences internes.", positions:{'Économie':'Planification écologique, SMIC à 1600€, fin des cadeaux fiscaux','Immigration':'Droit d\'asile, régularisation, solidarité','Europe':'Désobéissance aux traités, refondation sociale','Société':'Féminisme, antiracisme, laïcité émancipatrice'}, polls:9, euroscore:9.4, pres2022:21.95, legscore:11.6, logo:'https://lfi72-la-france-insoumise.fr/wp-content/uploads/2025/02/LFI-logo-site.png' },
   { id:'renaissance', name:'Renaissance (ex-LREM)', short:'RE', initials:'RE', color:'#006EB7', bg:'#eafaf1', orient:'centre', orientLabel:'Centre libéral', orientBg:'#2563a8', orientColor:'#fff', leader:'Gabriel Attal (Prés. parti), Emmanuel Macron (fondateur)', founded:'Fondé en 2016 sous "En Marche", devenu LREM puis La République En Marche (2017), rebaptisé Renaissance (2022).', desc:"Renaissance est le parti présidentiel. Dominant de 2017 à 2022 avec majorité absolue, il gouverne depuis 2022 en minorité. Incarne le «en même temps» : libéralisme économique + progressisme social + pro-européisme fort.", positions:{'Économie':'Libéralisme modernisateur, investissement, innovation','Immigration':'Fermeté et humanisme simultanés','Europe':'Fédéralisme, leadership européen','Société':'Progressisme républicain modéré'}, polls:18, euroscore:14.6, pres2022:27.85, legscore:25.8, logo:'https://upload.wikimedia.org/wikipedia/commons/thumb/7/75/Renaissance-logotype-officiel.svg/langfr-960px-Renaissance-logotype-officiel.svg.png' },
   { id:'ps', name:'Parti Socialiste', short:'PS', initials:'PS', color:'#E8003D', bg:'#fdecea', orient:'centre-gauche', orientLabel:'Centre-gauche', orientBg:'#e74c3c', orientColor:'#fff', leader:'Olivier Faure (Premier secrétaire)', founded:"Fondé en 1969, refondé à Épinay en 1971 sous Mitterrand, héritier de la SFIO de Jaurès (1905).", desc:"Le PS a dominé la gauche de 1981 à 2017. Après le séisme Macron (6,3% en 2017 avec Hamon !), il se reconstruit au sein du NFP. Raphaël Glucksmann (Place Publique/PS) réalise 13,8% aux européennes 2024, signe de recomposition.", positions:{'Économie':'Social-démocratie, redistribution, service public','Immigration':'Humanisme, intégration républicaine','Europe':'Pro-européen fort, Europe sociale','Société':'Progressisme, laïcité, droits des femmes'}, polls:6, euroscore:13.8, pres2022:1.75, legscore:5.7, logo:'https://upload.wikimedia.org/wikipedia/fr/d/d1/Logo_Parti_socialiste_%28France%29_2016.png' },
+  { id:'pp', name:'Place Publique', short:'PP', initials:'PP', color:'#FFD200', bg:'#fff8cf', orient:'centre-gauche', orientLabel:'Centre-gauche social-démocrate', orientBg:'#e74c3c', orientColor:'#fff', leader:'Raphaël Glucksmann et Aurore Lalucq (coprésidents)', founded:'Fondé le 6 novembre 2018 autour de Raphaël Glucksmann, Claire Nouvian et Thomas Porcher.', desc:"Place Publique est un parti de centre-gauche pro-européen. En alliance avec le PS, la liste menée par Raphaël Glucksmann a obtenu 13,83% aux européennes 2024.", positions:{'Économie':'Social-démocratie, justice sociale, réindustrialisation verte','Immigration':'Politique d\'accueil régulée, intégration, coopération européenne','Europe':'Fédéralisme européen, défense d\'une Europe sociale et démocratique','Société':'Progressisme républicain, laïcité, droits fondamentaux'}, polls:4, euroscore:13.83, pres2022:0, legscore:0, logo:'https://upload.wikimedia.org/wikipedia/commons/thumb/a/a5/Logo_Place_publique.svg/langfr-250px-Logo_Place_publique.svg.png' },
   { id:'lr', name:'Les Républicains', short:'LR', initials:'LR', color:'#0066CC', bg:'#e8f0fa', orient:'droite', orientLabel:'Droite', orientBg:'#1a4f8a', orientColor:'#fff', leader:'Laurent Wauquiez (Président)', founded:'Fondé comme RPR (1976, Chirac), devenu UMP (2002), rebaptisé LR (2015).', desc:"LR est la droite républicaine classique. En crise depuis 2017 (pris en étau entre macronisme et RN), il a connu une scission en 2023 (Ciotti vers RN). Wauquiez tente de reconstruire une droite autonome et ferme sur l'immigration.", positions:{'Économie':'Libéralisme, baisse impôts, réduction dette','Immigration':'Maîtrise des flux, fermeté, identité nationale','Europe':'Pro-UE pragmatique et exigeant','Société':'Valeurs républicaines conservatrices, ordre'}, polls:8, euroscore:7.2, pres2022:4.78, legscore:12.6, logo:'https://upload.wikimedia.org/wikipedia/commons/thumb/5/5c/CGLR2023_-_4.png/1280px-CGLR2023_-_4.png' },
+  { id:'udr', name:'Union des Droites pour la République', short:'UDR', initials:'UDR', color:'#0056A6', bg:'#e8f0fa', orient:'droite', orientLabel:'Droite souverainiste', orientBg:'#1a4f8a', orientColor:'#fff', leader:'Éric Ciotti (président)', founded:'Lancée le 31 août 2024 après la rupture d\'Éric Ciotti avec LR, �  partir de son mouvement créé en 2012.', desc:"L'UDR est un parti de droite souverainiste allié au RN depuis les législatives 2024. Le courant Ciotti a ensuite constitué son propre groupe �  l'Assemblée nationale.", positions:{'Économie':'Baisse des impôts, soutien aux entreprises, rigueur budgétaire','Immigration':'Fermeté renforcée, contrôle strict des frontières, priorité nationale','Europe':'Europe des nations, défense de la souveraineté française','Société':'Autorité de l\'État, sécurité, identité républicaine'}, polls:3, euroscore:0, pres2022:0, legscore:0, logo:'https://upload.wikimedia.org/wikipedia/fr/thumb/c/cd/Logo_UDR_2024.svg/langfr-250px-Logo_UDR_2024.svg.png' },
   { id:'modem', name:'Mouvement Démocrate', short:'MoDem', initials:'MD', color:'#FF7900', bg:'#fef3ea', orient:'centre', orientLabel:'Centre', orientBg:'#FF7900', orientColor:'#fff', leader:'François Bayrou (Président, Premier ministre depuis déc. 2024)', founded:'Fondé en 2007 par François Bayrou, issu de l\'UDF.', desc:"Le MoDem incarne le centre humaniste et pro-européen. Bayrou, candidat en 2002, 2007, 2012, est une figure inclassable de la politique française. Allié de Macron depuis 2017, il est Premier ministre depuis décembre 2024.", positions:{'Économie':'Économie sociale de marché, équilibre budgétaire','Immigration':'Accueil raisonné, intégration','Europe':'Pro-européen fervent','Société':'Valeurs démocrates-chrétiennes modérées'}, polls:4, euroscore:6.3, pres2022:0, legscore:5.1, logo:'https://upload.wikimedia.org/wikipedia/commons/0/08/Mouvement-Democrate-Logo-2019.png' },
   { id:'eelv', name:'Europe Écologie Les Verts', short:'EELV', initials:'EV', color:'#00A850', bg:'#d4edda', orient:'centre-gauche', orientLabel:'Centre-gauche écolo', orientBg:'#27ae60', orientColor:'#fff', leader:'Marine Tondelier (Secrétaire nationale)', founded:'Fondé en 2010, fusion des Verts (1984) et Europe Écologie.', desc:"EELV porte une vision de transformation radicale face à la crise climatique. Avec Marine Tondelier, le parti tente de se positionner à gauche tout en restant central dans la coalition NFP. Aux européennes 2024 : 5,5% sur liste autonome.", positions:{'Économie':'Décroissance, planification verte, sobriété','Immigration':'Accueil, solidarité internationale','Europe':'Europe verte et sociale','Société':'Féminisme, anti-discrimination, bien-être animal'}, polls:5, euroscore:5.5, pres2022:4.63, legscore:4.7, logo:'https://lesecologistes-paris11.org/wp-content/uploads/2025/06/bd19b-logo_eelv-fond-blanc.png' },
   { id:'pcf', name:'Parti Communiste Français', short:'PCF', initials:'PC', color:'#C1282A', bg:'#fdecea', orient:'gauche', orientLabel:'Gauche communiste', orientBg:'#8e1c1c', orientColor:'#fff', leader:'Fabien Roussel (Secrétaire national)', founded:'Fondé en 1920 au Congrès de Tours, par scission de la SFIO.', desc:"Le PCF a été le 1er parti de France dans les années 50 (25%). Aujourd'hui marginal (2-3%), Fabien Roussel tente un repositionnement sur un communisme républicain et populaire ('les croissants, le bon vin, le saucisson'), contre les tendances identitaires progressistes de la gauche.", positions:{'Économie':'Planification, nationalisations, fin des dividendes','Immigration':'Solidarité de classe internationale','Europe':'Europe sociale alternative aux traités libéraux','Société':'Laïcité stricte, droits des travailleurs'}, polls:3, euroscore:2.4, pres2022:2.28, legscore:2.2, logo:'https://upload.wikimedia.org/wikipedia/fr/thumb/6/6a/Logo_du_Parti_communiste_fran%C3%A7ais_%282018%2C_rouge%29.svg/langfr-1280px-Logo_du_Parti_communiste_fran%C3%A7ais_%282018%2C_rouge%29.svg.png' },
@@ -1781,6 +1785,7 @@ const pollData2024 = [
   {party:'LFI / NFP',val:14,color:'#be1622'},{party:'LR',val:8,color:'#0066CC'},
   {party:'Horizons',val:5,color:'#00B0E8'},{party:'EELV',val:5,color:'#00A850'},
   {party:'MoDem',val:4,color:'#FF7900'},{party:'PS',val:6,color:'#E8003D'},
+  {party:'Place Publique',val:4,color:'#FFD200'},{party:'UDR',val:3,color:'#0056A6'},
   {party:'Reconquête',val:3,color:'#1B1B1B'},{party:'PCF',val:3,color:'#C1282A'}
 ];
 const pres2022 = [
@@ -2016,7 +2021,7 @@ const oriQuestions = [
 const faqData = [
   { q:"Qu'est-ce que la gauche en politique ?", a:"La gauche politique défend traditionnellement l'égalité sociale, l'intervention de l'État dans l'économie et la redistribution des richesses. Elle accorde une importance primordiale aux droits des travailleurs, à la protection sociale et aux droits civils. En France, la gauche est représentée par le PS, LFI, EELV et le PCF, regroupés depuis 2024 dans le Nouveau Front Populaire (NFP)." },
   { q:"Qu'est-ce que la droite en politique ?", a:"La droite politique défend les valeurs traditionnelles, la liberté économique (libre marché), l'autorité de l'État et l'ordre social. Elle est généralement plus favorable à une économie de marché avec moins d'interventionnisme public. En France, la droite va des Républicains (LR) au Rassemblement National (RN), avec des différences importantes entre eux." },
-  { q:"Quels sont les principaux partis politiques français ?", a:"Les principaux partis français sont : le Rassemblement National (RN, extrême droite), La France Insoumise (LFI, gauche radicale), Renaissance (macronisme, centre), Les Républicains (LR, droite), le Parti Socialiste (PS, centre-gauche), Europe Écologie Les Verts (EELV), le MoDem et le PCF. Ensemble, ces partis structurent le paysage politique français autour de trois blocs depuis 2022." },
+  { q:"Quels sont les principaux partis politiques français ?", a:"Les principaux partis français sont : le Rassemblement National (RN), La France Insoumise (LFI), Renaissance, Les Républicains (LR), le Parti Socialiste (PS), Place Publique (PP), l'Union des Droites pour la République (UDR), Europe Écologie Les Verts (EELV), le MoDem et le PCF. Ensemble, ces forces structurent aujourd'hui un paysage politique très fragmenté." },
   { q:"Comment fonctionne l'élection présidentielle en France ?", a:"L'élection présidentielle française se déroule en deux tours. Au premier tour, tous les candidats ayant obtenu 500 parrainages d'élus peuvent se présenter. Si aucun n'obtient la majorité absolue (plus de 50%), les deux candidats arrivés en tête s'affrontent au second tour. Le vainqueur est élu pour un mandat de 5 ans (quinquennat), renouvelable une seule fois." },
   { q:"Qu'est-ce que la Ve République ?", a:"La Ve République est le régime politique actuel de la France, établi par la Constitution du 4 octobre 1958, rédigée sous l'autorité du général de Gaulle. Elle se caractérise par un exécutif fort (Président de la République aux pouvoirs étendus), un Parlement bicaméral (Assemblée nationale + Sénat) et une Cour constitutionnelle (Conseil constitutionnel). C'est le régime le plus stable de l'histoire de France depuis la Révolution." },
   { q:"Qu'est-ce qu'une cohabitation ?", a:"La cohabitation survient quand le Président de la République et le Premier ministre appartiennent à des camps politiques opposés. Cela s'est produit trois fois sous la Ve République : 1986-88 (Mitterrand/Chirac), 1993-95 (Mitterrand/Balladur), 1997-2002 (Chirac/Jospin). Pendant une cohabitation, le pouvoir exécutif est partagé, avec le Premier ministre dominant la politique intérieure." },
@@ -2192,6 +2197,21 @@ const partyEvolution = {
     ],
     note:"Le PS est passé de 1er parti (34% en 1988) à 1,75% en 2022 - effondrement historique. La liste PS/Place Publique aux européennes 2024 (13,8%) et la participation au NFP amorcent une reconstruction sous Olivier Faure."
   },
+  pp:{
+    name:'Place Publique', color:'#FFD200', short:'PP',
+    elections:[
+      {year:2019,label:'Euro. 2019 (PP+PS)',pct:6.19,type:'euro'},
+      {year:2024,label:'Euro. 2024 (PS+PP)',pct:13.83,type:'euro'},
+      {year:2024,label:'Légis. 2024 (NFP)',pct:28.06,type:'legis'}
+    ],
+    spectre:[
+      {year:2019,pos:41,label:'Centre-gauche'},{year:2024,pos:42,label:'Centre-gauche'},{year:2025,pos:42,label:'Centre-gauche'}
+    ],
+    sondages:[
+      {year:2019,pct:3},{year:2022,pct:2},{year:2024,pct:4},{year:2025,pct:4}
+    ],
+    note:"Place Publique, lancé en 2018, s'est imposé comme force social-démocrate pro-européenne autour de Raphaël Glucksmann. L'alliance PS-PP a atteint 13,83% aux européennes 2024."
+  },
   lr:{
     name:'Les Républicains', color:'#0066CC', short:'LR',
     elections:[
@@ -2212,6 +2232,20 @@ const partyEvolution = {
       {year:2021,pct:15},{year:2022,pct:12},{year:2023,pct:10},{year:2024,pct:8},{year:2025,pct:8}
     ],
     note:"LR (ex-UMP) est passé de 1er parti de droite à une formation en crise. Barnier (LR) a été PM de septembre à décembre 2024 avant d\'être censuré. Une partie du parti s\'est ralliée au gouvernement Bayrou en 2025."
+  },
+  udr:{
+    name:'Union des Droites pour la République', color:'#0056A6', short:'UDR',
+    elections:[
+      {year:2024,label:'Légis. 2024 T1 (alliance Ciotti-RN)',pct:4.01,type:'legis'},
+      {year:2024,label:'Légis. 2024 T2 (alliance Ciotti-RN)',pct:5.01,type:'legis'}
+    ],
+    spectre:[
+      {year:2024,pos:76,label:'Droite souverainiste'},{year:2025,pos:78,label:'Droite souverainiste'}
+    ],
+    sondages:[
+      {year:2024,pct:3},{year:2025,pct:3}
+    ],
+    note:"L'UDR est devenu un parti autonome en août 2024 autour d'Éric Ciotti. Lors des législatives 2024, l'alliance portée par ce courant a obtenu 4,01% au 1er tour et 5,01% au 2e tour."
   },
   modem:{
     name:'MoDem', color:'#FF6600', short:'MoDem',

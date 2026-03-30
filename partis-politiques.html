@@ -11,12 +11,12 @@
 </script>
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
-  <meta name="description" content="Panorama des 14 partis politiques français, comparateur interactif, baromètres de popularité et test de profil politique. Trouvez le parti le plus proche de vos valeurs."/>
+  <meta name="description" content="Panorama des 16 partis politiques français, comparateur interactif, baromètres de popularité et test de profil politique. Trouvez le parti le plus proche de vos valeurs."/>
   <meta name="keywords" content="politique française, idéologies politiques, partis politiques France, institutions Ve République, gauche droite France, comprendre la politique"/>
   <meta name="author" content="comprendrelapolitique.fr"/>
   <meta name="robots" content="index, follow"/>
   <meta property="og:title" content="Partis Politiques Français - Comparateur, Popularité et Profil | comprendrelapolitique.fr"/>
-  <meta property="og:description" content="Panorama des 14 partis politiques français, comparateur interactif, baromètres de popularité et test de profil politique. Trouvez le parti le plus proche de vos valeurs."/>
+  <meta property="og:description" content="Panorama des 16 partis politiques français, comparateur interactif, baromètres de popularité et test de profil politique. Trouvez le parti le plus proche de vos valeurs."/>
   <meta property="og:type" content="website"/>
   <meta property="og:url" content="https://comprendrelapolitique.fr/partis-politiques.html"/>
   <meta name="twitter:card" content="summary_large_image"/>
@@ -30,7 +30,7 @@
     "@context": "https://schema.org",
     "@type": "EducationalOrganization",
     "name": "Les partis politiques français",
-    "description": "Panorama des 14 partis politiques français, comparateur interactif, baromètres de popularité et test de profil politique. Trouvez le parti le plus proche de vos valeurs.",
+    "description": "Panorama des 16 partis politiques français, comparateur interactif, baromètres de popularité et test de profil politique. Trouvez le parti le plus proche de vos valeurs.",
     "url": "https://comprendrelapolitique.fr/partis-politiques.html"
   }
   </script>
@@ -674,6 +674,208 @@
   .ori-bd-bar{flex:1;height:14px;background:var(--bg2);border-radius:10px;overflow:hidden}
   .ori-bd-fill{height:100%;border-radius:10px;transition:width 1s ease}
   .ori-bd-val{width:36px;font-size:.78rem;font-weight:700;color:var(--text);flex-shrink:0}
+
+  /* =========================================================
+     VOTE PARTI (FIREBASE)
+  ========================================================= */
+  #vote-parti{background:var(--bg3)}
+  .vote-party-wrap{
+    background:var(--card);
+    border:1px solid var(--border);
+    border-radius:16px;
+    box-shadow:var(--shadow);
+    padding:1.35rem;
+  }
+  .vote-party-intro{
+    font-size:.95rem;
+    color:var(--text2);
+    margin-bottom:1rem;
+  }
+  .vote-party-list{
+    display:flex;
+    flex-direction:column;
+    gap:.62rem;
+  }
+  .vote-party-row{
+    width:100%;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:.9rem;
+    border:1.5px solid var(--border);
+    background:var(--bg);
+    color:var(--text);
+    border-radius:12px;
+    font-size:.84rem;
+    font-weight:700;
+    padding:.72rem .8rem;
+    text-align:left;
+    cursor:pointer;
+    transition:transform .18s,border-color .18s,background .18s,color .18s,box-shadow .18s;
+  }
+  .vote-party-row:hover{
+    border-color:var(--party-color,#2563a8);
+    box-shadow:0 0 0 2px var(--party-color,#2563a8);
+    transform:translateY(-1px);
+  }
+  .vote-party-row:focus-visible{
+    outline:2px solid var(--party-color,#2563a8);
+    outline-offset:2px;
+  }
+  .vote-party-row.is-selected{
+    border-color:var(--party-color,#2563a8);
+    background:var(--bg2);
+    box-shadow:0 0 0 3px var(--party-color,#2563a8);
+  }
+  .vote-party-row.is-busy{
+    opacity:.65;
+    pointer-events:none;
+  }
+  .vote-party-main{
+    display:flex;
+    align-items:center;
+    gap:.72rem;
+    min-width:0;
+  }
+  .vote-party-logo{
+    width:36px;
+    height:36px;
+    border-radius:9px;
+    background:#fff;
+    border:1px solid var(--border);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    padding:3px;
+    flex-shrink:0;
+    overflow:hidden;
+  }
+  .vote-party-logo img{
+    width:100%;
+    height:100%;
+    object-fit:contain;
+    border-radius:6px;
+    display:block;
+  }
+  .vote-party-name{
+    font-size:.92rem;
+    font-weight:700;
+    color:var(--text);
+    line-height:1.35;
+  }
+  .vote-party-total-wrap{
+    display:flex;
+    flex-direction:column;
+    align-items:flex-end;
+    min-width:88px;
+    flex-shrink:0;
+  }
+  .vote-party-total-label{
+    font-size:.64rem;
+    letter-spacing:.08em;
+    text-transform:uppercase;
+    font-weight:700;
+    color:var(--text3);
+  }
+  .vote-party-total{
+    font-size:.98rem;
+    font-weight:800;
+    color:var(--text);
+    line-height:1.2;
+  }
+  .vote-party-leader{
+    margin-top:1rem;
+    border:1px solid var(--border);
+    border-radius:12px;
+    background:var(--bg2);
+    padding:.9rem 1rem;
+    display:flex;
+    align-items:center;
+    gap:.8rem;
+  }
+  .vote-party-leader-logo{
+    width:54px;
+    height:54px;
+    border-radius:12px;
+    background:#fff;
+    border:1px solid var(--border);
+    padding:5px;
+    flex-shrink:0;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    overflow:hidden;
+  }
+  .vote-party-leader-logo img{
+    width:100%;
+    height:100%;
+    object-fit:contain;
+    display:block;
+  }
+  .vote-party-leader-label{
+    font-size:.66rem;
+    text-transform:uppercase;
+    letter-spacing:.08em;
+    color:var(--text3);
+    font-weight:700;
+    margin-bottom:.15rem;
+  }
+  .vote-party-leader-name{
+    font-family:'Playfair Display',serif;
+    font-size:1.35rem;
+    line-height:1.15;
+    font-weight:900;
+    color:var(--text);
+  }
+  .vote-party-leader-text{
+    font-size:.84rem;
+    color:var(--text2);
+    margin-top:.22rem;
+    line-height:1.45;
+  }
+  .vote-party-feedback{
+    margin-top:.95rem;
+    padding:.75rem .9rem;
+    border-radius:10px;
+    border:1px solid var(--border);
+    font-size:.84rem;
+    line-height:1.55;
+    color:var(--text2);
+    background:var(--bg2);
+    transition:all .25s;
+  }
+  .vote-party-feedback[data-state="success"]{
+    border-color:#27ae60;
+    background:#eafaf1;
+    color:#1e8449;
+  }
+  .vote-party-feedback[data-state="warn"]{
+    border-color:#d4a843;
+    background:#fff7e1;
+    color:#8a6a00;
+  }
+  .vote-party-feedback[data-state="error"]{
+    border-color:#c0392b;
+    background:#fdecea;
+    color:#922b21;
+  }
+  .vote-party-feedback.flash{
+    animation:voteFlash .35s ease;
+  }
+  @keyframes voteFlash{
+    0%{transform:translateY(2px);opacity:.8}
+    100%{transform:translateY(0);opacity:1}
+  }
+  @media (max-width:640px){
+    .vote-party-row{padding:.64rem .68rem}
+    .vote-party-logo{width:34px;height:34px}
+    .vote-party-name{font-size:.84rem}
+    .vote-party-total-wrap{min-width:72px}
+    .vote-party-total{font-size:.9rem}
+    .vote-party-leader{padding:.72rem .78rem}
+    .vote-party-leader-logo{width:46px;height:46px}
+    .vote-party-leader-name{font-size:1.08rem}
+  }
 
   /* =========================================================
      QUIZ
@@ -1497,6 +1699,191 @@
   </div>
 </section>
 
+<section id="vote-parti" aria-labelledby="vote-parti-title">
+  <div class="section-inner">
+    <div class="section-header reveal">
+      <div class="section-label">Votre vote pédagogique</div>
+      <h2 class="section-title" id="vote-parti-title">Quel parti vous correspond le mieux ?</h2>
+      <div class="divider"></div>
+      <p class="section-subtitle">Vous pensez avoir trouvé votre orientation politique ? Cliquez sur le parti qui vous correspond le mieux.</p>
+    </div>
+    <div class="vote-party-wrap reveal">
+      <p class="vote-party-intro">Choisissez un parti ci-dessous. Le vote est anonyme, et vous pouvez modifier votre choix une seule fois. Le total des votes s'affiche a droite de chaque parti.</p>
+      <div class="vote-party-list" id="votePartyGrid" role="group" aria-label="Choisir votre parti">
+        <button class="vote-party-row" type="button" data-vote-party="Rassemblement National" style="--party-color:#1c80ce;">
+          <span class="vote-party-main">
+            <span class="vote-party-logo"><img src="https://www.tv83.info/wp-content/uploads/2024/02/Logo_alternatif_Rassemblement_national_2018.png" alt="Logo Rassemblement National" loading="lazy"></span>
+            <span class="vote-party-name">Rassemblement National</span>
+          </span>
+          <span class="vote-party-total-wrap">
+            <span class="vote-party-total-label">Votes</span>
+            <span class="vote-party-total" data-vote-total="Rassemblement National">0</span>
+          </span>
+        </button>
+        <button class="vote-party-row" type="button" data-vote-party="La France Insoumise" style="--party-color:#5a2582;">
+          <span class="vote-party-main">
+            <span class="vote-party-logo"><img src="https://lfi72-la-france-insoumise.fr/wp-content/uploads/2025/02/LFI-logo-site.png" alt="Logo La France Insoumise" loading="lazy"></span>
+            <span class="vote-party-name">La France Insoumise</span>
+          </span>
+          <span class="vote-party-total-wrap">
+            <span class="vote-party-total-label">Votes</span>
+            <span class="vote-party-total" data-vote-total="La France Insoumise">0</span>
+          </span>
+        </button>
+        <button class="vote-party-row" type="button" data-vote-party="Les R&eacute;publicains" style="--party-color:#0055a4;">
+          <span class="vote-party-main">
+            <span class="vote-party-logo"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5c/CGLR2023_-_4.png/1280px-CGLR2023_-_4.png" alt="Logo Les R&eacute;publicains" loading="lazy"></span>
+            <span class="vote-party-name">Les R&eacute;publicains</span>
+          </span>
+          <span class="vote-party-total-wrap">
+            <span class="vote-party-total-label">Votes</span>
+            <span class="vote-party-total" data-vote-total="Les R&eacute;publicains">0</span>
+          </span>
+        </button>
+        <button class="vote-party-row" type="button" data-vote-party="Parti Socialiste" style="--party-color:#e20040;">
+          <span class="vote-party-main">
+            <span class="vote-party-logo"><img src="https://upload.wikimedia.org/wikipedia/fr/d/d1/Logo_Parti_socialiste_%28France%29_2016.png" alt="Logo Parti Socialiste" loading="lazy"></span>
+            <span class="vote-party-name">Parti Socialiste</span>
+          </span>
+          <span class="vote-party-total-wrap">
+            <span class="vote-party-total-label">Votes</span>
+            <span class="vote-party-total" data-vote-total="Parti Socialiste">0</span>
+          </span>
+        </button>
+        <button class="vote-party-row" type="button" data-vote-party="Europe &Eacute;cologie Les Verts" style="--party-color:#ccff26;">
+          <span class="vote-party-main">
+            <span class="vote-party-logo"><img src="https://lesecologistes-paris11.org/wp-content/uploads/2025/06/bd19b-logo_eelv-fond-blanc.png" alt="Logo Europe &Eacute;cologie Les Verts" loading="lazy"></span>
+            <span class="vote-party-name">Europe &Eacute;cologie Les Verts</span>
+          </span>
+          <span class="vote-party-total-wrap">
+            <span class="vote-party-total-label">Votes</span>
+            <span class="vote-party-total" data-vote-total="Europe &Eacute;cologie Les Verts">0</span>
+          </span>
+        </button>
+        <button class="vote-party-row" type="button" data-vote-party="Mouvement D&eacute;mocrate" style="--party-color:#ff7900;">
+          <span class="vote-party-main">
+            <span class="vote-party-logo"><img src="https://upload.wikimedia.org/wikipedia/commons/0/08/Mouvement-Democrate-Logo-2019.png" alt="Logo Mouvement D&eacute;mocrate" loading="lazy"></span>
+            <span class="vote-party-name">Mouvement D&eacute;mocrate</span>
+          </span>
+          <span class="vote-party-total-wrap">
+            <span class="vote-party-total-label">Votes</span>
+            <span class="vote-party-total" data-vote-total="Mouvement D&eacute;mocrate">0</span>
+          </span>
+        </button>
+        <button class="vote-party-row" type="button" data-vote-party="Renaissance" style="--party-color:#006eb7;">
+          <span class="vote-party-main">
+            <span class="vote-party-logo"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/75/Renaissance-logotype-officiel.svg/langfr-960px-Renaissance-logotype-officiel.svg.png" alt="Logo Renaissance" loading="lazy"></span>
+            <span class="vote-party-name">Renaissance</span>
+          </span>
+          <span class="vote-party-total-wrap">
+            <span class="vote-party-total-label">Votes</span>
+            <span class="vote-party-total" data-vote-total="Renaissance">0</span>
+          </span>
+        </button>
+        <button class="vote-party-row" type="button" data-vote-party="Horizons" style="--party-color:#00b0e8;">
+          <span class="vote-party-main">
+            <span class="vote-party-logo"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/55/Logo_Parti_Politique_Horizons_-_2021.svg/langfr-1920px-Logo_Parti_Politique_Horizons_-_2021.svg.png" alt="Logo Horizons" loading="lazy"></span>
+            <span class="vote-party-name">Horizons</span>
+          </span>
+          <span class="vote-party-total-wrap">
+            <span class="vote-party-total-label">Votes</span>
+            <span class="vote-party-total" data-vote-total="Horizons">0</span>
+          </span>
+        </button>
+        <button class="vote-party-row" type="button" data-vote-party="Parti Communiste Fran&ccedil;ais" style="--party-color:#d71920;">
+          <span class="vote-party-main">
+            <span class="vote-party-logo"><img src="https://upload.wikimedia.org/wikipedia/fr/thumb/6/6a/Logo_du_Parti_communiste_fran%C3%A7ais_%282018%2C_rouge%29.svg/langfr-1280px-Logo_du_Parti_communiste_fran%C3%A7ais_%282018%2C_rouge%29.svg.png" alt="Logo Parti Communiste Fran&ccedil;ais" loading="lazy"></span>
+            <span class="vote-party-name">Parti Communiste Fran&ccedil;ais</span>
+          </span>
+          <span class="vote-party-total-wrap">
+            <span class="vote-party-total-label">Votes</span>
+            <span class="vote-party-total" data-vote-total="Parti Communiste Fran&ccedil;ais">0</span>
+          </span>
+        </button>
+        <button class="vote-party-row" type="button" data-vote-party="Reconqu&ecirc;te !" style="--party-color:#1f2f6b;">
+          <span class="vote-party-main">
+            <span class="vote-party-logo"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/da/Logo_of_the_Reconquest_%28political_party%29.svg/3840px-Logo_of_the_Reconquest_%28political_party%29.svg.png" alt="Logo Reconqu&ecirc;te !" loading="lazy"></span>
+            <span class="vote-party-name">Reconqu&ecirc;te !</span>
+          </span>
+          <span class="vote-party-total-wrap">
+            <span class="vote-party-total-label">Votes</span>
+            <span class="vote-party-total" data-vote-total="Reconqu&ecirc;te !">0</span>
+          </span>
+        </button>
+        <button class="vote-party-row" type="button" data-vote-party="Nouveau Parti Anticapitaliste" style="--party-color:#ed1c24;">
+          <span class="vote-party-main">
+            <span class="vote-party-logo"><img src="https://npa-lanticapitaliste.org/sites/default/files/styles/large/public/autocollant-npa-identitaire-horizontal.jpg" alt="Logo Nouveau Parti Anticapitaliste" loading="lazy"></span>
+            <span class="vote-party-name">Nouveau Parti Anticapitaliste</span>
+          </span>
+          <span class="vote-party-total-wrap">
+            <span class="vote-party-total-label">Votes</span>
+            <span class="vote-party-total" data-vote-total="Nouveau Parti Anticapitaliste">0</span>
+          </span>
+        </button>
+        <button class="vote-party-row" type="button" data-vote-party="Lutte Ouvri&egrave;re" style="--party-color:#8b0000;">
+          <span class="vote-party-main">
+            <span class="vote-party-logo"><img src="https://upload.wikimedia.org/wikipedia/commons/e/e0/Logo_de_Lutte_Ouvri%C3%A8re.png" alt="Logo Lutte Ouvri&egrave;re" loading="lazy"></span>
+            <span class="vote-party-name">Lutte Ouvri&egrave;re</span>
+          </span>
+          <span class="vote-party-total-wrap">
+            <span class="vote-party-total-label">Votes</span>
+            <span class="vote-party-total" data-vote-total="Lutte Ouvri&egrave;re">0</span>
+          </span>
+        </button>
+        <button class="vote-party-row" type="button" data-vote-party="Union des D&eacute;mocrates et Ind&eacute;pendants" style="--party-color:#5b458c;">
+          <span class="vote-party-main">
+            <span class="vote-party-logo"><img src="https://upload.wikimedia.org/wikipedia/commons/6/60/Logo_UDI_2019.png" alt="Logo Union des D&eacute;mocrates et Ind&eacute;pendants" loading="lazy"></span>
+            <span class="vote-party-name">Union des D&eacute;mocrates et Ind&eacute;pendants</span>
+          </span>
+          <span class="vote-party-total-wrap">
+            <span class="vote-party-total-label">Votes</span>
+            <span class="vote-party-total" data-vote-total="Union des D&eacute;mocrates et Ind&eacute;pendants">0</span>
+          </span>
+        </button>
+        <button class="vote-party-row" type="button" data-vote-party="Parti Radical de Gauche" style="--party-color:#6184a8;">
+          <span class="vote-party-main">
+            <span class="vote-party-logo"><img src="https://upload.wikimedia.org/wikipedia/fr/1/12/Logotype_PRG_Le_centre_gauche.png" alt="Logo Parti Radical de Gauche" loading="lazy"></span>
+            <span class="vote-party-name">Parti Radical de Gauche</span>
+          </span>
+          <span class="vote-party-total-wrap">
+            <span class="vote-party-total-label">Votes</span>
+            <span class="vote-party-total" data-vote-total="Parti Radical de Gauche">0</span>
+          </span>
+        </button>
+        <button class="vote-party-row" type="button" data-vote-party="Union des Droites pour la R&eacute;publique" style="--party-color:#0056a6;">
+          <span class="vote-party-main">
+            <span class="vote-party-logo"><img src="https://upload.wikimedia.org/wikipedia/fr/thumb/c/cd/Logo_UDR_2024.svg/langfr-250px-Logo_UDR_2024.svg.png" alt="Logo Union des Droites pour la R&eacute;publique" loading="lazy"></span>
+            <span class="vote-party-name">Union des Droites pour la R&eacute;publique</span>
+          </span>
+          <span class="vote-party-total-wrap">
+            <span class="vote-party-total-label">Votes</span>
+            <span class="vote-party-total" data-vote-total="Union des Droites pour la R&eacute;publique">0</span>
+          </span>
+        </button>
+        <button class="vote-party-row" type="button" data-vote-party="Place Publique" style="--party-color:#ffd200;">
+          <span class="vote-party-main">
+            <span class="vote-party-logo"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a5/Logo_Place_publique.svg/langfr-250px-Logo_Place_publique.svg.png" alt="Logo Place Publique" loading="lazy"></span>
+            <span class="vote-party-name">Place Publique</span>
+          </span>
+          <span class="vote-party-total-wrap">
+            <span class="vote-party-total-label">Votes</span>
+            <span class="vote-party-total" data-vote-total="Place Publique">0</span>
+          </span>
+        </button>
+      </div>
+      <div class="vote-party-feedback" id="votePartyFeedback" data-state="info">Connexion securisee en cours...</div>
+      <div class="vote-party-leader" id="votePartyLeader" aria-live="polite">
+        <div class="vote-party-leader-logo" id="votePartyLeaderLogo"></div>
+        <div class="vote-party-leader-content">
+          <div class="vote-party-leader-label">Parti dominant</div>
+          <div class="vote-party-leader-name" id="votePartyLeaderName">En attente des premiers votes</div>
+          <div class="vote-party-leader-text" id="votePartyLeaderText">Le parti le plus vote apparaitra ici automatiquement.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- Bloc annonce Adsense -->
 <div class="adsense-inline-slot" style="max-width:1100px;margin:1rem auto 0;padding:0 1.5rem;">
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8582651575445662"
@@ -1732,7 +2119,9 @@ const parties = [
   { id:'lfi', name:'La France Insoumise', short:'LFI', initials:'LFI', color:'#be1622', bg:'#f9e8e8', orient:'gauche', orientLabel:'Gauche radicale', orientBg:'#c0392b', orientColor:'#fff', leader:'Jean-Luc Mélenchon (fondateur), Mathilde Panot (prés. groupe AN)', founded:'Fondée en 2016 par Jean-Luc Mélenchon, suite à sa rupture avec le PS et le Front de Gauche.', desc:"LFI est le pilier de la gauche radicale. Avec 22% à la présidentielle 2022 (4e par le nombre de voix total depuis 1965), puis 9,4% aux européennes 2024, LFI reste la force dominante de la gauche française malgré des turbulences internes.", positions:{'Économie':'Planification écologique, SMIC à 1600€, fin des cadeaux fiscaux','Immigration':'Droit d\'asile, régularisation, solidarité','Europe':'Désobéissance aux traités, refondation sociale','Société':'Féminisme, antiracisme, laïcité émancipatrice'}, polls:9, euroscore:9.4, pres2022:21.95, legscore:11.6, logo:'https://lfi72-la-france-insoumise.fr/wp-content/uploads/2025/02/LFI-logo-site.png' },
   { id:'renaissance', name:'Renaissance (ex-LREM)', short:'RE', initials:'RE', color:'#006EB7', bg:'#eafaf1', orient:'centre', orientLabel:'Centre libéral', orientBg:'#2563a8', orientColor:'#fff', leader:'Gabriel Attal (Prés. parti), Emmanuel Macron (fondateur)', founded:'Fondé en 2016 sous "En Marche", devenu LREM puis La République En Marche (2017), rebaptisé Renaissance (2022).', desc:"Renaissance est le parti présidentiel. Dominant de 2017 à 2022 avec majorité absolue, il gouverne depuis 2022 en minorité. Incarne le «en même temps» : libéralisme économique + progressisme social + pro-européisme fort.", positions:{'Économie':'Libéralisme modernisateur, investissement, innovation','Immigration':'Fermeté et humanisme simultanés','Europe':'Fédéralisme, leadership européen','Société':'Progressisme républicain modéré'}, polls:18, euroscore:14.6, pres2022:27.85, legscore:25.8, logo:'https://upload.wikimedia.org/wikipedia/commons/thumb/7/75/Renaissance-logotype-officiel.svg/langfr-960px-Renaissance-logotype-officiel.svg.png' },
   { id:'ps', name:'Parti Socialiste', short:'PS', initials:'PS', color:'#E8003D', bg:'#fdecea', orient:'centre-gauche', orientLabel:'Centre-gauche', orientBg:'#e74c3c', orientColor:'#fff', leader:'Olivier Faure (Premier secrétaire)', founded:"Fondé en 1969, refondé à Épinay en 1971 sous Mitterrand, héritier de la SFIO de Jaurès (1905).", desc:"Le PS a dominé la gauche de 1981 à 2017. Après le séisme Macron (6,3% en 2017 avec Hamon !), il se reconstruit au sein du NFP. Raphaël Glucksmann (Place Publique/PS) réalise 13,8% aux européennes 2024, signe de recomposition.", positions:{'Économie':'Social-démocratie, redistribution, service public','Immigration':'Humanisme, intégration républicaine','Europe':'Pro-européen fort, Europe sociale','Société':'Progressisme, laïcité, droits des femmes'}, polls:6, euroscore:13.8, pres2022:1.75, legscore:5.7, logo:'https://upload.wikimedia.org/wikipedia/fr/d/d1/Logo_Parti_socialiste_%28France%29_2016.png' },
+  { id:'pp', name:'Place Publique', short:'PP', initials:'PP', color:'#FFD200', bg:'#fff8cf', orient:'centre-gauche', orientLabel:'Centre-gauche social-démocrate', orientBg:'#e74c3c', orientColor:'#fff', leader:'Raphaël Glucksmann et Aurore Lalucq (coprésidents)', founded:'Fondé le 6 novembre 2018 autour de Raphaël Glucksmann, Claire Nouvian et Thomas Porcher.', desc:"Place Publique est un parti de centre-gauche pro-européen. En alliance avec le PS, la liste menée par Raphaël Glucksmann a obtenu 13,83% aux européennes 2024.", positions:{'Économie':'Social-démocratie, justice sociale, réindustrialisation verte','Immigration':'Politique d\'accueil régulée, intégration, coopération européenne','Europe':'Fédéralisme européen, défense d\'une Europe sociale et démocratique','Société':'Progressisme républicain, laïcité, droits fondamentaux'}, polls:4, euroscore:13.83, pres2022:0, legscore:0, logo:'https://upload.wikimedia.org/wikipedia/commons/thumb/a/a5/Logo_Place_publique.svg/langfr-250px-Logo_Place_publique.svg.png' },
   { id:'lr', name:'Les Républicains', short:'LR', initials:'LR', color:'#0066CC', bg:'#e8f0fa', orient:'droite', orientLabel:'Droite', orientBg:'#1a4f8a', orientColor:'#fff', leader:'Laurent Wauquiez (Président)', founded:'Fondé comme RPR (1976, Chirac), devenu UMP (2002), rebaptisé LR (2015).', desc:"LR est la droite républicaine classique. En crise depuis 2017 (pris en étau entre macronisme et RN), il a connu une scission en 2023 (Ciotti vers RN). Wauquiez tente de reconstruire une droite autonome et ferme sur l'immigration.", positions:{'Économie':'Libéralisme, baisse impôts, réduction dette','Immigration':'Maîtrise des flux, fermeté, identité nationale','Europe':'Pro-UE pragmatique et exigeant','Société':'Valeurs républicaines conservatrices, ordre'}, polls:8, euroscore:7.2, pres2022:4.78, legscore:12.6, logo:'https://upload.wikimedia.org/wikipedia/commons/thumb/5/5c/CGLR2023_-_4.png/1280px-CGLR2023_-_4.png' },
+  { id:'udr', name:'Union des Droites pour la République', short:'UDR', initials:'UDR', color:'#0056A6', bg:'#e8f0fa', orient:'droite', orientLabel:'Droite souverainiste', orientBg:'#1a4f8a', orientColor:'#fff', leader:'Éric Ciotti (président)', founded:'Lancée le 31 août 2024 après la rupture d\'Éric Ciotti avec LR, �  partir de son mouvement créé en 2012.', desc:"L'UDR est un parti de droite souverainiste allié au RN depuis les législatives 2024. Le courant Ciotti a ensuite constitué son propre groupe �  l'Assemblée nationale.", positions:{'Économie':'Baisse des impôts, soutien aux entreprises, rigueur budgétaire','Immigration':'Fermeté renforcée, contrôle strict des frontières, priorité nationale','Europe':'Europe des nations, défense de la souveraineté française','Société':'Autorité de l\'État, sécurité, identité républicaine'}, polls:3, euroscore:0, pres2022:0, legscore:0, logo:'https://upload.wikimedia.org/wikipedia/fr/thumb/c/cd/Logo_UDR_2024.svg/langfr-250px-Logo_UDR_2024.svg.png' },
   { id:'modem', name:'Mouvement Démocrate', short:'MoDem', initials:'MD', color:'#FF7900', bg:'#fef3ea', orient:'centre', orientLabel:'Centre', orientBg:'#FF7900', orientColor:'#fff', leader:'François Bayrou (Président, Premier ministre depuis déc. 2024)', founded:'Fondé en 2007 par François Bayrou, issu de l\'UDF.', desc:"Le MoDem incarne le centre humaniste et pro-européen. Bayrou, candidat en 2002, 2007, 2012, est une figure inclassable de la politique française. Allié de Macron depuis 2017, il est Premier ministre depuis décembre 2024.", positions:{'Économie':'Économie sociale de marché, équilibre budgétaire','Immigration':'Accueil raisonné, intégration','Europe':'Pro-européen fervent','Société':'Valeurs démocrates-chrétiennes modérées'}, polls:4, euroscore:6.3, pres2022:0, legscore:5.1, logo:'https://upload.wikimedia.org/wikipedia/commons/0/08/Mouvement-Democrate-Logo-2019.png' },
   { id:'eelv', name:'Europe Écologie Les Verts', short:'EELV', initials:'EV', color:'#00A850', bg:'#d4edda', orient:'centre-gauche', orientLabel:'Centre-gauche écolo', orientBg:'#27ae60', orientColor:'#fff', leader:'Marine Tondelier (Secrétaire nationale)', founded:'Fondé en 2010, fusion des Verts (1984) et Europe Écologie.', desc:"EELV porte une vision de transformation radicale face à la crise climatique. Avec Marine Tondelier, le parti tente de se positionner à gauche tout en restant central dans la coalition NFP. Aux européennes 2024 : 5,5% sur liste autonome.", positions:{'Économie':'Décroissance, planification verte, sobriété','Immigration':'Accueil, solidarité internationale','Europe':'Europe verte et sociale','Société':'Féminisme, anti-discrimination, bien-être animal'}, polls:5, euroscore:5.5, pres2022:4.63, legscore:4.7, logo:'https://lesecologistes-paris11.org/wp-content/uploads/2025/06/bd19b-logo_eelv-fond-blanc.png' },
   { id:'pcf', name:'Parti Communiste Français', short:'PCF', initials:'PC', color:'#C1282A', bg:'#fdecea', orient:'gauche', orientLabel:'Gauche communiste', orientBg:'#8e1c1c', orientColor:'#fff', leader:'Fabien Roussel (Secrétaire national)', founded:'Fondé en 1920 au Congrès de Tours, par scission de la SFIO.', desc:"Le PCF a été le 1er parti de France dans les années 50 (25%). Aujourd'hui marginal (2-3%), Fabien Roussel tente un repositionnement sur un communisme républicain et populaire ('les croissants, le bon vin, le saucisson'), contre les tendances identitaires progressistes de la gauche.", positions:{'Économie':'Planification, nationalisations, fin des dividendes','Immigration':'Solidarité de classe internationale','Europe':'Europe sociale alternative aux traités libéraux','Société':'Laïcité stricte, droits des travailleurs'}, polls:3, euroscore:2.4, pres2022:2.28, legscore:2.2, logo:'https://upload.wikimedia.org/wikipedia/fr/thumb/6/6a/Logo_du_Parti_communiste_fran%C3%A7ais_%282018%2C_rouge%29.svg/langfr-1280px-Logo_du_Parti_communiste_fran%C3%A7ais_%282018%2C_rouge%29.svg.png' },
@@ -1752,6 +2141,7 @@ const pollData2024 = [
   {party:'LFI / NFP',val:14,color:'#be1622'},{party:'LR',val:8,color:'#0066CC'},
   {party:'Horizons',val:5,color:'#00B0E8'},{party:'EELV',val:5,color:'#00A850'},
   {party:'MoDem',val:4,color:'#FF7900'},{party:'PS',val:6,color:'#E8003D'},
+  {party:'Place Publique',val:4,color:'#FFD200'},{party:'UDR',val:3,color:'#0056A6'},
   {party:'Reconquête',val:3,color:'#1B1B1B'},{party:'PCF',val:3,color:'#C1282A'}
 ];
 const pres2022 = [
@@ -1987,7 +2377,7 @@ const oriQuestions = [
 const faqData = [
   { q:"Qu'est-ce que la gauche en politique ?", a:"La gauche politique défend traditionnellement l'égalité sociale, l'intervention de l'État dans l'économie et la redistribution des richesses. Elle accorde une importance primordiale aux droits des travailleurs, à la protection sociale et aux droits civils. En France, la gauche est représentée par le PS, LFI, EELV et le PCF, regroupés depuis 2024 dans le Nouveau Front Populaire (NFP)." },
   { q:"Qu'est-ce que la droite en politique ?", a:"La droite politique défend les valeurs traditionnelles, la liberté économique (libre marché), l'autorité de l'État et l'ordre social. Elle est généralement plus favorable à une économie de marché avec moins d'interventionnisme public. En France, la droite va des Républicains (LR) au Rassemblement National (RN), avec des différences importantes entre eux." },
-  { q:"Quels sont les principaux partis politiques français ?", a:"Les principaux partis français sont : le Rassemblement National (RN, extrême droite), La France Insoumise (LFI, gauche radicale), Renaissance (macronisme, centre), Les Républicains (LR, droite), le Parti Socialiste (PS, centre-gauche), Europe Écologie Les Verts (EELV), le MoDem et le PCF. Ensemble, ces partis structurent le paysage politique français autour de trois blocs depuis 2022." },
+  { q:"Quels sont les principaux partis politiques français ?", a:"Les principaux partis français sont : le Rassemblement National (RN), La France Insoumise (LFI), Renaissance, Les Républicains (LR), le Parti Socialiste (PS), Place Publique (PP), l'Union des Droites pour la République (UDR), Europe Écologie Les Verts (EELV), le MoDem et le PCF. Ensemble, ces forces structurent aujourd'hui un paysage politique très fragmenté." },
   { q:"Comment fonctionne l'élection présidentielle en France ?", a:"L'élection présidentielle française se déroule en deux tours. Au premier tour, tous les candidats ayant obtenu 500 parrainages d'élus peuvent se présenter. Si aucun n'obtient la majorité absolue (plus de 50%), les deux candidats arrivés en tête s'affrontent au second tour. Le vainqueur est élu pour un mandat de 5 ans (quinquennat), renouvelable une seule fois." },
   { q:"Qu'est-ce que la Ve République ?", a:"La Ve République est le régime politique actuel de la France, établi par la Constitution du 4 octobre 1958, rédigée sous l'autorité du général de Gaulle. Elle se caractérise par un exécutif fort (Président de la République aux pouvoirs étendus), un Parlement bicaméral (Assemblée nationale + Sénat) et une Cour constitutionnelle (Conseil constitutionnel). C'est le régime le plus stable de l'histoire de France depuis la Révolution." },
   { q:"Qu'est-ce qu'une cohabitation ?", a:"La cohabitation survient quand le Président de la République et le Premier ministre appartiennent à des camps politiques opposés. Cela s'est produit trois fois sous la Ve République : 1986-88 (Mitterrand/Chirac), 1993-95 (Mitterrand/Balladur), 1997-2002 (Chirac/Jospin). Pendant une cohabitation, le pouvoir exécutif est partagé, avec le Premier ministre dominant la politique intérieure." },
@@ -2163,6 +2553,21 @@ const partyEvolution = {
     ],
     note:"Le PS est passé de 1er parti (34% en 1988) à 1,75% en 2022 - effondrement historique. La liste PS/Place Publique aux européennes 2024 (13,8%) et la participation au NFP amorcent une reconstruction sous Olivier Faure."
   },
+  pp:{
+    name:'Place Publique', color:'#FFD200', short:'PP',
+    elections:[
+      {year:2019,label:'Euro. 2019 (PP+PS)',pct:6.19,type:'euro'},
+      {year:2024,label:'Euro. 2024 (PS+PP)',pct:13.83,type:'euro'},
+      {year:2024,label:'Légis. 2024 (NFP)',pct:28.06,type:'legis'}
+    ],
+    spectre:[
+      {year:2019,pos:41,label:'Centre-gauche'},{year:2024,pos:42,label:'Centre-gauche'},{year:2025,pos:42,label:'Centre-gauche'}
+    ],
+    sondages:[
+      {year:2019,pct:3},{year:2022,pct:2},{year:2024,pct:4},{year:2025,pct:4}
+    ],
+    note:"Place Publique, lancé en 2018, s'est imposé comme force social-démocrate pro-européenne autour de Raphaël Glucksmann. L'alliance PS-PP a atteint 13,83% aux européennes 2024."
+  },
   lr:{
     name:'Les Républicains', color:'#0066CC', short:'LR',
     elections:[
@@ -2183,6 +2588,20 @@ const partyEvolution = {
       {year:2021,pct:15},{year:2022,pct:12},{year:2023,pct:10},{year:2024,pct:8},{year:2025,pct:8}
     ],
     note:"LR (ex-UMP) est passé de 1er parti de droite à une formation en crise. Barnier (LR) a été PM de septembre à décembre 2024 avant d\'être censuré. Une partie du parti s\'est ralliée au gouvernement Bayrou en 2025."
+  },
+  udr:{
+    name:'Union des Droites pour la République', color:'#0056A6', short:'UDR',
+    elections:[
+      {year:2024,label:'Légis. 2024 T1 (alliance Ciotti-RN)',pct:4.01,type:'legis'},
+      {year:2024,label:'Légis. 2024 T2 (alliance Ciotti-RN)',pct:5.01,type:'legis'}
+    ],
+    spectre:[
+      {year:2024,pos:76,label:'Droite souverainiste'},{year:2025,pos:78,label:'Droite souverainiste'}
+    ],
+    sondages:[
+      {year:2024,pct:3},{year:2025,pct:3}
+    ],
+    note:"L'UDR est devenu un parti autonome en août 2024 autour d'Éric Ciotti. Lors des législatives 2024, l'alliance portée par ce courant a obtenu 4,01% au 1er tour et 5,01% au 2e tour."
   },
   modem:{
     name:'MoDem', color:'#FF6600', short:'MoDem',
@@ -3396,5 +3815,335 @@ document.addEventListener('DOMContentLoaded',function(){
 });
 </script>
 
+<script type="module">
+import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.5/firebase-app.js";
+import { getAuth, onAuthStateChanged, signInAnonymously } from "https://www.gstatic.com/firebasejs/10.12.5/firebase-auth.js";
+import { collection, doc, getDoc, getFirestore, onSnapshot, serverTimestamp, setDoc, updateDoc } from "https://www.gstatic.com/firebasejs/10.12.5/firebase-firestore.js";
+
+const firebaseConfig = {
+  apiKey: "AIzaSyAAU02SCVuDBzJqn9rFfJwzg4UYOH6OctI",
+  authDomain: "comprendre-la-politique-7447f.firebaseapp.com",
+  projectId: "comprendre-la-politique-7447f",
+  storageBucket: "comprendre-la-politique-7447f.firebasestorage.app",
+  messagingSenderId: "1068084941843",
+  appId: "1:1068084941843:web:7320a2ee48d9ae808c1be6",
+  measurementId: "G-66E4GRQWYQ"
+};
+
+const voteButtons = Array.from(document.querySelectorAll("[data-vote-party]"));
+const voteTotals = Array.from(document.querySelectorAll("[data-vote-total]"));
+const feedbackEl = document.getElementById("votePartyFeedback");
+const leaderEl = document.getElementById("votePartyLeader");
+const leaderLogoEl = document.getElementById("votePartyLeaderLogo");
+const leaderNameEl = document.getElementById("votePartyLeaderName");
+const leaderTextEl = document.getElementById("votePartyLeaderText");
+
+if (voteButtons.length && feedbackEl) {
+  const app = initializeApp(firebaseConfig);
+  const auth = getAuth(app);
+  const db = getFirestore(app);
+  const canonicalParties = voteButtons.map((btn) => btn.dataset.voteParty);
+  const totalsByParty = new Map(voteTotals.map((el) => [el.dataset.voteTotal, el]));
+  const partyVisuals = new Map(
+    voteButtons.map((btn) => {
+      const logo = btn.querySelector(".vote-party-logo img");
+      const partyName = btn.querySelector(".vote-party-name");
+      const colorMatch = (btn.getAttribute("style") || "").match(/--party-color:\s*([^;]+)\s*;?/);
+      return [btn.dataset.voteParty, {
+        name: partyName ? partyName.textContent.trim() : btn.dataset.voteParty,
+        logo: logo ? logo.getAttribute("src") : "",
+        color: colorMatch ? colorMatch[1].trim() : "#2563a8"
+      }];
+    })
+  );
+
+  const PARTY_ALIASES = {
+    "RN": "Rassemblement National",
+    "Rassemblement National": "Rassemblement National",
+    "LFI": "La France Insoumise",
+    "La France Insoumise": "La France Insoumise",
+    "LR": "Les R\u00e9publicains",
+    "Les R\u00e9publicains": "Les R\u00e9publicains",
+    "Les Républicains": "Les R\u00e9publicains",
+    "PS": "Parti Socialiste",
+    "Parti Socialiste": "Parti Socialiste",
+    "EELV": "Europe \u00c9cologie Les Verts",
+    "Europe \u00c9cologie Les Verts": "Europe \u00c9cologie Les Verts",
+    "Europe Écologie Les Verts": "Europe \u00c9cologie Les Verts",
+    "MoDem": "Mouvement D\u00e9mocrate",
+    "Mouvement D\u00e9mocrate": "Mouvement D\u00e9mocrate",
+    "Mouvement Démocrate": "Mouvement D\u00e9mocrate",
+    "Renaissance": "Renaissance",
+    "Renaissance (ex-LREM)": "Renaissance",
+    "Horizons": "Horizons",
+    "PCF": "Parti Communiste Fran\u00e7ais",
+    "Parti Communiste Fran\u00e7ais": "Parti Communiste Fran\u00e7ais",
+    "Parti Communiste Français": "Parti Communiste Fran\u00e7ais",
+    "Reconqu\u00eate": "Reconqu\u00eate !",
+    "Reconqu\u00eate !": "Reconqu\u00eate !",
+    "Reconquête": "Reconqu\u00eate !",
+    "Reconquête !": "Reconqu\u00eate !",
+    "NPA": "Nouveau Parti Anticapitaliste",
+    "Nouveau Parti Anticapitaliste": "Nouveau Parti Anticapitaliste",
+    "LO": "Lutte Ouvri\u00e8re",
+    "Lutte Ouvri\u00e8re": "Lutte Ouvri\u00e8re",
+    "Lutte Ouvrière": "Lutte Ouvri\u00e8re",
+    "UDI": "Union des D\u00e9mocrates et Ind\u00e9pendants",
+    "Union des D\u00e9mocrates et Ind\u00e9pendants": "Union des D\u00e9mocrates et Ind\u00e9pendants",
+    "Union des Démocrates et Indépendants": "Union des D\u00e9mocrates et Ind\u00e9pendants",
+    "PRG": "Parti Radical de Gauche",
+    "Parti Radical de Gauche": "Parti Radical de Gauche",
+    "UDR": "Union des Droites pour la R\u00e9publique",
+    "Union des Droites pour la R\u00e9publique": "Union des Droites pour la R\u00e9publique",
+    "Union des Droites pour la République": "Union des Droites pour la R\u00e9publique",
+    "Place Publique": "Place Publique"
+  };
+
+  const state = {
+    uid: null,
+    currentVote: null,
+    hasChangedVote: false,
+    isSaving: false
+  };
+
+  function normalizePartyName(rawParty) {
+    if (!rawParty) return null;
+    const party = String(rawParty).trim();
+    if (Object.prototype.hasOwnProperty.call(PARTY_ALIASES, party)) {
+      return PARTY_ALIASES[party];
+    }
+    const aliasKey = Object.keys(PARTY_ALIASES).find((key) => key.toLowerCase() === party.toLowerCase());
+    return aliasKey ? PARTY_ALIASES[aliasKey] : party;
+  }
+
+  function getVoteTimeMs(voteTime) {
+    if (!voteTime) return Number.POSITIVE_INFINITY;
+    if (typeof voteTime.toMillis === "function") return voteTime.toMillis();
+    if (typeof voteTime.seconds === "number") {
+      const nanos = typeof voteTime.nanoseconds === "number" ? voteTime.nanoseconds : 0;
+      return (voteTime.seconds * 1000) + Math.floor(nanos / 1000000);
+    }
+    return Number.POSITIVE_INFINITY;
+  }
+
+  function setFeedback(text, tone = "info") {
+    feedbackEl.textContent = text;
+    feedbackEl.dataset.state = tone;
+    feedbackEl.classList.remove("flash");
+    requestAnimationFrame(() => feedbackEl.classList.add("flash"));
+  }
+
+  function renderVoteTotals(counts) {
+    totalsByParty.forEach((el, party) => {
+      el.textContent = String(counts[party] || 0);
+    });
+  }
+
+  function renderDominantParty(counts, firstVoteMsByParty) {
+    if (!leaderEl || !leaderLogoEl || !leaderNameEl || !leaderTextEl) return;
+
+    let winnerParty = null;
+    let winnerCount = -1;
+    let winnerFirstVoteMs = Number.POSITIVE_INFINITY;
+
+    canonicalParties.forEach((party) => {
+      const count = counts[party] || 0;
+      const firstVoteMs = firstVoteMsByParty[party];
+
+      if (count > winnerCount) {
+        winnerParty = party;
+        winnerCount = count;
+        winnerFirstVoteMs = firstVoteMs;
+        return;
+      }
+
+      if (count === winnerCount && count > 0 && firstVoteMs < winnerFirstVoteMs) {
+        winnerParty = party;
+        winnerFirstVoteMs = firstVoteMs;
+      }
+    });
+
+    if (!winnerParty || winnerCount <= 0) {
+      leaderLogoEl.innerHTML = "";
+      leaderNameEl.textContent = "En attente des premiers votes";
+      leaderTextEl.textContent = "Le parti le plus vote apparaitra ici automatiquement.";
+      leaderEl.style.borderColor = "";
+      leaderEl.style.boxShadow = "";
+      return;
+    }
+
+    const winnerVisual = partyVisuals.get(winnerParty) || { name: winnerParty, logo: "", color: "#2563a8" };
+    leaderNameEl.textContent = winnerVisual.name;
+    leaderTextEl.textContent = "Avec " + winnerCount + " vote" + (winnerCount > 1 ? "s" : "") + ", ce parti est actuellement en tete.";
+    leaderLogoEl.innerHTML = winnerVisual.logo
+      ? "<img src=\"" + winnerVisual.logo + "\" alt=\"Logo " + winnerVisual.name + "\" loading=\"lazy\">"
+      : "";
+    leaderEl.style.borderColor = winnerVisual.color;
+    leaderEl.style.boxShadow = "0 0 0 2px " + winnerVisual.color;
+  }
+
+  function subscribeVoteTotals() {
+    const votesCol = collection(db, "partyVotes");
+    onSnapshot(votesCol, (snapshot) => {
+      const counts = Object.create(null);
+      const firstVoteMsByParty = Object.create(null);
+      canonicalParties.forEach((party) => {
+        counts[party] = 0;
+        firstVoteMsByParty[party] = Number.POSITIVE_INFINITY;
+      });
+
+      snapshot.forEach((voteDoc) => {
+        const data = voteDoc.data() || {};
+        const normalized = normalizePartyName(data.party);
+        if (normalized && Object.prototype.hasOwnProperty.call(counts, normalized)) {
+          counts[normalized] += 1;
+          const voteTimeMs = getVoteTimeMs(data.updatedAt || data.createdAt);
+          if (voteTimeMs < firstVoteMsByParty[normalized]) {
+            firstVoteMsByParty[normalized] = voteTimeMs;
+          }
+        }
+      });
+
+      renderVoteTotals(counts);
+      renderDominantParty(counts, firstVoteMsByParty);
+    }, (error) => {
+      console.error("Erreur total votes:", error);
+    });
+  }
+
+  function renderSelection() {
+    voteButtons.forEach((btn) => {
+      const isSelected = state.currentVote === btn.dataset.voteParty;
+      btn.classList.toggle("is-selected", isSelected);
+      btn.setAttribute("aria-pressed", String(isSelected));
+    });
+  }
+
+  function setBusy(isBusy) {
+    state.isSaving = isBusy;
+    voteButtons.forEach((btn) => {
+      btn.classList.toggle("is-busy", isBusy);
+      btn.disabled = isBusy;
+    });
+  }
+
+  async function fetchUserVote(uid) {
+    const voteRef = doc(db, "partyVotes", uid);
+    const voteSnap = await getDoc(voteRef);
+
+    if (!voteSnap.exists()) {
+      state.currentVote = null;
+      state.hasChangedVote = false;
+      renderSelection();
+      setFeedback("Vous n'avez pas encore vote. Cliquez sur un parti pour enregistrer votre choix.", "info");
+      return;
+    }
+
+    const data = voteSnap.data() || {};
+    state.currentVote = normalizePartyName(data.party);
+    state.hasChangedVote = Boolean(data.hasChangedVote);
+    renderSelection();
+
+    if (state.currentVote) {
+      if (state.hasChangedVote) {
+        setFeedback("Vote charge : " + state.currentVote + ". Vous avez deja utilise votre modification.", "warn");
+      } else {
+        setFeedback("Vote charge : " + state.currentVote + ". Vous pouvez encore modifier votre vote une fois.", "success");
+      }
+    } else {
+      setFeedback("Aucun vote detecte pour ce compte anonyme.", "info");
+    }
+  }
+
+  async function submitVote(nextParty) {
+    const normalizedNextParty = normalizePartyName(nextParty) || nextParty;
+
+    if (!state.uid) {
+      setFeedback("Connexion en cours... Merci de patienter quelques secondes.", "warn");
+      return;
+    }
+    if (state.isSaving) return;
+
+    const voteRef = doc(db, "partyVotes", state.uid);
+
+    try {
+      setBusy(true);
+
+      if (!state.currentVote) {
+        await setDoc(voteRef, {
+          party: normalizedNextParty,
+          createdAt: serverTimestamp(),
+          updatedAt: serverTimestamp(),
+          hasChangedVote: false
+        });
+        state.currentVote = normalizedNextParty;
+        state.hasChangedVote = false;
+        renderSelection();
+        setFeedback("Vote enregistre pour " + normalizedNextParty + ". Vous pouvez modifier ce vote une seule fois.", "success");
+        return;
+      }
+
+      if (state.currentVote === normalizedNextParty) {
+        setFeedback("Vous avez deja vote pour " + normalizedNextParty + ".", "warn");
+        return;
+      }
+
+      if (state.hasChangedVote) {
+        setFeedback("Modification bloquee : vous avez deja utilise votre unique changement de vote.", "warn");
+        return;
+      }
+
+      await updateDoc(voteRef, {
+        party: normalizedNextParty,
+        updatedAt: serverTimestamp(),
+        hasChangedVote: true
+      });
+
+      state.currentVote = normalizedNextParty;
+      state.hasChangedVote = true;
+      renderSelection();
+      setFeedback("Vote modifie vers " + normalizedNextParty + ". Vous ne pouvez plus le modifier maintenant.", "success");
+    } catch (error) {
+      console.error("Erreur Firebase vote:", error);
+      setFeedback("Erreur lors de l'enregistrement du vote. Reessayez dans un instant.", "error");
+    } finally {
+      setBusy(false);
+    }
+  }
+
+  voteButtons.forEach((btn) => {
+    btn.addEventListener("click", () => submitVote(btn.dataset.voteParty));
+  });
+
+  const initialCounts = Object.create(null);
+  const initialFirstVoteMs = Object.create(null);
+  canonicalParties.forEach((party) => {
+    initialCounts[party] = 0;
+    initialFirstVoteMs[party] = Number.POSITIVE_INFINITY;
+  });
+  renderVoteTotals(initialCounts);
+  renderDominantParty(initialCounts, initialFirstVoteMs);
+  subscribeVoteTotals();
+
+  onAuthStateChanged(auth, async (user) => {
+    if (!user) return;
+    state.uid = user.uid;
+    try {
+      await fetchUserVote(user.uid);
+    } catch (error) {
+      console.error("Erreur chargement vote:", error);
+      setFeedback("Connexion etablie, mais le chargement du vote a echoue.", "error");
+    }
+  });
+
+  signInAnonymously(auth).catch((error) => {
+    console.error("Erreur auth anonyme:", error);
+    setFeedback("Connexion anonyme impossible. Verifiez la configuration Firebase.", "error");
+  });
+}
+</script>
+
 </body>
 </html>
+
+

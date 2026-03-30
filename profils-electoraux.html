@@ -11,11 +11,11 @@
 </script>
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
-  <meta name="description" content="Profils électoraux moyens par parti politique en France - âge, revenu, localisation, études. 14 partis analysés. Données INSEE, CEVIPOF et enquêtes post-électorales IFOP/IPSOS."/>
+  <meta name="description" content="Profils électoraux moyens par parti politique en France - âge, revenu, localisation, études. 16 partis analysés. Données INSEE, CEVIPOF et enquêtes post-électorales IFOP/IPSOS."/>
   <meta name="keywords" content="profil électoral France, sociologie du vote, qui vote quoi France, INSEE partis politiques, CEVIPOF, électorat RN LFI Renaissance"/>
   <meta name="robots" content="index, follow"/>
   <meta property="og:title" content="Profils Électoraux par Parti Politique - comprendrelapolitique.fr"/>
-  <meta property="og:description" content="Explorez les profils socio-démographiques des électorats français : âge, revenu, formation, localisation. 14 partis comparés."/>
+  <meta property="og:description" content="Explorez les profils socio-démographiques des électorats français : âge, revenu, formation, localisation. 16 partis comparés."/>
   <meta property="og:type" content="website"/>
   <meta property="og:url" content="https://comprendrelapolitique.fr/profils-electoraux.html"/>
   <meta name="twitter:card" content="summary_large_image"/>
@@ -335,7 +335,7 @@
   <div class="hero-in">
     <div class="hero-badge"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg> Analyse socio-électorale - INSEE, CEVIPOF, IFOP/IPSOS</div>
     <h1>Profils électoraux<br><em>par parti politique</em></h1>
-    <p>Visualisez les tendances électorales françaises selon les caractéristiques socio-démographiques moyennes de chaque parti : âge, revenu, formation, localisation. 14 partis comparés sur données officielles.</p>
+    <p>Visualisez les tendances électorales françaises selon les caractéristiques socio-démographiques moyennes de chaque parti : âge, revenu, formation, localisation. 16 partis comparés sur données officielles.</p>
     <div class="hero-note">
       <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="flex-shrink:0;margin-top:1px"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
       Ces profils représentent des moyennes statistiques agrégées, pas des profils individuels. Un même électeur peut voter différemment selon les scrutins et les contextes locaux.
@@ -371,7 +371,7 @@
       <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="display:inline;vertical-align:middle;margin-right:3px"><polyline points="1 4 1 10 7 10"/><path d="M3.51 15a9 9 0 1 0 .49-4.92"/></svg>
       Réinitialiser
     </button>
-    <span class="results-count" id="resultsCount">14 partis affichés</span>
+    <span class="results-count" id="resultsCount">16 partis affichés</span>
   </div>
 </div>
 
@@ -429,8 +429,8 @@
   </div>
 
   <div style="margin-bottom:1.1rem">
-    <h2 class="section-title">Répartitions démographiques - 14 partis</h2>
-    <p class="section-sub">Comparaison visuelle des profils de chaque parti selon la catégorie sélectionnée. Les 14 partis sont affichés.</p>
+    <h2 class="section-title">Répartitions démographiques - 16 partis</h2>
+    <p class="section-sub">Comparaison visuelle des profils de chaque parti selon la catégorie sélectionnée. Les 16 partis sont affichés.</p>
   </div>
   <div class="pie-section">
     <div class="chart-tabs" id="pieTabs">
@@ -638,7 +638,7 @@
 
 <script>
 /* ════════════════════════════════════════════════════
-   DONNÉES - ordre: RN, LFI, RE, PS, LR, MoDem, EELV, PCF, Horizons, R!, UDI, NPA, LO, PRG
+   DONNÉES - ordre: RN, LFI, RE, PS, PP, LR, UDR, MoDem, EELV, PCF, Horizons, R!, UDI, NPA, LO, PRG
    Sources: CEVIPOF, IFOP, IPSOS, INSEE, TNS-Sofres
 ════════════════════════════════════════════════════ */
 const PARTIS = [
@@ -646,7 +646,9 @@ const PARTIS = [
   {id:"lfi",nom:"La France Insoumise",logo:"https://lfi72-la-france-insoumise.fr/wp-content/uploads/2025/02/LFI-logo-site.png",couleur:"#be1622",orient:"Gauche radicale",orientBg:"#fdecea",orientCl:"#c0392b",ageMoyen:38,revenuMoyen:1720,revenuCateg:"bas",ageCat:"jeune",etudes:45,urbain:58,periurbain:28,rural:14,localisation:"urbain",csp:{emp:30,ouvrier:22,retraite:12,etudiant:22,autre:14},aides:["RSA","APL","Chômage"],ageDistrib:{moins35:42,entre35_59:35,plus60:23},participation:65,score2022:22.0,notes:"Électorat jeune, étudiant et populaire urbain. Forte présence dans les banlieues (93, 94) et les villes universitaires. Profil très jeune et très divers socialement.",etude:"Bac+2/+3 en cours ou obtenu. Fort taux d'étudiants dans l'électorat."},
   {id:"renaiss",nom:"Renaissance / Ensemble",logo:"https://upload.wikimedia.org/wikipedia/commons/thumb/7/75/Renaissance-logotype-officiel.svg/200px-Renaissance-logotype-officiel.svg.png",couleur:"#006EB7",orient:"Centre",orientBg:"#e0f2fe",orientCl:"#0369a1",ageMoyen:49,revenuMoyen:2850,revenuCateg:"moyen",ageCat:"senior",etudes:58,urbain:62,periurbain:28,rural:10,localisation:"urbain",csp:{emp:42,ouvrier:8,retraite:32,etudiant:8,autre:10},aides:["Complémentaire santé"],ageDistrib:{moins35:18,entre35_59:36,plus60:46},participation:83,score2022:27.9,notes:"Électorat urbain et diplômé, cadres et professions libérales. Forte présence dans les grandes métropoles et chez les retraités des classes moyennes supérieures.",etude:"Bac+3 et plus (58%). Cadres, professions intellectuelles, enseignants supérieurs."},
   {id:"ps",nom:"Parti Socialiste",logo:"https://upload.wikimedia.org/wikipedia/fr/d/d1/Logo_Parti_socialiste_%28France%29_2016.png",couleur:"#E8003D",orient:"Gauche",orientBg:"#fdecea",orientCl:"#c0392b",ageMoyen:52,revenuMoyen:2200,revenuCateg:"moyen",ageCat:"actif",etudes:55,urbain:60,periurbain:28,rural:12,localisation:"urbain",csp:{emp:42,ouvrier:12,retraite:34,etudiant:7,autre:5},aides:["Complémentaire santé"],ageDistrib:{moins35:15,entre35_59:38,plus60:47},participation:80,score2022:1.75,notes:"Électorat vieillissant : fonctionnaires et enseignants. Perte massive d'électorat vers LFI (populaire) et EELV (diplômés) depuis 2012.",etude:"Bac+3 (55%). Enseignants, fonctionnaires, travailleurs sociaux."},
+  {id:"pp",nom:"Place Publique",logo:"https://upload.wikimedia.org/wikipedia/commons/thumb/a/a5/Logo_Place_publique.svg/langfr-250px-Logo_Place_publique.svg.png",couleur:"#FFD200",orient:"Centre gauche social-démocrate",orientBg:"#fff8cf",orientCl:"#8a6a00",ageMoyen:44,revenuMoyen:2520,revenuCateg:"moyen",ageCat:"actif",etudes:67,urbain:70,periurbain:22,rural:8,localisation:"urbain",csp:{emp:46,ouvrier:7,retraite:24,etudiant:15,autre:8},aides:["APL"],ageDistrib:{moins35:30,entre35_59:44,plus60:26},participation:81,score2022:null,notes:"Électorat plutôt urbain, diplômé et pro-européen, proche de la social-démocratie. La dynamique vient surtout des européennes 2024 en alliance avec le PS autour de Raphaël Glucksmann.",etude:"Bac+3 et plus (67%). Cadres, professions intellectuelles, jeunes actifs des métropoles."},
   {id:"lr",nom:"Les Républicains",logo:"https://upload.wikimedia.org/wikipedia/commons/thumb/5/5c/CGLR2023_-_4.png/200px-CGLR2023_-_4.png",couleur:"#0066CC",orient:"Droite",orientBg:"#e0f2fe",orientCl:"#1a4f8a",ageMoyen:57,revenuMoyen:3100,revenuCateg:"haut",ageCat:"senior",etudes:62,urbain:52,periurbain:30,rural:18,localisation:"urbain",csp:{emp:38,ouvrier:6,retraite:42,etudiant:5,autre:9},aides:[],ageDistrib:{moins35:10,entre35_59:30,plus60:60},participation:88,score2022:4.8,notes:"Électorat très âgé - retraités des classes supérieures, catholiques pratiquants. Effondrement de la base électorale depuis 2017 (perte vers RN et Reconquête).",etude:"Bac+3 et plus (62%). Cadres, chefs d'entreprise, professions libérales."},
+  {id:"udr",nom:"Union des Droites pour la République",logo:"https://upload.wikimedia.org/wikipedia/fr/thumb/c/cd/Logo_UDR_2024.svg/langfr-250px-Logo_UDR_2024.svg.png",couleur:"#0056A6",orient:"Droite souverainiste",orientBg:"#e8f0fa",orientCl:"#1a4f8a",ageMoyen:52,revenuMoyen:2360,revenuCateg:"moyen",ageCat:"actif",etudes:48,urbain:44,periurbain:40,rural:16,localisation:"periurbain",csp:{emp:36,ouvrier:18,retraite:32,etudiant:5,autre:9},aides:[],ageDistrib:{moins35:16,entre35_59:41,plus60:43},participation:84,score2022:null,notes:"Parti lancé par Éric Ciotti en 2024, avec un électorat de droite plus marqué sur les enjeux d'autorité et d'immigration. Profil intermédiaire entre LR et RN, avec un ancrage périurbain notable.",etude:"Bac �  bac+2 (48%), avec présence d'indépendants, cadres intermédiaires et retraités."},
   {id:"modem",nom:"MoDem",logo:"https://upload.wikimedia.org/wikipedia/commons/0/08/Mouvement-Democrate-Logo-2019.png",couleur:"#FF7900",orient:"Centre",orientBg:"#fef9c3",orientCl:"#854d0e",ageMoyen:53,revenuMoyen:2950,revenuCateg:"moyen",ageCat:"senior",etudes:65,urbain:60,periurbain:28,rural:12,localisation:"urbain",csp:{emp:44,ouvrier:5,retraite:38,etudiant:6,autre:7},aides:[],ageDistrib:{moins35:12,entre35_59:38,plus60:50},participation:85,score2022:null,notes:"Parti de François Bayrou, électorat centriste très diplômé. Proches des chrétiens-démocrates européens. Fort dans le Béarn et les zones catholiques modérées.",etude:"Bac+3 et plus (65%). Profils similaires à LR mais plus centristes."},
   {id:"eelv",nom:"EELV / Les Écologistes",logo:"https://lesecologistes-paris11.org/wp-content/uploads/2025/06/bd19b-logo_eelv-fond-blanc.png",couleur:"#00A850",orient:"Gauche écologiste",orientBg:"#d4edda",orientCl:"#166534",ageMoyen:41,revenuMoyen:2650,revenuCateg:"moyen",ageCat:"actif",etudes:72,urbain:74,periurbain:20,rural:6,localisation:"urbain",csp:{emp:48,ouvrier:4,retraite:16,etudiant:18,autre:14},aides:["APL"],ageDistrib:{moins35:32,entre35_59:45,plus60:23},participation:79,score2022:4.6,notes:"Électorat le plus diplômé de France. Cadres supérieurs et professions intellectuelles dans les grandes villes. Fort en Lyon, Bordeaux, Strasbourg, Grenoble (mairies gagnées en 2020).",etude:"Bac+4 et plus (72%). Enseignants, ingénieurs, cadres supérieurs."},
   {id:"pcf",nom:"Parti Communiste Français",logo:"https://upload.wikimedia.org/wikipedia/fr/thumb/6/6a/Logo_du_Parti_communiste_fran%C3%A7ais_%282018%2C_rouge%29.svg/200px-Logo_du_Parti_communiste_fran%C3%A7ais_%282018%2C_rouge%29.svg.png",couleur:"#C1282A",orient:"Gauche radicale",orientBg:"#fdecea",orientCl:"#991b1b",ageMoyen:54,revenuMoyen:1850,revenuCateg:"bas",ageCat:"actif",etudes:32,urbain:48,periurbain:30,rural:22,localisation:"periurbain",csp:{emp:28,ouvrier:34,retraite:32,etudiant:4,autre:2},aides:["Chômage","Retraite complémentaire"],ageDistrib:{moins35:12,entre35_59:38,plus60:50},participation:72,score2022:2.3,notes:"Ancien parti ouvrier, électorat vieillissant concentré dans la banlieue rouge parisienne (93, 94) et les bassins miniers. Résiste par sa présence municipale.",etude:"CAP/BEP ou bac pro (60%). Ouvriers qualifiés, agents de la fonction publique."},
