@@ -94,7 +94,23 @@
   .nav-links a:hover{color:#fff;background:rgba(255,255,255,.07);border-color:rgba(255,255,255,.2);}
   .nav-links a.active,
   .nav-links a[aria-current="page"]{color:var(--gold);background:rgba(212,168,67,.12);border-color:rgba(212,168,67,.4);}
+  
   .nav-actions{display:flex;align-items:center;gap:.5rem;flex-shrink:0;margin-left:auto;}
+  .nav-auth-link{
+    display:inline-flex;align-items:center;justify-content:center;
+    padding:.45rem .78rem;border-radius:999px;
+    border:1px solid rgba(212,168,67,.55);
+    background:linear-gradient(135deg,rgba(212,168,67,.16),rgba(37,99,168,.16));
+    color:#fff;font-size:.72rem;font-weight:700;letter-spacing:.01em;
+    white-space:nowrap;transition:all .2s;text-decoration:none;
+    box-shadow:0 3px 10px rgba(0,0,0,.2);
+  }
+  .nav-auth-link:hover{
+    transform:translateY(-1px);
+    border-color:var(--gold);
+    color:var(--gold);
+    background:linear-gradient(135deg,rgba(212,168,67,.24),rgba(37,99,168,.22));
+  }
   .nav-toggle{display:none;background:none;border:none;cursor:pointer;padding:.4rem}
   .nav-toggle span{display:block;width:22px;height:2px;background:#fff;margin:4px 0;transition:.3s}
 
@@ -563,17 +579,6 @@
   <link rel="manifest" href="/site.webmanifest" />
   </head>
 <body>
-<div id="maintenanceOverlay" class="maintenance-overlay" role="alertdialog" aria-modal="true" aria-labelledby="maintenanceTitle" aria-describedby="maintenanceDesc">
-  <div class="maintenance-modal">
-    <div class="maintenance-icon-wrap" aria-hidden="true">
-      <span>⚠️</span>
-    </div>
-    <h2 id="maintenanceTitle">Page en cours de maintenance</h2>
-    <p id="maintenanceDesc">La section Actualités est temporairement indisponible pendant une opération technique.</p>
-    <span class="maintenance-note">Merci de patienter</span>
-  </div>
-</div>
-
 <!-- NAVBAR -->
 <nav id="navbar" role="navigation" aria-label="Navigation principale">
   <div class="nav-inner">
@@ -589,9 +594,11 @@
       <li><a href="profils-electoraux.html">Profils &eacute;lectoraux</a></li>
       <li><a href="guide-politique.html">Guide PDF</a></li>
       <li><a href="apprendre.html">Apprendre</a></li>
+      
     </ul>
     <button class="nav-arrow nav-arrow-right" id="navArrowRight" aria-label="Défiler la navigation vers la droite">&#8250;</button>
     <div class="nav-actions">
+      
       <button class="nav-toggle" id="navToggle" aria-label="Menu mobile">
         <span></span><span></span><span></span>
       </button>
@@ -603,10 +610,10 @@
 <header class="actu-hero">
   <div class="actu-hero-badge"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 22h16a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2H8a2 2 0 0 0-2 2v16a2 2 0 0 0-2 2zm0 0a2 2 0 0 1-2-2v-9c0-1.1.9-2 2-2h2"/><line x1="18" y1="2" x2="18" y2="22"/></svg> Fil d'actualité</div>
   <h1>Actualités <em>politiques françaises</em></h1>
-  <p>Les dernières informations sur la politique française et internationale, mises à jour quotidiennement via NewsAPI.</p>
+  <p>Les dernières informations sur la politique française et internationale, mises à jour quotidiennement via une source publique fiable.</p>
   <div class="actu-update-info">
     <div class="actu-update-dot"></div>
-    <span id="lastUpdateLabel">Chargement en cours…</span>
+    <span id="lastUpdateLabel">Chargement en cours...</span>
   </div>
 </header>
 
@@ -614,15 +621,9 @@
 <div class="actu-filters" role="navigation" aria-label="Filtres par catégorie">
   <div class="actu-filters-inner">
     <button class="actu-filter-btn active" data-cat="politique"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 11 12 14 22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg> Politique</button>
-    <button class="actu-filter-btn" data-cat="municipales"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg> Municipales 2026</button>
-    <button class="actu-filter-btn" data-cat="geopolitique"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polygon points="3 11 22 2 13 21 11 13 3 11"/></svg> Géopolitique</button>
-    <button class="actu-filter-btn" data-cat="conflits"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="4.93" y1="4.93" x2="19.07" y2="19.07"/></svg> Conflits</button>
-    <button class="actu-filter-btn" data-cat="securite"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg> Sécurité</button>
-    <button class="actu-filter-btn" data-cat="immigration"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg> Immigration</button>
-    <button class="actu-filter-btn" data-cat="economie"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 10h12"/><path d="M4 14h9"/><path d="M19 6a7.7 7.7 0 0 0-5.2-2A7.9 7.9 0 0 0 6 12c0 4.4 3.5 8 7.8 8 2 0 3.8-.8 5.2-2"/></svg> Économie</button>
-    <button class="actu-filter-btn" data-cat="ecologie"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10z"/><path d="M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12"/></svg> Environnement</button>
+    <button class="actu-filter-btn" data-cat="international"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg> International</button>
     <div class="actu-search-wrap">
-      <input type="search" class="actu-search" id="actuSearch" placeholder="Rechercher…" aria-label="Rechercher dans les actualités"/>
+      <input type="search" class="actu-search" id="actuSearch" placeholder="Rechercher..." aria-label="Rechercher dans les actualités"/>
       <span class="actu-search-icon"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></span>
     </div>
     <span class="actu-count" id="actuCount"></span>
@@ -633,7 +634,7 @@
 <main class="actu-main" id="actuMain">
   <div class="actu-spinner" id="actuSpinner">
     <div class="spinner-ring"></div>
-    <span>Chargement des actualités…</span>
+    <span>Chargement des actualités...</span>
   </div>
   <div id="actuContent" style="display:none">
     <div id="actuInfoBanner"></div>
@@ -721,6 +722,7 @@
       <a href="profils-electoraux.html">Profils &eacute;lectoraux</a>
       <a href="guide-politique.html">Guide PDF</a>
       <a href="apprendre.html">Apprendre</a>
+      
       <a href="mentions-legales.html">Mentions l&eacute;gales</a>
     </div>
     <div style="margin-top:1.8rem;padding-top:1.5rem;border-top:1px solid rgba(255,255,255,.08);max-width:760px;margin-left:auto;margin-right:auto;">
@@ -736,7 +738,7 @@
 
 <!-- COOKIE BANNER -->
 <div id="cookieBanner" role="dialog" aria-label="Consentement aux cookies" aria-live="polite">
-  <div class="cookie-title">🍪 Ce site utilise des cookies</div>
+  <div class="cookie-title">ðŸª Ce site utilise des cookies</div>
   <p>Des cookies Google Analytics sont utilisés <strong>uniquement pour mesurer l'audience</strong> et améliorer le contenu pédagogique.</p>
   <div class="cookie-actions">
     <a href="mentions-legales.html" class="cookie-link">Politique de confidentialité</a>
@@ -752,27 +754,27 @@ const ACTU_CONFIG = {
   apiKey:   'pub_25bf563f33c4468dbbd6a091e6e705a5',
   pageSize: 9,
   fetchTimeoutMs: 8000,
-  // Mapping catégorie → paramètres newsdata.io (category + mots-clés)
-  categoryQueries: {
-    politique:    { category:'politics',    q:'france politique' },
-    municipales:  { category:'politics',    q:'municipales 2026 mairie france' },
-    geopolitique: { category:'world',       q:'diplomatie relations internationales france otan politique etrangere' },
-    conflits:     { category:'world',       q:'guerre conflit armee militaire ukraine gaza' },
-    securite:     { category:'politics',    q:'securite interieure police gendarmerie terrorisme france' },
-    immigration:  { category:'politics',    q:'immigration migrants refugies france flux migratoire' },
-    economie:     { category:'business',    q:'crise economique budget dette france inflation bourse energie' },
-    ecologie:     { category:'environment', q:'rechauffement climatique transition ecologique france cop' },
+  placeholderEmoji: {
+    default: '\ud83d\udcf0',
+    politique: '\ud83c\udfdb\ufe0f',
+    international: '\ud83c\udf0d'
   },
-  // Labels d'affichage par catégorie (utilisé par detectCategory / badges)
+  // Mapping categorie -> parametres newsdata.io
+  categoryQueries: {
+    politique: {
+      category:'politics',
+      country:'fr',
+      language:'fr'
+    },
+    international: {
+      category:'world',
+      language:'fr'
+    },
+  },
+  // Labels d'affichage par categorie
   categoryMap: [
-    { cat:'politique',    label:'Politique',    keywords:['parlement','assemblée','sénat','macron','gouvernement','ministre','premier','élection','parti','bayrou','lfi','rn','ps','lr'] },
-    { cat:'economie',     label:'Économie',     keywords:['économie','budget','inflation','dette','bourse','marché','crise économique','énergie','immobilier'] },
-    { cat:'geopolitique', label:'Géopolitique', keywords:['diplomatie','otan','relations internationales','ambassadeur','sommet'] },
-    { cat:'conflits',     label:'Conflits',     keywords:['guerre','conflit','armée','offensive','cessez','militaire','ukraine','gaza'] },
-    { cat:'securite',     label:'Sécurité',     keywords:['sécurité','police','gendarmerie','terrorisme','criminalité','délinquance'] },
-    { cat:'immigration',  label:'Immigration',  keywords:['immigration','migrants','réfugiés','asile','expulsion','frontière'] },
-    { cat:'ecologie',     label:'Environnement',keywords:['climat','écologie','transition','renouvelable','cop','réchauffement'] },
-    { cat:'municipales',  label:'Municipales',  keywords:['municipal','mairie','maire','commune','élections municipales'] },
+    { cat:'politique',     label:'Politique',     emoji:'\ud83c\udfdb\ufe0f', keywords:['parlement','assemblee','senat','macron','gouvernement','ministre','premier','election','parti','bayrou','lfi','rn','ps','lr','france'] },
+    { cat:'international', label:'International', emoji:'\ud83c\udf0d', keywords:['diplomatie','otan','relations internationales','ambassadeur','sommet','guerre','conflit','militaire','ukraine','gaza','onu','international','monde'] },
   ]
 }
 
@@ -802,36 +804,46 @@ function formatDate(dateStr) {
 }
 
 function detectCategory(article) {
-  const text = ((article.title||'') + ' ' + (article.description||'')).toLowerCase();
-  for (const rule of ACTU_CONFIG.categoryMap) {
-    if (rule.keywords.some(kw => text.includes(kw))) return rule.cat;
+  if (article && article._cat) {
+    if (['international', 'geopolitique', 'conflits'].includes(article._cat)) return 'international';
+    return 'politique';
   }
-  return 'politique'; // défaut
+
+  const text = normalizeStr(repairText((article.title || '') + ' ' + (article.description || '')));
+  const rawCategory = normalizeStr(repairText((article && (article.rawCategory || article.category)) || ''));
+
+  for (const rule of ACTU_CONFIG.categoryMap) {
+    if (rule.keywords.some(kw => text.includes(normalizeStr(kw)))) return rule.cat;
+  }
+
+  if (rawCategory.includes('world')) return 'international';
+  if (rawCategory.includes('politics')) return 'politique';
+
+  return 'politique';
 }
 
 function isUne(article, index) {
-  // "À la une" = les 3 premiers articles ou si le titre contient des marqueurs forts
   if (index < 3) return true;
-  const text = (article.title||'').toLowerCase();
+  const text = (article.title || '').toLowerCase();
   return ['exclusif','urgent','breaking','alerte','direct'].some(m => text.includes(m));
 }
 
 function getCategoryLabel(cat) {
   const map = {
-    politique:'Politique', economie:'Économie', diplomatie:'Diplomatie',
-    ecologie:'Écologie', societe:'Société', securite:'Sécurité'
+    politique:'Politique',
+    international:'International'
   };
   return map[cat] || 'Actualité';
 }
 
 function getCategoryEmoji(cat) {
-  return (ACTU_CONFIG.categoryMap.find(r=>r.cat===cat)||{}).emoji || '📰';
+  return (ACTU_CONFIG.categoryMap.find(r => r.cat === cat) || {}).emoji || ACTU_CONFIG.placeholderEmoji[cat] || ACTU_CONFIG.placeholderEmoji.default;
 }
 
 function getBadgeClass(cat) {
   const map = {
-    politique:'badge-politique', economie:'badge-economie', diplomatie:'badge-diplomatie',
-    ecologie:'badge-ecologie', societe:'badge-societe', securite:'badge-securite'
+    politique:'badge-politique',
+    international:'badge-diplomatie'
   };
   return map[cat] || 'badge-actu';
 }
@@ -863,17 +875,147 @@ function stripHtml(str) {
   return (str || '').replace(/<[^>]*>/g, ' ').replace(/\s+/g, ' ').trim();
 }
 
+function repairText(str) {
+  if (typeof str !== 'string') return '';
+
+  let out = stripHtml(str);
+
+  if (/[\u00c3\u00c2\u00e2\u00c5]/.test(out) && typeof TextDecoder !== 'undefined') {
+    for (let i = 0; i < 2; i += 1) {
+      try {
+        const bytes = Uint8Array.from(Array.from(out, function(ch) {
+          return ch.charCodeAt(0) & 255;
+        }));
+        const repaired = new TextDecoder('utf-8').decode(bytes);
+        if (!repaired || repaired === out) break;
+        out = repaired;
+      } catch (e) {
+        break;
+      }
+    }
+  }
+
+  const commonFixes = [
+    ['\u00e2\u20ac\u00a6', '...'],
+    ['\u00e2\u20ac\u2122', '\u2019'],
+    ['\u00e2\u20ac\u0153', '\u201c'],
+    ['\u00e2\u20ac\u009d', '\u201d'],
+    ['\u00e2\u20ac\u2013', '-'],
+    ['\u00e2\u20ac\u2014', '-'],
+    ['\u00c2\u00a0', ' '],
+    ['\u00c3\u00a9', '\u00e9'],
+    ['\u00c3\u00a8', '\u00e8'],
+    ['\u00c3\u00aa', '\u00ea'],
+    ['\u00c3\u00ab', '\u00eb'],
+    ['\u00c3\u00a0', '\u00e0'],
+    ['\u00c3\u00a2', '\u00e2'],
+    ['\u00c3\u00a7', '\u00e7'],
+    ['\u00c3\u00b4', '\u00f4'],
+    ['\u00c3\u00ae', '\u00ee'],
+    ['\u00c3\u00af', '\u00ef'],
+    ['\u00c3\u00bb', '\u00fb'],
+    ['\u00c3\u00b9', '\u00f9'],
+    ['\u00c3\u00bc', '\u00fc'],
+    ['\u00c3\u2030', '\u00c9'],
+    ['\u00c5\u201c', '\u0153']
+  ];
+
+  commonFixes.forEach(function(pair) {
+    out = out.split(pair[0]).join(pair[1]);
+  });
+
+  return out.normalize('NFC').replace(/\s+/g, ' ').trim();
+}
+
+function normalizeArticle(article, fallbackCategory) {
+  return {
+    title: repairText(article.title || ''),
+    description: repairText(article.description || ''),
+    url: article.url || '',
+    urlToImage: article.urlToImage || null,
+    publishedAt: article.publishedAt || '',
+    source: {
+      name: repairText((article.source && article.source.name) || '') || 'Source'
+    },
+    category: repairText(article.category || fallbackCategory || ''),
+    rawCategory: repairText(article.category || fallbackCategory || '')
+  };
+}
+
+function dedupeArticles(articles) {
+  const seen = new Set();
+  return articles.filter(function(article) {
+    const key = (article.url || '').trim() || ((article.title || '').trim() + '|' + (((article.source && article.source.name) || '').trim()));
+    if (!key || seen.has(key)) return false;
+    seen.add(key);
+    return true;
+  });
+}
+
+function getArticleTimestamp(article) {
+  const time = Date.parse((article && article.publishedAt) || '');
+  return Number.isFinite(time) ? time : 0;
+}
+
+function sortArticles(articles) {
+  return [...articles].sort(function(a, b) {
+    const diff = getArticleTimestamp(b) - getArticleTimestamp(a);
+    if (diff !== 0) return diff;
+    return (a.title || '').localeCompare(b.title || '', 'fr', { sensitivity:'base' });
+  });
+}
+
+function textIncludesOneOf(text, keywords) {
+  return keywords.some(function(keyword) {
+    return text.includes(normalizeStr(keyword));
+  });
+}
+
+function articleMatchesCategory(article, category) {
+  if (category === 'all') return true;
+
+  const text = normalizeStr(repairText(
+    (article.title || '') + ' ' +
+    (article.description || '') + ' ' +
+    (((article.source || {}).name) || '')
+  ));
+  const rawCategory = normalizeStr(repairText((article && (article.rawCategory || article.category)) || ''));
+  const detected = detectCategory(article);
+
+  if (category === 'politique') {
+    const frenchPoliticsTerms = [
+      'france','gouvernement','assemblee','senat','parlement','elysee','matignon',
+      'ministre','premier ministre','depute','assemblee nationale','republique',
+      'presidentielle','legislatives','macron','bayrou'
+    ];
+    return (detected === 'politique' || rawCategory.includes('politics')) && textIncludesOneOf(text, frenchPoliticsTerms);
+  }
+
+  if (category === 'international') {
+    const worldPoliticsTerms = [
+      'international','diplomatie','gouvernement','parlement','president',
+      'premier ministre','election','sommet','otan','onu','guerre','conflit',
+      'sanction','ukraine','gaza','russie','etats-unis','chine',
+      'union europeenne','commission europeenne'
+    ];
+    return (detected === 'international' || rawCategory.includes('world')) && textIncludesOneOf(text, worldPoliticsTerms);
+  }
+
+  return detected === category;
+}
+
+function updateLoadMoreVisibility() {
+  const loadMoreEl = document.getElementById('actuLoadmore');
+  if (!loadMoreEl) return;
+  const canLoadMore = state.liveSource === 'newsdata' && !!state.nextCursor && !state.currentSearch.trim();
+  loadMoreEl.style.display = canLoadMore ? 'block' : 'none';
+}
+
 async function fetchGoogleNewsRss(category) {
   if (state.page && state.page > 1) return [];
   const qMap = {
     politique: 'politique france gouvernement parlement',
-    municipales: 'elections municipales france',
-    geopolitique: 'geopolitique france europe otan',
-    conflits: 'guerre ukraine gaza france',
-    securite: 'securite interieure france police',
-    immigration: 'immigration france politique',
-    economie: 'economie france budget inflation',
-    ecologie: 'ecologie france climat'
+    international: 'politique internationale diplomatie guerre monde'
   };
   const query = qMap[category] || qMap.politique;
   const rssUrl = `https://news.google.com/rss/search?q=${encodeURIComponent(query)}&hl=fr&gl=FR&ceid=FR:fr`;
@@ -901,22 +1043,25 @@ async function fetchGoogleNewsRss(category) {
    API FETCH - NewsAPI
 ============================================================ */
 async function fetchNews(category, pageNum) {
-  const cfg = ACTU_CONFIG.categoryQueries[category] || { category: 'politics', q: 'france politique' };
+  const cfg = ACTU_CONFIG.categoryQueries[category] || { category: 'politics' };
 
   if (pageNum && pageNum !== 1 && (!state.nextCursor || state.liveSource !== 'newsdata')) {
     return [];
   }
 
   try {
-    let url = `https://newsdata.io/api/1/latest?apikey=${ACTU_CONFIG.apiKey}` +
-      `&country=fr&language=fr` +
-      `&removeduplicate=1` +
-      `&category=${encodeURIComponent(cfg.category)}`;
-    if (cfg.q) url += `&q=${encodeURIComponent(cfg.q)}`;
-    if (pageNum && pageNum !== 1 && state.nextCursor) {
-      url += `&page=${encodeURIComponent(state.nextCursor)}`;
-    }
+    const params = new URLSearchParams({
+      apikey: ACTU_CONFIG.apiKey,
+      removeduplicate: '1',
+      category: cfg.category || 'politics'
+    });
 
+    if (cfg.language) params.set('language', cfg.language);
+    if (cfg.country) params.set('country', cfg.country);
+    if (cfg.useQuery && cfg.q) params.set('q', cfg.q);
+    if (pageNum && pageNum !== 1 && state.nextCursor) params.set('page', state.nextCursor);
+
+    const url = `https://newsdata.io/api/1/latest?${params.toString()}`;
     const res = await fetchWithTimeout(url, ACTU_CONFIG.fetchTimeoutMs || 8000);
     if (!res.ok) throw new Error(`HTTP ${res.status}`);
 
@@ -924,39 +1069,31 @@ async function fetchNews(category, pageNum) {
     if (data.status !== 'success') throw new Error(data.message || 'API error');
 
     state.nextCursor = data.nextPage || null;
-    if (!state.nextCursor) {
-      const loadMoreEl = document.getElementById('actuLoadmore');
-      if (loadMoreEl) loadMoreEl.style.display = 'none';
-    }
-
     const mapped = (data.results || []).map(function(a) {
-      return {
-        title:       a.title || '',
+      return normalizeArticle({
+        title: a.title || '',
         description: a.description || '',
-        url:         a.link || '',
-        urlToImage:  a.image_url || null,
+        url: a.link || '',
+        urlToImage: a.image_url || null,
         publishedAt: a.pubDate || '',
-        source:      { name: a.source_name || a.source_id || '' },
-        category:    (a.category || []).join(', ')
-      };
-    }).filter(function(a){ return !!a.title && !!a.url; });
+        source: { name: a.source_name || a.source_id || '' },
+        category: (a.category || []).join(', ')
+      }, (a.category || []).join(', '));
+    }).filter(function(a) {
+      return !!a.title && !!a.url;
+    });
 
-    if (mapped.length) {
+    const deduped = dedupeArticles(mapped);
+    if (deduped.length) {
       state.liveSource = 'newsdata';
-      return mapped;
+      return deduped;
     }
 
     throw new Error('No Newsdata results');
-
   } catch (primaryErr) {
-    if (pageNum && pageNum !== 1) return [];
-
-    const rssArticles = await fetchGoogleNewsRss(category);
     state.nextCursor = null;
-    state.liveSource = 'google-rss';
-    const loadMoreEl = document.getElementById('actuLoadmore');
-    if (loadMoreEl) loadMoreEl.style.display = 'none';
-    return rssArticles;
+    state.liveSource = 'fallback';
+    throw primaryErr;
   }
 }
 
@@ -964,9 +1101,7 @@ async function fetchNews(category, pageNum) {
    RENDER
 ============================================================ */
 
-/* ════════════════════════════════════════════════════
-   QUALITY FILTER - articles must be nationally relevant
-════════════════════════════════════════════════════ */
+/* Quality filter - national relevance only */
 var EXCLUDE_TERMS = [
   "obseques","funerailles","enterrement","commemoration locale",
   "kermesse","vide-grenier","brocante","tournoi local","inauguration",
@@ -979,7 +1114,7 @@ var EXCLUDE_TERMS = [
 
 function normalizeStr(s) {
   return (s||"").toLowerCase()
-    .normalize("NFD").replace(/[̀-ͯ]/g, "")
+    .normalize("NFD").replace(/[\u0300-\u036f]/g, "")
     .replace(/['']/g, " ");
 }
 
@@ -1082,60 +1217,137 @@ function updateCount() {
 function applyFilters() {
   let filtered = [...state.allArticles];
 
-  // Category filter
   if (state.currentCat !== 'all') {
-    filtered = filtered.filter(a => detectCategory(a) === state.currentCat);
-  }
-
-  // Search filter
-  const q = state.currentSearch.toLowerCase().trim();
-  if (q) {
-    filtered = filtered.filter(a => {
-      const text = ((a.title||'') + ' ' + (a.description||'')).toLowerCase();
-      return text.includes(q);
+    filtered = filtered.filter(function(article) {
+      return articleMatchesCategory(article, state.currentCat);
     });
   }
 
-  state.displayed = filtered;
+  const q = normalizeStr(state.currentSearch);
+  if (q) {
+    filtered = filtered.filter(function(a) {
+      const searchable = normalizeStr(repairText((a.title || '') + ' ' + (a.description || '')));
+      return searchable.includes(q);
+    });
+  }
+
+  state.displayed = sortArticles(filtered);
   renderArticles(state.displayed, true);
+  updateLoadMoreVisibility();
+}
+
+function setLiveMeta(sourceLabel) {
+  const apiNote = document.getElementById('actuApiNote');
+  const lastUpdate = document.getElementById('lastUpdateLabel');
+  const infoBanner = document.getElementById('actuInfoBanner');
+
+  if (infoBanner) infoBanner.innerHTML = '';
+  if (lastUpdate) lastUpdate.textContent = 'Mis \u00e0 jour le ' + new Date().toLocaleDateString('fr-FR');
+  if (apiNote) apiNote.textContent = sourceLabel;
+}
+
+function setFallbackMeta(message) {
+  const infoBanner = document.getElementById('actuInfoBanner');
+  const apiNote = document.getElementById('actuApiNote');
+  const lastUpdate = document.getElementById('lastUpdateLabel');
+
+  if (infoBanner) {
+    infoBanner.innerHTML = `<div class="actu-info-banner warn">&#9888;&#65039; <span>${message}</span></div>`;
+  }
+  if (apiNote) apiNote.textContent = 'Affichage des articles de d\u00e9monstration';
+  if (lastUpdate) lastUpdate.textContent = 'Articles de d\u00e9monstration';
+}
+
+async function loadCategoryArticles(category) {
+  const spinner = document.getElementById('actuSpinner');
+  const content = document.getElementById('actuContent');
+
+  state.currentCat = category;
+  state.page = 1;
+  state.loading = true;
+  state.apiWorked = false;
+  state.liveSource = 'none';
+  state.nextCursor = null;
+  state.allArticles = [];
+  state.displayed = [];
+
+  if (spinner) spinner.style.display = 'flex';
+  if (content) content.style.display = 'none';
+
+  try {
+    const apiArticles = await fetchNews(category, 1);
+    const relevantArticles = dedupeArticles(apiArticles.filter(isRelevantArticle));
+    const topicalArticles = relevantArticles.filter(function(article) {
+      return articleMatchesCategory(article, category);
+    });
+
+    if (!topicalArticles.length) throw new Error('No topical articles');
+
+    state.allArticles = sortArticles(topicalArticles);
+    state.apiWorked = true;
+    setLiveMeta('Actualit\u00e9s fournies par Newsdata.io - mise \u00e0 jour en temps r\u00e9el');
+  } catch (err) {
+    console.warn('Actualit\u00e9s en direct indisponibles pour', category, err && err.message ? err.message : err);
+    const fallbackArticles = getFallbackArticles(category);
+    state.allArticles = sortArticles(fallbackArticles.length ? fallbackArticles : getFallbackArticles('all').slice(0, ACTU_CONFIG.pageSize));
+    state.liveSource = 'fallback';
+    state.nextCursor = null;
+    setFallbackMeta("Le flux d'actualit\u00e9s en direct est temporairement indisponible pour cette cat\u00e9gorie. Affichage des articles de d\u00e9monstration.");
+  } finally {
+    state.loading = false;
+    try {
+      applyFilters();
+    } catch (renderErr) {
+      console.error('Erreur de rendu des actualit\u00e9s :', renderErr);
+      const featuredEl = document.getElementById('actuFeatured');
+      const gridEl = document.getElementById('actuGrid');
+      if (featuredEl) {
+        featuredEl.innerHTML = `<div class="actu-info-banner">Impossible d'afficher les actualit\u00e9s pour le moment.</div>`;
+      }
+      if (gridEl) gridEl.innerHTML = '';
+    } finally {
+      if (spinner) spinner.style.display = 'none';
+      if (content) content.style.display = 'block';
+    }
+  }
 }
 
 /* ============================================================
    LOAD MORE
 ============================================================ */
 async function loadMore() {
-  if (state.liveSource !== 'newsdata') {
-    const lm = document.getElementById('actuLoadmore');
-    if (lm) lm.style.display = 'none';
+  if (state.loading || state.liveSource !== 'newsdata' || !state.nextCursor) {
+    updateLoadMoreVisibility();
     return;
   }
-  if (state.loading) return;
+
   state.loading = true;
   const btn = document.getElementById('actuLoadmoreBtn');
-  if (btn) { btn.disabled = true; btn.querySelector('span').textContent = 'Chargement…'; }
+  const btnLabel = btn ? btn.querySelector('span') : null;
+  if (btn) btn.disabled = true;
+  if (btnLabel) btnLabel.textContent = 'Chargement...';
 
   try {
     state.page++;
     const articles = await fetchNews(state.currentCat, state.page);
-    if (articles.length) {
-      state.allArticles = [...state.allArticles, ...articles.filter(isRelevantArticle)];
-      applyFilters();
-      if (articles.length < ACTU_CONFIG.pageSize) {
-        const lm = document.getElementById('actuLoadmore');
-        if (lm) lm.style.display = 'none';
-      }
-    } else {
-      const lm = document.getElementById('actuLoadmore');
-        if (lm) lm.style.display = 'none';
-    }
-  } catch(e) {
-    console.warn('Load more error:', e);
-    const lm = document.getElementById('actuLoadmore');
-        if (lm) lm.style.display = 'none';
-  }
+    const relevantArticles = dedupeArticles(articles.filter(isRelevantArticle));
+    const topicalArticles = relevantArticles.filter(function(article) {
+      return articleMatchesCategory(article, state.currentCat);
+    });
 
-  state.loading = false;
-  if (btn) { btn.disabled = false; btn.querySelector('span').textContent = 'Charger plus d\'articles'; }
+    if (topicalArticles.length) {
+      state.allArticles = dedupeArticles([...state.allArticles, ...topicalArticles]);
+      applyFilters();
+    }
+  } catch (e) {
+    console.warn('Load more error:', e);
+    state.page = Math.max(1, state.page - 1);
+  } finally {
+    state.loading = false;
+    if (btn) btn.disabled = false;
+    if (btnLabel) btnLabel.textContent = "Charger plus d'articles";
+    updateLoadMoreVisibility();
+  }
 }
 
 /* ============================================================
@@ -1169,7 +1381,7 @@ function getFallbackArticles(cat) {
       urlToImage:null,
       source:{name:"Le Monde"},
       publishedAt:new Date(Date.now()-172800000).toISOString(),
-      _cat:"diplomatie"
+      _cat:"geopolitique"
     },
     {
       title:"Loi Climat : le Conseil d'État valide les objectifs de réduction d'émissions",
@@ -1214,7 +1426,7 @@ function getFallbackArticles(cat) {
       urlToImage:null,
       source:{name:"Élysée"},
       publishedAt:new Date(Date.now()-604800000).toISOString(),
-      _cat:"diplomatie"
+      _cat:"geopolitique"
     },
     {
       title:"Sondage : RN en tête des intentions de vote aux prochaines législatives",
@@ -1252,8 +1464,37 @@ function getFallbackArticles(cat) {
       publishedAt:new Date(Date.now()-950400000).toISOString(),
       _cat:"politique"
     },
+    {
+      title:"Municipales 2026 : les maires sortants affinent d\u00e9j\u00e0 leurs strat\u00e9gies locales",
+      description:"Dans plusieurs grandes villes, les \u00e9quipes municipales pr\u00e9parent le calendrier politique, les alliances locales et les premi\u00e8res consultations citoyennes avant 2026.",
+      url:"https://www.vie-publique.fr",
+      urlToImage:null,
+      source:{name:"Vie Publique"},
+      publishedAt:new Date(Date.now()-216000000).toISOString(),
+      _cat:"municipales"
+    },
+    {
+      title:"Immigration : le gouvernement d\u00e9taille l'application des nouvelles proc\u00e9dures administratives",
+      description:"Le minist\u00e8re de l'Int\u00e9rieur a pr\u00e9sent\u00e9 plusieurs mesures de mise en \u0153uvre concernant l'asile, les d\u00e9lais d'instruction et les reconduites \u00e0 la fronti\u00e8re.",
+      url:"https://www.service-public.fr",
+      urlToImage:null,
+      source:{name:"Service Public"},
+      publishedAt:new Date(Date.now()-302400000).toISOString(),
+      _cat:"immigration"
+    },
+    {
+      title:"Ukraine et Proche-Orient : la France r\u00e9affirme sa ligne diplomatique face aux conflits",
+      description:"Paris appelle \u00e0 la d\u00e9sescalade sur plusieurs fronts et poursuit ses \u00e9changes avec ses partenaires europ\u00e9ens sur l'aide humanitaire et la s\u00e9curit\u00e9.",
+      url:"https://www.diplomatie.gouv.fr",
+      urlToImage:null,
+      source:{name:"France Diplomatie"},
+      publishedAt:new Date(Date.now()-388800000).toISOString(),
+      _cat:"conflits"
+    },
   ];
   if (!cat || cat === 'all') return all;
+  if (cat === 'politique') return all.filter(a => ['politique', 'municipales'].includes(a._cat));
+  if (cat === 'international') return all.filter(a => ['geopolitique', 'conflits'].includes(a._cat));
   return all.filter(a => a._cat === cat);
 }
 
@@ -1261,52 +1502,7 @@ function getFallbackArticles(cat) {
    INIT
 ============================================================ */
 async function initActu() {
-  const spinner = document.getElementById('actuSpinner');
-  const content = document.getElementById('actuContent');
-  const infoBanner = document.getElementById('actuInfoBanner');
-  const apiNote = document.getElementById('actuApiNote');
-  const loadmore = document.getElementById('actuLoadmore');
-  const lastUpdate = document.getElementById('lastUpdateLabel');
-
-  try {
-    const apiArticles = await fetchNews('politique', 1);
-    const relevantArticles = apiArticles.filter(isRelevantArticle);
-
-    if (relevantArticles.length) {
-      state.allArticles = relevantArticles;
-      state.apiWorked = true;
-      if (lastUpdate) lastUpdate.textContent = 'Mis a jour le ' + new Date().toLocaleDateString('fr-FR');
-      if (apiNote) apiNote.textContent = state.liveSource === 'newsdata' ? 'Actualites fournies par Newsdata.io - mise a jour en temps reel' : 'Actualites en direct via Google News (RSS)';
-      if (loadmore && state.liveSource === 'newsdata' && apiArticles.length >= ACTU_CONFIG.pageSize) loadmore.style.display = 'block';
-    } else {
-      state.allArticles = getFallbackArticles('politique');
-      state.apiWorked = false;
-      state.liveSource = 'fallback';
-      if (infoBanner) {
-        infoBanner.innerHTML = `<div class="actu-info-banner warn">⚠️ <span>Aucun article exploitable en direct pour le moment. Affichage des articles de demonstration.</span></div>`;
-      }
-      if (lastUpdate) lastUpdate.textContent = 'Articles de demonstration';
-      if (loadmore) loadmore.style.display = 'none';
-    }
-
-  } catch(err) {
-    console.warn('Newsdata.io fetch failed:', err.message, '- using fallback articles');
-    state.allArticles = getFallbackArticles('politique');
-    state.liveSource = 'fallback';
-
-    if (infoBanner) {
-      infoBanner.innerHTML = `<div class="actu-info-banner warn">
-        ⚠️ <span>La connexion à Newsdata.io n'a pas pu s'établir. Les articles ci-dessous sont des articles de démonstration.</span>
-      </div>`;
-    }
-    if (lastUpdate) lastUpdate.textContent = 'Articles de démonstration';
-  }
-
-  state.displayed = [...state.allArticles];
-  applyFilters();
-
-  if (spinner) spinner.style.display = 'none';
-  if (content) content.style.display = 'block';
+  await loadCategoryArticles(state.currentCat || 'politique');
 }
 
 /* ============================================================
@@ -1315,67 +1511,20 @@ async function initActu() {
 document.addEventListener('DOMContentLoaded', function() {
   const maintenanceOverlay = document.getElementById('maintenanceOverlay');
   if (maintenanceOverlay) {
-    const navbar = document.getElementById('navbar');
-    const syncOverlayTop = function() {
-      if (navbar) {
-        maintenanceOverlay.style.setProperty('--maintenance-top', navbar.offsetHeight + 'px');
-      }
-    };
-    syncOverlayTop();
-    window.addEventListener('resize', syncOverlayTop, { passive: true });
-    maintenanceOverlay.classList.add('show');
-    document.body.classList.add('maintenance-lock');
-    Array.from(document.body.children).forEach(function(el){
-      if (el !== maintenanceOverlay && el.id !== 'navbar') {
-        el.setAttribute('inert','');
-        el.setAttribute('aria-hidden','true');
-      }
-    });
-    document.addEventListener('keydown', function(e){
-      if (e.key === 'Escape' || e.key === 'Tab') {
-        e.preventDefault();
-      }
-    }, true);
-    return;
+    maintenanceOverlay.remove();
+    document.body.classList.remove('maintenance-lock');
   }
 
-  // Init news
   initActu();
 
-  // Category filter buttons
-  document.querySelectorAll('.actu-filter-btn').forEach(btn => {
+  document.querySelectorAll('.actu-filter-btn').forEach(function(btn) {
     btn.addEventListener('click', async function() {
-      document.querySelectorAll('.actu-filter-btn').forEach(b => b.classList.remove('active'));
+      document.querySelectorAll('.actu-filter-btn').forEach(function(b) { b.classList.remove('active'); });
       this.classList.add('active');
-      state.currentCat = this.dataset.cat;
-      state.page = 1;
-      state.allArticles = [];
-      state.nextCursor = null;
-
-      // Reload from API or fallback for this category
-      document.getElementById('actuGrid').innerHTML = '';
-      document.getElementById('actuFeatured').innerHTML = '';
-      document.getElementById('actuSpinner').style.display = 'flex';
-      document.getElementById('actuContent').style.display = 'none';
-
-      try {
-        const articles = await fetchNews(state.currentCat, 1);
-        state.allArticles = articles.length ? articles : getFallbackArticles(state.currentCat);
-      } catch(e) {
-        state.allArticles = getFallbackArticles(state.currentCat);
-      }
-
-      state.displayed = [...state.allArticles];
-      applyFilters();
-      document.getElementById('actuSpinner').style.display = 'none';
-      document.getElementById('actuContent').style.display = 'block';
-
-      const lm = document.getElementById('actuLoadmore');
-      if (lm) lm.style.display = (state.liveSource === 'newsdata' && state.allArticles.length >= ACTU_CONFIG.pageSize) ? 'block' : 'none';
+      await loadCategoryArticles(this.dataset.cat);
     });
   });
 
-  // Search
   const searchInput = document.getElementById('actuSearch');
   if (searchInput) {
     let debounceTimer;
@@ -1388,58 +1537,54 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   }
 
-  // Load more
   const lmBtn = document.getElementById('actuLoadmoreBtn');
   if (lmBtn) lmBtn.addEventListener('click', loadMore);
 
-  // Navbar toggle
   const toggle = document.getElementById('navToggle');
-  if (toggle) toggle.addEventListener('click', () => {
+  if (toggle) toggle.addEventListener('click', function() {
     document.getElementById('navLinks').classList.toggle('open');
   });
 
-  // Navbar scroll
   const navbar = document.getElementById('navbar');
   const scrollBtn = document.getElementById('scrollTopBtn');
-  window.addEventListener('scroll', () => {
+  window.addEventListener('scroll', function() {
     if (navbar) navbar.classList.toggle('scrolled', window.scrollY > 50);
     if (scrollBtn) {
       scrollBtn.style.opacity = window.scrollY > 400 ? '1' : '0';
       scrollBtn.style.pointerEvents = window.scrollY > 400 ? 'all' : 'none';
     }
-  }, {passive:true});
+  }, { passive:true });
 
-  // Scroll to top
-  if (scrollBtn) scrollBtn.addEventListener('click', () => window.scrollTo({top:0,behavior:'smooth'}));
+  if (scrollBtn) scrollBtn.addEventListener('click', function() {
+    window.scrollTo({ top:0, behavior:'smooth' });
+  });
 
-  // Nav arrows
   const ul = document.getElementById('navLinks');
   const btnL = document.getElementById('navArrowLeft');
   const btnR = document.getElementById('navArrowRight');
   if (ul && btnL && btnR) {
-    function updateArrows(){
+    function updateArrows() {
       const atLeft = ul.scrollLeft <= 2;
       const atRight = ul.scrollLeft >= ul.scrollWidth - ul.clientWidth - 2;
       btnL.classList.toggle('visible', !atLeft);
       btnR.classList.toggle('visible', !atRight);
     }
-    btnL.addEventListener('click', () => ul.scrollBy({left:-200,behavior:'smooth'}));
-    btnR.addEventListener('click', () => ul.scrollBy({left:200,behavior:'smooth'}));
-    ul.addEventListener('scroll', updateArrows, {passive:true});
-    window.addEventListener('resize', updateArrows, {passive:true});
+    btnL.addEventListener('click', function() { ul.scrollBy({ left:-200, behavior:'smooth' }); });
+    btnR.addEventListener('click', function() { ul.scrollBy({ left:200, behavior:'smooth' }); });
+    ul.addEventListener('scroll', updateArrows, { passive:true });
+    window.addEventListener('resize', updateArrows, { passive:true });
     setTimeout(updateArrows, 100);
   }
 
-  // Cookie banner
   const banner = document.getElementById('cookieBanner');
   if (banner && localStorage.getItem('cookieConsent') !== 'accepted') {
-    setTimeout(() => banner.classList.add('show'), 2500);
+    setTimeout(function() { banner.classList.add('show'); }, 2500);
     const acceptBtn = document.getElementById('cookieAccept');
-    if (acceptBtn) acceptBtn.addEventListener('click', () => {
-      localStorage.setItem('cookieConsent','accepted');
+    if (acceptBtn) acceptBtn.addEventListener('click', function() {
+      localStorage.setItem('cookieConsent', 'accepted');
       banner.classList.remove('show');
       banner.classList.add('hide');
-      setTimeout(() => banner.style.display='none', 400);
+      setTimeout(function() { banner.style.display = 'none'; }, 400);
     });
   }
 });
