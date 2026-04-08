@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
+<meta charset="UTF-8"/>
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-R2B9TW1V79"></script>
 <script>
@@ -9,8 +10,7 @@
   gtag('js', new Date());
   gtag('config', 'G-R2B9TW1V79');
 </script>
-  <meta charset="UTF-8"/>
-  <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
   <meta name="description" content="Panorama des 16 partis politiques français, comparateur interactif, baromètres de popularité et test de profil politique. Trouvez le parti le plus proche de vos valeurs."/>
   <meta name="keywords" content="politique française, idéologies politiques, partis politiques France, institutions Ve République, gauche droite France, comprendre la politique"/>
   <meta name="author" content="comprendrelapolitique.fr"/>
@@ -134,7 +134,23 @@
   }
   .nav-links a:hover{color:#fff;background:rgba(255,255,255,.07);border-color:rgba(255,255,255,.2);}
   .nav-links a.active{color:var(--gold);background:rgba(212,168,67,.12);border-color:rgba(212,168,67,.4);}
+  
   .nav-actions{display:flex;align-items:center;gap:.5rem;flex-shrink:0;margin-left:auto;}
+  .nav-auth-link{
+    display:inline-flex;align-items:center;justify-content:center;
+    padding:.45rem .78rem;border-radius:999px;
+    border:1px solid rgba(212,168,67,.55);
+    background:linear-gradient(135deg,rgba(212,168,67,.16),rgba(37,99,168,.16));
+    color:#fff;font-size:.72rem;font-weight:700;letter-spacing:.01em;
+    white-space:nowrap;transition:all .2s;text-decoration:none;
+    box-shadow:0 3px 10px rgba(0,0,0,.2);
+  }
+  .nav-auth-link:hover{
+    transform:translateY(-1px);
+    border-color:var(--gold);
+    color:var(--gold);
+    background:linear-gradient(135deg,rgba(212,168,67,.24),rgba(37,99,168,.22));
+  }
 
   .nav-toggle{display:none;background:none;border:none;cursor:pointer;padding:.4rem}
   .nav-toggle span{display:block;width:22px;height:2px;background:#fff;margin:4px 0;transition:.3s}
@@ -1581,19 +1597,21 @@
   <div class="nav-inner">
     <div class="nav-logo"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 36" width="28" height="16" aria-hidden="true" style="display:inline-block;vertical-align:middle;flex-shrink:0"><path d="M32 34 A30 30 0 0 1 2 34 Z" fill="#B80000"/><path d="M32 34 A30 30 0 0 0 62 34 Z" fill="#003DA6"/><path d="M9 34 A23 23 0 0 1 32 11" fill="none" stroke="#E03030" stroke-width="3.8" stroke-linecap="round"/><path d="M15 34 A17 17 0 0 1 32 17" fill="none" stroke="#CC2222" stroke-width="3.8" stroke-linecap="round"/><path d="M21 34 A11 11 0 0 1 32 23" fill="none" stroke="#AA1515" stroke-width="3.8" stroke-linecap="round"/><path d="M55 34 A23 23 0 0 0 32 11" fill="none" stroke="#3366EE" stroke-width="3.8" stroke-linecap="round"/><path d="M49 34 A17 17 0 0 0 32 17" fill="none" stroke="#2255CC" stroke-width="3.8" stroke-linecap="round"/><path d="M43 34 A11 11 0 0 0 32 23" fill="none" stroke="#1144AA" stroke-width="3.8" stroke-linecap="round"/><line x1="32" y1="11" x2="32" y2="34" stroke="rgba(255,255,255,0.75)" stroke-width="1.5" stroke-dasharray="2,2"/><line x1="2" y1="34" x2="62" y2="34" stroke="rgba(255,255,255,0.55)" stroke-width="1.5"/></svg> <span>Comprendre la</span> Politique</div>
     <button class="nav-arrow nav-arrow-left" id="navArrowLeft" aria-label="Défiler la navigation vers la gauche">&#8249;</button>
-        <ul class="nav-links" id="navLinks">
+            <ul class="nav-links" id="navLinks">
       <li><a href="index.html">Accueil</a></li>
       <li><a href="comprendre-la-politique.html">Introduction</a></li>
       <li><a href="partis-politiques.html" aria-current="page">Partis politiques</a></li>
-      <li><a href="systeme-politique.html">Syst&egrave;me politique</a></li>
+      <li><a href="systeme-politique.html">Système politique</a></li>
       <li><a href="culture-politique.html">Culture politique</a></li>
-      <li><a href="actualites-politiques.html">Actualit&eacute;s</a></li>
-      <li><a href="profils-electoraux.html">Profils &eacute;lectoraux</a></li>
+      <li><a href="actualites-politiques.html">Actualités</a></li>
+      <li><a href="gagnants-perdants.html">Gagnants / perdants</a></li>
+      <li><a href="profils-electoraux.html">Profils électoraux</a></li>
       <li><a href="guide-politique.html">Guide PDF</a></li>
       <li><a href="apprendre.html">Apprendre</a></li>
     </ul>
     <button class="nav-arrow nav-arrow-right" id="navArrowRight" aria-label="Défiler la navigation vers la droite">&#8250;</button>
     <div class="nav-actions">
+      
       <button class="nav-toggle" id="navToggle" aria-label="Menu mobile">
         <span></span><span></span><span></span>
       </button>
@@ -1611,7 +1629,7 @@
     </div>
     <div class="search-bar reveal">
       <span class="search-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></span>
-      <input type="text" id="partySearch" placeholder="Rechercher un parti (ex : RN, gauche, écologie…)" aria-label="Rechercher un parti politique"/>
+      <input type="text" id="partySearch" placeholder="Rechercher un parti (ex : RN, gauche, écologieâ€¦)" aria-label="Rechercher un parti politique"/>
     </div>
     <div class="party-filters reveal" id="partyFilters" role="group" aria-label="Filtrer par orientation politique">
       <button class="pf-btn active" data-filter="all">Tous</button>
@@ -1639,7 +1657,7 @@
       <button class="pop-tab active" data-tab="sondages" role="tab"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg> Sondages (2024)</button>
       <button class="pop-tab" data-tab="pres2022" role="tab"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 11 12 14 22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg> Présidentielle 2022</button>
       <button class="pop-tab" data-tab="legis2022" role="tab"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="22" x2="21" y2="22"/><line x1="6" y1="18" x2="6" y2="11"/><line x1="10" y1="18" x2="10" y2="11"/><line x1="14" y1="18" x2="14" y2="11"/><line x1="18" y1="18" x2="18" y2="11"/><polygon points="12 2 20 7 4 7"/></svg> Législatives 2022</button>
-      <button class="pop-tab" data-tab="euro2024" role="tab">🇪🇺 Européennes 2024</button>
+      <button class="pop-tab" data-tab="euro2024" role="tab">ðŸ‡ªðŸ‡º Européennes 2024</button>
     </div>
     <div class="pop-panel active reveal" id="tab-sondages"></div>
     <div class="pop-panel" id="tab-pres2022"></div>
@@ -1678,7 +1696,7 @@
     <div class="orientation-wrap reveal">
       <div class="ori-card">
         <div class="ori-header">
-          <h3>🧭 Test d'orientation politique</h3>
+          <h3>ðŸ§­ Test d'orientation politique</h3>
           <p>Répondez spontanément - il n'y a pas de bonne ou mauvaise réponse</p>
         </div>
         <div class="ori-body">
@@ -1688,7 +1706,7 @@
             <div class="ori-question" id="oriQ"></div>
             <div class="ori-scale" id="oriOpts"></div>
             <div class="ori-nav">
-              <button class="btn btn-sm" id="oriPrev" id="oriPrev" style="visibility:hidden">← Précédent</button>
+              <button class="btn btn-sm" id="oriPrev" id="oriPrev" style="visibility:hidden">â† Précédent</button>
               <button class="btn btn-primary btn-sm" id="oriNext" id="oriNext">Suivant →</button>
             </div>
           </div>
@@ -1923,11 +1941,11 @@
         </div>
         <div class="exploration-arrow">&rarr;</div>
       </a>
-      <a href="comprendre-la-politique.html" class="exploration-card">
-        <div class="exploration-icon" style="color:var(--gold)"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9.5 2A2.5 2.5 0 0 1 12 4.5v15a2.5 2.5 0 0 1-4.96-.46 2.5 2.5 0 0 1-1.04-4.79A2.5 2.5 0 0 1 4 12a2.5 2.5 0 0 1 2-2.45V9.5A2.5 2.5 0 0 1 9.5 2z"/><path d="M14.5 2A2.5 2.5 0 0 0 12 4.5v15a2.5 2.5 0 0 0 4.96-.46 2.5 2.5 0 0 0 1.04-4.79A2.5 2.5 0 0 0 20 12a2.5 2.5 0 0 0-2-2.45V9.5A2.5 2.5 0 0 0 14.5 2z"/></svg></div>
+      <a href="academie-politique.html" class="exploration-card">
+        <div class="exploration-icon" style="color:var(--gold)"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l2.8 5.7 6.2.9-4.5 4.4 1.1 6.2L12 16.6 6.4 19.2l1.1-6.2L3 8.6l6.2-.9L12 2z"/></svg></div>
         <div class="exploration-text">
-          <strong>Comprendre la politique</strong>
-          <span>Explorez le spectre politique, les ideologies et les themes -&gt;</span>
+          <strong>Acad&eacute;mie politique</strong>
+          <span>Lancez des quiz a niveaux, gagnez de l'XP et debloquez des badges -&gt;</span>
         </div>
         <div class="exploration-arrow">&rarr;</div>
       </a>
@@ -1962,17 +1980,18 @@
   <div class="footer-inner">
     <div class="footer-logo"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 36" width="28" height="16" aria-hidden="true" style="display:inline-block;vertical-align:middle;flex-shrink:0;opacity:.9"><path d="M32 34 A30 30 0 0 1 2 34 Z" fill="#B80000"/><path d="M32 34 A30 30 0 0 0 62 34 Z" fill="#003DA6"/><path d="M9 34 A23 23 0 0 1 32 11" fill="none" stroke="#E03030" stroke-width="3.8" stroke-linecap="round"/><path d="M15 34 A17 17 0 0 1 32 17" fill="none" stroke="#CC2222" stroke-width="3.8" stroke-linecap="round"/><path d="M21 34 A11 11 0 0 1 32 23" fill="none" stroke="#AA1515" stroke-width="3.8" stroke-linecap="round"/><path d="M55 34 A23 23 0 0 0 32 11" fill="none" stroke="#3366EE" stroke-width="3.8" stroke-linecap="round"/><path d="M49 34 A17 17 0 0 0 32 17" fill="none" stroke="#2255CC" stroke-width="3.8" stroke-linecap="round"/><path d="M43 34 A11 11 0 0 0 32 23" fill="none" stroke="#1144AA" stroke-width="3.8" stroke-linecap="round"/><line x1="32" y1="11" x2="32" y2="34" stroke="rgba(255,255,255,0.75)" stroke-width="1.5" stroke-dasharray="2,2"/><line x1="2" y1="34" x2="62" y2="34" stroke="rgba(255,255,255,0.55)" stroke-width="1.5"/></svg> <span>Comprendre la</span> Politique</div>
     <p>Site pédagogique à but éducatif. Contenu équilibré et non partisan.<br>Les données de sondages sont issues des principaux instituts (IFOP, BVA, Odoxa, Ipsos) et sont indicatives.</p>
-        <div class="footer-links">
+            <div class="footer-links">
       <a href="index.html">Accueil</a>
       <a href="comprendre-la-politique.html">Introduction</a>
       <a href="partis-politiques.html">Partis politiques</a>
-      <a href="systeme-politique.html">Syst&egrave;me politique</a>
+      <a href="systeme-politique.html">Système politique</a>
       <a href="culture-politique.html">Culture politique</a>
-      <a href="actualites-politiques.html">Actualit&eacute;s</a>
-      <a href="profils-electoraux.html">Profils &eacute;lectoraux</a>
+      <a href="actualites-politiques.html">Actualités</a>
+      <a href="gagnants-perdants.html">Gagnants / perdants</a>
+      <a href="profils-electoraux.html">Profils électoraux</a>
       <a href="guide-politique.html">Guide PDF</a>
       <a href="apprendre.html">Apprendre</a>
-      <a href="mentions-legales.html">Mentions l&eacute;gales</a>
+      <a href="mentions-legales.html">Mentions légales</a>
     </div>
     <div style="margin-top:1.8rem;padding-top:1.5rem;border-top:1px solid rgba(255,255,255,.08);max-width:760px;margin-left:auto;margin-right:auto;">
       <p style="color:rgba(255,255,255,.55);font-size:.78rem;font-weight:600;margin-bottom:.5rem;letter-spacing:.06em;text-transform:uppercase;"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg> Sources &amp; fiabilité</p>
@@ -1986,7 +2005,7 @@
 
 <!-- Bandeau cookies -->
 <div id="cookieBanner" role="dialog" aria-label="Consentement aux cookies" aria-live="polite">
-  <div class="cookie-title">🍪 Ce site utilise des cookies</div>
+  <div class="cookie-title">ðŸª Ce site utilise des cookies</div>
   <p>Des cookies Google Analytics sont utilisés <strong>uniquement pour mesurer l'audience</strong> et améliorer le contenu pédagogique. Aucune donnée personnelle n'est vendue ou partagée.</p>
   <div class="cookie-actions">
     <a href="mentions-legales.html" class="cookie-link">Politique de confidentialité</a>
@@ -2001,21 +2020,21 @@
    DATA - IDÉOLOGIES
 ============================================================ */
 const ideologies = [
-  { id:'conservatisme', label:'Droite', lc:'#1a4f8a', bg:'#e8f0fa', icon:'🏛️', name:'Conservatisme',
+  { id:'conservatisme', label:'Droite', lc:'#1a4f8a', bg:'#e8f0fa', icon:'ðŸ›ï¸', name:'Conservatisme',
     def:"Le conservatisme défend les traditions, les institutions établies et une évolution prudente de la société. Il valorise l'ordre, la famille, la nation et la religion contre les changements rapides.",
     history:"Né en réaction à la Révolution française, théorisé par Edmund Burke (1790). En France : royalisme, bonapartisme, gaullisme, droite républicaine. Aujourd'hui incarné par LR.",
     thinkers:['Edmund Burke','Joseph de Maistre','Charles de Gaulle','Jacques Chirac','Nicolas Sarkozy'],
     franceEx:'Les Républicains (LR), courant gaulliste de Renaissance',
     worldEx:'Parti Conservateur (UK), CDU (Allemagne), Parti Républicain (USA)',
     quote:{text:"Il faut changer pour que les choses restent les mêmes.",author:"Giuseppe Tomasi di Lampedusa, Le Guépard"} },
-  { id:'liberalisme', label:'Centre', lc:'#1e8449', bg:'#eafaf1', icon:'⚖️', name:'Libéralisme',
-    def:"Le libéralisme place la liberté individuelle au cœur de son projet : liberté économique (libre marché) et liberté politique (démocratie, droits civils). Courant dominant en Europe occidentale.",
+  { id:'liberalisme', label:'Centre', lc:'#1e8449', bg:'#eafaf1', icon:'âš–ï¸', name:'Libéralisme',
+    def:"Le libéralisme place la liberté individuelle au cÅ“ur de son projet : liberté économique (libre marché) et liberté politique (démocratie, droits civils). Courant dominant en Europe occidentale.",
     history:"Issu des Lumières (Locke, Montesquieu, Smith). En France : centre depuis la IIIe République. Aujourd'hui porté par Renaissance, MoDem. Le libéralisme économique est distinct du libéralisme culturel.",
     thinkers:['John Locke','Adam Smith','Alexis de Tocqueville','Raymond Aron','Emmanuel Macron'],
     franceEx:'Renaissance, MoDem, Horizons, UDI',
     worldEx:'Parti Libéral (Canada), FDP (Allemagne), Lib-Dems (UK)',
     quote:{text:"La liberté est le droit de faire tout ce que les lois permettent.",author:"Montesquieu, De l'Esprit des Lois (1748)"} },
-  { id:'socialisme', label:'Gauche', lc:'#c0392b', bg:'#fdecea', icon:'🌹', name:'Socialisme',
+  { id:'socialisme', label:'Gauche', lc:'#c0392b', bg:'#fdecea', icon:'ðŸŒ¹', name:'Socialisme',
     def:"Le socialisme prône une transformation de la société pour réduire les inégalités. Il défend l'intervention de l'État dans l'économie, la protection sociale forte et les droits des travailleurs.",
     history:"Né au XIXe siècle avec Saint-Simon, Proudhon. La SFIO de Jaurès (1905) est sa matrice française. Mitterrand refonde le PS en 1971 (Congrès d'Épinay). Au pouvoir en 1981, 1997 et 2012.",
     thinkers:['Jean Jaurès','Léon Blum','François Mitterrand','Michel Rocard','Lionel Jospin'],
@@ -2036,14 +2055,14 @@ const ideologies = [
     franceEx:'La France Insoumise (LFI), NPA (anticapitaliste)',
     worldEx:'Podemos (Espagne), Syriza (Grèce), Bernie Sanders (USA)',
     quote:{text:"La révolution, c'est quand le possible devient nécessaire.",author:"Jean-Luc Mélenchon"} },
-  { id:'ecologisme', label:'Centre-gauche', lc:'#1e8449', bg:'#eafaf1', icon:'🌿', name:'Écologisme politique',
-    def:"L'écologisme place la protection de l'environnement au cœur du projet politique. Il remet en cause le modèle de croissance capitaliste au nom des limites planétaires et de la justice intergénérationnelle.",
+  { id:'ecologisme', label:'Centre-gauche', lc:'#1e8449', bg:'#eafaf1', icon:'ðŸŒ¿', name:'Écologisme politique',
+    def:"L'écologisme place la protection de l'environnement au cÅ“ur du projet politique. Il remet en cause le modèle de croissance capitaliste au nom des limites planétaires et de la justice intergénérationnelle.",
     history:"Né dans les années 70 (rapport Meadows 'Limites de la croissance', 1972). En France : Les Verts fondés en 1984, devenus EELV en 2010. René Dumont, premier candidat écologiste en 1974.",
     thinkers:['René Dumont','Ivan Illich','Yannick Jadot','Sandrine Rousseau','Greta Thunberg'],
     franceEx:'EELV, Génération Écologie, partis verts locaux',
     worldEx:'Die Grünen (Allemagne - au gouvernement 2021-2024), Scottish Greens',
     quote:{text:"Nous ne sommes pas en train de sauver la planète, nous sauvons notre espèce.",author:"Yann Arthus-Bertrand"} },
-  { id:'nationalism', label:'Extrême droite', lc:'#555', bg:'#e8e9ea', icon:'🦅', name:'Nationalisme & populisme de droite',
+  { id:'nationalism', label:'Extrême droite', lc:'#555', bg:'#e8e9ea', icon:'ðŸ¦…', name:'Nationalisme & populisme de droite',
     def:"Le nationalisme met la nation en valeur suprême. Le populisme de droite oppose 'le peuple' aux 'élites corrompues' et aux immigrés perçus comme une menace identitaire et économique.",
     history:"Boulangisme, Ligue des Patriotes, Action Française de Maurras. Front National créé en 1972 par Jean-Marie Le Pen. Marine Le Pen le rebaptise RN en 2018 dans une stratégie de 'dédiabolisation'.",
     thinkers:['Charles Maurras','Jean-Marie Le Pen','Marine Le Pen','Éric Zemmour'],
@@ -2057,21 +2076,21 @@ const ideologies = [
     franceEx:'Groupes autonomes, CNT-F, certains milieux des ZAD',
     worldEx:'CNT (Espagne), IWW (USA), mouvements altermondialistes',
     quote:{text:"La propriété, c'est le vol !",author:"Pierre-Joseph Proudhon (1840)"} },
-  { id:'gaullisme', label:'Droite républicaine', lc:'#1a4f8a', bg:'#e8f0fa', icon:'⚔️', name:'Gaullisme',
+  { id:'gaullisme', label:'Droite républicaine', lc:'#1a4f8a', bg:'#e8f0fa', icon:'âš”ï¸', name:'Gaullisme',
     def:"Le gaullisme est une doctrine française centrée sur la grandeur nationale, l'indépendance de la France, la souveraineté populaire et un État fort. Il transcende parfois gauche et droite.",
     history:"Du RPF (1947) au RPR de Chirac (1976), puis UMP (2002). Aujourd'hui dilué dans LR et en partie dans Renaissance. Chirac en est la dernière grande incarnation.",
     thinkers:['Charles de Gaulle','Michel Debré','Jacques Chirac','Charles Pasqua'],
     franceEx:'Courant gaulliste dans LR, certaines figures de Renaissance',
     worldEx:'Inspiration pour les partis souverainistes de droite républicaine en Europe',
     quote:{text:"La politique de la France ne se fait pas à la corbeille.",author:"Charles de Gaulle"} },
-  { id:'reformisme', label:'Centre-gauche', lc:'#e74c3c', bg:'#fef0ed', icon:'📋', name:'Réformisme social-démocrate',
+  { id:'reformisme', label:'Centre-gauche', lc:'#e74c3c', bg:'#fef0ed', icon:'ðŸ“‹', name:'Réformisme social-démocrate',
     def:"Le réformisme cherche à transformer la société progressivement par la voie institutionnelle et légale, sans rupture révolutionnaire. Il constitue le pilier de la social-démocratie européenne.",
     history:"Courant dominant depuis Bernstein (fin XIXe). En France, incarné par le PS dans ses années de gouvernement, Rocard ('Il faut traverser la rivière pierre par pierre'), Jospin.",
     thinkers:['Édouard Bernstein','Léon Blum','Michel Rocard','Lionel Jospin'],
     franceEx:'PS (gouvernemental), Génération.s, Place Publique',
     worldEx:'SPD, partis sociaux-démocrates nordiques, Labour (UK)',
     quote:{text:"Gouverner, c'est choisir.",author:"Pierre Mendès France"} },
-  { id:'federalisme', label:'Centre pro-européen', lc:'#1e8449', bg:'#eafaf1', icon:'🇪🇺', name:'Fédéralisme européen',
+  { id:'federalisme', label:'Centre pro-européen', lc:'#1e8449', bg:'#eafaf1', icon:'ðŸ‡ªðŸ‡º', name:'Fédéralisme européen',
     def:"Le fédéralisme européen prône une intégration politique poussée : gouvernement, parlement, politique étrangère et défense communs pour faire de l'UE un véritable État fédéral.",
     history:"Imaginé par Victor Hugo (1849), relancé après 1945 par Jean Monnet, Robert Schuman, Adenauer. Courant fort chez les partis centristes et pro-européens depuis les années 90.",
     thinkers:['Victor Hugo','Jean Monnet','Robert Schuman','Guy Verhofstadt'],
@@ -2086,7 +2105,7 @@ const ideologies = [
     worldEx:'Brexit (UK), M5S (Italie), AfD (Allemagne)',
     quote:{text:"Ni Bruxelles, ni Washington - la France doit décider pour les Français.",author:"Courant souverainiste"} },
 
-  { id:'monarchisme', label:'Droite traditionaliste', lc:'#7b3f00', bg:'#f9f0e8', icon:'👑', name:'Monarchisme constitutionnel',
+  { id:'monarchisme', label:'Droite traditionaliste', lc:'#7b3f00', bg:'#f9f0e8', icon:'ðŸ‘‘', name:'Monarchisme constitutionnel',
     def:"Le monarchisme constitutionnel prône un régime où un monarque héréditaire règne sans gouverner, les pouvoirs étant exercés par un gouvernement responsable devant un parlement élu. Distinct de la monarchie absolue.",
     history:"Théorisé par Montesquieu et les doctrinaires sous la Restauration. En France, le légitimisme (Bourbons) et l\'orléanisme (Louis-Philippe) s\'affrontent au XIXe. Aujourd\'hui marginal, il subsiste autour du prétendant Louis de Bourbon.",
     thinkers:['Montesquieu','Benjamin Constant','François Guizot','Jacques Bainville','Charles Maurras'],
@@ -2094,7 +2113,7 @@ const ideologies = [
     worldEx:'Monarchies constitutionnelles : Espagne, Belgique, Pays-Bas, Suède, Royaume-Uni',
     quote:{text:"Le roi règne mais ne gouverne pas.",author:"Adolphe Thiers, 1830"} },
 
-  { id:'libertarianisme', label:'Droite/Gauche libérale', lc:'#f39c12', bg:'#fef9e7', icon:'🗽', name:'Libertarianisme',
+  { id:'libertarianisme', label:'Droite/Gauche libérale', lc:'#f39c12', bg:'#fef9e7', icon:'ðŸ—½', name:'Libertarianisme',
     def:"Le libertarianisme radicalise le libéralisme : il défend la liberté individuelle absolue contre toute coercition étatique. Il s\'oppose aussi bien à l\'État social qu\'à la morale imposée. Sa devise : liberté maximale, État minimal.",
     history:"Né aux États-Unis dans les années 1970 (Ayn Rand, Murray Rothbard, Friedrich Hayek). Peu implanté en France politiquement mais très influent dans les milieux libéraux, tech et entrepreneuriaux. Le mouvement altcoin/Bitcoin y est philosophiquement lié.",
     thinkers:['Friedrich Hayek','Milton Friedman','Ayn Rand','Murray Rothbard','Robert Nozick'],
@@ -2102,7 +2121,7 @@ const ideologies = [
     worldEx:'Parti Libertarien (USA - 3e parti), ancrage fort dans la Silicon Valley',
     quote:{text:"Votre liberté s\'arrête là où celle d\'autrui commence - et nulle part ailleurs.",author:"Principe libertarien fondateur"} },
 
-  { id:'syndicalisme', label:'Mouvement ouvrier', lc:'#c0392b', bg:'#fdecea', icon:'⚙️', name:'Syndicalisme révolutionnaire',
+  { id:'syndicalisme', label:'Mouvement ouvrier', lc:'#c0392b', bg:'#fdecea', icon:'âš™ï¸', name:'Syndicalisme révolutionnaire',
     def:"Le syndicalisme révolutionnaire prône l\'émancipation des travailleurs par l\'action directe (grève générale, boycott) sans passer par l\'État ni les partis politiques. L\'organisation professionnelle remplace l\'État.",
     history:"Théorisé par Georges Sorel (Réflexions sur la violence, 1908) et Fernand Pelloutier. La Charte d\'Amiens (1906) de la CGT affirme l\'indépendance syndicale des partis. Influence persistante sur le syndicalisme français, l\'un des plus combatifs d\'Europe.",
     thinkers:['Georges Sorel','Fernand Pelloutier','Pierre Monatte','Victor Griffuelhes'],
@@ -2121,7 +2140,7 @@ const parties = [
   { id:'ps', name:'Parti Socialiste', short:'PS', initials:'PS', color:'#E8003D', bg:'#fdecea', orient:'centre-gauche', orientLabel:'Centre-gauche', orientBg:'#e74c3c', orientColor:'#fff', leader:'Olivier Faure (Premier secrétaire)', founded:"Fondé en 1969, refondé à Épinay en 1971 sous Mitterrand, héritier de la SFIO de Jaurès (1905).", desc:"Le PS a dominé la gauche de 1981 à 2017. Après le séisme Macron (6,3% en 2017 avec Hamon !), il se reconstruit au sein du NFP. Raphaël Glucksmann (Place Publique/PS) réalise 13,8% aux européennes 2024, signe de recomposition.", positions:{'Économie':'Social-démocratie, redistribution, service public','Immigration':'Humanisme, intégration républicaine','Europe':'Pro-européen fort, Europe sociale','Société':'Progressisme, laïcité, droits des femmes'}, polls:6, euroscore:13.8, pres2022:1.75, legscore:5.7, logo:'https://upload.wikimedia.org/wikipedia/fr/d/d1/Logo_Parti_socialiste_%28France%29_2016.png' },
   { id:'pp', name:'Place Publique', short:'PP', initials:'PP', color:'#FFD200', bg:'#fff8cf', orient:'centre-gauche', orientLabel:'Centre-gauche social-démocrate', orientBg:'#e74c3c', orientColor:'#fff', leader:'Raphaël Glucksmann et Aurore Lalucq (coprésidents)', founded:'Fondé le 6 novembre 2018 autour de Raphaël Glucksmann, Claire Nouvian et Thomas Porcher.', desc:"Place Publique est un parti de centre-gauche pro-européen. En alliance avec le PS, la liste menée par Raphaël Glucksmann a obtenu 13,83% aux européennes 2024.", positions:{'Économie':'Social-démocratie, justice sociale, réindustrialisation verte','Immigration':'Politique d\'accueil régulée, intégration, coopération européenne','Europe':'Fédéralisme européen, défense d\'une Europe sociale et démocratique','Société':'Progressisme républicain, laïcité, droits fondamentaux'}, polls:4, euroscore:13.83, pres2022:0, legscore:0, logo:'https://upload.wikimedia.org/wikipedia/commons/thumb/a/a5/Logo_Place_publique.svg/langfr-250px-Logo_Place_publique.svg.png' },
   { id:'lr', name:'Les Républicains', short:'LR', initials:'LR', color:'#0066CC', bg:'#e8f0fa', orient:'droite', orientLabel:'Droite', orientBg:'#1a4f8a', orientColor:'#fff', leader:'Laurent Wauquiez (Président)', founded:'Fondé comme RPR (1976, Chirac), devenu UMP (2002), rebaptisé LR (2015).', desc:"LR est la droite républicaine classique. En crise depuis 2017 (pris en étau entre macronisme et RN), il a connu une scission en 2023 (Ciotti vers RN). Wauquiez tente de reconstruire une droite autonome et ferme sur l'immigration.", positions:{'Économie':'Libéralisme, baisse impôts, réduction dette','Immigration':'Maîtrise des flux, fermeté, identité nationale','Europe':'Pro-UE pragmatique et exigeant','Société':'Valeurs républicaines conservatrices, ordre'}, polls:8, euroscore:7.2, pres2022:4.78, legscore:12.6, logo:'https://upload.wikimedia.org/wikipedia/commons/thumb/5/5c/CGLR2023_-_4.png/1280px-CGLR2023_-_4.png' },
-  { id:'udr', name:'Union des Droites pour la République', short:'UDR', initials:'UDR', color:'#0056A6', bg:'#e8f0fa', orient:'droite', orientLabel:'Droite souverainiste', orientBg:'#1a4f8a', orientColor:'#fff', leader:'Éric Ciotti (président)', founded:'Lancée le 31 août 2024 après la rupture d\'Éric Ciotti avec LR, �  partir de son mouvement créé en 2012.', desc:"L'UDR est un parti de droite souverainiste allié au RN depuis les législatives 2024. Le courant Ciotti a ensuite constitué son propre groupe �  l'Assemblée nationale.", positions:{'Économie':'Baisse des impôts, soutien aux entreprises, rigueur budgétaire','Immigration':'Fermeté renforcée, contrôle strict des frontières, priorité nationale','Europe':'Europe des nations, défense de la souveraineté française','Société':'Autorité de l\'État, sécurité, identité républicaine'}, polls:3, euroscore:0, pres2022:0, legscore:0, logo:'https://upload.wikimedia.org/wikipedia/fr/thumb/c/cd/Logo_UDR_2024.svg/langfr-250px-Logo_UDR_2024.svg.png' },
+  { id:'udr', name:'Union des Droites pour la République', short:'UDR', initials:'UDR', color:'#0056A6', bg:'#e8f0fa', orient:'droite', orientLabel:'Droite souverainiste', orientBg:'#1a4f8a', orientColor:'#fff', leader:'Éric Ciotti (président)', founded:'Lancée le 31 août 2024 après la rupture d\'Éric Ciotti avec LR, ï¿½Â  partir de son mouvement créé en 2012.', desc:"L'UDR est un parti de droite souverainiste allié au RN depuis les législatives 2024. Le courant Ciotti a ensuite constitué son propre groupe ï¿½Â  l'Assemblée nationale.", positions:{'Économie':'Baisse des impôts, soutien aux entreprises, rigueur budgétaire','Immigration':'Fermeté renforcée, contrôle strict des frontières, priorité nationale','Europe':'Europe des nations, défense de la souveraineté française','Société':'Autorité de l\'État, sécurité, identité républicaine'}, polls:3, euroscore:0, pres2022:0, legscore:0, logo:'https://upload.wikimedia.org/wikipedia/fr/thumb/c/cd/Logo_UDR_2024.svg/langfr-250px-Logo_UDR_2024.svg.png' },
   { id:'modem', name:'Mouvement Démocrate', short:'MoDem', initials:'MD', color:'#FF7900', bg:'#fef3ea', orient:'centre', orientLabel:'Centre', orientBg:'#FF7900', orientColor:'#fff', leader:'François Bayrou (Président, Premier ministre depuis déc. 2024)', founded:'Fondé en 2007 par François Bayrou, issu de l\'UDF.', desc:"Le MoDem incarne le centre humaniste et pro-européen. Bayrou, candidat en 2002, 2007, 2012, est une figure inclassable de la politique française. Allié de Macron depuis 2017, il est Premier ministre depuis décembre 2024.", positions:{'Économie':'Économie sociale de marché, équilibre budgétaire','Immigration':'Accueil raisonné, intégration','Europe':'Pro-européen fervent','Société':'Valeurs démocrates-chrétiennes modérées'}, polls:4, euroscore:6.3, pres2022:0, legscore:5.1, logo:'https://upload.wikimedia.org/wikipedia/commons/0/08/Mouvement-Democrate-Logo-2019.png' },
   { id:'eelv', name:'Europe Écologie Les Verts', short:'EELV', initials:'EV', color:'#00A850', bg:'#d4edda', orient:'centre-gauche', orientLabel:'Centre-gauche écolo', orientBg:'#27ae60', orientColor:'#fff', leader:'Marine Tondelier (Secrétaire nationale)', founded:'Fondé en 2010, fusion des Verts (1984) et Europe Écologie.', desc:"EELV porte une vision de transformation radicale face à la crise climatique. Avec Marine Tondelier, le parti tente de se positionner à gauche tout en restant central dans la coalition NFP. Aux européennes 2024 : 5,5% sur liste autonome.", positions:{'Économie':'Décroissance, planification verte, sobriété','Immigration':'Accueil, solidarité internationale','Europe':'Europe verte et sociale','Société':'Féminisme, anti-discrimination, bien-être animal'}, polls:5, euroscore:5.5, pres2022:4.63, legscore:4.7, logo:'https://lesecologistes-paris11.org/wp-content/uploads/2025/06/bd19b-logo_eelv-fond-blanc.png' },
   { id:'pcf', name:'Parti Communiste Français', short:'PCF', initials:'PC', color:'#C1282A', bg:'#fdecea', orient:'gauche', orientLabel:'Gauche communiste', orientBg:'#8e1c1c', orientColor:'#fff', leader:'Fabien Roussel (Secrétaire national)', founded:'Fondé en 1920 au Congrès de Tours, par scission de la SFIO.', desc:"Le PCF a été le 1er parti de France dans les années 50 (25%). Aujourd'hui marginal (2-3%), Fabien Roussel tente un repositionnement sur un communisme républicain et populaire ('les croissants, le bon vin, le saucisson'), contre les tendances identitaires progressistes de la gauche.", positions:{'Économie':'Planification, nationalisations, fin des dividendes','Immigration':'Solidarité de classe internationale','Europe':'Europe sociale alternative aux traités libéraux','Société':'Laïcité stricte, droits des travailleurs'}, polls:3, euroscore:2.4, pres2022:2.28, legscore:2.2, logo:'https://upload.wikimedia.org/wikipedia/fr/thumb/6/6a/Logo_du_Parti_communiste_fran%C3%A7ais_%282018%2C_rouge%29.svg/langfr-1280px-Logo_du_Parti_communiste_fran%C3%A7ais_%282018%2C_rouge%29.svg.png' },
@@ -2168,11 +2187,11 @@ const euro2024 = [
    DATA - SCRUTINS
 ============================================================ */
 const scrutins = [
-  { icon:'🏅', iconBg:'#fdecea', name:'Élection présidentielle', sub:'Tous les 5 ans', color:'#c0392b',
+  { icon:'ðŸ…', iconBg:'#fdecea', name:'Élection présidentielle', sub:'Tous les 5 ans', color:'#c0392b',
     steps:['Premier tour : tous les candidats (500 parrainages minimum) - si majorité absolue, élu directement','Deuxième tour : les deux candidats arrivés en tête si pas de majorité au 1er','Elected le candidat qui obtient la majorité des suffrages exprimés'],
     infos:{'Mandat':'5 ans','Suffrage':'Universel direct','Âge':'18 ans minimum','Parrainage':'500 élus requis'},
     tip:"<strong>Anecdote :</strong> La présidentielle n'a qu'une seule fois connu un ballottage sans la gauche ou la droite classique : en 2017 (Macron vs Le Pen) et en 2002 (Chirac vs J.-M. Le Pen)." },
-  { icon:'🏛️', iconBg:'#e8f0fa', name:'Élections législatives', sub:'Tous les 5 ans (ou dissolution)', color:'#1a4f8a',
+  { icon:'ðŸ›ï¸', iconBg:'#e8f0fa', name:'Élections législatives', sub:'Tous les 5 ans (ou dissolution)', color:'#1a4f8a',
     steps:['1er tour : les candidats ayant obtenu plus de 12,5% des inscrits accèdent au 2nd tour','2e tour : scrutin majoritaire uninominal, le candidat le plus voté gagne','577 circonscriptions = 577 députés élus indépendamment'],
     infos:{'Mandat':'5 ans','Suffrage':'Universel direct','Circonscriptions':'577','Mode':'Majoritaire à 2 tours'},
     tip:"<strong>Le saviez-vous ?</strong> En 2024, la dissolution surprise prononcée par Macron a conduit à des législatives historiques avec un NFP premier groupe sans majorité absolue." },
@@ -2180,15 +2199,15 @@ const scrutins = [
     steps:['1er tour : listes en présence, les listes > 5% peuvent se maintenir au 2e tour','Fusion possible entre listes ayant > 5% et qui le souhaitent','2e tour : représentation proportionnelle avec prime à la liste en tête'],
     infos:{'Mandat':'6 ans','Collectivités':'18 régions','Suffrage':'Universel direct','Mode':'Proportionnel +prime'},
     tip:"<strong>Particularité :</strong> La liste arrivée en tête obtient automatiquement le quart des sièges ('prime majoritaire'), puis le reste est réparti à la proportionnelle." },
-  { icon:'🏘️', iconBg:'#fef0ed', name:'Élections municipales', sub:'Tous les 6 ans', color:'#e74c3c',
+  { icon:'ðŸ˜ï¸', iconBg:'#fef0ed', name:'Élections municipales', sub:'Tous les 6 ans', color:'#e74c3c',
     steps:['Communes < 1000 hab. : scrutin plurinominal majoritaire à 2 tours','Communes > 1000 hab. : scrutin de liste proportionnel avec prime majoritaire','Le maire est élu par le Conseil municipal après les élections'],
     infos:{'Mandat':'6 ans','Collectivités':'35 000 communes','Suffrage':'Universel direct','Mode':'Selon taille'},
     tip:"<strong>Fait intéressant :</strong> La France a le plus grand nombre de communes d'Europe (35 000), soit autant que l'Allemagne, le Royaume-Uni, l'Espagne et l'Italie réunis !" },
-  { icon:'🇪🇺', iconBg:'#eaf4fc', name:'Élections européennes', sub:'Tous les 5 ans', color:'#2980b9',
+  { icon:'ðŸ‡ªðŸ‡º', iconBg:'#eaf4fc', name:'Élections européennes', sub:'Tous les 5 ans', color:'#2980b9',
     steps:['Scrutin de liste à la représentation proportionnelle nationale','Une seule circonscription pour toute la France (depuis 2019)','Seuil de 5% pour obtenir des élus'],
     infos:{'Mandat':'5 ans','Sièges FR':'81 eurodéputés','Suffrage':'Universel direct','Mode':'Proportionnel'},
     tip:"<strong>Réforme 2018 :</strong> Macron a rétabli la circonscription nationale unique (contre les 8 régions créées en 2003 par Chirac). L'objectif : renforcer la dimension européenne du scrutin." },
-  { icon:'🏢', iconBg:'#e8e9ea', name:'Élections départementales', sub:'Tous les 6 ans', color:'#555',
+  { icon:'ðŸ¢', iconBg:'#e8e9ea', name:'Élections départementales', sub:'Tous les 6 ans', color:'#555',
     steps:['Scrutin binominal : chaque liste est composée d\'un homme et d\'une femme','1er tour : mayorité absolue des suffrages et 25% des inscrits pour être élu','2e tour : majorité relative, mais nécessité d\'avoir > 12,5% des inscrits au 1er'],
     infos:{'Mandat':'6 ans','Cantons':'~2000 cantons','Suffrage':'Universel direct','Mode':'Binominal majoritaire'},
     tip:"<strong>Parité :</strong> Le scrutin binominal instauré en 2013 impose l'alternance homme-femme par binôme, assurant une parité parfaite dans les conseils départementaux." }
@@ -2198,21 +2217,21 @@ const scrutins = [
    DATA - INSTITUTIONS
 ============================================================ */
 const institutions = [
-  { id:'president', icon:'🎖️', name:'Président de la République', role:'Chef de l\'État, chef des armées',
+  { id:'president', icon:'ðŸŽ–ï¸', name:'Président de la République', role:'Chef de l\'État, chef des armées',
     color:'#d4a843', detail:"<p>Le Président est élu au suffrage universel direct pour 5 ans (quinquennat depuis 2000). Il nomme le Premier ministre, préside le Conseil des ministres, peut dissoudre l'Assemblée nationale et recourir au référendum. L'article 16 lui confère des pouvoirs exceptionnels en cas de crise grave.</p><p>Dans la pratique, le Président domine l'exécutif sauf en période de <strong>cohabitation</strong>, où il doit nommer un Premier ministre de l'opposition.</p>", facts:['5 ans de mandat renouvelable une fois','Nomme le Premier ministre','Préside le Conseil des ministres','Chef des armées (Article 15)','Article 16 : pouvoirs d\'exception'] },
-  { id:'gouvernement', icon:'🏛️', name:'Gouvernement & Premier ministre', role:'Détermine et conduit la politique nationale',
+  { id:'gouvernement', icon:'ðŸ›ï¸', name:'Gouvernement & Premier ministre', role:'Détermine et conduit la politique nationale',
     color:'#2563a8', detail:"<p>Le Premier ministre dirige le gouvernement et est responsable devant l'Assemblée nationale. Il coordonne l'action des ministres et signe les décrets. En période de cohabitation (1986-88, 1993-95, 1997-2002), son rôle est central face à un Président affaibli.</p><p>Depuis 2024, François Bayrou (MoDem) est Premier ministre. C'est le 7e Premier ministre sous la présidence Macron.</p>", facts:['Responsable devant l\'AN','Signe décrets et ordonnances','Prépare le budget','Coordonne les ministres','Peut engager la responsabilité du gouvernement'] },
-  { id:'assemblee', icon:'📜', name:'Assemblée nationale', role:'Chambre basse du Parlement',
+  { id:'assemblee', icon:'ðŸ“œ', name:'Assemblée nationale', role:'Chambre basse du Parlement',
     color:'#c0392b', detail:"<p>577 députés élus au scrutin majoritaire uninominal à deux tours pour 5 ans. L'Assemblée vote les lois, le budget et peut renverser le gouvernement par une motion de censure. Depuis 2022, aucune majorité absolue : trois blocs (NFP, macronistes, RN) cohabitent dans une situation inédite sous la Ve République.</p>", facts:['577 députés','Mandat de 5 ans','Vote les lois et le budget','Peut renverser le gouvernement','Commission d\'enquête et de contrôle'] },
-  { id:'senat', icon:'🏺', name:'Sénat', role:'Chambre haute du Parlement',
-    color:'#1a4f8a', detail:"<p>348 sénateurs élus au suffrage indirect (par les grands électeurs : maires, conseillers régionaux, départementaux…) pour 6 ans, renouvelés par moitié. Le Sénat représente les collectivités territoriales. Il est structurellement à droite depuis des décennies, ce qui en fait un contrepoids à la gauche nationale.</p>", facts:['348 sénateurs','Suffrage universel indirect','6 ans de mandat','Représente les territoires','Structurellement à droite'] },
-  { id:'conseil-const', icon:'⚖️', name:'Conseil constitutionnel', role:'Garant de la Constitution',
+  { id:'senat', icon:'ðŸº', name:'Sénat', role:'Chambre haute du Parlement',
+    color:'#1a4f8a', detail:"<p>348 sénateurs élus au suffrage indirect (par les grands électeurs : maires, conseillers régionaux, départementauxâ€¦) pour 6 ans, renouvelés par moitié. Le Sénat représente les collectivités territoriales. Il est structurellement à droite depuis des décennies, ce qui en fait un contrepoids à la gauche nationale.</p>", facts:['348 sénateurs','Suffrage universel indirect','6 ans de mandat','Représente les territoires','Structurellement à droite'] },
+  { id:'conseil-const', icon:'âš–ï¸', name:'Conseil constitutionnel', role:'Garant de la Constitution',
     color:'#27ae60', detail:"<p>9 membres nommés pour 9 ans (3 par le Président, 3 par le Président de l'AN, 3 par le Président du Sénat). Il vérifie la conformité des lois à la Constitution. Depuis 2010, tout citoyen peut soulever une <strong>Question Prioritaire de Constitutionnalité (QPC)</strong> lors d'un procès.</p>", facts:['9 membres nommés','Mandat de 9 ans non renouvelable','Contrôle la constitutionnalité','QPC depuis 2010','Valide les élections présidentielles'] },
-  { id:'ce', icon:'📋', name:'Conseil d\'État', role:'Juge administratif suprême + conseiller du gouvernement',
+  { id:'ce', icon:'ðŸ“‹', name:'Conseil d\'État', role:'Juge administratif suprême + conseiller du gouvernement',
     color:'#8e1c1c', detail:"<p>Double rôle : juridictionnel (juge suprême de l'ordre administratif - litiges avec l'État) et consultatif (avis sur les projets de loi et décrets). Ses membres sont recrutés à l'ENA (désormais INSP). Le Conseil d'État est une institution très puissante, souvent incomprise du grand public.</p>", facts:['Fondé en 1799 par Napoléon','Double rôle : juge + conseiller','Recruté sur concours INSP','Indépendant du gouvernement','Donne avis sur tous les projets de loi'] },
   { id:'syndicats', icon:'✊', name:'Syndicats & corps intermédiaires', role:'Acteurs sociaux et contre-pouvoirs',
     color:'#e74c3c', detail:"<p>Les syndicats (CGT, CFDT, FO, CFTC, CFE-CGC) jouent un rôle fondamental en France. Bien que peu représentatifs en termes d'adhésions (8% de salariés syndiqués, parmi les plus bas en Europe), ils ont un poids considérable dans la négociation sociale et les mobilisations. La réforme des retraites de 2023 a montré leur capacité de mobilisation.</p>", facts:['CGT (confédéré, gauche)','CFDT (réformiste, centre)','FO (indépendante)','CFTC (chrétienne)','CFE-CGC (cadres)'] },
-  { id:'medias', icon:'📰', name:'Médias & opinion publique', role:'4e pouvoir informel',
+  { id:'medias', icon:'ðŸ“°', name:'Médias & opinion publique', role:'4e pouvoir informel',
     color:'#2980b9', detail:"<p>Les médias constituent un pouvoir informel crucial. En France, la question de la concentration médiatique (Bolloré, Arnault, Niel, Dassault…) alimente le débat sur l'indépendance de la presse. L'Arcom (ex-CSA) régule l'audiovisuel. Les réseaux sociaux ont profondément reconfiguré la communication politique depuis 2012.</p>", facts:['Arcom régule l\'audiovisuel','Concentration dans quelques groupes','Presse publique : France Médias','Réseaux sociaux omniprésents','AFP : agence d\'information publique'] },
   { id:'collectivites', icon:'<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="1 6 1 22 8 18 16 22 23 18 23 2 16 6 8 2 1 6"/><line x1="8" y1="2" x2="8" y2="18"/><line x1="16" y1="6" x2="16" y2="22"/></svg>', name:'Collectivités territoriales', role:'Décentralisation et démocratie locale',
     color:'#27ae60', detail:"<p>Depuis les lois Defferre (1982), la France est décentralisée. 3 niveaux : communes (35 000), départements (101), régions (18). Ils gèrent l'éducation, les transports, l'action sociale, le développement économique. Le clivage centralisateurs vs décentralisateurs traverse gauche et droite.</p>", facts:['35 000 communes','101 départements','18 régions','Lois Defferre 1982','Budget : 250 Mds €/an'] }
@@ -2225,9 +2244,9 @@ const etudes = [
   { tag:'Réforme sociale', tagBg:'#fdecea', tagColor:'#c0392b', title:'Réforme des retraites 2023', date:'Janvier–Avril 2023', desc:"La réforme portée par Élisabeth Borne décale l'âge légal de la retraite de 62 à 64 ans. Elle est adoptée via le 49.3 sans vote de l'Assemblée, déclenchant une crise politique et sociale majeure. 14 journées de manifestations (plus d'un million de personnes), motions de censure rejetées d'une voix...", impact:['Âge retraite : 64 ans','14 journées de grève','1,2 M manifestants','49.3 utilisé','Crise de légitimité'], timeline:[{c:'#c0392b',t:'16 jan. 2023 : Présentation du projet de réforme'},{c:'#c0392b',t:'10 févr. : 1ère grande manifestation (1,2M personnes)'},{c:'#c0392b',t:'16 mars : 8e journée de mobilisation (3,5M selon syndicats)'},{c:'#1a4f8a',t:'20 mars : Recours au 49.3 - pas de vote à l\'AN'},{c:'#8e1c1c',t:'Motions de censure rejetées d\'une voix - promulgation'}] },
   { tag:'Crise démocratique', tagBg:'#e8f0fa', tagColor:'#1a4f8a', title:'Dissolution et tripartition 2024', date:'Juin–Juillet 2024', desc:"Après les résultats catastrophiques des européennes (14,6% pour Renaissance, 31,4% pour le RN), Macron dissout l'Assemblée nationale de manière surprise. Le Nouveau Front Populaire (LFI+PS+EELV+PCF) arrive en tête des législatives mais sans majorité absolue. Première cohabitation «implicite» de la Ve République.", impact:['NFP : 193 sièges','Renaissance/alliés : 168','RN : 143 sièges','Aucune majorité absolue','Instabilité gouvernementale'], timeline:[{c:'#1a4f8a',t:'9 juin : Dissolution surprise annoncée à 21h'},{c:'#c0392b',t:'30 juin : 1er tour - RN en tête (33%)'},{c:'#27ae60',t:'7 juillet : 2e tour - NFP 1er groupe, sans majorité'},{c:'#e74c3c',t:'Août : Macron refuse Lucie Castets (NFP)'},{c:'#FF7900',t:'Déc. 2024 : Bayrou (MoDem) nommé Premier ministre'}] },
   { tag:'Liberté publique', tagBg:'#eafaf1', tagColor:'#1e8449', title:'Loi sécurité globale & débat sur les libertés', date:'2020–2021', desc:"Proposée par LREM, la «loi sécurité globale» entend protéger les policiers en rendant pénalement punissable la diffusion d'images permettant d'identifier un agent en opération. Elle déclenche une vive opposition (journalistes, associations de liberté de la presse, gauche) au nom de la liberté d'informer.", impact:['Débat liberté vs sécurité','Mobilisation journalistes','Censure partielle Cons. Const.','Précédent sur droit à filmer','Fracture société/police'], timeline:[{c:'#1a4f8a',t:'Nov. 2020 : Dépôt de la proposition LREM'},{c:'#c0392b',t:'28 nov. : 1ères manifestations + «Nuit de la Honte»'},{c:'#27ae60',t:'Janv. 2021 : Conseil constitutionnel censure l\'article 24'},{c:'#e74c3c',t:'Mai 2021 : LOI adoptée, article controversé retiré'}] },
-  { tag:'Crise sociale', tagBg:'#f9e8e8', tagColor:'#8e1c1c', title:'Les Gilets Jaunes 2018–2019', date:'Novembre 2018 – Juillet 2019', desc:"Mouvement de contestation populaire né sur les réseaux sociaux contre la hausse de la taxe carbone et la baisse du pouvoir d'achat. Inédit : sans leader ni organisation politique. 36 semaines de mobilisation. Macron concède le Grand Débat National et 10 milliards de mesures sociales.", impact:['36 samedis de mobilisation','~10 Mds € de mesures','Grand Débat National','Révision de la Constitution rejetée','Fracture territoriale ville/campagne'], timeline:[{c:'#8e1c1c',t:'17 nov. 2018 : 1er acte - 282 000 personnes'},{c:'#8e1c1c',t:'1er déc. : Acte III - violences à Paris, Champs-Élysées'},{c:'#1a4f8a',t:'10 déc. : Discours Macron + 10 Mds de mesures'},{c:'#27ae60',t:'Janv.–Mars 2019 : Grand Débat National'},{c:'#555',t:"Juin 2019 : Dissolution progressive du mouvement"}] },
-  { tag:'Droit & Société', tagBg:'#eaf4fc', tagColor:'#1a5276', title:'Mariage pour tous 2013', date:'2012–2013', desc:"La loi Taubira (du nom de la Garde des Sceaux Christiane Taubira) ouvre le mariage et l'adoption aux couples de même sexe. Promesse de Hollande, elle déclenche une vive opposition (Manif pour Tous) et un soutien massif de la gauche et des associations LGBTQ+. Adoptée définitivement le 23 avril 2013.", impact:['Premier mariage gay : 29 mai 2013','~240 000 manifestants contre (jan 2013)','Adoption plénière ouverte','Divide gauche/droite net','Loi toujours en vigueur'], timeline:[{c:'#c0392b',t:"Oct. 2012 : Dépôt du projet de loi Taubira"},{c:'#1a4f8a',t:"Jan. 2013 : 'Manif pour Tous' - 300 000 personnes"},{c:'#27ae60',t:"Fév.–Avril 2013 : Débats passionnés à l'Assemblée"},{c:'#27ae60',t:"23 avril 2013 : Adoption définitive"},{c:'#gold',t:"29 mai 2013 : 1er mariage gay à Montpellier"}] },
-  { tag:'Économie', tagBg:'#fef0ed', tagColor:'#e74c3c', title:"La politique des «quoi qu’il en coûte»", date:'Mars 2020 – 2022', desc:"Face à la pandémie de Covid-19, Bruno Le Maire et Macron lancent un soutien économique massif : chômage partiel, prêts garantis (PGE), aides aux entreprises. Coût : ~230 milliards d'euros. Si la politique a sauvé des milliers d'entreprises, elle a aussi creusé la dette publique (115% du PIB en 2022).", impact:['230 Mds € engagés','300 000 entreprises aidées','Chômage limité à 8%','Dette : 115% du PIB','Inflation post-COVID'], timeline:[{c:'#1a4f8a',t:"16 mars 2020 : 'Quoi qu'il en coûte' - annonce Macron"},{c:'#1a4f8a',t:"Avril 2020 : Chômage partiel - 12M salariés couverts"},{c:'#27ae60',t:"2021 : Reprise économique (+6,8% PIB)"},{c:'#c0392b',t:"2022 : Inflation +5%, fin du 'quoi qu'il en coûte'"},{c:'#8e1c1c',t:"2024 : Déficit 6% du PIB, plans d'économies"}] }
+  { tag:'Crise sociale', tagBg:'#f9e8e8', tagColor:'#8e1c1c', title:'Les Gilets Jaunes 2018–2019', date:'Novembre 2018 – Juillet 2019', desc:"Mouvement de contestation populaire né sur les réseaux sociaux contre la hausse de la taxe carbone et la baisse du pouvoir d'achat. Inédit : sans leader ni organisation politique. 36 semaines de mobilisation. Macron concède le Grand Débat National et 10 milliards de mesures sociales.", impact:['36 samedis de mobilisation','~10 Mds € de mesures','Grand Débat National','Révision de la Constitution rejetée','Fracture territoriale ville/campagne'], timeline:[{c:'#8e1c1c',t:'17 nov. 2018 : 1er acte - 282 000 personnes'},{c:'#8e1c1c',t:'1er déc. : Acte III - violences à Paris, Champs-Ã‰lysées'},{c:'#1a4f8a',t:'10 déc. : Discours Macron + 10 Mds de mesures'},{c:'#27ae60',t:'Janv.–Mars 2019 : Grand Débat National'},{c:'#555',t:"Juin 2019 : Dissolution progressive du mouvement"}] },
+  { tag:'Droit & Société', tagBg:'#eaf4fc', tagColor:'#1a5276', title:'Mariage pour tous 2013', date:'2012–2013', desc:"La loi Taubira (du nom de la Garde des Sceaux Christiane Taubira) ouvre le mariage et l'adoption aux couples de même sexe. Promesse de Hollande, elle déclenche une vive opposition (Manif pour Tous) et un soutien massif de la gauche et des associations LGBTQ+. Adoptée définitivement le 23 avril 2013.", impact:['Premier mariage gay : 29 mai 2013','~240 000 manifestants contre (jan 2013)','Adoption plénière ouverte','Divide gauche/droite net','Loi toujours en vigueur'], timeline:[{c:'#c0392b',t:"Oct. 2012 : Dépôt du projet de loi Taubira"},{c:'#1a4f8a',t:"Jan. 2013 : 'Manif pour Tous' - 300 000 personnes"},{c:'#27ae60',t:"Fév.â€“Avril 2013 : Débats passionnés à l'Assemblée"},{c:'#27ae60',t:"23 avril 2013 : Adoption définitive"},{c:'#gold',t:"29 mai 2013 : 1er mariage gay à Montpellier"}] },
+  { tag:'Économie', tagBg:'#fef0ed', tagColor:'#e74c3c', title:"La politique des «quoi qu’il en coûteÂ»", date:'Mars 2020 – 2022', desc:"Face à la pandémie de Covid-19, Bruno Le Maire et Macron lancent un soutien économique massif : chômage partiel, prêts garantis (PGE), aides aux entreprises. Coût : ~230 milliards d'euros. Si la politique a sauvé des milliers d'entreprises, elle a aussi creusé la dette publique (115% du PIB en 2022).", impact:['230 Mds € engagés','300 000 entreprises aidées','Chômage limité à 8%','Dette : 115% du PIB','Inflation post-COVID'], timeline:[{c:'#1a4f8a',t:"16 mars 2020 : 'Quoi qu'il en coûte' - annonce Macron"},{c:'#1a4f8a',t:"Avril 2020 : Chômage partiel - 12M salariés couverts"},{c:'#27ae60',t:"2021 : Reprise économique (+6,8% PIB)"},{c:'#c0392b',t:"2022 : Inflation +5%, fin du 'quoi qu'il en coûte'"},{c:'#8e1c1c',t:"2024 : Déficit 6% du PIB, plans d'économies"}] }
 ];
 
 /* ============================================================
@@ -2342,7 +2361,7 @@ const oriQuestions = [
     q:"Sur le travail et les droits sociaux, que défendez-vous ?",
     opts:[
       {txt:"SMIC à 1600€, 32h, fin de la précarité et des licenciements boursiers",scores:{lfi:4,pcf:4,npa:4,lo:4,ps:2}},
-      {txt:"Droits syndicaux forts, CDI, dialogue social au cœur",scores:{ps:4,pcf:2,eelv:2,prg:3}},
+      {txt:"Droits syndicaux forts, CDI, dialogue social au cÅ“ur",scores:{ps:4,pcf:2,eelv:2,prg:3}},
       {txt:"Flexicurité : flexibilité pour les employeurs + sécurité pour les salariés",scores:{renaissance:4,modem:3,horizons:2}},
       {txt:"Assouplir le code du travail pour créer des emplois",scores:{lr:4,udi:3,horizons:2,renaissance:1}},
       {txt:"Priorité nationale à l'embauche, protection des travailleurs français",scores:{rn:4,reconquete:4}}
@@ -2445,16 +2464,16 @@ const glossaire = [
    DATA - RESSOURCES
 ============================================================ */
 const ressources = [
-  {icon:'📚',bg:'#e8f0fa',logo:'https://yt3.googleusercontent.com/vwlryHemmiEKupLdaHjKLLkusfqABotGGX6Bi_qhOuIYnC_hmyflyQJFSZM-HWSMrB25yNpb=s900-c-k-c0x00ffffff-no-rj',title:'Vie-Publique.fr',desc:'Site officiel pour comprendre les institutions, la loi et la vie politique française.',url:'https://www.vie-publique.fr',label:'vie-publique.fr'},
-  {icon:'🏛️',bg:'#fdecea',logo:'https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/Logo_de_l%27Assembl%C3%A9e_nationale_fran%C3%A7aise.svg/1280px-Logo_de_l%27Assembl%C3%A9e_nationale_fran%C3%A7aise.svg.png',title:'Assemblée Nationale',desc:'Groupes politiques, lois en discussion, votes des députés et comptes rendus.',url:'https://www.assemblee-nationale.fr',label:'assemblee-nationale.fr'},
-  {icon:'🗳️',bg:'#eafaf1',logo:'https://upload.wikimedia.org/wikipedia/commons/0/03/Conseil_Constitutionnel%2C_logo_2016.svg',title:'Conseil Constitutionnel',desc:'Décisions, jurisprudence et ressources pédagogiques sur le droit constitutionnel.',url:'https://www.conseil-constitutionnel.fr',label:'conseil-constitutionnel.fr'},
-  {icon:'📰',bg:'#f9e8e8',logo:'https://www.vhv.rs/dpng/d/181-1818810_le-monde-logo-photos-and-pictures-in-hd.png',title:'Le Monde Politique',desc:'Dossiers, analyses et décryptages sur l\'actualité politique française et européenne.',url:'https://www.lemonde.fr/politique/',label:'lemonde.fr/politique'},
-  {icon:'🎓',bg:'#fef0ed',logo:'https://logonews.fr/wp-content/uploads/2015/03/logo-site.jpg',title:'Sciences Po',desc:'Ressources pédagogiques et travaux de recherche sur la vie politique française.',url:'https://www.sciencespo.fr',label:'sciencespo.fr'},
-  {icon:'📊',bg:'#e8f0fa',logo:'https://logos-world.net/wp-content/uploads/2024/12/Ifop-Logo-New.png',title:'IFOP - Sondages',desc:'Baromètres politiques, intentions de vote et études d\'opinion sur les partis.',url:'https://www.ifop.com/publications/',label:'ifop.com'},
-  {icon:'🌍',bg:'#eafaf1',logo:'https://upload.wikimedia.org/wikipedia/commons/thumb/1/1e/European_Parliament_logo.svg/1280px-European_Parliament_logo.svg.png',title:'Parlement Européen FR',desc:'Eurodéputés français, groupes politiques européens et enjeux de l\'UE.',url:'https://www.europarl.europa.eu/france',label:'europarl.europa.eu'},
-  {icon:'📖',bg:'#f9e8e8',logo:'https://lh4.googleusercontent.com/proxy/sj2PuOaDJRzFexUCUe4mvjIsdlmk6l31kv0s9yqInw8tUKhxjKww05wJ5EIYQ92hKjVqTZGmbOfgYvVbJ5MmQz2BbbHEzLdRMMtCamGMZIavRUyGL6ToHP1Se8yjE5nTDv0',title:'Gallica (BNF)',desc:'Archives historiques, journaux anciens, pamphlets politiques - l\'histoire de France en documents.',url:'https://gallica.bnf.fr',label:'gallica.bnf.fr'},
-  {icon:'🔬',bg:'#f0e8f8',logo:'https://cdn.bsky.app/img/avatar/plain/did:plc:cgop5e2dco7wwssyxzkgnuiw/bafkreicwnhinxt2rc5r3gcgo5rnsfhkzajpmfgkzieuykz5g7lwqmikfui',title:'AFSP',desc:'Association Française de Science Politique - recherche, publications et actualités académiques sur la politique.',url:'https://www.afsp.info',label:'afsp.info'},
-  {icon:'📐',bg:'#e8f8f0',logo:'https://politiscales.fr/images/politiscales_cover.png',title:'PolitiScales',desc:'Test de positionnement politique multidimensionnel pour explorer et situer ses valeurs politiques.',url:'https://politiscales.fr',label:'politiscales.fr'}
+  {icon:'ðŸ“š',bg:'#e8f0fa',logo:'https://yt3.googleusercontent.com/vwlryHemmiEKupLdaHjKLLkusfqABotGGX6Bi_qhOuIYnC_hmyflyQJFSZM-HWSMrB25yNpb=s900-c-k-c0x00ffffff-no-rj',title:'Vie-Publique.fr',desc:'Site officiel pour comprendre les institutions, la loi et la vie politique française.',url:'https://www.vie-publique.fr',label:'vie-publique.fr'},
+  {icon:'ðŸ›ï¸',bg:'#fdecea',logo:'https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/Logo_de_l%27Assembl%C3%A9e_nationale_fran%C3%A7aise.svg/1280px-Logo_de_l%27Assembl%C3%A9e_nationale_fran%C3%A7aise.svg.png',title:'Assemblée Nationale',desc:'Groupes politiques, lois en discussion, votes des députés et comptes rendus.',url:'https://www.assemblee-nationale.fr',label:'assemblee-nationale.fr'},
+  {icon:'ðŸ—³ï¸',bg:'#eafaf1',logo:'https://upload.wikimedia.org/wikipedia/commons/0/03/Conseil_Constitutionnel%2C_logo_2016.svg',title:'Conseil Constitutionnel',desc:'Décisions, jurisprudence et ressources pédagogiques sur le droit constitutionnel.',url:'https://www.conseil-constitutionnel.fr',label:'conseil-constitutionnel.fr'},
+  {icon:'ðŸ“°',bg:'#f9e8e8',logo:'https://www.vhv.rs/dpng/d/181-1818810_le-monde-logo-photos-and-pictures-in-hd.png',title:'Le Monde Politique',desc:'Dossiers, analyses et décryptages sur l\'actualité politique française et européenne.',url:'https://www.lemonde.fr/politique/',label:'lemonde.fr/politique'},
+  {icon:'ðŸŽ“',bg:'#fef0ed',logo:'https://logonews.fr/wp-content/uploads/2015/03/logo-site.jpg',title:'Sciences Po',desc:'Ressources pédagogiques et travaux de recherche sur la vie politique française.',url:'https://www.sciencespo.fr',label:'sciencespo.fr'},
+  {icon:'ðŸ“Š',bg:'#e8f0fa',logo:'https://logos-world.net/wp-content/uploads/2024/12/Ifop-Logo-New.png',title:'IFOP - Sondages',desc:'Baromètres politiques, intentions de vote et études d\'opinion sur les partis.',url:'https://www.ifop.com/publications/',label:'ifop.com'},
+  {icon:'ðŸŒ',bg:'#eafaf1',logo:'https://upload.wikimedia.org/wikipedia/commons/thumb/1/1e/European_Parliament_logo.svg/1280px-European_Parliament_logo.svg.png',title:'Parlement Européen FR',desc:'Eurodéputés français, groupes politiques européens et enjeux de l\'UE.',url:'https://www.europarl.europa.eu/france',label:'europarl.europa.eu'},
+  {icon:'ðŸ“–',bg:'#f9e8e8',logo:'https://lh4.googleusercontent.com/proxy/sj2PuOaDJRzFexUCUe4mvjIsdlmk6l31kv0s9yqInw8tUKhxjKww05wJ5EIYQ92hKjVqTZGmbOfgYvVbJ5MmQz2BbbHEzLdRMMtCamGMZIavRUyGL6ToHP1Se8yjE5nTDv0',title:'Gallica (BNF)',desc:'Archives historiques, journaux anciens, pamphlets politiques - l\'histoire de France en documents.',url:'https://gallica.bnf.fr',label:'gallica.bnf.fr'},
+  {icon:'ðŸ”¬',bg:'#f0e8f8',logo:'https://cdn.bsky.app/img/avatar/plain/did:plc:cgop5e2dco7wwssyxzkgnuiw/bafkreicwnhinxt2rc5r3gcgo5rnsfhkzajpmfgkzieuykz5g7lwqmikfui',title:'AFSP',desc:'Association Française de Science Politique - recherche, publications et actualités académiques sur la politique.',url:'https://www.afsp.info',label:'afsp.info'},
+  {icon:'ðŸ“',bg:'#e8f8f0',logo:'https://politiscales.fr/images/politiscales_cover.png',title:'PolitiScales',desc:'Test de positionnement politique multidimensionnel pour explorer et situer ses valeurs politiques.',url:'https://politiscales.fr',label:'politiscales.fr'}
 ];
 
 /* ============================================================
@@ -2875,7 +2894,7 @@ function renderEvoSondages(wrap,dA,dB){
   }).join('');
   const headers=dB?`<th>${dA.short}</th><th>${dB.short}</th>`:`<th>${dA.short}</th>`;
   wrap.innerHTML=`
-    <div class="evo-chart-title">📈 Popularité dans les sondages - ${dA.name}${dB?' vs '+dB.name:''}</div>
+    <div class="evo-chart-title">ðŸ“ˆ Popularité dans les sondages - ${dA.name}${dB?' vs '+dB.name:''}</div>
     ${svgChart}
     <div class="evo-legend">
       <div class="evo-leg-item"><div class="evo-leg-dot" style="background:${dA.color}"></div>${dA.name}</div>
@@ -2887,7 +2906,7 @@ function renderEvoSondages(wrap,dA,dB){
         <tbody>${rows}</tbody>
       </table>
     </div>
-    <div class="evo-comparison-note">⚠️ Données de sondages indicatives. Sources : IFOP, BVA, Odoxa.</div>`;
+    <div class="evo-comparison-note">âš ï¸ Données de sondages indicatives. Sources : IFOP, BVA, Odoxa.</div>`;
 }
 
 function renderEvoSpectre(wrap,dA,dB){
@@ -2940,13 +2959,13 @@ function renderEvoSpectre(wrap,dA,dB){
     ${dB?makePartyLine(dB,dB.color):''}
   </svg>`;
   wrap.innerHTML=`
-    <div class="evo-chart-title">🧭 Position sur le spectre gauche-droite (estimation) - ${dA.name}${dB?' vs '+dB.name:''}</div>
+    <div class="evo-chart-title">ðŸ§­ Position sur le spectre gauche-droite (estimation) - ${dA.name}${dB?' vs '+dB.name:''}</div>
     ${svg}
     <div class="evo-legend">
       <div class="evo-leg-item"><div class="evo-leg-dot" style="background:${dA.color}"></div>${dA.name}</div>
       ${dB?`<div class="evo-leg-item"><div class="evo-leg-dot" style="background:${dB.color}"></div>${dB.name}</div>`:''}
     </div>
-    <div class="evo-comparison-note">🔎 Ces positions sont des estimations analytiques basées sur les programmes, coalitions et déclarations. Échelle de 0 (extrême gauche) à 100 (extrême droite).</div>`;
+    <div class="evo-comparison-note">ðŸ”Ž Ces positions sont des estimations analytiques basées sur les programmes, coalitions et déclarations. Échelle de 0 (extrême gauche) à 100 (extrême droite).</div>`;
 }
 
 function buildLineChart(dA,dB,mode,yLabel){
@@ -3021,7 +3040,7 @@ function renderIdeologies(){
         <div class="ideo-section-title">Incarnations</div>
         <div class="examples">
           <div class="example-item"><span class="ex-flag" style="font-size:.9rem">FR</span><span>${i.franceEx}</span></div>
-          <div class="example-item"><span class="ex-flag">🌍</span><span>${i.worldEx}</span></div>
+          <div class="example-item"><span class="ex-flag">ðŸŒ</span><span>${i.worldEx}</span></div>
         </div>
         ${i.quote?`<div class="quote-block">${i.quote.text}<span class="quote-author">- ${i.quote.author}</span></div>`:''}
       </div>
@@ -3056,12 +3075,12 @@ function renderParties(filter,search){
         </div>
       </div>
       <div class="party-body">
-        <div class="party-leader">👤 ${p.leader}</div>
+        <div class="party-leader">ðŸ‘¤ ${p.leader}</div>
         <p class="party-desc">${p.desc}</p>
         <div class="positions-grid">
           ${Object.entries(p.positions).map(([k,v])=>`<div class="pos-item"><div class="pos-label">${k}</div><div class="pos-val">${v}</div></div>`).join('')}
         </div>
-        <div class="party-founded">📅 ${p.founded}</div>
+        <div class="party-founded">ðŸ“… ${p.founded}</div>
       </div>
     </div>`).join('');
 }
@@ -3271,12 +3290,12 @@ function renderInstitutions(){
   flow.innerHTML=`
     <div class="flow-node" style="border-color:#d4a843"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 11 12 14 22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg> Peuple<br><small>Suffrage universel</small></div>
     <div class="flow-arrow">→</div>
-    <div class="flow-node" style="border-color:#d4a843">🎖️ Président<br><small>5 ans</small></div>
+    <div class="flow-node" style="border-color:#d4a843">ðŸŽ–ï¸ Président<br><small>5 ans</small></div>
     <div class="flow-arrow">→</div>
     <div class="flow-node" style="border-color:#2563a8"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="22" x2="21" y2="22"/><line x1="6" y1="18" x2="6" y2="11"/><line x1="10" y1="18" x2="10" y2="11"/><line x1="14" y1="18" x2="14" y2="11"/><line x1="18" y1="18" x2="18" y2="11"/><polygon points="12 2 20 7 4 7"/></svg> Premier ministre<br><small>Nommé</small></div>
     <div class="flow-arrow">→</div>
-    <div class="flow-node" style="border-color:#2563a8">📋 Gouvernement<br><small>Ministres</small></div>
-    <div class="flow-arrow">↔️</div>
+    <div class="flow-node" style="border-color:#2563a8">ðŸ“‹ Gouvernement<br><small>Ministres</small></div>
+    <div class="flow-arrow">â†”ï¸</div>
     <div class="flow-node" style="border-color:#c0392b"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg> Assemblée nationale<br><small>577 députés</small></div>`;
 }
 
@@ -3292,7 +3311,7 @@ function showInst(id){
     <h3>${inst.icon} ${inst.name}</h3>
     <p style="color:#8895a7;font-size:.82rem;margin-bottom:1rem">${inst.role}</p>
     ${inst.detail}
-    <div class="inst-facts">${inst.facts.map(f=>`<div class="inst-fact">📌 ${f}</div>`).join('')}</div>`;
+    <div class="inst-facts">${inst.facts.map(f=>`<div class="inst-fact">ðŸ“Œ ${f}</div>`).join('')}</div>`;
   d.classList.add('show');
   d.scrollIntoView({behavior:'smooth',block:'nearest'});
 }
@@ -3308,7 +3327,7 @@ function renderEtudes(){
       <div class="etude-top">
         <span class="etude-tag" style="background:${e.tagBg};color:${e.tagColor}">${e.tag}</span>
         <h3>${e.title}</h3>
-        <div class="etude-date">📅 ${e.date}</div>
+        <div class="etude-date">ðŸ“… ${e.date}</div>
       </div>
       <div class="etude-body">
         <p>${e.desc}</p>
@@ -3380,7 +3399,7 @@ function renderRessources(){
       </div>
       <h4>${r.title}</h4>
       <p>${r.desc}</p>
-      <span class="res-link">🔗 ${r.label}</span>
+      <span class="res-link">ðŸ”— ${r.label}</span>
     </a>`).join('');
 }
 
@@ -3417,7 +3436,7 @@ function selectOpt(idx){
   if(idx!==q.ans) opts[q.ans].classList.add('correct');
   const fb=document.getElementById('quizFeedback');
   if(fb){
-    fb.textContent=(idx===q.ans?'<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Bonne réponse ! ':'❌ Mauvaise réponse. ')+q.exp;
+    fb.textContent=(idx===q.ans?'<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Bonne réponse ! ':'âŒ Mauvaise réponse. ')+q.exp;
     fb.className='quiz-feedback show '+(idx===q.ans?'good':'bad');
   }
   if(idx===q.ans) quizScore++;
@@ -3442,7 +3461,7 @@ function showQuizScore(){
   if(quizScore>=9){stars='<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>';msg='Excellent ! Vous maîtrisez la politique française !';}
   else if(quizScore>=7){stars='<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>';msg='Très bien ! Quelques révisions et vous êtes expert !';}
   else if(quizScore>=5){stars='<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>';msg='Pas mal ! Relisez les fiches pour progresser.';}
-  else{stars='📖';msg='Retournez au cours, il y a beaucoup à découvrir !';}
+  else{stars='ðŸ“–';msg='Retournez au cours, il y a beaucoup à découvrir !';}
   const stEl=document.getElementById('scoreStars');
   const numEl=document.getElementById('scoreNum');
   const msgEl=document.getElementById('scoreMsg');
@@ -3541,8 +3560,8 @@ function showOriResult(){
         </div>`;
       }).join('')}
     </div>
-    <p style="font-size:.78rem;color:#8895a7;max-width:460px;margin:0 auto .5rem">⚠️ Ce test est purement indicatif et pédagogique. La politique est complexe et nuancée !</p>
-    <button class="btn btn-primary btn-sm" id="oriResetBtn" style="margin-top:1rem">🔄 Refaire le test</button>`;
+    <p style="font-size:.78rem;color:#8895a7;max-width:460px;margin:0 auto .5rem">âš ï¸ Ce test est purement indicatif et pédagogique. La politique est complexe et nuancée !</p>
+    <button class="btn btn-primary btn-sm" id="oriResetBtn" style="margin-top:1rem">ðŸ”„ Refaire le test</button>`;
   res.classList.add('show');
   requestAnimationFrame(()=>requestAnimationFrame(()=>{
     res.querySelectorAll('.ori-bd-fill').forEach(el=>{ el.style.width=el.dataset.val+'%'; });
@@ -4145,5 +4164,8 @@ if (voteButtons.length && feedbackEl) {
 
 </body>
 </html>
+
+
+
 
 

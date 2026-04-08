@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
+<meta charset="UTF-8"/>
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-R2B9TW1V79"></script>
 <script>
@@ -9,8 +10,7 @@
   gtag('js', new Date());
   gtag('config', 'G-R2B9TW1V79');
 </script>
-  <meta charset="UTF-8"/>
-  <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
   <meta name="description" content="Plongez dans l'histoire politique française : chronologie de 1789 à 2025, évolution des partis, études de cas, citations historiques et anecdotes politiques."/>
   <meta name="keywords" content="politique française, idéologies politiques, partis politiques France, institutions Ve République, gauche droite France, comprendre la politique"/>
   <meta name="author" content="comprendrelapolitique.fr"/>
@@ -134,7 +134,23 @@
   }
   .nav-links a:hover{color:#fff;background:rgba(255,255,255,.07);border-color:rgba(255,255,255,.2);}
   .nav-links a.active{color:var(--gold);background:rgba(212,168,67,.12);border-color:rgba(212,168,67,.4);}
+  
   .nav-actions{display:flex;align-items:center;gap:.5rem;flex-shrink:0;margin-left:auto;}
+  .nav-auth-link{
+    display:inline-flex;align-items:center;justify-content:center;
+    padding:.45rem .78rem;border-radius:999px;
+    border:1px solid rgba(212,168,67,.55);
+    background:linear-gradient(135deg,rgba(212,168,67,.16),rgba(37,99,168,.16));
+    color:#fff;font-size:.72rem;font-weight:700;letter-spacing:.01em;
+    white-space:nowrap;transition:all .2s;text-decoration:none;
+    box-shadow:0 3px 10px rgba(0,0,0,.2);
+  }
+  .nav-auth-link:hover{
+    transform:translateY(-1px);
+    border-color:var(--gold);
+    color:var(--gold);
+    background:linear-gradient(135deg,rgba(212,168,67,.24),rgba(37,99,168,.22));
+  }
 
   .nav-toggle{display:none;background:none;border:none;cursor:pointer;padding:.4rem}
   .nav-toggle span{display:block;width:22px;height:2px;background:#fff;margin:4px 0;transition:.3s}
@@ -1499,19 +1515,21 @@
   <div class="nav-inner">
     <div class="nav-logo"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 36" width="28" height="16" aria-hidden="true" style="display:inline-block;vertical-align:middle;flex-shrink:0"><path d="M32 34 A30 30 0 0 1 2 34 Z" fill="#B80000"/><path d="M32 34 A30 30 0 0 0 62 34 Z" fill="#003DA6"/><path d="M9 34 A23 23 0 0 1 32 11" fill="none" stroke="#E03030" stroke-width="3.8" stroke-linecap="round"/><path d="M15 34 A17 17 0 0 1 32 17" fill="none" stroke="#CC2222" stroke-width="3.8" stroke-linecap="round"/><path d="M21 34 A11 11 0 0 1 32 23" fill="none" stroke="#AA1515" stroke-width="3.8" stroke-linecap="round"/><path d="M55 34 A23 23 0 0 0 32 11" fill="none" stroke="#3366EE" stroke-width="3.8" stroke-linecap="round"/><path d="M49 34 A17 17 0 0 0 32 17" fill="none" stroke="#2255CC" stroke-width="3.8" stroke-linecap="round"/><path d="M43 34 A11 11 0 0 0 32 23" fill="none" stroke="#1144AA" stroke-width="3.8" stroke-linecap="round"/><line x1="32" y1="11" x2="32" y2="34" stroke="rgba(255,255,255,0.75)" stroke-width="1.5" stroke-dasharray="2,2"/><line x1="2" y1="34" x2="62" y2="34" stroke="rgba(255,255,255,0.55)" stroke-width="1.5"/></svg> <span>Comprendre la</span> Politique</div>
     <button class="nav-arrow nav-arrow-left" id="navArrowLeft" aria-label="Défiler la navigation vers la gauche">&#8249;</button>
-        <ul class="nav-links" id="navLinks">
+            <ul class="nav-links" id="navLinks">
       <li><a href="index.html">Accueil</a></li>
       <li><a href="comprendre-la-politique.html">Introduction</a></li>
       <li><a href="partis-politiques.html">Partis politiques</a></li>
-      <li><a href="systeme-politique.html">Syst&egrave;me politique</a></li>
+      <li><a href="systeme-politique.html">Système politique</a></li>
       <li><a href="culture-politique.html" aria-current="page">Culture politique</a></li>
-      <li><a href="actualites-politiques.html">Actualit&eacute;s</a></li>
-      <li><a href="profils-electoraux.html">Profils &eacute;lectoraux</a></li>
+      <li><a href="actualites-politiques.html">Actualités</a></li>
+      <li><a href="gagnants-perdants.html">Gagnants / perdants</a></li>
+      <li><a href="profils-electoraux.html">Profils électoraux</a></li>
       <li><a href="guide-politique.html">Guide PDF</a></li>
       <li><a href="apprendre.html">Apprendre</a></li>
     </ul>
     <button class="nav-arrow nav-arrow-right" id="navArrowRight" aria-label="Défiler la navigation vers la droite">&#8250;</button>
     <div class="nav-actions">
+      
       <button class="nav-toggle" id="navToggle" aria-label="Menu mobile">
         <span></span><span></span><span></span>
       </button>
@@ -1937,17 +1955,18 @@
   <div class="footer-inner">
     <div class="footer-logo"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 36" width="28" height="16" aria-hidden="true" style="display:inline-block;vertical-align:middle;flex-shrink:0;opacity:.9"><path d="M32 34 A30 30 0 0 1 2 34 Z" fill="#B80000"/><path d="M32 34 A30 30 0 0 0 62 34 Z" fill="#003DA6"/><path d="M9 34 A23 23 0 0 1 32 11" fill="none" stroke="#E03030" stroke-width="3.8" stroke-linecap="round"/><path d="M15 34 A17 17 0 0 1 32 17" fill="none" stroke="#CC2222" stroke-width="3.8" stroke-linecap="round"/><path d="M21 34 A11 11 0 0 1 32 23" fill="none" stroke="#AA1515" stroke-width="3.8" stroke-linecap="round"/><path d="M55 34 A23 23 0 0 0 32 11" fill="none" stroke="#3366EE" stroke-width="3.8" stroke-linecap="round"/><path d="M49 34 A17 17 0 0 0 32 17" fill="none" stroke="#2255CC" stroke-width="3.8" stroke-linecap="round"/><path d="M43 34 A11 11 0 0 0 32 23" fill="none" stroke="#1144AA" stroke-width="3.8" stroke-linecap="round"/><line x1="32" y1="11" x2="32" y2="34" stroke="rgba(255,255,255,0.75)" stroke-width="1.5" stroke-dasharray="2,2"/><line x1="2" y1="34" x2="62" y2="34" stroke="rgba(255,255,255,0.55)" stroke-width="1.5"/></svg> <span>Comprendre la</span> Politique</div>
     <p>Site pédagogique à but éducatif. Contenu équilibré et non partisan.<br>Les données de sondages sont issues des principaux instituts (IFOP, BVA, Odoxa, Ipsos) et sont indicatives.</p>
-        <div class="footer-links">
+            <div class="footer-links">
       <a href="index.html">Accueil</a>
       <a href="comprendre-la-politique.html">Introduction</a>
       <a href="partis-politiques.html">Partis politiques</a>
-      <a href="systeme-politique.html">Syst&egrave;me politique</a>
+      <a href="systeme-politique.html">Système politique</a>
       <a href="culture-politique.html">Culture politique</a>
-      <a href="actualites-politiques.html">Actualit&eacute;s</a>
-      <a href="profils-electoraux.html">Profils &eacute;lectoraux</a>
+      <a href="actualites-politiques.html">Actualités</a>
+      <a href="gagnants-perdants.html">Gagnants / perdants</a>
+      <a href="profils-electoraux.html">Profils électoraux</a>
       <a href="guide-politique.html">Guide PDF</a>
       <a href="apprendre.html">Apprendre</a>
-      <a href="mentions-legales.html">Mentions l&eacute;gales</a>
+      <a href="mentions-legales.html">Mentions légales</a>
     </div>
     <div style="margin-top:1.8rem;padding-top:1.5rem;border-top:1px solid rgba(255,255,255,.08);max-width:760px;margin-left:auto;margin-right:auto;">
       <p style="color:rgba(255,255,255,.55);font-size:.78rem;font-weight:600;margin-bottom:.5rem;letter-spacing:.06em;text-transform:uppercase;"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg> Sources &amp; fiabilité</p>
@@ -3860,3 +3879,4 @@ document.addEventListener('DOMContentLoaded',function(){
 
 </body>
 </html>
+
