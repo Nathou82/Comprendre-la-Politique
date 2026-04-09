@@ -3075,7 +3075,7 @@ function renderParties(filter,search){
         </div>
       </div>
       <div class="party-body">
-        <div class="party-leader">ðŸ‘¤ ${p.leader}</div>
+        <div class="party-leader"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex-shrink:0"><path d="M20 21a8 8 0 0 0-16 0"/><circle cx="12" cy="7" r="4"/></svg> ${p.leader}</div>
         <p class="party-desc">${p.desc}</p>
         <div class="positions-grid">
           ${Object.entries(p.positions).map(([k,v])=>`<div class="pos-item"><div class="pos-label">${k}</div><div class="pos-val">${v}</div></div>`).join('')}
