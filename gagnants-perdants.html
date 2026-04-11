@@ -68,6 +68,7 @@
   .nav-arrow.visible{display:flex}
   .nav-links a{color:rgba(255,255,255,.7);font-size:.73rem;font-weight:500;padding:.3rem .55rem;border-radius:5px;white-space:nowrap;transition:color .18s,background .18s,border-color .18s;border:1.5px solid transparent;display:inline-flex;align-items:center}
   .nav-links a:hover{color:#fff;background:rgba(255,255,255,.07);border-color:rgba(255,255,255,.2)}
+  .nav-links a.active,
   .nav-links a[aria-current="page"]{color:var(--gold);background:rgba(212,168,67,.12);border-color:rgba(212,168,67,.4)}
   .nav-actions{display:flex;align-items:center;gap:.5rem;flex-shrink:0;margin-left:auto}
   .nav-toggle{display:none;background:none;border:none;cursor:pointer;padding:.4rem}
@@ -77,6 +78,10 @@
   .hero-shell{max-width:1180px;margin:0 auto;position:relative;z-index:1;display:grid;grid-template-columns:minmax(0,1.15fr) minmax(300px,.85fr);gap:2rem;align-items:end}
   .hero-badge{display:inline-flex;align-items:center;gap:.4rem;background:rgba(212,175,55,.15);border:1px solid rgba(212,175,55,.35);color:var(--gold);font-size:.72rem;font-weight:700;padding:.25rem .75rem;border-radius:20px;letter-spacing:.06em;text-transform:uppercase;margin-bottom:1rem}
   .hero-copy h1{font-size:clamp(2.35rem,5vw,4rem);color:#fff;margin-bottom:1rem;max-width:780px}
+  .hero-highlight{
+    color:var(--gold);
+    font-style:normal;
+  }
   .hero-copy p{max-width:700px;margin:0 0 1.5rem;font-size:1rem;color:rgba(255,255,255,.74)}
   .hero-actions{display:flex;flex-wrap:wrap;gap:.8rem;margin-bottom:1.6rem}
   .gp-btn{display:inline-flex;align-items:center;gap:.55rem;padding:.78rem 1.2rem;border-radius:999px;border:1px solid transparent;font-size:.84rem;font-weight:700;transition:transform .2s,background .2s,border-color .2s,color .2s}
@@ -296,7 +301,7 @@
   <div class="hero-shell">
     <div class="hero-copy">
       <div class="hero-badge"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><path d="M19 9l-5 5-4-4-3 3"/></svg> Lecture concrète des réformes</div>
-      <h1>Qui gagne, qui perd selon les mesures politiques&nbsp;?</h1>
+      <h1><span class="hero-highlight">Qui gagne, qui perd</span> selon les mesures politiques&nbsp;?</h1>
       <p>Cette page vous aide à comprendre, simplement et sans jargon, quels groupes peuvent profiter d'une grande mesure politique, lesquels peuvent y perdre, et pourquoi les effets sont souvent plus nuancés qu'ils n'en ont l'air.</p>
       <div class="hero-actions"><a href="#mesures" class="gp-btn gp-btn-primary"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14"/><path d="M19 12l-7 7-7-7"/></svg> Voir les mesures</a><a href="#resume" class="gp-btn gp-btn-secondary"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4"/><path d="M12 8h.01"/></svg> Ce qu'il faut retenir</a></div>
       <div class="hero-note"><span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="M12 5v14"/></svg> 12 grandes mesures</span><span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg> Explications simples</span><span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg> Vision neutre et pédagogique</span></div>

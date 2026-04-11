@@ -84,6 +84,8 @@
   .nav-arrow.visible{display:flex}
   .nav-links a{color:rgba(255,255,255,.7);font-size:.73rem;font-weight:500;padding:.3rem .55rem;border-radius:5px;white-space:nowrap;transition:color .18s,background .18s,border-color .18s;border:1.5px solid transparent;display:inline-flex;align-items:center}
   .nav-links a:hover{color:#fff;background:rgba(255,255,255,.07);border-color:rgba(255,255,255,.2)}
+  .nav-links a.active,
+  .nav-links a[aria-current="page"]{color:var(--gold);background:rgba(212,168,67,.12);border-color:rgba(212,168,67,.4)}
   .nav-actions{display:flex;align-items:center;gap:.5rem;flex-shrink:0;margin-left:auto}
   .nav-toggle{display:none;background:none;border:none;cursor:pointer;padding:.4rem}
   .nav-toggle span{display:block;width:22px;height:2px;background:#fff;margin:4px 0;transition:.3s}
@@ -93,6 +95,10 @@
   .hero-shell{max-width:1180px;margin:0 auto;position:relative;z-index:1;display:grid;grid-template-columns:minmax(0,1.1fr) minmax(320px,.9fr);gap:2rem;align-items:center}
   .hero-badge{display:inline-flex;align-items:center;gap:.4rem;background:rgba(212,175,55,.15);border:1px solid rgba(212,175,55,.35);color:var(--gold);font-size:.72rem;font-weight:700;padding:.25rem .75rem;border-radius:20px;letter-spacing:.06em;text-transform:uppercase;margin-bottom:1rem}
   .hero-copy h1{font-size:clamp(2.4rem,5vw,4rem);color:#fff;margin-bottom:1rem;max-width:720px}
+  .hero-highlight{
+    color:var(--gold);
+    font-style:normal;
+  }
   .hero-copy p{max-width:680px;margin:0 0 1.5rem;font-size:1rem;color:rgba(255,255,255,.74)}
   .hero-copy p a{color:#fff;text-decoration:underline;text-decoration-color:rgba(212,168,67,.55);text-underline-offset:4px}
   .hero-actions{display:flex;flex-wrap:wrap;gap:.8rem;margin-bottom:1.4rem}
@@ -251,7 +257,8 @@
 <header class="hero">
   <div class="hero-shell">
     <div class="hero-copy">
-      <div class="hero-badge"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg> Articles pÃ©dagogiques</div><h1>Articles pour comprendre la politique simplement</h1>
+      <div class="hero-badge"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg> Articles p&eacute;dagogiques</div>
+      <h1><span class="hero-highlight">Articles</span> pour comprendre la politique simplement</h1>
       <p>Retrouvez ici des explications simples pour mieux comprendre la politique fran&ccedil;aise, ses institutions et ses grandes r&egrave;gles. Cette page sert de porte d'entr&eacute;e claire pour apprendre sans jargon, puis approfondir avec nos contenus sur le <a href="systeme-politique.html">syst&egrave;me politique</a>, la <a href="culture-politique.html">culture politique</a> et l'<a href="comprendre-la-politique.html">introduction &agrave; la politique</a>.</p>
       <div class="hero-actions"><a href="#articles" class="page-btn page-btn-primary"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14"/><path d="M19 12l-7 7-7-7"/></svg> Voir les articles</a></div>
       <div class="hero-note"><span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/></svg> Comprendre la politique</span><span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg> Explication simple</span><span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg> Politique fran&ccedil;aise</span></div>
