@@ -147,7 +147,12 @@
   }
 
   /* ── MAIN ── */
-  .guide-main{max-width:960px;margin:0 auto;padding:3.5rem 1.5rem 0}
+  .guide-main{padding:0 0 4rem}
+  .guide-band{padding:3.5rem 0}
+  .guide-band-soft{background:#f2f5f9}
+  .guide-band-white{background:#fff}
+  .guide-band-inner{max-width:960px;margin:0 auto;padding:0 1.5rem}
+  .guide-band-inner > :last-child{margin-bottom:0 !important}
 
   /* ── SECTION TITLES ── */
   .sec-lbl{display:inline-flex;align-items:center;gap:.4rem;background:rgba(212,175,55,.1);border:1px solid rgba(212,175,55,.25);color:var(--gold);font-size:.7rem;font-weight:700;padding:.22rem .7rem;border-radius:20px;letter-spacing:.08em;text-transform:uppercase;margin-bottom:.7rem}
@@ -433,6 +438,7 @@
           <span class="price-label">Accès instantané · PDF</span>
         </div>
       </div>
+      <div style="font-size:.75rem;color:rgba(255,255,255,.62);font-weight:600;margin:-.45rem 0 1.2rem">Prix de lancement - peut &eacute;voluer prochainement</div>
       <div class="hero-trust">
         <span class="trust-item">
           <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
@@ -487,6 +493,68 @@
 
 <!-- ══════════ MAIN ══════════ -->
 <main class="guide-main">
+  <section class="guide-band guide-band-soft">
+    <div class="guide-band-inner">
+  <!-- PROBLEM USER BLOCK -->
+  <div style="text-align:center;margin-bottom:1.6rem">
+    <span class="sec-lbl">
+      <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4"/><path d="M12 8h.01"/></svg>
+      Un probl&egrave;me tr&egrave;s courant
+    </span>
+    <h2 class="sec-title">Tu ne comprends pas vraiment la politique fran&ccedil;aise ?</h2>
+    <p class="sec-sub" style="max-width:640px;margin:0 auto 2rem">Si tu te sens perdu devant les institutions, les lois ou les partis, ce guide a &eacute;t&eacute; pens&eacute; pour toi.</p>
+  </div>
+  <div class="audience-grid" style="margin-bottom:1.15rem">
+    <div class="audience-card">
+      <div class="aud-ico"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4"/><path d="M12 8h.01"/></svg></div>
+      <div><div class="aud-title">Tu trouves &ccedil;a compliqu&eacute; ?</div><p class="aud-desc">Entre les institutions, les sigles, les scrutins et les d&eacute;bats publics, il est facile de ne plus savoir par o&ugrave; commencer.</p></div>
+    </div>
+    <div class="audience-card">
+      <div class="aud-ico"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16v16H4z"/><path d="M8 8h8"/><path d="M8 12h8"/><path d="M8 16h5"/></svg></div>
+      <div><div class="aud-title">Tu ne sais pas comment fonctionnent les lois ?</div><p class="aud-desc">On parle souvent de votes, d'amendements, d'Assembl&eacute;e ou de S&eacute;nat sans jamais remettre l'ensemble dans un ordre simple.</p></div>
+    </div>
+    <div class="audience-card">
+      <div class="aud-ico"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/></svg></div>
+      <div><div class="aud-title">Tu entends parler de partis sans vraiment les comprendre ?</div><p class="aud-desc">Les noms reviennent partout, mais leurs diff&eacute;rences concr&egrave;tes restent souvent floues pour beaucoup de lecteurs.</p></div>
+    </div>
+    <div class="audience-card" style="grid-column:1/-1;align-items:center;background:linear-gradient(135deg,#fff 0%,#f8fafc 100%)">
+      <div class="aud-ico"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 11 12 14 22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg></div>
+      <div><div class="aud-title" style="font-size:.95rem">Tu n'es pas seul. Et c'est exactement pour &ccedil;a que ce guide existe.</div><p class="aud-desc">Il te donne un cadre clair, progressif et p&eacute;dagogique pour enfin tout relier sans passer des heures &agrave; recouper des sources.</p></div>
+    </div>
+  </div>
+
+  <!-- CLEAR RESULT BLOCK -->
+  <div style="text-align:center;margin-bottom:1.6rem">
+    <span class="sec-lbl">
+      <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><polyline points="20 6 9 17 4 12"/></svg>
+      R&eacute;sultat clair
+    </span>
+    <h2 class="sec-title">En 2 heures, tu vas enfin comprendre :</h2>
+  </div>
+  <div class="audience-grid" style="margin-bottom:3.5rem">
+    <div class="audience-card">
+      <div class="aud-ico"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16v16H4z"/><path d="M8 8h8"/><path d="M8 12h8"/><path d="M8 16h5"/></svg></div>
+      <div><div class="aud-title">Comment fonctionnent les lois</div><p class="aud-desc">Le parcours d'un texte, les institutions impliqu&eacute;es et ce qui se passe vraiment avant son adoption.</p></div>
+    </div>
+    <div class="audience-card">
+      <div class="aud-ico"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="22" x2="21" y2="22"/><line x1="6" y1="18" x2="6" y2="11"/><line x1="10" y1="18" x2="10" y2="11"/><line x1="14" y1="18" x2="14" y2="11"/><line x1="18" y1="18" x2="18" y2="11"/><polygon points="12 2 20 7 4 7"/></svg></div>
+      <div><div class="aud-title">Qui prend les d&eacute;cisions</div><p class="aud-desc">Pr&eacute;sident, Gouvernement, Assembl&eacute;e, S&eacute;nat : chacun retrouve sa vraie place dans le syst&egrave;me politique.</p></div>
+    </div>
+    <div class="audience-card">
+      <div class="aud-ico"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/></svg></div>
+      <div><div class="aud-title">Les diff&eacute;rences entre les partis</div><p class="aud-desc">Leurs id&eacute;es, leurs familles politiques et les grands clivages qui structurent la vie politique fran&ccedil;aise.</p></div>
+    </div>
+    <div class="audience-card">
+      <div class="aud-ico"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20V10"/><path d="M18 20V4"/><path d="M6 20v-6"/></svg></div>
+      <div><div class="aud-title">Les grands enjeux politiques</div><p class="aud-desc">Les sujets qui reviennent dans l'actualit&eacute; et pourquoi ils occupent autant de place dans le d&eacute;bat public.</p></div>
+    </div>
+  </div>
+
+    </div>
+  </section>
+
+  <section class="guide-band guide-band-white">
+    <div class="guide-band-inner">
 
   <!-- FOR WHOM -->
   <div style="text-align:center;margin-bottom:1.6rem">
@@ -591,6 +659,12 @@
     </div>
   </div>
 
+  <div style="text-align:center;margin:-.4rem 0 3.5rem">
+    <a href="https://payhip.com/b/yqXEI" target="_blank" rel="noopener noreferrer" class="btn-buy">
+      <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+      T&eacute;l&eacute;charger le guide - 2,99 &euro;
+    </a>
+  </div>
   <!-- CTA BAND -->
   <div class="cta-band">
     <div class="cta-band-text" style="position:relative">
@@ -601,6 +675,7 @@
       <div class="price-block">
         <div class="price-big">2,99 €</div>
         <div class="price-once">paiement unique</div>
+        <div style="margin-top:.45rem;font-size:.74rem;color:rgba(255,255,255,.62);font-weight:600">Prix de lancement - peut &eacute;voluer prochainement</div>
       </div>
       <a href="https://payhip.com/b/yqXEI" target="_blank" rel="noopener noreferrer" class="btn-buy">
         <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
@@ -608,6 +683,12 @@
       </a>
     </div>
   </div>
+
+    </div>
+  </section>
+
+  <section class="guide-band guide-band-soft">
+    <div class="guide-band-inner">
 
   <!-- BENEFITS -->
   <div style="text-align:center;margin-bottom:1.6rem">
@@ -647,6 +728,12 @@
     </div>
   </div>
 
+  <div style="text-align:center;margin:-.4rem 0 3.5rem">
+    <a href="https://payhip.com/b/yqXEI" target="_blank" rel="noopener noreferrer" class="btn-buy">
+      <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+      T&eacute;l&eacute;charger le guide - 2,99 &euro;
+    </a>
+  </div>
   <!-- GUARANTEE -->
   <div class="guarantee">
     <div class="guarantee-ico"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></svg></div>
@@ -656,6 +743,12 @@
     </div>
   </div>
 
+    </div>
+  </section>
+
+  <section class="guide-band guide-band-white">
+    <div class="guide-band-inner">
+
   <!-- TESTIMONIALS -->
   <div style="text-align:center;margin-bottom:1.6rem">
     <span class="sec-lbl">
@@ -663,6 +756,7 @@
       Ce qu'ils en pensent
     </span>
     <h2 class="sec-title">Retours de <em>lecteurs</em></h2>
+    <p class="sec-sub" style="max-width:600px;margin:0 auto .7rem;font-weight:600;color:var(--text2)">D&eacute;j&agrave; utilis&eacute; par de nombreux &eacute;l&egrave;ves et lecteurs</p>
     <p class="sec-sub" style="max-width:600px;margin:0 auto 2rem">Des profils variés, une même satisfaction : comprendre enfin ce qui se passe vraiment.</p>
   </div>
   <div class="testi-grid">
@@ -724,6 +818,12 @@
     </div>
   </div>
 
+  <div style="text-align:center;margin:-.4rem 0 3.5rem">
+    <a href="https://payhip.com/b/yqXEI" target="_blank" rel="noopener noreferrer" class="btn-buy">
+      <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+      T&eacute;l&eacute;charger le guide - 2,99 &euro;
+    </a>
+  </div>
   <!-- FAQ -->
   <div style="text-align:center;margin-bottom:1.6rem">
     <span class="sec-lbl">
@@ -778,10 +878,24 @@
     </div>
   </div>
 
+  <div class="guarantee">
+    <div class="guarantee-ico"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></svg></div>
+    <div class="guarantee-text">
+      <strong>Paiement s&eacute;curis&eacute; - acc&egrave;s imm&eacute;diat</strong>
+      <span>Paiement s&eacute;curis&eacute; - Acc&egrave;s imm&eacute;diat apr&egrave;s achat - T&eacute;l&eacute;chargement simple et rapide.</span>
+    </div>
+  </div>
+    </div>
+  </section>
+
+  <section class="guide-band guide-band-soft">
+    <div class="guide-band-inner">
+
   <!-- FINAL CTA -->
   <div class="final-cta">
     <h2>Rejoignez les lecteurs qui ont <em>enfin</em> compris</h2>
     <p>Un guide complet, neutre et accessible pour saisir toute la complexité politique française. Au prix d'un café.</p>
+    <p style="margin:-.9rem auto 1.6rem;max-width:560px;font-size:.88rem;color:rgba(255,255,255,.75)">Comprendre la politique ne devrait pas &ecirc;tre compliqu&eacute;. Ce guide te simplifie tout.</p>
     <div class="final-cta-btns">
       <a href="https://payhip.com/b/yqXEI" rel="noopener noreferrer" class="btn-buy" style="font-size:1.05rem;padding:1rem 2.2rem">
         <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
@@ -795,6 +909,8 @@
     <p style="margin-top:1.4rem;font-size:.72rem;color:rgba(255,255,255,.3)">Paiement sécurisé · PDF universel · Téléchargement immédiat · Aucun abonnement</p>
   </div>
 
+    </div>
+  </section>
 </main>
 
 <!-- EXPLORATION -->
