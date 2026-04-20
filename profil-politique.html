@@ -1,0 +1,1427 @@
+﻿﻿﻿<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8"/>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-R2B9TW1V79"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-R2B9TW1V79');
+</script>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<meta name="description" content="Faites un test de profil politique clair et nuancé pour repérer vos sensibilités, vos idéologies dominantes et les partis politiques pouvant être proches de certaines de vos priorités."/>
+<meta name="keywords" content="profil politique, test politique, idéologies politiques, partis politiques français, sensibilités politiques, comprendre la politique française"/>
+<meta name="author" content="comprendrelapolitique.fr"/>
+<meta name="robots" content="index, follow"/>
+<meta property="og:title" content="Quel est votre profil politique ? | Comprendre la Politique"/>
+<meta property="og:description" content="Un test politique interactif, moderne et pédagogique pour mieux comprendre vos sensibilités, vos idéologies dominantes et les partis pouvant être proches de certaines de vos priorités."/>
+<meta property="og:type" content="website"/>
+<meta property="og:url" content="https://comprendrelapolitique.fr/profil-politique.html"/>
+<meta property="og:image" content="https://comprendrelapolitique.fr/favicon/web-app-manifest-512x512.png"/>
+<meta property="og:image:alt" content="Comprendre la Politique - visuel du site"/>
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:title" content="Quel est votre profil politique ? | Comprendre la Politique"/>
+<meta name="twitter:description" content="Découvrez un profil politique détaillé, des idéologies dominantes et des repères indicatifs vers les partis français grâce à un test interactif premium."/>
+<meta name="twitter:image" content="https://comprendrelapolitique.fr/favicon/web-app-manifest-512x512.png"/>
+<title>Quel est votre profil politique ? Test interactif, idéologies et repères | Comprendre la Politique</title>
+<link rel="canonical" href="https://comprendrelapolitique.fr/profil-politique.html"/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
+<link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96"/>
+<link rel="icon" type="image/svg+xml" href="/favicon.svg"/>
+<link rel="shortcut icon" href="/favicon.ico"/>
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"/>
+<meta name="apple-mobile-web-app-title" content="Comprendre la Politique"/>
+<link rel="manifest" href="/site.webmanifest"/>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "Quel est votre profil politique ?",
+  "description": "Test politique interactif pour découvrir un profil dominant, des idéologies proches et des repères indicatifs vers les partis français.",
+  "publisher": {
+    "@type": "Organization",
+    "name": "Comprendre la Politique"
+  },
+  "mainEntityOfPage": "https://comprendrelapolitique.fr/profil-politique.html",
+  "url": "https://comprendrelapolitique.fr/profil-politique.html",
+  "inLanguage": "fr-FR"
+}
+</script>
+<style>
+  :root{
+    --bg:#f7f8fa;--bg2:#eef0f4;--bg3:#fff;
+    --text:#1e2a38;--text2:#3a4a5c;--text3:#8895a7;
+    --border:#dce3ed;--navy:#0d1b2a;--navy2:#152236;
+    --blue:#1a4f8a;--blue2:#2563a8;
+    --gold:#d4a843;--accent:#c8392b;
+    --card:#fff;
+    --shadow:0 2px 16px rgba(0,0,0,.07);
+    --shadow2:0 8px 32px rgba(0,0,0,.12);
+  }
+  *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth;font-size:16px}
+  body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--text);overflow-x:hidden}
+  a{color:inherit;text-decoration:none}
+  img{max-width:100%;display:block}
+  h1,h2,h3,h4{font-family:'Playfair Display',serif;line-height:1.2;color:var(--text)}
+  p{line-height:1.75;color:var(--text2)}
+
+  #navbar{position:fixed;top:0;left:0;right:0;z-index:1000;background:rgba(13,27,42,.97);backdrop-filter:blur(14px);border-bottom:1px solid rgba(255,255,255,.07);transition:box-shadow .3s}
+  #navbar.scrolled{box-shadow:0 4px 30px rgba(0,0,0,.5)}
+  .nav-inner{max-width:1400px;margin:0 auto;display:flex;align-items:center;padding:.7rem 1.5rem;gap:0}
+  .nav-logo{font-family:'Playfair Display',serif;font-size:1.2rem;font-weight:900;color:#fff;display:flex;align-items:center;gap:.4rem;flex-shrink:0}
+  .nav-logo span{color:var(--gold)}
+  .nav-links{display:flex;gap:.1rem;list-style:none;flex-wrap:nowrap;overflow-x:auto;scrollbar-width:none;-ms-overflow-style:none;margin-left:1.2rem}
+  .nav-links::-webkit-scrollbar{display:none}
+  .nav-arrow{display:none;align-items:center;justify-content:center;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.18);color:#fff;font-size:1.2rem;line-height:1;width:26px;height:26px;border-radius:50%;cursor:pointer;flex-shrink:0;transition:background .18s,opacity .18s;padding:0}
+  .nav-arrow:hover{background:rgba(255,255,255,.22)}
+  .nav-arrow.visible{display:flex}
+  .nav-links a{color:rgba(255,255,255,.7);font-size:.73rem;font-weight:500;padding:.3rem .55rem;border-radius:5px;white-space:nowrap;transition:color .18s,background .18s,border-color .18s;border:1.5px solid transparent;display:inline-flex;align-items:center}
+  .nav-links a:hover{color:#fff;background:rgba(255,255,255,.07);border-color:rgba(255,255,255,.2)}
+  .nav-links a[aria-current="page"],.nav-links a.active{color:var(--gold);background:rgba(212,168,67,.12);border-color:rgba(212,168,67,.4)}
+  .nav-actions{display:flex;align-items:center;gap:.5rem;flex-shrink:0;margin-left:auto}
+  .nav-toggle{display:none;background:none;border:none;cursor:pointer;padding:.4rem}
+  .nav-toggle span{display:block;width:22px;height:2px;background:#fff;margin:4px 0;transition:.3s}
+
+  .hero{background:radial-gradient(circle at 18% 18%, rgba(212,168,67,.18) 0%, transparent 28%),radial-gradient(circle at 82% 28%, rgba(37,99,168,.2) 0%, transparent 30%),linear-gradient(135deg,var(--navy) 0%,#0e2244 58%,#101c31 100%);padding:7rem 1.5rem 4.6rem;border-bottom:2px solid rgba(212,175,55,.2);position:relative;overflow:hidden}
+  .hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 70% 60% at 50% 0%,rgba(212,175,55,.08) 0%,transparent 70%);pointer-events:none}
+  .hero-shell{max-width:1180px;margin:0 auto;position:relative;z-index:1;display:grid;grid-template-columns:minmax(0,1.1fr) minmax(320px,.9fr);gap:2rem;align-items:center}
+  .hero-badge{display:inline-flex;align-items:center;gap:.4rem;background:rgba(212,175,55,.15);border:1px solid rgba(212,175,55,.35);color:var(--gold);font-size:.72rem;font-weight:700;padding:.25rem .75rem;border-radius:20px;letter-spacing:.06em;text-transform:uppercase;margin-bottom:1rem}
+  .hero-copy h1{font-size:clamp(2.4rem,5vw,4rem);color:#fff;margin-bottom:1rem;max-width:760px}
+  .hero-highlight{color:var(--gold);font-style:normal}
+  .hero-copy p{max-width:700px;margin:0 0 1.5rem;font-size:1rem;color:rgba(255,255,255,.74)}
+  .hero-copy p a{color:#fff;text-decoration:underline;text-decoration-color:rgba(212,168,67,.55);text-underline-offset:4px}
+  .hero-actions{display:flex;flex-wrap:wrap;gap:.8rem;margin-bottom:1.4rem}
+  .page-btn{display:inline-flex;align-items:center;gap:.55rem;padding:.78rem 1.2rem;border-radius:999px;border:1px solid transparent;font-size:.84rem;font-weight:700;transition:transform .2s,background .2s,border-color .2s,color .2s}
+  .page-btn:hover{transform:translateY(-1px)}
+  .page-btn-primary{background:var(--gold);color:#0d1b2a;box-shadow:0 12px 30px rgba(212,168,67,.18)}
+  .page-btn-secondary{border-color:rgba(255,255,255,.18);background:rgba(255,255,255,.06);color:#fff}
+  .hero-note{display:flex;flex-wrap:wrap;gap:.65rem;color:rgba(255,255,255,.62);font-size:.76rem}
+  .hero-note span{display:inline-flex;align-items:center;gap:.4rem;padding:.36rem .68rem;border-radius:999px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.08)}
+  .hero-panel{display:grid;gap:1rem}
+  .hero-card{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.08);border-radius:18px;padding:1.35rem 1.25rem;backdrop-filter:blur(10px);box-shadow:0 16px 40px rgba(5,12,20,.22)}
+  .hero-card .kicker{font-size:.7rem;font-weight:700;letter-spacing:.11em;text-transform:uppercase;color:rgba(212,168,67,.9);margin-bottom:.5rem}
+  .hero-card strong{display:block;font-family:'Playfair Display',serif;font-size:2rem;line-height:1;color:#fff;margin-bottom:.35rem}
+  .hero-card p{font-size:.84rem;color:rgba(255,255,255,.62)}
+  .mini-list{display:grid;gap:.72rem}
+  .mini-item{display:grid;grid-template-columns:auto 1fr;gap:.75rem;align-items:start;padding:.85rem .9rem;border-radius:14px;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.08)}
+  .mini-icon{width:34px;height:34px;border-radius:10px;display:flex;align-items:center;justify-content:center;background:rgba(212,168,67,.14);color:var(--gold);flex-shrink:0}
+  .mini-item strong{display:block;color:#fff;margin-bottom:.2rem;font-size:.86rem}
+  .mini-item span{font-size:.79rem;line-height:1.6;color:rgba(255,255,255,.62)}
+
+  .note-wrap{max-width:1200px;margin:0 auto;padding:1.1rem 1.5rem 0}
+  .note-box{background:linear-gradient(135deg,rgba(37,99,168,.06),rgba(255,255,255,.95));border:1px solid rgba(37,99,168,.12);border-radius:16px;padding:1rem 1.1rem;display:flex;align-items:flex-start;gap:.8rem;color:var(--text2);font-size:.86rem;line-height:1.65}
+  .note-box svg{flex-shrink:0;color:var(--blue2);margin-top:.1rem}
+
+  .page-main{max-width:1200px;margin:0 auto;padding:1.8rem 1.5rem 0}
+  .section-head{display:flex;justify-content:space-between;align-items:end;gap:1rem;flex-wrap:wrap;margin-bottom:1.4rem}
+  .section-label{display:inline-flex;align-items:center;gap:.45rem;font-size:.72rem;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:var(--blue2);margin-bottom:.65rem}
+  .section-head h2{margin-bottom:.5rem}
+  .section-head p{max-width:760px;font-size:.98rem;color:var(--text3)}
+
+  .article-card{position:relative;background:var(--card);border:1px solid var(--border);box-shadow:var(--shadow);border-radius:20px;padding:1.35rem 1.3rem 1.25rem;overflow:hidden;transition:transform .24s,box-shadow .24s,border-color .24s,opacity .28s;opacity:0;transform:translateY(12px);display:flex;flex-direction:column;min-height:100%}
+  .article-card::before{content:'';position:absolute;left:0;right:0;top:0;height:4px;background:linear-gradient(90deg,var(--blue2),var(--gold))}
+  .article-card.is-visible{opacity:1;transform:none}
+  .article-card:hover{transform:translateY(-4px);box-shadow:var(--shadow2);border-color:#c7d6e8}
+  .article-chip{display:inline-flex;align-items:center;gap:.4rem;padding:.38rem .74rem;border-radius:999px;font-size:.72rem;font-weight:800;letter-spacing:.04em;background:#eaf1fb;color:#1a4f8a;border:1px solid #cbdcf3}
+  .section-band{position:relative;padding:3rem 0 3.1rem;margin:1rem 0 0}
+  .section-band::before{content:'';position:absolute;left:50%;top:0;bottom:0;width:100vw;transform:translateX(-50%);background:#f1f4f8;border-top:1px solid rgba(13,27,42,.05);border-bottom:1px solid rgba(13,27,42,.05);z-index:-1}
+
+  .roles-section{padding-bottom:2.8rem}
+  .roles-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1.25rem}
+  .role-card h3{font-size:1.2rem;margin-bottom:.65rem}
+  .role-card p{font-size:.9rem;line-height:1.72;color:var(--text2)}
+  .role-head{display:flex;align-items:center;justify-content:space-between;gap:.75rem;flex-wrap:wrap;margin-bottom:.9rem}
+  .role-number{width:40px;height:40px;border-radius:12px;display:inline-flex;align-items:center;justify-content:center;background:linear-gradient(135deg,var(--navy),#173152);color:#fff;font-family:'Playfair Display',serif;font-size:1.1rem;font-weight:900;box-shadow:0 12px 26px rgba(13,27,42,.18)}
+  .role-meta{display:flex;align-items:center;gap:.45rem;font-size:.76rem;color:var(--text3);margin-top:.8rem;padding-top:.8rem;border-top:1px dashed var(--border)}
+  .role-meta svg{color:var(--gold);flex-shrink:0}
+
+  .compare-section{padding-bottom:0}
+  .compare-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1.2rem}
+  .compare-card{background:var(--card);border:1px solid var(--border);box-shadow:var(--shadow);border-radius:18px;padding:1.35rem 1.3rem}
+  .compare-tag{display:inline-flex;align-items:center;gap:.4rem;padding:.36rem .72rem;border-radius:999px;font-size:.72rem;font-weight:800;letter-spacing:.04em;background:#eef4fb;color:#1a4f8a;border:1px solid #d5e3f3;margin-bottom:.8rem}
+  .compare-card h3{margin-bottom:.55rem}
+  .compare-card p{font-size:.9rem;line-height:1.72;margin-bottom:.95rem}
+  .compare-list{list-style:none;display:grid;gap:.58rem}
+  .compare-list li{position:relative;padding-left:1rem;font-size:.84rem;line-height:1.6;color:var(--text2)}
+  .compare-list li::before{content:'';position:absolute;left:0;top:.58rem;width:6px;height:6px;border-radius:50%;background:var(--gold)}
+
+  .summary-section{padding:0 1.5rem 3rem}
+  .summary-inner{max-width:1200px;margin:0 auto}
+  .summary-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem}
+  .summary-card{background:var(--card);border:1px solid var(--border);box-shadow:var(--shadow);border-radius:18px;padding:1.25rem 1.2rem}
+  .summary-card h3{display:flex;align-items:center;gap:.5rem;font-size:1rem;margin-bottom:.65rem}
+  .summary-card p{font-size:.86rem;color:var(--text2);line-height:1.7}
+  .summary-card svg{color:var(--gold);flex-shrink:0}
+  .summary-note{margin-top:1rem;padding:1rem 1.1rem;border-radius:16px;background:var(--navy);color:#fff;display:flex;gap:.8rem;align-items:flex-start}
+  .summary-note p{color:rgba(255,255,255,.76);font-size:.86rem;line-height:1.72}
+  .summary-note strong{color:#fff}
+  .summary-note svg{flex-shrink:0;color:var(--gold);margin-top:.12rem}
+
+  .exploration-section{position:relative;overflow:hidden;background:linear-gradient(135deg,#0a1628 0%,#0d1f3c 40%,#0e2244 100%);padding:4rem 1.5rem 4.5rem;border-top:2px solid rgba(212,175,55,.25)}
+  .exploration-section::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 70% 60% at 50% 0%,rgba(212,175,55,.08) 0%,transparent 70%);pointer-events:none}
+  .exploration-inner{max-width:1040px;margin:0 auto;position:relative}
+  .exploration-badge{display:inline-flex;align-items:center;gap:.4rem;background:rgba(212,175,55,.15);border:1px solid rgba(212,175,55,.35);color:var(--gold);font-size:.72rem;font-weight:700;padding:.25rem .75rem;border-radius:20px;letter-spacing:.06em;text-transform:uppercase;margin-bottom:1rem}
+  .exploration-title{font-family:'Playfair Display',serif;font-size:1.8rem;font-weight:900;color:#fff;text-align:center;margin-bottom:.6rem;line-height:1.25}
+  .exploration-title em{color:var(--gold);font-style:normal}
+  .exploration-subtitle{text-align:center;font-size:.88rem;color:rgba(255,255,255,.55);margin-bottom:2.4rem;max-width:540px;margin-left:auto;margin-right:auto;line-height:1.6}
+  .exploration-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1.1rem}
+  .exploration-card{display:flex;align-items:center;gap:1rem;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);border-radius:14px;padding:1.15rem 1.2rem;transition:background .22s,border-color .22s,transform .2s,box-shadow .22s;position:relative;overflow:hidden}
+  .exploration-card::after{content:'';position:absolute;inset:0;background:linear-gradient(135deg,rgba(212,175,55,.06) 0%,transparent 60%);opacity:0;transition:opacity .22s;pointer-events:none;border-radius:14px}
+  .exploration-card:hover{background:rgba(255,255,255,.1);border-color:rgba(212,175,55,.5);transform:translateY(-3px);box-shadow:0 8px 30px rgba(0,0,0,.35),0 0 0 1px rgba(212,175,55,.2)}
+  .exploration-card:hover::after{opacity:1}
+  .exploration-icon{font-size:1.7rem;flex-shrink:0;background:rgba(255,255,255,.07);border-radius:10px;width:46px;height:46px;display:flex;align-items:center;justify-content:center;transition:background .2s}
+  .exploration-card:hover .exploration-icon{background:rgba(212,175,55,.15)}
+  .exploration-text{flex:1;min-width:0}
+  .exploration-text strong{display:block;font-size:.84rem;font-weight:700;color:#fff;margin-bottom:.2rem}
+  .exploration-text span{font-size:.74rem;color:rgba(255,255,255,.5);line-height:1.45}
+  .exploration-arrow{color:var(--gold);font-size:1.3rem;font-weight:700;flex-shrink:0;width:28px;height:28px;display:flex;align-items:center;justify-content:center;background:rgba(212,175,55,.12);border-radius:50%;transition:background .2s,transform .2s}
+  .exploration-card:hover .exploration-arrow{background:rgba(212,175,55,.25);transform:translateX(3px)}
+
+  .share-section{background:var(--navy);padding:2.2rem 1.5rem;border-top:1px solid rgba(255,255,255,.07)}
+  .share-inner{max-width:700px;margin:0 auto;text-align:center}
+  .share-title{font-size:.8rem;font-weight:700;color:rgba(255,255,255,.45);text-transform:uppercase;letter-spacing:.1em;margin-bottom:1rem}
+  .share-btns{display:flex;justify-content:center;flex-wrap:wrap;gap:.55rem}
+  .share-btn{display:inline-flex;align-items:center;gap:.45rem;padding:.45rem 1rem;border-radius:25px;font-size:.76rem;font-weight:700;border:1.5px solid transparent;transition:transform .18s,box-shadow .18s,opacity .18s;cursor:pointer}
+  .share-btn:hover{transform:translateY(-2px);box-shadow:0 4px 16px rgba(0,0,0,.18);opacity:.92}
+  .share-btn svg{width:16px;height:16px;fill:currentColor;flex-shrink:0}
+  .share-btn-fb{background:#1877F2;color:#fff;border-color:#1877F2}
+  .share-btn-x{background:#000;color:#fff;border-color:#333}
+  .share-btn-li{background:#0A66C2;color:#fff;border-color:#0A66C2}
+  .share-btn-wa{background:#25D366;color:#fff;border-color:#25D366}
+  .share-btn-tg{background:#229ED9;color:#fff;border-color:#229ED9}
+
+  footer{background:var(--navy);padding:3rem 1.5rem;text-align:center;border-top:1px solid rgba(255,255,255,.08)}
+  .footer-inner{max-width:1280px;margin:0 auto}
+  .footer-logo{font-family:'Playfair Display',serif;font-size:1.3rem;font-weight:900;color:#fff}
+  .footer-logo span{color:var(--gold)}
+  footer p{color:rgba(255,255,255,.3);font-size:.78rem;margin-top:.65rem;line-height:1.7}
+  .footer-links{display:flex;justify-content:center;gap:1.3rem;flex-wrap:wrap;margin-top:1.3rem}
+  .footer-links a{color:rgba(255,255,255,.45);font-size:.77rem;transition:color .2s}
+  .footer-links a:hover{color:var(--gold)}
+
+  #scrollTopBtn{position:fixed;right:1.1rem;bottom:1.1rem;z-index:999;width:42px;height:42px;border:none;border-radius:50%;background:var(--navy);color:#fff;font-size:1rem;cursor:pointer;box-shadow:0 12px 30px rgba(13,27,42,.25);opacity:0;pointer-events:none;transition:opacity .2s,transform .2s}
+  #scrollTopBtn:hover{transform:translateY(-2px)}
+  #cookieBanner{position:fixed;right:1rem;bottom:1rem;z-index:1100;width:min(360px,calc(100vw - 2rem));background:#0f1f33;color:#fff;border-radius:18px;padding:1rem 1rem .95rem;box-shadow:0 18px 40px rgba(0,0,0,.28);border:1px solid rgba(255,255,255,.08);transform:translateY(20px);opacity:0;pointer-events:none;transition:all .3s}
+  #cookieBanner.show{transform:translateY(0);opacity:1;pointer-events:all}
+  #cookieBanner.hide{transform:translateY(20px);opacity:0;pointer-events:none}
+  .cookie-title{font-weight:700;margin-bottom:.45rem}
+  #cookieBanner p{font-size:.82rem;color:rgba(255,255,255,.72);line-height:1.65}
+  .cookie-actions{display:flex;justify-content:space-between;align-items:center;gap:.7rem;margin-top:.8rem}
+  .cookie-link{font-size:.78rem;color:var(--gold)}
+  .cookie-accept{border:none;background:var(--gold);color:#0d1b2a;font-weight:700;border-radius:999px;padding:.56rem .95rem;cursor:pointer}
+
+  @media(max-width:1080px){.hero-shell{grid-template-columns:1fr}.hero-panel{grid-template-columns:repeat(2,minmax(0,1fr))}.roles-grid,.summary-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+  @media(max-width:900px){.compare-grid,.exploration-grid{grid-template-columns:1fr}}
+  @media(max-width:760px){.hero{padding-top:6.4rem}.roles-grid,.summary-grid{grid-template-columns:1fr}.section-band{padding:2.2rem 0 2.3rem}.nav-toggle{display:block}.nav-arrow{display:none !important}.nav-inner{flex-wrap:wrap}.nav-links{display:none;flex-direction:column;width:100%;margin:1rem 0 0;gap:.35rem;overflow:visible}.nav-links.open{display:flex}.nav-links a{padding:.7rem .75rem;background:rgba(255,255,255,.04);border-color:rgba(255,255,255,.08)}.hero-panel{grid-template-columns:1fr}}
+  @media(max-width:560px){.hero-copy h1{font-size:2.15rem}.hero-actions{flex-direction:column;align-items:stretch}.page-btn{justify-content:center}.cookie-actions{flex-direction:column;align-items:stretch}.cookie-accept{text-align:center}}
+
+  /* =========================================================
+     SOUTENIR + RESEAUX SOCIAUX FOOTER
+  ========================================================= */
+  .nav-support-link{
+    display:inline-flex;align-items:center;gap:.42rem;
+    margin-left:.75rem;padding:.42rem .78rem;
+    border-radius:999px;border:1px solid rgba(255,255,255,.09);
+    background:#dd2a3b;
+    color:#fff;font-size:.72rem;font-weight:800;
+    letter-spacing:.01em;white-space:nowrap;text-decoration:none;
+    box-shadow:0 8px 18px rgba(221,42,59,.18);
+    transition:transform .18s,box-shadow .18s,filter .18s,background .18s;
+    flex-shrink:0;
+  }
+  .nav-support-link:hover{
+    transform:translateY(-1px);
+    box-shadow:0 10px 22px rgba(221,42,59,.24);
+    filter:brightness(1.03);
+  }
+  .nav-support-link .support-heart{font-size:.9rem;line-height:1;display:inline-flex;align-items:center;justify-content:center;transform:translateY(-.5px)}
+  .footer-social{
+    margin-top:1.15rem;
+    display:flex;flex-direction:column;align-items:center;justify-content:center;
+    gap:.7rem;
+  }
+  .footer-social-title{
+    font-size:.7rem;font-weight:700;color:rgba(255,255,255,.4);
+    text-transform:uppercase;letter-spacing:.1em;
+  }
+  .footer-social-links{display:flex;justify-content:center;align-items:center;flex-wrap:wrap;gap:.55rem;}
+  .footer-social-link{
+    display:inline-flex;align-items:center;justify-content:center;
+    width:38px;height:38px;border-radius:50%;
+    background:rgba(255,255,255,.06);
+    border:1px solid rgba(255,255,255,.12);
+    color:rgba(255,255,255,.76);text-decoration:none;
+    transition:transform .18s,background .18s,border-color .18s,color .18s,box-shadow .18s;
+  }
+  .footer-social-link:hover{
+    transform:translateY(-2px);
+    color:#fff;
+    box-shadow:0 8px 20px rgba(0,0,0,.18);
+  }
+  .footer-social-link svg{width:17px;height:17px;display:block;fill:currentColor;}
+  .footer-social-link.social-tiktok:hover{background:rgba(37,244,238,.14);border-color:rgba(37,244,238,.24)}
+  .footer-social-link.social-tiktok svg{transform:translateX(.8px);}
+  .footer-social-link.social-instagram:hover{background:rgba(225,48,108,.14);border-color:rgba(225,48,108,.24)}
+  .footer-social-link.social-youtube:hover{background:rgba(255,0,0,.14);border-color:rgba(255,0,0,.24)}
+  @media(max-width:640px){
+    .nav-support-link{margin-left:.5rem;padding:.36rem .64rem;font-size:.66rem}
+    .footer-social{margin-top:1rem}
+    .footer-social-link{width:36px;height:36px}
+  }
+
+  /* =========================================================
+     PAGE - PROFIL POLITIQUE
+  ========================================================= */
+  .analysis-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1.15rem}
+  .analysis-card h3{font-size:1.1rem;margin:.8rem 0 .6rem}
+  .analysis-card p{font-size:.88rem;color:var(--text2)}
+  .analysis-meta{margin-top:auto;padding-top:1rem;font-size:.78rem;color:var(--text3);display:flex;align-items:center;gap:.45rem}
+  .analysis-icon{width:42px;height:42px;border-radius:12px;display:inline-flex;align-items:center;justify-content:center;background:#edf4fc;color:var(--blue2)}
+
+  .quiz-section{padding-bottom:2.8rem}
+  .quiz-shell{display:grid;grid-template-columns:320px minmax(0,1fr);gap:1.25rem;align-items:start}
+  .quiz-side{position:sticky;top:92px;display:grid;gap:1rem}
+  .quiz-panel,.question-card,.quiz-start-card,.result-card,.path-card,.party-card,.dimension-card,.profile-card,.ideology-card{background:var(--card);border:1px solid var(--border);box-shadow:var(--shadow);border-radius:20px}
+  .quiz-panel{padding:1.2rem 1.15rem}
+  .quiz-panel h3{font-size:1.08rem;margin-bottom:.4rem}
+  .quiz-panel p{font-size:.84rem;color:var(--text3)}
+  .progress-meta{display:flex;align-items:center;justify-content:space-between;gap:.75rem;margin-bottom:.75rem}
+  .progress-count{font-size:.8rem;font-weight:700;color:var(--text2)}
+  .progress-fill{height:100%;width:0;border-radius:999px;background:linear-gradient(90deg,var(--blue2),var(--gold));transition:width .35s ease}
+  .progress-track{height:10px;border-radius:999px;background:#e8edf5;overflow:hidden;margin-bottom:1rem}
+  .current-theme{display:inline-flex;align-items:center;gap:.45rem;padding:.42rem .8rem;border-radius:999px;background:#eef4fb;border:1px solid #d5e3f3;color:#1a4f8a;font-size:.76rem;font-weight:700}
+  .quiz-stats{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:.7rem;margin-top:1rem}
+  .quiz-stat{padding:.85rem .9rem;border-radius:14px;background:#f7f9fc;border:1px solid #e1e8f2}
+  .quiz-stat strong{display:block;font-size:1rem;color:var(--text)}
+  .quiz-stat span{display:block;margin-top:.15rem;font-size:.76rem;color:var(--text3);line-height:1.45}
+  .theme-list{list-style:none;display:grid;gap:.55rem;margin-top:1rem}
+  .theme-item{display:flex;align-items:center;gap:.65rem;padding:.68rem .78rem;border-radius:12px;background:#fafbfd;border:1px solid #e2e8f1;color:var(--text2);font-size:.8rem;transition:background .2s,border-color .2s,transform .2s}
+  .theme-item svg{flex-shrink:0;color:var(--blue2)}
+  .theme-item.active{background:#eef4fb;border-color:#bcd0ea;color:var(--blue2);transform:translateX(2px)}
+  .theme-item.done{background:#f7f4ea;border-color:#ead9ab}
+  .quiz-stage{display:grid;gap:1rem}
+  .quiz-start-card{padding:1.5rem}
+  .quiz-start-card h3{font-size:1.45rem;margin-bottom:.65rem}
+  .quiz-start-card p{font-size:.92rem;color:var(--text2)}
+  .quiz-start-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:.85rem;margin:1.25rem 0}
+  .quiz-start-item{padding:1rem;border-radius:16px;background:#f8fafc;border:1px solid #e3e9f2}
+  .quiz-start-item strong{display:block;margin-top:.55rem;font-size:.9rem}
+  .quiz-start-item span{display:block;margin-top:.3rem;font-size:.79rem;color:var(--text3);line-height:1.55}
+  .quiz-start-item .mini-icon{background:#edf4fc;color:var(--blue2)}
+  .quiz-start-actions{display:flex;flex-wrap:wrap;gap:.8rem;margin-top:1.2rem}
+  .quiz-disclaimer{margin-top:1rem;padding:.85rem .95rem;border-radius:14px;background:#f7f9fc;border:1px dashed #d6dde8;font-size:.8rem;color:var(--text3)}
+  .page-btn-light{border-color:var(--border);background:#f8fafc;color:var(--text)}
+  .page-btn-light:hover{background:#f0f4f9;border-color:#c8d4e2}
+  .question-card{padding:1.45rem 1.35rem 1.25rem;position:relative;overflow:hidden}
+  .question-card::before{content:'';position:absolute;left:0;top:0;right:0;height:4px;background:linear-gradient(90deg,var(--blue2),var(--gold))}
+  .question-top{display:flex;align-items:flex-start;justify-content:space-between;gap:1rem;flex-wrap:wrap;margin-bottom:1rem}
+  .question-count{font-size:.76rem;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:var(--text3)}
+  .question-theme{display:inline-flex;align-items:center;gap:.4rem;padding:.38rem .72rem;border-radius:999px;background:#eef4fb;border:1px solid #d5e3f3;color:var(--blue2);font-size:.76rem;font-weight:800}
+  .question-title{font-size:2rem;line-height:1.18;margin-bottom:.85rem}
+.question-help{font-size:.9rem;color:#6f7f92;max-width:760px;line-height:1.75}
+  .answer-list{display:grid;gap:.75rem;margin-top:1.3rem}
+  .answer-btn{display:flex;align-items:center;gap:.9rem;width:100%;padding:1rem 1.05rem;border-radius:16px;border:1px solid #d8e2ef;background:#fff;text-align:left;cursor:pointer;transition:border-color .2s,box-shadow .2s,transform .18s,background .2s}
+  .answer-btn:hover{border-color:#b8cbe1;box-shadow:0 10px 24px rgba(37,99,168,.08);transform:translateY(-1px)}
+  .answer-btn.selected{border-color:rgba(212,168,67,.55);background:#fffaf0;box-shadow:0 10px 30px rgba(212,168,67,.12)}
+.answer-score{width:38px;height:38px;border-radius:12px;display:inline-flex;align-items:center;justify-content:center;background:#eff4fb;color:var(--blue2);flex-shrink:0;border:1px solid rgba(37,99,168,.08)}
+.answer-score svg{width:17px;height:17px;display:block}
+.answer-score.agree-strong{background:#eaf8ef;color:#1f8a4c;border-color:rgba(31,138,76,.12)}
+.answer-score.agree{background:#eef7fb;color:#2563a8;border-color:rgba(37,99,168,.12)}
+.answer-score.neutral{background:#f3f5f8;color:#728197;border-color:rgba(114,129,151,.12)}
+.answer-score.disagree{background:#fcf2ed;color:#c26a2f;border-color:rgba(194,106,47,.12)}
+.answer-score.disagree-strong{background:#fdeeee;color:#c0392b;border-color:rgba(192,57,43,.14)}
+  .answer-copy strong{display:block;font-size:.94rem;color:var(--text);margin-bottom:.18rem}
+  .answer-copy span{display:block;font-size:.78rem;color:var(--text3);line-height:1.55}
+  .question-footer{display:flex;align-items:center;justify-content:space-between;gap:1rem;flex-wrap:wrap;margin-top:1.2rem;padding-top:1rem;border-top:1px dashed #dbe3ee}
+  .question-footer p{font-size:.8rem;color:var(--text3)}
+  .question-empty{color:#c0392b;font-size:.82rem;font-weight:700;display:none}
+  .question-empty.show{display:block}
+  .question-wrap{transition:opacity .28s ease,transform .28s ease}
+  .question-wrap.is-transitioning{opacity:0;transform:translateY(6px)}
+  .hidden{display:none !important}
+
+  .method-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1rem}
+  .method-card{padding:1.25rem 1.2rem}
+  .method-card h3{font-size:1.08rem;margin-bottom:.55rem}
+  .method-card p{font-size:.86rem;color:var(--text2)}
+  .method-list{list-style:none;display:grid;gap:.55rem;margin-top:.85rem}
+  .method-list li{position:relative;padding-left:1rem;font-size:.82rem;line-height:1.55;color:var(--text2)}
+  .method-list li::before{content:'';position:absolute;left:0;top:.55rem;width:6px;height:6px;border-radius:50%;background:var(--gold)}
+
+  .result-section{display:none;padding-bottom:.2rem}
+  .result-section.show{display:block}
+  .result-shell{display:grid;gap:1rem}
+  .result-hero-card{padding:1.5rem 1.4rem;background:linear-gradient(135deg,var(--navy) 0%,#102746 60%,#12223a 100%);color:#fff;border-radius:24px;border:1px solid rgba(255,255,255,.08);box-shadow:0 22px 45px rgba(10,22,40,.18)}
+  .result-kicker{display:inline-flex;align-items:center;gap:.45rem;padding:.3rem .8rem;border-radius:999px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.14);font-size:.73rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:rgba(255,255,255,.78)}
+  .result-hero-grid{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(280px,.9fr);gap:1.4rem;align-items:start;margin-top:1rem}
+  .result-hero-card h2{font-size:clamp(2rem,4vw,3.2rem);color:#fff;margin:.8rem 0 .55rem}
+  .result-hero-card h2 span{color:var(--result-accent,var(--gold))}
+  .result-hero-card p{color:rgba(255,255,255,.72);font-size:.94rem}
+  .result-side-card{padding:1rem 1rem .95rem;border-radius:18px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.09)}
+  .result-side-card strong{display:block;color:#fff;font-size:1rem;margin-bottom:.25rem}
+  .result-side-card span{display:block;color:rgba(255,255,255,.68);font-size:.8rem;line-height:1.55}
+  .result-side-stack{display:grid;gap:.8rem}
+  .result-tag-row{display:flex;flex-wrap:wrap;gap:.55rem;margin-top:1rem}
+  .result-tag{display:inline-flex;align-items:center;gap:.4rem;padding:.42rem .8rem;border-radius:999px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.12);font-size:.78rem;color:#fff}
+  .result-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:1rem}
+  .result-card{padding:1.25rem 1.2rem}
+  .result-card h3{display:flex;align-items:center;gap:.55rem;font-size:1.15rem;margin-bottom:.65rem}
+  .result-card h3 svg{color:var(--gold);flex-shrink:0}
+  .dimension-grid{display:grid;gap:.8rem}
+  .dimension-row{padding:.8rem .85rem;border-radius:14px;background:#f8fafc;border:1px solid #e2e8f1}
+  .dimension-head{display:flex;align-items:center;justify-content:space-between;gap:.65rem;margin-bottom:.55rem}
+  .dimension-head strong{font-size:.87rem;color:var(--text)}
+  .dimension-head span{font-size:.76rem;color:var(--text3)}
+  .dimension-track{height:10px;border-radius:999px;background:#e8edf5;overflow:hidden}
+  .dimension-bar{height:100%;border-radius:999px;background:linear-gradient(90deg,var(--result-accent,var(--gold)),#2a7bd0);width:0;transition:width .65s ease}
+  .trait-list{display:grid;gap:.7rem}
+  .trait-item{padding:.9rem .95rem;border-radius:14px;background:#f8fafc;border:1px solid #e3e9f2;font-size:.86rem;color:var(--text2);display:flex;align-items:flex-start;gap:.7rem}
+  .trait-item svg{color:var(--gold);flex-shrink:0;margin-top:.12rem}
+  .ideology-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:.9rem}
+  .ideology-card{padding:1rem .95rem;display:grid;grid-template-columns:auto 1fr;gap:.8rem;align-items:start}
+  .ideology-icon{width:46px;height:46px;border-radius:14px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+  .ideology-card strong{display:block;font-size:.92rem;color:var(--text)}
+  .ideology-card span{display:block;font-size:.76rem;color:var(--text3);line-height:1.55;margin-top:.22rem}
+  .ideology-score{margin-top:.5rem;height:8px;border-radius:999px;background:#edf2f8;overflow:hidden}
+  .ideology-score-fill{height:100%;border-radius:999px}
+  .why-copy p{font-size:.88rem;color:var(--text2);margin-bottom:.85rem}
+  .why-copy p:last-child{margin-bottom:0}
+  .profile-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:.9rem}
+  .profile-card{padding:1rem .95rem}
+  .profile-card strong{display:block;font-size:.92rem;color:var(--text);margin-bottom:.25rem}
+  .profile-card span{display:block;font-size:.78rem;color:var(--text3);line-height:1.55}
+  .profile-match{margin-top:.7rem;display:flex;align-items:center;justify-content:space-between;gap:.7rem;font-size:.76rem;color:var(--text3)}
+  .party-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:.9rem}
+  .party-card{padding:1rem;display:flex;gap:.85rem;align-items:flex-start;transition:transform .2s,box-shadow .2s,border-color .2s}
+  .party-card:hover{transform:translateY(-3px);box-shadow:var(--shadow2);border-color:#c7d6e8}
+  .party-logo{width:52px;height:52px;border-radius:14px;background:#fff;border:1px solid #e3e8f1;padding:.45rem;display:flex;align-items:center;justify-content:center;flex-shrink:0;overflow:hidden}
+  .party-logo img{width:100%;height:100%;object-fit:contain}
+  .party-copy{min-width:0;flex:1}
+  .party-top{display:flex;align-items:flex-start;justify-content:space-between;gap:.7rem}
+  .party-copy strong{display:block;font-size:.92rem;color:var(--text)}
+  .party-copy span{display:block;font-size:.76rem;color:var(--text3);line-height:1.55;margin-top:.2rem}
+  .party-match{display:inline-flex;align-items:center;gap:.35rem;padding:.34rem .7rem;border-radius:999px;background:#eef4fb;border:1px solid #d5e3f3;color:var(--blue2);font-size:.72rem;font-weight:800;white-space:nowrap}
+  .result-note-box{padding:1rem 1.05rem;border-radius:16px;background:#f7f9fc;border:1px dashed #d3dce8;font-size:.82rem;color:var(--text3)}
+  .path-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1rem}
+  .path-card{padding:1rem .95rem;display:flex;gap:.8rem;align-items:flex-start;transition:transform .2s,box-shadow .2s,border-color .2s}
+  .path-card:hover{transform:translateY(-3px);box-shadow:var(--shadow2);border-color:#c7d6e8}
+  .path-icon{width:42px;height:42px;border-radius:12px;background:#edf4fc;color:var(--blue2);display:flex;align-items:center;justify-content:center;flex-shrink:0}
+  .path-copy strong{display:block;font-size:.9rem;color:var(--text)}
+  .path-copy span{display:block;font-size:.78rem;color:var(--text3);line-height:1.55;margin-top:.24rem}
+  .result-actions{display:flex;flex-wrap:wrap;gap:.8rem;margin-top:.4rem}
+  .result-inline-links a{color:var(--blue2);font-weight:700;text-decoration:underline;text-decoration-color:rgba(37,99,168,.35);text-underline-offset:4px}
+  .result-inline-links{font-size:.88rem;color:var(--text2)}
+
+  @media(max-width:1080px){
+    .analysis-grid,.method-grid,.path-grid,.result-grid{grid-template-columns:1fr}
+    .quiz-shell{grid-template-columns:1fr}
+    .quiz-side{position:relative;top:auto}
+    .result-hero-grid{grid-template-columns:1fr}
+  }
+  @media(max-width:960px){
+    .quiz-start-grid,.ideology-grid,.party-grid,.profile-grid{grid-template-columns:1fr}
+  }
+  @media(max-width:760px){
+    .analysis-grid,.method-grid{grid-template-columns:1fr}
+    .question-title{font-size:1.55rem}
+  }
+  @media(max-width:560px){
+    .quiz-start-actions,.result-actions{flex-direction:column;align-items:stretch}
+    .quiz-stats{grid-template-columns:1fr}
+  }
+</style>
+</head>
+<body>
+
+<nav id="navbar" role="navigation" aria-label="Navigation principale">
+  <div class="nav-inner">
+        <a href="index.html" class="nav-logo"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 36" width="28" height="16" aria-hidden="true" style="display:inline-block;vertical-align:middle;flex-shrink:0"><path d="M32 34 A30 30 0 0 1 2 34 Z" fill="#B80000"/><path d="M32 34 A30 30 0 0 0 62 34 Z" fill="#003DA6"/><path d="M9 34 A23 23 0 0 1 32 11" fill="none" stroke="#E03030" stroke-width="3.8" stroke-linecap="round"/><path d="M15 34 A17 17 0 0 1 32 17" fill="none" stroke="#CC2222" stroke-width="3.8" stroke-linecap="round"/><path d="M21 34 A11 11 0 0 1 32 23" fill="none" stroke="#AA1515" stroke-width="3.8" stroke-linecap="round"/><path d="M55 34 A23 23 0 0 0 32 11" fill="none" stroke="#3366EE" stroke-width="3.8" stroke-linecap="round"/><path d="M49 34 A17 17 0 0 0 32 17" fill="none" stroke="#2255CC" stroke-width="3.8" stroke-linecap="round"/><path d="M43 34 A11 11 0 0 0 32 23" fill="none" stroke="#1144AA" stroke-width="3.8" stroke-linecap="round"/><line x1="32" y1="11" x2="32" y2="34" stroke="rgba(255,255,255,0.75)" stroke-width="1.5" stroke-dasharray="2,2"/><line x1="2" y1="34" x2="62" y2="34" stroke="rgba(255,255,255,0.55)" stroke-width="1.5"/></svg> <span>Comprendre la</span> Politique</a>
+    <button class="nav-arrow nav-arrow-left" id="navArrowLeft" aria-label="D&eacute;filer la navigation vers la gauche">&#8249;</button>
+        <ul class="nav-links" id="navLinks">
+      <li><a href="index.html">Accueil</a></li>
+      <li><a href="comprendre-la-politique.html">Introduction</a></li>
+      <li><a href="partis-politiques.html">Partis politiques</a></li>
+      <li><a href="profil-politique.html" aria-current="page">Profil politique</a></li>
+      <li><a href="systeme-politique.html">Syst&egrave;me politique</a></li>
+      <li><a href="culture-politique.html">Culture politique</a></li>
+      <li><a href="actualites-politiques.html">Actualit&eacute;s</a></li>
+      <li><a href="articles.html">Articles</a></li>
+      <li><a href="gagnants-perdants.html">Gagnants / perdants</a></li>
+      <li><a href="profils-electoraux.html">Profils &eacute;lectoraux</a></li>
+      <li><a href="guide-politique.html">Guide PDF</a></li>
+      <li><a href="apprendre.html">Apprendre</a></li>
+    </ul>
+    <button class="nav-arrow nav-arrow-right" id="navArrowRight" aria-label="D&eacute;filer la navigation vers la droite">&#8250;</button>
+    <div class="nav-actions"><button class="nav-toggle" id="navToggle" aria-label="Menu mobile"><span></span><span></span><span></span></button>
+      <a href="https://ko-fi.com/comprendrelapolitique" target="_blank" rel="noopener noreferrer" class="nav-support-link" aria-label="Soutenir Comprendre la Politique sur Ko-fi">
+        <span class="support-heart" aria-hidden="true">&#129293;</span>
+        <span>Soutenir</span>
+      </a></div>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="hero-shell">
+    <div class="hero-copy">
+      <div class="hero-badge"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l7 4v6c0 5-3.5 9.74-7 10-3.5-.26-7-5-7-10V6l7-4z"/></svg> Test interactif premium</div>
+      <h1>Quel est votre <span class="hero-highlight">profil politique</span> ?</h1>
+      <p>Répondez à une série de questions simples pour faire ressortir vos grandes priorités, vos sensibilités idéologiques et des repères indicatifs vers les <a href="partis-politiques.html" style="color:var(--blue2);font-weight:700">partis politiques</a> pouvant être proches de certaines de vos réponses. Le but n'est pas de vous dire pour qui voter, mais de relier vos intuitions aux grandes familles d'idées présentées dans <a href="comprendre-la-politique.html" style="color:var(--blue2);font-weight:700">l'introduction à la politique française</a>.</p>
+      <div class="hero-actions"><a href="#profil-test" class="page-btn page-btn-primary" id="heroStartBtn"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polygon points="5 3 19 12 5 21 5 3"/></svg> Commencer le test</a><a href="#methode" class="page-btn page-btn-secondary"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4"/><path d="M12 8h.01"/></svg> Voir la méthode</a></div>
+      <div class="hero-note"><span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20V10"/><path d="M18 20V4"/><path d="M6 20v-6"/></svg> 15 questions</span><span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 6h13"/><path d="M8 12h13"/><path d="M8 18h13"/><path d="M3 6h.01"/><path d="M3 12h.01"/><path d="M3 18h.01"/></svg> Échelle claire à 5 niveaux</span><span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><path d="M7 15l4-4 3 3 5-6"/></svg> Résultat nuancé et détaillé</span></div>
+    </div>
+    <div class="hero-panel">
+      <div class="hero-card"><div class="kicker">En quelques minutes</div><strong>Votre boussole politique</strong><p>Le test synthétise des thèmes comme l'économie, les impôts, l'écologie, l'Europe, la sécurité ou le rôle de l'État pour faire apparaître un profil principal, des sensibilités secondaires et des pistes pour aller plus loin.</p></div>
+      <div class="mini-list">
+        <div class="mini-item"><div class="mini-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12h16"/><path d="M12 4v16"/></svg></div><div><strong>Nuancé</strong><span>Le résultat évite les étiquettes brutales et garde une vraie zone grise.</span></div></div>
+        <div class="mini-item"><div class="mini-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v18"/><path d="M5 7h14"/><path d="M5 17h14"/></svg></div><div><strong>Idéologies</strong><span>Vous voyez les courants qui ressortent le plus parmi les grandes familles politiques françaises.</span></div></div>
+        <div class="mini-item"><div class="mini-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 11 12 14 22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg></div><div><strong>Repères indicatifs</strong><span>Des partis potentiellement proches sont proposés sans jamais devenir une consigne de vote.</span></div></div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<div class="note-wrap"><div class="note-box"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4"/><path d="M12 8h.01"/></svg><div><strong>Réponse rapide :</strong> ce test politique repose sur une série de questions courtes avec une échelle de réponse simple. À la fin, vous obtenez un profil dominant, des idéologies qui ressortent, quelques partis pouvant être proches de certaines de vos priorités et des liens pour approfondir avec le reste du site.</div></div></div>
+
+<main class="page-main">
+  <section class="analysis-section" aria-labelledby="analyseTitle">
+    <div class="section-head">
+      <div>
+        <div class="section-label">Ce que le test regarde</div>
+        <h2 id="analyseTitle">Une lecture large de vos priorités politiques</h2>
+        <p>Le questionnaire croise plusieurs thèmes pour éviter les raccourcis trop rapides. On peut être attaché aux <a href="gagnants-perdants.html" style="color:var(--blue2);font-weight:700">services publics et à la redistribution</a>, tout en restant prudent sur l'Europe ou plus ferme sur la sécurité. C'est cette combinaison qui fait émerger un profil crédible.</p>
+      </div>
+    </div>
+    <div class="analysis-grid">
+      <article class="article-card analysis-card reveal-card">
+        <div class="analysis-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"><path d="M12 1v22"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7H14.5a3.5 3.5 0 0 1 0 7H6"/></svg></div>
+        <h3>Économie, impôts, rôle de l'État</h3>
+        <p>Le test mesure votre rapport à la redistribution, à l'intervention publique, au marché et à la protection sociale. C'est souvent là que se joue la grande différence entre gauche, centre et droite.</p>
+        <div class="analysis-meta"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12h16"/><path d="M12 4v16"/></svg> Fiscalité, services publics, investissement collectif</div>
+      </article>
+      <article class="article-card analysis-card reveal-card">
+        <div class="analysis-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"><path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.5 19 2c1 2 2 4.2 2 8 0 5.5-4.8 10-10 10z"/><path d="M2 21c0-3 1.9-5.4 5.1-6 2.4-.5 4.9-2 5.9-3"/></svg></div>
+        <h3>Écologie, société, libertés</h3>
+        <p>Les réponses mettent aussi en lumière votre sensibilité écologique, votre rapport aux libertés individuelles, à l'ouverture de la société et aux changements culturels. Cela permet de relier vos réponses aux grandes idéologies expliquées dans <a href="comprendre-la-politique.html" style="color:var(--blue2);font-weight:700">l'introduction politique</a>.</p>
+        <div class="analysis-meta"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/></svg> Écologie, progressisme, arbitrages de société</div>
+      </article>
+      <article class="article-card analysis-card reveal-card">
+        <div class="analysis-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12a9 9 0 1 1-9-9"/><path d="M21 3l-9 9"/><path d="M15 3h6v6"/></svg></div>
+        <h3>Ordre, souveraineté, Europe</h3>
+        <p>Le test prend enfin en compte la sécurité, l'immigration, la souveraineté nationale et le rapport à l'intégration européenne. C'est ce qui permet de distinguer un profil plus autorité, plus souverainiste, plus centriste ou plus fédéraliste.</p>
+        <div class="analysis-meta"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg> Sécurité, frontières, institutions et Europe</div>
+      </article>
+    </div>
+  </section>
+
+  <section class="quiz-section section-band" id="profil-test" aria-labelledby="quizTitle">
+    <div class="section-head">
+      <div>
+        <div class="section-label">Le test</div>
+        <h2 id="quizTitle">Répondez pas à pas, sans pression</h2>
+        <p>Les questions apparaissent une par une pour garder une lecture fluide. Chaque réponse nourrit plusieurs dimensions en même temps afin d'obtenir un résultat plus fin qu'un simple clivage gauche-droite.</p>
+      </div>
+    </div>
+    <div class="quiz-shell">
+      <aside class="quiz-side">
+        <div class="quiz-panel">
+          <div class="progress-meta">
+            <div>
+              <div class="section-label" style="margin-bottom:.25rem">Progression</div>
+              <div class="progress-count"><span id="progressCount">0</span> / <span id="totalCount">15</span> questions</div>
+            </div>
+            <div class="current-theme" id="currentThemeChip"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20V10"/><path d="M18 20V4"/><path d="M6 20v-6"/></svg><span>Prêt à commencer</span></div>
+          </div>
+          <div class="progress-track"><div class="progress-fill" id="progressFill"></div></div>
+          <p>Répondez instinctivement. Il n'y a pas de bonne réponse, seulement des priorités différentes.</p>
+          <div class="quiz-stats">
+            <div class="quiz-stat"><strong>5</strong><span>Niveaux de réponse simples et cohérents</span></div>
+            <div class="quiz-stat"><strong>8</strong><span>Dimensions utilisées pour affiner le résultat</span></div>
+            <div class="quiz-stat"><strong>2 à 4</strong><span>Idéologies mises en avant à la fin</span></div>
+            <div class="quiz-stat"><strong>4 min</strong><span>Environ pour terminer le test</span></div>
+          </div>
+        </div>
+        <div class="quiz-panel">
+          <h3>Thèmes couverts</h3>
+          <p>Le test traverse l'essentiel des débats politiques français actuels.</p>
+          <ul class="theme-list" id="themeList"></ul>
+        </div>
+      </aside>
+
+      <div class="quiz-stage">
+        <div class="quiz-start-card" id="quizStartCard">
+          <h3>Un résultat utile, pas une étiquette figée</h3>
+          <p>Vous allez obtenir un profil principal, des sensibilités secondaires, des idéologies dominantes et des repères vers des partis pouvant parfois correspondre à certaines de vos priorités. Cela reste une lecture pédagogique, jamais une consigne de vote.</p>
+          <div class="quiz-start-grid">
+            <div class="quiz-start-item"><div class="mini-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16v16H4z"/><path d="M8 8h8"/><path d="M8 12h8"/><path d="M8 16h5"/></svg></div><strong>Questions simples</strong><span>Des formulations courtes, rapides à lire et compréhensibles pour débuter.</span></div>
+            <div class="quiz-start-item"><div class="mini-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v18"/><path d="M5 7h14"/><path d="M5 17h14"/></svg></div><strong>Lecture nuancée</strong><span>Le résultat combine plusieurs axes : écologie, État, Europe, sécurité, libertés...</span></div>
+            <div class="quiz-start-item"><div class="mini-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><path d="M7 14l4-4 3 3 5-6"/></svg></div><strong>Pour aller plus loin</strong><span>Le résultat ouvre vers les pages du site les plus pertinentes selon ce qui ressort chez vous.</span></div>
+          </div>
+          <div class="quiz-start-actions">
+            <button class="page-btn page-btn-primary" id="startQuizBtn"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polygon points="5 3 19 12 5 21 5 3"/></svg> Lancer le test</button>
+            <a href="articles.html" class="page-btn page-btn-light"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16v16H4z"/><path d="M8 8h8"/><path d="M8 12h8"/><path d="M8 16h5"/></svg> Revoir les bases avant</a>
+          </div>
+          <div class="quiz-disclaimer"><strong>Important :</strong> le test n'est pas scientifique et n'a pas vocation à enfermer dans une case. Il sert surtout à clarifier des tendances, à mettre des mots sur des intuitions et à relier ces tendances au paysage politique français.</div>
+        </div>
+
+        <div class="question-card hidden" id="questionCard">
+          <div class="question-wrap" id="questionWrap">
+            <div class="question-top">
+              <div>
+                <div class="question-count" id="questionCountLabel">Question 1 sur 15</div>
+                <h3 class="question-title" id="questionTitle">Question</h3>
+                <p class="question-help" id="questionHelp">Choisissez la réponse qui vous ressemble le plus.</p>
+              </div>
+              <div class="question-theme" id="questionTheme"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12h16"/><path d="M12 4v16"/></svg><span>Thème</span></div>
+            </div>
+            <div class="answer-list" id="answerList"></div>
+            <div class="question-footer">
+              <button class="page-btn page-btn-light" id="prevQuestionBtn"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"/></svg> Question précédente</button>
+              <p>Vos réponses servent uniquement à afficher le résultat sur cette page.</p>
+            </div>
+            <div class="question-empty" id="questionEmpty">Choisissez une réponse pour continuer.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="result-section" id="resultSection" aria-labelledby="resultTitle">
+    <div class="section-head">
+      <div>
+        <div class="section-label">Votre résultat</div>
+        <h2 id="resultTitle">Une lecture nuancée de vos réponses</h2>
+        <p>Ce résultat est un repère pédagogique. Il vise à faire ressortir des tendances, pas à figer une identité politique définitive.</p>
+      </div>
+    </div>
+
+    <div class="result-shell">
+      <div class="result-hero-card" id="resultHeroCard">
+        <div class="result-kicker"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20V10"/><path d="M18 20V4"/><path d="M6 20v-6"/></svg> Résultat principal</div>
+        <div class="result-hero-grid">
+          <div>
+            <h2 id="resultProfileName">Votre <span>profil politique</span></h2>
+            <p id="resultSummary">Le résultat apparaîtra ici à la fin du test.</p>
+            <div class="result-tag-row" id="resultTraitTags"></div>
+          </div>
+          <div class="result-side-stack">
+            <div class="result-side-card">
+              <strong id="resultHook">Un profil équilibré</strong>
+              <span id="resultHookText">Une accroche synthétique viendra résumer l'esprit général du profil.</span>
+            </div>
+            <div class="result-side-card">
+              <strong>Repère important</strong>
+              <span>Les partis proposés plus bas sont seulement des points de repère indicatifs. Vos réponses peuvent aussi chevaucher plusieurs sensibilités.</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="result-grid">
+        <div class="result-card">
+          <h3><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><path d="M7 14l4-4 3 3 5-6"/></svg> Vos grands équilibres</h3>
+          <div class="dimension-grid" id="dimensionGrid"></div>
+        </div>
+        <div class="result-card">
+          <h3><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l7 4v6c0 5-3.5 9.74-7 10-3.5-.26-7-5-7-10V6l7-4z"/></svg> Ce qui ressort chez vous</h3>
+          <div class="trait-list" id="traitList"></div>
+        </div>
+      </div>
+
+      <div class="result-grid">
+        <div class="result-card">
+          <h3><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4"/><path d="M12 8h.01"/></svg> Pourquoi ce résultat</h3>
+          <div class="why-copy" id="whyCopy"></div>
+        </div>
+        <div class="result-card">
+          <h3><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v18"/><path d="M5 7h14"/><path d="M5 17h14"/></svg> Profils proches</h3>
+          <div class="profile-grid" id="profileGrid"></div>
+        </div>
+      </div>
+
+      <div class="result-card">
+        <h3><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16v16H4z"/><path d="M8 8h8"/><path d="M8 12h8"/><path d="M8 16h5"/></svg> Idéologies dominantes</h3>
+        <div class="ideology-grid" id="ideologyGrid"></div>
+      </div>
+
+      <div class="result-card">
+        <h3><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 11 12 14 22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg> Partis potentiellement proches</h3>
+        <p style="font-size:.86rem;color:var(--text3);margin-bottom:1rem">Ces repères restent indicatifs. Ils suggèrent des partis pouvant être proches de certaines de vos priorités, sans jamais constituer une consigne de vote.</p>
+        <div class="party-grid" id="partyGrid"></div>
+        <div class="result-note-box" style="margin-top:1rem">Le résultat final ne remplace pas la lecture des programmes. Pour affiner, comparez ensuite les positions détaillées dans <a href="partis-politiques.html" style="color:var(--blue2);font-weight:700;text-decoration:underline">la page sur les partis politiques</a>.</div>
+      </div>
+
+      <div class="result-card">
+        <h3><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg> Pour aller plus loin</h3>
+        <p class="result-inline-links" id="resultInlineLinks">Les liens les plus utiles s'afficheront ici selon votre profil.</p>
+        <div class="path-grid" id="pathGrid" style="margin-top:1rem"></div>
+        <div class="result-actions">
+          <button class="page-btn page-btn-primary" id="restartQuizBtn"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="1 4 1 10 7 10"/><path d="M3.51 15a9 9 0 1 0 2.13-9.36L1 10"/></svg> Recommencer</button>
+          <a href="partis-politiques.html" class="page-btn page-btn-light"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 11 12 14 22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg> Découvrir les partis politiques</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="method-section section-band" id="methode" aria-labelledby="methodeTitle">
+    <div class="section-head">
+      <div>
+        <div class="section-label">Méthode</div>
+        <h2 id="methodeTitle">Comment le résultat est construit</h2>
+        <p>Le test n'essaie pas de résumer la politique à une seule ligne. Il combine plusieurs dimensions idéologiques pour produire un profil principal, des profils voisins et des repères vers des <a href="articles.html" style="color:var(--blue2);font-weight:700">articles pédagogiques</a> ou des pages plus détaillées du site.</p>
+      </div>
+    </div>
+    <div class="method-grid">
+      <article class="article-card method-card reveal-card">
+        <span class="article-chip">1. Réponses Likert</span>
+        <h3>Une échelle simple, mais informative</h3>
+        <p>Chaque réponse va de « Tout à fait d'accord » à « Pas du tout d'accord ». Ce format évite le choix binaire et laisse une vraie place à la nuance et aux positions modérées.</p>
+        <ul class="method-list">
+          <li>Lecture rapide sur mobile comme sur desktop</li>
+          <li>Une seule question à la fois pour garder le confort de lecture</li>
+          <li>Un résultat qui valorise les zones de nuance</li>
+        </ul>
+      </article>
+      <article class="article-card method-card reveal-card">
+        <span class="article-chip">2. Plusieurs dimensions</span>
+        <h3>Pas seulement gauche contre droite</h3>
+        <p>Le calcul croise plusieurs axes : redistribution, marché, État, écologie, sécurité, Europe, libertés et souveraineté. C'est ce qui permet de distinguer des profils très différents au sein d'un même camp apparent.</p>
+        <ul class="method-list">
+          <li>Profil plus social ou plus libéral</li>
+          <li>Profil plus écologiste, plus autorité ou plus progressiste</li>
+          <li>Rapport à l'Europe et à la souveraineté mieux pris en compte</li>
+        </ul>
+      </article>
+      <article class="article-card method-card reveal-card">
+        <span class="article-chip">3. Lecture pédagogique</span>
+        <h3>Un outil pour comprendre, pas pour enfermer</h3>
+        <p>Le résultat vise à relier vos réponses aux grandes idéologies, puis au paysage français. Pour replacer cela dans les institutions et les mesures concrètes, vous pouvez ensuite explorer <a href="systeme-politique.html" style="color:var(--blue2);font-weight:700">le système politique</a> ou <a href="gagnants-perdants.html" style="color:var(--blue2);font-weight:700">qui gagne et qui perd selon les mesures</a>.</p>
+        <ul class="method-list">
+          <li>Idéologies présentées comme sensibilités dominantes</li>
+          <li>Partis proposés comme repères indicatifs</li>
+          <li>Aucune logique de consigne de vote</li>
+        </ul>
+      </article>
+    </div>
+  </section>
+</main>
+
+<div class="adsense-inline-slot" style="max-width:1100px;margin:0 auto 1.8rem;padding:0 1.5rem;">
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8582651575445662" crossorigin="anonymous"></script>
+  <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-8582651575445662" data-ad-slot="9089655637" data-ad-format="auto" data-full-width-responsive="true"></ins>
+  <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+</div>
+
+<section class="exploration-section" aria-label="Continuer votre exploration politique">
+  <div class="exploration-inner">
+    <div style="text-align:center;margin-bottom:.4rem;"><span class="exploration-badge"><span style="display:inline-flex;align-items:center;vertical-align:middle;margin-right:.3rem"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"/></svg></span>Continuer l'exploration</span></div>
+    <h2 class="exploration-title">Allez plus loin dans votre<br><em>exploration politique</em></h2>
+    <p class="exploration-subtitle">Trois pages complémentaires pour continuer dans un ordre logique.</p>
+    <div class="exploration-grid">
+      <a href="comprendre-la-politique.html" class="exploration-card"><div class="exploration-icon" style="color:var(--gold)"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg></div><div class="exploration-text"><strong>Comprendre la politique</strong><span>Revenez sur les grands repères idéologiques et les notions de base -&gt;</span></div><div class="exploration-arrow">&rarr;</div></a>
+      <a href="partis-politiques.html" class="exploration-card"><div class="exploration-icon" style="color:var(--gold)"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 11 12 14 22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg></div><div class="exploration-text"><strong>Partis politiques</strong><span>Comparez les partis et leurs positions sur les grands sujets -&gt;</span></div><div class="exploration-arrow">&rarr;</div></a>
+      <a href="gagnants-perdants.html" class="exploration-card"><div class="exploration-icon" style="color:var(--gold)"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><path d="M7 14l4-4 3 3 5-6"/></svg></div><div class="exploration-text"><strong>Gagnants / perdants</strong><span>Voyez qui profite ou non des grandes mesures politiques -&gt;</span></div><div class="exploration-arrow">&rarr;</div></a>
+    </div>
+  </div>
+</section>
+
+<section class="share-section" aria-label="Partager sur les réseaux sociaux">
+  <div class="share-inner">
+    <div class="share-title"><span style="display:inline-flex;align-items:center;gap:.35rem;vertical-align:middle"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg></span> Partager ce site</div>
+    <div class="share-btns">
+      <a href="https://www.facebook.com/sharer/sharer.php?u=https://comprendrelapolitique.fr/profil-politique.html" target="_blank" rel="noopener noreferrer" class="share-btn share-btn-fb" aria-label="Partager sur Facebook"><svg viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg> Facebook</a>
+      <a href="https://twitter.com/intent/tweet?url=https://comprendrelapolitique.fr/profil-politique.html&amp;text=Quel%20est%20votre%20profil%20politique%20%3F" target="_blank" rel="noopener noreferrer" class="share-btn share-btn-x" aria-label="Partager sur X / Twitter"><svg viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.74l7.73-8.835L1.254 2.25H8.08l4.253 5.622zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg> X / Twitter</a>
+      <a href="https://www.linkedin.com/sharing/share-offsite/?url=https://comprendrelapolitique.fr/profil-politique.html" target="_blank" rel="noopener noreferrer" class="share-btn share-btn-li" aria-label="Partager sur LinkedIn"><svg viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg> LinkedIn</a>
+      <a href="https://api.whatsapp.com/send?text=Quel%20est%20votre%20profil%20politique%20%3F%20https://comprendrelapolitique.fr/profil-politique.html" target="_blank" rel="noopener noreferrer" class="share-btn share-btn-wa" aria-label="Partager sur WhatsApp"><svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg> WhatsApp</a>
+      <a href="https://t.me/share/url?url=https://comprendrelapolitique.fr/profil-politique.html&amp;text=Quel%20est%20votre%20profil%20politique%20%3F" target="_blank" rel="noopener noreferrer" class="share-btn share-btn-tg" aria-label="Partager sur Telegram"><svg viewBox="0 0 24 24"><path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/></svg> Telegram</a>
+    </div>
+  </div>
+</section>
+
+<footer role="contentinfo">
+  <div class="footer-inner">
+    <div class="footer-logo"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 36" width="28" height="16" aria-hidden="true" style="display:inline-block;vertical-align:middle;flex-shrink:0;opacity:.9"><path d="M32 34 A30 30 0 0 1 2 34 Z" fill="#B80000"/><path d="M32 34 A30 30 0 0 0 62 34 Z" fill="#003DA6"/><path d="M9 34 A23 23 0 0 1 32 11" fill="none" stroke="#E03030" stroke-width="3.8" stroke-linecap="round"/><path d="M15 34 A17 17 0 0 1 32 17" fill="none" stroke="#CC2222" stroke-width="3.8" stroke-linecap="round"/><path d="M21 34 A11 11 0 0 1 32 23" fill="none" stroke="#AA1515" stroke-width="3.8" stroke-linecap="round"/><path d="M55 34 A23 23 0 0 0 32 11" fill="none" stroke="#3366EE" stroke-width="3.8" stroke-linecap="round"/><path d="M49 34 A17 17 0 0 0 32 17" fill="none" stroke="#2255CC" stroke-width="3.8" stroke-linecap="round"/><path d="M43 34 A11 11 0 0 0 32 23" fill="none" stroke="#1144AA" stroke-width="3.8" stroke-linecap="round"/><line x1="32" y1="11" x2="32" y2="34" stroke="rgba(255,255,255,0.75)" stroke-width="1.5" stroke-dasharray="2,2"/><line x1="2" y1="34" x2="62" y2="34" stroke="rgba(255,255,255,0.55)" stroke-width="1.5"/></svg> <span>Comprendre la</span> Politique</div>
+    <p>Site p&eacute;dagogique &agrave; but &eacute;ducatif. Contenu &eacute;quilibr&eacute; et non partisan.<br>Les donn&eacute;es de sondages sont issues des principaux instituts (IFOP, BVA, Odoxa, Ipsos) et sont indicatives.</p>
+        <div class="footer-links">
+      <a href="index.html">Accueil</a>
+      <a href="comprendre-la-politique.html">Introduction</a>
+      <a href="partis-politiques.html">Partis politiques</a>
+      <a href="profil-politique.html">Profil politique</a>
+      <a href="systeme-politique.html">Syst&egrave;me politique</a>
+      <a href="culture-politique.html">Culture politique</a>
+      <a href="actualites-politiques.html">Actualit&eacute;s</a>
+      <a href="articles.html">Articles</a>
+      <a href="gagnants-perdants.html">Gagnants / perdants</a>
+      <a href="profils-electoraux.html">Profils &eacute;lectoraux</a>
+      <a href="guide-politique.html">Guide PDF</a>
+      <a href="apprendre.html">Apprendre</a>
+      <a href="mentions-legales.html">Mentions l&eacute;gales</a>
+    </div>
+    <div class="footer-social" aria-label="Réseaux sociaux Comprendre la Politique">
+      <div class="footer-social-title">Suivre le site</div>
+      <div class="footer-social-links">
+        <a href="https://www.tiktok.com/@comprendrelapolitique.fr" target="_blank" rel="noopener noreferrer" class="footer-social-link social-tiktok" aria-label="TikTok Comprendre la Politique">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14.6 3c.34 2.23 1.62 3.8 3.76 4.3v2.48a6.42 6.42 0 0 1-3.08-.84v5.07c0 3.38-2.26 5.69-5.52 5.69-3.1 0-5.26-2.15-5.26-4.95 0-2.95 2.28-5.08 5.53-5.02v2.39c-1.77-.1-2.98.97-2.98 2.48 0 1.42 1.01 2.42 2.38 2.42 1.53 0 2.68-1.01 2.68-3.02V3h2.49z"/></svg>
+        </a>
+        <a href="https://www.instagram.com/comprendre_la_politique.fr" target="_blank" rel="noopener noreferrer" class="footer-social-link social-instagram" aria-label="Instagram Comprendre la Politique">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7.75 2h8.5A5.75 5.75 0 0 1 22 7.75v8.5A5.75 5.75 0 0 1 16.25 22h-8.5A5.75 5.75 0 0 1 2 16.25v-8.5A5.75 5.75 0 0 1 7.75 2zm0 1.9A3.85 3.85 0 0 0 3.9 7.75v8.5a3.85 3.85 0 0 0 3.85 3.85h8.5a3.85 3.85 0 0 0 3.85-3.85v-8.5A3.85 3.85 0 0 0 16.25 3.9h-8.5zm8.95 1.42a1.18 1.18 0 1 1 0 2.36 1.18 1.18 0 0 1 0-2.36zM12 6.85A5.15 5.15 0 1 1 6.85 12 5.16 5.16 0 0 1 12 6.85zm0 1.9A3.25 3.25 0 1 0 15.25 12 3.25 3.25 0 0 0 12 8.75z"/></svg>
+        </a>
+        <a href="https://www.youtube.com/@comprendrelapolitique" target="_blank" rel="noopener noreferrer" class="footer-social-link social-youtube" aria-label="YouTube Comprendre la Politique">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21.8 8.4a2.9 2.9 0 0 0-2.04-2.06C17.97 5.8 12 5.8 12 5.8s-5.97 0-7.76.54A2.9 2.9 0 0 0 2.2 8.4 30.7 30.7 0 0 0 1.7 12a30.7 30.7 0 0 0 .5 3.6 2.9 2.9 0 0 0 2.04 2.06C6.03 18.2 12 18.2 12 18.2s5.97 0 7.76-.54a2.9 2.9 0 0 0 2.04-2.06 30.7 30.7 0 0 0 .5-3.6 30.7 30.7 0 0 0-.5-3.6zM10.1 15.2V8.8L15.7 12l-5.6 3.2z"/></svg>
+        </a>
+      </div>
+    </div>
+    <div style="margin-top:1.8rem;padding-top:1.5rem;border-top:1px solid rgba(255,255,255,.08);max-width:760px;margin-left:auto;margin-right:auto;">
+      <p style="color:rgba(255,255,255,.55);font-size:.78rem;font-weight:600;margin-bottom:.5rem;letter-spacing:.06em;text-transform:uppercase;"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg> Sources &amp; fiabilit&eacute;</p>
+      <p style="color:rgba(255,255,255,.3);font-size:.75rem;line-height:1.75;">Les informations pr&eacute;sent&eacute;es sur ce site sont issues de sources publiques et institutionnelles : <strong style="color:rgba(255,255,255,.5)">Minist&egrave;re de l'Int&eacute;rieur</strong> (r&eacute;sultats &eacute;lectoraux), <strong style="color:rgba(255,255,255,.5)">Conseil Constitutionnel</strong>, <strong style="color:rgba(255,255,255,.5)">Assembl&eacute;e Nationale</strong>, <strong style="color:rgba(255,255,255,.5)">vie-publique.fr</strong>, <strong style="color:rgba(255,255,255,.5)">Archives Nationales</strong> et <strong style="color:rgba(255,255,255,.5)">Gallica (BNF)</strong>. Les donn&eacute;es de sondages sont fournies par IFOP, BVA, Odoxa et Ipsos &agrave; titre indicatif. Contenu &eacute;ducatif, &eacute;quilibr&eacute; et non partisan.</p>
+    </div>
+    <p style="margin-top:1.5rem;font-size:.7rem">&copy; 2026 Comprendre la Politique - comprendrelapolitique.fr | Contenu p&eacute;dagogique, non partisan | Donn&eacute;es : Minist&egrave;re de l'Int&eacute;rieur</p>
+  </div>
+</footer>
+
+<button id="scrollTopBtn" aria-label="Retour en haut de page" title="Retour en haut">&#8593;</button>
+
+<div id="cookieBanner" role="dialog" aria-label="Consentement aux cookies" aria-live="polite">
+  <div class="cookie-title">Cookies et mesure d'audience</div>
+  <p>Des cookies Google Analytics sont utilis&eacute;s <strong>uniquement pour mesurer l'audience</strong> et am&eacute;liorer le contenu p&eacute;dagogique.</p>
+  <div class="cookie-actions"><a href="mentions-legales.html" class="cookie-link">Politique de confidentialit&eacute;</a><button class="cookie-accept" id="cookieAccept">Accepter</button></div>
+</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  const navToggle = document.getElementById('navToggle');
+  const navLinks = document.getElementById('navLinks');
+  const navbar = document.getElementById('navbar');
+  const scrollBtn = document.getElementById('scrollTopBtn');
+  const cookieBanner = document.getElementById('cookieBanner');
+  const cookieAccept = document.getElementById('cookieAccept');
+  const navArrowLeft = document.getElementById('navArrowLeft');
+  const navArrowRight = document.getElementById('navArrowRight');
+  const revealCards = Array.from(document.querySelectorAll('.reveal-card'));
+
+  if (navToggle && navLinks) {
+    navToggle.addEventListener('click', function() {
+      navLinks.classList.toggle('open');
+    });
+  }
+
+  function updateNavArrows() {
+    if (!navLinks || !navArrowLeft || !navArrowRight) return;
+    const atLeft = navLinks.scrollLeft <= 2;
+    const atRight = navLinks.scrollLeft >= navLinks.scrollWidth - navLinks.clientWidth - 2;
+    navArrowLeft.classList.toggle('visible', !atLeft);
+    navArrowRight.classList.toggle('visible', !atRight);
+  }
+
+  if (navLinks && navArrowLeft && navArrowRight) {
+    navArrowLeft.addEventListener('click', function() { navLinks.scrollBy({ left: -220, behavior: 'smooth' }); });
+    navArrowRight.addEventListener('click', function() { navLinks.scrollBy({ left: 220, behavior: 'smooth' }); });
+    navLinks.addEventListener('scroll', updateNavArrows, { passive: true });
+    window.addEventListener('resize', updateNavArrows, { passive: true });
+    window.setTimeout(updateNavArrows, 120);
+  }
+
+  if ('IntersectionObserver' in window) {
+    const observer = new IntersectionObserver(function(entries) {
+      entries.forEach(function(entry) {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('is-visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.18 });
+    revealCards.forEach(function(card) { observer.observe(card); });
+  } else {
+    revealCards.forEach(function(card) { card.classList.add('is-visible'); });
+  }
+
+  window.addEventListener('scroll', function() {
+    if (navbar) { navbar.classList.toggle('scrolled', window.scrollY > 50); }
+    if (scrollBtn) {
+      scrollBtn.style.opacity = window.scrollY > 420 ? '1' : '0';
+      scrollBtn.style.pointerEvents = window.scrollY > 420 ? 'all' : 'none';
+    }
+  }, { passive: true });
+
+  if (scrollBtn) {
+    scrollBtn.addEventListener('click', function() {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+  }
+
+  if (cookieBanner && window.localStorage.getItem('cookieConsent') !== 'accepted') {
+    window.setTimeout(function() { cookieBanner.classList.add('show'); }, 2200);
+  }
+
+  if (cookieAccept) {
+    cookieAccept.addEventListener('click', function() {
+      window.localStorage.setItem('cookieConsent', 'accepted');
+      if (cookieBanner) {
+        cookieBanner.classList.remove('show');
+        cookieBanner.classList.add('hide');
+        window.setTimeout(function() { cookieBanner.style.display = 'none'; }, 400);
+      }
+    });
+  }
+
+  const startQuizBtn = document.getElementById('startQuizBtn');
+  const heroStartBtn = document.getElementById('heroStartBtn');
+  const prevQuestionBtn = document.getElementById('prevQuestionBtn');
+  const restartQuizBtn = document.getElementById('restartQuizBtn');
+  const quizStartCard = document.getElementById('quizStartCard');
+  const questionCard = document.getElementById('questionCard');
+  const questionWrap = document.getElementById('questionWrap');
+  const progressCountEl = document.getElementById('progressCount');
+  const totalCountEl = document.getElementById('totalCount');
+  const progressFillEl = document.getElementById('progressFill');
+  const currentThemeChip = document.getElementById('currentThemeChip');
+  const themeListEl = document.getElementById('themeList');
+  const questionCountLabel = document.getElementById('questionCountLabel');
+  const questionTitle = document.getElementById('questionTitle');
+  const questionHelp = document.getElementById('questionHelp');
+  const questionTheme = document.getElementById('questionTheme');
+  const answerList = document.getElementById('answerList');
+  const questionEmpty = document.getElementById('questionEmpty');
+  const resultSection = document.getElementById('resultSection');
+  const resultHeroCard = document.getElementById('resultHeroCard');
+  const resultProfileName = document.getElementById('resultProfileName');
+  const resultSummary = document.getElementById('resultSummary');
+  const resultTraitTags = document.getElementById('resultTraitTags');
+  const resultHook = document.getElementById('resultHook');
+  const resultHookText = document.getElementById('resultHookText');
+  const dimensionGrid = document.getElementById('dimensionGrid');
+  const traitList = document.getElementById('traitList');
+  const whyCopy = document.getElementById('whyCopy');
+  const profileGrid = document.getElementById('profileGrid');
+  const ideologyGrid = document.getElementById('ideologyGrid');
+  const partyGrid = document.getElementById('partyGrid');
+  const pathGrid = document.getElementById('pathGrid');
+  const resultInlineLinks = document.getElementById('resultInlineLinks');
+
+  if (!startQuizBtn || !questionCard || !answerList || !resultSection) {
+    return;
+  }
+
+  const dimensionKeys = ['redistribution', 'market', 'state', 'ecology', 'authority', 'progressive', 'europe', 'sovereignty'];
+
+  const icons = {
+    economy: '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 1v22"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7H14.5a3.5 3.5 0 0 1 0 7H6"/></svg>',
+    tax: '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><path d="M7 14l4-4 3 3 5-6"/></svg>',
+    school: '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3L2 8l10 5 10-5-10-5z"/><path d="M6 10.6V15c0 1.4 2.7 3 6 3s6-1.6 6-3v-4.4"/></svg>',
+    leaf: '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.5 19 2c1 2 2 4.2 2 8 0 5.5-4.8 10-10 10z"/><path d="M2 21c0-3 1.9-5.4 5.1-6 2.4-.5 4.9-2 5.9-3"/></svg>',
+    shield: '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l7 4v6c0 5-3.5 9.74-7 10-3.5-.26-7-5-7-10V6l7-4z"/></svg>',
+    freedom: '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v18"/><path d="M5 7h14"/><path d="M5 17h14"/></svg>',
+    europe: '<svg width="16" height="16" viewBox="0 0 24 24" fill="none"><rect x="2.5" y="4" width="19" height="16" rx="3" fill="#1E3A8A"/><g fill="#FACC15"><circle cx="12" cy="7.2" r="0.9"/><circle cx="14.8" cy="8.1" r="0.9"/><circle cx="16.6" cy="10.4" r="0.9"/><circle cx="16.6" cy="13.6" r="0.9"/><circle cx="14.8" cy="15.9" r="0.9"/><circle cx="12" cy="16.8" r="0.9"/><circle cx="9.2" cy="15.9" r="0.9"/><circle cx="7.4" cy="13.6" r="0.9"/><circle cx="7.4" cy="10.4" r="0.9"/><circle cx="9.2" cy="8.1" r="0.9"/></g></svg>',
+    social: '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16v16H4z"/><path d="M8 8h8"/><path d="M8 12h8"/><path d="M8 16h5"/></svg>',
+    vote: '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 11 12 14 22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>'
+  };
+
+  const themeMeta = {
+    economie: { label: 'Économie', icon: icons.economy },
+    fiscalite: { label: 'Impôts', icon: icons.tax },
+    services: { label: 'Services publics', icon: icons.school },
+    ecologie: { label: 'Écologie', icon: icons.leaf },
+    immigration: { label: 'Immigration', icon: icons.shield },
+    securite: { label: 'Sécurité', icon: icons.shield },
+    libertes: { label: 'Libertés', icon: icons.freedom },
+    europe: { label: 'Europe', icon: icons.europe },
+    social: { label: 'Protection sociale', icon: icons.social },
+    democratie: { label: 'Démocratie', icon: icons.vote }
+  };
+
+  const likertOptions = [
+    { value: 2, tone: 'agree-strong', icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="4 13 8.5 17.5 20 6"/><polyline points="9 13 13.5 17.5 20 11"/></svg>', label: 'Tout à fait d\'accord', desc: 'Cette idée correspond clairement à votre position.' },
+    { value: 1, tone: 'agree', icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="5 13 9 17 19 7"/></svg>', label: 'Plutôt d\'accord', desc: 'Vous penchez dans ce sens sans adhérer complètement.' },
+    { value: 0, tone: 'neutral', icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="6" y1="12" x2="18" y2="12"/></svg>', label: 'Neutre', desc: 'Vous êtes partagé ou ce sujet n\'est pas prioritaire pour vous.' },
+    { value: -1, tone: 'disagree', icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="7" y1="12" x2="17" y2="12"/><line x1="12" y1="7" x2="17" y2="12"/><line x1="12" y1="17" x2="17" y2="12"/></svg>', label: 'Plutôt pas d\'accord', desc: 'Vous êtes plutôt en désaccord, sans rejet total.' },
+    { value: -2, tone: 'disagree-strong', icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="7" y1="7" x2="17" y2="17"/><line x1="17" y1="7" x2="7" y2="17"/></svg>', label: 'Pas du tout d\'accord', desc: 'Cette idée va clairement à l\'encontre de votre position.' }
+  ];
+
+  const questions = [
+    { theme: 'economie', title: 'L\'État devrait davantage intervenir dans l\'économie.', help: 'Autrement dit, faut-il que la puissance publique régule davantage les marchés, protège certains secteurs et corrige plus activement les inégalités, plutôt que de laisser l\'économie fonctionner plus librement ?', weights: { state: 1.6, redistribution: 1.2, market: -1.4 } },
+    { theme: 'fiscalite', title: 'Les impôts sur les plus riches devraient être plus élevés.', help: 'Cette mesure demande si les ménages les plus aisés doivent contribuer davantage pour financer les dépenses publiques et réduire les écarts de richesse.', weights: { redistribution: 1.8, market: -1.1, state: 0.4 } },
+    { theme: 'services', title: 'Il faut investir davantage dans l\'école, l\'hôpital et les transports publics, même si cela coûte plus cher.', help: 'Concrètement, cela revient à accepter plus de dépenses publiques - et parfois plus d\'impôts ou de dette - pour améliorer des services utilisés par tous au quotidien.', weights: { redistribution: 1.5, state: 1.4, market: -0.8 } },
+    { theme: 'services', title: 'Réduire la dépense publique devrait être une priorité, même si certains services publics sont moins développés.', help: 'Ici, on teste si vous privilégiez d\'abord la maîtrise des finances publiques, même si cela signifie moins de moyens pour certains services collectifs.', weights: { market: 1.7, state: -1.5, redistribution: -1.3 } },
+    { theme: 'ecologie', title: 'L\'État devrait imposer des règles écologiques plus strictes aux entreprises, même si cela ralentit parfois l\'économie.', help: 'La question porte sur votre niveau d\'acceptation de contraintes plus fortes pour réduire les émissions, même si cela peut coûter à court terme en croissance ou en compétitivité.', weights: { ecology: 1.9, state: 0.8, market: -0.8 } },
+    { theme: 'immigration', title: 'La France devrait fortement durcir sa politique migratoire.', help: 'On s\'interroge ici sur le niveau de contrôle souhaité à l\'entrée et au séjour sur le territoire, ainsi que sur l\'équilibre entre fermeté, accueil et intégration.', weights: { authority: 1.2, sovereignty: 1.6, progressive: -1.3, europe: -0.4 } },
+    { theme: 'securite', title: 'Il faut augmenter les moyens de la police et de la justice pour renforcer l\'ordre.', help: 'Cette mesure sert à voir si vous souhaitez prioritairement renforcer l\'ordre public, la lutte contre la délinquance et la capacité de sanction de l\'État.', weights: { authority: 1.8, state: 0.7, progressive: -0.3 } },
+    { theme: 'libertes', title: 'Les libertés individuelles doivent être protégées, même si cela limite parfois certaines politiques de sécurité.', help: 'Ici, vous arbitrez entre protection des droits individuels - vie privée, liberté d\'expression, garanties juridiques - et outils de sécurité plus étendus.', weights: { progressive: 1.4, authority: -1.5, state: -0.2 } },
+    { theme: 'europe', title: 'L\'Union européenne devrait avoir davantage de poids dans les grandes décisions économiques et climatiques.', help: 'Cette question demande si les grandes réponses sur l\'économie, l\'industrie ou le climat doivent davantage se décider à l\'échelle européenne plutôt qu\'au seul niveau national.', weights: { europe: 1.9, sovereignty: -1.7 } },
+    { theme: 'europe', title: 'La France devrait récupérer plus de pouvoirs aujourd\'hui exercés au niveau européen.', help: 'On teste ici votre attachement à une France plus autonome dans ses choix politiques, économiques et juridiques, face à une intégration européenne plus poussée.', weights: { sovereignty: 1.9, europe: -1.8 } },
+    { theme: 'social', title: 'La protection sociale doit rester forte, même si cela implique des prélèvements plus élevés.', help: 'Concrètement, cela concerne les retraites, l\'assurance maladie, le chômage ou les aides sociales, financés collectivement par davantage de cotisations ou d\'impôts.', weights: { redistribution: 1.5, state: 1.1, market: -1.2 } },
+    { theme: 'economie', title: 'Le secteur privé gère souvent plus efficacement que l\'État dans de nombreux domaines.', help: 'La mesure oppose une confiance plus forte dans les entreprises et la concurrence à une gestion publique plus importante dans l\'économie et les services.', weights: { market: 1.8, state: -1.6, redistribution: -0.5 } },
+    { theme: 'libertes', title: 'Les évolutions de société comme l\'égalité des droits ou la reconnaissance de nouvelles libertés vont globalement dans le bon sens.', help: 'Cela permet de situer votre ouverture aux changements de société sur les droits, les mœurs et la reconnaissance de nouvelles libertés.', weights: { progressive: 1.9, authority: -0.6 } },
+    { theme: 'economie', title: 'L\'État devrait mieux protéger les entreprises françaises face à la concurrence mondiale.', help: 'On mesure ici votre degré d\'acceptation de protections nationales ou de règles plus défensives face à la concurrence internationale et à la mondialisation.', weights: { sovereignty: 1.1, state: 0.8, market: -0.6 } },
+    { theme: 'democratie', title: 'Les citoyens devraient être consultés plus souvent directement par référendum.', help: 'Cette question demande si vous souhaitez donner plus souvent directement la parole aux citoyens, plutôt que de laisser les décisions aux seuls représentants élus.', weights: { sovereignty: 0.8, state: -0.1, europe: -0.2 } }
+  ];
+
+  const dimensionLabels = {
+    redistribution: { label: 'Redistribution et justice sociale', low: 'priorité plus faible', high: 'priorité forte' },
+    market: { label: 'Place du marché et de l\'initiative privée', low: 'régulation privilégiée', high: 'marché privilégié' },
+    state: { label: 'Intervention de l\'État', low: 'État plus limité', high: 'État plus présent' },
+    ecology: { label: 'Priorité écologique', low: 'enjeu moins central', high: 'enjeu très central' },
+    authority: { label: 'Ordre, sécurité, autorité', low: 'priorité plus faible', high: 'priorité forte' },
+    progressive: { label: 'Ouverture sociétale et libertés', low: 'prudence conservatrice', high: 'ouverture forte' },
+    europe: { label: 'Intégration européenne', low: 'distance vis-à-vis de l\'UE', high: 'proximité avec l\'UE' },
+    sovereignty: { label: 'Souveraineté nationale', low: 'plus secondaire', high: 'très importante' }
+  };
+
+  const profileCatalog = [
+    { id: 'social-redistributif', name: 'Profil social et redistributif', accent: '#c0392b', hook: 'La justice sociale et les protections collectives comptent beaucoup pour vous', hookText: 'Vous semblez donner un poids important aux services publics, à la redistribution et au rôle de l\'État dans l\'économie.', summary: 'Vos réponses montrent une forte sensibilité à la justice sociale, au financement collectif et à la protection sociale. Vous attendez souvent de l\'action publique qu\'elle corrige davantage les inégalités.', targets: { redistribution: 90, market: 18, state: 84, ecology: 58, authority: 28, progressive: 64, europe: 48, sovereignty: 42 } },
+    { id: 'ecologiste-progressiste', name: 'Profil écologiste et progressiste', accent: '#1e8449', hook: 'L\'écologie, les libertés et les évolutions de société pèsent fortement dans vos choix', hookText: 'Vous semblez attentif à l\'urgence écologique, aux libertés individuelles et à une société plus ouverte.', summary: 'Vos réponses suggèrent une sensibilité forte à l\'écologie politique, aux libertés individuelles et à un cadre de société plus progressiste. L\'action publique reste importante, mais souvent au service de la transition et des droits.', targets: { redistribution: 72, market: 28, state: 62, ecology: 98, authority: 20, progressive: 92, europe: 78, sovereignty: 18 } },
+    { id: 'social-democrate-europeen', name: 'Profil social-démocrate et pro-européen', accent: '#d4a843', hook: 'Vous combinez modération réformiste, justice sociale et attachement européen', hookText: 'Vos réponses paraissent assez compatibles avec une logique de compromis, de réformes progressives et d\'Europe politique.', summary: 'Vous semblez rechercher un équilibre entre protection sociale, réformes pragmatiques et ancrage européen. Le changement vous paraît préférable lorsqu\'il passe par des institutions stables et des compromis.', targets: { redistribution: 72, market: 44, state: 64, ecology: 68, authority: 40, progressive: 72, europe: 88, sovereignty: 18 } },
+    { id: 'centriste-modere', name: 'Profil centriste et modéré', accent: '#2563a8', hook: 'Vous cherchez plutôt l\'équilibre que l\'affrontement idéologique', hookText: 'Vos réponses donnent l\'image d\'une position plus modérée, attentive à la stabilité et à la nuance.', summary: 'Vos arbitrages paraissent assez centristes : vous évitez les positions les plus tranchées, vous acceptez volontiers les compromis et vous recherchez souvent un équilibre entre efficacité, cohésion sociale et modération institutionnelle.', targets: { redistribution: 56, market: 56, state: 52, ecology: 56, authority: 50, progressive: 56, europe: 72, sovereignty: 34 } },
+    { id: 'liberal-reformateur', name: 'Profil libéral et réformateur', accent: '#1e8449', hook: 'Vous donnez davantage de place au marché, aux réformes et à l\'initiative privée', hookText: 'Vos réponses valorisent souvent la responsabilité individuelle, la réforme graduelle et l\'efficacité économique.', summary: 'Vous semblez plus à l\'aise avec une économie de marché, une action publique plus ciblée et une logique de réformes plutôt que de ruptures. Vous pouvez aussi être attaché à l\'ouverture européenne et à une modernisation des institutions.', targets: { redistribution: 34, market: 84, state: 34, ecology: 50, authority: 48, progressive: 60, europe: 80, sovereignty: 18 } },
+    { id: 'conservateur-republicain', name: 'Profil conservateur républicain', accent: '#1a4f8a', hook: 'L\'ordre, la stabilité institutionnelle et une certaine fermeté ressortent davantage', hookText: 'Vos réponses accordent souvent une place importante à l\'autorité, aux repères collectifs et à une évolution plus prudente de la société.', summary: 'Vous semblez privilégier l\'ordre, la stabilité, une certaine fermeté en matière de sécurité et une évolution plus prudente des normes sociales. L\'État peut garder un rôle structurant, mais sans basculer vers une forte redistribution.', targets: { redistribution: 34, market: 66, state: 54, ecology: 30, authority: 82, progressive: 24, europe: 48, sovereignty: 54 } },
+    { id: 'autorite-souverainete', name: 'Profil autorité et souveraineté', accent: '#8e1c1c', hook: 'La sécurité, l\'autorité et la souveraineté nationale pèsent fortement dans vos réponses', hookText: 'Vous donnez visiblement un poids élevé au contrôle, aux frontières et à la capacité du pays à décider par lui-même.', summary: 'Vos réponses suggèrent une forte priorité donnée à la sécurité, à la maîtrise des frontières et à la souveraineté nationale. Vous semblez préférer un cadre politique plus ferme, plus vertical et plus autonome face aux institutions supranationales.', targets: { redistribution: 40, market: 46, state: 70, ecology: 16, authority: 96, progressive: 16, europe: 10, sovereignty: 95 } }
+  ];
+
+  const ideologyCatalog = [
+    { id: 'socialisme', name: 'Socialisme', lc: '#c0392b', bg: '#fdecea', icon: '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22c2.2-2.2 3.1-4.6 3-7.4-2.8-.1-5.2.8-7.3 2.9" stroke="#2E7D32" stroke-width="2"/><circle cx="15.8" cy="8.2" r="2.2" fill="#E53935"/><circle cx="12.8" cy="6.2" r="2.1" fill="#EF5350"/><circle cx="9.5" cy="7.6" r="2.2" fill="#D32F2F"/><circle cx="10.7" cy="11" r="2.1" fill="#F06292"/><circle cx="14.5" cy="11.4" r="2.1" fill="#C62828"/></svg>', desc: 'Protection sociale, réduction des inégalités et intervention publique plus forte.', targets: { redistribution: 86, market: 18, state: 78, ecology: 56, authority: 28, progressive: 68, europe: 60, sovereignty: 26 } },
+    { id: 'reformisme', name: 'Réformisme social-démocrate', lc: '#e74c3c', bg: '#fef0ed', icon: '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="8" y="2" width="8" height="4" rx="1"/><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/></svg>', desc: 'Réformes progressives, compromis institutionnel et justice sociale sans rupture.', targets: { redistribution: 72, market: 42, state: 64, ecology: 66, authority: 40, progressive: 72, europe: 86, sovereignty: 18 } },
+    { id: 'ecologisme', name: 'Écologisme politique', lc: '#1e8449', bg: '#eafaf1', icon: '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.5 19 2c1 2 2 4.2 2 8 0 5.5-4.8 10-10 10z"/><path d="M2 21c0-3 1.9-5.4 5.1-6 2.4-.5 4.9-2 5.9-3"/></svg>', desc: 'Urgence climatique, transition écologique et vision de long terme.', targets: { redistribution: 68, market: 24, state: 58, ecology: 98, authority: 16, progressive: 84, europe: 74, sovereignty: 20 } },
+    { id: 'liberalisme', name: 'Libéralisme', lc: '#1e8449', bg: '#eafaf1', icon: '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v18"/><path d="M5 7h14"/><path d="M5 17h14"/><path d="M7 7l-3 5h6z"/><path d="M17 7l-3 5h6z"/></svg>', desc: 'Libertés individuelles, économie de marché et réformes modernisatrices.', targets: { redistribution: 28, market: 86, state: 28, ecology: 46, authority: 42, progressive: 62, europe: 82, sovereignty: 16 } },
+    { id: 'conservatisme', name: 'Conservatisme', lc: '#1a4f8a', bg: '#e8f0fa', icon: '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="22" x2="21" y2="22"/><line x1="6" y1="18" x2="6" y2="11"/><line x1="10" y1="18" x2="10" y2="11"/><line x1="14" y1="18" x2="14" y2="11"/><line x1="18" y1="18" x2="18" y2="11"/><polygon points="12 2 20 7 4 7"/></svg>', desc: 'Ordre, continuité, institutions solides et évolution plus prudente.', targets: { redistribution: 34, market: 62, state: 54, ecology: 24, authority: 84, progressive: 18, europe: 44, sovereignty: 54 } },
+    { id: 'gaullisme', name: 'Gaullisme', lc: '#1a4f8a', bg: '#e8f0fa', icon: '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>', desc: 'État fort, indépendance nationale et équilibre républicain.', targets: { redistribution: 42, market: 48, state: 74, ecology: 24, authority: 76, progressive: 26, europe: 38, sovereignty: 74 } },
+    { id: 'federalisme', name: 'Fédéralisme européen', lc: '#1e8449', bg: '#eafaf1', icon: '<svg width="20" height="20" viewBox="0 0 24 24" fill="none"><rect x="2.5" y="4" width="19" height="16" rx="3" fill="#1E3A8A"/><g fill="#FACC15"><circle cx="12" cy="7.2" r="0.9"/><circle cx="14.8" cy="8.1" r="0.9"/><circle cx="16.6" cy="10.4" r="0.9"/><circle cx="16.6" cy="13.6" r="0.9"/><circle cx="14.8" cy="15.9" r="0.9"/><circle cx="12" cy="16.8" r="0.9"/><circle cx="9.2" cy="15.9" r="0.9"/><circle cx="7.4" cy="13.6" r="0.9"/><circle cx="7.4" cy="10.4" r="0.9"/><circle cx="9.2" cy="8.1" r="0.9"/></g></svg>', desc: 'Intégration européenne forte et recherche de solutions communes.', targets: { redistribution: 56, market: 46, state: 48, ecology: 70, authority: 34, progressive: 66, europe: 98, sovereignty: 4 } },
+    { id: 'souverainisme', name: 'Souverainisme', lc: '#8e1c1c', bg: '#f9e8e8', icon: '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="1 6 1 22 8 18 16 22 23 18 23 2 16 6 8 2 1 6"/><line x1="8" y1="2" x2="8" y2="18"/><line x1="16" y1="6" x2="16" y2="22"/></svg>', desc: 'Primauté de la décision nationale face aux cadres supranationaux.', targets: { redistribution: 42, market: 40, state: 62, ecology: 18, authority: 78, progressive: 22, europe: 8, sovereignty: 98 } },
+    { id: 'radicalisme', name: 'Radicalisme de gauche', lc: '#e74c3c', bg: '#fef0ed', icon: '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>', desc: 'Rupture plus nette avec les logiques de marché et volonté de transformation profonde.', targets: { redistribution: 92, market: 8, state: 86, ecology: 72, authority: 18, progressive: 76, europe: 20, sovereignty: 52 } },
+    { id: 'communisme', name: 'Communisme', lc: '#8e1c1c', bg: '#f9e8e8', icon: '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 14.9 8.3 22 9.2 16.8 14 18.3 21 12 17.6 5.7 21 7.2 14 2 9.2 9.1 8.3 12 2"/></svg>', desc: 'Collectivisation, critique du capitalisme et priorité absolue à l\'égalité.', targets: { redistribution: 98, market: 2, state: 84, ecology: 54, authority: 14, progressive: 62, europe: 18, sovereignty: 44 } }
+  ];
+
+  const partyCatalog = [
+    { id: 'lo', name: 'Lutte Ouvrière', logo: 'https://upload.wikimedia.org/wikipedia/commons/e/e0/Logo_de_Lutte_Ouvri%C3%A8re.png', color: '#8b0000', blurb: 'Très à gauche sur la redistribution et la critique du capitalisme.', targets: { redistribution: 96, market: 4, state: 68, ecology: 46, authority: 10, progressive: 54, europe: 12, sovereignty: 34 } },
+    { id: 'npa', name: 'Nouveau Parti Anticapitaliste', logo: 'https://npa-lanticapitaliste.org/sites/default/files/styles/large/public/autocollant-npa-identitaire-horizontal.jpg', color: '#ed1c24', blurb: 'Très critique envers le marché, avec une forte sensibilité sociale et militante.', targets: { redistribution: 94, market: 6, state: 66, ecology: 70, authority: 8, progressive: 80, europe: 14, sovereignty: 32 } },
+    { id: 'pcf', name: 'Parti Communiste Français', logo: 'https://upload.wikimedia.org/wikipedia/fr/thumb/6/6a/Logo_du_Parti_communiste_fran%C3%A7ais_%282018%2C_rouge%29.svg/langfr-1280px-Logo_du_Parti_communiste_fran%C3%A7ais_%282018%2C_rouge%29.svg.png', color: '#d71920', blurb: 'Protection sociale forte, intervention publique et critique du libéralisme économique.', targets: { redistribution: 90, market: 10, state: 80, ecology: 56, authority: 24, progressive: 60, europe: 26, sovereignty: 40 } },
+    { id: 'lfi', name: 'La France Insoumise', logo: 'https://lfi72-la-france-insoumise.fr/wp-content/uploads/2025/02/LFI-logo-site.png', color: '#5a2582', blurb: 'Intervention de l\'État, redistribution, critique des traités européens et accent social.', targets: { redistribution: 88, market: 18, state: 82, ecology: 72, authority: 24, progressive: 72, europe: 28, sovereignty: 58 } },
+    { id: 'eelv', name: 'Europe Écologie Les Verts', logo: 'https://lesecologistes-paris11.org/wp-content/uploads/2025/06/bd19b-logo_eelv-fond-blanc.png', color: '#ccff26', blurb: 'Écologie, libertés publiques et transformation écologique de l\'économie.', targets: { redistribution: 72, market: 28, state: 60, ecology: 98, authority: 16, progressive: 90, europe: 80, sovereignty: 18 } },
+    { id: 'ps', name: 'Parti Socialiste', logo: 'https://upload.wikimedia.org/wikipedia/fr/d/d1/Logo_Parti_socialiste_%28France%29_2016.png', color: '#e20040', blurb: 'Social-démocratie, justice sociale et attachement européen.', targets: { redistribution: 74, market: 40, state: 66, ecology: 66, authority: 36, progressive: 72, europe: 80, sovereignty: 18 } },
+    { id: 'pp', name: 'Place Publique', logo: 'https://upload.wikimedia.org/wikipedia/commons/thumb/a/a5/Logo_Place_publique.svg/langfr-250px-Logo_Place_publique.svg.png', color: '#ffd200', blurb: 'Centre-gauche pro-européen, social et réformiste.', targets: { redistribution: 68, market: 44, state: 58, ecology: 72, authority: 34, progressive: 72, europe: 90, sovereignty: 14 } },
+    { id: 'renaissance', name: 'Renaissance', logo: 'https://upload.wikimedia.org/wikipedia/commons/thumb/7/75/Renaissance-logotype-officiel.svg/langfr-960px-Renaissance-logotype-officiel.svg.png', color: '#006eb7', blurb: 'Réformes, économie de marché et fort ancrage européen.', targets: { redistribution: 40, market: 80, state: 38, ecology: 54, authority: 52, progressive: 60, europe: 96, sovereignty: 8 } },
+    { id: 'modem', name: 'MoDem', logo: 'https://upload.wikimedia.org/wikipedia/commons/0/08/Mouvement-Democrate-Logo-2019.png', color: '#ff7900', blurb: 'Centre modéré, compromis institutionnel et attachement européen.', targets: { redistribution: 50, market: 64, state: 44, ecology: 56, authority: 48, progressive: 56, europe: 90, sovereignty: 12 } },
+    { id: 'horizons', name: 'Horizons', logo: 'https://upload.wikimedia.org/wikipedia/commons/thumb/5/55/Logo_Parti_Politique_Horizons_-_2021.svg/langfr-1920px-Logo_Parti_Politique_Horizons_-_2021.svg.png', color: '#00b0e8', blurb: 'Centre-droit réformateur, pro-européen et plus orienté gestion.', targets: { redistribution: 32, market: 74, state: 40, ecology: 44, authority: 58, progressive: 44, europe: 78, sovereignty: 18 } },
+    { id: 'udi', name: 'UDI', logo: 'https://upload.wikimedia.org/wikipedia/commons/6/60/Logo_UDI_2019.png', color: '#5b458c', blurb: 'Centre-droit libéral, pro-européen et attaché à l\'économie de marché.', targets: { redistribution: 40, market: 72, state: 38, ecology: 40, authority: 54, progressive: 46, europe: 74, sovereignty: 22 } },
+    { id: 'lr', name: 'Les Républicains', logo: 'https://upload.wikimedia.org/wikipedia/commons/thumb/5/5c/CGLR2023_-_4.png/1280px-CGLR2023_-_4.png', color: '#0055a4', blurb: 'Droite républicaine, sécurité, maîtrise budgétaire et fermeté institutionnelle.', targets: { redistribution: 32, market: 68, state: 52, ecology: 28, authority: 82, progressive: 22, europe: 54, sovereignty: 48 } },
+    { id: 'udr', name: 'UDR', logo: 'https://upload.wikimedia.org/wikipedia/fr/thumb/c/cd/Logo_UDR_2024.svg/langfr-250px-Logo_UDR_2024.svg.png', color: '#0056a6', blurb: 'Droite souverainiste, autorité, frontières et identité républicaine.', targets: { redistribution: 28, market: 62, state: 60, ecology: 20, authority: 90, progressive: 16, europe: 20, sovereignty: 80 } },
+    { id: 'rn', name: 'Rassemblement National', logo: 'https://www.tv83.info/wp-content/uploads/2024/02/Logo_alternatif_Rassemblement_national_2018.png', color: '#1c80ce', blurb: 'Souveraineté, contrôle migratoire, sécurité et critique de l\'intégration européenne.', targets: { redistribution: 38, market: 44, state: 62, ecology: 18, authority: 92, progressive: 12, europe: 16, sovereignty: 92 } },
+    { id: 'reconquete', name: 'Reconquête !', logo: 'https://upload.wikimedia.org/wikipedia/commons/thumb/d/da/Logo_of_the_Reconquest_%28political_party%29.svg/3840px-Logo_of_the_Reconquest_%28political_party%29.svg.png', color: '#1f2f6b', blurb: 'Très axé sur l\'autorité, l\'identité et la souveraineté nationale.', targets: { redistribution: 22, market: 56, state: 58, ecology: 10, authority: 98, progressive: 8, europe: 8, sovereignty: 96 } }
+  ];
+
+  const pathCatalog = {
+    comprendre: { id: 'comprendre', url: 'comprendre-la-politique.html', title: 'Comprendre la politique', desc: 'Revenez sur les grands repères idéologiques et les notions de base.', icon: '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>' },
+    parties: { id: 'parties', url: 'partis-politiques.html', title: 'Partis politiques', desc: 'Comparez les partis et leurs positions sur les grands sujets.', icon: '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 11 12 14 22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>' },
+    systeme: { id: 'systeme', url: 'systeme-politique.html', title: 'Système politique', desc: 'Comprenez les institutions et le partage des pouvoirs.', icon: '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="22" x2="21" y2="22"/><line x1="6" y1="18" x2="6" y2="11"/><line x1="10" y1="18" x2="10" y2="11"/><line x1="14" y1="18" x2="14" y2="11"/><line x1="18" y1="18" x2="18" y2="11"/><polygon points="12 2 20 7 4 7"/></svg>' },
+    culture: { id: 'culture', url: 'culture-politique.html', title: 'Culture politique', desc: 'Replacez vos intuitions dans l\'histoire et les grands repères français.', icon: '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>' },
+    articles: { id: 'articles', url: 'articles.html', title: 'Articles', desc: 'Continuez avec des explications simples sur les institutions françaises.', icon: '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16v16H4z"/><path d="M8 8h8"/><path d="M8 12h8"/><path d="M8 16h5"/></svg>' },
+    gagnants: { id: 'gagnants', url: 'gagnants-perdants.html', title: 'Gagnants / perdants', desc: 'Voyez qui profite ou non des grandes mesures politiques.', icon: '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><path d="M7 14l4-4 3 3 5-6"/></svg>' }
+  };
+
+  const state = {
+    started: false,
+    current: 0,
+    answers: new Array(questions.length).fill(null),
+    results: null
+  };
+
+  const themeOrder = ['economie', 'fiscalite', 'services', 'ecologie', 'immigration', 'securite', 'libertes', 'europe', 'social', 'democratie'];
+  const maxRange = dimensionKeys.reduce(function(acc, key) { acc[key] = 0; return acc; }, {});
+
+  questions.forEach(function(question) {
+    Object.keys(question.weights).forEach(function(key) {
+      maxRange[key] += Math.abs(question.weights[key]) * 2;
+    });
+  });
+
+  totalCountEl.textContent = String(questions.length);
+
+  function clamp(value, min, max) {
+    return Math.max(min, Math.min(max, value));
+  }
+
+  function formatPercent(value) {
+    return Math.round(value) + '%';
+  }
+
+  function scoreAgainstTarget(currentScores, targetScores, customWeights) {
+    let weightedGap = 0;
+    let weightedTotal = 0;
+    dimensionKeys.forEach(function(key) {
+      const weight = customWeights && customWeights[key] ? customWeights[key] : 1;
+      weightedGap += Math.abs((currentScores[key] || 0) - (targetScores[key] || 50)) * weight;
+      weightedTotal += 100 * weight;
+    });
+    return Math.round(Math.max(0, (1 - weightedGap / weightedTotal) * 100));
+  }
+
+  function getNormalizedScores() {
+    const raw = dimensionKeys.reduce(function(acc, key) { acc[key] = 0; return acc; }, {});
+
+    questions.forEach(function(question, index) {
+      const answerValue = state.answers[index];
+      if (answerValue === null) return;
+      Object.keys(question.weights).forEach(function(key) {
+        raw[key] += answerValue * question.weights[key];
+      });
+    });
+
+    const normalized = {};
+    dimensionKeys.forEach(function(key) {
+      const range = maxRange[key] || 1;
+      normalized[key] = clamp(50 + (raw[key] / range) * 50, 0, 100);
+    });
+
+    return normalized;
+  }
+
+  function getAnsweredCount() {
+    return state.answers.filter(function(answer) { return answer !== null; }).length;
+  }
+
+  function getCurrentThemeId() {
+    return questions[state.current] ? questions[state.current].theme : null;
+  }
+
+  function updateThemeList() {
+    if (!themeListEl) return;
+    themeListEl.innerHTML = themeOrder.map(function(themeId) {
+      const theme = themeMeta[themeId];
+      const anyAnswered = questions.some(function(question, index) { return question.theme === themeId && state.answers[index] !== null; });
+      const isActive = state.started && getCurrentThemeId() === themeId && !state.results;
+      const className = 'theme-item' + (isActive ? ' active' : '') + (!isActive && anyAnswered ? ' done' : '');
+      return '<li class="' + className + '">' + theme.icon + '<span>' + theme.label + '</span></li>';
+    }).join('');
+  }
+
+  function updateProgress() {
+    const answeredCount = getAnsweredCount();
+    const displayCount = state.started && !state.results ? Math.min(state.current + 1, questions.length) : (state.results ? questions.length : 0);
+    progressCountEl.textContent = String(displayCount);
+    progressFillEl.style.width = (questions.length ? ((answeredCount / questions.length) * 100) : 0) + '%';
+    if (state.started && !state.results) {
+      const theme = themeMeta[getCurrentThemeId()];
+      currentThemeChip.innerHTML = (theme ? theme.icon : icons.vote) + '<span>' + (theme ? theme.label : 'Question') + '</span>';
+    } else if (state.results) {
+      currentThemeChip.innerHTML = icons.vote + '<span>Résultat disponible</span>';
+    } else {
+      currentThemeChip.innerHTML = '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20V10"/><path d="M18 20V4"/><path d="M6 20v-6"/></svg><span>Prêt à commencer</span>';
+    }
+    updateThemeList();
+  }
+
+  function renderQuestion() {
+    const question = questions[state.current];
+    if (!question) return;
+
+    questionCountLabel.textContent = 'Question ' + (state.current + 1) + ' sur ' + questions.length;
+    questionTitle.textContent = question.title;
+    questionHelp.textContent = question.help;
+    const theme = themeMeta[question.theme];
+    questionTheme.innerHTML = (theme ? theme.icon : icons.vote) + '<span>' + (theme ? theme.label : 'Thème') + '</span>';
+    questionEmpty.classList.remove('show');
+    prevQuestionBtn.disabled = state.current === 0;
+    prevQuestionBtn.style.opacity = state.current === 0 ? '.55' : '1';
+
+    answerList.innerHTML = likertOptions.map(function(option) {
+      const isSelected = state.answers[state.current] === option.value;
+      return '<button type="button" class="answer-btn' + (isSelected ? ' selected' : '') + '" data-answer-value="' + option.value + '"><span class="answer-score ' + option.tone + '">' + option.icon + '</span><span class="answer-copy"><strong>' + option.label + '</strong><span>' + option.desc + '</span></span></button>';
+    }).join('');
+
+    Array.from(answerList.querySelectorAll('.answer-btn')).forEach(function(button) {
+      button.addEventListener('click', function() {
+        const value = Number(button.getAttribute('data-answer-value'));
+        handleAnswer(value);
+      });
+    });
+
+    updateProgress();
+  }
+
+  function animateQuestionSwap(callback) {
+    if (!questionWrap) {
+      callback();
+      return;
+    }
+    questionWrap.classList.add('is-transitioning');
+    window.setTimeout(function() {
+      callback();
+      questionWrap.classList.remove('is-transitioning');
+    }, 180);
+  }
+
+  function handleAnswer(value) {
+    state.answers[state.current] = value;
+    renderQuestion();
+    if (state.current < questions.length - 1) {
+      window.setTimeout(function() {
+        animateQuestionSwap(function() {
+          state.current += 1;
+          renderQuestion();
+        });
+      }, 120);
+    } else {
+      window.setTimeout(finishQuiz, 180);
+    }
+  }
+
+  function startQuiz() {
+    state.started = true;
+    state.results = null;
+    resultSection.classList.remove('show');
+    quizStartCard.classList.add('hidden');
+    questionCard.classList.remove('hidden');
+    renderQuestion();
+    document.getElementById('profil-test').scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }
+
+  function resetQuiz() {
+    state.started = false;
+    state.current = 0;
+    state.answers = new Array(questions.length).fill(null);
+    state.results = null;
+    quizStartCard.classList.remove('hidden');
+    questionCard.classList.add('hidden');
+    resultSection.classList.remove('show');
+    progressFillEl.style.width = '0%';
+    progressCountEl.textContent = '0';
+    updateProgress();
+    document.getElementById('profil-test').scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }
+
+  function getProfileMatches(normalized) {
+    return profileCatalog.map(function(profile) {
+      return {
+        profile: profile,
+        score: scoreAgainstTarget(normalized, profile.targets)
+      };
+    }).sort(function(a, b) { return b.score - a.score; });
+  }
+
+  function getIdeologyMatches(normalized) {
+    return ideologyCatalog.map(function(ideology) {
+      return {
+        ideology: ideology,
+        score: scoreAgainstTarget(normalized, ideology.targets)
+      };
+    }).sort(function(a, b) { return b.score - a.score; });
+  }
+
+  function getPartyMatches(normalized) {
+    return partyCatalog.map(function(party) {
+      return {
+        party: party,
+        score: scoreAgainstTarget(normalized, party.targets)
+      };
+    }).sort(function(a, b) { return b.score - a.score; });
+  }
+
+  function getStrongestDimensions(normalized) {
+    return dimensionKeys.map(function(key) {
+      return {
+        key: key,
+        value: normalized[key],
+        delta: Math.abs(normalized[key] - 50)
+      };
+    }).sort(function(a, b) { return b.delta - a.delta; });
+  }
+
+  function buildTraitItems(normalized) {
+    const traits = [];
+    if (normalized.redistribution >= 65) traits.push('Vous accordez beaucoup d\'importance à la justice sociale et au financement collectif.');
+    if (normalized.market >= 65) traits.push('Vous laissez volontiers plus de place au marché et à l\'initiative privée.');
+    if (normalized.state >= 65) traits.push('Vous attendez davantage de l\'État pour structurer l\'économie et protéger la société.');
+    if (normalized.ecology >= 65) traits.push('L\'écologie apparaît comme un critère central dans vos arbitrages.');
+    if (normalized.authority >= 65) traits.push('L\'ordre, la sécurité et la fermeté publique ressortent nettement.');
+    if (normalized.progressive >= 65) traits.push('Vous êtes plutôt favorable à une société plus ouverte et à des libertés élargies.');
+    if (normalized.europe >= 65) traits.push('Vous semblez assez à l\'aise avec une intégration européenne plus forte.');
+    if (normalized.sovereignty >= 65) traits.push('La capacité de la France à décider par elle-même compte beaucoup pour vous.');
+    if (normalized.progressive <= 35) traits.push('Vous paraissez plus prudent face aux évolutions sociétales rapides.');
+    if (normalized.europe <= 35) traits.push('Vous gardez davantage de distance vis-à-vis d\'une intégration européenne poussée.');
+    return traits.slice(0, 4);
+  }
+
+  function buildWhyParagraphs(profile, normalized) {
+    const strongest = getStrongestDimensions(normalized);
+    const topLabels = strongest.slice(0, 3).map(function(item) { return dimensionLabels[item.key].label.toLowerCase(); });
+    const high = strongest.filter(function(item) { return item.value >= 60; }).slice(0, 3);
+    const low = strongest.filter(function(item) { return item.value <= 40; }).slice(0, 2);
+    const paragraphs = [];
+    paragraphs.push('Votre résultat principal ressort parce que vos réponses dessinent un ensemble assez cohérent sur ' + topLabels.join(', ') + '.');
+    if (high.length) {
+      paragraphs.push('Ce qui pèse le plus dans votre profil : ' + high.map(function(item) {
+        return dimensionLabels[item.key].label.toLowerCase();
+      }).join(', ') + '.');
+    }
+    if (low.length) {
+      paragraphs.push('À l\'inverse, vous êtes moins proche des positions qui donnent davantage de poids à ' + low.map(function(item) {
+        return dimensionLabels[item.key].label.toLowerCase();
+      }).join(' et ') + '.');
+    } else {
+      paragraphs.push('Votre profil garde toutefois une part de nuance : certaines dimensions restent plus modérées et évitent un résultat caricatural.');
+    }
+    paragraphs.push(profile.summary);
+    return paragraphs;
+  }
+
+  function buildPartyReason(party, normalized) {
+    const overlaps = [];
+    if (normalized.ecology >= 60 && party.targets.ecology >= 65) overlaps.push('l\'écologie');
+    if (normalized.redistribution >= 60 && party.targets.redistribution >= 65) overlaps.push('la justice sociale');
+    if (normalized.market >= 60 && party.targets.market >= 65) overlaps.push('une économie plus libérale');
+    if (normalized.authority >= 60 && party.targets.authority >= 70) overlaps.push('la sécurité et l\'autorité');
+    if (normalized.europe >= 60 && party.targets.europe >= 70) overlaps.push('un cap pro-européen');
+    if (normalized.sovereignty >= 60 && party.targets.sovereignty >= 70) overlaps.push('la souveraineté nationale');
+    if (overlaps.length) {
+      return 'Vos réponses rejoignent ce parti sur ' + overlaps.slice(0, 2).join(' et ') + '.';
+    }
+    return party.blurb;
+  }
+
+  function getPathSelection(primaryProfile, normalized) {
+    const selected = [];
+    function pushPath(id) {
+      if (!selected.some(function(item) { return item.id === id; }) && pathCatalog[id]) {
+        selected.push(pathCatalog[id]);
+      }
+    }
+
+    if (normalized.ecology >= 65) pushPath('gagnants');
+    if (normalized.authority >= 65 || normalized.sovereignty >= 65) pushPath('systeme');
+    if (normalized.progressive >= 60 || normalized.redistribution >= 65) pushPath('comprendre');
+    if (primaryProfile.id === 'centriste-modere' || primaryProfile.id === 'liberal-reformateur') pushPath('articles');
+    if (primaryProfile.id === 'conservateur-republicain' || primaryProfile.id === 'autorite-souverainete') pushPath('culture');
+
+    pushPath('parties');
+    pushPath('articles');
+    pushPath('comprendre');
+
+    return selected.slice(0, 3);
+  }
+
+  function renderDimensionGrid(normalized) {
+    dimensionGrid.innerHTML = dimensionKeys.map(function(key) {
+      const item = dimensionLabels[key];
+      const value = Math.round(normalized[key]);
+      return '<div class="dimension-row"><div class="dimension-head"><strong>' + item.label + '</strong><span>' + value + '/100</span></div><div class="dimension-track"><div class="dimension-bar" style="width:' + value + '%"></div></div></div>';
+    }).join('');
+  }
+
+  function renderTraitList(traits) {
+    traitList.innerHTML = traits.map(function(trait) {
+      return '<div class="trait-item"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg><span>' + trait + '</span></div>';
+    }).join('');
+    resultTraitTags.innerHTML = traits.slice(0, 4).map(function(trait) {
+      return '<span class="result-tag">' + trait.replace(/\.$/, '') + '</span>';
+    }).join('');
+  }
+
+  function renderWhy(paragraphs) {
+    whyCopy.innerHTML = paragraphs.map(function(paragraph) {
+      return '<p>' + paragraph + '</p>';
+    }).join('');
+  }
+
+  function renderProfiles(profileMatches) {
+    profileGrid.innerHTML = profileMatches.slice(1, 3).map(function(entry) {
+      return '<div class="profile-card"><strong>' + entry.profile.name + '</strong><span>' + entry.profile.hookText + '</span><div class="profile-match"><span>Proximité</span><strong>' + formatPercent(entry.score) + '</strong></div></div>';
+    }).join('');
+  }
+
+  function renderIdeologies(ideologyMatches) {
+    ideologyGrid.innerHTML = ideologyMatches.slice(0, 4).map(function(entry) {
+      return '<div class="ideology-card"><div class="ideology-icon" style="background:' + entry.ideology.bg + ';color:' + entry.ideology.lc + '">' + entry.ideology.icon + '</div><div><strong>' + entry.ideology.name + '</strong><span>' + entry.ideology.desc + '</span><div class="ideology-score"><div class="ideology-score-fill" style="width:' + entry.score + '%;background:' + entry.ideology.lc + '"></div></div></div></div>';
+    }).join('');
+  }
+
+  function renderParties(partyMatches, normalized) {
+    partyGrid.innerHTML = partyMatches.slice(0, 4).map(function(entry) {
+      return '<a class="party-card" href="partis-politiques.html#party-' + entry.party.id + '" style="text-decoration:none;color:inherit"><div class="party-logo"><img src="' + entry.party.logo + '" alt="Logo ' + entry.party.name + '" loading="lazy"></div><div class="party-copy"><div class="party-top"><strong>' + entry.party.name + '</strong><span class="party-match">Proche à ' + formatPercent(entry.score) + '</span></div><span>' + buildPartyReason(entry.party, normalized) + '</span></div></a>';
+    }).join('');
+  }
+
+  function renderPaths(primaryProfile, normalized) {
+    const paths = getPathSelection(primaryProfile, normalized);
+    pathGrid.innerHTML = paths.map(function(path) {
+      return '<a class="path-card" href="' + path.url + '" style="text-decoration:none;color:inherit"><div class="path-icon">' + path.icon + '</div><div class="path-copy"><strong>' + path.title + '</strong><span>' + path.desc + '</span></div></a>';
+    }).join('');
+    const titles = paths.map(function(path) { return '<a href="' + path.url + '">' + path.title + '</a>'; });
+    resultInlineLinks.innerHTML = 'Pour approfondir ce qui ressort chez vous, commencez par ' + titles.join(', puis ') + '.';
+  }
+
+  function finishQuiz() {
+    const normalized = getNormalizedScores();
+    const profileMatches = getProfileMatches(normalized);
+    const ideologyMatches = getIdeologyMatches(normalized);
+    const partyMatches = getPartyMatches(normalized);
+    const primaryProfile = profileMatches[0].profile;
+    const traits = buildTraitItems(normalized);
+    const whyParagraphs = buildWhyParagraphs(primaryProfile, normalized);
+
+    state.results = {
+      normalized: normalized,
+      profileMatches: profileMatches,
+      ideologyMatches: ideologyMatches,
+      partyMatches: partyMatches,
+      primaryProfile: primaryProfile,
+      traits: traits,
+      whyParagraphs: whyParagraphs
+    };
+
+    resultHeroCard.style.setProperty('--result-accent', primaryProfile.accent);
+    const words = primaryProfile.name.split(' ');
+    resultProfileName.innerHTML = words.map(function(word, index) {
+      return index === words.length - 1 ? '<span>' + word + '</span>' : word;
+    }).join(' ');
+    resultSummary.textContent = primaryProfile.summary;
+    resultHook.textContent = primaryProfile.hook;
+    resultHookText.textContent = primaryProfile.hookText;
+
+    renderDimensionGrid(normalized);
+    renderTraitList(traits);
+    renderWhy(whyParagraphs);
+    renderProfiles(profileMatches);
+    renderIdeologies(ideologyMatches);
+    renderParties(partyMatches, normalized);
+    renderPaths(primaryProfile, normalized);
+
+    questionCard.classList.add('hidden');
+    resultSection.classList.add('show');
+    updateProgress();
+    resultSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }
+
+  prevQuestionBtn.addEventListener('click', function() {
+    if (state.current === 0) return;
+    animateQuestionSwap(function() {
+      state.current -= 1;
+      renderQuestion();
+    });
+  });
+
+  startQuizBtn.addEventListener('click', startQuiz);
+
+  if (heroStartBtn) {
+    heroStartBtn.addEventListener('click', function(event) {
+      event.preventDefault();
+      if (!state.started) {
+        startQuiz();
+      } else {
+        document.getElementById('profil-test').scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    });
+  }
+
+  restartQuizBtn.addEventListener('click', resetQuiz);
+
+  updateProgress();
+});
+</script>
+
+</body>
+</html>
+
+
+
+
