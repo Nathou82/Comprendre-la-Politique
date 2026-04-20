@@ -313,7 +313,61 @@
     .filters-in{gap:.45rem}
     #cookieBanner{bottom:.8rem;right:.8rem;left:.8rem;width:auto;max-width:none}
   }
-  </style>
+  
+  /* =========================================================
+     SOUTENIR + RESEAUX SOCIAUX FOOTER
+  ========================================================= */
+  .nav-support-link{
+    display:inline-flex;align-items:center;gap:.42rem;
+    margin-left:.75rem;padding:.42rem .78rem;
+    border-radius:999px;border:1px solid rgba(255,255,255,.09);
+    background:#dd2a3b;
+    color:#fff;font-size:.72rem;font-weight:800;
+    letter-spacing:.01em;white-space:nowrap;text-decoration:none;
+    box-shadow:0 8px 18px rgba(221,42,59,.18);
+    transition:transform .18s,box-shadow .18s,filter .18s,background .18s;
+    flex-shrink:0;
+  }
+  .nav-support-link:hover{
+    transform:translateY(-1px);
+    box-shadow:0 10px 22px rgba(221,42,59,.24);
+    filter:brightness(1.03);
+  }
+  .nav-support-link .support-heart{font-size:.9rem;line-height:1;display:inline-flex;align-items:center;justify-content:center;transform:translateY(-.5px)}
+  .footer-social{
+    margin-top:1.15rem;
+    display:flex;flex-direction:column;align-items:center;justify-content:center;
+    gap:.7rem;
+  }
+  .footer-social-title{
+    font-size:.7rem;font-weight:700;color:rgba(255,255,255,.4);
+    text-transform:uppercase;letter-spacing:.1em;
+  }
+  .footer-social-links{display:flex;justify-content:center;align-items:center;flex-wrap:wrap;gap:.55rem;}
+  .footer-social-link{
+    display:inline-flex;align-items:center;justify-content:center;
+    width:38px;height:38px;border-radius:50%;
+    background:rgba(255,255,255,.06);
+    border:1px solid rgba(255,255,255,.12);
+    color:rgba(255,255,255,.76);text-decoration:none;
+    transition:transform .18s,background .18s,border-color .18s,color .18s,box-shadow .18s;
+  }
+  .footer-social-link:hover{
+    transform:translateY(-2px);
+    color:#fff;
+    box-shadow:0 8px 20px rgba(0,0,0,.18);
+  }
+  .footer-social-link svg{width:17px;height:17px;display:block;fill:currentColor;}
+  .footer-social-link.social-tiktok:hover{background:rgba(37,244,238,.14);border-color:rgba(37,244,238,.24)}
+  .footer-social-link.social-tiktok svg{transform:translateX(.8px);}
+  .footer-social-link.social-instagram:hover{background:rgba(225,48,108,.14);border-color:rgba(225,48,108,.24)}
+  .footer-social-link.social-youtube:hover{background:rgba(255,0,0,.14);border-color:rgba(255,0,0,.24)}
+  @media(max-width:640px){
+    .nav-support-link{margin-left:.5rem;padding:.36rem .64rem;font-size:.66rem}
+    .footer-social{margin-top:1rem}
+    .footer-social-link{width:36px;height:36px}
+  }
+</style>
   <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96" />
   <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
   <link rel="shortcut icon" href="/favicon.ico" />
@@ -325,7 +379,7 @@
 
 <nav id="navbar" role="navigation" aria-label="Navigation principale">
   <div class="nav-inner">
-    <a href="index.html" class="nav-logo"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 36" width="28" height="16" aria-hidden="true" style="display:inline-block;vertical-align:middle;flex-shrink:0"><path d="M32 34 A30 30 0 0 1 2 34 Z" fill="#B80000"/><path d="M32 34 A30 30 0 0 0 62 34 Z" fill="#003DA6"/><path d="M9 34 A23 23 0 0 1 32 11" fill="none" stroke="#E03030" stroke-width="3.8" stroke-linecap="round"/><path d="M15 34 A17 17 0 0 1 32 17" fill="none" stroke="#CC2222" stroke-width="3.8" stroke-linecap="round"/><path d="M21 34 A11 11 0 0 1 32 23" fill="none" stroke="#AA1515" stroke-width="3.8" stroke-linecap="round"/><path d="M55 34 A23 23 0 0 0 32 11" fill="none" stroke="#3366EE" stroke-width="3.8" stroke-linecap="round"/><path d="M49 34 A17 17 0 0 0 32 17" fill="none" stroke="#2255CC" stroke-width="3.8" stroke-linecap="round"/><path d="M43 34 A11 11 0 0 0 32 23" fill="none" stroke="#1144AA" stroke-width="3.8" stroke-linecap="round"/><line x1="32" y1="11" x2="32" y2="34" stroke="rgba(255,255,255,0.75)" stroke-width="1.5" stroke-dasharray="2,2"/><line x1="2" y1="34" x2="62" y2="34" stroke="rgba(255,255,255,0.55)" stroke-width="1.5"/></svg> <span>Comprendre la</span> Politique</a>
+        <a href="index.html" class="nav-logo"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 36" width="28" height="16" aria-hidden="true" style="display:inline-block;vertical-align:middle;flex-shrink:0"><path d="M32 34 A30 30 0 0 1 2 34 Z" fill="#B80000"/><path d="M32 34 A30 30 0 0 0 62 34 Z" fill="#003DA6"/><path d="M9 34 A23 23 0 0 1 32 11" fill="none" stroke="#E03030" stroke-width="3.8" stroke-linecap="round"/><path d="M15 34 A17 17 0 0 1 32 17" fill="none" stroke="#CC2222" stroke-width="3.8" stroke-linecap="round"/><path d="M21 34 A11 11 0 0 1 32 23" fill="none" stroke="#AA1515" stroke-width="3.8" stroke-linecap="round"/><path d="M55 34 A23 23 0 0 0 32 11" fill="none" stroke="#3366EE" stroke-width="3.8" stroke-linecap="round"/><path d="M49 34 A17 17 0 0 0 32 17" fill="none" stroke="#2255CC" stroke-width="3.8" stroke-linecap="round"/><path d="M43 34 A11 11 0 0 0 32 23" fill="none" stroke="#1144AA" stroke-width="3.8" stroke-linecap="round"/><line x1="32" y1="11" x2="32" y2="34" stroke="rgba(255,255,255,0.75)" stroke-width="1.5" stroke-dasharray="2,2"/><line x1="2" y1="34" x2="62" y2="34" stroke="rgba(255,255,255,0.55)" stroke-width="1.5"/></svg> <span>Comprendre la</span> Politique</a>
     <button class="nav-arrow nav-arrow-left" id="navArrowLeft" aria-label="Défiler la navigation vers la gauche">&#8249;</button>
             <ul class="nav-links" id="navLinks">
       <li><a href="index.html">Accueil</a></li>
@@ -346,6 +400,10 @@
       <button class="nav-toggle" id="navToggle" aria-label="Menu mobile">
         <span></span><span></span><span></span>
       </button>
+      <a href="https://ko-fi.com/comprendrelapolitique" target="_blank" rel="noopener noreferrer" class="nav-support-link" aria-label="Soutenir Comprendre la Politique sur Ko-fi">
+        <span class="support-heart" aria-hidden="true">🤍</span>
+        <span>Soutenir</span>
+      </a>
     </div>
   </div>
 </nav>
@@ -469,7 +527,7 @@
   <div class="test-section">
     <div style="margin-bottom:1.1rem">
       <h2 class="section-title" style="margin-bottom:.35rem">Quel parti correspond le plus à votre profil ?</h2>
-      <p class="section-sub" style="margin-bottom:.45rem">Mini-test pédagogique : âge, revenu mensuel, profession et niveau d’étude.</p>
+      <p class="section-sub" style="margin-bottom:.45rem">Mini-test pédagogique : âge, revenu mensuel, profession et niveau d'étude.</p>
     </div>
 
     <form id="profilTestForm" class="test-form" aria-label="Mini test profil électoral" autocomplete="off">
@@ -502,10 +560,10 @@
         </div>
 
         <div class="test-field">
-          <label class="test-lbl" for="tEtudes">Niveau d’étude</label>
+          <label class="test-lbl" for="tEtudes">Niveau d'étude</label>
           <select class="test-input" id="tEtudes" required>
             <option value="" disabled selected>Sélectionnez</option>
-            <option value="moins_bac">Moins qu’un bac</option>
+            <option value="moins_bac">Moins qu'un bac</option>
             <option value="bac">Bac</option>
             <option value="bac2">Bac+2</option>
             <option value="bac3">Bac+3 / bac+4</option>
@@ -639,6 +697,20 @@
       <a href="apprendre.html">Apprendre</a>
       <a href="mentions-legales.html">Mentions légales</a>
     </div>
+    <div class="footer-social" aria-label="Réseaux sociaux Comprendre la Politique">
+      <div class="footer-social-title">Suivre le site</div>
+      <div class="footer-social-links">
+        <a href="https://www.tiktok.com/@comprendrelapolitique.fr" target="_blank" rel="noopener noreferrer" class="footer-social-link social-tiktok" aria-label="TikTok Comprendre la Politique">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14.6 3c.34 2.23 1.62 3.8 3.76 4.3v2.48a6.42 6.42 0 0 1-3.08-.84v5.07c0 3.38-2.26 5.69-5.52 5.69-3.1 0-5.26-2.15-5.26-4.95 0-2.95 2.28-5.08 5.53-5.02v2.39c-1.77-.1-2.98.97-2.98 2.48 0 1.42 1.01 2.42 2.38 2.42 1.53 0 2.68-1.01 2.68-3.02V3h2.49z"/></svg>
+        </a>
+        <a href="https://www.instagram.com/comprendre_la_politique.fr" target="_blank" rel="noopener noreferrer" class="footer-social-link social-instagram" aria-label="Instagram Comprendre la Politique">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7.75 2h8.5A5.75 5.75 0 0 1 22 7.75v8.5A5.75 5.75 0 0 1 16.25 22h-8.5A5.75 5.75 0 0 1 2 16.25v-8.5A5.75 5.75 0 0 1 7.75 2zm0 1.9A3.85 3.85 0 0 0 3.9 7.75v8.5a3.85 3.85 0 0 0 3.85 3.85h8.5a3.85 3.85 0 0 0 3.85-3.85v-8.5A3.85 3.85 0 0 0 16.25 3.9h-8.5zm8.95 1.42a1.18 1.18 0 1 1 0 2.36 1.18 1.18 0 0 1 0-2.36zM12 6.85A5.15 5.15 0 1 1 6.85 12 5.16 5.16 0 0 1 12 6.85zm0 1.9A3.25 3.25 0 1 0 15.25 12 3.25 3.25 0 0 0 12 8.75z"/></svg>
+        </a>
+        <a href="https://www.youtube.com/@comprendrelapolitique" target="_blank" rel="noopener noreferrer" class="footer-social-link social-youtube" aria-label="YouTube Comprendre la Politique">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21.8 8.4a2.9 2.9 0 0 0-2.04-2.06C17.97 5.8 12 5.8 12 5.8s-5.97 0-7.76.54A2.9 2.9 0 0 0 2.2 8.4 30.7 30.7 0 0 0 1.7 12a30.7 30.7 0 0 0 .5 3.6 2.9 2.9 0 0 0 2.04 2.06C6.03 18.2 12 18.2 12 18.2s5.97 0 7.76-.54a2.9 2.9 0 0 0 2.04-2.06 30.7 30.7 0 0 0 .5-3.6 30.7 30.7 0 0 0-.5-3.6zM10.1 15.2V8.8L15.7 12l-5.6 3.2z"/></svg>
+        </a>
+      </div>
+    </div>
     <div style="margin-top:1.8rem;padding-top:1.5rem;border-top:1px solid rgba(255,255,255,.08);max-width:760px;margin-left:auto;margin-right:auto;">
       <p style="color:rgba(255,255,255,.55);font-size:.78rem;font-weight:600;margin-bottom:.5rem;letter-spacing:.06em;text-transform:uppercase;"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg> Sources &amp; fiabilité</p>
       <p style="color:rgba(255,255,255,.3);font-size:.75rem;line-height:1.75;">Les informations présentées sur ce site sont issues de sources publiques et institutionnelles : <strong style="color:rgba(255,255,255,.5)">Ministère de l'Intérieur</strong> (résultats électoraux), <strong style="color:rgba(255,255,255,.5)">Conseil Constitutionnel</strong>, <strong style="color:rgba(255,255,255,.5)">Assemblée Nationale</strong>, <strong style="color:rgba(255,255,255,.5)">vie-publique.fr</strong>, <strong style="color:rgba(255,255,255,.5)">Archives Nationales</strong> et <strong style="color:rgba(255,255,255,.5)">Gallica (BNF)</strong>. Les données de sondages sont fournies par IFOP, BVA, Odoxa et Ipsos à titre indicatif. Contenu éducatif, équilibré et non partisan.</p>
@@ -665,16 +737,16 @@
 const PARTIS = [
   {id:"rn",nom:"Rassemblement National",logo:"https://www.tv83.info/wp-content/uploads/2024/02/Logo_alternatif_Rassemblement_national_2018.png",couleur:"#182B70",orient:"Extrême droite",orientBg:"#fdecea",orientCl:"#991b1b",ageMoyen:47,revenuMoyen:1820,revenuCateg:"bas",ageCat:"actif",etudes:28,urbain:38,periurbain:42,rural:20,localisation:"periurbain",csp:{emp:38,ouvrier:29,retraite:24,etudiant:5,autre:4},aides:["Chômage","RSA","AAH"],ageDistrib:{moins35:22,entre35_59:38,plus60:40},participation:75,score2022:23.2,notes:"Électorat populaire et périurbain, très présent dans les zones désindustrialisées (Nord, Moselle, Var, Pas-de-Calais). Fort sentiment de déclassement, rejet des élites.",etude:"Bac ou CAP/BEP (62%). Faible part de diplômés du supérieur. Électeurs majoritairement issus des milieux artisanaux."},
   {id:"lfi",nom:"La France Insoumise",logo:"https://lfi72-la-france-insoumise.fr/wp-content/uploads/2025/02/LFI-logo-site.png",couleur:"#be1622",orient:"Gauche radicale",orientBg:"#fdecea",orientCl:"#c0392b",ageMoyen:38,revenuMoyen:1720,revenuCateg:"bas",ageCat:"jeune",etudes:45,urbain:58,periurbain:28,rural:14,localisation:"urbain",csp:{emp:30,ouvrier:22,retraite:12,etudiant:22,autre:14},aides:["RSA","APL","Chômage"],ageDistrib:{moins35:42,entre35_59:35,plus60:23},participation:65,score2022:22.0,notes:"Électorat jeune, étudiant et populaire urbain. Forte présence dans les banlieues (93, 94) et les villes universitaires. Profil très jeune et très divers racialement.",etude:"Bac+2/+3 en cours ou obtenu. Fort taux d'étudiants dans l'électorat."},
-  {id:"renaiss",nom:"Renaissance / Ensemble",logo:"https://upload.wikimedia.org/wikipedia/commons/thumb/7/75/Renaissance-logotype-officiel.svg/langfr-960px-Renaissance-logotype-officiel.svg.png",couleur:"#006EB7",orient:"Centre",orientBg:"#e0f2fe",orientCl:"#0369a1",ageMoyen:49,revenuMoyen:2850,revenuCateg:"moyen",ageCat:"senior",etudes:58,urbain:62,periurbain:28,rural:10,localisation:"urbain",csp:{emp:42,ouvrier:8,retraite:32,etudiant:8,autre:10},aides:["Complémentaire santé"],ageDistrib:{moins35:18,entre35_59:36,plus60:46},participation:83,score2022:27.9,notes:"Électorat urbain et diplômé, cadres et professions libérales. Forte présence dans les grandes métropoles et chez les retraités des classes moyennes supérieures.",etude:"Bac+3 et plus (58%). Cadres, professions intellectuelles, enseignants supérieurs."},
+  {id:"renaiss",nom:"Renaissance / Ensemble",logo:"https://upload.wikimedia.org/wikipedia/commons/thumb/7/75/Renaissance-logotype-officiel.svg/200px-Renaissance-logotype-officiel.svg.png",couleur:"#006EB7",orient:"Centre",orientBg:"#e0f2fe",orientCl:"#0369a1",ageMoyen:49,revenuMoyen:2850,revenuCateg:"moyen",ageCat:"senior",etudes:58,urbain:62,periurbain:28,rural:10,localisation:"urbain",csp:{emp:42,ouvrier:8,retraite:32,etudiant:8,autre:10},aides:["Complémentaire santé"],ageDistrib:{moins35:18,entre35_59:36,plus60:46},participation:83,score2022:27.9,notes:"Électorat urbain et diplômé, cadres et professions libérales. Forte présence dans les grandes métropoles et chez les retraités des classes moyennes supérieures.",etude:"Bac+3 et plus (58%). Cadres, professions intellectuelles, enseignants supérieurs."},
   {id:"ps",nom:"Parti Socialiste",logo:"https://upload.wikimedia.org/wikipedia/fr/d/d1/Logo_Parti_socialiste_%28France%29_2016.png",couleur:"#E8003D",orient:"Gauche",orientBg:"#fdecea",orientCl:"#c0392b",ageMoyen:52,revenuMoyen:2200,revenuCateg:"moyen",ageCat:"actif",etudes:55,urbain:60,periurbain:28,rural:12,localisation:"urbain",csp:{emp:42,ouvrier:12,retraite:34,etudiant:7,autre:5},aides:["Complémentaire santé"],ageDistrib:{moins35:15,entre35_59:38,plus60:47},participation:80,score2022:1.75,notes:"Électorat vieillissant : fonctionnaires et enseignants. Perte massive d'électorat vers LFI (populaire) et EELV (diplômés) depuis 2012.",etude:"Bac+3 (55%). Enseignants, fonctionnaires, travailleurs sociaux."},
   {id:"pp",nom:"Place Publique",logo:"https://upload.wikimedia.org/wikipedia/commons/thumb/a/a5/Logo_Place_publique.svg/langfr-250px-Logo_Place_publique.svg.png",couleur:"#FFD200",orient:"Centre gauche social-démocrate",orientBg:"#fff8cf",orientCl:"#8a6a00",ageMoyen:44,revenuMoyen:2520,revenuCateg:"moyen",ageCat:"actif",etudes:67,urbain:70,periurbain:22,rural:8,localisation:"urbain",csp:{emp:46,ouvrier:7,retraite:24,etudiant:15,autre:8},aides:["APL"],ageDistrib:{moins35:30,entre35_59:44,plus60:26},participation:81,score2022:null,notes:"Électorat plutôt urbain, diplômé et pro-européen, proche de la social-démocratie. La dynamique vient surtout des européennes 2024 en alliance avec le PS autour de Raphaël Glucksmann.",etude:"Bac+3 et plus (67%). Cadres, professions intellectuelles, jeunes actifs des métropoles."},
-  {id:"lr",nom:"Les Républicains",logo:"https://upload.wikimedia.org/wikipedia/commons/thumb/5/5c/CGLR2023_-_4.png/1280px-CGLR2023_-_4.png",couleur:"#0066CC",orient:"Droite",orientBg:"#e0f2fe",orientCl:"#1a4f8a",ageMoyen:57,revenuMoyen:3100,revenuCateg:"haut",ageCat:"senior",etudes:62,urbain:52,periurbain:30,rural:18,localisation:"urbain",csp:{emp:38,ouvrier:6,retraite:42,etudiant:5,autre:9},aides:[],ageDistrib:{moins35:10,entre35_59:30,plus60:60},participation:88,score2022:4.8,notes:"Électorat très âgé - retraités des classes supérieures, catholiques pratiquants. Effondrement de la base électorale depuis 2017 (perte vers RN et Reconquête).",etude:"Bac+3 et plus (62%). Cadres, chefs d'entreprise, professions libérales."},
+  {id:"lr",nom:"Les Républicains",logo:"https://upload.wikimedia.org/wikipedia/commons/thumb/5/5c/CGLR2023_-_4.png/200px-CGLR2023_-_4.png",couleur:"#0066CC",orient:"Droite",orientBg:"#e0f2fe",orientCl:"#1a4f8a",ageMoyen:57,revenuMoyen:3100,revenuCateg:"haut",ageCat:"senior",etudes:62,urbain:52,periurbain:30,rural:18,localisation:"urbain",csp:{emp:38,ouvrier:6,retraite:42,etudiant:5,autre:9},aides:[],ageDistrib:{moins35:10,entre35_59:30,plus60:60},participation:88,score2022:4.8,notes:"Électorat très âgé - retraités des classes supérieures, catholiques pratiquants. Effondrement de la base électorale depuis 2017 (perte vers RN et Reconquête).",etude:"Bac+3 et plus (62%). Cadres, chefs d'entreprise, professions libérales."},
   {id:"udr",nom:"Union des Droites pour la République",logo:"https://upload.wikimedia.org/wikipedia/fr/thumb/c/cd/Logo_UDR_2024.svg/langfr-250px-Logo_UDR_2024.svg.png",couleur:"#0056A6",orient:"Droite souverainiste",orientBg:"#e8f0fa",orientCl:"#1a4f8a",ageMoyen:52,revenuMoyen:2360,revenuCateg:"moyen",ageCat:"actif",etudes:48,urbain:44,periurbain:40,rural:16,localisation:"periurbain",csp:{emp:36,ouvrier:18,retraite:32,etudiant:5,autre:9},aides:[],ageDistrib:{moins35:16,entre35_59:41,plus60:43},participation:84,score2022:null,notes:"Parti lancé par Éric Ciotti en 2024, avec un électorat de droite plus marqué sur les enjeux d'autorité et d'immigration. Profil intermédiaire entre LR et RN, avec un ancrage périurbain notable.",etude:"Bac    bac+2 (48%), avec présence d'indépendants, cadres intermédiaires et retraités."},
   {id:"modem",nom:"MoDem",logo:"https://upload.wikimedia.org/wikipedia/commons/0/08/Mouvement-Democrate-Logo-2019.png",couleur:"#FF7900",orient:"Centre",orientBg:"#fef9c3",orientCl:"#854d0e",ageMoyen:53,revenuMoyen:2950,revenuCateg:"moyen",ageCat:"senior",etudes:65,urbain:60,periurbain:28,rural:12,localisation:"urbain",csp:{emp:44,ouvrier:5,retraite:38,etudiant:6,autre:7},aides:[],ageDistrib:{moins35:12,entre35_59:38,plus60:50},participation:85,score2022:null,notes:"Parti de François Bayrou, électorat centriste très diplômé. Proches des chrétiens-démocrates européens. Fort dans le Béarn et les zones catholiques modérées.",etude:"Bac+3 et plus (65%). Profils similaires à LR mais plus centristes."},
   {id:"eelv",nom:"EELV / Les Écologistes",logo:"https://lesecologistes-paris11.org/wp-content/uploads/2025/06/bd19b-logo_eelv-fond-blanc.png",couleur:"#00A850",orient:"Gauche écologiste",orientBg:"#d4edda",orientCl:"#166534",ageMoyen:41,revenuMoyen:2650,revenuCateg:"moyen",ageCat:"actif",etudes:72,urbain:74,periurbain:20,rural:6,localisation:"urbain",csp:{emp:48,ouvrier:4,retraite:16,etudiant:18,autre:14},aides:["APL"],ageDistrib:{moins35:32,entre35_59:45,plus60:23},participation:79,score2022:4.6,notes:"Électorat le plus diplômé de France. Cadres supérieurs et professions intellectuelles dans les grandes villes. Fort en Lyon, Bordeaux, Strasbourg, Grenoble (mairies gagnées en 2020).",etude:"Bac+4 et plus (72%). Enseignants, ingénieurs, cadres supérieurs."},
-  {id:"pcf",nom:"Parti Communiste Français",logo:"https://upload.wikimedia.org/wikipedia/fr/thumb/6/6a/Logo_du_Parti_communiste_fran%C3%A7ais_%282018%2C_rouge%29.svg/langfr-1280px-Logo_du_Parti_communiste_fran%C3%A7ais_%282018%2C_rouge%29.svg.png",couleur:"#C1282A",orient:"Gauche radicale",orientBg:"#fdecea",orientCl:"#991b1b",ageMoyen:54,revenuMoyen:1850,revenuCateg:"bas",ageCat:"actif",etudes:32,urbain:48,periurbain:30,rural:22,localisation:"periurbain",csp:{emp:28,ouvrier:34,retraite:32,etudiant:4,autre:2},aides:["Chômage","Retraite complémentaire"],ageDistrib:{moins35:12,entre35_59:38,plus60:50},participation:72,score2022:2.3,notes:"Ancien parti ouvrier, électorat vieillissant concentré dans la banlieue rouge parisienne (93, 94) et les bassins miniers. Résiste par sa présence municipale.",etude:"CAP/BEP ou bac pro (60%). Ouvriers qualifiés, agents de la fonction publique."},
-  {id:"horizons",nom:"Horizons",logo:"https://upload.wikimedia.org/wikipedia/commons/thumb/5/55/Logo_Parti_Politique_Horizons_-_2021.svg/langfr-1920px-Logo_Parti_Politique_Horizons_-_2021.svg.png",couleur:"#00B0E8",orient:"Centre droit",orientBg:"#e0f2fe",orientCl:"#0369a1",ageMoyen:51,revenuMoyen:2800,revenuCateg:"moyen",ageCat:"actif",etudes:60,urbain:58,periurbain:30,rural:12,localisation:"urbain",csp:{emp:45,ouvrier:7,retraite:35,etudiant:6,autre:7},aides:[],ageDistrib:{moins35:14,entre35_59:40,plus60:46},participation:82,score2022:null,notes:"Parti fondé par Édouard Philippe, légèrement plus à droite que Renaissance. Forte implantation en Normandie et dans les villes de taille moyenne à travers les maires élus.",etude:"Bac+3 et plus (60%). Cadres, chefs de PME, élus locaux."},
-  {id:"reconq",nom:"Reconquête !",logo:"https://upload.wikimedia.org/wikipedia/commons/thumb/d/da/Logo_of_the_Reconquest_%28political_party%29.svg/3840px-Logo_of_the_Reconquest_%28political_party%29.svg.png",couleur:"#1e1e5e",orient:"Extrême droite",orientBg:"#fdecea",orientCl:"#991b1b",ageMoyen:43,revenuMoyen:2600,revenuCateg:"moyen",ageCat:"actif",etudes:50,urbain:55,periurbain:30,rural:15,localisation:"urbain",csp:{emp:42,ouvrier:14,retraite:26,etudiant:10,autre:8},aides:[],ageDistrib:{moins35:28,entre35_59:42,plus60:30},participation:70,score2022:7.1,notes:"Plus jeune et plus diplômé que le RN. Forte présence dans PACA et les zones à forte immigration. Profil 'conservateur urbain' qui se distingue de l'électorat RN classique.",etude:"Bac+2 à bac+3 (50%). Cadres moyens, indépendants, professions libérales conservatrices."},
+  {id:"pcf",nom:"Parti Communiste Français",logo:"https://upload.wikimedia.org/wikipedia/fr/thumb/6/6a/Logo_du_Parti_communiste_fran%C3%A7ais_%282018%2C_rouge%29.svg/200px-Logo_du_Parti_communiste_fran%C3%A7ais_%282018%2C_rouge%29.svg.png",couleur:"#C1282A",orient:"Gauche radicale",orientBg:"#fdecea",orientCl:"#991b1b",ageMoyen:54,revenuMoyen:1850,revenuCateg:"bas",ageCat:"actif",etudes:32,urbain:48,periurbain:30,rural:22,localisation:"periurbain",csp:{emp:28,ouvrier:34,retraite:32,etudiant:4,autre:2},aides:["Chômage","Retraite complémentaire"],ageDistrib:{moins35:12,entre35_59:38,plus60:50},participation:72,score2022:2.3,notes:"Ancien parti ouvrier, électorat vieillissant concentré dans la banlieue rouge parisienne (93, 94) et les bassins miniers. Résiste par sa présence municipale.",etude:"CAP/BEP ou bac pro (60%). Ouvriers qualifiés, agents de la fonction publique."},
+  {id:"horizons",nom:"Horizons",logo:"https://upload.wikimedia.org/wikipedia/commons/thumb/5/55/Logo_Parti_Politique_Horizons_-_2021.svg/200px-Logo_Parti_Politique_Horizons_-_2021.svg.png",couleur:"#00B0E8",orient:"Centre droit",orientBg:"#e0f2fe",orientCl:"#0369a1",ageMoyen:51,revenuMoyen:2800,revenuCateg:"moyen",ageCat:"actif",etudes:60,urbain:58,periurbain:30,rural:12,localisation:"urbain",csp:{emp:45,ouvrier:7,retraite:35,etudiant:6,autre:7},aides:[],ageDistrib:{moins35:14,entre35_59:40,plus60:46},participation:82,score2022:null,notes:"Parti fondé par Édouard Philippe, légèrement plus à droite que Renaissance. Forte implantation en Normandie et dans les villes de taille moyenne à travers les maires élus.",etude:"Bac+3 et plus (60%). Cadres, chefs de PME, élus locaux."},
+  {id:"reconq",nom:"Reconquête !",logo:"https://upload.wikimedia.org/wikipedia/commons/thumb/d/da/Logo_of_the_Reconquest_%28political_party%29.svg/200px-Logo_of_the_Reconquest_%28political_party%29.svg.png",couleur:"#1e1e5e",orient:"Extrême droite",orientBg:"#fdecea",orientCl:"#991b1b",ageMoyen:43,revenuMoyen:2600,revenuCateg:"moyen",ageCat:"actif",etudes:50,urbain:55,periurbain:30,rural:15,localisation:"urbain",csp:{emp:42,ouvrier:14,retraite:26,etudiant:10,autre:8},aides:[],ageDistrib:{moins35:28,entre35_59:42,plus60:30},participation:70,score2022:7.1,notes:"Plus jeune et plus diplômé que le RN. Forte présence dans PACA et les zones à forte immigration. Profil 'conservateur urbain' qui se distingue de l'électorat RN classique.",etude:"Bac+2 à bac+3 (50%). Cadres moyens, indépendants, professions libérales conservatrices."},
   {id:"udi",nom:"Union Démocrates Indépendants",logo:"https://upload.wikimedia.org/wikipedia/commons/6/60/Logo_UDI_2019.png",couleur:"#00AACC",orient:"Centre droit",orientBg:"#e0f2fe",orientCl:"#0369a1",ageMoyen:54,revenuMoyen:2900,revenuCateg:"moyen",ageCat:"senior",etudes:60,urbain:52,periurbain:30,rural:18,localisation:"urbain",csp:{emp:40,ouvrier:8,retraite:40,etudiant:5,autre:7},aides:[],ageDistrib:{moins35:11,entre35_59:34,plus60:55},participation:83,score2022:null,notes:"Héritier de la démocratie chrétienne et du centre droit, ancienne UDF. Élus locaux nombreux dans l'Est et les régions catholiques. Très proches de LR et MoDem.",etude:"Bac+3 et plus (60%). Cadres, élus locaux, chefs d'entreprise."},
   {id:"npa",nom:"Nouveau Parti Anticapitaliste",logo:"https://npa-lanticapitaliste.org/sites/default/files/styles/large/public/autocollant-npa-identitaire-horizontal.jpg",couleur:"#cc0000",orient:"Extrême gauche",orientBg:"#fdecea",orientCl:"#991b1b",ageMoyen:36,revenuMoyen:1600,revenuCateg:"bas",ageCat:"jeune",etudes:52,urbain:70,periurbain:22,rural:8,localisation:"urbain",csp:{emp:26,ouvrier:20,retraite:8,etudiant:32,autre:14},aides:["RSA","Chômage","APL"],ageDistrib:{moins35:48,entre35_59:36,plus60:16},participation:55,score2022:0.77,notes:"Électorat très jeune : étudiants militants et précaires urbains. Présence dans les universités et les villes de gauche. Électorat mobile, pouvant voter LFI ou s'abstenir.",etude:"Bac+2/+3 (52%). Nombreux étudiants, militants syndicaux, précaires qualifiés."},
   {id:"lo",nom:"Lutte Ouvrière",logo:"https://upload.wikimedia.org/wikipedia/commons/e/e0/Logo_de_Lutte_Ouvri%C3%A8re.png",couleur:"#cc0000",orient:"Extrême gauche",orientBg:"#fdecea",orientCl:"#991b1b",ageMoyen:48,revenuMoyen:1550,revenuCateg:"bas",ageCat:"actif",etudes:35,urbain:55,periurbain:30,rural:15,localisation:"urbain",csp:{emp:18,ouvrier:42,retraite:28,etudiant:8,autre:4},aides:["Chômage","RSA"],ageDistrib:{moins35:18,entre35_59:45,plus60:37},participation:58,score2022:0.56,notes:"Électorat ouvrier militant, fidèle à la tradition trotskyste. Concentré dans les zones industrielles et les bassins employant de grands groupes. Électorat stable mais en déclin.",etude:"CAP/BEP ou bac pro (65%). Ouvriers d'usine, agents SNCF, postiers."},
@@ -1370,7 +1442,7 @@ function initProfilMiniTest() {
       ? `Les profils proches donnent aussi ${secTxt}.`
       : `D'autres partis ressortent aussi selon vos autres critères.`;
 
-    const sentence3 = `Votre âge (${age} ans, ${userAgeCat}), votre revenu (${Math.round(revenu).toLocaleString("fr-FR")} €) et votre niveau d’étude (${eduLabel}, utilisé comme tendance sur la page) structurent surtout le résultat.`;
+    const sentence3 = `Votre âge (${age} ans, ${userAgeCat}), votre revenu (${Math.round(revenu).toLocaleString("fr-FR")} €) et votre niveau d'étude (${eduLabel}, utilisé comme tendance sur la page) structurent surtout le résultat.`;
 
     explWrap.innerHTML = `
       <p style="margin-bottom:.55rem">${sentence1}</p>
@@ -1403,7 +1475,7 @@ function initProfilMiniTest() {
       return;
     }
     if (!eduMap[eduKeyIn]) {
-      setError("Veuillez sélectionner un niveau d’étude.");
+      setError("Veuillez sélectionner un niveau d'étude.");
       return;
     }
 
@@ -1411,7 +1483,7 @@ function initProfilMiniTest() {
     const { userAgeCat, userRevenuCateg } = computeUserCats(age, revenu);
 
     const eduLabels = {
-      moins_bac: "Moins qu’un bac",
+      moins_bac: "Moins qu'un bac",
       bac: "Bac",
       bac2: "Bac+2",
       bac3: "Bac+3 / bac+4",
@@ -1477,3 +1549,5 @@ document.addEventListener("DOMContentLoaded",function(){
 </script>
 </body>
 </html>
+
+

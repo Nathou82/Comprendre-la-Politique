@@ -1458,7 +1458,61 @@
   @media(max-width:640px){
     .overview-grid,.exploration-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1.1rem;}
   }
-  </style>
+  
+  /* =========================================================
+     SOUTENIR + RESEAUX SOCIAUX FOOTER
+  ========================================================= */
+  .nav-support-link{
+    display:inline-flex;align-items:center;gap:.42rem;
+    margin-left:.75rem;padding:.42rem .78rem;
+    border-radius:999px;border:1px solid rgba(255,255,255,.09);
+    background:#dd2a3b;
+    color:#fff;font-size:.72rem;font-weight:800;
+    letter-spacing:.01em;white-space:nowrap;text-decoration:none;
+    box-shadow:0 8px 18px rgba(221,42,59,.18);
+    transition:transform .18s,box-shadow .18s,filter .18s,background .18s;
+    flex-shrink:0;
+  }
+  .nav-support-link:hover{
+    transform:translateY(-1px);
+    box-shadow:0 10px 22px rgba(221,42,59,.24);
+    filter:brightness(1.03);
+  }
+  .nav-support-link .support-heart{font-size:.9rem;line-height:1;display:inline-flex;align-items:center;justify-content:center;transform:translateY(-.5px)}
+  .footer-social{
+    margin-top:1.15rem;
+    display:flex;flex-direction:column;align-items:center;justify-content:center;
+    gap:.7rem;
+  }
+  .footer-social-title{
+    font-size:.7rem;font-weight:700;color:rgba(255,255,255,.4);
+    text-transform:uppercase;letter-spacing:.1em;
+  }
+  .footer-social-links{display:flex;justify-content:center;align-items:center;flex-wrap:wrap;gap:.55rem;}
+  .footer-social-link{
+    display:inline-flex;align-items:center;justify-content:center;
+    width:38px;height:38px;border-radius:50%;
+    background:rgba(255,255,255,.06);
+    border:1px solid rgba(255,255,255,.12);
+    color:rgba(255,255,255,.76);text-decoration:none;
+    transition:transform .18s,background .18s,border-color .18s,color .18s,box-shadow .18s;
+  }
+  .footer-social-link:hover{
+    transform:translateY(-2px);
+    color:#fff;
+    box-shadow:0 8px 20px rgba(0,0,0,.18);
+  }
+  .footer-social-link svg{width:17px;height:17px;display:block;fill:currentColor;}
+  .footer-social-link.social-tiktok:hover{background:rgba(37,244,238,.14);border-color:rgba(37,244,238,.24)}
+  .footer-social-link.social-tiktok svg{transform:translateX(.8px);}
+  .footer-social-link.social-instagram:hover{background:rgba(225,48,108,.14);border-color:rgba(225,48,108,.24)}
+  .footer-social-link.social-youtube:hover{background:rgba(255,0,0,.14);border-color:rgba(255,0,0,.24)}
+  @media(max-width:640px){
+    .nav-support-link{margin-left:.5rem;padding:.36rem .64rem;font-size:.66rem}
+    .footer-social{margin-top:1rem}
+    .footer-social-link{width:36px;height:36px}
+  }
+</style>
   <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96" />
   <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
   <link rel="shortcut icon" href="/favicon.ico" />
@@ -1470,7 +1524,7 @@
 
 <nav id="navbar" role="navigation" aria-label="Navigation principale">
   <div class="nav-inner">
-    <div class="nav-logo"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 36" width="28" height="16" aria-hidden="true" style="display:inline-block;vertical-align:middle;flex-shrink:0"><path d="M32 34 A30 30 0 0 1 2 34 Z" fill="#B80000"/><path d="M32 34 A30 30 0 0 0 62 34 Z" fill="#003DA6"/><path d="M9 34 A23 23 0 0 1 32 11" fill="none" stroke="#E03030" stroke-width="3.8" stroke-linecap="round"/><path d="M15 34 A17 17 0 0 1 32 17" fill="none" stroke="#CC2222" stroke-width="3.8" stroke-linecap="round"/><path d="M21 34 A11 11 0 0 1 32 23" fill="none" stroke="#AA1515" stroke-width="3.8" stroke-linecap="round"/><path d="M55 34 A23 23 0 0 0 32 11" fill="none" stroke="#3366EE" stroke-width="3.8" stroke-linecap="round"/><path d="M49 34 A17 17 0 0 0 32 17" fill="none" stroke="#2255CC" stroke-width="3.8" stroke-linecap="round"/><path d="M43 34 A11 11 0 0 0 32 23" fill="none" stroke="#1144AA" stroke-width="3.8" stroke-linecap="round"/><line x1="32" y1="11" x2="32" y2="34" stroke="rgba(255,255,255,0.75)" stroke-width="1.5" stroke-dasharray="2,2"/><line x1="2" y1="34" x2="62" y2="34" stroke="rgba(255,255,255,0.55)" stroke-width="1.5"/></svg> <span>Comprendre la</span> Politique</div>
+        <div class="nav-logo"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 36" width="28" height="16" aria-hidden="true" style="display:inline-block;vertical-align:middle;flex-shrink:0"><path d="M32 34 A30 30 0 0 1 2 34 Z" fill="#B80000"/><path d="M32 34 A30 30 0 0 0 62 34 Z" fill="#003DA6"/><path d="M9 34 A23 23 0 0 1 32 11" fill="none" stroke="#E03030" stroke-width="3.8" stroke-linecap="round"/><path d="M15 34 A17 17 0 0 1 32 17" fill="none" stroke="#CC2222" stroke-width="3.8" stroke-linecap="round"/><path d="M21 34 A11 11 0 0 1 32 23" fill="none" stroke="#AA1515" stroke-width="3.8" stroke-linecap="round"/><path d="M55 34 A23 23 0 0 0 32 11" fill="none" stroke="#3366EE" stroke-width="3.8" stroke-linecap="round"/><path d="M49 34 A17 17 0 0 0 32 17" fill="none" stroke="#2255CC" stroke-width="3.8" stroke-linecap="round"/><path d="M43 34 A11 11 0 0 0 32 23" fill="none" stroke="#1144AA" stroke-width="3.8" stroke-linecap="round"/><line x1="32" y1="11" x2="32" y2="34" stroke="rgba(255,255,255,0.75)" stroke-width="1.5" stroke-dasharray="2,2"/><line x1="2" y1="34" x2="62" y2="34" stroke="rgba(255,255,255,0.55)" stroke-width="1.5"/></svg> <span>Comprendre la</span> Politique</div>
     <button class="nav-arrow nav-arrow-left" id="navArrowLeft" aria-label="Défiler la navigation vers la gauche">&#8249;</button>
             <ul class="nav-links" id="navLinks">
       <li><a href="index.html">Accueil</a></li>
@@ -1491,6 +1545,10 @@
       <button class="nav-toggle" id="navToggle" aria-label="Menu mobile">
         <span></span><span></span><span></span>
       </button>
+      <a href="https://ko-fi.com/comprendrelapolitique" target="_blank" rel="noopener noreferrer" class="nav-support-link" aria-label="Soutenir Comprendre la Politique sur Ko-fi">
+        <span class="support-heart" aria-hidden="true">🤍</span>
+        <span>Soutenir</span>
+      </a>
     </div>
   </div>
 </nav>
@@ -1852,6 +1910,20 @@
       <a href="apprendre.html">Apprendre</a>
       <a href="mentions-legales.html">Mentions légales</a>
     </div>
+    <div class="footer-social" aria-label="Réseaux sociaux Comprendre la Politique">
+      <div class="footer-social-title">Suivre le site</div>
+      <div class="footer-social-links">
+        <a href="https://www.tiktok.com/@comprendrelapolitique.fr" target="_blank" rel="noopener noreferrer" class="footer-social-link social-tiktok" aria-label="TikTok Comprendre la Politique">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14.6 3c.34 2.23 1.62 3.8 3.76 4.3v2.48a6.42 6.42 0 0 1-3.08-.84v5.07c0 3.38-2.26 5.69-5.52 5.69-3.1 0-5.26-2.15-5.26-4.95 0-2.95 2.28-5.08 5.53-5.02v2.39c-1.77-.1-2.98.97-2.98 2.48 0 1.42 1.01 2.42 2.38 2.42 1.53 0 2.68-1.01 2.68-3.02V3h2.49z"/></svg>
+        </a>
+        <a href="https://www.instagram.com/comprendre_la_politique.fr" target="_blank" rel="noopener noreferrer" class="footer-social-link social-instagram" aria-label="Instagram Comprendre la Politique">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7.75 2h8.5A5.75 5.75 0 0 1 22 7.75v8.5A5.75 5.75 0 0 1 16.25 22h-8.5A5.75 5.75 0 0 1 2 16.25v-8.5A5.75 5.75 0 0 1 7.75 2zm0 1.9A3.85 3.85 0 0 0 3.9 7.75v8.5a3.85 3.85 0 0 0 3.85 3.85h8.5a3.85 3.85 0 0 0 3.85-3.85v-8.5A3.85 3.85 0 0 0 16.25 3.9h-8.5zm8.95 1.42a1.18 1.18 0 1 1 0 2.36 1.18 1.18 0 0 1 0-2.36zM12 6.85A5.15 5.15 0 1 1 6.85 12 5.16 5.16 0 0 1 12 6.85zm0 1.9A3.25 3.25 0 1 0 15.25 12 3.25 3.25 0 0 0 12 8.75z"/></svg>
+        </a>
+        <a href="https://www.youtube.com/@comprendrelapolitique" target="_blank" rel="noopener noreferrer" class="footer-social-link social-youtube" aria-label="YouTube Comprendre la Politique">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21.8 8.4a2.9 2.9 0 0 0-2.04-2.06C17.97 5.8 12 5.8 12 5.8s-5.97 0-7.76.54A2.9 2.9 0 0 0 2.2 8.4 30.7 30.7 0 0 0 1.7 12a30.7 30.7 0 0 0 .5 3.6 2.9 2.9 0 0 0 2.04 2.06C6.03 18.2 12 18.2 12 18.2s5.97 0 7.76-.54a2.9 2.9 0 0 0 2.04-2.06 30.7 30.7 0 0 0 .5-3.6 30.7 30.7 0 0 0-.5-3.6zM10.1 15.2V8.8L15.7 12l-5.6 3.2z"/></svg>
+        </a>
+      </div>
+    </div>
     <div style="margin-top:1.8rem;padding-top:1.5rem;border-top:1px solid rgba(255,255,255,.08);max-width:760px;margin-left:auto;margin-right:auto;">
       <p style="color:rgba(255,255,255,.55);font-size:.78rem;font-weight:600;margin-bottom:.5rem;letter-spacing:.06em;text-transform:uppercase;"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg> Sources &amp; fiabilité</p>
       <p style="color:rgba(255,255,255,.3);font-size:.75rem;line-height:1.75;">Les informations présentées sur ce site sont issues de sources publiques et institutionnelles : <strong style="color:rgba(255,255,255,.5)">Ministère de l'Intérieur</strong> (résultats électoraux), <strong style="color:rgba(255,255,255,.5)">Conseil Constitutionnel</strong>, <strong style="color:rgba(255,255,255,.5)">Assemblée Nationale</strong>, <strong style="color:rgba(255,255,255,.5)">vie-publique.fr</strong>, <strong style="color:rgba(255,255,255,.5)">Archives Nationales</strong> et <strong style="color:rgba(255,255,255,.5)">Gallica (BNF)</strong>. Les données de sondages sont fournies par IFOP, BVA, Odoxa et Ipsos à titre indicatif. Contenu éducatif, équilibré et non partisan.</p>
@@ -2121,7 +2193,7 @@ const etudes = [
   { tag:'Liberté publique', tagBg:'#eafaf1', tagColor:'#1e8449', title:'Loi sécurité globale & débat sur les libertés', date:'2020–2021', desc:"Proposée par LREM, la «loi sécurité globale» entend protéger les policiers en rendant pénalement punissable la diffusion d'images permettant d'identifier un agent en opération. Elle déclenche une vive opposition (journalistes, associations de liberté de la presse, gauche) au nom de la liberté d'informer.", impact:['Débat liberté vs sécurité','Mobilisation journalistes','Censure partielle Cons. Const.','Précédent sur droit à filmer','Fracture société/police'], timeline:[{c:'#1a4f8a',t:'Nov. 2020 : Dépôt de la proposition LREM'},{c:'#c0392b',t:'28 nov. : 1ères manifestations + «Nuit de la Honte»'},{c:'#27ae60',t:'Janv. 2021 : Conseil constitutionnel censure l\'article 24'},{c:'#e74c3c',t:'Mai 2021 : LOI adoptée, article controversé retiré'}] },
   { tag:'Crise sociale', tagBg:'#f9e8e8', tagColor:'#8e1c1c', title:'Les Gilets Jaunes 2018–2019', date:'Novembre 2018 – Juillet 2019', desc:"Mouvement de contestation populaire né sur les réseaux sociaux contre la hausse de la taxe carbone et la baisse du pouvoir d'achat. Inédit : sans leader ni organisation politique. 36 semaines de mobilisation. Macron concède le Grand Débat National et 10 milliards de mesures sociales.", impact:['36 samedis de mobilisation','~10 Mds € de mesures','Grand Débat National','Révision de la Constitution rejetée','Fracture territoriale ville/campagne'], timeline:[{c:'#8e1c1c',t:'17 nov. 2018 : 1er acte - 282 000 personnes'},{c:'#8e1c1c',t:'1er déc. : Acte III - violences à Paris, Champs-Élysées'},{c:'#1a4f8a',t:'10 déc. : Discours Macron + 10 Mds de mesures'},{c:'#27ae60',t:'Janv.–Mars 2019 : Grand Débat National'},{c:'#555',t:"Juin 2019 : Dissolution progressive du mouvement"}] },
   { tag:'Droit & Société', tagBg:'#eaf4fc', tagColor:'#1a5276', title:'Mariage pour tous 2013', date:'2012–2013', desc:"La loi Taubira (du nom de la Garde des Sceaux Christiane Taubira) ouvre le mariage et l'adoption aux couples de même sexe. Promesse de Hollande, elle déclenche une vive opposition (Manif pour Tous) et un soutien massif de la gauche et des associations LGBTQ+. Adoptée définitivement le 23 avril 2013.", impact:['Premier mariage gay : 29 mai 2013','~240 000 manifestants contre (jan 2013)','Adoption plénière ouverte','Divide gauche/droite net','Loi toujours en vigueur'], timeline:[{c:'#c0392b',t:"Oct. 2012 : Dépôt du projet de loi Taubira"},{c:'#1a4f8a',t:"Jan. 2013 : 'Manif pour Tous' - 300 000 personnes"},{c:'#27ae60',t:"Fév.–Avril 2013 : Débats passionnés à l'Assemblée"},{c:'#27ae60',t:"23 avril 2013 : Adoption définitive"},{c:'#gold',t:"29 mai 2013 : 1er mariage gay à Montpellier"}] },
-  { tag:'Économie', tagBg:'#fef0ed', tagColor:'#e74c3c', title:"La politique des «quoi qu’il en coûte»", date:'Mars 2020 – 2022', desc:"Face à la pandémie de Covid-19, Bruno Le Maire et Macron lancent un soutien économique massif : chômage partiel, prêts garantis (PGE), aides aux entreprises. Coût : ~230 milliards d'euros. Si la politique a sauvé des milliers d'entreprises, elle a aussi creusé la dette publique (115% du PIB en 2022).", impact:['230 Mds € engagés','300 000 entreprises aidées','Chômage limité à 8%','Dette : 115% du PIB','Inflation post-COVID'], timeline:[{c:'#1a4f8a',t:"16 mars 2020 : 'Quoi qu'il en coûte' - annonce Macron"},{c:'#1a4f8a',t:"Avril 2020 : Chômage partiel - 12M salariés couverts"},{c:'#27ae60',t:"2021 : Reprise économique (+6,8% PIB)"},{c:'#c0392b',t:"2022 : Inflation +5%, fin du 'quoi qu'il en coûte'"},{c:'#8e1c1c',t:"2024 : Déficit 6% du PIB, plans d'économies"}] }
+  { tag:'Économie', tagBg:'#fef0ed', tagColor:'#e74c3c', title:"La politique des «quoi qu'il en coûte»", date:'Mars 2020 – 2022', desc:"Face à la pandémie de Covid-19, Bruno Le Maire et Macron lancent un soutien économique massif : chômage partiel, prêts garantis (PGE), aides aux entreprises. Coût : ~230 milliards d'euros. Si la politique a sauvé des milliers d'entreprises, elle a aussi creusé la dette publique (115% du PIB en 2022).", impact:['230 Mds € engagés','300 000 entreprises aidées','Chômage limité à 8%','Dette : 115% du PIB','Inflation post-COVID'], timeline:[{c:'#1a4f8a',t:"16 mars 2020 : 'Quoi qu'il en coûte' - annonce Macron"},{c:'#1a4f8a',t:"Avril 2020 : Chômage partiel - 12M salariés couverts"},{c:'#27ae60',t:"2021 : Reprise économique (+6,8% PIB)"},{c:'#c0392b',t:"2022 : Inflation +5%, fin du 'quoi qu'il en coûte'"},{c:'#8e1c1c',t:"2024 : Déficit 6% du PIB, plans d'économies"}] }
 ];
 
 /* ============================================================
@@ -2875,7 +2947,7 @@ function renderIdeologies(){
           <div class="ideo-tag" style="color:${i.lc}">${i.label}</div>
           <h3>${i.name}</h3>
         </div>
-        <div class="ideo-chevron">▼</div>
+        <div class="ideo-chevron">?</div>
       </div>
       <div class="ideo-body">
         <div class="ideo-def" style="border-color:${i.lc}">${i.def}</div>
@@ -3236,7 +3308,7 @@ function renderFaq(){
     <div class="faq-item" id="faq-${i}" data-faq="${i}">
       <div class="faq-q" style="cursor:pointer">
         <span class="faq-q-text">${f.q}</span>
-        <span class="faq-chevron">▼</span>
+        <span class="faq-chevron">?</span>
       </div>
       <div class="faq-a">${f.a}</div>
     </div>`).join('');
@@ -3712,5 +3784,6 @@ document.addEventListener('DOMContentLoaded',function(){
 
 </body>
 </html>
+
 
 

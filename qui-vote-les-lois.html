@@ -221,13 +221,67 @@
   @media(max-width:900px){.compare-grid,.exploration-grid{grid-template-columns:1fr}}
   @media(max-width:760px){.hero{padding-top:6.4rem}.stages-grid,.summary-grid{grid-template-columns:1fr}.section-band{padding:2.2rem 0 2.3rem}.nav-toggle{display:block}.nav-arrow{display:none !important}.nav-inner{flex-wrap:wrap}.nav-links{display:none;flex-direction:column;width:100%;margin:1rem 0 0;gap:.35rem;overflow:visible}.nav-links.open{display:flex}.nav-links a{padding:.7rem .75rem;background:rgba(255,255,255,.04);border-color:rgba(255,255,255,.08)}.hero-panel{grid-template-columns:1fr}}
   @media(max-width:560px){.hero-copy h1{font-size:2.15rem}.hero-actions{flex-direction:column;align-items:stretch}.page-btn{justify-content:center}.cookie-actions{flex-direction:column;align-items:stretch}.cookie-accept{text-align:center}}
+
+  /* =========================================================
+     SOUTENIR + RESEAUX SOCIAUX FOOTER
+  ========================================================= */
+  .nav-support-link{
+    display:inline-flex;align-items:center;gap:.42rem;
+    margin-left:.75rem;padding:.42rem .78rem;
+    border-radius:999px;border:1px solid rgba(255,255,255,.09);
+    background:#dd2a3b;
+    color:#fff;font-size:.72rem;font-weight:800;
+    letter-spacing:.01em;white-space:nowrap;text-decoration:none;
+    box-shadow:0 8px 18px rgba(221,42,59,.18);
+    transition:transform .18s,box-shadow .18s,filter .18s,background .18s;
+    flex-shrink:0;
+  }
+  .nav-support-link:hover{
+    transform:translateY(-1px);
+    box-shadow:0 10px 22px rgba(221,42,59,.24);
+    filter:brightness(1.03);
+  }
+  .nav-support-link .support-heart{font-size:.9rem;line-height:1;display:inline-flex;align-items:center;justify-content:center;transform:translateY(-.5px)}
+  .footer-social{
+    margin-top:1.15rem;
+    display:flex;flex-direction:column;align-items:center;justify-content:center;
+    gap:.7rem;
+  }
+  .footer-social-title{
+    font-size:.7rem;font-weight:700;color:rgba(255,255,255,.4);
+    text-transform:uppercase;letter-spacing:.1em;
+  }
+  .footer-social-links{display:flex;justify-content:center;align-items:center;flex-wrap:wrap;gap:.55rem;}
+  .footer-social-link{
+    display:inline-flex;align-items:center;justify-content:center;
+    width:38px;height:38px;border-radius:50%;
+    background:rgba(255,255,255,.06);
+    border:1px solid rgba(255,255,255,.12);
+    color:rgba(255,255,255,.76);text-decoration:none;
+    transition:transform .18s,background .18s,border-color .18s,color .18s,box-shadow .18s;
+  }
+  .footer-social-link:hover{
+    transform:translateY(-2px);
+    color:#fff;
+    box-shadow:0 8px 20px rgba(0,0,0,.18);
+  }
+  .footer-social-link svg{width:17px;height:17px;display:block;fill:currentColor;}
+  .footer-social-link.social-tiktok:hover{background:rgba(37,244,238,.14);border-color:rgba(37,244,238,.24)}
+  .footer-social-link.social-tiktok svg{transform:translateX(.8px);}
+  .footer-social-link.social-instagram:hover{background:rgba(225,48,108,.14);border-color:rgba(225,48,108,.24)}
+  .footer-social-link.social-youtube:hover{background:rgba(255,0,0,.14);border-color:rgba(255,0,0,.24)}
+  @media(max-width:640px){
+    .nav-support-link{margin-left:.5rem;padding:.36rem .64rem;font-size:.66rem}
+    .footer-social{margin-top:1rem}
+    .footer-social-link{width:36px;height:36px}
+  }
 </style>
 </head>
 <body>
 
 <nav id="navbar" role="navigation" aria-label="Navigation principale">
   <div class="nav-inner">
-    <a href="index.html" class="nav-logo"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 36" width="28" height="16" aria-hidden="true" style="display:inline-block;vertical-align:middle;flex-shrink:0"><path d="M32 34 A30 30 0 0 1 2 34 Z" fill="#B80000"/><path d="M32 34 A30 30 0 0 0 62 34 Z" fill="#003DA6"/><path d="M9 34 A23 23 0 0 1 32 11" fill="none" stroke="#E03030" stroke-width="3.8" stroke-linecap="round"/><path d="M15 34 A17 17 0 0 1 32 17" fill="none" stroke="#CC2222" stroke-width="3.8" stroke-linecap="round"/><path d="M21 34 A11 11 0 0 1 32 23" fill="none" stroke="#AA1515" stroke-width="3.8" stroke-linecap="round"/><path d="M55 34 A23 23 0 0 0 32 11" fill="none" stroke="#3366EE" stroke-width="3.8" stroke-linecap="round"/><path d="M49 34 A17 17 0 0 0 32 17" fill="none" stroke="#2255CC" stroke-width="3.8" stroke-linecap="round"/><path d="M43 34 A11 11 0 0 0 32 23" fill="none" stroke="#1144AA" stroke-width="3.8" stroke-linecap="round"/><line x1="32" y1="11" x2="32" y2="34" stroke="rgba(255,255,255,0.75)" stroke-width="1.5" stroke-dasharray="2,2"/><line x1="2" y1="34" x2="62" y2="34" stroke="rgba(255,255,255,0.55)" stroke-width="1.5"/></svg> <span>Comprendre la</span> Politique</a>
+        <a href="index.html" class="nav-logo"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 36" width="28" height="16" aria-hidden="true" style="display:inline-block;vertical-align:middle;flex-shrink:0"><path d="M32 34 A30 30 0 0 1 2 34 Z" fill="#B80000"/><path d="M32 34 A30 30 0 0 0 62 34 Z" fill="#003DA6"/><path d="M9 34 A23 23 0 0 1 32 11" fill="none" stroke="#E03030" stroke-width="3.8" stroke-linecap="round"/><path d="M15 34 A17 17 0 0 1 32 17" fill="none" stroke="#CC2222" stroke-width="3.8" stroke-linecap="round"/><path d="M21 34 A11 11 0 0 1 32 23" fill="none" stroke="#AA1515" stroke-width="3.8" stroke-linecap="round"/><path d="M55 34 A23 23 0 0 0 32 11" fill="none" stroke="#3366EE" stroke-width="3.8" stroke-linecap="round"/><path d="M49 34 A17 17 0 0 0 32 17" fill="none" stroke="#2255CC" stroke-width="3.8" stroke-linecap="round"/><path d="M43 34 A11 11 0 0 0 32 23" fill="none" stroke="#1144AA" stroke-width="3.8" stroke-linecap="round"/><line x1="32" y1="11" x2="32" y2="34" stroke="rgba(255,255,255,0.75)" stroke-width="1.5" stroke-dasharray="2,2"/><line x1="2" y1="34" x2="62" y2="34" stroke="rgba(255,255,255,0.55)" stroke-width="1.5"/></svg> <span>Comprendre la</span> Politique</a>
     <button class="nav-arrow nav-arrow-left" id="navArrowLeft" aria-label="D&eacute;filer la navigation vers la gauche">&#8249;</button>
     <ul class="nav-links" id="navLinks">
       <li><a href="index.html">Accueil</a></li>
@@ -243,7 +297,11 @@
       <li><a href="apprendre.html">Apprendre</a></li>
     </ul>
     <button class="nav-arrow nav-arrow-right" id="navArrowRight" aria-label="D&eacute;filer la navigation vers la droite">&#8250;</button>
-    <div class="nav-actions"><button class="nav-toggle" id="navToggle" aria-label="Menu mobile"><span></span><span></span><span></span></button></div>
+    <div class="nav-actions"><button class="nav-toggle" id="navToggle" aria-label="Menu mobile"><span></span><span></span><span></span></button>
+      <a href="https://ko-fi.com/comprendrelapolitique" target="_blank" rel="noopener noreferrer" class="nav-support-link" aria-label="Soutenir Comprendre la Politique sur Ko-fi">
+        <span class="support-heart" aria-hidden="true">🤍</span>
+        <span>Soutenir</span>
+      </a></div>
   </div>
 </nav>
 
@@ -440,6 +498,20 @@
       <a href="apprendre.html">Apprendre</a>
       <a href="mentions-legales.html">Mentions l&eacute;gales</a>
     </div>
+    <div class="footer-social" aria-label="Réseaux sociaux Comprendre la Politique">
+      <div class="footer-social-title">Suivre le site</div>
+      <div class="footer-social-links">
+        <a href="https://www.tiktok.com/@comprendrelapolitique.fr" target="_blank" rel="noopener noreferrer" class="footer-social-link social-tiktok" aria-label="TikTok Comprendre la Politique">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14.6 3c.34 2.23 1.62 3.8 3.76 4.3v2.48a6.42 6.42 0 0 1-3.08-.84v5.07c0 3.38-2.26 5.69-5.52 5.69-3.1 0-5.26-2.15-5.26-4.95 0-2.95 2.28-5.08 5.53-5.02v2.39c-1.77-.1-2.98.97-2.98 2.48 0 1.42 1.01 2.42 2.38 2.42 1.53 0 2.68-1.01 2.68-3.02V3h2.49z"/></svg>
+        </a>
+        <a href="https://www.instagram.com/comprendre_la_politique.fr" target="_blank" rel="noopener noreferrer" class="footer-social-link social-instagram" aria-label="Instagram Comprendre la Politique">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7.75 2h8.5A5.75 5.75 0 0 1 22 7.75v8.5A5.75 5.75 0 0 1 16.25 22h-8.5A5.75 5.75 0 0 1 2 16.25v-8.5A5.75 5.75 0 0 1 7.75 2zm0 1.9A3.85 3.85 0 0 0 3.9 7.75v8.5a3.85 3.85 0 0 0 3.85 3.85h8.5a3.85 3.85 0 0 0 3.85-3.85v-8.5A3.85 3.85 0 0 0 16.25 3.9h-8.5zm8.95 1.42a1.18 1.18 0 1 1 0 2.36 1.18 1.18 0 0 1 0-2.36zM12 6.85A5.15 5.15 0 1 1 6.85 12 5.16 5.16 0 0 1 12 6.85zm0 1.9A3.25 3.25 0 1 0 15.25 12 3.25 3.25 0 0 0 12 8.75z"/></svg>
+        </a>
+        <a href="https://www.youtube.com/@comprendrelapolitique" target="_blank" rel="noopener noreferrer" class="footer-social-link social-youtube" aria-label="YouTube Comprendre la Politique">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21.8 8.4a2.9 2.9 0 0 0-2.04-2.06C17.97 5.8 12 5.8 12 5.8s-5.97 0-7.76.54A2.9 2.9 0 0 0 2.2 8.4 30.7 30.7 0 0 0 1.7 12a30.7 30.7 0 0 0 .5 3.6 2.9 2.9 0 0 0 2.04 2.06C6.03 18.2 12 18.2 12 18.2s5.97 0 7.76-.54a2.9 2.9 0 0 0 2.04-2.06 30.7 30.7 0 0 0 .5-3.6 30.7 30.7 0 0 0-.5-3.6zM10.1 15.2V8.8L15.7 12l-5.6 3.2z"/></svg>
+        </a>
+      </div>
+    </div>
     <div style="margin-top:1.8rem;padding-top:1.5rem;border-top:1px solid rgba(255,255,255,.08);max-width:760px;margin-left:auto;margin-right:auto;">
       <p style="color:rgba(255,255,255,.55);font-size:.78rem;font-weight:600;margin-bottom:.5rem;letter-spacing:.06em;text-transform:uppercase;"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg> Sources &amp; fiabilit&eacute;</p>
       <p style="color:rgba(255,255,255,.3);font-size:.75rem;line-height:1.75;">Les informations pr&eacute;sent&eacute;es sur ce site sont issues de sources publiques et institutionnelles : <strong style="color:rgba(255,255,255,.5)">Minist&egrave;re de l'Int&eacute;rieur</strong> (r&eacute;sultats &eacute;lectoraux), <strong style="color:rgba(255,255,255,.5)">Conseil Constitutionnel</strong>, <strong style="color:rgba(255,255,255,.5)">Assembl&eacute;e Nationale</strong>, <strong style="color:rgba(255,255,255,.5)">vie-publique.fr</strong>, <strong style="color:rgba(255,255,255,.5)">Archives Nationales</strong> et <strong style="color:rgba(255,255,255,.5)">Gallica (BNF)</strong>. Les donn&eacute;es de sondages sont fournies par IFOP, BVA, Odoxa et Ipsos &agrave; titre indicatif. Contenu &eacute;ducatif, &eacute;quilibr&eacute; et non partisan.</p>
@@ -537,6 +609,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
 </body>
 </html>
+
 
 
 
