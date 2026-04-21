@@ -1,4 +1,4 @@
-﻿﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="fr">
 <head>
 <meta charset="UTF-8"/>
@@ -303,7 +303,7 @@
   .ideo-card{
     background:var(--card);border:1px solid var(--border);
     border-radius:12px;overflow:hidden;
-    transition:box-shadow .25s,transform .25s;
+    transition:box-shadow .25s,transform .25s,border-color .25s,background .25s;
   }
   .ideo-card:hover{box-shadow:var(--shadow2);transform:translateY(-2px)}
   .ideo-header{padding:1.3rem;cursor:pointer;display:flex;align-items:flex-start;justify-content:space-between;gap:.9rem}
@@ -352,10 +352,20 @@
   #test-orientation{scroll-margin-top:120px}
   .party-card{
     background:var(--card);border:1px solid var(--border);border-radius:12px;overflow:hidden;
-    transition:box-shadow .25s,transform .25s;
+    transition:box-shadow .25s,transform .25s,border-color .25s,background .25s;
     scroll-margin-top:120px;
+    cursor:pointer;position:relative;
   }
-  .party-card:hover{box-shadow:var(--shadow2);transform:translateY(-2px)}
+  .party-card:hover{
+    box-shadow:var(--shadow2),0 0 0 2px var(--party-accent-soft,rgba(37,99,168,.16));
+    transform:translateY(-2px);
+    border-color:var(--party-accent,rgba(37,99,168,.22));
+  }
+  .party-card.is-selected{
+    border-color:var(--party-accent,rgba(37,99,168,.42));
+    box-shadow:0 16px 36px rgba(13,27,42,.12),0 0 0 3px var(--party-accent-soft,rgba(37,99,168,.18));
+    background:linear-gradient(180deg,#fff 0%,var(--party-accent-bg,#f7faff) 100%);
+  }
   .party-top{padding:1.3rem 1.3rem .9rem;display:flex;align-items:flex-start;gap:.9rem}
   .party-logo{width:50px;height:50px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:1.05rem;font-weight:900;font-family:'Playfair Display',serif;flex-shrink:0;color:#fff}
   .party-logo-official{background:#fff !important;padding:4px;border:1px solid var(--border);}
@@ -373,45 +383,147 @@
   .pos-val{font-size:.78rem;font-weight:500;color:var(--text)}
   .party-founded{font-size:.73rem;color:var(--text3);margin-top:.9rem;padding-top:.7rem;border-top:1px solid var(--border);display:flex;align-items:flex-start;gap:.35rem}
   .party-founded svg{flex-shrink:0;margin-top:.08rem}
+  .party-card-footer{
+    margin-top:1rem;padding-top:.9rem;border-top:1px solid var(--border);
+    display:flex;align-items:center;justify-content:space-between;gap:.8rem;
+  }
+  .party-card-cta{
+    display:inline-flex;align-items:center;gap:.45rem;
+    font-size:.76rem;font-weight:700;letter-spacing:.03em;color:var(--blue2);
+  }
+  .party-card-cta svg{transition:transform .2s ease}
+  .party-card:hover .party-card-cta,
+  .party-card.is-selected .party-card-cta,
+  .party-card:hover .party-card-note,
+  .party-card.is-selected .party-card-note{color:var(--party-accent,var(--blue2))}
+  .party-card:hover .party-card-cta svg,.party-card.is-selected .party-card-cta svg{transform:translateX(2px)}
+  .party-card-note{font-size:.72rem;color:var(--text3)}
+  .party-detail-shell{margin-top:1.6rem}
+  .party-detail-placeholder{
+    background:var(--card);border:1px dashed rgba(136,149,167,.4);border-radius:14px;
+    padding:1.25rem 1.35rem;color:var(--text3);font-size:.9rem;line-height:1.7;
+  }
+  .party-detail-panel{
+    display:none;background:var(--card);border:1px solid var(--border);border-radius:18px;
+    box-shadow:var(--shadow2);padding:1.4rem;
+  }
+  .party-detail-panel.show{display:block;animation:fadeIn .35s ease}
+  .party-detail-top{
+    display:grid;grid-template-columns:minmax(0,1.15fr) minmax(280px,.85fr);
+    gap:1rem;align-items:stretch;
+  }
+  .party-detail-main,.party-detail-side,.party-detail-card{
+    background:linear-gradient(180deg,#fff 0%,#fbfcff 100%);
+    border:1px solid var(--border);border-radius:14px;
+  }
+  .party-detail-main{padding:1.25rem 1.25rem 1.15rem}
+  .party-detail-side{padding:1.1rem}
+  .party-detail-head{display:flex;gap:1rem;align-items:flex-start;margin-bottom:1rem}
+  .party-detail-logo{
+    width:66px;height:66px;border-radius:14px;display:flex;align-items:center;justify-content:center;
+    font-size:1.35rem;font-weight:900;font-family:'Playfair Display',serif;color:#fff;flex-shrink:0;
+  }
+  .party-detail-logo.party-logo-official{padding:6px}
+  .party-detail-kicker{
+    font-size:.72rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--blue2);margin-bottom:.3rem;
+  }
+  .party-detail-title-row{display:flex;align-items:flex-start;justify-content:space-between;gap:.8rem;flex-wrap:wrap}
+  .party-detail-title h3{font-size:1.35rem;margin-bottom:.1rem}
+  .party-detail-title .party-short{font-size:.82rem}
+  .party-detail-summary{font-size:.92rem;color:var(--text2);line-height:1.78;margin-bottom:1rem}
+  .party-detail-actions{display:flex;gap:.7rem;flex-wrap:wrap}
+  .party-detail-btn{
+    display:inline-flex;align-items:center;gap:.45rem;padding:.62rem 1rem;border-radius:999px;
+    border:1px solid var(--border);font-size:.8rem;font-weight:700;text-decoration:none;cursor:pointer;
+    transition:all .2s ease;background:#fff;color:var(--text);
+  }
+  .party-detail-btn:hover{border-color:rgba(37,99,168,.32);color:var(--blue2);transform:translateY(-1px)}
+  .party-detail-btn.is-primary{background:var(--navy);color:#fff;border-color:var(--navy)}
+  .party-detail-btn.is-primary:hover{background:var(--navy2);color:#fff}
+  .party-detail-mini-stats{
+    display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:.7rem;
+  }
+  .party-stat{
+    padding:.8rem .85rem;border-radius:12px;background:var(--bg2);border:1px solid rgba(136,149,167,.18);
+  }
+  .party-stat-label{
+    font-size:.65rem;font-weight:700;letter-spacing:.09em;text-transform:uppercase;color:var(--text3);margin-bottom:.2rem;
+  }
+  .party-stat-value{font-size:.86rem;font-weight:700;color:var(--text);line-height:1.45}
+  .party-detail-grid{
+    display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1rem;margin-top:1rem;
+  }
+  .party-detail-card{padding:1rem}
+  .party-detail-card h4{font-size:1rem;margin-bottom:.75rem}
+  .party-detail-list{display:grid;gap:.65rem}
+  .party-detail-item{
+    display:grid;grid-template-columns:120px 1fr;gap:.7rem;align-items:start;
+    font-size:.84rem;line-height:1.65;
+  }
+  .party-detail-item dt{font-weight:700;color:var(--text)}
+  .party-detail-item dd{margin:0;color:var(--text2)}
+  .party-ideology-list{display:flex;flex-wrap:wrap;gap:.55rem}
+  .party-ideology-pill{
+    display:inline-flex;align-items:center;gap:.4rem;padding:.45rem .7rem;border-radius:999px;
+    background:var(--bg2);border:1px solid rgba(136,149,167,.2);font-size:.76rem;font-weight:700;color:var(--text);
+  }
+  .party-ideology-dot{width:8px;height:8px;border-radius:50%;background:var(--gold);flex-shrink:0}
+  .party-site-link{
+    display:inline-flex;align-items:center;gap:.42rem;color:var(--blue2);font-weight:700;text-decoration:none;
+  }
+  .party-site-link:hover{text-decoration:underline}
+  .party-detail-compare{
+    margin-top:1rem;padding:1rem 1.05rem;border-radius:14px;
+    background:linear-gradient(180deg,#f8fbff 0%,#fff 100%);border:1px solid rgba(37,99,168,.14);
+  }
+  .party-detail-compare-top{
+    display:flex;align-items:flex-end;justify-content:space-between;gap:1rem;flex-wrap:wrap;margin-bottom:.85rem;
+  }
+  .party-detail-compare-title{font-size:1rem;font-weight:700;color:var(--text)}
+  .party-detail-compare-subtitle{font-size:.8rem;color:var(--text3);margin-top:.2rem}
+  .party-detail-compare-controls{display:flex;gap:.65rem;flex-wrap:wrap}
+  .party-detail-compare-controls .comp-selector{min-width:240px;flex:1}
+  .party-inline-compare-output{display:none}
+  .party-inline-compare-output.show{display:block;animation:fadeIn .35s ease}
+  .party-compare-inline-grid{
+    display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1rem;margin-top:.85rem;
+  }
+  .party-compare-mini-card{
+    background:#fff;border:1px solid var(--border);border-radius:12px;padding:1rem;
+  }
+  .party-compare-mini-head{display:flex;align-items:center;gap:.75rem;margin-bottom:.7rem}
+  .party-compare-mini-head .comp-party-logo{margin:0;width:54px;height:54px}
+  .party-compare-mini-head .comp-party-name{margin-bottom:.18rem;font-size:1rem}
+  .party-compare-mini-list{display:grid;gap:.55rem}
+  .party-compare-mini-item{
+    display:grid;grid-template-columns:120px 1fr;gap:.65rem;font-size:.8rem;line-height:1.55;
+  }
+  .party-compare-mini-item strong{color:var(--text)}
+    .party-detail-footnote{
+    margin-top:.9rem;font-size:.73rem;color:var(--text3);line-height:1.6;
+  }
+  @media(max-width:1100px){
+    .party-detail-top{grid-template-columns:1fr}
+    .party-detail-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+  }
+  @media(max-width:760px){
+    .parties-grid{grid-template-columns:1fr}
+    .party-detail-grid,.party-compare-inline-grid{grid-template-columns:1fr}
+    .party-detail-item,.party-compare-mini-item{grid-template-columns:1fr}
+    .party-detail-compare-controls{flex-direction:column;align-items:stretch}
+    .party-detail-compare-controls .comp-selector{min-width:0;width:100%}
+    .party-detail-main,.party-detail-side,.party-detail-card,.party-detail-panel{padding:1rem}
+    .party-detail-head{flex-direction:column}
+  }
 
   /* =========================================================
      POPULARITÉ DES PARTIS
   ========================================================= */
-  #popularite{background:var(--bg3)}
-  .pop-tabs{display:flex;gap:.5rem;flex-wrap:wrap;margin-bottom:2rem}
-  .pop-tab{
-    padding:.45rem 1rem;border-radius:6px;font-size:.82rem;font-weight:600;
-    cursor:pointer;border:1.5px solid var(--border);background:var(--card);color:var(--text3);
-    transition:all .2s;
+  .party-detail-history{grid-column:span 2}
+  .party-detail-history p{font-size:.9rem;line-height:1.85;color:var(--text2)}
+  @media(max-width:760px){
+    .party-detail-history{grid-column:auto}
   }
-  .pop-tab.active{background:var(--blue);color:#fff;border-color:var(--blue)}
-  .pop-panel{display:none;animation:fadeIn .3s ease}
-  .pop-panel.active{display:block}
-  .pop-source{font-size:.72rem;color:var(--text3);margin-bottom:1.5rem;font-style:italic}
-  .bar-chart{display:flex;flex-direction:column;gap:.65rem}
-  .bar-row{display:flex;align-items:center;gap:.8rem}
-  .bar-label{width:130px;flex-shrink:0;font-size:.82rem;font-weight:600;text-align:right;color:var(--text)}
-  .bar-track{flex:1;background:var(--bg2);border-radius:20px;overflow:hidden;height:28px;position:relative}
-  .bar-fill{
-    height:100%;border-radius:20px;display:flex;align-items:center;
-    padding-left:.65rem;font-size:.76rem;font-weight:700;color:#fff;
-    width:0%;transition:width 1.2s cubic-bezier(.25,.46,.45,.94);
-    min-width:2rem;
-  }
-  .bar-val{width:45px;flex-shrink:0;font-size:.82rem;font-weight:700;color:var(--text)}
-  .pop-legend{display:flex;flex-wrap:wrap;gap:.6rem;margin-top:1.5rem}
-  .pop-leg-item{display:flex;align-items:center;gap:.35rem;font-size:.74rem;color:var(--text2)}
-  .pop-leg-dot{width:10px;height:10px;border-radius:50%;flex-shrink:0}
-
-  /* Donut chart */
-  .donut-wrap{display:flex;align-items:center;gap:2.5rem;flex-wrap:wrap}
-  .donut-svg{flex-shrink:0}
-  .donut-legend{display:flex;flex-direction:column;gap:.55rem}
-  .donut-leg-row{display:flex;align-items:center;gap:.55rem;font-size:.82rem}
-  .donut-leg-color{width:12px;height:12px;border-radius:3px;flex-shrink:0}
-  .donut-leg-name{font-weight:600;color:var(--text);min-width:110px}
-  .donut-leg-val{color:var(--text3)}
-
   /* =========================================================
      COMPARATEUR DE PARTIS
   ========================================================= */
@@ -478,23 +590,6 @@
   .td-right{border-left:2px solid #3498db}
 
   /* =========================================================
-     POPULARITE CHART
-  ========================================================= */
-  .election-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:1.5rem;margin-top:2rem}
-  .election-card{
-    background:var(--card);border:1px solid var(--border);border-radius:12px;
-    padding:1.5rem;transition:background .35s,color .35s,border-color .35s;
-  }
-  .election-card h4{margin-bottom:.3rem;font-size:1rem}
-  .election-date{font-size:.72rem;color:var(--text3);margin-bottom:1.2rem}
-  .elec-bars{display:flex;flex-direction:column;gap:.55rem}
-  .elec-bar-row{display:flex;align-items:center;gap:.6rem}
-  .elec-party-name{font-size:.75rem;width:80px;flex-shrink:0;font-weight:600;color:var(--text)}
-  .elec-bar-bg{flex:1;height:18px;background:var(--bg2);border-radius:10px;overflow:hidden}
-  .elec-bar-fill{height:100%;border-radius:10px;transition:width 1.2s cubic-bezier(.25,.46,.45,.94)}
-  .elec-val{font-size:.75rem;width:36px;flex-shrink:0;font-weight:700;color:var(--text);text-align:right}
-
-  /* =========================================================
      SCRUTINS
   ========================================================= */
   #scrutins{background:var(--bg2)}
@@ -549,7 +644,7 @@
   .inst-card{
     background:var(--card);border:1px solid var(--border);
     border-radius:12px;padding:1.4rem;text-align:center;
-    transition:box-shadow .25s,transform .25s;
+    transition:box-shadow .25s,transform .25s,border-color .25s,background .25s;
     cursor:pointer;
   }
   .inst-card:hover{box-shadow:var(--shadow2);transform:translateY(-2px)}
@@ -1742,30 +1837,14 @@
       <button class="pf-btn" data-filter="extreme-droite" style="border-color:#555;color:#555">Extrême droite</button>
     </div>
     <div class="parties-grid" id="partiesGrid"></div>
+    <div class="party-detail-shell reveal" id="partyDetailShell">
+      <div class="party-detail-placeholder" id="partyDetailPlaceholder">Choisissez une carte ci-dessus pour afficher une fiche détaillée, puis comparez ce parti avec une autre formation si vous voulez aller plus loin.</div>
+      <div class="party-detail-panel" id="partyDetailPanel" aria-live="polite"></div>
+    </div>
   </div>
 </section>
 
-<section id="popularite" aria-labelledby="pop-title">
-  <div class="section-inner">
-    <div class="section-header reveal">
-      <div class="section-label">Sondages & résultats électoraux</div>
-      <h2 class="section-title" id="pop-title">Popularité des partis politiques français</h2>
-      <div class="divider"></div>
-      <p class="section-subtitle">Intentions de vote, r&eacute;sultats des derni&egrave;res &eacute;lections, &eacute;volution des forces en pr&eacute;sence : des donn&eacute;es &agrave; relier aussi aux <a href="actualites-politiques.html" style="color:var(--blue2);font-weight:700">actualit&eacute;s politiques</a> pour comprendre les dynamiques du moment.</p>
-    </div>
-    <div class="pop-tabs reveal" role="tablist">
-      <button class="pop-tab active" data-tab="sondages" role="tab"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg> Sondages (2024)</button>
-      <button class="pop-tab" data-tab="pres2022" role="tab"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 11 12 14 22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg> Présidentielle 2022</button>
-      <button class="pop-tab" data-tab="legis2022" role="tab"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="22" x2="21" y2="22"/><line x1="6" y1="18" x2="6" y2="11"/><line x1="10" y1="18" x2="10" y2="11"/><line x1="14" y1="18" x2="14" y2="11"/><line x1="18" y1="18" x2="18" y2="11"/><polygon points="12 2 20 7 4 7"/></svg> Législatives 2022</button>
-      <button class="pop-tab" data-tab="euro2024" role="tab"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg> Europ&eacute;ennes 2024</button>
-    </div>
-    <div class="pop-panel active reveal" id="tab-sondages"></div>
-    <div class="pop-panel" id="tab-pres2022"></div>
-    <div class="pop-panel" id="tab-legis2022"></div>
-    <div class="pop-panel" id="tab-euro2024"></div>
-    <div class="election-grid" id="electionGrid"></div>
-  </div>
-</section>
+
 
 <section id="comparateur" aria-labelledby="comp-title">
   <div class="section-inner">
@@ -1791,7 +1870,7 @@
       <div class="section-label">Votre vote pédagogique</div>
       <h2 class="section-title" id="vote-parti-title">Quel parti vous correspond le mieux ?</h2>
       <div class="divider"></div>
-      <p class="section-subtitle">Vous pensez avoir trouvé votre orientation politique ? Cliquez sur le parti qui vous correspond le mieux.</p>
+      <p class="section-subtitle">Vous pensez avoir trouvé votre orientation politique ? Cliquez sur le parti qui vous correspond le mieux. Si non, faites votre <a href="profil-politique.html" style="color:var(--blue2);font-weight:700">test d'orientation politique</a></p>
     </div>
     <div class="vote-party-wrap reveal">
       <p class="vote-party-intro">Choisissez un parti ci-dessous. Le vote est anonyme, et vous pouvez modifier votre choix une seule fois. La part des votes s'affiche en pourcentage &agrave; droite de chaque parti.</p>
@@ -2245,6 +2324,367 @@ const parties = [
 /* ============================================================
    DATA - POPULARITÉ (données indicatives 2024)
 ============================================================ */
+const partyProfiles = {
+  rn:{
+    founder:"Jean-Marie Le Pen",
+    createdAt:"5 octobre 1972",
+    headquarters:"114 bis rue Michel-Ange, 75016 Paris",
+    ideologies:["Nationalisme","Souverainisme","Droite radicale"],
+    simplifiedPosition:"Extrême droite nationaliste et souverainiste",
+    deputesLabel:"122 députés au groupe Rassemblement National",
+    senateursLabel:"Pas de groupe autonome ; présence sénatoriale limitée",
+    eurodeputesLabel:"30 eurodéputés élus en 2024",
+    implantationLabel:"Implantation forte dans le Nord, le Sud-Est et plusieurs villes moyennes",
+    membersLabel:"Plus de 100 000 adhérents et sympathisants revendiqués",
+    budgetLabel:"Non disponible de manière homogène",
+    officialSite:"https://rassemblementnational.fr/",
+    summary:"Le RN met en avant la souveraineté, le contrôle de l'immigration, l'autorité et un discours social centré sur le pouvoir d'achat.",
+    historyEvolution:"Créé en 1972 sous le nom de Front national, le parti rassemble d'abord plusieurs courants de l'extrême droite française. Longtemps marginal, il progresse à partir des années 1980 autour des thèmes migratoires, sécuritaires et identitaires. Sous Marine Le Pen, il change de stratégie, devient Rassemblement National en 2018 et cherche à apparaître comme un parti de gouvernement. En 2026, il occupe une place centrale dans l'opposition et reste l'une des principales forces électorales du pays."
+  },
+  lfi:{
+    founder:"Jean-Luc Mélenchon",
+    createdAt:"2016",
+    headquarters:"25 passage Dubail, 75010 Paris",
+    ideologies:["Écosocialisme","Populisme de gauche","Interventionnisme étatique"],
+    simplifiedPosition:"Gauche radicale sociale et écologique",
+    deputesLabel:"71 députés au groupe LFI-NFP",
+    senateursLabel:"Pas de groupe ni de contingent autonome structuré au Sénat",
+    eurodeputesLabel:"9 eurodéputés élus en 2024",
+    implantationLabel:"Forte présence militante dans les grandes métropoles et les bastions urbains",
+    membersLabel:"370 000 adhérents",
+    budgetLabel:"Non disponible de manière homogène",
+    officialSite:"https://lafranceinsoumise.fr/",
+    summary:"LFI défend une forte redistribution, la planification écologique et une critique marquée des traités européens actuels.",
+    historyEvolution:"Fondée en 2016 après la rupture de Jean-Luc Mélenchon avec le Parti socialiste, La France Insoumise se construit d'abord comme un mouvement plus souple qu'un parti classique. Elle devient rapidement l'une des principales forces de gauche grâce aux présidentielles de 2017 puis de 2022. Son rôle central dans les alliances de gauche, de la NUPES au NFP, a renforcé son poids national. En 2026, elle reste un repère majeur de la gauche contestataire, même si sa ligne continue de faire débat."
+  },
+  renaissance:{
+    founder:"Emmanuel Macron",
+    createdAt:"2016 (En Marche), devenu Renaissance en 2022",
+    headquarters:"11 avenue Robert Schuman, 75007 Paris",
+    ideologies:["Social-libéralisme","Progressisme","Européisme"],
+    simplifiedPosition:"Centre libéral et pro-européen",
+    deputesLabel:"91 députés dans le groupe Ensemble pour la République",
+    senateursLabel:"Présence via le groupe RDPI (19 sénateurs), sans ventilation partisane homogène",
+    eurodeputesLabel:"13 sièges sur la liste Besoin d'Europe, ventilation interne non homogène",
+    implantationLabel:"Implantation nationale liée à ses élus sortants et à la coalition présidentielle",
+    membersLabel:"8 500 adhérents",
+    budgetLabel:"Non disponible de manière homogène",
+    officialSite:"https://parti-renaissance.fr/",
+    summary:"Renaissance défend une ligne pro-européenne, réformiste et libérale, avec un État stratège mais favorable à l'entreprise.",
+    historyEvolution:"Le mouvement naît en 2016 autour d'Emmanuel Macron sous le nom En Marche, dans un contexte de rejet des partis traditionnels. Sa victoire présidentielle de 2017 lui permet de devenir le centre du pouvoir sous le nom de La République En Marche, puis Renaissance à partir de 2022. Après la période de majorité absolue, il doit apprendre à gouverner avec une base parlementaire plus fragile. En 2026, il demeure l'un des piliers du bloc central, mais dans un paysage beaucoup plus fragmenté qu'à ses débuts."
+  },
+  ps:{
+    founder:"Héritier de la SFIO, refondé autour de François Mitterrand",
+    createdAt:"1969, refondé au congrès d'Épinay en 1971",
+    headquarters:"45 boulevard Saint-Martin, 75003 Paris",
+    ideologies:["Social-démocratie","Réformisme social","Pro-européisme"],
+    simplifiedPosition:"Centre-gauche réformiste et social-démocrate",
+    deputesLabel:"69 députés dans le groupe Socialistes et apparentés",
+    senateursLabel:"65 sénateurs dans le groupe Socialiste, Écologiste et Républicain",
+    eurodeputesLabel:"13 sièges sur la liste commune PS - Place Publique en 2024",
+    implantationLabel:"Réseau historique d'élus locaux dans plusieurs grandes villes, départements et régions",
+    membersLabel:"Plus de 41 000 adhérents",
+    budgetLabel:"Non disponible de manière homogène",
+    officialSite:"https://www.parti-socialiste.fr/",
+    summary:"Le PS reste un repère classique de la gauche réformiste, attaché au service public, à la redistribution et à l'Europe sociale.",
+    historyEvolution:"Le PS moderne se structure au début des années 1970 autour de François Mitterrand, puis devient l'un des deux grands partis de gouvernement de la Ve République. Il marque profondément la vie politique avec les présidences Mitterrand puis Hollande, avant de subir un effondrement spectaculaire en 2017. Depuis, il tente de se reconstruire par les alliances à gauche et par son ancrage local. En 2026, il a retrouvé une visibilité réelle sans avoir retrouvé l'hégémonie qu'il a connue autrefois."
+  },
+  pp:{
+    founder:"Raphaël Glucksmann, Claire Nouvian, Thomas Porcher et des soutiens citoyens",
+    createdAt:"6 novembre 2018",
+    headquarters:"20 rue Richer, 75009 Paris",
+    ideologies:["Social-démocratie","Fédéralisme européen","Progressisme"],
+    simplifiedPosition:"Centre-gauche social-démocrate et pro-européen",
+    deputesLabel:"Contingent autonome non disponible ; influence surtout via les alliances",
+    senateursLabel:"Non disponible en contingent autonome",
+    eurodeputesLabel:"13 sièges sur la liste commune PS - Place Publique en 2024",
+    implantationLabel:"Structure plus légère, surtout militante, européenne et urbaine",
+    membersLabel:"12 000 adhérents revendiqués en 2025",
+    budgetLabel:"Non disponible de manière homogène",
+    officialSite:"https://place-publique.eu/",
+    summary:"Place Publique insiste sur la justice sociale, l'Europe politique et une ligne progressiste réformatrice.",
+    historyEvolution:"Créé en 2018 comme parti citoyen et pro-européen, Place Publique apparaît dans un moment de recomposition de la gauche modérée. Son développement a d'abord été limité, avant de gagner en visibilité grâce à l'alliance nouée avec le Parti socialiste autour de Raphaël Glucksmann. Les européennes de 2024 lui donnent un poids politique bien supérieur à sa taille organisationnelle initiale. En 2026, il reste un acteur de recomposition plus qu'un vieux parti installé."
+  },
+  lr:{
+    founder:"Héritier du RPR puis de l'UMP",
+    createdAt:"2015 sous le nom Les Républicains",
+    headquarters:"4 place du Palais Bourbon, 75007 Paris",
+    ideologies:["Conservatisme","Libéralisme économique","Droite républicaine"],
+    simplifiedPosition:"Droite républicaine classique",
+    deputesLabel:"48 députés au groupe Droite Républicaine",
+    senateursLabel:"130 sénateurs au groupe Les Républicains",
+    eurodeputesLabel:"6 eurodéputés élus en 2024",
+    implantationLabel:"Très forte implantation sénatoriale, départementale et municipale",
+    membersLabel:"76 000 adhérents",
+    budgetLabel:"Non disponible de manière homogène",
+    officialSite:"https://republicains.fr/",
+    summary:"LR défend une droite de gouvernement attachée à l'ordre, à la maîtrise de la dette, à l'entreprise et à une ligne plus ferme sur l'immigration.",
+    historyEvolution:"Les Républicains prolongent la vieille famille gaulliste passée par le RPR puis l'UMP. Longtemps au centre de l'alternance à droite, ce courant a dominé la vie politique française pendant plusieurs décennies. Depuis 2017, il est pris entre le macronisme au centre et le RN à sa droite, ce qui a provoqué une crise durable et plusieurs divisions. En 2026, LR reste influent localement et au Sénat, mais cherche encore la formule pour redevenir une grande force nationale."
+  },
+  udr:{
+    founder:"Éric Ciotti",
+    createdAt:"31 août 2024",
+    headquarters:"149 rue de l'Université, 75007 Paris",
+    ideologies:["Droite conservatrice","Souverainisme","Autorité"],
+    simplifiedPosition:"Droite souverainiste et sécuritaire",
+    deputesLabel:"17 députés au groupe UDR",
+    senateursLabel:"Pas de groupe autonome au Sénat",
+    eurodeputesLabel:"Non disponible",
+    implantationLabel:"Implantation en construction, avec des élus issus de la droite classique",
+    membersLabel:"13 000 adhérents",
+    budgetLabel:"Non disponible de manière homogène",
+    officialSite:"https://www.udr.fr/",
+    summary:"L'UDR cherche à installer une droite plus souverainiste et plus alignée sur les thèmes d'autorité et de fermeté migratoire.",
+    historyEvolution:"L'UDR naît en 2024 de la rupture entre Éric Ciotti et Les Républicains, après la crise provoquée par son rapprochement avec le RN. À l'origine, il s'agit d'abord d'une scission parlementaire et d'un réalignement politique plus que d'un vieux parti enraciné. Sa trajectoire est donc encore récente et largement en construction. En 2026, il cherche à transformer cette rupture de circonstance en formation durable de la droite souverainiste."
+  },
+  modem:{
+    founder:"François Bayrou",
+    createdAt:"2007",
+    headquarters:"133 bis rue de l'Université, 75007 Paris",
+    ideologies:["Centrisme","Démocratie chrétienne","Européisme"],
+    simplifiedPosition:"Centre humaniste et pro-européen",
+    deputesLabel:"37 députés dans le groupe Les Démocrates",
+    senateursLabel:"Présence surtout dans l'Union Centriste et des groupes alliés ; ventilation non homogène",
+    eurodeputesLabel:"13 sièges sur la liste Besoin d'Europe, ventilation interne non homogène",
+    implantationLabel:"Réseau ancien d'élus centristes et locaux",
+    membersLabel:"12 000 adhérents en 2017",
+    budgetLabel:"Non disponible de manière homogène",
+    officialSite:"https://www.mouvementdemocrate.fr/",
+    summary:"Le MoDem défend une ligne centriste, pro-européenne et attachée à l'équilibre entre marché, responsabilité budgétaire et cohésion sociale.",
+    historyEvolution:"Le MoDem est créé en 2007 par François Bayrou pour faire vivre un centre indépendant, hors du face-à-face classique entre droite et gauche. Après un fort moment présidentiel en 2007, il connaît une période plus fragile avant de redevenir central grâce à son alliance avec Emmanuel Macron en 2017. Depuis, il pèse davantage par ses alliances et ses élus que par sa force autonome. En 2026, il reste une pièce importante du centre gouvernemental français."
+  },
+  eelv:{
+    founder:"Fusion des Verts et d'Europe Écologie",
+    createdAt:"2010",
+    headquarters:"11 rue des Petits-Hôtels, 75010 Paris",
+    ideologies:["Écologisme","Progressisme","Gauche écologiste"],
+    simplifiedPosition:"Centre-gauche écologiste",
+    deputesLabel:"38 députés dans le groupe Écologiste et Social",
+    senateursLabel:"Présence via les groupes écologistes et de gauche au Sénat",
+    eurodeputesLabel:"5 eurodéputés élus en 2024",
+    implantationLabel:"Ancrage solide dans certaines métropoles et villes universitaires",
+    membersLabel:"18 000 adhérents revendiqués en 2025",
+    budgetLabel:"Non disponible de manière homogène",
+    officialSite:"https://lesecologistes.fr/",
+    summary:"Les Écologistes mettent la transition climatique au centre, avec une forte sensibilité sociale, européenne et progressiste.",
+    historyEvolution:"L'écologie politique française s'installe progressivement à partir des années 1980 avant de se restructurer en 2010 avec la fusion entre les Verts et Europe Écologie. Le parti alterne depuis entre moments d'autonomie électorale forte, notamment aux européennes, et phases d'alliance avec la gauche. Il a aussi changé de nom et d'image pour élargir sa base. En 2026, il reste la principale force écologiste organisée du paysage politique français."
+  },
+  pcf:{
+    founder:"Majorité issue du congrès de Tours",
+    createdAt:"Décembre 1920",
+    headquarters:"2 place du Colonel-Fabien, 75019 Paris",
+    ideologies:["Communisme","Républicanisme social","Interventionnisme étatique"],
+    simplifiedPosition:"Gauche communiste et populaire",
+    deputesLabel:"17 députés dans le groupe Gauche Démocrate et Républicaine",
+    senateursLabel:"18 sénateurs dans le groupe CRCE-K, avec alliés",
+    eurodeputesLabel:"Non disponible en contingent autonome en 2024",
+    implantationLabel:"Tradition municipale forte dans certains bastions populaires et banlieues",
+    membersLabel:"Plus de 65 000 adhérents revendiqués",
+    budgetLabel:"Non disponible de manière homogène",
+    officialSite:"https://www.pcf.fr/",
+    summary:"Le PCF reste un repère de gauche ouvrière et sociale, favorable à un État fort, aux services publics et à une lecture de classe des rapports économiques.",
+    historyEvolution:"Le PCF naît en 1920 lors du congrès de Tours, quand une majorité des socialistes choisit de rejoindre l'Internationale communiste. Il devient ensuite un très grand parti populaire, central dans la gauche française d'après-guerre et dans de nombreuses municipalités. Son poids électoral recule fortement à partir des années 1980, mais il conserve un capital historique, militant et local. En 2026, il est plus modeste nationalement, mais reste un acteur identifié de la gauche."
+  },
+  horizons:{
+    founder:"Édouard Philippe",
+    createdAt:"2021",
+    headquarters:"30 avenue d'Iéna, 75116 Paris",
+    ideologies:["Centre droit","Libéralisme pragmatique","Pro-européisme"],
+    simplifiedPosition:"Centre à sensibilité libérale-conservatrice",
+    deputesLabel:"35 députés dans le groupe Horizons & Indépendants",
+    senateursLabel:"Présence via des groupes centristes et indépendants ; ventilation non homogène",
+    eurodeputesLabel:"13 sièges sur la liste Besoin d'Europe, ventilation interne non homogène",
+    implantationLabel:"Plus de 1 000 comités municipaux revendiqués",
+    membersLabel:"34 000 adhérents",
+    budgetLabel:"Non disponible de manière homogène",
+    officialSite:"https://horizonsleparti.fr/",
+    summary:"Horizons défend une ligne de centre droit plus rigoureuse sur la gestion publique, avec une culture de gouvernement et un discours pro-européen.",
+    historyEvolution:"Horizons est fondé en 2021 par Édouard Philippe après son passage à Matignon, pour structurer un espace de centre droit dans la majorité présidentielle. Le parti se construit rapidement autour d'un réseau d'élus locaux et d'une image de sérieux gestionnaire. Sa trajectoire est liée à la volonté de préparer l'après-Macron sans rompre avec la culture de gouvernement. En 2026, il est souvent perçu comme l'un des principaux instruments des ambitions nationales d'Édouard Philippe."
+  },
+  reconquete:{
+    founder:"Éric Zemmour",
+    createdAt:"2021",
+    headquarters:"Non disponible de façon homogène dans les sources publiques consultées",
+    ideologies:["National-conservatisme","Identitarisme","Souverainisme"],
+    simplifiedPosition:"Extrême droite identitaire",
+    deputesLabel:"Pas de groupe autonome à l'Assemblée nationale",
+    senateursLabel:"Pas de présence autonome au Sénat",
+    eurodeputesLabel:"5 eurodéputés élus en 2024",
+    implantationLabel:"Structure militante nationale mais ancrage local encore limité",
+    membersLabel:"75 000 adhérents",
+    budgetLabel:"Non disponible de manière homogène",
+    officialSite:"https://www.parti-reconquete.fr/",
+    summary:"Reconquête met au premier plan l'identité, l'immigration, l'autorité et une critique très frontale du multiculturalisme.",
+    historyEvolution:"Reconquête apparaît en 2021 autour de la candidature présidentielle d'Éric Zemmour, dans le but d'occuper un espace encore plus identitaire que celui du RN. Le parti connaît une montée très rapide au départ, portée par la campagne présidentielle, puis se heurte à la difficulté de s'implanter durablement. Les tensions internes et les départs de figures importantes ont ensuite fragilisé sa dynamique. En 2026, il reste une force de niche visible, mais beaucoup moins structurante qu'à son lancement."
+  },
+  udi:{
+    founder:"Jean-Louis Borloo",
+    createdAt:"2012",
+    headquarters:"22 bis rue des Volontaires, 75015 Paris",
+    ideologies:["Centre droit","Libéralisme social","Européisme"],
+    simplifiedPosition:"Centre-droit modéré",
+    deputesLabel:"Pas de contingent autonome stable à l'Assemblée nationale",
+    senateursLabel:"Présence forte dans le groupe Union Centriste (59 sénateurs), sans ventilation uniforme",
+    eurodeputesLabel:"Non disponible en contingent autonome",
+    implantationLabel:"Réseau local d'élus centristes, surtout municipaux et sénatoriaux",
+    membersLabel:"9 500 adhérents en 2022",
+    budgetLabel:"Non disponible de manière homogène",
+    officialSite:"https://parti-udi.fr/",
+    summary:"L'UDI défend un centrisme de droite modéré, attaché au compromis, à l'Europe et à une économie de marché régulée.",
+    historyEvolution:"L'UDI est créée en 2012 pour rassembler plusieurs sensibilités centristes et démocrates-chrétiennes après des années de domination de la droite classique. Son histoire est marquée par les alliances plus que par de grandes aventures autonomes, ce qui explique son poids surtout local et sénatorial. Elle a souvent servi de passerelle entre la droite républicaine et le centre macroniste. En 2026, elle reste une formation discrète mais utile dans l'architecture du centre droit."
+  },
+  npa:{
+    founder:"Olivier Besancenot et des militants issus de la LCR",
+    createdAt:"2009",
+    headquarters:"Non disponible de manière homogène",
+    ideologies:["Anticapitalisme","Trotskisme","Internationalisme"],
+    simplifiedPosition:"Extrême gauche anticapitaliste",
+    deputesLabel:"Aucun député en contingent autonome",
+    senateursLabel:"Aucune présence autonome",
+    eurodeputesLabel:"0",
+    implantationLabel:"Présence surtout militante, syndicale et dans les mobilisations sociales",
+    membersLabel:"2 000 adhérents en 2018",
+    budgetLabel:"Non disponible de manière homogène",
+    officialSite:"https://npa-lanticapitaliste.org/",
+    summary:"Le NPA défend une rupture avec le capitalisme, l'auto-organisation des luttes et une lecture internationaliste des rapports sociaux.",
+    historyEvolution:"Le NPA est lancé en 2009 pour dépasser le cadre de la Ligue communiste révolutionnaire et bâtir une force anticapitaliste plus large. Il connaît une certaine visibilité autour d'Olivier Besancenot, puis entre dans une phase de divisions stratégiques et de scissions successives. Son poids électoral est resté faible, mais sa présence militante dans les luttes sociales a perduré. En 2026, il incarne toujours une extrême gauche de mouvement plus que de pouvoir institutionnel."
+  },
+  lo:{
+    founder:"Courant trotskiste autour de l'Union communiste",
+    createdAt:"Courant actif depuis les années 1940",
+    headquarters:"BP 20029, 93501 Pantin Cedex",
+    ideologies:["Trotskisme","Lutte des classes","Internationalisme"],
+    simplifiedPosition:"Extrême gauche trotskiste",
+    deputesLabel:"Aucun député",
+    senateursLabel:"Aucun sénateur",
+    eurodeputesLabel:"0",
+    implantationLabel:"Réseau militant resserré, surtout dans certaines zones ouvrières",
+    membersLabel:"8 000 adhérents",
+    budgetLabel:"Non disponible de manière homogène",
+    officialSite:"https://lutte-ouvriere.org/",
+    summary:"Lutte Ouvrière reste centrée sur la classe ouvrière, l'opposition au capitalisme et la méfiance envers les alliances électorales réformistes.",
+    historyEvolution:"Lutte Ouvrière s'inscrit dans un courant trotskiste ancien, structuré dans la durée autour d'une organisation militante très disciplinée. Le parti a connu ses meilleurs scores avec Arlette Laguiller dans les années 1990 et au début des années 2000, avant de revenir à des niveaux plus modestes. Sa ligne a peu varié, ce qui lui donne une identité stable mais limite son élargissement. En 2026, LO reste une formation très cohérente idéologiquement, mais politiquement marginale."
+  },
+  prg:{
+    founder:"Scission de l'aile de gauche du Parti radical",
+    createdAt:"1972",
+    headquarters:"3 avenue Constant-Coquelin, 75007 Paris",
+    ideologies:["Radicalisme de gauche","Laïcité","Social-libéralisme"],
+    simplifiedPosition:"Centre-gauche radical et laïque",
+    deputesLabel:"Pas de contingent autonome stable",
+    senateursLabel:"Présence via le RDSE, sans ventilation uniforme",
+    eurodeputesLabel:"Non disponible en contingent autonome",
+    implantationLabel:"Implantation locale ponctuelle et héritage d'élus radicaux",
+    membersLabel:"4 000 adhérents en 2023",
+    budgetLabel:"Non disponible de manière homogène",
+    officialSite:"https://www.partiradicaldegauche.fr/",
+    summary:"Le PRG se situe dans une tradition radicale, laïque et républicaine, souvent alliée à la gauche modérée.",
+    historyEvolution:"Le PRG naît en 1972 d'une séparation au sein de la vieille famille radicale, en choisissant une alliance durable avec la gauche. Son histoire est celle d'un petit parti de tradition républicaine et laïque, souvent plus influent localement qu'électoralement au niveau national. Il a traversé plusieurs phases de rapprochement, de marginalisation puis de maintien dans les coalitions de gauche. En 2026, il reste un acteur secondaire mais identifiable du centre-gauche historique."
+  }
+};
+let activePartyId='';
+
+function getPartyRecord(id){
+  const base=parties.find(p=>p.id===id);
+  if(!base) return null;
+  return Object.assign({},base,partyProfiles[id]||{});
+}
+
+function formatPercent(value){
+  if(value===undefined||value===null||value===''||Number(value)===0) return 'Non présenté';
+  const num=Number(value);
+  if(Number.isNaN(num)) return 'Non disponible';
+  return String(num).replace('.',',')+'%';
+}
+
+function getOfficialSiteLabel(url){
+  if(!url) return 'Non disponible';
+  return url.replace(/^https?:\/\//,'').replace(/\/$/,'');
+}
+
+const ideologyAccentColors={
+  'Nationalisme':'#1a1a2e',
+  'Souverainisme':'#7c2d12',
+  'Droite radicale':'#374151',
+  '?cosocialisme':'#15803d',
+  'Populisme de gauche':'#be1622',
+  'Interventionnisme ?tatique':'#d97706',
+  'Social-lib?ralisme':'#2563a8',
+  'Progressisme':'#c0392b',
+  'Europ?anisme':'#1d4ed8',
+  'Social-d?mocratie':'#e11d48',
+  'R?formisme social':'#fb7185',
+  'Pro-europ?isme':'#2563eb',
+  'F?d?ralisme europ?en':'#1e3a8a',
+  'Conservatisme':'#1a4f8a',
+  'Lib?ralisme ?conomique':'#16a34a',
+  'Droite r?publicaine':'#2563a8',
+  'Droite conservatrice':'#1e40af',
+  'Autorit?':'#991b1b',
+  'Centre humaniste':'#f97316',
+  '?cologie politique':'#16a34a',
+  'Communisme':'#8e1c1c',
+  'Centre droit r?formateur':'#0f766e',
+  'Zemmourisme':'#111827',
+  'D?mocratie chr?tienne':'#5b458c',
+  'Anticapitalisme':'#dc2626',
+  'Trotskisme':'#7f1d1d',
+  'Radicalisme de gauche':'#c8001e',
+  'La?cit?':'#6184a8'
+};
+
+function getIdeologyColor(label){
+  return ideologyAccentColors[label]||'#d4a843';
+}
+
+function getSelectedPartyFilter(){
+  const active=document.querySelector('.pf-btn.active');
+  return active?active.dataset.filter:'all';
+}
+
+function hexToRgba(hex,alpha){
+  const raw=(hex||'').trim().replace('#','');
+  if(!raw) return `rgba(37,99,168,${alpha})`;
+  const normalized=raw.length===3?raw.split('').map(ch=>ch+ch).join(''):raw;
+  if(normalized.length!==6) return `rgba(37,99,168,${alpha})`;
+  const value=parseInt(normalized,16);
+  if(Number.isNaN(value)) return `rgba(37,99,168,${alpha})`;
+  const r=(value>>16)&255;
+  const g=(value>>8)&255;
+  const b=value&255;
+  return `rgba(${r},${g},${b},${alpha})`;
+}
+
+function getPartyAccentColor(p){
+  const accentMap={
+    rn:'#224374',
+    lfi:'#7b13d6',
+    ps:'#da003e',
+    reconquete:'#0a0963',
+    udi:'#5f468f',
+    prg:'#36475c'
+  };
+  return accentMap[p.id]||p.color||'#2563a8';
+}
+
+function getComparisonDataset(p){
+  const party=getPartyRecord(p.id)||p;
+  return [
+    {label:'Nom',value:party.name},
+    {label:'Sigle',value:party.short},
+    {label:'Président',value:party.leader},
+    {label:'Positionnement',value:party.simplifiedPosition||party.orientLabel},
+    {label:'Idéologie',value:(party.ideologies||[]).join(', ')||'Non disponible'},
+    {label:'Économie',value:party.positions['Économie']||'Non disponible'},
+    {label:'Europe',value:party.positions['Europe']||'Non disponible'},
+    {label:'Immigration',value:party.positions['Immigration']||'Non disponible'},
+    {label:'Société',value:party.positions['Société']||'Non disponible'},
+    {label:'Députés',value:party.deputesLabel||'Non disponible'},
+    {label:'Sénateurs',value:party.senateursLabel||'Non disponible'},
+    {label:'Eurodéputés',value:party.eurodeputesLabel||'Non disponible'},
+    {label:'Site officiel',value:party.officialSite?`<a class="party-site-link" href="${party.officialSite}" target="_blank" rel="noopener noreferrer">${getOfficialSiteLabel(party.officialSite)}</a>`:'Non disponible',isHtml:true}
+  ];
+}
 const pollData2024 = [
   {party:'RN',val:34,color:'#1a1a2e'},{party:'Renaissance',val:18,color:'#006EB7'},
   {party:'LFI / NFP',val:14,color:'#be1622'},{party:'LR',val:8,color:'#0066CC'},
@@ -3140,24 +3580,46 @@ function renderIdeologies(){
 /* ============================================================
    RENDER - PARTIS
 ============================================================ */
-function renderParties(filter,search){
-  filter=filter||'all'; search=search||'';
-  const g=document.getElementById('partiesGrid');
-  if(!g) return;
-  const f=parties.filter(p=>{
-    const mf=filter==='all'||p.orient===filter;
-    const s=search.toLowerCase();
-    const ms=!s||p.name.toLowerCase().includes(s)||p.short.toLowerCase().includes(s)||p.orient.includes(s)||p.desc.toLowerCase().includes(s);
-    return mf&&ms;
+function buildPartyLogoMarkup(p,variant){
+  const map={
+    card:{base:'party-logo',official:'party-logo party-logo-official'},
+    detail:{base:'party-detail-logo',official:'party-detail-logo party-logo-official'},
+    compare:{base:'comp-party-logo',official:'comp-party-logo comp-party-logo-official'}
+  };
+  const classes=map[variant]||map.card;
+  if(p.logo){
+    return `<div class="${classes.official}"><img src="${p.logo}" alt="${p.short}" onerror="this.parentElement.className='${classes.base}';this.parentElement.innerHTML='${p.initials}';this.parentElement.style.background='${p.color}'"/></div>`;
+  }
+  return `<div class="${classes.base}" style="background:${p.color}">${p.initials}</div>`;
+}
+
+function updatePartySelectionState(){
+  document.querySelectorAll('[data-party-card]').forEach(card=>{
+    card.classList.toggle('is-selected',card.dataset.partyCard===activePartyId);
   });
-  if(!f.length){g.innerHTML='<div style="color:#8895a7;padding:2rem;font-style:italic">Aucun parti trouvé.</div>';return;}
-  g.innerHTML=f.map(p=>`
-    <div class="party-card" id="party-${p.id}">
+}
+
+function renderParties(filter,search){
+  filter=filter||'all';
+  search=(search||'').trim().toLowerCase();
+  const grid=document.getElementById('partiesGrid');
+  if(!grid) return;
+  const filtered=parties.map(p=>getPartyRecord(p.id)||p).filter(p=>{
+    const matchesFilter=filter==='all'||p.orient===filter;
+    const haystack=[
+      p.name,p.short,p.orientLabel,p.desc,p.summary,(p.ideologies||[]).join(' '),
+      p.leader,p.founder||'',p.simplifiedPosition||'',Object.values(p.positions||{}).join(' ')
+    ].join(' ').toLowerCase();
+    return matchesFilter && (!search || haystack.includes(search));
+  });
+  if(!filtered.length){
+    grid.innerHTML='<div style="color:#8895a7;padding:2rem;font-style:italic">Aucun parti trouvé.</div>';
+    return;
+  }
+  grid.innerHTML=filtered.map(p=>`
+    <article class="party-card ${p.id===activePartyId?'is-selected':''}" id="party-${p.id}" data-party-card="${p.id}" style="--party-accent:${getPartyAccentColor(p)};--party-accent-soft:${hexToRgba(getPartyAccentColor(p),.22)};--party-accent-bg:${hexToRgba(getPartyAccentColor(p),.05)}">
       <div class="party-top">
-        ${p.logo
-          ? `<div class="party-logo party-logo-official"><img src="${p.logo}" alt="${p.short}" onerror="this.parentElement.className='party-logo';this.parentElement.innerHTML='${p.initials}';this.parentElement.style.background='${p.color}'"/></div>`
-          : `<div class="party-logo" style="background:${p.color}">${p.initials}</div>`
-        }
+        ${buildPartyLogoMarkup(p,'card')}
         <div class="party-meta">
           <span class="party-orient" style="background:${p.orientBg};color:${p.orientColor}">${p.orientLabel}</span>
           <h3>${p.name}</h3>
@@ -3171,100 +3633,83 @@ function renderParties(filter,search){
           ${Object.entries(p.positions).map(([k,v])=>`<div class="pos-item"><div class="pos-label">${k}</div><div class="pos-val">${v}</div></div>`).join('')}
         </div>
         <div class="party-founded"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg> <span>${p.founded}</span></div>
-      </div>
-    </div>`).join('');
-}
-
-/* ============================================================
-   RENDER - POPULARITÉ
-============================================================ */
-function renderBarChart(data,containerId,sourceText){
-  const c=document.getElementById(containerId);
-  if(!c) return;
-  c.innerHTML=`<p class="pop-source">Source : ${sourceText}</p>
-  <div class="bar-chart">
-    ${data.map(d=>`
-      <div class="bar-row">
-        <div class="bar-label">${d.party}</div>
-        <div class="bar-track">
-          <div class="bar-fill" data-val="${d.val}" style="background:${d.color};width:0%">${d.val}%</div>
+        <div class="party-card-footer">
+          <span class="party-card-note">Aperçu rapide</span>
+          <span class="party-card-cta">Voir la fiche <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
         </div>
-        <div class="bar-val">${d.val}%</div>
-      </div>`).join('')}
-  </div>`;
-  requestAnimationFrame(()=>{
-    requestAnimationFrame(()=>{
-      c.querySelectorAll('.bar-fill').forEach(el=>{ el.style.width=el.dataset.val+'%'; });
-    });
-  });
+      </div>
+    </article>`).join('');
 }
 
-function renderPopularite(){
-  renderBarChart(pollData2024,'tab-sondages','IFOP/BVA/Odoxa - Moyennes intentions de vote 2024-2025 (présidentielle hypothétique T1, données indicatives)');
-  renderBarChart(pres2022,'tab-pres2022','Résultats officiels 1er tour présidentielle 2022 - Ministère de l\'Intérieur');
-  renderBarChart(legis2022,'tab-legis2022','Résultats officiels 1er tour législatives 2022 - Ministère de l\'Intérieur');
-  renderBarChart(euro2024,'tab-euro2024','Résultats officiels élections européennes 2024 - Ministère de l\'Intérieur');
-}
-
-function initPopTabs(){
-  document.querySelectorAll('.pop-tab').forEach(btn=>{
-    btn.addEventListener('click',()=>{
-      document.querySelectorAll('.pop-tab').forEach(b=>b.classList.remove('active'));
-      document.querySelectorAll('.pop-panel').forEach(p=>p.classList.remove('active'));
-      btn.classList.add('active');
-      const panel=document.getElementById('tab-'+btn.dataset.tab);
-      if(panel){
-        panel.classList.add('active');
-        requestAnimationFrame(()=>requestAnimationFrame(()=>{
-          panel.querySelectorAll('.bar-fill').forEach(el=>{ el.style.width='0%'; });
-          requestAnimationFrame(()=>requestAnimationFrame(()=>{
-            panel.querySelectorAll('.bar-fill').forEach(el=>{ el.style.width=el.dataset.val+'%'; });
-          }));
-        }));
-      }
-    });
-  });
-}
-
-/* ============================================================
-   RENDER - COMPARATEUR
-============================================================ */
 function populateSelectors(){
-  const a=document.getElementById('compA'),b=document.getElementById('compB');
+  const a=document.getElementById('compA');
+  const b=document.getElementById('compB');
   if(!a||!b) return;
   const opts=parties.map(p=>`<option value="${p.id}">${p.name} (${p.short})</option>`).join('');
-  a.innerHTML=opts; b.innerHTML=opts;
-  a.value='lfi'; b.value='rn';
+  a.innerHTML=opts;
+  b.innerHTML=opts;
+  if(!a.value) a.value='lfi';
+  if(!b.value) b.value='rn';
 }
 
-function runComparison(){
-  const a=document.getElementById('compA'),b=document.getElementById('compB');
-  if(!a||!b) return;
-  const idA=a.value, idB=b.value;
-  if(idA===idB){ alert('Veuillez sélectionner deux partis différents.'); return; }
-  const pA=parties.find(p=>p.id===idA), pB=parties.find(p=>p.id===idB);
-  if(!pA||!pB) return;
-  const out=document.getElementById('compOutput');
-  if(!out) return;
-  const themes=['Économie','Immigration','Europe','Société'];
-  const rows=themes.map(t=>`
-    <div class="comp-row">
-      <div class="comp-row-left">${pA.positions[t]||'-'}</div>
-      <div class="comp-row-theme">${t}</div>
-      <div class="comp-row-right">${pB.positions[t]||'-'}</div>
-    </div>`).join('');
-  const extraThemes=[
-    {label:'Orientation',vA:pA.orientLabel,vB:pB.orientLabel},
-    {label:'Sondages 2024',vA:(pA.polls||'?')+'%',vB:(pB.polls||'?')+'%'},
-    {label:'Présidentielle 2022',vA:pA.pres2022?pA.pres2022+'%':'Non présenté',vB:pB.pres2022?pB.pres2022+'%':'Non présenté'},
-    {label:'Européennes 2024',vA:pA.euroscore?pA.euroscore+'%':'Non présenté',vB:pB.euroscore?pB.euroscore+'%':'Non présenté'}
-  ];
-  const extraRows=extraThemes.map(t=>`
-    <div class="comp-row">
-      <div class="comp-row-left" style="font-weight:600">${t.vA}</div>
-      <div class="comp-row-theme">${t.label}</div>
-      <div class="comp-row-right" style="font-weight:600">${t.vB}</div>
-    </div>`).join('');
+function getDefaultCompareTarget(baseId){
+  const party=getPartyRecord(baseId);
+  if(!party) return 'rn';
+  if(party.orient.includes('droite')) return 'lfi';
+  if(party.orient.includes('gauche')) return 'rn';
+  if(baseId==='renaissance'||baseId==='modem'||baseId==='horizons'||baseId==='udi') return 'ps';
+  return 'lr';
+}
+
+function buildComparisonRows(pA,pB){
+  const dataA=getComparisonDataset(pA);
+  const dataB=getComparisonDataset(pB);
+  return dataA.map((row,index)=>{
+    const other=dataB[index];
+    return `<div class="comp-row"><div class="comp-row-left">${row.value}</div><div class="comp-row-theme">${row.label}</div><div class="comp-row-right">${other.value}</div></div>`;
+  }).join('');
+}
+
+function buildComparisonMarkup(pA,pB,options){
+  const opts=options||{};
+  const rows=buildComparisonRows(pA,pB);
+  if(opts.compact){
+    return `
+      <div class="party-compare-inline-grid">
+        <div class="party-compare-mini-card">
+          <div class="party-compare-mini-head">
+            ${buildPartyLogoMarkup(pA,'compare')}
+            <div>
+              <div class="comp-party-name">${pA.name}</div>
+              <div class="comp-party-orient" style="color:${pA.color}">${pA.orientLabel}</div>
+            </div>
+          </div>
+          <div class="party-compare-mini-list">
+            <div class="party-compare-mini-item"><strong>Positionnement</strong><span>${pA.simplifiedPosition||pA.orientLabel}</span></div>
+            <div class="party-compare-mini-item"><strong>Députés</strong><span>${pA.deputesLabel||'Non disponible'}</span></div>
+            <div class="party-compare-mini-item"><strong>Europe</strong><span>${pA.positions['Europe']||'Non disponible'}</span></div>
+            <div class="party-compare-mini-item"><strong>Immigration</strong><span>${pA.positions['Immigration']||'Non disponible'}</span></div>
+          </div>
+        </div>
+        <div class="party-compare-mini-card">
+          <div class="party-compare-mini-head">
+            ${buildPartyLogoMarkup(pB,'compare')}
+            <div>
+              <div class="comp-party-name">${pB.name}</div>
+              <div class="comp-party-orient" style="color:${pB.color}">${pB.orientLabel}</div>
+            </div>
+          </div>
+          <div class="party-compare-mini-list">
+            <div class="party-compare-mini-item"><strong>Positionnement</strong><span>${pB.simplifiedPosition||pB.orientLabel}</span></div>
+            <div class="party-compare-mini-item"><strong>Députés</strong><span>${pB.deputesLabel||'Non disponible'}</span></div>
+            <div class="party-compare-mini-item"><strong>Europe</strong><span>${pB.positions['Europe']||'Non disponible'}</span></div>
+            <div class="party-compare-mini-item"><strong>Immigration</strong><span>${pB.positions['Immigration']||'Non disponible'}</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="comp-table-section" style="margin-top:1rem">${rows}</div>`;
+  }
+
   const radarData=[
     {label:'Gauche éco.',scoreA:getEcoScore(pA),scoreB:getEcoScore(pB)},
     {label:'Social',scoreA:getSocialScore(pA),scoreB:getSocialScore(pB)},
@@ -3273,39 +3718,211 @@ function runComparison(){
     {label:'Sécurité',scoreA:getSecScore(pA),scoreB:getSecScore(pB)}
   ];
   const svg=buildRadar(radarData,pA,pB);
-  out.innerHTML=`
+  return `
     <div class="comp-header-row">
       <div class="comp-party-card">
-        ${pA.logo
-          ? `<div class="comp-party-logo comp-party-logo-official"><img src="${pA.logo}" alt="${pA.short}" onerror="this.parentElement.className='comp-party-logo';this.parentElement.innerHTML='${pA.initials}';this.parentElement.style.background='${pA.color}'"/></div>`
-          : `<div class="comp-party-logo" style="background:${pA.color}">${pA.initials}</div>`
-        }
+        ${buildPartyLogoMarkup(pA,'compare')}
         <div class="comp-party-name">${pA.name}</div>
         <div class="comp-party-orient" style="color:${pA.color}">${pA.orientLabel}</div>
       </div>
       <div class="comp-radar-wrap">${svg}</div>
       <div class="comp-party-card">
-        ${pB.logo
-          ? `<div class="comp-party-logo comp-party-logo-official"><img src="${pB.logo}" alt="${pB.short}" onerror="this.parentElement.className='comp-party-logo';this.parentElement.innerHTML='${pB.initials}';this.parentElement.style.background='${pB.color}'"/></div>`
-          : `<div class="comp-party-logo" style="background:${pB.color}">${pB.initials}</div>`
-        }
+        ${buildPartyLogoMarkup(pB,'compare')}
         <div class="comp-party-name">${pB.name}</div>
         <div class="comp-party-orient" style="color:${pB.color}">${pB.orientLabel}</div>
       </div>
     </div>
     <div class="comp-table-section">
-      <h3>Positions comparées</h3>${rows}
-      <h3 style="margin-top:1.5rem">Données électorales</h3>${extraRows}
+      <h3>Comparaison détaillée</h3>
+      ${rows}
     </div>`;
-  out.classList.add('show');
-  out.scrollIntoView({behavior:'smooth',block:'start'});
 }
 
-function getEcoScore(p){return({lfi:90,pcf:85,ps:70,eelv:75,npa:85,lo:80,renaissance:40,modem:45,horizons:35,lr:25,udi:35,rn:20,reconquete:15,prg:65})[p.id]||50;}
-function getSocialScore(p){return({lfi:95,pcf:90,ps:80,eelv:80,npa:90,lo:90,renaissance:45,modem:50,horizons:40,lr:30,udi:40,rn:35,reconquete:20,prg:65})[p.id]||50;}
-function getEuroScore(p){return({lfi:25,pcf:30,ps:75,eelv:80,npa:20,lo:15,renaissance:95,modem:90,horizons:80,lr:60,udi:75,rn:25,reconquete:10,prg:75})[p.id]||50;}
-function getEcoloScore(p){return({lfi:75,pcf:60,ps:70,eelv:98,npa:70,lo:55,renaissance:55,modem:55,horizons:45,lr:30,udi:40,rn:20,reconquete:10,prg:60})[p.id]||50;}
-function getSecScore(p){return({lfi:30,pcf:35,ps:45,eelv:35,npa:25,lo:30,renaissance:65,modem:60,horizons:75,lr:80,udi:65,rn:90,reconquete:95,prg:50})[p.id]||50;}
+function syncComparatorSelectors(idA,idB){
+  const a=document.getElementById('compA');
+  const b=document.getElementById('compB');
+  if(a) a.value=idA;
+  if(b) b.value=idB;
+}
+
+function buildPartyDetailMarkup(p,compareTargetId){
+  const compareId=(compareTargetId&&compareTargetId!==p.id?compareTargetId:getDefaultCompareTarget(p.id));
+  const compareOptions=parties.filter(item=>item.id!==p.id).map(item=>`<option value="${item.id}" ${item.id===compareId?'selected':''}>${item.name}</option>`).join('');
+  return `
+    <div class="party-detail-top">
+      <div class="party-detail-main">
+        <div class="party-detail-head">
+          ${buildPartyLogoMarkup(p,'detail')}
+          <div class="party-detail-title" style="flex:1">
+            <div class="party-detail-kicker">Fiche détaillée du parti</div>
+            <div class="party-detail-title-row">
+              <div>
+                <h3>${p.name}</h3>
+                <div class="party-short">${p.short} · ${p.orientLabel}</div>
+              </div>
+              <span class="party-orient" style="background:${p.orientBg};color:${p.orientColor}">${p.simplifiedPosition||p.orientLabel}</span>
+            </div>
+          </div>
+        </div>
+        <p class="party-detail-summary">${p.summary||p.desc}</p>
+        <div class="party-detail-actions">
+          <a class="party-detail-btn" href="${p.officialSite||'#'}" ${p.officialSite?'target="_blank" rel="noopener noreferrer"':'aria-disabled="true"'}>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
+            Site officiel
+          </a>
+          <button class="party-detail-btn is-primary" type="button" id="partyDetailCompareFocus">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"><path d="M16 3h5v5"/><path d="M8 21H3v-5"/><path d="M21 3l-7 7"/><path d="M3 21l7-7"/></svg>
+            Comparer avec un autre parti
+          </button>
+        </div>
+      </div>
+      <aside class="party-detail-side">
+        <div class="party-detail-kicker">Repères électoraux</div>
+        <div class="party-detail-mini-stats">
+          <div class="party-stat"><div class="party-stat-label">Sondages</div><div class="party-stat-value">${p.polls?String(p.polls).replace('.',',')+'%':'Non disponible'}</div></div>
+          <div class="party-stat"><div class="party-stat-label">Prés. 2022</div><div class="party-stat-value">${formatPercent(p.pres2022)}</div></div>
+          <div class="party-stat"><div class="party-stat-label">Lég. 2022</div><div class="party-stat-value">${formatPercent(p.legscore)}</div></div>
+          <div class="party-stat"><div class="party-stat-label">Europ. 2024</div><div class="party-stat-value">${formatPercent(p.euroscore)}</div></div>
+        </div>
+      </aside>
+    </div>
+
+    <div class="party-detail-grid">
+      <section class="party-detail-card">
+        <h4>Repères essentiels</h4>
+        <dl class="party-detail-list">
+          <div class="party-detail-item"><dt>Dirigeant</dt><dd>${p.leader||'Non disponible'}</dd></div>
+          <div class="party-detail-item"><dt>Fondateur</dt><dd>${p.founder||'Non disponible'}</dd></div>
+          <div class="party-detail-item"><dt>Création</dt><dd>${p.createdAt||'Non disponible'}</dd></div>
+          <div class="party-detail-item"><dt>Siège</dt><dd>${p.headquarters||'Non disponible'}</dd></div>
+        </dl>
+      </section>
+
+      <section class="party-detail-card">
+        <h4>Idéologies dominantes</h4>
+        <div class="party-ideology-list">
+          ${(p.ideologies||['Non disponible']).map(label=>`<span class="party-ideology-pill"><span class="party-ideology-dot" style="background:${getIdeologyColor(label)}"></span>${label}</span>`).join('')}
+        </div>
+        <dl class="party-detail-list" style="margin-top:1rem">
+          <div class="party-detail-item"><dt>Économie</dt><dd>${p.positions['Économie']||'Non disponible'}</dd></div>
+          <div class="party-detail-item"><dt>Europe</dt><dd>${p.positions['Europe']||'Non disponible'}</dd></div>
+          <div class="party-detail-item"><dt>Immigration</dt><dd>${p.positions['Immigration']||'Non disponible'}</dd></div>
+          <div class="party-detail-item"><dt>Société</dt><dd>${p.positions['Société']||'Non disponible'}</dd></div>
+        </dl>
+      </section>
+
+      <section class="party-detail-card">
+        <h4>Poids institutionnel</h4>
+        <dl class="party-detail-list">
+          <div class="party-detail-item"><dt>Députés</dt><dd>${p.deputesLabel||'Non disponible'}</dd></div>
+          <div class="party-detail-item"><dt>Sénateurs</dt><dd>${p.senateursLabel||'Non disponible'}</dd></div>
+          <div class="party-detail-item"><dt>Eurodéputés</dt><dd>${p.eurodeputesLabel||'Non disponible'}</dd></div>
+          <div class="party-detail-item"><dt>Implantation</dt><dd>${p.implantationLabel||'Non disponible'}</dd></div>
+        </dl>
+      </section>
+
+      <section class="party-detail-card party-detail-history">
+        <h4>Histoire et évolution</h4>
+        <p>${p.historyEvolution||'Non disponible'}</p>
+      </section>
+
+      <section class="party-detail-card">
+        <h4>Organisation</h4>
+        <dl class="party-detail-list">
+          <div class="party-detail-item"><dt>Adhérents</dt><dd>${p.membersLabel||'Non disponible'}</dd></div>
+          <div class="party-detail-item"><dt>Budget</dt><dd>${p.budgetLabel||'Non disponible'}</dd></div>
+          <div class="party-detail-item"><dt>Site officiel</dt><dd>${p.officialSite?`<a class="party-site-link" href="${p.officialSite}" target="_blank" rel="noopener noreferrer">${getOfficialSiteLabel(p.officialSite)}</a>`:'Non disponible'}</dd></div>
+          <div class="party-detail-item"><dt>Résumé</dt><dd>${p.summary||p.desc}</dd></div>
+        </dl>
+      </section>
+    </div>
+
+    <div class="party-detail-compare" id="partyDetailCompareBlock">
+      <div class="party-detail-compare-top">
+        <div>
+          <div class="party-detail-compare-title">Comparer ${p.short} avec un autre parti</div>
+          <div class="party-detail-compare-subtitle">Un comparatif simple sur les idées, le positionnement et le poids institutionnel.</div>
+        </div>
+        <div class="party-detail-compare-controls">
+          <select class="comp-selector" id="inlineCompareSelect" aria-label="Choisir un second parti à comparer">
+            ${compareOptions}
+          </select>
+          <button class="btn btn-primary btn-sm" type="button" id="partyInlineCompareBtn">Comparer</button>
+          <button class="party-detail-btn" type="button" id="partyOpenFullCompare">Ouvrir le comparateur complet</button>
+        </div>
+      </div>
+      <div class="party-inline-compare-output" id="partyInlineCompareOutput"></div>
+      <div class="party-detail-footnote">Données institutionnelles et électorales simplifiées à but pédagogique. Les effectifs et alliances peuvent évoluer selon les groupes parlementaires et les scrutins.</div>
+    </div>`;
+}
+function renderPartyDetail(id,options){
+  const opts=options||{};
+  const panel=document.getElementById('partyDetailPanel');
+  const placeholder=document.getElementById('partyDetailPlaceholder');
+  const record=getPartyRecord(id);
+  if(!panel||!placeholder||!record) return;
+  activePartyId=id;
+  panel.innerHTML=buildPartyDetailMarkup(record,opts.compareTargetId);
+  panel.classList.add('show');
+  placeholder.style.display='none';
+  updatePartySelectionState();
+  if(opts.updateHash!==false){
+    const nextHash='#party-'+id;
+    if(window.location.hash!==nextHash) history.replaceState(null,'',nextHash);
+  }
+  if(opts.syncCompare!==false){
+    const defaultTarget=(opts.compareTargetId&&opts.compareTargetId!==id?opts.compareTargetId:getDefaultCompareTarget(id));
+    syncComparatorSelectors(id,defaultTarget);
+  }
+  if(opts.scroll){
+    panel.scrollIntoView({behavior:'smooth',block:'start'});
+  }
+}
+
+function runInlineComparison(){
+  if(!activePartyId) return;
+  const select=document.getElementById('inlineCompareSelect');
+  const output=document.getElementById('partyInlineCompareOutput');
+  if(!select||!output) return;
+  const targetId=select.value;
+  if(!targetId||targetId===activePartyId){
+    alert('Veuillez sélectionner un autre parti.');
+    return;
+  }
+  const base=getPartyRecord(activePartyId);
+  const target=getPartyRecord(targetId);
+  if(!base||!target) return;
+  output.innerHTML=buildComparisonMarkup(base,target,{compact:true});
+  output.classList.add('show');
+  syncComparatorSelectors(base.id,target.id);
+  output.scrollIntoView({behavior:'smooth',block:'nearest'});
+}
+
+function runComparison(options){
+  const opts=options||{};
+  const a=document.getElementById('compA');
+  const b=document.getElementById('compB');
+  if(!a||!b) return;
+  const idA=a.value;
+  const idB=b.value;
+  if(idA===idB){ alert('Veuillez sélectionner deux partis différents.'); return; }
+  const pA=getPartyRecord(idA);
+  const pB=getPartyRecord(idB);
+  if(!pA||!pB) return;
+  const out=document.getElementById('compOutput');
+  if(!out) return;
+  out.innerHTML=buildComparisonMarkup(pA,pB,{compact:false});
+  out.classList.add('show');
+  if(opts.scroll!==false){
+    out.scrollIntoView({behavior:'smooth',block:'start'});
+  }
+}
+
+function getEcoScore(p){return({lfi:90,pcf:85,ps:70,eelv:75,npa:85,lo:80,renaissance:40,modem:45,horizons:35,lr:25,udi:35,rn:20,reconquete:15,prg:65,pp:68,udr:28})[p.id]||50;}
+function getSocialScore(p){return({lfi:95,pcf:90,ps:80,eelv:80,npa:90,lo:90,renaissance:45,modem:50,horizons:40,lr:30,udi:40,rn:35,reconquete:20,prg:65,pp:78,udr:30})[p.id]||50;}
+function getEuroScore(p){return({lfi:25,pcf:30,ps:75,eelv:80,npa:20,lo:15,renaissance:95,modem:90,horizons:80,lr:60,udi:75,rn:25,reconquete:10,prg:75,pp:88,udr:30})[p.id]||50;}
+function getEcoloScore(p){return({lfi:75,pcf:60,ps:70,eelv:98,npa:70,lo:55,renaissance:55,modem:55,horizons:45,lr:30,udi:40,rn:20,reconquete:10,prg:60,pp:74,udr:22})[p.id]||50;}
+function getSecScore(p){return({lfi:30,pcf:35,ps:45,eelv:35,npa:25,lo:30,renaissance:65,modem:60,horizons:75,lr:80,udi:65,rn:90,reconquete:95,prg:50,pp:42,udr:88})[p.id]||50;}
 
 function buildRadar(data,pA,pB){
   const W=180,H=180,cx=W/2,cy=H/2,R=70,n=data.length;
@@ -3330,8 +3947,7 @@ function buildRadar(data,pA,pB){
 
 /* ============================================================
    RENDER - SCRUTINS
-============================================================ */
-function renderScrutins(){
+============================================================ */function renderScrutins(){
   const g=document.getElementById('scrutinsGrid');
   if(!g) return;
   g.innerHTML=scrutins.map(s=>`
@@ -3699,29 +4315,31 @@ function initPartyFilters(){
     btn.addEventListener('click',()=>{
       document.querySelectorAll('.pf-btn').forEach(b=>b.classList.remove('active'));
       btn.classList.add('active');
-      renderParties(btn.dataset.filter,document.getElementById('partySearch').value);
+      renderParties(btn.dataset.filter,document.getElementById('partySearch')?.value||'');
+      updatePartySelectionState();
     });
   });
   const search=document.getElementById('partySearch');
   if(search) search.addEventListener('input',e=>{
-    const af=document.querySelector('.pf-btn.active')?.dataset.filter||'all';
-    renderParties(af,e.target.value);
+    renderParties(getSelectedPartyFilter(),e.target.value);
+    updatePartySelectionState();
   });
 }
 
-function scrollToParty(id){
+function scrollToParty(id,options){
+  const opts=options||{};
   if(!id) return;
-  const el=document.getElementById('party-'+id);
-  if(el){
+  const tryScroll=()=>{
+    const el=document.getElementById('party-'+id);
+    if(!el) return false;
+    if(opts.openDetail!==false) renderPartyDetail(id,{syncCompare:true,updateHash:false});
     el.scrollIntoView({behavior:'smooth',block:'start'});
-    return;
-  }
-  const pSection=document.getElementById('partis');
-  if(pSection) pSection.scrollIntoView({behavior:'smooth',block:'start'});
-  setTimeout(()=>{
-    const target=document.getElementById('party-'+id);
-    if(target) target.scrollIntoView({behavior:'smooth',block:'start'});
-  },220);
+    return true;
+  };
+  if(tryScroll()) return;
+  const section=document.getElementById('partis');
+  if(section) section.scrollIntoView({behavior:'smooth',block:'start'});
+  setTimeout(()=>{ if(!tryScroll()) renderPartyDetail(id,{syncCompare:true,updateHash:false}); },220);
 }
 
 function getPartyIdFromLocation(){
@@ -3733,12 +4351,12 @@ function getPartyIdFromLocation(){
 function initPartyDeepLink(){
   const targetId=getPartyIdFromLocation();
   if(!targetId) return;
-  setTimeout(()=>scrollToParty(targetId),180);
+  setTimeout(()=>scrollToParty(targetId,{openDetail:true}),180);
 }
 
 window.addEventListener('hashchange',function(){
   const targetId=getPartyIdFromLocation();
-  if(targetId) scrollToParty(targetId);
+  if(targetId) scrollToParty(targetId,{openDetail:true});
 });
 
 /* ============================================================
@@ -3757,9 +4375,24 @@ function initEventDelegation(){
 
     // ── Party dots (hero + spectrum) ─────────────────────────
     const partyDot=t.closest('[data-party]');
-    if(partyDot){ scrollToParty(partyDot.dataset.party); return; }
+    if(partyDot){ scrollToParty(partyDot.dataset.party,{openDetail:true}); return; }
 
-    // ── FAQ items ────────────────────────────────────────────
+    const partyCard=t.closest('[data-party-card]');
+    if(partyCard){ renderPartyDetail(partyCard.dataset.partyCard,{scroll:true}); return; }
+    if(t.closest('#partyInlineCompareBtn')){ runInlineComparison(); return; }
+    if(t.closest('#partyDetailCompareFocus')){
+      document.getElementById('inlineCompareSelect')?.focus();
+      document.getElementById('partyDetailCompareBlock')?.scrollIntoView({behavior:'smooth',block:'nearest'});
+      return;
+    }
+    if(t.closest('#partyOpenFullCompare')){
+      const target=document.getElementById('inlineCompareSelect')?.value||getDefaultCompareTarget(activePartyId);
+      if(activePartyId) syncComparatorSelectors(activePartyId,target);
+      runComparison({scroll:false});
+      document.getElementById('comparateur')?.scrollIntoView({behavior:'smooth',block:'start'});
+      return;
+    }
+
     const faqItem=t.closest('[data-faq]');
     if(faqItem && t.closest('.faq-q')){
       faqItem.classList.toggle('open');
@@ -3912,8 +4545,6 @@ document.addEventListener('DOMContentLoaded',function(){
 document.addEventListener('DOMContentLoaded',function(){
   renderParties();
   initPartyDeepLink();
-  renderPopularite();
-  initPopTabs();
   populateSelectors();
   initNav();
   initNavArrows();
@@ -4340,6 +4971,7 @@ if (voteButtons.length && feedbackEl) {
 
 </body>
 </html>
+
 
 
 
