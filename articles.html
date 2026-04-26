@@ -274,6 +274,20 @@
     .footer-social{margin-top:1rem}
     .footer-social-link{width:36px;height:36px}
   }
+
+  /* Cartes éditoriales illustrées */
+
+  /* Cartes éditoriales illustrées */
+  .article-card{padding:0;overflow:hidden}
+  .article-card::before{display:none}
+  .article-card-image{width:100%;aspect-ratio:16/9;object-fit:cover;display:block;border-radius:18px 18px 0 0;background:#0d1b2a}
+  .article-card-body{padding:1.25rem 1.25rem 1.2rem;display:flex;flex-direction:column;flex:1}
+  .article-card .article-meta{margin-bottom:.85rem}
+  .article-card .article-actions{margin-top:auto;padding-top:.15rem}
+  .article-card h3{margin-bottom:.55rem}
+  .article-card p{margin-bottom:1.05rem}
+  @media(max-width:640px){.article-card-image{border-radius:16px 16px 0 0}}
+
 </style>
 </head>
 <body>
@@ -336,73 +350,86 @@
     </div>
         <div class="articles-grid">
       <article class="article-card reveal-card">
-        <div class="article-meta"><span class="article-chip"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="22" x2="21" y2="22"/><line x1="6" y1="18" x2="6" y2="11"/><line x1="10" y1="18" x2="10" y2="11"/><line x1="14" y1="18" x2="14" y2="11"/><line x1="18" y1="18" x2="18" y2="11"/><polygon points="12 2 20 7 4 7"/></svg> Institutions</span><span class="article-readtime"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg> Lecture rapide</span></div>
-        <h3>Comment fonctionne une loi en France ?</h3>
-        <p>Une explication simple du processus d'une loi, depuis l'id&eacute;e politique jusqu'au vote final et &agrave; la promulgation.</p>
-        <div class="article-links"><span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"><path d="M9 11l3 3L22 4"/></svg> Comprendre les grandes &eacute;tapes d'une loi en France</span><span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"><path d="M9 11l3 3L22 4"/></svg> Voir le r&ocirc;le du gouvernement, de l'Assembl&eacute;e et du S&eacute;nat</span></div>
-        <div class="article-actions"><a href="comment-fonctionne-une-loi.html" class="article-btn">Lire l'article <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a><span class="article-anchor">Article 1</span></div>
+        <img src="https://www.conseil-national.mc/wp-content/uploads/2019/07/textes-de-lois-960x640.jpg" alt="Comment fonctionne une loi en France illustration" class="article-card-image" loading="lazy" decoding="async">
+        <div class="article-card-body">
+          <div class="article-meta"><span class="article-chip">Institutions</span><span class="article-readtime">Lecture rapide</span></div>
+          <h3>Comment fonctionne une loi en France ?</h3>
+          <p>Une explication simple du processus d&#x27;une loi, depuis l&#x27;idée politique jusqu&#x27;au vote final et à la promulgation.</p>
+          <div class="article-actions"><a href="comment-fonctionne-une-loi.html" class="article-link">Lire l'article <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a></div>
+        </div>
       </article>
       <article class="article-card reveal-card">
-        <div class="article-meta"><span class="article-chip"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="22" x2="21" y2="22"/><line x1="6" y1="18" x2="6" y2="11"/><line x1="10" y1="18" x2="10" y2="11"/><line x1="14" y1="18" x2="14" y2="11"/><line x1="18" y1="18" x2="18" y2="11"/><polygon points="12 2 20 7 4 7"/></svg> Institutions</span><span class="article-readtime"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg> Explication claire</span></div>
-        <h3>Quel est le r&ocirc;le du pr&eacute;sident de la R&eacute;publique ?</h3>
-        <p>Une lecture simple des pouvoirs du pr&eacute;sident, de ses limites et de sa place dans la Ve R&eacute;publique.</p>
-        <div class="article-links"><span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"><path d="M9 11l3 3L22 4"/></svg> Distinguer les pouvoirs r&eacute;els du pr&eacute;sident et les id&eacute;es re&ccedil;ues</span><span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"><path d="M9 11l3 3L22 4"/></svg> Comprendre son lien avec le Premier ministre et le Parlement</span></div>
-        <div class="article-actions"><a href="role-du-president.html" class="article-btn">Lire l'article <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a><span class="article-anchor">Article 2</span></div>
+        <img src="https://images.lecho.be/view?iid=Elvis:4_9IgrS9qs5ANN7RZTwVz0&amp;context=ONLINE&amp;ratio=16/9&amp;width=640&amp;u=1739644674000" alt="Rôle du président de la République illustration" class="article-card-image" loading="lazy" decoding="async">
+        <div class="article-card-body">
+          <div class="article-meta"><span class="article-chip">Institutions</span><span class="article-readtime">Explication claire</span></div>
+          <h3>Quel est le rôle du président de la République ?</h3>
+          <p>Une lecture simple des pouvoirs du président, de ses limites et de sa place dans la Ve République.</p>
+          <div class="article-actions"><a href="role-du-president.html" class="article-link">Lire l'article <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a></div>
+        </div>
       </article>
       <article class="article-card reveal-card">
-        <div class="article-meta"><span class="article-chip"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="22" x2="21" y2="22"/><line x1="6" y1="18" x2="6" y2="11"/><line x1="10" y1="18" x2="10" y2="11"/><line x1="14" y1="18" x2="14" y2="11"/><line x1="18" y1="18" x2="18" y2="11"/><polygon points="12 2 20 7 4 7"/></svg> Institutions</span><span class="article-readtime"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg> Format simple</span></div>
-        <h3>&Agrave; quoi sert le S&eacute;nat ?</h3>
-        <p>Comprendre simplement le r&ocirc;le du S&eacute;nat, son utilit&eacute;, ses diff&eacute;rences avec l'Assembl&eacute;e nationale et sa place dans le syst&egrave;me politique.</p>
-        <div class="article-links"><span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"><path d="M9 11l3 3L22 4"/></svg> Voir pourquoi la France a deux chambres parlementaires</span><span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"><path d="M9 11l3 3L22 4"/></svg> Comprendre le r&ocirc;le du S&eacute;nat dans le vote des lois</span></div>
-        <div class="article-actions"><a href="a-quoi-sert-le-senat.html" class="article-btn">Lire l'article <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a><span class="article-anchor">Article 3</span></div>
+        <img src="https://remeng.rosselcdn.net/sites/default/files/dpistyles_v2/rem_16_9_1124w/2020/09/16/node_190674/12112328/public/2020/09/16/B9724545954Z.1_20200916085948_000%2BGFPGKK7AN.1-0.jpg?itok=noi9crVA1600413223" alt="À quoi sert le Sénat en France illustration" class="article-card-image" loading="lazy" decoding="async">
+        <div class="article-card-body">
+          <div class="article-meta"><span class="article-chip">Institutions</span><span class="article-readtime">Guide simple</span></div>
+          <h3>À quoi sert le Sénat ?</h3>
+          <p>Comprendre simplement le rôle du Sénat, son utilité, ses différences avec l&#x27;Assemblée nationale et sa place dans le système politique.</p>
+          <div class="article-actions"><a href="a-quoi-sert-le-senat.html" class="article-link">Lire l'article <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a></div>
+        </div>
       </article>
       <article class="article-card reveal-card">
-        <div class="article-meta"><span class="article-chip"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="22" x2="21" y2="22"/><line x1="6" y1="18" x2="6" y2="11"/><line x1="10" y1="18" x2="10" y2="11"/><line x1="14" y1="18" x2="14" y2="11"/><line x1="18" y1="18" x2="18" y2="11"/><polygon points="12 2 20 7 4 7"/></svg> Parlement</span><span class="article-readtime"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg> R&eacute;ponse claire</span></div>
-        <h3>Qui vote les lois en France ?</h3>
-        <p>Une r&eacute;ponse simple pour comprendre le r&ocirc;le du Parlement fran&ccedil;ais, des d&eacute;put&eacute;s, des s&eacute;nateurs et du dernier mot de l'Assembl&eacute;e nationale.</p>
-        <div class="article-links"><span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"><path d="M9 11l3 3L22 4"/></svg> Comprendre qui vote vraiment les textes</span><span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"><path d="M9 11l3 3L22 4"/></svg> Voir le r&ocirc;le de l'Assembl&eacute;e nationale et du S&eacute;nat</span></div>
-        <div class="article-actions"><a href="qui-vote-les-lois.html" class="article-btn">Lire l'article <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a><span class="article-anchor">Article 4</span></div>
+        <img src="https://media.ouest-france.fr/v1/pictures/MjAyNTAxMGMyYTEzYzRjZjcxOTM1ZmNkYjVkMmMwYmMyOGZjYWI?width=1260&amp;height=708&amp;focuspoint=50%2C25&amp;cropresize=1&amp;client_id=bpeditorial&amp;sign=d9b8695923d4991095a9440c30e484a50284f52efb1a2629c08065f519313191" alt="Qui vote les lois en France illustration" class="article-card-image" loading="lazy" decoding="async">
+        <div class="article-card-body">
+          <div class="article-meta"><span class="article-chip">Parlement</span><span class="article-readtime">Réponse claire</span></div>
+          <h3>Qui vote les lois en France ?</h3>
+          <p>Une réponse simple pour comprendre le rôle du Parlement, des députés, des sénateurs et du dernier mot de l&#x27;Assemblée nationale.</p>
+          <div class="article-actions"><a href="qui-vote-les-lois.html" class="article-link">Lire l'article <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a></div>
+        </div>
       </article>
       <article class="article-card reveal-card">
-        <div class="article-meta"><span class="article-chip"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="22" x2="21" y2="22"/><line x1="6" y1="18" x2="6" y2="11"/><line x1="10" y1="18" x2="10" y2="11"/><line x1="14" y1="18" x2="14" y2="11"/><line x1="18" y1="18" x2="18" y2="11"/><polygon points="12 2 20 7 4 7"/></svg> &Eacute;lections</span><span class="article-readtime"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg> Explication simple</span></div>
-        <h3>Comment sont &eacute;lus les d&eacute;put&eacute;s ?</h3>
-        <p>Une explication claire du scrutin majoritaire &agrave; deux tours, des &eacute;lections l&eacute;gislatives, du mandat et du r&ocirc;le des d&eacute;put&eacute;s.</p>
-        <div class="article-links"><span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"><path d="M9 11l3 3L22 4"/></svg> Comprendre le scrutin l&eacute;gislatif en France</span><span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"><path d="M9 11l3 3L22 4"/></svg> Voir qui peut voter et comment le mandat fonctionne</span></div>
-        <div class="article-actions"><a href="comment-sont-elus-les-deputes.html" class="article-btn">Lire l'article <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a><span class="article-anchor">Article 5</span></div>
+        <img src="https://metropole.toulouse.fr/sites/toulouse-fr/files/styles/paragraphe_image/public/2022-09/elections_urnes.jpg.webp?itok=RLxKtBay" alt="Comment sont élus les députés en France illustration" class="article-card-image" loading="lazy" decoding="async">
+        <div class="article-card-body">
+          <div class="article-meta"><span class="article-chip">Élections</span><span class="article-readtime">Explication simple</span></div>
+          <h3>Comment sont élus les députés ?</h3>
+          <p>Une explication claire du scrutin majoritaire à deux tours, des élections législatives, du mandat et du rôle des députés.</p>
+          <div class="article-actions"><a href="comment-sont-elus-les-deputes.html" class="article-link">Lire l'article <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a></div>
+        </div>
       </article>
       <article class="article-card reveal-card">
-        <div class="article-meta"><span class="article-chip"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg> Finances publiques</span><span class="article-readtime"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg> Tr&egrave;s concret</span></div>
-        <h3>Pourquoi on paie des imp&ocirc;ts ?</h3>
-        <p>Une page simple pour comprendre l'utilit&eacute; des imp&ocirc;ts, ce qu'ils financent et pourquoi ils comptent dans la vie collective.</p>
-        <div class="article-links"><span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"><path d="M9 11l3 3L22 4"/></svg> Voir &agrave; quoi servent les imp&ocirc;ts au quotidien</span><span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"><path d="M9 11l3 3L22 4"/></svg> Comprendre le lien avec les services publics</span></div>
-        <div class="article-actions"><a href="pourquoi-on-paie-des-impots.html" class="article-btn">Lire l'article <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a><span class="article-anchor">Article 6</span></div>
+        <img src="https://www.euodia.fr/upload/blog/article/impot%202024.jpeg" alt="Pourquoi on paie des impôts en France illustration" class="article-card-image" loading="lazy" decoding="async">
+        <div class="article-card-body">
+          <div class="article-meta"><span class="article-chip">Finances publiques</span><span class="article-readtime">Très concret</span></div>
+          <h3>Pourquoi on paie des impôts ?</h3>
+          <p>Une page simple pour comprendre l&#x27;utilité des impôts, ce qu&#x27;ils financent et pourquoi ils comptent dans la vie collective.</p>
+          <div class="article-actions"><a href="pourquoi-on-paie-des-impots.html" class="article-link">Lire l'article <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a></div>
+        </div>
       </article>
-
-
       <article class="article-card reveal-card">
-        <div class="article-meta"><span class="article-chip"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/><path d="M16 13H8"/><path d="M16 17H8"/></svg> Institutions</span><span class="article-readtime"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg> Lecture claire</span></div>
-        <h3>Pourquoi les lois prennent du temps ?</h3>
-        <p>Une explication simple des débats, de la navette parlementaire et des contrôles qui rendent le vote d'une loi plus long.</p>
-        <div class="article-links"><span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"><path d="M9 11l3 3L22 4"/></svg> Comprendre pourquoi une loi peut sembler lente</span><span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"><path d="M9 11l3 3L22 4"/></svg> Voir l'utilité des débats et contrôles</span></div>
-        <div class="article-actions"><a href="pourquoi-les-lois-prennent-du-temps.html" class="article-btn">Lire l'article <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a><span class="article-anchor">Article 7</span></div>
+        <img src="https://images.lanouvellerepublique.fr/image/upload/t_1020w/f_auto/63f111ad2fa75d786c8b45f4.jpg" alt="Pourquoi les lois prennent du temps en France illustration" class="article-card-image" loading="lazy" decoding="async">
+        <div class="article-card-body">
+          <div class="article-meta"><span class="article-chip">Institutions</span><span class="article-readtime">Analyse courte</span></div>
+          <h3>Pourquoi les lois prennent du temps ?</h3>
+          <p>Une explication simple des débats, de la navette parlementaire et des contrôles qui rendent le vote d&#x27;une loi plus long.</p>
+          <div class="article-actions"><a href="pourquoi-les-lois-prennent-du-temps.html" class="article-link">Lire l'article <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a></div>
+        </div>
       </article>
-
       <article class="article-card reveal-card">
-        <div class="article-meta"><span class="article-chip"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12h18"/><path d="M12 3v18"/><path d="M5 5l14 14"/><path d="M19 5L5 19"/></svg> Contre-pouvoirs</span><span class="article-readtime"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg> Très utile</span></div>
-        <h3>Qui contrôle le gouvernement en France ?</h3>
-        <p>Comprendre le rôle du Parlement, des questions, des commissions, de la motion de censure et des contrôles institutionnels.</p>
-        <div class="article-links"><span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"><path d="M9 11l3 3L22 4"/></svg> Identifier les principaux contre-pouvoirs</span><span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"><path d="M9 11l3 3L22 4"/></svg> Comprendre la motion de censure simplement</span></div>
-        <div class="article-actions"><a href="qui-controle-le-gouvernement-en-france.html" class="article-btn">Lire l'article <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a><span class="article-anchor">Article 8</span></div>
+        <img src="https://media.ouest-france.fr/v1/pictures/MjAyNTA2YzFlYTQ4OGRjNThjMjIxNmE2MTFjN2Q0NDRlNTRlODk?width=1260&amp;height=708&amp;focuspoint=50%2C25&amp;cropresize=1&amp;client_id=bpeditorial&amp;sign=d6bdf9549dc2249bc31ce24756c60f865928052ffb682e24ee33cfc528153213" alt="Qui contrôle le gouvernement en France illustration" class="article-card-image" loading="lazy" decoding="async">
+        <div class="article-card-body">
+          <div class="article-meta"><span class="article-chip">Contre-pouvoirs</span><span class="article-readtime">Très utile</span></div>
+          <h3>Qui contrôle le gouvernement en France ?</h3>
+          <p>Comprendre le rôle du Parlement, des questions, des commissions, de la motion de censure et des contrôles institutionnels.</p>
+          <div class="article-actions"><a href="qui-controle-le-gouvernement-en-france.html" class="article-link">Lire l'article <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a></div>
+        </div>
       </article>
-
       <article class="article-card reveal-card">
-        <div class="article-meta"><span class="article-chip"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M4 4.5A2.5 2.5 0 0 1 6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5z"/><path d="M10 7h6"/><path d="M10 11h6"/></svg> Parlement</span><span class="article-readtime"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg> Explication simple</span></div>
-        <h3>Pourquoi il y a deux assemblées en France ?</h3>
-        <p>Une page claire sur l'utilité du bicamérisme et la complémentarité entre l'Assemblée nationale et le Sénat.</p>
-        <div class="article-links"><span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"><path d="M9 11l3 3L22 4"/></svg> Comprendre l'intérêt du bicamérisme</span><span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"><path d="M9 11l3 3L22 4"/></svg> Distinguer Assemblée nationale et Sénat</span></div>
-        <div class="article-actions"><a href="pourquoi-il-y-a-deux-assemblees-en-france.html" class="article-btn">Lire l'article <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a><span class="article-anchor">Article 9</span></div>
+        <img src="https://www.assemblee-nationale.fr/var/ezflow_site/storage/images/7/5/9/3/7923957-1-fre-FR/AN_280253_retouche_1000.jpg" alt="Pourquoi il y a deux assemblées en France illustration" class="article-card-image" loading="lazy" decoding="async">
+        <div class="article-card-body">
+          <div class="article-meta"><span class="article-chip">Parlement</span><span class="article-readtime">Comprendre vite</span></div>
+          <h3>Pourquoi il y a deux assemblées en France ?</h3>
+          <p>Une page claire sur l&#x27;utilité du bicamérisme et la complémentarité entre l&#x27;Assemblée nationale et le Sénat.</p>
+          <div class="article-actions"><a href="pourquoi-il-y-a-deux-assemblees-en-france.html" class="article-link">Lire l'article <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a></div>
+        </div>
       </article>
-
     </div>
   </section>
 </main>
