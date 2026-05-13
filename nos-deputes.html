@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="fr">
 <head>
 <meta charset="UTF-8"/>
@@ -283,7 +283,7 @@
 
   /* Page Nos députés */
   .deputies-section{padding:4.8rem 1.5rem;background:var(--bg3)}
-  .deputies-section.is-muted{background:var(--bg2)}
+  .deputies-section.is-muted{background:var(--bg3)}
   .deputies-inner{max-width:1180px;margin:0 auto}
   .deputies-intro-text{max-width:780px;color:var(--text3);font-size:1rem;margin-top:.6rem}
   .deputies-intro-text a{color:var(--blue2);font-weight:800;border-bottom:1px solid rgba(37,99,168,.22)}
@@ -342,6 +342,19 @@
   @media(max-width:980px){.stats-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.filters-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.filter-field.is-reset{grid-column:1/-1}.results-toolbar{align-items:stretch;flex-direction:column}.sort-inline{justify-content:space-between}.sort-inline select{flex:1;min-width:0}}
   @media(max-width:640px){.deputies-section{padding:3.4rem 1rem}.stats-grid{grid-template-columns:1fr}.filters-card{padding:1rem;border-radius:22px}.filters-grid{grid-template-columns:1fr}.deputies-grid{grid-template-columns:1fr}.results-count{font-size:1.45rem}.sort-inline{display:block}.sort-inline select{width:100%;margin-top:.45rem}.deputy-card{border-radius:22px}.deputy-photo{width:68px;height:68px;border-radius:20px}}
 
+
+
+  /* Intro compacte sans grand hero */
+  .compact-hero{padding:6.3rem 1.5rem 3.2rem;background:var(--bg2);border-bottom:1px solid var(--border)}
+  .compact-hero-inner{max-width:1200px;margin:0 auto}
+  .compact-hero .section-label{display:inline-flex;align-items:center;gap:.45rem;font-size:.72rem;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:var(--blue2);margin-bottom:1rem}
+  .compact-hero h1{font-size:clamp(2.25rem,4vw,3.5rem);max-width:980px;margin-bottom:.2rem;color:var(--text)}
+  .compact-hero .hero-highlight,.compact-hero h1 em{color:inherit;font-style:normal}
+  .compact-hero-line{width:44px;height:3px;background:var(--gold);border-radius:999px;margin:1rem 0 1.25rem}
+  .compact-hero p{max-width:760px;font-size:1.05rem;color:var(--text3);line-height:1.75}
+  .compact-hero p a{color:var(--blue2);font-weight:700;text-decoration:none;border-bottom:2px solid rgba(212,168,67,.5)}
+  @media(max-width:760px){.compact-hero{padding:5.7rem 1rem 2.35rem}.compact-hero h1{font-size:2.1rem}.compact-hero p{font-size:.95rem}}
+
 </style>
 </head>
 <body>
@@ -373,25 +386,14 @@
       </a></div>
   </div>
 </nav>
-<header class="hero">
-  <div class="hero-shell">
-    <div class="hero-copy">
-      <div class="hero-badge"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18"/><path d="M5 21V7l7-4 7 4v14"/><path d="M9 21v-8h6v8"/></svg> Assemblée nationale</div>
-      <h1><span class="hero-highlight">Nos députés</span> : rechercher un député français</h1>
-      <p>Retrouvez facilement les députés français par nom, région, département, circonscription, profession ou groupe politique. Pour replacer leur rôle dans les institutions, vous pouvez aussi consulter le <a href="systeme-politique.html" style="color:var(--blue2);font-weight:700">système politique français</a> et la page qui explique <a href="qui-vote-les-lois.html" style="color:var(--blue2);font-weight:700">qui vote les lois</a>.</p>
-      <div class="hero-actions"><a href="#rechercher-depute" class="page-btn page-btn-primary"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg> Rechercher un député</a></div>
-      <div class="hero-note"><span>577 députés</span><span>Groupes politiques</span><span>Régions et départements</span></div>
-    </div>
-    <div class="hero-panel">
-      <div class="hero-card"><div class="kicker">Recherche interactive</div><strong>Un annuaire clair</strong><p>Nom, département, profession, groupe politique : les filtres se mettent à jour instantanément sans recharger la page.</p></div>
-      <div class="mini-list">
-        <div class="mini-item"><div class="mini-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg></div><div><strong>Recherche rapide</strong><span>Trouvez un député par nom, territoire, groupe ou profession.</span></div></div>
-        <div class="mini-item"><div class="mini-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M7 8h10"/><path d="M7 12h10"/><path d="M7 16h6"/></svg></div><div><strong>Cartes lisibles</strong><span>Photo, groupe politique, région, département et circonscription.</span></div></div>
-        <div class="mini-item"><div class="mini-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20V10"/><path d="M18 20V4"/><path d="M6 20v-6"/></svg></div><div><strong>Vue d'ensemble</strong><span>Des statistiques simples pour comprendre la composition de l'Assemblée.</span></div></div>
-      </div>
-    </div>
+<section class="compact-hero" aria-labelledby="compactIntroTitle">
+  <div class="compact-hero-inner">
+    <div class="section-label">Assemblée nationale</div>
+    <h1 id="compactIntroTitle"><span class="hero-highlight">Nos députés</span> : rechercher un député français</h1>
+    <div class="compact-hero-line" aria-hidden="true"></div>
+    <p>Retrouvez facilement les députés français par nom, région, département, circonscription, profession ou groupe politique. Pour replacer leur rôle dans les institutions, vous pouvez aussi consulter le <a href="systeme-politique.html" style="color:var(--blue2);font-weight:700">système politique français</a> et la page qui explique <a href="qui-vote-les-lois.html" style="color:var(--blue2);font-weight:700">qui vote les lois</a>.</p>
   </div>
-</header>
+</section>
 <main class="page-main">
   <section class="deputies-section" aria-labelledby="statsTitle">
     <div class="deputies-inner">
