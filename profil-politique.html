@@ -766,20 +766,20 @@ function catLabel(q){return `${iconMarkup(q.catIcon||'circle',q.catTone||'blue',
    DATA — PARTIES
 ================================================================ */
 const PARTIES = [
-  { id:'rn', name:'Rassemblement National', short:'RN', color:'#1a1a2e', bg:'#e8e9ea', initials:'RN', orient:'Extrême droite', logo:'https://www.tv83.info/wp-content/uploads/2024/02/Logo_alternatif_Rassemblement_national_2018.png', canvasLogo:'https://upload.wikimedia.org/wikipedia/commons/thumb/d/d2/Rassemblement_national_logo_%282018%29.svg/480px-Rassemblement_national_logo_%282018%29.svg.png' },
-  { id:'lfi', name:'La France Insoumise', short:'LFI', color:'#be1622', bg:'#f9e8e8', initials:'LFI', orient:'Gauche radicale', logo:'https://lfi72-la-france-insoumise.fr/wp-content/uploads/2025/02/LFI-logo-site.png', canvasLogo:'https://upload.wikimedia.org/wikipedia/fr/thumb/a/ac/La_France_insoumise_-_Logo_2021.svg/480px-La_France_insoumise_-_Logo_2021.svg.png' },
+  { id:'rn', name:'Rassemblement National', short:'RN', color:'#1a1a2e', bg:'#e8e9ea', initials:'RN', orient:'Extrême droite', logo:'https://www.tv83.info/wp-content/uploads/2024/02/Logo_alternatif_Rassemblement_national_2018.png', canvasLogo:'https://upload.wikimedia.org/wikipedia/fr/thumb/1/17/Logo_alternatif_Rassemblement_national_2018.svg/960px-Logo_alternatif_Rassemblement_national_2018.svg.png' },
+  { id:'lfi', name:'La France Insoumise', short:'LFI', color:'#be1622', bg:'#f9e8e8', initials:'LFI', orient:'Gauche radicale', logo:'https://lfi72-la-france-insoumise.fr/wp-content/uploads/2025/02/LFI-logo-site.png', canvasLogo:'https://upload.wikimedia.org/wikipedia/fr/thumb/0/07/La_France_insoumise_logo_2024.svg/langfr-1920px-La_France_insoumise_logo_2024.svg.png' },
   { id:'renaissance', name:'Renaissance (ex-LREM)', short:'RE', color:'#006EB7', bg:'#eaf4fb', initials:'RE', orient:'Centre libéral', logo:'https://upload.wikimedia.org/wikipedia/commons/thumb/7/75/Renaissance-logotype-officiel.svg/langfr-960px-Renaissance-logotype-officiel.svg.png' },
   { id:'ps', name:'Parti Socialiste', short:'PS', color:'#E8003D', bg:'#fde8ef', initials:'PS', orient:'Centre-gauche', logo:'https://upload.wikimedia.org/wikipedia/fr/d/d1/Logo_Parti_socialiste_%28France%29_2016.png' },
   { id:'pp', name:'Place Publique', short:'PP', color:'#F2C300', bg:'#fff8d9', initials:'PP', orient:'Centre-gauche pro-européen', logo:'https://upload.wikimedia.org/wikipedia/commons/thumb/a/a5/Logo_Place_publique.svg/langfr-250px-Logo_Place_publique.svg.png' },
   { id:'lr', name:'Les Républicains', short:'LR', color:'#1a4f8a', bg:'#e8f0fa', initials:'LR', orient:'Droite', logo:'https://upload.wikimedia.org/wikipedia/commons/thumb/5/5c/CGLR2023_-_4.png/1280px-CGLR2023_-_4.png' },
   { id:'udr', name:'Union des Droites pour la République', short:'UDR', color:'#0b3d91', bg:'#e9f0fb', initials:'UDR', orient:'Droite souverainiste', logo:'https://upload.wikimedia.org/wikipedia/fr/thumb/c/cd/Logo_UDR_2024.svg/langfr-250px-Logo_UDR_2024.svg.png' },
   { id:'modem', name:'Mouvement Démocrate', short:'MoDem', color:'#f57c00', bg:'#fff3e0', initials:'MD', orient:'Centre', logo:'https://upload.wikimedia.org/wikipedia/commons/0/08/Mouvement-Democrate-Logo-2019.png' },
-  { id:'eelv', name:'Les Écologistes', short:'EELV', color:'#27ae60', bg:'#eafaf1', initials:'EE', orient:'écologiste', logo:'https://lesecologistes-paris11.org/wp-content/uploads/2025/06/bd19b-logo_eelv-fond-blanc.png', canvasLogo:'https://upload.wikimedia.org/wikipedia/commons/thumb/2/29/Europe_Ecologie_Les_Verts_logo_2019.svg/480px-Europe_Ecologie_Les_Verts_logo_2019.svg.png' },
+  { id:'eelv', name:'Les Écologistes', short:'EELV', color:'#27ae60', bg:'#eafaf1', initials:'EE', orient:'écologiste', logo:'https://lesecologistes-paris11.org/wp-content/uploads/2025/06/bd19b-logo_eelv-fond-blanc.png', canvasLogo:'https://upload.wikimedia.org/wikipedia/fr/thumb/6/69/Logo-e-e-l-v.svg/3840px-Logo-e-e-l-v.svg.png' },
   { id:'pcf', name:'Parti Communiste Français', short:'PCF', color:'#cc0000', bg:'#fdecea', initials:'PCF', orient:'Gauche communiste', logo:'https://upload.wikimedia.org/wikipedia/fr/thumb/6/6a/Logo_du_Parti_communiste_fran%C3%A7ais_%282018%2C_rouge%29.svg/langfr-1280px-Logo_du_Parti_communiste_fran%C3%A7ais_%282018%2C_rouge%29.svg.png' },
   { id:'horizons', name:'Horizons', short:'HOR', color:'#1f2a7a', bg:'#eceefe', initials:'HOR', orient:'Centre droit', logo:'https://upload.wikimedia.org/wikipedia/commons/thumb/5/55/Logo_Parti_Politique_Horizons_-_2021.svg/langfr-1920px-Logo_Parti_Politique_Horizons_-_2021.svg.png' },
   { id:'reconquete', name:'Reconquête !', short:'R!', color:'#37474f', bg:'#eceff1', initials:'R!', orient:'Extrême droite', logo:'https://upload.wikimedia.org/wikipedia/commons/thumb/d/da/Logo_of_the_Reconquest_%28political_party%29.svg/3840px-Logo_of_the_Reconquest_%28political_party%29.svg.png' },
   { id:'udi', name:'Union des Démocrates et Indépendants', short:'UDI', color:'#5bc0de', bg:'#e9f8fc', initials:'UDI', orient:'Centre droit', logo:'https://upload.wikimedia.org/wikipedia/commons/6/60/Logo_UDI_2019.png' },
-  { id:'npa', name:'Nouveau Parti Anticapitaliste', short:'NPA', color:'#d71920', bg:'#fde8e8', initials:'NPA', orient:'Extrême gauche', logo:'https://npa-lanticapitaliste.org/sites/default/files/styles/large/public/autocollant-npa-identitaire-horizontal.jpg', canvasLogo:'https://upload.wikimedia.org/wikipedia/fr/thumb/5/51/Logo_NPA_%282009%29.svg/480px-Logo_NPA_%282009%29.svg.png' },
+  { id:'npa', name:'Nouveau Parti Anticapitaliste', short:'NPA', color:'#d71920', bg:'#fde8e8', initials:'NPA', orient:'Extrême gauche', logo:'https://upload.wikimedia.org/wikipedia/commons/8/8c/Logo_du_NPA_-_l%27Anticapitaliste.jpg', canvasLogo:'https://upload.wikimedia.org/wikipedia/commons/8/8c/Logo_du_NPA_-_l%27Anticapitaliste.jpg' },
   { id:'lo', name:'Lutte Ouvrière', short:'LO', color:'#b00000', bg:'#fde7e7', initials:'LO', orient:'Extrême gauche', logo:'https://upload.wikimedia.org/wikipedia/commons/e/e0/Logo_de_Lutte_Ouvri%C3%A8re.png' },
   { id:'prg', name:'Parti Radical de Gauche', short:'PRG', color:'#e91e63', bg:'#fce4ec', initials:'PRG', orient:'Centre-gauche', logo:'https://upload.wikimedia.org/wikipedia/fr/1/12/Logotype_PRG_Le_centre_gauche.png' },
 ];
@@ -1221,7 +1221,7 @@ const IMPACTS_DB = [
   { id:'retraite', cond:ls=>ls.situation_pro==='retraite', icon:'clock', tone:'gold', title:"Pensions de retraite", desc:"Retraité(e), vous êtes concerné(e) par la revalorisation des pensions, l'indexation sur l'inflation et le financement du système de retraite.", fav:['lfi','pcf','ps','pp','npa','lo','rn','prg'], defav:['renaissance','modem','horizons','udi','lr'] },
   { id:'famille', cond:ls=>ls.foyer==='famille'||ls.foyer==='monoparental', icon:'users', tone:'pink', title:"Aides aux familles & école", desc:"Avec des enfants ? charge, allocations, cantines, garde d'enfants, école publique et fiscalité familiale peuvent fortement peser dans votre quotidien.", fav:['lfi','ps','pcf','pp','prg','eelv','rn','lr','udr'], defav:[] },
   { id:'chomage', cond:ls=>ls.situation_pro==='chomage', icon:'search', tone:'slate', title:"Allocations chômage & retour ? l'emploi", desc:"En recherche d'emploi, la durée et les conditions d'indemnisation, la formation et l'accompagnement varient très fortement selon les familles politiques.", fav:['lfi','pcf','ps','pp','eelv','npa','lo','prg'], defav:['lr','renaissance','horizons','udi','rn','udr','reconquete'] },
-  { id:'tc', cond:ls=>ls.transport==='tc'||ls.transport==='velo', icon:'train', tone:'green', title:"Investissement dans les transports propres", desc:"Usager des transports en commun ou du vélo, vous b?n?ficiez surtout des programmes qui financent rail, bus, vélo, rénovation des lignes et tarification sociale.", fav:['eelv','lfi','ps','pp','pcf','npa','lo','prg','renaissance','modem'], defav:['rn','reconquete','udr'] },
+  { id:'tc', cond:ls=>ls.transport==='tc'||ls.transport==='velo', icon:'train', tone:'green', title:"Investissement dans les transports propres", desc:"Usager des transports en commun ou du vélo, vous bénéficiez surtout des programmes qui financent rail, bus, vélo, rénovation des lignes et tarification sociale.", fav:['eelv','lfi','ps','pp','pcf','npa','lo','prg','renaissance','modem'], defav:['rn','reconquete','udr'] },
 ];
 
 function renderImpact() {
@@ -1235,7 +1235,7 @@ function renderImpact() {
     return '<div class="impact-card"><div class="impact-icon">'+iconMarkup(imp.icon, imp.tone || 'blue', 'md')+'</div>'
       + '<div class="impact-title">'+imp.title+'</div><div class="impact-desc">'+imp.desc+'</div>'
       + (favChips ? '<div class="impact-fav"><div class="impact-fav-label">Partis potentiellement favorables :</div>'+favChips+'</div>' : '')
-      + (defavChips ? '<div class="impact-fav" style="margin-top:.4rem"><div class="impact-fav-label">Partis potentiellement d?favorables :</div>'+defavChips+'</div>' : '')
+      + (defavChips ? '<div class="impact-fav" style="margin-top:.4rem"><div class="impact-fav-label">Partis potentiellement défavorables :</div>'+defavChips+'</div>' : '')
       + '</div>';
   }).join('');
 }
@@ -1325,9 +1325,30 @@ function renderAnalysis() {
 function roundRect(ctx,x,y,w,h,r){if(ctx.roundRect){ctx.beginPath();ctx.roundRect(x,y,w,h,r);ctx.fill();return;}ctx.beginPath();ctx.moveTo(x+r,y);ctx.arcTo(x+w,y,x+w,y+h,r);ctx.arcTo(x+w,y+h,x,y+h,r);ctx.arcTo(x,y+h,x,y,r);ctx.arcTo(x,y,x+w,y,r);ctx.closePath();ctx.fill();}
 function drawText(ctx,text,x,y,o={}){ctx.fillStyle=o.color||'#1e2a38';ctx.font=o.font||'16px DM Sans';ctx.textAlign=o.align||'left';ctx.textBaseline=o.baseline||'alphabetic';ctx.fillText(text,x,y);}
 function drawWrappedText(ctx,text,x,y,maxWidth,lineHeight,o={}){const words=String(text).split(' ');let line='',yy=y;words.forEach(word=>{const test=line?line+' '+word:word;if(ctx.measureText(test).width>maxWidth&&line){drawText(ctx,line,x,yy,o);line=word;yy+=lineHeight;}else line=test;});if(line)drawText(ctx,line,x,yy,o);return yy;}
-function loadPartyImage(url){return new Promise(resolve=>{const img=new Image();img.crossOrigin='anonymous';img.onload=()=>resolve(img);img.onerror=()=>resolve(null);img.src=url;});}
+function loadPartyImage(url){
+  return new Promise(resolve=>{
+    // Méthode 1 : fetch + blob URL — évite le "canvas taint" si le serveur supporte CORS
+    fetch(url,{mode:'cors',cache:'default'})
+      .then(r=>{if(!r.ok)throw new Error(r.status);return r.blob();})
+      .then(blob=>{
+        const blobUrl=URL.createObjectURL(blob);
+        const img=new Image();
+        img.onload=()=>{URL.revokeObjectURL(blobUrl);resolve(img);};
+        img.onerror=()=>{URL.revokeObjectURL(blobUrl);resolve(null);};
+        img.src=blobUrl;
+      })
+      .catch(()=>{
+        // Méthode 2 : img avec crossOrigin='anonymous' (serveur doit retourner CORS headers)
+        const img=new Image();
+        img.crossOrigin='anonymous';
+        img.onload=()=>resolve(img);
+        img.onerror=()=>resolve(null);
+        img.src=url+'?cb='+Date.now(); // cache-buster pour éviter les conflits de cache
+      });
+  });
+}
 function drawLogoFallback(ctx,p,x,y,w,h){ctx.fillStyle=p.bg;roundRect(ctx,x,y,w,h,8);ctx.fillStyle=p.color;ctx.font='800 14px DM Sans';ctx.textAlign='center';ctx.textBaseline='middle';ctx.fillText(p.initials,x+w/2,y+h/2+1);}
-async function drawCanvasPartyLogo(ctx,p,x,y,w,h,useImages=true){ctx.fillStyle='#fff';roundRect(ctx,x,y,w,h,8);ctx.strokeStyle='#dce3ed';ctx.lineWidth=1;ctx.strokeRect(x+.5,y+.5,w-1,h-1);if(useImages&&(p.canvasLogo||p.logo)){const img=await loadPartyImage(p.canvasLogo||p.logo);if(img){const pad=5,iw=img.naturalWidth||img.width,ih=img.naturalHeight||img.height,scale=Math.min((w-pad*2)/iw,(h-pad*2)/ih),dw=iw*scale,dh=ih*scale;ctx.drawImage(img,x+(w-dw)/2,y+(h-dh)/2,dw,dh);return;}}drawLogoFallback(ctx,p,x,y,w,h);}
+async function drawCanvasPartyLogo(ctx,p,x,y,w,h,useImages=true){ctx.fillStyle='#fff';roundRect(ctx,x,y,w,h,8);ctx.strokeStyle='#dce3ed';ctx.lineWidth=1;ctx.strokeRect(x+.5,y+.5,w-1,h-1);if(useImages){const urls=[p.canvasLogo,p.logo].filter(Boolean);for(const url of urls){const img=await loadPartyImage(url);if(img){const pad=5,iw=img.naturalWidth||img.width,ih=img.naturalHeight||img.height,scale=Math.min((w-pad*2)/iw,(h-pad*2)/ih),dw=iw*scale,dh=ih*scale;ctx.drawImage(img,x+(w-dw)/2,y+(h-dh)/2,dw,dh);return;}}}drawLogoFallback(ctx,p,x,y,w,h);}
 async function renderPngPreview(useImages=true){const canvas=document.getElementById('pngPreviewCanvas'),ctx=canvas.getContext('2d'),sorted=sortedParties(),rowH=54,top=160,bottom=92;canvas.width=900;canvas.height=top+sorted.length*rowH+bottom;ctx.clearRect(0,0,canvas.width,canvas.height);ctx.fillStyle='#f7f8fa';ctx.fillRect(0,0,canvas.width,canvas.height);ctx.fillStyle='#0d1b2a';ctx.fillRect(0,0,canvas.width,122);ctx.fillStyle='#d4a843';ctx.fillRect(0,0,canvas.width,6);drawText(ctx,'Comprendre la Politique',42,52,{color:'#fff',font:'900 28px Playfair Display'});drawText(ctx,'Mes résultats de profil politique',42,86,{color:'rgba(255,255,255,.72)',font:'700 16px DM Sans'});drawText(ctx,new Date().toLocaleDateString('fr-FR',{day:'2-digit',month:'long',year:'numeric'}),858,53,{color:'rgba(255,255,255,.55)',font:'700 13px DM Sans',align:'right'});drawText(ctx,'Classement indicatif selon vos réponses',42,145,{color:'#3a4a5c',font:'800 14px DM Sans'});for(let i=0;i<sorted.length;i++){const p=sorted[i],pct=partyScores[p.id]||0,y=top+i*rowH;ctx.fillStyle=i===0?'#fff9ea':'#fff';roundRect(ctx,32,y,836,44,10);ctx.strokeStyle=i===0?'#d4a843':'#dce3ed';ctx.lineWidth=i===0?2:1;ctx.strokeRect(32.5,y+.5,835,43);drawText(ctx,String(i+1),55,y+28,{color:'#8895a7',font:'800 13px DM Sans',align:'center'});await drawCanvasPartyLogo(ctx,p,78,y+7,46,30,useImages);drawText(ctx,p.name,142,y+27,{color:'#1e2a38',font:'800 14px DM Sans'});ctx.fillStyle='#e7ebf3';roundRect(ctx,510,y+18,250,8,99);ctx.fillStyle=p.color;roundRect(ctx,510,y+18,Math.max(4,250*pct/100),8,99);drawText(ctx,pct+'%',824,y+27,{color:'#1e2a38',font:'900 14px DM Sans',align:'right'});}const footerY=top+sorted.length*rowH+32;drawWrappedText(ctx,'Analyse locale et pédagogique. Les scores résument des proximités programmatiques et ne remplacent pas la lecture des programmes.',42,footerY,690,20,{color:'#8895a7',font:'600 13px DM Sans'});drawText(ctx,'comprendrelapolitique.fr',858,footerY+28,{color:'#8895a7',font:'800 13px DM Sans',align:'right'});}
 async function openPngModal(){const modal=document.getElementById('pngModal');modal.hidden=false;document.body.style.overflow='hidden';requestAnimationFrame(()=>modal.classList.add('is-open'));try{await renderPngPreview(true);document.getElementById('pngDownloadBtn').focus();}catch(e){console.warn('PNG preview fallback',e);await renderPngPreview(false);}}
 function closePngModal(){const modal=document.getElementById('pngModal');modal.classList.remove('is-open');document.body.style.overflow='';setTimeout(()=>{modal.hidden=true;},180);}
