@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+﻿﻿<!DOCTYPE html>
 <html lang="fr">
 <head>
 <!-- Google tag (gtag.js) -->
@@ -1233,7 +1233,22 @@
     box-shadow:var(--shadow2);transform:translateY(-3px);
     border-color:var(--blue2);
   }
-  .overview-card-icon{font-size:2rem;margin-bottom:.7rem;}
+  .overview-card-icon{margin-bottom:.9rem;}
+  .overview-svg-icon{--overview-icon-color:var(--blue2);--overview-icon-bg:rgba(37,99,168,.12);width:52px;height:52px;border-radius:14px;display:inline-flex;align-items:center;justify-content:center;flex-shrink:0;background:var(--overview-icon-bg);color:var(--overview-icon-color);box-shadow:inset 0 0 0 1px rgba(255,255,255,.55),0 8px 20px rgba(13,27,42,.06);transition:transform .2s,box-shadow .2s,background .2s;}
+  .overview-svg-icon svg{width:54%;height:54%;display:block;stroke:currentColor;fill:none;stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round;}
+  .overview-svg-icon.mini{width:28px;height:28px;border-radius:9px;box-shadow:inset 0 0 0 1px rgba(255,255,255,.5);}
+  .overview-svg-icon.mini svg{width:58%;height:58%;stroke-width:2.3;}
+  .overview-card:hover .overview-svg-icon{transform:translateY(-1px);box-shadow:inset 0 0 0 1px rgba(255,255,255,.65),0 10px 24px rgba(13,27,42,.1);}
+  .overview-icon-blue{--overview-icon-color:#2563a8;--overview-icon-bg:rgba(37,99,168,.12);}
+  .overview-icon-gold{--overview-icon-color:#c99522;--overview-icon-bg:rgba(212,168,67,.17);}
+  .overview-icon-green{--overview-icon-color:#1e8449;--overview-icon-bg:rgba(39,174,96,.13);}
+  .overview-icon-red{--overview-icon-color:#c0392b;--overview-icon-bg:rgba(192,57,43,.12);}
+  .overview-icon-purple{--overview-icon-color:#7e57c2;--overview-icon-bg:rgba(126,87,194,.13);}
+  .overview-icon-teal{--overview-icon-color:#138d75;--overview-icon-bg:rgba(19,141,117,.13);}
+  .overview-icon-orange{--overview-icon-color:#d35400;--overview-icon-bg:rgba(211,84,0,.13);}
+  .overview-icon-pink{--overview-icon-color:#c2185b;--overview-icon-bg:rgba(194,24,91,.12);}
+  .overview-icon-slate{--overview-icon-color:#536579;--overview-icon-bg:rgba(83,101,121,.12);}
+  .overview-icon-cyan{--overview-icon-color:#0277bd;--overview-icon-bg:rgba(2,119,189,.12);}
   .overview-card-title{
     font-family:'Playfair Display',serif;
     font-size:1rem;font-weight:700;color:var(--text);margin-bottom:.5rem;
@@ -1563,7 +1578,7 @@
     <div class="overview-grid">
 
       <a href="comprendre-la-politique.html" class="overview-card reveal">
-        <div class="overview-card-icon">🧠</div>
+        <div class="overview-card-icon"><span class="overview-svg-icon overview-icon-purple" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="m15.2 8.8-2.1 5.1-5.1 2.1 2.1-5.1 5.1-2.1Z"/><path d="M12 2v2M12 20v2M2 12h2M20 12h2"/></svg></span></div>
         <div class="overview-card-title">Comprendre la politique</div>
         <p class="overview-card-desc">Le spectre gauche-droite, les 15 grandes idéologies politiques françaises et la comparaison thématique des positions de chaque camp.</p>
         <div class="overview-card-tags">
@@ -1571,11 +1586,11 @@
           <span class="overview-card-tag">15 idéologies</span>
           <span class="overview-card-tag">Thèmes clés</span>
         </div>
-        <div class="overview-card-footer"><span>Commencer →</span><span>🧠</span></div>
+        <div class="overview-card-footer"><span>Commencer →</span><span class="overview-svg-icon overview-icon-purple mini" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="m15.2 8.8-2.1 5.1-5.1 2.1 2.1-5.1 5.1-2.1Z"/><path d="M12 2v2M12 20v2M2 12h2M20 12h2"/></svg></span></div>
       </a>
 
       <a href="systeme-politique.html" class="overview-card reveal reveal-delay-1">
-        <div class="overview-card-icon">🏛️</div>
+        <div class="overview-card-icon"><span class="overview-svg-icon overview-icon-gold" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M3 21h18"/><path d="M5 21V10h14v11"/><path d="M8 21v-7M12 21v-7M16 21v-7"/><path d="m4 10 8-6 8 6"/><path d="M7 10h10"/></svg></span></div>
         <div class="overview-card-title">Système politique</div>
         <p class="overview-card-desc">Les institutions de la Ve République, la hiérarchie des normes juridiques et les six types de scrutins électoraux expliqués clairement.</p>
         <div class="overview-card-tags">
@@ -1583,11 +1598,11 @@
           <span class="overview-card-tag">Types de lois</span>
           <span class="overview-card-tag">Scrutins</span>
         </div>
-        <div class="overview-card-footer"><span>Découvrir →</span><span>🏛️</span></div>
+        <div class="overview-card-footer"><span>Découvrir →</span><span class="overview-svg-icon overview-icon-gold mini" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M3 21h18"/><path d="M5 21V10h14v11"/><path d="M8 21v-7M12 21v-7M16 21v-7"/><path d="m4 10 8-6 8 6"/><path d="M7 10h10"/></svg></span></div>
       </a>
 
       <a href="partis-politiques.html" class="overview-card reveal reveal-delay-2">
-        <div class="overview-card-icon">🗳️</div>
+        <div class="overview-card-icon"><span class="overview-svg-icon overview-icon-red" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="5" y="4" width="14" height="16" rx="2"/><path d="M8 4V2h8v2"/><circle cx="9" cy="9" r="1"/><circle cx="9" cy="13" r="1"/><circle cx="9" cy="17" r="1"/><path d="M12 9h5M12 13h5M12 17h5"/></svg></span></div>
         <div class="overview-card-title">Partis politiques</div>
         <p class="overview-card-desc">Panorama des 14 partis, baromètres de popularité, comparateur interactif et test de profil politique pour trouver votre positionnement.</p>
         <div class="overview-card-tags">
@@ -1595,11 +1610,11 @@
           <span class="overview-card-tag">Comparateur</span>
           <span class="overview-card-tag">Profil politique</span>
         </div>
-        <div class="overview-card-footer"><span>Explorer →</span><span>🗳️</span></div>
+        <div class="overview-card-footer"><span>Explorer →</span><span class="overview-svg-icon overview-icon-red mini" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="5" y="4" width="14" height="16" rx="2"/><path d="M8 4V2h8v2"/><circle cx="9" cy="9" r="1"/><circle cx="9" cy="13" r="1"/><circle cx="9" cy="17" r="1"/><path d="M12 9h5M12 13h5M12 17h5"/></svg></span></div>
       </a>
 
       <a href="profil-politique.html" class="overview-card reveal">
-        <div class="overview-card-icon">&#129517;</div>
+        <div class="overview-card-icon"><span class="overview-svg-icon overview-icon-teal" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1.5"/><path d="M12 3v3M21 12h-3M12 21v-3M3 12h3"/></svg></span></div>
         <div class="overview-card-title">Profil politique</div>
         <p class="overview-card-desc">Un test détaillé et pédagogique pour faire ressortir vos grandes valeurs, vos idéologies dominantes et les partis qui peuvent s'en rapprocher à titre indicatif.</p>
         <div class="overview-card-tags">
@@ -1607,10 +1622,10 @@
           <span class="overview-card-tag">Résultat nuancé</span>
           <span class="overview-card-tag">Idéologies &amp; partis</span>
         </div>
-        <div class="overview-card-footer"><span>Faire le test →</span><span>&#129517;</span></div>
+        <div class="overview-card-footer"><span>Faire le test →</span><span class="overview-svg-icon overview-icon-teal mini" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1.5"/><path d="M12 3v3M21 12h-3M12 21v-3M3 12h3"/></svg></span></div>
       </a>
       <a href="culture-politique.html" class="overview-card reveal">
-        <div class="overview-card-icon">📜</div>
+        <div class="overview-card-icon"><span class="overview-svg-icon overview-icon-orange" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 4v16"/><circle cx="12" cy="6" r="2"/><circle cx="12" cy="12" r="2"/><circle cx="12" cy="18" r="2"/><path d="M14 6h5M5 12h5M14 18h5"/></svg></span></div>
         <div class="overview-card-title">Culture politique</div>
         <p class="overview-card-desc">Chronologie de 1789 à 2025, évolution des partis, études de cas historiques, citations de grandes figures et anecdotes politiques.</p>
         <div class="overview-card-tags">
@@ -1618,11 +1633,11 @@
           <span class="overview-card-tag">Évolution des partis</span>
           <span class="overview-card-tag">Citations</span>
         </div>
-        <div class="overview-card-footer"><span>Explorer →</span><span>📜</span></div>
+        <div class="overview-card-footer"><span>Explorer →</span><span class="overview-svg-icon overview-icon-orange mini" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 4v16"/><circle cx="12" cy="6" r="2"/><circle cx="12" cy="12" r="2"/><circle cx="12" cy="18" r="2"/><path d="M14 6h5M5 12h5M14 18h5"/></svg></span></div>
       </a>
 
       <a href="apprendre.html" class="overview-card reveal reveal-delay-1">
-        <div class="overview-card-icon">🎓</div>
+        <div class="overview-card-icon"><span class="overview-svg-icon overview-icon-green" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="m3 8 9-5 9 5-9 5-9-5Z"/><path d="M7 11v5c1.4 1.6 3 2.4 5 2.4s3.6-.8 5-2.4v-5"/><path d="M21 8v6"/></svg></span></div>
         <div class="overview-card-title">Apprendre</div>
         <p class="overview-card-desc">Quiz interactifs pour tester vos connaissances, FAQ politique, glossaire de 48 termes clés et ressources pédagogiques sélectionnées.</p>
         <div class="overview-card-tags">
@@ -1630,11 +1645,11 @@
           <span class="overview-card-tag">Glossaire 48 termes</span>
           <span class="overview-card-tag">Ressources</span>
           </div>
-        <div class="overview-card-footer"><span>S'exercer →</span><span>🎓</span></div>
+        <div class="overview-card-footer"><span>S'exercer →</span><span class="overview-svg-icon overview-icon-green mini" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="m3 8 9-5 9 5-9 5-9-5Z"/><path d="M7 11v5c1.4 1.6 3 2.4 5 2.4s3.6-.8 5-2.4v-5"/><path d="M21 8v6"/></svg></span></div>
       </a>
 
       <a href="actualites-politiques.html" class="overview-card reveal reveal-delay-2">
-        <div class="overview-card-icon">📰</div>
+        <div class="overview-card-icon"><span class="overview-svg-icon overview-icon-cyan" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 6h14a1 1 0 0 1 1 1v13H6a3 3 0 0 1-3-3V8a2 2 0 0 1 2-2Z"/><path d="M3 8h2v9a1 1 0 0 0 1 1"/><path d="M8 10h5M8 14h9M8 17h7"/><path d="M16 10h1"/></svg></span></div>
         <div class="overview-card-title">Actualités politiques</div>
         <p class="overview-card-desc">Les dernières informations politiques françaises en temps réel : gouvernement, partis, économie, diplomatie. Mis à jour quotidiennement.</p>
         <div class="overview-card-tags">
@@ -1642,12 +1657,12 @@
           <span class="overview-card-tag">Newsdata.io</span>
           <span class="overview-card-tag">Toutes catégories</span>
         </div>
-        <div class="overview-card-footer"><span>Suivre →</span><span>📰</span></div>
+        <div class="overview-card-footer"><span>Suivre →</span><span class="overview-svg-icon overview-icon-cyan mini" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 6h14a1 1 0 0 1 1 1v13H6a3 3 0 0 1-3-3V8a2 2 0 0 1 2-2Z"/><path d="M3 8h2v9a1 1 0 0 0 1 1"/><path d="M8 10h5M8 14h9M8 17h7"/><path d="M16 10h1"/></svg></span></div>
       </a>
 
 
       <a href="nos-deputes.html" class="overview-card reveal reveal-delay-2">
-        <div class="overview-card-icon">💼</div>
+        <div class="overview-card-icon"><span class="overview-svg-icon overview-icon-blue" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="4" y="5" width="16" height="14" rx="2"/><path d="M8 5V3h8v2"/><circle cx="10" cy="11" r="2"/><path d="M7 16c.7-2 5.3-2 6 0"/><path d="M14 10h3M14 14h3"/></svg></span></div>
         <div class="overview-card-title">Nos députés</div>
         <p class="overview-card-desc">Recherchez les députés français par nom, région, département, circonscription, profession ou groupe politique, avec photos et logos des groupes.</p>
         <div class="overview-card-tags">
@@ -1655,11 +1670,11 @@
           <span class="overview-card-tag">Filtres rapides</span>
           <span class="overview-card-tag">Groupes politiques</span>
         </div>
-        <div class="overview-card-footer"><span>Rechercher →</span><span>💼</span></div>
+        <div class="overview-card-footer"><span>Rechercher →</span><span class="overview-svg-icon overview-icon-blue mini" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="4" y="5" width="16" height="14" rx="2"/><path d="M8 5V3h8v2"/><circle cx="10" cy="11" r="2"/><path d="M7 16c.7-2 5.3-2 6 0"/><path d="M14 10h3M14 14h3"/></svg></span></div>
       </a>
 
       <a href="profils-electoraux.html" class="overview-card reveal reveal-delay-2">
-        <div class="overview-card-icon">📊</div>
+        <div class="overview-card-icon"><span class="overview-svg-icon overview-icon-purple" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 19V5"/><path d="M4 19h16"/><rect x="7" y="11" width="3" height="5" rx="1"/><rect x="12" y="8" width="3" height="8" rx="1"/><rect x="17" y="5" width="3" height="11" rx="1"/></svg></span></div>
         <div class="overview-card-title">Profils électoraux</div>
         <p class="overview-card-desc">Explorez les profils socio-démographiques moyens de chaque parti : âge, revenu, formation, localisation. Données INSEE et études électorales.</p>
         <div class="overview-card-tags">
@@ -1667,11 +1682,11 @@
           <span class="overview-card-tag">Graphiques interactifs</span>
           <span class="overview-card-tag">Sources INSEE</span>
         </div>
-        <div class="overview-card-footer"><span>Analyser →</span><span>📊</span></div>
+        <div class="overview-card-footer"><span>Analyser →</span><span class="overview-svg-icon overview-icon-purple mini" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 19V5"/><path d="M4 19h16"/><rect x="7" y="11" width="3" height="5" rx="1"/><rect x="12" y="8" width="3" height="8" rx="1"/><rect x="17" y="5" width="3" height="11" rx="1"/></svg></span></div>
       </a>
       
       <a href="guide-politique.html" class="overview-card reveal reveal-delay-2">
-        <div class="overview-card-icon">📄</div>
+        <div class="overview-card-icon"><span class="overview-svg-icon overview-icon-slate" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8l-5-5Z"/><path d="M14 3v5h5"/><path d="M8 13h8M8 17h6"/></svg></span></div>
         <div class="overview-card-title">Guide PDF</div>
         <p class="overview-card-desc">Le guide pédagogique complet pour décrypter les partis, les institutions et les grands enjeux qui façonnent la France d'aujourd'hui - écrit pour être accessible à tous.</p>
         <div class="overview-card-tags">
@@ -1679,11 +1694,11 @@
           <span class="overview-card-tag">Paragraphes argumentés</span>
           <span class="overview-card-tag">2,99€ SEULEMENT !</span>
         </div>
-        <div class="overview-card-footer"><span>Acheter →</span><span>📄</span></div>
+        <div class="overview-card-footer"><span>Acheter →</span><span class="overview-svg-icon overview-icon-slate mini" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8l-5-5Z"/><path d="M14 3v5h5"/><path d="M8 13h8M8 17h6"/></svg></span></div>
       </a>
 
 <a href="gagnants-perdants.html" class="overview-card reveal reveal-delay-2">
-  <div class="overview-card-icon">💰</div>
+  <div class="overview-card-icon"><span class="overview-svg-icon overview-icon-orange" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 3v18"/><path d="M5 7h14"/><path d="M7 7 4 13h6L7 7Z"/><path d="m17 7-3 6h6l-3-6Z"/><path d="M8 21h8"/></svg></span></div>
   <div class="overview-card-title">Gagnants / Perdants</div>
   <p class="overview-card-desc">Comprenez en quelques minutes qui gagne et qui perd selon les grandes décisions politiques (impôts, salaires, écologie…), avec des exemples concrets et faciles à saisir.</p>
   <div class="overview-card-tags">
@@ -1691,10 +1706,10 @@
     <span class="overview-card-tag">Données fiables</span>
     <span class="overview-card-tag">Explication en +</span>
   </div>
-  <div class="overview-card-footer"><span>Voir →</span><span>💰</span></div>
+  <div class="overview-card-footer"><span>Voir →</span><span class="overview-svg-icon overview-icon-orange mini" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 3v18"/><path d="M5 7h14"/><path d="M7 7 4 13h6L7 7Z"/><path d="m17 7-3 6h6l-3-6Z"/><path d="M8 21h8"/></svg></span></div>
 </a>
       <a href="articles.html" class="overview-card reveal reveal-delay-2">
-  <div class="overview-card-icon">📰</div>
+  <div class="overview-card-icon"><span class="overview-svg-icon overview-icon-pink" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="m16 4 4 4-10.5 10.5L5 20l1.5-4.5L16 4Z"/><path d="m14 6 4 4"/><path d="M4 21h16"/></svg></span></div>
   <div class="overview-card-title">Articles</div>
   <p class="overview-card-desc">Des explications simples et rapides pour comprendre la politique française à travers des articles clairs et accessibles.</p>
   <div class="overview-card-tags">
@@ -1702,7 +1717,7 @@
     <span class="overview-card-tag">Explication clarifiée</span>
     <span class="overview-card-tag">Institutions françaises</span>
   </div>
-  <div class="overview-card-footer"><span>Lire →</span><span>📰</span></div>
+  <div class="overview-card-footer"><span>Lire →</span><span class="overview-svg-icon overview-icon-pink mini" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="m16 4 4 4-10.5 10.5L5 20l1.5-4.5L16 4Z"/><path d="m14 6 4 4"/><path d="M4 21h16"/></svg></span></div>
 </a>
 
     </div>
