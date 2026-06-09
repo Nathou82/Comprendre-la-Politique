@@ -234,7 +234,7 @@ section{padding:5rem 1.5rem}
    FICHES CANDIDATS
 ========================================================= */
 #candidats{background:var(--bg3)}
-.cands-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:1.3rem}
+.cands-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(290px,1fr));gap:1.3rem}
 .cand-card{background:var(--card);border:1px solid var(--border);border-radius:14px;overflow:hidden;transition:box-shadow .25s,transform .25s;cursor:pointer}
 .cand-card:hover{box-shadow:var(--shadow2);transform:translateY(-2px)}
 .cand-top{padding:1.4rem 1.4rem 1rem;display:flex;align-items:flex-start;gap:1rem}
@@ -323,6 +323,27 @@ section{padding:5rem 1.5rem}
 .prc-name{font-size:.88rem;font-weight:700;color:var(--text)}
 .prc-measures{display:flex;flex-direction:column;gap:.4rem}
 .prc-measure{font-size:.8rem;color:var(--text2);padding:.35rem .6rem;background:var(--bg2);border-radius:6px;border-left:3px solid var(--border)}
+
+/* =========================================================
+   GRAPHIQUES CANDIDATS — mini barres positionnement
+========================================================= */
+.cand-chart-section{padding:0 1.4rem 1.2rem;border-top:1px solid var(--border)}
+.cand-chart-title{font-size:.65rem;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--text3);margin:.9rem 0 .7rem;display:flex;align-items:center;gap:.35rem}
+.cand-chart-title svg{flex-shrink:0}
+.cand-bar-row{display:flex;align-items:center;gap:.5rem;margin-bottom:.4rem}
+.cand-bar-label{font-size:.72rem;color:var(--text2);width:80px;flex-shrink:0;text-align:right}
+.cand-bar-track{flex:1;height:8px;background:var(--bg2);border-radius:10px;overflow:hidden;position:relative}
+.cand-bar-fill{height:100%;border-radius:10px;transition:width 1s ease .2s}
+.cand-bar-val{font-size:.68rem;font-weight:700;color:var(--text3);width:28px;text-align:left;flex-shrink:0}
+.cand-avatar img{width:100%;height:100%;object-fit:cover;object-position:center top;display:block}
+.cand-avatar-initials{display:flex;align-items:center;justify-content:center;width:100%;height:100%;font-size:1.3rem;font-weight:700;font-family:'Playfair Display',serif;color:#fff}
+.cand-spectrum-section{padding:.2rem 1.4rem 1rem;border-top:1px solid var(--border)}
+.cand-spectrum-title{font-size:.65rem;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--text3);margin:.8rem 0 .55rem}
+.spec-item{display:flex;align-items:center;gap:.6rem;margin-bottom:.45rem}
+.spec-item-label{font-size:.72rem;color:var(--text2);width:76px;flex-shrink:0;text-align:right}
+.spec-track{flex:1;height:7px;background:var(--bg2);border-radius:10px;position:relative;overflow:hidden}
+.spec-fill{height:100%;border-radius:10px}
+.spec-val{font-size:.68rem;font-weight:700;width:32px;text-align:left;flex-shrink:0}
 
 /* =========================================================
    MODULE FAVORIS
@@ -882,6 +903,61 @@ footer p{color:rgba(255,255,255,.3);font-size:.78rem;margin-top:.65rem;line-heig
 </section>
 
 <!-- ======================================================
+     SPECTRE POLITIQUE SVG — positionnement des candidats
+====================================================== -->
+<section id="spectre-candidats" style="background:var(--bg3)" aria-label="Spectre politique des candidats 2027">
+  <div class="section-inner">
+    <div class="section-header">
+      <div class="section-label"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block;vertical-align:-.15em;margin-right:.35rem"><path d="M3 12a8 8 0 0 1 13.7-5.7L20 9"/><path d="M20 4v5h-5"/><path d="M21 12a8 8 0 0 1-13.7 5.7L4 15"/><path d="M4 20v-5h5"/></svg>Spectre</div>
+      <h2 class="section-title">Positionnement des candidats</h2>
+      <div class="divider"></div>
+      <p class="section-subtitle">Visualisation simplifiée et pédagogique — chaque indicateur est estimé sur la base des programmes officiels publiés.</p>
+    </div>
+
+    <!-- Graphique spectre gauche/droite -->
+    <div style="background:var(--card);border:1px solid var(--border);border-radius:14px;padding:2rem;margin-bottom:2rem;overflow-x:auto">
+      <div style="font-size:.72rem;font-weight:700;text-transform:uppercase;letter-spacing:.09em;color:var(--text3);text-align:center;margin-bottom:1.4rem">Spectre Gauche — Droite (positionnement indicatif)</div>
+      <div style="position:relative;height:14px;border-radius:14px;background:linear-gradient(90deg,#8e1c1c 0%,#c0392b 16%,#e74c3c 33%,#27ae60 50%,#3498db 66%,#1a4f8a 83%,#1a1a2e 100%);margin-bottom:.6rem"></div>
+      <div style="display:flex;justify-content:space-between;font-size:.68rem;color:var(--text3);margin-bottom:2rem">
+        <span>Extrême gauche</span><span>Gauche</span><span>Centre</span><span>Droite</span><span>Extrême droite</span>
+      </div>
+      <!-- Candidats sur le spectre -->
+      <div style="display:flex;flex-wrap:wrap;gap:.7rem;justify-content:center">
+        <span style="display:inline-flex;align-items:center;gap:.4rem;padding:.3rem .75rem;border-radius:20px;font-size:.74rem;font-weight:700;background:#c0392b22;color:#c0392b;border:1px solid #c0392b44">🔴 Mélenchon</span>
+        <span style="display:inline-flex;align-items:center;gap:.4rem;padding:.3rem .75rem;border-radius:20px;font-size:.74rem;font-weight:700;background:#b91c1c22;color:#b91c1c;border:1px solid #b91c1c44">🔴 Roussel</span>
+        <span style="display:inline-flex;align-items:center;gap:.4rem;padding:.3rem .75rem;border-radius:20px;font-size:.74rem;font-weight:700;background:#16a34a22;color:#16a34a;border:1px solid #16a34a44">🟢 Tondelier</span>
+        <span style="display:inline-flex;align-items:center;gap:.4rem;padding:.3rem .75rem;border-radius:20px;font-size:.74rem;font-weight:700;background:#e74c3c22;color:#e74c3c;border:1px solid #e74c3c44">🌹 Glucksmann</span>
+        <span style="display:inline-flex;align-items:center;gap:.4rem;padding:.3rem .75rem;border-radius:20px;font-size:.74rem;font-weight:700;background:#27ae6022;color:#27ae60;border:1px solid #27ae6044">🟢 Attal</span>
+        <span style="display:inline-flex;align-items:center;gap:.4rem;padding:.3rem .75rem;border-radius:20px;font-size:.74rem;font-weight:700;background:#1a4f8a22;color:#1a4f8a;border:1px solid #1a4f8a44">🔵 É. Philippe</span>
+        <span style="display:inline-flex;align-items:center;gap:.4rem;padding:.3rem .75rem;border-radius:20px;font-size:.74rem;font-weight:700;background:#00318922;color:#003189;border:1px solid #00318944">🔷 Retailleau</span>
+        <span style="display:inline-flex;align-items:center;gap:.4rem;padding:.3rem .75rem;border-radius:20px;font-size:.74rem;font-weight:700;background:#1e3a8a22;color:#1e3a8a;border:1px solid #1e3a8a44">🇫🇷 Dupont-Aignan</span>
+        <span style="display:inline-flex;align-items:center;gap:.4rem;padding:.3rem .75rem;border-radius:20px;font-size:.74rem;font-weight:700;background:#2d343622;color:#2d3436;border:1px solid #2d343644">⬛ Bardella</span>
+        <span style="display:inline-flex;align-items:center;gap:.4rem;padding:.3rem .75mm;border-radius:20px;font-size:.74rem;font-weight:700;background:#7f1d1d22;color:#7f1d1d;border:1px solid #7f1d1d44">⚫ Zemmour</span>
+      </div>
+    </div>
+
+    <!-- Tableau comparatif 5 axes clés -->
+    <div style="background:var(--card);border:1px solid var(--border);border-radius:14px;padding:2rem;overflow-x:auto">
+      <div style="font-size:.72rem;font-weight:700;text-transform:uppercase;letter-spacing:.09em;color:var(--text3);text-align:center;margin-bottom:1.4rem">Comparatif 5 axes — Positionnement indicatif (source : programmes et déclarations)</div>
+      <table style="width:100%;border-collapse:collapse;min-width:640px;font-size:.8rem">
+        <thead>
+          <tr>
+            <th style="padding:.7rem 1rem;text-align:left;background:var(--navy);color:var(--gold);font-size:.7rem;letter-spacing:.07em;text-transform:uppercase;border-radius:8px 0 0 0">Candidat</th>
+            <th style="padding:.7rem .8rem;text-align:center;background:var(--navy);color:rgba(255,255,255,.8);font-size:.68rem">Retraites</th>
+            <th style="padding:.7rem .8rem;text-align:center;background:var(--navy);color:rgba(255,255,255,.8);font-size:.68rem">Nucléaire</th>
+            <th style="padding:.7rem .8rem;text-align:center;background:var(--navy);color:rgba(255,255,255,.8);font-size:.68rem">Immigration</th>
+            <th style="padding:.7rem .8rem;text-align:center;background:var(--navy);color:rgba(255,255,255,.8);font-size:.68rem">Europe</th>
+            <th style="padding:.7rem .8rem;text-align:center;background:var(--navy);color:rgba(255,255,255,.8);font-size:.68rem;border-radius:0 8px 0 0">ISF</th>
+          </tr>
+        </thead>
+        <tbody id="spectreTbody">
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- ======================================================
      CONTINUER L'EXPLORATION
 ====================================================== -->
 <section class="exploration-section" aria-label="Continuer votre exploration politique">
@@ -1019,29 +1095,6 @@ footer p{color:rgba(255,255,255,.3);font-size:.78rem;margin-top:.65rem;line-heig
       <p style="color:rgba(255,255,255,.3);font-size:.75rem;line-height:1.75;">Les informations présentées sur ce site sont issues de sources publiques et institutionnelles : <strong style="color:rgba(255,255,255,.5)">Ministère de l'Intérieur</strong> (résultats électoraux), <strong style="color:rgba(255,255,255,.5)">Conseil Constitutionnel</strong>, <strong style="color:rgba(255,255,255,.5)">Assemblée Nationale</strong>, <strong style="color:rgba(255,255,255,.5)">vie-publique.fr</strong>, <strong style="color:rgba(255,255,255,.5)">Archives Nationales</strong> et <strong style="color:rgba(255,255,255,.5)">Gallica (BNF)</strong>. Les données de sondages sont fournies par IFOP, BVA, Odoxa et Ipsos à titre indicatif. Contenu éducatif, équilibré et non partisan.</p>
     </div>
     <p style="margin-top:1.5rem;font-size:.7rem">© 2026 Comprendre la Politique – comprendrelapolitique.fr | Contenu pédagogique, non partisan | Données : Ministère de l'Intérieur</p>
-  </div>
-</footer>
-      <a href="mentions-legales.html">Mentions légales</a>
-    </div>
-    <div class="footer-social" aria-label="Réseaux sociaux">
-      <div class="footer-social-title">Suivre le site</div>
-      <div class="footer-social-links">
-        <a href="https://www.tiktok.com/@comprendrelapolitique.fr" target="_blank" rel="noopener noreferrer" class="footer-social-link social-tiktok" aria-label="TikTok">
-          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14.6 3c.34 2.23 1.62 3.8 3.76 4.3v2.48a6.42 6.42 0 0 1-3.08-.84v5.07c0 3.38-2.26 5.69-5.52 5.69-3.1 0-5.26-2.15-5.26-4.95 0-2.95 2.28-5.08 5.53-5.02v2.39c-1.77-.1-2.98.97-2.98 2.48 0 1.42 1.01 2.42 2.38 2.42 1.53 0 2.68-1.01 2.68-3.02V3h2.49z"/></svg>
-        </a>
-        <a href="https://www.instagram.com/comprendre_la_politique.fr" target="_blank" rel="noopener noreferrer" class="footer-social-link social-instagram" aria-label="Instagram">
-          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7.75 2h8.5A5.75 5.75 0 0 1 22 7.75v8.5A5.75 5.75 0 0 1 16.25 22h-8.5A5.75 5.75 0 0 1 2 16.25v-8.5A5.75 5.75 0 0 1 7.75 2zm0 1.9A3.85 3.85 0 0 0 3.9 7.75v8.5a3.85 3.85 0 0 0 3.85 3.85h8.5a3.85 3.85 0 0 0 3.85-3.85v-8.5A3.85 3.85 0 0 0 16.25 3.9h-8.5zm8.95 1.42a1.18 1.18 0 1 1 0 2.36 1.18 1.18 0 0 1 0-2.36zM12 6.85A5.15 5.15 0 1 1 6.85 12 5.16 5.16 0 0 1 12 6.85zm0 1.9A3.25 3.25 0 1 0 15.25 12 3.25 3.25 0 0 0 12 8.75z"/></svg>
-        </a>
-        <a href="https://www.youtube.com/@comprendrelapolitique" target="_blank" rel="noopener noreferrer" class="footer-social-link social-youtube" aria-label="YouTube">
-          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21.8 8.4a2.9 2.9 0 0 0-2.04-2.06C17.97 5.8 12 5.8 12 5.8s-5.97 0-7.76.54A2.9 2.9 0 0 0 2.2 8.4 30.7 30.7 0 0 0 1.7 12a30.7 30.7 0 0 0 .5 3.6 2.9 2.9 0 0 0 2.04 2.06C6.03 18.2 12 18.2 12 18.2s5.97 0 7.76-.54a2.9 2.9 0 0 0 2.04-2.06 30.7 30.7 0 0 0 .5-3.6 30.7 30.7 0 0 0-.5-3.6zM10.1 15.2V8.8L15.7 12l-5.6 3.2z"/></svg>
-        </a>
-      </div>
-    </div>
-    <div style="margin-top:1.8rem;padding-top:1.5rem;border-top:1px solid rgba(255,255,255,.08);max-width:760px;margin-left:auto;margin-right:auto;">
-      <p style="color:rgba(255,255,255,.55);font-size:.78rem;font-weight:600;margin-bottom:.5rem;letter-spacing:.06em;text-transform:uppercase;"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block;vertical-align:-.15em;margin-right:.35rem"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>Sources &amp; fiabilité</p>
-      <p style="color:rgba(255,255,255,.3);font-size:.75rem;line-height:1.75;">Les propositions présentées sur cette page sont issues des <strong style="color:rgba(255,255,255,.5)">programmes officiels</strong>, des <strong style="color:rgba(255,255,255,.5)">déclarations publiques</strong> vérifiées et des <strong style="color:rgba(255,255,255,.5)">sites des candidats</strong>. Sources croisées : AFP Factuel, vie-publique.fr, Le Monde, Le Figaro. Contenu éducatif, non partisan. Mis à jour au fil des annonces officielles.</p>
-    </div>
-    <p style="margin-top:1.5rem;font-size:.7rem">© 2026 Comprendre la Politique - comprendrelapolitique.fr | Contenu pédagogique, non partisan</p>
   </div>
 </footer>
 
@@ -1458,17 +1511,17 @@ const POPULAR_MEASURES = [
   {
     icon:'<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#7c3aed" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>', title:'Âge de la retraite', hot:true,
     desc:'La réforme à 64 ans divise : certains veulent l\'abroger (LFI, RN, PS), d\'autres la maintenir (centre droit).',
-    parties:['melenchon','le_pen','glucksmann','philippe','macron_camp'],
+    parties:['melenchon','bardella','glucksmann','philippe','macron_camp'],
   },
   {
     icon:'<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#d97706" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>', title:'Nucléaire ou renouvelables ?', hot:true,
     desc:'Clivage fort entre partisans du nucléaire (droite, RN, centre) et ceux qui privilégient les renouvelables (LFI).',
-    parties:['philippe','le_pen','bardella','melenchon'],
+    parties:['philippe','bardella','dupont_aignan','retailleau'],
   },
   {
     icon:'<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#059669" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/><path d="M2 12h20"/></svg>', title:'Immigration : zéro ou accueil ?', hot:true,
     desc:'De l\'immigration nette à zéro (RN) à la régularisation et l\'accueil digne (LFI, PS).',
-    parties:['le_pen','bardella','melenchon','glucksmann'],
+    parties:['bardella','melenchon','glucksmann'],
   },
   {
     icon:'<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#d4a843" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 1v22M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>', title:'Fiscalité des riches', hot:false,
@@ -1483,7 +1536,7 @@ const POPULAR_MEASURES = [
   {
     icon:'<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#1d4ed8" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>', title:'Souveraineté européenne', hot:false,
     desc:'L\'Europe fédérale (Glucksmann, Renaissance) s\'oppose à l\'Europe des nations (RN, LR).',
-    parties:['glucksmann','macron_camp','le_pen','retailleau'],
+    parties:['glucksmann','macron_camp','retailleau','dupont_aignan'],
   },
   {
     icon:'<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#16a34a" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 21c8-2 14-9 14-18C10 3 3 10 3 19c0 1 1 2 2 2z"/><path d="M5 19c3-5 7-8 12-10"/></svg>', title:'Règle verte constitutionnelle', hot:false,
@@ -1493,7 +1546,7 @@ const POPULAR_MEASURES = [
   {
     icon:'<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#1a4f8a" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3 5 6v5c0 4.5 3 8.5 7 10 4-1.5 7-5.5 7-10V6l-7-3z"/></svg>', title:'Peines planchers', hot:true,
     desc:'Rétablissement des peines planchers défendu par la droite et le RN. Opposition à gauche.',
-    parties:['le_pen','bardella','retailleau','philippe'],
+    parties:['bardella','retailleau','dupont_aignan','philippe'],
   },
 ];
 
@@ -1765,25 +1818,71 @@ function renderCompTable(){
 const candsGrid = document.getElementById('candsGrid');
 const favs = JSON.parse(localStorage.getItem('prog2027_favs') || '{}');
 
+/* Données de positionnement pour graphiques (0-100 sur chaque axe) */
+const CAND_SCORES = {
+  philippe:      {etatisme:28, ecologie:42, ouverture:55, securite:72, europe:68},
+  macron_camp:   {etatisme:38, ecologie:65, ouverture:70, securite:60, europe:85},
+  melenchon:     {etatisme:90, ecologie:82, ouverture:85, securite:30, europe:40},
+  bardella:      {etatisme:45, ecologie:25, ouverture:10, securite:92, europe:22},
+  glucksmann:    {etatisme:60, ecologie:78, ouverture:80, securite:45, europe:90},
+  retailleau:    {etatisme:30, ecologie:30, ouverture:22, securite:88, europe:30},
+  roussel:       {etatisme:95, ecologie:65, ouverture:70, securite:35, europe:50},
+  tondelier:     {etatisme:68, ecologie:98, ouverture:88, securite:28, europe:75},
+  dupont_aignan: {etatisme:40, ecologie:35, ouverture:15, securite:75, europe:18},
+  zemmour:       {etatisme:35, ecologie:15, ouverture:5,  securite:98, europe:12},
+};
+const SCORE_LABELS = {etatisme:'Intervention État', ecologie:'Écologie', ouverture:'Ouverture migratoire', securite:'Fermeté sécurité', europe:'Pro-Europe'};
+const SCORE_COLORS = {etatisme:'#7c3aed', ecologie:'#16a34a', ouverture:'#059669', securite:'#1a4f8a', europe:'#1d4ed8'};
+
 CANDIDATES.forEach(c => {
   const card = document.createElement('div');
   card.className = 'cand-card reveal';
-  const topMeasures = [
-    {theme: 'economie', svgPath:'<path d="M4 19V5M4 19h16"/><rect x="7" y="11" width="3" height="5" rx="1"/><rect x="12" y="7" width="3" height="9" rx="1"/><rect x="17" y="9" width="3" height="7" rx="1"/>', color:'#2563a8'},
-    {theme: 'retraites', svgPath:'<path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/>', color:'#7c3aed'},
-    {theme: 'securite', svgPath:'<path d="M12 3 5 6v5c0 4.5 3 8.5 7 10 4-1.5 7-5.5 7-10V6l-7-3z"/>', color:'#1a4f8a'},
-    {theme: 'energie', svgPath:'<polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/>', color:'#d97706'},
+  const allMeasures = [
+    {theme:'economie',    svgPath:'<path d="M4 19V5M4 19h16"/><rect x="7" y="11" width="3" height="5" rx="1"/><rect x="12" y="7" width="3" height="9" rx="1"/><rect x="17" y="9" width="3" height="7" rx="1"/>',  color:'#2563a8'},
+    {theme:'retraites',   svgPath:'<path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/>',              color:'#7c3aed'},
+    {theme:'securite',    svgPath:'<path d="M12 3 5 6v5c0 4.5 3 8.5 7 10 4-1.5 7-5.5 7-10V6l-7-3z"/>',                                                                                                           color:'#1a4f8a'},
+    {theme:'energie',     svgPath:'<polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/>',                                                                                                                   color:'#d97706'},
+    {theme:'immigration', svgPath:'<circle cx="12" cy="12" r="10"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/><path d="M2 12h20"/>',              color:'#059669'},
+    {theme:'europe',      svgPath:'<circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>',                           color:'#1d4ed8'},
   ];
-  let measuresHtml = topMeasures.map(m => `
+  let measuresHtml = allMeasures.map(m => `
     <div class="cand-measure">
       <span class="cand-measure-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="${m.color}" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" style="display:block">${m.svgPath}</svg></span>
-      <span class="cand-measure-text">${c.measures[m.theme] ? c.measures[m.theme].substring(0,100)+'…' : 'Non précisé'}</span>
+      <span class="cand-measure-text">${c.measures[m.theme] ? c.measures[m.theme].substring(0,130)+'…' : 'Non précisé'}</span>
     </div>`).join('');
+
+  /* Mini graphiques de positionnement */
+  const scores = CAND_SCORES[c.id] || {};
+  let barsHtml = '';
+  if(Object.keys(scores).length){
+    barsHtml = `<div class="cand-spectrum-section">
+      <div class="cand-spectrum-title"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="${c.color}" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19V5M4 19h16"/><rect x="7" y="11" width="3" height="5" rx="1"/><rect x="12" y="7" width="3" height="9" rx="1"/><rect x="17" y="9" width="3" height="7" rx="1"/></svg> Positionnement</div>`;
+    Object.keys(scores).forEach(k => {
+      const v = scores[k];
+      barsHtml += `<div class="spec-item">
+        <span class="spec-item-label">${SCORE_LABELS[k]||k}</span>
+        <div class="spec-track"><div class="spec-fill" style="width:${v}%;background:${SCORE_COLORS[k]||c.color}"></div></div>
+        <span class="spec-val" style="color:${SCORE_COLORS[k]||c.color}">${v}%</span>
+      </div>`;
+    });
+    barsHtml += `</div>`;
+  }
 
   const initials = c.name.split(' ').filter(w=>w.length>1).map(w=>w[0]).join('').substring(0,2).toUpperCase();
   const avatarContent = c.photo
     ? `<img src="${c.photo}" alt="${c.name}" onerror="this.style.display='none';this.parentElement.insertAdjacentHTML('beforeend','<span class=\\'cand-avatar-initials\\'>${initials}</span>')">`
     : `<span class="cand-avatar-initials">${initials}</span>`;
+
+  /* Programme complet enrichi */
+  const fullProg = Object.keys(c.measures).map(tid => {
+    const t = THEMES.find(x=>x.id===tid);
+    if(!t) return '';
+    return `<div style="margin-bottom:1rem;padding:.7rem .9rem;background:var(--bg2);border-radius:8px;border-left:3px solid ${t.color}">
+      <div style="font-size:.7rem;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:${t.color};margin-bottom:.35rem;display:flex;align-items:center;gap:.3rem">${t.icon} ${t.label}</div>
+      <p style="font-size:.81rem;line-height:1.7;color:var(--text2);margin:0">${c.measures[tid]}</p>
+    </div>`;
+  }).join('');
+
   card.innerHTML = `
     <div class="cand-top">
       <div class="cand-avatar" style="background:${c.color};border-color:${c.color}88">${avatarContent}</div>
@@ -1795,12 +1894,14 @@ CANDIDATES.forEach(c => {
     </div>
     <div class="cand-slogan">"${c.slogan}"</div>
     <div class="cand-body">
-      <div class="cand-measures-title">Principales mesures</div>
+      <div class="cand-measures-title">Mesures clés</div>
       ${measuresHtml}
     </div>
-    <button class="cand-expand-btn" data-id="${c.id}"><svg class="cand-expand-chevron" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="transition:transform .3s"><polyline points="6 9 12 15 18 9"/></svg> Voir le programme complet</button>
+    ${barsHtml}
+    <button class="cand-expand-btn" data-id="${c.id}"><svg class="cand-expand-chevron" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="transition:transform .3s"><polyline points="6 9 12 15 18 9"/></svg> Programme complet (15 thèmes)</button>
     <div class="cand-extra" id="extra-${c.id}">
-      <p>${c.desc}</p>
+      <p style="margin-bottom:1rem">${c.desc}</p>
+      <div>${fullProg}</div>
     </div>`;
 
   candsGrid.appendChild(card);
@@ -2080,6 +2181,44 @@ document.getElementById('vsRunBtn').addEventListener('click', () => {
   document.getElementById('vsResult').classList.add('show');
   document.getElementById('vsResult').scrollIntoView({behavior:'smooth', block:'start'});
 });
+
+/* ============================================================
+   TABLEAU SPECTRE COMPARATIF
+============================================================ */
+(function(){
+  const tbody = document.getElementById('spectreTbody');
+  if(!tbody) return;
+  const spectreData = [
+    {id:'melenchon',     retraites:'60 ans',    nucleaire:'❌ Sortie',      immigration:'🟢 Régularisation', europe:'🔴 Critique',   isf:'✅ Rétabli'},
+    {id:'roussel',       retraites:'60 ans',    nucleaire:'✅ Maintien+',   immigration:'🟢 Régularisation', europe:'🟡 Europe sociale',isf:'✅ Rétabli'},
+    {id:'tondelier',     retraites:'62 ans',    nucleaire:'❌ Sortie 2040', immigration:'🟢 Accueil',        europe:'✅ Pacte vert',  isf:'✅ Climatique'},
+    {id:'glucksmann',    retraites:'62 ans',    nucleaire:'🟡 Existant',    immigration:'🟢 Accueil digne',  europe:'✅ Pro-UE',     isf:'✅ Adapté'},
+    {id:'macron_camp',   retraites:'64 ans ✅', nucleaire:'✅ 6 EPR2',      immigration:'🟡 Maîtrisée',      europe:'✅ Souveraine', isf:'❌ Non'},
+    {id:'philippe',      retraites:'64 ans ✅', nucleaire:'✅ 6 EPR2',      immigration:'🟡 Exigeante',      europe:'✅ Pro-UE',     isf:'❌ Non'},
+    {id:'retailleau',    retraites:'64 ans ✅', nucleaire:'✅ 6+8 EPR2',    immigration:'🔴 Stricte',         europe:'🟡 Nations',   isf:'❌ Non'},
+    {id:'dupont_aignan', retraites:'62 ans',    nucleaire:'✅ 12 EPR2',     immigration:'🔴 Zéro net',        europe:'🔴 Sortie',    isf:'❌ Non'},
+    {id:'bardella',      retraites:'60 ans',    nucleaire:'✅ Étendu',      immigration:'🔴 Zéro net',        europe:'🔴 Nations',   isf:'❌ Non'},
+    {id:'zemmour',       retraites:'60 ans',    nucleaire:'✅ 20 EPR2',     immigration:'🔴 Remigration',     europe:'🔴 Sortie',    isf:'❌ Non'},
+  ];
+  spectreData.forEach((d, i) => {
+    const c = CANDIDATES.find(x => x.id === d.id);
+    if(!c) return;
+    const tr = document.createElement('tr');
+    tr.style.borderTop = '1px solid var(--border)';
+    if(i%2===0) tr.style.background = 'var(--bg)';
+    tr.innerHTML = `
+      <td style="padding:.65rem 1rem;font-weight:700;color:${c.color};display:flex;align-items:center;gap:.5rem">
+        ${c.photo ? `<img src="${c.photo}" alt="${c.name}" style="width:24px;height:24px;border-radius:50%;object-fit:cover;object-position:center top;border:1.5px solid ${c.color}44;flex-shrink:0" onerror="this.style.display='none'">` : ''}
+        <span style="font-size:.82rem">${c.name}</span>
+      </td>
+      <td style="padding:.65rem .8rem;text-align:center;font-size:.76rem;color:var(--text2)">${d.retraites}</td>
+      <td style="padding:.65rem .8rem;text-align:center;font-size:.76rem;color:var(--text2)">${d.nucleaire}</td>
+      <td style="padding:.65rem .8rem;text-align:center;font-size:.76rem;color:var(--text2)">${d.immigration}</td>
+      <td style="padding:.65rem .8rem;text-align:center;font-size:.76rem;color:var(--text2)">${d.europe}</td>
+      <td style="padding:.65rem .8rem;text-align:center;font-size:.76rem;color:var(--text2)">${d.isf}</td>`;
+    tbody.appendChild(tr);
+  });
+})();
 
 /* ============================================================
    NAVBAR
