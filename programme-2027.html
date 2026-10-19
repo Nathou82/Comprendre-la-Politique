@@ -798,6 +798,61 @@ footer p{color:rgba(255,255,255,.3);font-size:.78rem;margin-top:.65rem;line-heig
 .chart-theme-tab.active{background:var(--blue2);color:#fff;border-color:var(--blue2)}
 @media(max-width:600px){.chart-card{padding:1.2rem 1rem 1rem}.chart-canvas-wrap{padding:.6rem}}
 
+/* ── Vote candidat (section « Quel candidat vous correspond le mieux ? ») ── */
+#vote-candidat{background:var(--bg2);scroll-margin-top:84px}
+.vc-wrap{max-width:980px;margin:0 auto}
+.vc-panel{background:var(--bg3);border:1px solid var(--border);border-radius:22px;box-shadow:var(--shadow2);padding:1.6rem}
+.vc-intro{font-size:.9rem;line-height:1.65;color:var(--text2);max-width:760px;margin-bottom:1.2rem}
+.vc-top{display:flex;align-items:center;justify-content:space-between;gap:.8rem;flex-wrap:wrap;margin-bottom:1.1rem}
+.vc-count{display:inline-flex;align-items:center;gap:.45rem;padding:.42rem .85rem;border-radius:999px;border:1px solid var(--border);background:var(--bg2);font-size:.78rem;font-weight:600;color:var(--text2)}
+.vc-count b{color:var(--text);font-variant-numeric:tabular-nums}
+.vc-count::before{content:"";width:8px;height:8px;border-radius:50%;background:#27ae60;box-shadow:0 0 0 3px rgba(39,174,96,.2)}
+.vc-switch{display:inline-flex;gap:.25rem;padding:.25rem;border:1px solid var(--border);border-radius:999px;background:var(--bg2)}
+.vc-switch button{border:0;background:transparent;color:var(--text3);font:inherit;font-size:.76rem;font-weight:700;padding:.38rem .9rem;border-radius:999px;cursor:pointer;transition:background .18s,color .18s,box-shadow .18s}
+.vc-switch button:hover{color:var(--text)}
+.vc-switch button.is-active{background:var(--navy);color:#fff;box-shadow:0 2px 8px rgba(13,27,42,.25)}
+.vc-switch button:focus-visible,.vc-row:focus-visible{outline:3px solid var(--blue2);outline-offset:2px}
+.vc-leader{--c:var(--border);display:flex;align-items:center;gap:1rem;padding:1rem 1.15rem;margin-bottom:1.1rem;border-radius:16px;border:1.5px solid var(--c);background:linear-gradient(135deg,var(--bg2),var(--bg3));transition:border-color .3s,box-shadow .3s}
+.vc-leader.has-leader{box-shadow:0 0 0 3px color-mix(in srgb,var(--c) 18%,transparent)}
+.vc-leader-photo{flex:none;width:68px;height:68px;border-radius:50%;overflow:hidden;border:3px solid var(--c);background:var(--bg2);display:grid;place-items:center;font-weight:800;color:var(--text3)}
+.vc-leader-photo img{width:100%;height:100%;object-fit:cover;object-position:center top}
+.vc-leader-label{font-size:.68rem;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:var(--text3)}
+.vc-leader-name{font-family:'Playfair Display',serif;font-size:1.25rem;font-weight:800;color:var(--text);line-height:1.2;margin:.1rem 0}
+.vc-leader-text{font-size:.82rem;color:var(--text2)}
+.vc-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:.75rem}
+.vc-row{--c:#2563a8;position:relative;display:flex;align-items:center;gap:.9rem;width:100%;padding:.8rem .95rem;border:1.5px solid var(--border);border-radius:16px;background:var(--bg3);color:var(--text);text-align:left;font:inherit;cursor:pointer;transition:transform .18s,border-color .18s,box-shadow .18s,background .18s}
+.vc-row:hover{transform:translateY(-2px);border-color:var(--c);box-shadow:0 8px 22px rgba(13,27,42,.1)}
+.vc-row.is-selected{border-color:var(--c);background:color-mix(in srgb,var(--c) 7%,var(--bg3));box-shadow:0 0 0 1.5px var(--c)}
+.vc-row.is-busy{opacity:.65;cursor:progress}
+.vc-photo{flex:none;width:54px;height:54px;border-radius:50%;overflow:hidden;border:2.5px solid var(--c);background:var(--bg2);display:grid;place-items:center;font-size:.9rem;font-weight:800;color:var(--c)}
+.vc-photo img{width:100%;height:100%;object-fit:cover;object-position:center top;display:block}
+.vc-info{flex:1;min-width:0}
+.vc-name{display:flex;align-items:center;flex-wrap:wrap;gap:.35rem;font-size:.92rem;font-weight:800;line-height:1.2}
+.vc-mine{display:none;font-size:.6rem;font-weight:800;letter-spacing:.04em;text-transform:uppercase;color:#fff;background:var(--c);padding:.14rem .5rem;border-radius:999px}
+.vc-row.is-selected .vc-mine{display:inline-block}
+.vc-party{display:block;font-size:.72rem;color:var(--text3);margin-top:.1rem;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.vc-bar{display:block;height:6px;margin-top:.55rem;border-radius:999px;background:var(--bg2);overflow:hidden}
+.vc-bar i{display:block;height:100%;width:0;border-radius:999px;background:var(--c);transition:width .6s cubic-bezier(.2,.8,.2,1)}
+.vc-score{flex:none;min-width:60px;text-align:right}
+.vc-score strong{display:block;font-size:1.08rem;font-weight:800;font-variant-numeric:tabular-nums}
+.vc-score small{display:block;font-size:.6rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--text3)}
+.vc-feedback{margin-top:1.1rem;padding:.75rem 1rem;border-radius:12px;border:1px solid var(--border);background:var(--bg2);font-size:.84rem;color:var(--text2)}
+.vc-feedback[data-state="success"]{border-color:rgba(39,174,96,.4);background:rgba(39,174,96,.09);color:#1e8449}
+.vc-feedback[data-state="warn"]{border-color:rgba(212,168,67,.55);background:rgba(212,168,67,.13);color:#8a6410}
+.vc-feedback[data-state="error"]{border-color:rgba(192,57,43,.45);background:rgba(192,57,43,.09);color:#c0392b}
+.vc-note{margin-top:.8rem;text-align:center;font-size:.74rem;color:var(--text3)}
+@media(max-width:720px){.vc-panel{padding:1.1rem}.vc-grid{grid-template-columns:1fr}.vc-leader-photo{width:56px;height:56px}.vc-leader-name{font-size:1.1rem}}
+@media(prefers-reduced-motion:reduce){.vc-row,.vc-bar i,.vc-leader{transition:none}.vc-row:hover{transform:none}}
+/* ── CTA vers le vote ── */
+.vc-cta-band{padding:1.4rem 0;background:var(--bg)}
+.vc-cta{display:flex;align-items:center;gap:1rem;max-width:980px;margin:0 auto;padding:.95rem 1.2rem;border-radius:16px;border:1px solid var(--border);background:linear-gradient(120deg,var(--bg3),var(--bg2));text-decoration:none;color:var(--text);box-shadow:var(--shadow);transition:transform .18s,border-color .18s,box-shadow .18s}
+.vc-cta:hover{transform:translateY(-2px);border-color:var(--gold);box-shadow:var(--shadow2)}
+.vc-cta-icon{flex:none;width:42px;height:42px;border-radius:12px;display:grid;place-items:center;background:rgba(212,168,67,.18);color:#b8861b}
+.vc-cta-text{flex:1;min-width:0;display:flex;flex-direction:column;gap:.1rem}
+.vc-cta-text strong{font-size:.95rem}
+.vc-cta-text span{font-size:.8rem;color:var(--text3)}
+.vc-cta-go{flex:none;font-size:.82rem;font-weight:800;color:var(--blue2);white-space:nowrap}
+@media(max-width:520px){.vc-cta-text span{display:none}.vc-cta{padding:.8rem 1rem}}
 </style>
 </head>
 <body>
@@ -854,6 +909,7 @@ footer p{color:rgba(255,255,255,.3);font-size:.78rem;margin-top:.65rem;line-heig
       <div class="hero-ctas reveal reveal-delay-2">
         <a href="#comparateur" class="btn btn-primary"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block;vertical-align:-.15em;margin-right:.35rem"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>Commencer la comparaison</a>
         <a href="#candidats" class="btn btn-outline"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block;vertical-align:-.15em;margin-right:.35rem"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>Voir les candidats</a>
+        <a href="#vote-candidat" class="btn btn-outline btn-sm" aria-label="Voter pour le candidat qui vous correspond le mieux"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block;vertical-align:-.15em;margin-right:.35rem"><path d="m9 12 2 2 4-4"/><path d="M5 7c0-1.1.9-2 2-2h10a2 2 0 0 1 2 2v12H5V7z"/><path d="M22 19H2"/></svg>Voter pour un candidat</a>
       </div>
       <div class="hero-stats reveal reveal-delay-2">
         <div class="stat-card"><div class="num" id="statCandidats">12</div><div class="lbl">Candidats comparés</div></div>
@@ -970,6 +1026,16 @@ footer p{color:rgba(255,255,255,.3);font-size:.78rem;margin-top:.65rem;line-heig
   </div>
 </section>
 
+<div class="vc-cta-band">
+  <div class="section-inner">
+    <a href="#vote-candidat" class="vc-cta">
+      <span class="vc-cta-icon" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 12 2 2 4-4"/><path d="M5 7c0-1.1.9-2 2-2h10a2 2 0 0 1 2 2v12H5V7z"/><path d="M22 19H2"/></svg></span>
+      <span class="vc-cta-text"><strong>Quel candidat vous correspond le mieux ?</strong><span>Vous avez parcouru les fiches : donnez votre avis en un clic, de façon anonyme.</span></span>
+      <span class="vc-cta-go">Voter &rarr;</span>
+    </a>
+  </div>
+</div>
+
 <!-- ======================================================
      COMPARAISON PAR THÈME
 ====================================================== -->
@@ -985,6 +1051,16 @@ footer p{color:rgba(255,255,255,.3);font-size:.78rem;margin-top:.65rem;line-heig
     <div class="theme-cmp-grid" id="themeCmpGrid"></div>
   </div>
 </section>
+
+<div class="vc-cta-band">
+  <div class="section-inner">
+    <a href="#vote-candidat" class="vc-cta">
+      <span class="vc-cta-icon" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 12 2 2 4-4"/><path d="M5 7c0-1.1.9-2 2-2h10a2 2 0 0 1 2 2v12H5V7z"/><path d="M22 19H2"/></svg></span>
+      <span class="vc-cta-text"><strong>Quel candidat vous correspond le mieux ?</strong><span>Un thème vous a convaincu ? Votez pour le candidat qui vous correspond.</span></span>
+      <span class="vc-cta-go">Voter &rarr;</span>
+    </a>
+  </div>
+</div>
 
 <!-- ======================================================
      EN UN COUP D'ŒIL
@@ -1133,6 +1209,16 @@ footer p{color:rgba(255,255,255,.3);font-size:.78rem;margin-top:.65rem;line-heig
   </div>
 </section>
 
+<div class="vc-cta-band">
+  <div class="section-inner">
+    <a href="#vote-candidat" class="vc-cta">
+      <span class="vc-cta-icon" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 12 2 2 4-4"/><path d="M5 7c0-1.1.9-2 2-2h10a2 2 0 0 1 2 2v12H5V7z"/><path d="M22 19H2"/></svg></span>
+      <span class="vc-cta-text"><strong>Quel candidat vous correspond le mieux ?</strong><span>Après avoir comparé deux candidats, dites lequel vous correspond le mieux.</span></span>
+      <span class="vc-cta-go">Voter &rarr;</span>
+    </a>
+  </div>
+</div>
+
 <!-- ======================================================
      SECTION PÉDAGOGIQUE SEO
 ====================================================== -->
@@ -1259,6 +1345,43 @@ footer p{color:rgba(255,255,255,.3);font-size:.78rem;margin-top:.65rem;line-heig
       <p class="chart-note">Le score reflète l'ambition et la précision des propositions sur ce thème, estimés à partir des programmes officiels. Ce n'est pas un jugement de valeur.</p>
     </div>
 
+  </div>
+</section>
+
+<!-- ======================================================
+     VOTE : QUEL CANDIDAT VOUS CORRESPOND LE MIEUX ?
+====================================================== -->
+<section id="vote-candidat" aria-labelledby="vote-candidat-title">
+  <div class="section-inner">
+    <div class="section-header reveal">
+      <div class="section-label">Votre vote pédagogique</div>
+      <h2 class="section-title" id="vote-candidat-title">Quel candidat vous correspond le mieux ?</h2>
+      <div class="divider"></div>
+      <p class="section-subtitle">Après avoir comparé les programmes, cliquez sur le candidat dont les propositions vous correspondent le mieux. Pas encore sûr ? Faites votre <a href="profil-politique.html" style="color:var(--blue2);font-weight:700">test d'orientation politique</a>.</p>
+    </div>
+    <div class="vc-wrap reveal">
+      <div class="vc-panel">
+        <p class="vc-intro">Choisissez un candidat ci-dessous. Le vote est anonyme et vous pouvez modifier votre choix une seule fois. La part des votes s'affiche à droite de chaque candidat.</p>
+        <div class="vc-top">
+          <span class="vc-count" id="voteCandCount"><b>0</b> vote</span>
+          <div class="vc-switch" role="group" aria-label="Changer l'affichage des votes">
+            <button type="button" class="is-active" data-vc-display="percent" aria-pressed="true">%</button>
+            <button type="button" data-vc-display="count" aria-pressed="false">Nombre</button>
+          </div>
+        </div>
+        <div class="vc-leader" id="voteCandLeader" aria-live="polite">
+          <div class="vc-leader-photo" id="voteCandLeaderPhoto" aria-hidden="true">?</div>
+          <div>
+            <div class="vc-leader-label">Actuellement en tête</div>
+            <div class="vc-leader-name" id="voteCandLeaderName">En attente des premiers votes</div>
+            <div class="vc-leader-text" id="voteCandLeaderText">Le candidat le plus voté apparaîtra ici automatiquement.</div>
+          </div>
+        </div>
+        <div class="vc-grid" id="voteCandGrid" role="group" aria-label="Choisir votre candidat"></div>
+        <div class="vc-feedback" id="voteCandFeedback" data-state="info" role="status">Connexion sécurisée en cours…</div>
+        <p class="vc-note">Vote pédagogique réalisé par les visiteurs du site : il n'a pas valeur de sondage et ne représente pas l'opinion des Français.</p>
+      </div>
+    </div>
   </div>
 </section>
 
@@ -3473,6 +3596,257 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 })();
+</script>
+<script>
+/* ── Vote candidat : construction des lignes (photos, noms, couleurs depuis CANDIDATES) ── */
+(function(){
+  const grid=document.getElementById('voteCandGrid');
+  if(!grid||typeof CANDIDATES==='undefined')return;
+  const esc=t=>String(t).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/"/g,'&quot;');
+  const initials=n=>n.split(/\s+/).map(w=>w[0]).slice(0,2).join('').toUpperCase();
+  /* Ordre d'affichage : candidats en tête des sondages d'abord (octobre 2026) */
+  const ORDER=['lepen','melenchon','philippe','glucksmann','retailleau','macron_camp','lisnard','zemmour','tondelier','roussel','dupont_aignan','asselineau'];
+  const LIST=ORDER.map(id=>CANDIDATES.find(c=>c.id===id)).filter(Boolean).concat(CANDIDATES.filter(c=>ORDER.indexOf(c.id)<0));
+  grid.innerHTML=LIST.map(c=>{
+    const ini=initials(c.name);
+    const pic=c.photo?'<img src="'+esc(c.photo)+'" alt="" width="54" height="54" loading="lazy" decoding="async" referrerpolicy="no-referrer">':ini;
+    return '<button type="button" class="vc-row" data-vote-cand="'+esc(c.id)+'" data-name="'+esc(c.name)+'" data-initials="'+esc(ini)+'" aria-pressed="false" style="--c:'+esc(c.color)+'">'
+      +'<span class="vc-photo">'+pic+'</span>'
+      +'<span class="vc-info"><span class="vc-name">'+esc(c.name)+'<span class="vc-mine">Votre choix</span></span>'
+      +'<span class="vc-party">'+esc(c.party)+'</span>'
+      +'<span class="vc-bar" aria-hidden="true"><i data-vote-bar="'+esc(c.id)+'"></i></span></span>'
+      +'<span class="vc-score"><strong data-vote-total="'+esc(c.id)+'">0 %</strong><small class="vc-score-label">Part</small></span>'
+      +'</button>';
+  }).join('');
+  /* photo introuvable : on affiche les initiales */
+  grid.querySelectorAll('.vc-photo img').forEach(img=>{
+    img.addEventListener('error',()=>{img.replaceWith(document.createTextNode(img.closest('.vc-row').dataset.initials));},{once:true});
+  });
+})();
+</script>
+<script type="module" id="vote-candidat-js">
+import { initializeApp, getApps, getApp } from "https://www.gstatic.com/firebasejs/10.12.5/firebase-app.js";
+import { getAuth, onAuthStateChanged, signInAnonymously } from "https://www.gstatic.com/firebasejs/10.12.5/firebase-auth.js";
+import { collection, doc, getDoc, getFirestore, onSnapshot, serverTimestamp, setDoc, updateDoc } from "https://www.gstatic.com/firebasejs/10.12.5/firebase-firestore.js";
+
+const firebaseConfig = {
+  apiKey: "AIzaSyAAU02SCVuDBzJqn9rFfJwzg4UYOH6OctI",
+  authDomain: "comprendre-la-politique-7447f.firebaseapp.com",
+  projectId: "comprendre-la-politique-7447f",
+  storageBucket: "comprendre-la-politique-7447f.firebasestorage.app",
+  messagingSenderId: "1068084941843",
+  appId: "1:1068084941843:web:7320a2ee48d9ae808c1be6",
+  measurementId: "G-66E4GRQWYQ"
+};
+
+const voteButtons = Array.from(document.querySelectorAll("[data-vote-cand]"));
+const displayButtons = Array.from(document.querySelectorAll("[data-vc-display]"));
+const labels = Array.from(document.querySelectorAll(".vc-score-label"));
+const totalsEls = new Map(Array.from(document.querySelectorAll("[data-vote-total]")).map((el) => [el.dataset.voteTotal, el]));
+const barsEls = new Map(Array.from(document.querySelectorAll("[data-vote-bar]")).map((el) => [el.dataset.voteBar, el]));
+const feedbackEl = document.getElementById("voteCandFeedback");
+const countEl = document.getElementById("voteCandCount");
+const leaderEl = document.getElementById("voteCandLeader");
+const leaderPhotoEl = document.getElementById("voteCandLeaderPhoto");
+const leaderNameEl = document.getElementById("voteCandLeaderName");
+const leaderTextEl = document.getElementById("voteCandLeaderText");
+
+if (voteButtons.length && feedbackEl) {
+  const app = getApps().length ? getApp() : initializeApp(firebaseConfig);
+  const auth = getAuth(app);
+  const db = getFirestore(app);
+  const COLLECTION = "candidateVotes";
+  const ids = voteButtons.map((b) => b.dataset.voteCand);
+  const visuals = new Map(voteButtons.map((b) => {
+    const img = b.querySelector(".vc-photo img");
+    const color = (b.getAttribute("style") || "").match(/--c:\s*([^;]+)/);
+    return [b.dataset.voteCand, {
+      name: b.dataset.name,
+      initials: b.dataset.initials,
+      photo: img ? img.getAttribute("src") : "",
+      color: color ? color[1].trim() : "#2563a8"
+    }];
+  }));
+
+  const state = { uid: null, currentVote: null, hasChangedVote: false, isSaving: false };
+  const view = { mode: "percent", counts: {}, firstMs: {}, total: 0 };
+
+  function setFeedback(text, tone = "info") {
+    feedbackEl.textContent = text;
+    feedbackEl.dataset.state = tone;
+  }
+  function timeMs(t) {
+    if (!t) return Infinity;
+    if (typeof t.toMillis === "function") return t.toMillis();
+    if (typeof t.seconds === "number") return t.seconds * 1000;
+    return Infinity;
+  }
+  function pct(count, total) {
+    if (!total) return "0 %";
+    const v = (count / total) * 100;
+    const r = v >= 10 ? Math.round(v) : Math.round(v * 10) / 10;
+    return (Number.isInteger(r) ? String(r) : r.toFixed(1).replace(".", ",")) + " %";
+  }
+  const shown = (count, total) => view.mode === "count" ? String(count || 0) : pct(count, total);
+
+  function renderTotals() {
+    const max = Math.max(0, ...ids.map((id) => view.counts[id] || 0));
+    ids.forEach((id) => {
+      const count = view.counts[id] || 0;
+      const el = totalsEls.get(id);
+      if (el) el.textContent = shown(count, view.total);
+      const bar = barsEls.get(id);
+      if (bar) bar.style.width = (max ? (count / max) * 100 : 0) + "%";
+    });
+    labels.forEach((l) => { l.textContent = view.mode === "count" ? "Votes" : "Part"; });
+    if (countEl) countEl.innerHTML = "<b>" + view.total + "</b> vote" + (view.total > 1 ? "s" : "");
+  }
+
+  function setPhoto(el, v) {
+    el.textContent = "";
+    if (v && v.photo) {
+      const img = document.createElement("img");
+      img.src = v.photo; img.alt = ""; img.referrerPolicy = "no-referrer";
+      img.addEventListener("error", () => { el.textContent = v.initials; }, { once: true });
+      el.appendChild(img);
+    } else {
+      el.textContent = v ? v.initials : "?";
+    }
+  }
+
+  function renderLeader() {
+    let best = null, bestCount = -1, bestMs = Infinity;
+    ids.forEach((id) => {
+      const c = view.counts[id] || 0, ms = view.firstMs[id];
+      if (c > bestCount || (c === bestCount && c > 0 && ms < bestMs)) { best = id; bestCount = c; bestMs = ms; }
+    });
+    if (!best || bestCount <= 0) {
+      leaderEl.classList.remove("has-leader");
+      leaderEl.style.removeProperty("--c");
+      leaderPhotoEl.textContent = "?";
+      leaderNameEl.textContent = "En attente des premiers votes";
+      leaderTextEl.textContent = "Le candidat le plus voté apparaîtra ici automatiquement.";
+      return;
+    }
+    const v = visuals.get(best);
+    leaderEl.classList.add("has-leader");
+    leaderEl.style.setProperty("--c", v.color);
+    setPhoto(leaderPhotoEl, v);
+    leaderNameEl.textContent = v.name;
+    const value = view.mode === "count"
+      ? bestCount + " vote" + (bestCount > 1 ? "s" : "")
+      : pct(bestCount, view.total) + " des votes";
+    leaderTextEl.textContent = "Avec " + value + ", il est actuellement en tête.";
+  }
+
+  function renderSelection() {
+    voteButtons.forEach((b) => {
+      const sel = state.currentVote === b.dataset.voteCand;
+      b.classList.toggle("is-selected", sel);
+      b.setAttribute("aria-pressed", String(sel));
+    });
+  }
+  function setBusy(busy) {
+    state.isSaving = busy;
+    voteButtons.forEach((b) => { b.classList.toggle("is-busy", busy); b.disabled = busy; });
+  }
+  const nameOf = (id) => (visuals.get(id) || {}).name || id;
+
+  function subscribe() {
+    onSnapshot(collection(db, COLLECTION), (snap) => {
+      const counts = {}, firstMs = {};
+      ids.forEach((id) => { counts[id] = 0; firstMs[id] = Infinity; });
+      snap.forEach((d) => {
+        const data = d.data() || {};
+        const id = data.candidate;
+        if (Object.prototype.hasOwnProperty.call(counts, id)) {
+          counts[id] += 1;
+          const ms = timeMs(data.updatedAt || data.createdAt);
+          if (ms < firstMs[id]) firstMs[id] = ms;
+        }
+      });
+      view.counts = counts; view.firstMs = firstMs;
+      view.total = ids.reduce((s, id) => s + counts[id], 0);
+      renderTotals(); renderLeader();
+    }, (error) => {
+      console.error("Erreur total votes candidats:", error);
+      setFeedback("Impossible de charger les votes pour le moment. Réessayez plus tard.", "error");
+    });
+  }
+
+  async function fetchUserVote(uid) {
+    const snap = await getDoc(doc(db, COLLECTION, uid));
+    if (!snap.exists()) {
+      state.currentVote = null; state.hasChangedVote = false; renderSelection();
+      setFeedback("Vous n'avez pas encore voté. Cliquez sur un candidat pour enregistrer votre choix.", "info");
+      return;
+    }
+    const data = snap.data() || {};
+    state.currentVote = ids.includes(data.candidate) ? data.candidate : null;
+    state.hasChangedVote = Boolean(data.hasChangedVote);
+    renderSelection();
+    if (state.currentVote) {
+      setFeedback(state.hasChangedVote
+        ? "Votre vote : " + nameOf(state.currentVote) + ". Vous avez déjà utilisé votre modification."
+        : "Votre vote : " + nameOf(state.currentVote) + ". Vous pouvez encore le modifier une fois.",
+        state.hasChangedVote ? "warn" : "success");
+    }
+  }
+
+  async function submitVote(next) {
+    if (!state.uid) { setFeedback("Connexion en cours… Merci de patienter quelques secondes.", "warn"); return; }
+    if (state.isSaving) return;
+    const ref = doc(db, COLLECTION, state.uid);
+    try {
+      setBusy(true);
+      if (!state.currentVote) {
+        await setDoc(ref, { candidate: next, createdAt: serverTimestamp(), updatedAt: serverTimestamp(), hasChangedVote: false });
+        state.currentVote = next; state.hasChangedVote = false; renderSelection();
+        setFeedback("Vote enregistré pour " + nameOf(next) + ". Vous pouvez le modifier une seule fois.", "success");
+        return;
+      }
+      if (state.currentVote === next) { setFeedback("Vous avez déjà voté pour " + nameOf(next) + ".", "warn"); return; }
+      if (state.hasChangedVote) { setFeedback("Modification bloquée : vous avez déjà utilisé votre unique changement de vote.", "warn"); return; }
+      await updateDoc(ref, { candidate: next, updatedAt: serverTimestamp(), hasChangedVote: true });
+      state.currentVote = next; state.hasChangedVote = true; renderSelection();
+      setFeedback("Vote modifié vers " + nameOf(next) + ". Vous ne pouvez plus le modifier.", "success");
+    } catch (error) {
+      console.error("Erreur Firebase vote candidat:", error);
+      setFeedback("Erreur lors de l'enregistrement du vote. Réessayez dans un instant.", "error");
+    } finally {
+      setBusy(false);
+    }
+  }
+
+  voteButtons.forEach((b) => b.addEventListener("click", () => submitVote(b.dataset.voteCand)));
+  displayButtons.forEach((b) => b.addEventListener("click", () => {
+    if (b.dataset.vcDisplay === view.mode) return;
+    view.mode = b.dataset.vcDisplay;
+    displayButtons.forEach((x) => {
+      const on = x.dataset.vcDisplay === view.mode;
+      x.classList.toggle("is-active", on); x.setAttribute("aria-pressed", String(on));
+    });
+    renderTotals(); renderLeader();
+  }));
+
+  ids.forEach((id) => { view.counts[id] = 0; view.firstMs[id] = Infinity; });
+  renderTotals(); renderLeader();
+  subscribe();
+
+  onAuthStateChanged(auth, async (user) => {
+    if (!user) return;
+    state.uid = user.uid;
+    try { await fetchUserVote(user.uid); }
+    catch (error) {
+      console.error("Erreur chargement vote candidat:", error);
+      setFeedback("Connexion établie, mais le chargement de votre vote a échoué.", "error");
+    }
+  });
+  signInAnonymously(auth).catch((error) => {
+    console.error("Erreur auth anonyme:", error);
+    setFeedback("Connexion anonyme impossible pour le moment.", "error");
+  });
+}
 </script>
 <script type="module" id="feedback-widget-inline-js">
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.5/firebase-app.js";
