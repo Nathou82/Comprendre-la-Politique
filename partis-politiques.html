@@ -798,235 +798,69 @@
   /* =========================================================
      VOTE PARTI (FIREBASE)
   ========================================================= */
-  #vote-parti{background:var(--bg3)}
+  #vote-parti{background:var(--bg2);scroll-margin-top:84px}
   .vote-party-wrap{
-    background:var(--card);
-    border:1px solid var(--border);
-    border-radius:16px;
-    box-shadow:var(--shadow);
-    padding:1.35rem;
+    max-width:980px;margin:0 auto;
+    background:var(--bg3);border:1px solid var(--border);border-radius:22px;
+    box-shadow:var(--shadow2);padding:1.6rem;
   }
-  .vote-party-intro{
-    font-size:.95rem;
-    color:var(--text2);
-    margin-bottom:1rem;
-  }
-  .vote-party-toolbar{
-    display:flex;
-    justify-content:flex-end;
-    margin-bottom:.9rem;
-  }
-  .vote-party-display-switch{
-    display:inline-flex;
-    align-items:center;
-    gap:.28rem;
-    padding:.24rem;
-    border:1px solid var(--border);
-    border-radius:999px;
-    background:var(--bg2);
-  }
-  .vote-party-display-btn{
-    border:none;
-    background:transparent;
-    color:var(--text3);
-    border-radius:999px;
-    padding:.38rem .76rem;
-    font-size:.75rem;
-    font-weight:700;
-    cursor:pointer;
-    transition:background .18s,color .18s,transform .18s;
-  }
-  .vote-party-display-btn:hover{color:var(--text);transform:translateY(-1px)}
-  .vote-party-display-btn.is-active{
-    background:var(--navy);
-    color:#fff;
-    box-shadow:0 10px 22px rgba(17,28,45,.14);
-  }
-  .vote-party-list{
-    display:flex;
-    flex-direction:column;
-    gap:.62rem;
-  }
-  .vote-party-row{
-    width:100%;
-    display:flex;
-    align-items:center;
-    justify-content:space-between;
-    gap:.9rem;
-    border:1.5px solid var(--border);
-    background:var(--bg);
-    color:var(--text);
-    border-radius:12px;
-    font-size:.84rem;
-    font-weight:700;
-    padding:.72rem .8rem;
-    text-align:left;
-    cursor:pointer;
-    transition:transform .18s,border-color .18s,background .18s,color .18s,box-shadow .18s;
-  }
-  .vote-party-row:hover{
-    border-color:var(--party-color,#2563a8);
-    box-shadow:0 0 0 2px var(--party-color,#2563a8);
-    transform:translateY(-1px);
-  }
-  .vote-party-row:focus-visible{
-    outline:2px solid var(--party-color,#2563a8);
-    outline-offset:2px;
-  }
-  .vote-party-row.is-selected{
-    border-color:var(--party-color,#2563a8);
-    background:var(--bg2);
-    box-shadow:0 0 0 3px var(--party-color,#2563a8);
-  }
-  .vote-party-row.is-busy{
-    opacity:.65;
-    pointer-events:none;
-  }
-  .vote-party-main{
-    display:flex;
-    align-items:center;
-    gap:.72rem;
-    min-width:0;
-  }
-  .vote-party-logo{
-    width:36px;
-    height:36px;
-    border-radius:9px;
-    background:#fff;
-    border:1px solid var(--border);
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    padding:3px;
-    flex-shrink:0;
-    overflow:hidden;
-  }
-  .vote-party-logo img{
-    width:100%;
-    height:100%;
-    object-fit:contain;
-    border-radius:6px;
-    display:block;
-  }
-  .vote-party-name{
-    font-size:.92rem;
-    font-weight:700;
-    color:var(--text);
-    line-height:1.35;
-  }
-  .vote-party-total-wrap{
-    display:flex;
-    flex-direction:column;
-    align-items:flex-end;
-    min-width:88px;
-    flex-shrink:0;
-  }
-  .vote-party-total-label{
-    font-size:.64rem;
-    letter-spacing:.08em;
-    text-transform:uppercase;
-    font-weight:700;
-    color:var(--text3);
-  }
-  .vote-party-total{
-    font-size:.98rem;
-    font-weight:800;
-    color:var(--text);
-    line-height:1.2;
-  }
+  .vote-party-intro{font-size:.9rem;line-height:1.65;color:var(--text2);max-width:760px;margin-bottom:1.2rem}
+  .vote-party-toolbar{display:flex;align-items:center;justify-content:space-between;gap:.8rem;flex-wrap:wrap;margin-bottom:1.1rem}
+  .vote-party-count{display:inline-flex;align-items:center;gap:.45rem;padding:.42rem .85rem;border-radius:999px;border:1px solid var(--border);background:var(--bg2);font-size:.78rem;font-weight:600;color:var(--text2)}
+  .vote-party-count b{color:var(--text);font-variant-numeric:tabular-nums}
+  .vote-party-count::before{content:"";width:8px;height:8px;border-radius:50%;background:#27ae60;box-shadow:0 0 0 3px rgba(39,174,96,.2)}
+  .vote-party-display-switch{display:inline-flex;gap:.25rem;padding:.25rem;border:1px solid var(--border);border-radius:999px;background:var(--bg2)}
+  .vote-party-display-btn{border:0;background:transparent;color:var(--text3);font:inherit;font-size:.76rem;font-weight:700;padding:.38rem .9rem;border-radius:999px;cursor:pointer;transition:background .18s,color .18s,box-shadow .18s}
+  .vote-party-display-btn:hover{color:var(--text)}
+  .vote-party-display-btn.is-active{background:var(--navy);color:#fff;box-shadow:0 2px 8px rgba(13,27,42,.25)}
+  .vote-party-display-btn:focus-visible,.vote-party-row:focus-visible{outline:3px solid var(--blue2);outline-offset:2px}
   .vote-party-leader{
-    margin-top:1rem;
-    border:1px solid var(--border);
-    border-radius:12px;
-    background:var(--bg2);
-    padding:.9rem 1rem;
-    display:flex;
-    align-items:center;
-    gap:.8rem;
+    display:flex;align-items:center;gap:1rem;margin:0 0 1.1rem;padding:1rem 1.15rem;
+    border-radius:16px;border:1.5px solid var(--border);
+    background:linear-gradient(135deg,var(--bg2),var(--bg3));
+    transition:border-color .3s,box-shadow .3s;
   }
-  .vote-party-leader-logo{
-    width:54px;
-    height:54px;
-    border-radius:12px;
-    background:#fff;
-    border:1px solid var(--border);
-    padding:5px;
-    flex-shrink:0;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    overflow:hidden;
+  .vote-party-leader-logo{flex:none;width:64px;height:64px;border-radius:14px;overflow:hidden;background:#fff;border:1px solid var(--border);padding:6px;display:flex;align-items:center;justify-content:center}
+  .vote-party-leader-logo img{width:100%;height:100%;object-fit:contain;display:block}
+  .vote-party-leader-label{font-size:.68rem;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:var(--text3)}
+  .vote-party-leader-name{font-family:'Playfair Display',serif;font-size:1.25rem;font-weight:800;color:var(--text);line-height:1.2;margin:.1rem 0}
+  .vote-party-leader-text{font-size:.82rem;color:var(--text2)}
+  .vote-party-list{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:.75rem}
+  .vote-party-row{
+    --c:var(--party-color,#2563a8);
+    position:relative;display:flex;align-items:center;justify-content:flex-start;gap:.9rem;width:100%;
+    padding:.8rem .95rem;border:1.5px solid var(--border);border-radius:16px;
+    background:var(--bg3);color:var(--text);text-align:left;font:inherit;cursor:pointer;
+    transition:transform .18s,border-color .18s,box-shadow .18s,background .18s;
   }
-  .vote-party-leader-logo img{
-    width:100%;
-    height:100%;
-    object-fit:contain;
-    display:block;
+  .vote-party-row:hover{transform:translateY(-2px);border-color:var(--c);box-shadow:0 8px 22px rgba(13,27,42,.1)}
+  .vote-party-row.is-selected{border-color:var(--c);background:color-mix(in srgb,var(--c) 7%,var(--bg3));box-shadow:0 0 0 1.5px var(--c)}
+  .vote-party-row.is-busy{opacity:.65;pointer-events:none}
+  .vote-party-main{display:flex;align-items:center;gap:.9rem;min-width:0;flex:1}
+  .vote-party-logo{flex:none;width:54px;height:54px;border-radius:14px;overflow:hidden;background:#fff;border:2px solid var(--c);padding:4px;display:flex;align-items:center;justify-content:center}
+  .vote-party-logo img{width:100%;height:100%;object-fit:contain;border-radius:6px;display:block}
+  .vote-party-info{flex:1;min-width:0}
+  .vote-party-name{display:flex;align-items:center;flex-wrap:wrap;gap:.35rem;font-size:.92rem;font-weight:800;line-height:1.25;color:var(--text)}
+  .vote-party-row.is-selected .vote-party-name::after{content:"Votre choix";font-size:.6rem;font-weight:800;letter-spacing:.04em;text-transform:uppercase;color:#fff;background:var(--c);padding:.14rem .5rem;border-radius:999px}
+  .vote-party-bar{display:block;height:6px;margin-top:.55rem;border-radius:999px;background:var(--bg2);overflow:hidden}
+  .vote-party-bar i{display:block;height:100%;width:0;border-radius:999px;background:var(--c);transition:width .6s cubic-bezier(.2,.8,.2,1)}
+  .vote-party-total-wrap{flex:none;min-width:60px;display:flex;flex-direction:column;align-items:flex-end;text-align:right}
+  .vote-party-total-label{font-size:.6rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--text3)}
+  .vote-party-total{font-size:1.08rem;font-weight:800;color:var(--text);line-height:1.2;font-variant-numeric:tabular-nums;order:-1}
+  .vote-party-feedback{margin-top:1.1rem;padding:.75rem 1rem;border-radius:12px;border:1px solid var(--border);background:var(--bg2);font-size:.84rem;line-height:1.55;color:var(--text2);transition:all .25s}
+  .vote-party-feedback[data-state="success"]{border-color:rgba(39,174,96,.4);background:rgba(39,174,96,.09);color:#1e8449}
+  .vote-party-feedback[data-state="warn"]{border-color:rgba(212,168,67,.55);background:rgba(212,168,67,.13);color:#8a6410}
+  .vote-party-feedback[data-state="error"]{border-color:rgba(192,57,43,.45);background:rgba(192,57,43,.09);color:#c0392b}
+  .vote-party-feedback.flash{animation:voteFlash .35s ease}
+  @keyframes voteFlash{0%{transform:translateY(2px);opacity:.8}100%{transform:translateY(0);opacity:1}}
+  .vote-party-note{margin-top:.8rem;text-align:center;font-size:.74rem;color:var(--text3)}
+  @media (max-width:720px){
+    .vote-party-wrap{padding:1.1rem}
+    .vote-party-list{grid-template-columns:1fr}
+    .vote-party-leader-logo{width:56px;height:56px}
+    .vote-party-leader-name{font-size:1.1rem}
   }
-  .vote-party-leader-label{
-    font-size:.66rem;
-    text-transform:uppercase;
-    letter-spacing:.08em;
-    color:var(--text3);
-    font-weight:700;
-    margin-bottom:.15rem;
-  }
-  .vote-party-leader-name{
-    font-family:'Playfair Display',serif;
-    font-size:1.35rem;
-    line-height:1.15;
-    font-weight:900;
-    color:var(--text);
-  }
-  .vote-party-leader-text{
-    font-size:.84rem;
-    color:var(--text2);
-    margin-top:.22rem;
-    line-height:1.45;
-  }
-  .vote-party-feedback{
-    margin-top:.95rem;
-    padding:.75rem .9rem;
-    border-radius:10px;
-    border:1px solid var(--border);
-    font-size:.84rem;
-    line-height:1.55;
-    color:var(--text2);
-    background:var(--bg2);
-    transition:all .25s;
-  }
-  .vote-party-feedback[data-state="success"]{
-    border-color:#27ae60;
-    background:#eafaf1;
-    color:#1e8449;
-  }
-  .vote-party-feedback[data-state="warn"]{
-    border-color:#d4a843;
-    background:#fff7e1;
-    color:#8a6a00;
-  }
-  .vote-party-feedback[data-state="error"]{
-    border-color:#c0392b;
-    background:#fdecea;
-    color:#922b21;
-  }
-  .vote-party-feedback.flash{
-    animation:voteFlash .35s ease;
-  }
-  @keyframes voteFlash{
-    0%{transform:translateY(2px);opacity:.8}
-    100%{transform:translateY(0);opacity:1}
-  }
-  @media (max-width:640px){
-    .vote-party-row{padding:.64rem .68rem}
-    .vote-party-logo{width:34px;height:34px}
-    .vote-party-name{font-size:.84rem}
-    .vote-party-total-wrap{min-width:72px}
-    .vote-party-total{font-size:.9rem}
-    .vote-party-leader{padding:.72rem .78rem}
-    .vote-party-leader-logo{width:46px;height:46px}
-    .vote-party-leader-name{font-size:1.08rem}
-  }
+  @media (prefers-reduced-motion:reduce){.vote-party-row,.vote-party-bar i,.vote-party-leader{transition:none}.vote-party-row:hover{transform:none}}
 
   /* =========================================================
      QUIZ
@@ -1893,16 +1727,25 @@
     <div class="vote-party-wrap reveal">
       <p class="vote-party-intro">Choisissez un parti ci-dessous. Le vote est anonyme, et vous pouvez modifier votre choix une seule fois. La part des votes s'affiche en pourcentage &agrave; droite de chaque parti.</p>
       <div class="vote-party-toolbar">
+        <span class="vote-party-count" id="votePartyCount"><b>0</b> vote</span>
         <div class="vote-party-display-switch" role="group" aria-label="Changer l'affichage des votes">
           <button class="vote-party-display-btn is-active" type="button" data-vote-display="percent" aria-pressed="true">%</button>
           <button class="vote-party-display-btn" type="button" data-vote-display="count" aria-pressed="false">Nombre</button>
+        </div>
+      </div>
+      <div class="vote-party-leader" id="votePartyLeader" aria-live="polite">
+        <div class="vote-party-leader-logo" id="votePartyLeaderLogo"></div>
+        <div class="vote-party-leader-content">
+          <div class="vote-party-leader-label">Actuellement en tête</div>
+          <div class="vote-party-leader-name" id="votePartyLeaderName">En attente des premiers votes</div>
+          <div class="vote-party-leader-text" id="votePartyLeaderText">Le parti le plus vote apparaitra ici automatiquement.</div>
         </div>
       </div>
       <div class="vote-party-list" id="votePartyGrid" role="group" aria-label="Choisir votre parti">
         <button class="vote-party-row" type="button" data-vote-party="Rassemblement National" style="--party-color:#1c80ce;">
           <span class="vote-party-main">
             <span class="vote-party-logo"><img src="https://www.tv83.info/wp-content/uploads/2024/02/Logo_alternatif_Rassemblement_national_2018.png" alt="Logo Rassemblement National" loading="lazy"></span>
-            <span class="vote-party-name">Rassemblement National</span>
+            <span class="vote-party-info"><span class="vote-party-name">Rassemblement National</span><span class="vote-party-bar" aria-hidden="true"><i data-vote-bar="Rassemblement National"></i></span></span>
           </span>
           <span class="vote-party-total-wrap">
             <span class="vote-party-total-label">Part</span>
@@ -1912,7 +1755,7 @@
         <button class="vote-party-row" type="button" data-vote-party="La France Insoumise" style="--party-color:#5a2582;">
           <span class="vote-party-main">
             <span class="vote-party-logo"><img src="https://lfi72-la-france-insoumise.fr/wp-content/uploads/2025/02/LFI-logo-site.png" alt="Logo La France Insoumise" loading="lazy"></span>
-            <span class="vote-party-name">La France Insoumise</span>
+            <span class="vote-party-info"><span class="vote-party-name">La France Insoumise</span><span class="vote-party-bar" aria-hidden="true"><i data-vote-bar="La France Insoumise"></i></span></span>
           </span>
           <span class="vote-party-total-wrap">
             <span class="vote-party-total-label">Part</span>
@@ -1922,7 +1765,7 @@
         <button class="vote-party-row" type="button" data-vote-party="Les R&eacute;publicains" style="--party-color:#0055a4;">
           <span class="vote-party-main">
             <span class="vote-party-logo"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5c/CGLR2023_-_4.png/1280px-CGLR2023_-_4.png" alt="Logo Les R&eacute;publicains" loading="lazy"></span>
-            <span class="vote-party-name">Les R&eacute;publicains</span>
+            <span class="vote-party-info"><span class="vote-party-name">Les R&eacute;publicains</span><span class="vote-party-bar" aria-hidden="true"><i data-vote-bar="Les R&eacute;publicains"></i></span></span>
           </span>
           <span class="vote-party-total-wrap">
             <span class="vote-party-total-label">Part</span>
@@ -1932,7 +1775,7 @@
         <button class="vote-party-row" type="button" data-vote-party="Parti Socialiste" style="--party-color:#e20040;">
           <span class="vote-party-main">
             <span class="vote-party-logo"><img src="https://upload.wikimedia.org/wikipedia/fr/d/d1/Logo_Parti_socialiste_%28France%29_2016.png" alt="Logo Parti Socialiste" loading="lazy"></span>
-            <span class="vote-party-name">Parti Socialiste</span>
+            <span class="vote-party-info"><span class="vote-party-name">Parti Socialiste</span><span class="vote-party-bar" aria-hidden="true"><i data-vote-bar="Parti Socialiste"></i></span></span>
           </span>
           <span class="vote-party-total-wrap">
             <span class="vote-party-total-label">Part</span>
@@ -1942,7 +1785,7 @@
         <button class="vote-party-row" type="button" data-vote-party="Europe &Eacute;cologie Les Verts" style="--party-color:#ccff26;">
           <span class="vote-party-main">
             <span class="vote-party-logo"><img src="https://lesecologistes-paris11.org/wp-content/uploads/2025/06/bd19b-logo_eelv-fond-blanc.png" alt="Logo Europe &Eacute;cologie Les Verts" loading="lazy"></span>
-            <span class="vote-party-name">Europe &Eacute;cologie Les Verts</span>
+            <span class="vote-party-info"><span class="vote-party-name">Europe &Eacute;cologie Les Verts</span><span class="vote-party-bar" aria-hidden="true"><i data-vote-bar="Europe &Eacute;cologie Les Verts"></i></span></span>
           </span>
           <span class="vote-party-total-wrap">
             <span class="vote-party-total-label">Part</span>
@@ -1952,7 +1795,7 @@
         <button class="vote-party-row" type="button" data-vote-party="Mouvement D&eacute;mocrate" style="--party-color:#ff7900;">
           <span class="vote-party-main">
             <span class="vote-party-logo"><img src="https://upload.wikimedia.org/wikipedia/commons/0/08/Mouvement-Democrate-Logo-2019.png" alt="Logo Mouvement D&eacute;mocrate" loading="lazy"></span>
-            <span class="vote-party-name">Mouvement D&eacute;mocrate</span>
+            <span class="vote-party-info"><span class="vote-party-name">Mouvement D&eacute;mocrate</span><span class="vote-party-bar" aria-hidden="true"><i data-vote-bar="Mouvement D&eacute;mocrate"></i></span></span>
           </span>
           <span class="vote-party-total-wrap">
             <span class="vote-party-total-label">Part</span>
@@ -1962,7 +1805,7 @@
         <button class="vote-party-row" type="button" data-vote-party="Renaissance" style="--party-color:#006eb7;">
           <span class="vote-party-main">
             <span class="vote-party-logo"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/75/Renaissance-logotype-officiel.svg/langfr-960px-Renaissance-logotype-officiel.svg.png" alt="Logo Renaissance" loading="lazy"></span>
-            <span class="vote-party-name">Renaissance</span>
+            <span class="vote-party-info"><span class="vote-party-name">Renaissance</span><span class="vote-party-bar" aria-hidden="true"><i data-vote-bar="Renaissance"></i></span></span>
           </span>
           <span class="vote-party-total-wrap">
             <span class="vote-party-total-label">Part</span>
@@ -1972,7 +1815,7 @@
         <button class="vote-party-row" type="button" data-vote-party="Horizons" style="--party-color:#00b0e8;">
           <span class="vote-party-main">
             <span class="vote-party-logo"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/55/Logo_Parti_Politique_Horizons_-_2021.svg/langfr-1920px-Logo_Parti_Politique_Horizons_-_2021.svg.png" alt="Logo Horizons" loading="lazy"></span>
-            <span class="vote-party-name">Horizons</span>
+            <span class="vote-party-info"><span class="vote-party-name">Horizons</span><span class="vote-party-bar" aria-hidden="true"><i data-vote-bar="Horizons"></i></span></span>
           </span>
           <span class="vote-party-total-wrap">
             <span class="vote-party-total-label">Part</span>
@@ -1982,7 +1825,7 @@
         <button class="vote-party-row" type="button" data-vote-party="Parti Communiste Fran&ccedil;ais" style="--party-color:#d71920;">
           <span class="vote-party-main">
             <span class="vote-party-logo"><img src="https://upload.wikimedia.org/wikipedia/fr/thumb/6/6a/Logo_du_Parti_communiste_fran%C3%A7ais_%282018%2C_rouge%29.svg/langfr-1280px-Logo_du_Parti_communiste_fran%C3%A7ais_%282018%2C_rouge%29.svg.png" alt="Logo Parti Communiste Fran&ccedil;ais" loading="lazy"></span>
-            <span class="vote-party-name">Parti Communiste Fran&ccedil;ais</span>
+            <span class="vote-party-info"><span class="vote-party-name">Parti Communiste Fran&ccedil;ais</span><span class="vote-party-bar" aria-hidden="true"><i data-vote-bar="Parti Communiste Fran&ccedil;ais"></i></span></span>
           </span>
           <span class="vote-party-total-wrap">
             <span class="vote-party-total-label">Part</span>
@@ -1992,7 +1835,7 @@
         <button class="vote-party-row" type="button" data-vote-party="Reconqu&ecirc;te !" style="--party-color:#1f2f6b;">
           <span class="vote-party-main">
             <span class="vote-party-logo"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/da/Logo_of_the_Reconquest_%28political_party%29.svg/3840px-Logo_of_the_Reconquest_%28political_party%29.svg.png" alt="Logo Reconqu&ecirc;te !" loading="lazy"></span>
-            <span class="vote-party-name">Reconqu&ecirc;te !</span>
+            <span class="vote-party-info"><span class="vote-party-name">Reconqu&ecirc;te !</span><span class="vote-party-bar" aria-hidden="true"><i data-vote-bar="Reconqu&ecirc;te !"></i></span></span>
           </span>
           <span class="vote-party-total-wrap">
             <span class="vote-party-total-label">Part</span>
@@ -2002,7 +1845,7 @@
         <button class="vote-party-row" type="button" data-vote-party="Nouveau Parti Anticapitaliste" style="--party-color:#ed1c24;">
           <span class="vote-party-main">
             <span class="vote-party-logo"><img src="https://npa-lanticapitaliste.org/sites/default/files/styles/large/public/autocollant-npa-identitaire-horizontal.jpg" alt="Logo Nouveau Parti Anticapitaliste" loading="lazy"></span>
-            <span class="vote-party-name">Nouveau Parti Anticapitaliste</span>
+            <span class="vote-party-info"><span class="vote-party-name">Nouveau Parti Anticapitaliste</span><span class="vote-party-bar" aria-hidden="true"><i data-vote-bar="Nouveau Parti Anticapitaliste"></i></span></span>
           </span>
           <span class="vote-party-total-wrap">
             <span class="vote-party-total-label">Part</span>
@@ -2012,7 +1855,7 @@
         <button class="vote-party-row" type="button" data-vote-party="Lutte Ouvri&egrave;re" style="--party-color:#8b0000;">
           <span class="vote-party-main">
             <span class="vote-party-logo"><img src="https://upload.wikimedia.org/wikipedia/commons/e/e0/Logo_de_Lutte_Ouvri%C3%A8re.png" alt="Logo Lutte Ouvri&egrave;re" loading="lazy"></span>
-            <span class="vote-party-name">Lutte Ouvri&egrave;re</span>
+            <span class="vote-party-info"><span class="vote-party-name">Lutte Ouvri&egrave;re</span><span class="vote-party-bar" aria-hidden="true"><i data-vote-bar="Lutte Ouvri&egrave;re"></i></span></span>
           </span>
           <span class="vote-party-total-wrap">
             <span class="vote-party-total-label">Part</span>
@@ -2022,7 +1865,7 @@
         <button class="vote-party-row" type="button" data-vote-party="Union des D&eacute;mocrates et Ind&eacute;pendants" style="--party-color:#5b458c;">
           <span class="vote-party-main">
             <span class="vote-party-logo"><img src="https://upload.wikimedia.org/wikipedia/commons/6/60/Logo_UDI_2019.png" alt="Logo Union des D&eacute;mocrates et Ind&eacute;pendants" loading="lazy"></span>
-            <span class="vote-party-name">Union des D&eacute;mocrates et Ind&eacute;pendants</span>
+            <span class="vote-party-info"><span class="vote-party-name">Union des D&eacute;mocrates et Ind&eacute;pendants</span><span class="vote-party-bar" aria-hidden="true"><i data-vote-bar="Union des D&eacute;mocrates et Ind&eacute;pendants"></i></span></span>
           </span>
           <span class="vote-party-total-wrap">
             <span class="vote-party-total-label">Part</span>
@@ -2032,7 +1875,7 @@
         <button class="vote-party-row" type="button" data-vote-party="Parti Radical de Gauche" style="--party-color:#6184a8;">
           <span class="vote-party-main">
             <span class="vote-party-logo"><img src="https://upload.wikimedia.org/wikipedia/fr/1/12/Logotype_PRG_Le_centre_gauche.png" alt="Logo Parti Radical de Gauche" loading="lazy"></span>
-            <span class="vote-party-name">Parti Radical de Gauche</span>
+            <span class="vote-party-info"><span class="vote-party-name">Parti Radical de Gauche</span><span class="vote-party-bar" aria-hidden="true"><i data-vote-bar="Parti Radical de Gauche"></i></span></span>
           </span>
           <span class="vote-party-total-wrap">
             <span class="vote-party-total-label">Part</span>
@@ -2042,7 +1885,7 @@
         <button class="vote-party-row" type="button" data-vote-party="Union des Droites pour la R&eacute;publique" style="--party-color:#0056a6;">
           <span class="vote-party-main">
             <span class="vote-party-logo"><img src="https://upload.wikimedia.org/wikipedia/fr/thumb/c/cd/Logo_UDR_2024.svg/langfr-250px-Logo_UDR_2024.svg.png" alt="Logo Union des Droites pour la R&eacute;publique" loading="lazy"></span>
-            <span class="vote-party-name">Union des Droites pour la R&eacute;publique</span>
+            <span class="vote-party-info"><span class="vote-party-name">Union des Droites pour la R&eacute;publique</span><span class="vote-party-bar" aria-hidden="true"><i data-vote-bar="Union des Droites pour la R&eacute;publique"></i></span></span>
           </span>
           <span class="vote-party-total-wrap">
             <span class="vote-party-total-label">Part</span>
@@ -2052,7 +1895,7 @@
         <button class="vote-party-row" type="button" data-vote-party="Place Publique" style="--party-color:#ffd200;">
           <span class="vote-party-main">
             <span class="vote-party-logo"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a5/Logo_Place_publique.svg/langfr-250px-Logo_Place_publique.svg.png" alt="Logo Place Publique" loading="lazy"></span>
-            <span class="vote-party-name">Place Publique</span>
+            <span class="vote-party-info"><span class="vote-party-name">Place Publique</span><span class="vote-party-bar" aria-hidden="true"><i data-vote-bar="Place Publique"></i></span></span>
           </span>
           <span class="vote-party-total-wrap">
             <span class="vote-party-total-label">Part</span>
@@ -2061,14 +1904,7 @@
         </button>
       </div>
       <div class="vote-party-feedback" id="votePartyFeedback" data-state="info">Connexion securisee en cours...</div>
-      <div class="vote-party-leader" id="votePartyLeader" aria-live="polite">
-        <div class="vote-party-leader-logo" id="votePartyLeaderLogo"></div>
-        <div class="vote-party-leader-content">
-          <div class="vote-party-leader-label">Parti dominant</div>
-          <div class="vote-party-leader-name" id="votePartyLeaderName">En attente des premiers votes</div>
-          <div class="vote-party-leader-text" id="votePartyLeaderText">Le parti le plus vote apparaitra ici automatiquement.</div>
-        </div>
-      </div>
+      <p class="vote-party-note">Vote pédagogique réalisé par les visiteurs du site : il n'a pas valeur de sondage et ne représente pas l'opinion des Français.</p>
     </div>
   </div>
 </section>
@@ -4641,6 +4477,8 @@ const leaderEl = document.getElementById("votePartyLeader");
 const leaderLogoEl = document.getElementById("votePartyLeaderLogo");
 const leaderNameEl = document.getElementById("votePartyLeaderName");
 const leaderTextEl = document.getElementById("votePartyLeaderText");
+const voteBars = Array.from(document.querySelectorAll("[data-vote-bar]"));
+const voteCountEl = document.getElementById("votePartyCount");
 
 if (voteButtons.length && feedbackEl) {
   const app = initializeApp(firebaseConfig);
@@ -4777,6 +4615,12 @@ if (voteButtons.length && feedbackEl) {
     totalsByParty.forEach((el, party) => {
       el.textContent = getVoteDisplayValue(counts[party] || 0, totalVotes);
     });
+    const maxCount = Math.max(0, ...canonicalParties.map((party) => counts[party] || 0));
+    voteBars.forEach((bar) => {
+      const count = counts[bar.dataset.voteBar] || 0;
+      bar.style.width = (maxCount ? (count / maxCount) * 100 : 0) + "%";
+    });
+    if (voteCountEl) voteCountEl.innerHTML = "<b>" + totalVotes + "</b> vote" + (totalVotes > 1 ? "s" : "");
   }
 
   function renderDominantParty(counts, firstVoteMsByParty, totalVotes) {
