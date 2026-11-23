@@ -3861,10 +3861,10 @@ if (voteButtons.length && feedbackEl) {
 }
 </script>
 <script type="module" id="feedback-widget-inline-js">
-import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.5/firebase-app.js";
+import { initializeApp, getApps, getApp } from "https://www.gstatic.com/firebasejs/10.12.5/firebase-app.js";
 import { getFirestore, collection, doc, getDoc, runTransaction, serverTimestamp } from "https://www.gstatic.com/firebasejs/10.12.5/firebase-firestore.js";
 const firebaseConfig={apiKey:"AIzaSyAAU02SCVuDBzJqn9rFfJwzg4UYOH6OctI",authDomain:"comprendre-la-politique-7447f.firebaseapp.com",projectId:"comprendre-la-politique-7447f",storageBucket:"comprendre-la-politique-7447f.firebasestorage.app",messagingSenderId:"1068084941843",appId:"1:1068084941843:web:7320a2ee48d9ae808c1be6"};
-const app=initializeApp(firebaseConfig);const db=getFirestore(app);
+const app=getApps().length?getApp():initializeApp(firebaseConfig);const db=getFirestore(app);
 const positiveIcon='<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10v11"/><path d="M15 5.5 14 10h5.2a2 2 0 0 1 1.92 2.55l-1.55 5.4A4 4 0 0 1 15.72 21H7a2 2 0 0 1-2-2v-7a2 2 0 0 1 2-2h2.2a2 2 0 0 0 1.66-.9L14 4.5a1.2 1.2 0 0 1 1 .97Z"/></svg>';
 const negativeIcon='<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17 14V3"/><path d="M9 18.5 10 14H4.8a2 2 0 0 1-1.92-2.55l1.55-5.4A4 4 0 0 1 8.28 3H17a2 2 0 0 1 2 2v7a2 2 0 0 1-2 2h-2.2a2 2 0 0 0-1.66.9L10 19.5a1.2 1.2 0 0 1-1-.97Z"/></svg>';
 function currentPagePath(){if(window.location.protocol==="file:"){return "/"+(window.location.pathname.split(/[\\/]/).pop()||"index.html")}const path=window.location.pathname||"/";return path.endsWith("/")?"/":path}
